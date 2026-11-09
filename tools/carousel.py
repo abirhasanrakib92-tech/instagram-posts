@@ -173,7 +173,7 @@ async def _slide(b, work, name, body, extra_css=''):
 async def cta_slide(b, work):
     body = """
 <div class="head"><span>Abir Hasan Rakib</span><span>UI/UX Designer</span></div>
-<div style="position:absolute;left:80px;right:80px;top:300px">
+<div style="position:absolute;left:80px;right:80px;top:230px">
  <div style="font:600 30px 'Inter Tight';color:#6B6B74;letter-spacing:-.3px">Have a product in mind?</div>
  <div style="font:600 148px/0.95 'Inter Tight';letter-spacing:-6px;margin-top:22px">Open for<br>new <span style="color:#3D5AFE">projects</span></div>
  <div style="display:flex;gap:12px;margin-top:46px;flex-wrap:wrap">
@@ -182,9 +182,11 @@ async def cta_slide(b, work):
 </div>
 <div style="position:absolute;left:80px;right:80px;bottom:84px;display:flex;flex-direction:column;gap:14px">
  <div class="row"><span class="ic">{{wa}}</span><span><small>WhatsApp</small>+880 1730 402 994</span></div>
+ <div class="row"><span class="ic">{{em}}</span><span><small>Email</small>abirhasanrakib92@gmail.com</span></div>
  <div class="row"><span class="ic">{{ig}}</span><span><small>Follow for daily UI</small>@abirhasanrakib_</span><span class="save">Save for later {{bm}}</span></div>
 </div>"""
     body = body.replace('{{wa}}', R.expand_icons('{{icon:message-circle:30:#111114:2}}')) \
+               .replace('{{em}}', R.expand_icons('{{icon:mail:30:#111114:2}}')) \
                .replace('{{ig}}', R.expand_icons('{{icon:at-sign:30:#111114:2}}')) \
                .replace('{{bm}}', R.expand_icons('{{icon:bookmark:24:#ffffff:2.2}}'))
     css = """.chip{font:500 24px 'Inter Tight';padding:14px 24px;border-radius:999px;border:1.5px solid #111114}
