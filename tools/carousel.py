@@ -8,7 +8,7 @@ Usage:
 Style (from the owner's reference posts): every slide uses the same #EEEEEE background,
 close-ups are BIG and bleed off the canvas edges, no labels, no extra text, and the slides
 pan across the same design so people swipe through it.
-  dashboard -> 4 slides: full window, zoom top-left, zoom top-right, zoom bottom
+  dashboard -> 3 slides: full window, left half, right half (owner's spec)
   website   -> 6 slides: two-card overview, top section zoom, then the long page rotated 90°
                in consecutive bands (page top on the left), bleeding off both sides
   app       -> 4 slides: hand+phone cover, then close-ups into the top, middle and bottom of the phone
@@ -60,10 +60,13 @@ async def dashboard(d, work, prefix, b):
     url = m.group(1) if m else 'app.example.com'
     uri = R.b64(png)
     _, fw, fh = window_html(uri, url, 1, 0, 0)
+    # Owner's spec: slide 1 = full screen, slide 2 = left half, slide 3 = right half.
+    # The window is scaled to fill the canvas height; each half is cut exactly at the window's midline.
+    k = (H - 2 * 64) / fh
+    y = (H - fh * k) / 2
     views = [
-        (1.9, 64, 150),                                   # top-left: logo, nav, KPIs, chart start
-        (1.9, W - 64 - fw * 1.9, 150),                    # top-right: KPIs, side cards
-        (2.7, -fw * 2.7 * 0.33, H - 110 - fh * 2.7),      # deep zoom on the lower cards, bleeding on three sides
+        (k, W - fw * k / 2, y),        # left half: window midline sits on the canvas right edge
+        (k, -fw * k / 2, y),           # right half: window midline sits on the canvas left edge
     ]
     n = 2
     for k, x, y in views:
