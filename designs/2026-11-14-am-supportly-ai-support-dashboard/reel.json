@@ -1,0 +1,41 @@
+{
+ "duration": 27.0,
+ "accent": "#7C5CFC",
+ "tilt": 1.6,
+ "build": [0.9, 4.2],
+ "build_sel": [".sb", ".top", ".k", ".card"],
+ "count_sel": ".k b",
+ "grow": [{"sel": "#cv rect", "t": [8.0, 9.8]}],
+ "show": [
+  {"sel": "#cv g", "t": 10.0},
+  {"sel": ".chat .m:nth-child(1)", "t": 12.4},
+  {"sel": ".chat .m:nth-child(2)", "t": 13.3},
+  {"sel": ".chat .m:nth-child(3)", "t": 14.3}
+ ],
+ "bars": [{"sel": "[data-reel=intents] .bar div", "t": 20.0}],
+ "rings": [
+  {"sel": "[data-reel=kpi]", "t": [5.9, 7.6], "pad": 8, "radius": 26},
+  {"sel": "[data-reel=chat] .m:nth-child(2)", "t": [13.7, 15.2], "pad": 6, "radius": 18},
+  {"sel": "[data-reel=gaps] .gap:nth-of-type(2)", "t": [16.6, 17.4], "pad": 4, "radius": 12},
+  {"sel": "[data-reel=btn]", "t": [18.3, 19.3], "pad": 6, "radius": 999},
+  {"sel": "[data-reel=intents] .it:nth-of-type(2)", "t": [20.6, 22.0], "pad": 4, "radius": 12}
+ ],
+ "cursor": {"path": [[16.6, "[data-reel=gaps]", [0.85, 0.35]], [17.9, "[data-reel=btn]", [0.55, 0.6]]], "click": [18.2], "target": "[data-reel=btn]"},
+ "camera": [
+  [0.0, "full", 0.92],
+  [4.6, "full"],
+  [5.8, "[data-reel=kpi]", 0.9],
+  [7.4, "[data-reel=kpi]", 0.9],
+  [8.4, "[data-reel=chart]"],
+  [11.0, "[data-reel=chart]"],
+  [12.2, "[data-reel=chat]"],
+  [15.2, "[data-reel=chat]", 1.05],
+  [16.4, "[data-reel=gaps]"],
+  [19.2, "[data-reel=gaps]"],
+  [20.2, "[data-reel=intents]"],
+  [22.2, "[data-reel=intents]"],
+  [23.6, "full"],
+  [27.0, "full", 1.02]
+ ],
+ "end": [24.6, 25.4]
+}

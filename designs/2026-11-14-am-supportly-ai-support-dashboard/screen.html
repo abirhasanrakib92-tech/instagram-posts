@@ -66,16 +66,16 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
  <div class="top"><div><h1>AI support insights</h1><div class="sub">Last 7 days · Nov 7 – Nov 13 · all channels</div></div><div class="sp"></div>
   <div class="btn">{{icon:calendar:15:#17142A}}Last 7 days{{icon:chevron-down:15:#17142A}}</div><div class="btn">{{icon:download:15:#17142A}}Export</div></div>
  <div class="kpis">
-  <div class="k hero"><small>{{icon:sparkles:15:#E4DCFF}}Resolved by AI, no human needed</small><b>68.4%<em style="background:rgba(255,255,255,.2)">+6.1 pts</em></b>
+  <div class="k hero" data-reel="kpi"><small>{{icon:sparkles:15:#E4DCFF}}Resolved by AI, no human needed</small><b>68.4%<em style="background:rgba(255,255,255,.2)">+6.1 pts</em></b>
    <div class="seg"><div style="width:68.4%;background:#fff"></div><div style="width:31.6%;background:rgba(255,255,255,.35)"></div></div><div class="f">6,412 of 9,374 conversations</div></div>
   <div class="k"><small>{{icon:zap:15:#5C5970}}First response</small><b>9 sec<em style="background:var(--grn2);color:var(--grn)">−4m 51s</em></b><div class="f">was 5 min before AI</div></div>
   <div class="k"><small>{{icon:smile:15:#5C5970}}CSAT</small><b>4.7<em style="background:var(--grn2);color:var(--grn)">+0.3</em></b><div class="f">1,840 ratings</div></div>
   <div class="k"><small>{{icon:user-round-check:15:#5C5970}}Handed to humans</small><b>2,962<em style="background:var(--org2);color:#B54708">31.6%</em></b><div class="f">avg handoff after 2.4 msgs</div></div>
  </div>
  <div class="row" style="grid-template-columns:1.6fr 1fr">
-  <div class="card"><div class="ch"><h3>Conversations by day</h3><div class="leg"><span><i style="background:var(--pur)"></i>Resolved by AI</span><span><i style="background:#D9D3F7"></i>Human</span></div></div>
+  <div class="card" data-reel="chart"><div class="ch"><h3>Conversations by day</h3><div class="leg"><span><i style="background:var(--pur)"></i>Resolved by AI</span><span><i style="background:#D9D3F7"></i>Human</span></div></div>
    <svg id="cv" width="100%" height="292" style="margin-top:10px;overflow:visible"></svg></div>
-  <div class="card"><div class="ch"><h3>Live: Ava at work</h3><span class="tag" style="margin-left:auto;background:var(--grn2);color:var(--grn)">{{icon:circle-check:12:#12B76A:2.6}}Resolved</span></div>
+  <div class="card" data-reel="chat"><div class="ch"><h3>Live: Ava at work</h3><span class="tag" style="margin-left:auto;background:var(--grn2);color:var(--grn)">{{icon:circle-check:12:#12B76A:2.6}}Resolved</span></div>
    <div class="chat">
     <div class="m u">Hi, my order #48213 still says processing. It was supposed to ship Monday?</div>
     <div class="m a">Sorry about the wait! It left our warehouse <b>this morning at 8:12</b> and should arrive <b>Fri, Nov 15</b>. Here's tracking: TRK-90217.</div>
@@ -84,19 +84,19 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
    <div style="display:flex;gap:8px;margin-top:12px;font-size:12px;color:var(--ink2)"><span class="tag" style="background:#F3F2F7;color:var(--ink2)">Order status</span><span class="tag" style="background:#F3F2F7;color:var(--ink2)">Confidence 97%</span><span class="tag" style="background:#F3F2F7;color:var(--ink2)">38 sec</span></div></div>
  </div>
  <div class="row" style="grid-template-columns:1fr 1fr;flex:1;min-height:0">
-  <div class="card"><div class="ch"><h3>Top intents</h3><span class="s">AI resolution rate</span></div>
+  <div class="card" data-reel="intents"><div class="ch"><h3>Top intents</h3><span class="s">AI resolution rate</span></div>
    <div class="it"><div><b>Where is my order?</b><small>2,318 chats</small></div><div class="bar"><div style="width:91%;height:100%;background:var(--pur)"></div></div><span class="pct">91%</span></div>
    <div class="it"><div><b>Change delivery address</b><small>1,104 chats</small></div><div class="bar"><div style="width:84%;height:100%;background:var(--pur)"></div></div><span class="pct">84%</span></div>
    <div class="it"><div><b>Refund request</b><small>962 chats</small></div><div class="bar"><div style="width:52%;height:100%;background:var(--org)"></div></div><span class="pct">52%</span></div>
    <div class="it"><div><b>Damaged item</b><small>540 chats</small></div><div class="bar"><div style="width:23%;height:100%;background:#F04438"></div></div><span class="pct">23%</span></div>
    <div class="it"><div><b>Cancel subscription</b><small>410 chats</small></div><div class="bar"><div style="width:76%;height:100%;background:var(--pur)"></div></div><span class="pct">76%</span></div>
   </div>
-  <div class="card"><div class="ch"><h3>Knowledge gaps</h3><span class="s">Questions Ava couldn't answer</span></div>
+  <div class="card" data-reel="gaps"><div class="ch"><h3>Knowledge gaps</h3><span class="s">Questions Ava couldn't answer</span></div>
    <div class="gap">{{icon:file-question:18:#F79009}}<span>Can I return a gift without a receipt?</span><span class="n">148 asks</span></div>
    <div class="gap">{{icon:file-question:18:#F79009}}<span>Do you ship to the Faroe Islands?</span><span class="n">63 asks</span></div>
    <div class="gap">{{icon:file-question:18:#F79009}}<span>How do I combine two orders?</span><span class="n">41 asks</span></div>
    <div class="gap">{{icon:file-question:18:#F79009}}<span>Is the winter sale price matched?</span><span class="n">29 asks</span></div>
-   <div class="gap"><span class="tag" style="background:var(--pur);color:#fff;padding:8px 12px;font-size:12px">{{icon:sparkles:13:#ffffff:2.4}}Draft 4 articles with AI</span></div>
+   <div class="gap"><span class="tag" data-reel="btn" style="background:var(--pur);color:#fff;padding:8px 12px;font-size:12px">{{icon:sparkles:13:#ffffff:2.4}}Draft 4 articles with AI</span></div>
   </div>
  </div>
 </main></div>
