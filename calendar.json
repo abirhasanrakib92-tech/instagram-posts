@@ -31,9 +31,10 @@
    "images": [
     "posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-1.jpg",
     "posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-2.jpg",
-    "posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-3.jpg"
+    "posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-3.jpg",
+    "posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-4.jpg"
    ],
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-10-am",
@@ -57,7 +58,8 @@
     "posts/2026-11/2026-11-10-am-meeting-notes-website-4.jpg",
     "posts/2026-11/2026-11-10-am-meeting-notes-website-5.jpg",
     "posts/2026-11/2026-11-10-am-meeting-notes-website-6.jpg",
-    "posts/2026-11/2026-11-10-am-meeting-notes-website-7.jpg"
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-7.jpg",
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-8.jpg"
    ]
   },
   {
@@ -74,7 +76,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-11-am",
@@ -90,7 +92,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-11-pm",
@@ -122,7 +124,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-12-pm",
@@ -138,7 +140,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-13-am",
@@ -170,7 +172,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-14-am",
@@ -186,7 +188,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-14-pm",
@@ -218,7 +220,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-15-pm",
@@ -234,7 +236,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-16-am",
@@ -266,7 +268,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-17-am",
@@ -282,7 +284,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-17-pm",
@@ -314,7 +316,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-18-pm",
@@ -330,7 +332,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-19-am",
@@ -362,7 +364,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-20-am",
@@ -378,7 +380,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-20-pm",
@@ -410,7 +412,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-21-pm",
@@ -426,7 +428,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-22-am",
@@ -458,7 +460,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-23-am",
@@ -474,7 +476,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-23-pm",
@@ -506,7 +508,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-24-pm",
@@ -522,7 +524,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-25-am",
@@ -554,7 +556,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-26-am",
@@ -570,7 +572,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-26-pm",
@@ -602,7 +604,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-27-pm",
@@ -618,7 +620,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-28-am",
@@ -650,7 +652,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-29-am",
@@ -666,7 +668,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-11-29-pm",
@@ -698,7 +700,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-11-30-pm",
@@ -714,7 +716,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-12-01-am",
@@ -746,7 +748,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-12-02-am",
@@ -762,7 +764,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-12-02-pm",
@@ -794,7 +796,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-12-03-pm",
@@ -810,7 +812,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-12-04-am",
@@ -842,7 +844,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-12-05-am",
@@ -858,7 +860,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-12-05-pm",
@@ -890,7 +892,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-12-06-pm",
@@ -906,7 +908,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-12-07-am",
@@ -938,7 +940,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-12-08-am",
@@ -954,7 +956,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   },
   {
    "id": "2026-12-08-pm",
@@ -986,7 +988,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-app"
   },
   {
    "id": "2026-12-09-pm",
@@ -1002,7 +1004,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "carousel-3"
+   "format": "carousel-dashboard"
   }
  ]
 }

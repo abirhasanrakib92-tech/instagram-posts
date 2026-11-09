@@ -8,9 +8,9 @@ Usage:
 Style (from the owner's reference posts): every slide uses the same #EEEEEE background,
 close-ups are BIG and bleed off the canvas edges, no labels, no extra text, and the slides
 pan across the same design so people swipe through it.
-  dashboard -> 3 slides: full window, left half, right half (owner's spec)
+  dashboard -> 4 slides: full window, left half, right half, CTA (owner's spec)
   website   -> whole home page in two columns, top of page large, then the whole page rotated 90°
-               in consecutive bands through the footer (owner's spec)
+               in consecutive bands through the footer (max 7), then CTA (owner's spec)
   app       -> 5 slides: hand+phone cover, description + nav bar, typography, colors, CTA (owner's spec)
 """
 import asyncio, sys, pathlib, base64
@@ -76,6 +76,7 @@ async def dashboard(d, work, prefix, b):
         await shot_html(b, p, work / f'zoom{n}.png', {'width': W, 'height': H}, 2)
         save(Image.open(work / f'zoom{n}.png').resize((W, H), Image.LANCZOS), f'{prefix}-{n}.jpg')
         n += 1
+    save(await cta_slide(b, work), f'{prefix}-{n}.jpg')
 
 
 async def website(d, work, prefix, b):
@@ -128,7 +129,7 @@ box-shadow:0 0 0 1px rgba(0,0,0,.05),0 40px 80px -30px rgba(20,20,30,.3)}}</styl
     # Split that strip into k equal canvas-wide windows (k = fewest that fit, max 8); any tiny overlap is spread evenly.
     import math
     span = rw_total + 300
-    k = min(8, max(1, math.ceil(span / W)))
+    k = min(7, max(1, math.ceil(span / W)))   # 2 + 7 + CTA = 10 (Instagram max)
     step = (span - W) / (k - 1) if k > 1 else 0
     for i in range(k):
         c = Image.new('RGB', (W, H), BG)
@@ -136,9 +137,10 @@ box-shadow:0 0 0 1px rgba(0,0,0,.05),0 40px 80px -30px rgba(20,20,30,.3)}}</styl
         a0 = max(0, -off)
         c.paste(rot.crop((a0, 0, min(rw_total, a0 + W - max(0, off)), band)), (max(0, off), 100))
         save(c, f'{prefix}-{i + 3}.jpg')
-    x = rw_total if span <= 8 * W else 0
+    save(await cta_slide(b, work), f'{prefix}-{k + 3}.jpg')
+    x = rw_total if span <= 7 * W else 0
     if x < rw_total:
-        print('WARNING: page longer than 8 rotated slides; shorten the page')
+        print('WARNING: page longer than 7 rotated slides; shorten the page')
 
 
 def _png_bytes(img):

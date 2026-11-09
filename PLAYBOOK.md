@@ -5,11 +5,11 @@ Every scheduled run follows this file. It covers what to post, how to design it,
 ## Locked format (approved by the owner on 2026-11-09 — do not change)
 
 Match these approved posts exactly in presentation; only the design inside the screen changes:
-- App → `posts/2026-11/2026-11-09-fintech-home.jpg` (hand holding phone, 4:5 version from `tools/render.py app`)
-- Dashboard → `posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-1.jpg` … `-3.jpg` (**3-slide carousel**: full window, left half, right half; no popup/zoom card)
-- Website → `posts/2026-11/2026-11-10-am-meeting-notes-website-1.jpg` … `-7.jpg` (**carousel**: whole home page in two columns, top of page large, then the whole page rotated 90° in equal bands through the footer)
+- App → `reference/app-approved-1.jpg` … `-5.jpg` (**5-slide carousel**: hand holding phone, description + nav bar, typography, colors, CTA)
+- Dashboard → `posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-1.jpg` … `-4.jpg` (**carousel**: full window, left half, right half, CTA; no popup/zoom card)
+- Website → `posts/2026-11/2026-11-10-am-meeting-notes-website-1.jpg` … `-8.jpg` (**carousel**: whole home page in two columns, top of page large, the whole page rotated 90° in equal bands through the footer, CTA)
 
-Always: 1080×1350, `#EEEEEE` background, light UI, no CTA bar, no "Designed by" strip, no extra text on the canvas.
+Always: 1080×1350, `#EEEEEE` background, light UI, no CTA bar or "Designed by" strip on the design slides; the only CTA is the fixed last slide.
 Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 
 ## The schedule
@@ -31,23 +31,32 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 5. Prepare the **next** slot the same way (design → render → push → `ready`), so it is waiting before its time.
    If anything about the next one fails, leave it `planned`; the next run will build it.
 
-## Post format per type (approved 2026-11-09)
+## Post format per type (all approved by the owner on 2026-11-09 — every post is a carousel ending with the CTA slide)
 
 | type | format | how to render | how to publish |
 |---|---|---|---|
-| dashboard | **carousel, exactly 3 slides**: 1 full screen, 2 left half, 3 right half | `python3 tools/carousel.py designs/<dir> dashboard posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg -2.jpg -3.jpg` | Windsor `create_carousel_post` with the 3 URLs in order |
-| app | single image (carousel not approved yet) | `tools/render.py … app` | `create_image_post` |
-| website | **carousel, 5–10 slides**: 1 whole home page in two columns, 2 top of page large, 3+ whole page rotated 90° in equal bands ending on the footer | `python3 tools/carousel.py designs/<dir> website posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg … -N.jpg` | Windsor `create_carousel_post` with all URLs in order (max 10) |
+| dashboard | **4 slides**: 1 full screen, 2 left half, 3 right half, 4 CTA | `python3 tools/carousel.py designs/<dir> dashboard posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg … -4.jpg` | `create_carousel_post` with all URLs in order |
+| app | **5 slides**: 1 hand holding phone, 2 description (UPPERCASE, key phrases bold) + the app's nav bar enlarged, 3 typography, 4 colors, 5 CTA | `python3 tools/carousel.py designs/<dir> app posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg … -5.jpg` | `create_carousel_post` with all URLs in order |
+| website | **5–10 slides**: 1 whole home page in two columns, 2 top of page large, 3+ whole page rotated 90° in equal bands ending on the footer (max 7), last CTA | `python3 tools/carousel.py designs/<dir> website posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg … -N.jpg` | `create_carousel_post` with all URLs in order (max 10) |
 
-Only change app posts to carousels if the owner approves it later. Keep website pages 4500–7000px tall so the rotated part fits in at most 8 slides. Store carousel paths in the slot as `images` (list) and leave `image` null.
+The CTA slide is fixed (tools/carousel.py `cta_slide`): Abir Hasan Rakib · UI/UX Designer, "Open for new projects", WhatsApp +880 1730 402 994, Email abirhasanrakib92@gmail.com, @abirhasanrakib_, Save for later. Never change it unless the owner asks.
+Keep website pages 4500–7000px tall so the rotated part fits in 7 slides. Store slide paths in the slot as `images` (list) and leave `image` null.
+
+App designs must include these in `<head>` (they feed slides 2–4), and the bottom nav bar must have class `tab` or attribute `data-nav`:
+```
+<meta name="app-name" content="Habit Tracker">
+<meta name="app-desc" content="One or two sentences about what the app lets people do, with 2 **key phrases** in double asterisks.">
+<meta name="fonts" content="<font family from assets/fonts.css>|One sentence on why this typeface fits the product.">
+<meta name="palette" content="#HEX:Name|#HEX:Name|#HEX:Name|#HEX:Name|#HEX:Name|#HEX:Name">   (exactly 6, the real colors used)
+```
 
 ## Designing a post
 
-Folder: `designs/<slot-id>-<short-slug>/screen.html` (+ any images it uses). Output:
-`posts/<YYYY-MM>/<slot-id>-<short-slug>.jpg`, made with
+Folder: `designs/<slot-id>-<short-slug>/screen.html` (+ any images it uses). Output: the carousel slides
+`posts/<YYYY-MM>/<slot-id>-<short-slug>-1.jpg … -N.jpg`, made with
 
 ```
-python3 tools/render.py designs/<dir> <app|dashboard|website> posts/<YYYY-MM>/<file>.jpg
+python3 tools/carousel.py designs/<dir> <app|dashboard|website> posts/<YYYY-MM>/<slot-id>-<short-slug>
 ```
 
 Canvas for every post: 1080×1350, flat `#EEEEEE` studio background, **no CTA bar, no "Designed by", no logo strip**.
@@ -128,8 +137,7 @@ Do all of this on **every** post. Nothing here may break the locked format.
 2. Public URL: `https://raw.githubusercontent.com/abirhasanrakib92-tech/instagram-posts/main/<path to jpg>`.
    Confirm it returns HTTP 200 and `image/jpeg` before posting.
 3. Post with Windsor.ai: `execute_action`, connector `instagram`, account `17841402898456368`:
-   dashboards and websites → action `create_carousel_post`, params `{image_urls: [all slides in order], caption}`;
-   app → action `create_image_post`, params `{image_url, caption}`.
+   every post → action `create_carousel_post`, params `{image_urls: [all slides in order], caption}`.
    Verify every URL returns HTTP 200 first.
 4. Caption: follow **Growth rules** below (keyword first line, hook, save/share prompt, question, max 5 researched hashtags).
 5. Save the caption, image path and `media_id` in the slot, set `posted`, commit, push.
