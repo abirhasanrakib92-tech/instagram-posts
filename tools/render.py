@@ -51,16 +51,16 @@ def b64(path):
 
 
 # ---------- app: hand-holding-phone photo ----------
-def compose_app(screen_png, out):
+def compose_app(screen_png, out, scale=1):
     ref = Image.open(ROOT / 'assets/mockups/hand-phone.png').convert('RGB')
     # 4:5 crop around the phone, then scale to 1080 wide
     cx0, cw = 255, 957
-    s = W / cw
-    base = ref.crop((cx0, 0, cx0 + cw, 1196)).resize((W, H), Image.LANCZOS)
+    s = W * scale / cw
+    base = ref.crop((cx0, 0, cx0 + cw, 1196)).resize((round(W * scale), round(H * scale)), Image.LANCZOS)
     X0, Y0, SW, SH, R = (538 - cx0) * s, 43 * s, 392 * s, 853 * s, 60 * s
     X0, Y0, SWi, SHi = round(X0), round(Y0), round(SW), round(SH)
     scr = Image.open(screen_png).convert('RGB').resize((SWi, SHi), Image.LANCZOS)
-    k = 4
+    k = 4 if scale == 1 else 2
     m = Image.new('L', (SWi * k, SHi * k), 0)
     ImageDraw.Draw(m).rounded_rectangle([0, 0, SWi * k - 1, SHi * k - 1], R * k, fill=255)
     m = m.resize((SWi, SHi), Image.LANCZOS)
