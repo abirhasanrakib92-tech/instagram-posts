@@ -1,0 +1,112 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.supportly.ai/insights">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F5F5F8;--line:#E7E6EE;--ink:#17142A;--ink2:#5C5970;--ink3:#9C99AE;--pur:#7C5CFC;--pur2:#EFEAFF;--grn:#12B76A;--grn2:#E3F8EE;--org:#F79009;--org2:#FEF0DC}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'DM Sans';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.app{display:grid;grid-template-columns:240px 1fr;height:960px}
+.sb{background:#fff;border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;padding:0 8px;letter-spacing:-.4px}
+.logo i{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--pur),#A88BFF);display:grid;place-items:center}
+.logo em{font-style:normal;font-size:10.5px;font-weight:700;color:var(--pur);background:var(--pur2);padding:2px 6px;border-radius:6px}
+.nav{margin-top:24px;display:flex;flex-direction:column;gap:2px}
+.nav a{display:flex;align-items:center;gap:11px;height:40px;padding:0 10px;border-radius:11px;font-size:14px;font-weight:500;color:var(--ink2)}
+.nav a.on{background:var(--pur2);color:var(--pur);font-weight:700}
+.nav a em{margin-left:auto;font-style:normal;font-size:11px;font-weight:700;color:var(--ink3)}
+.t{font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--ink3);margin:22px 10px 8px}
+.agent{margin-top:auto;border-radius:18px;padding:14px;background:var(--ink);color:#fff}
+.agent .h{display:flex;align-items:center;gap:10px}
+.agent .o{width:34px;height:34px;border-radius:50%;background:conic-gradient(var(--pur),#5BE3A8,var(--pur));display:grid;place-items:center}
+.agent b{font-size:14px}.agent small{display:flex;align-items:center;gap:5px;font-size:11.5px;color:#A9A5C2}
+.agent small i{width:7px;height:7px;border-radius:50%;background:#5BE3A8}
+.agent p{font-size:12px;color:#CFCBE3;margin-top:10px;line-height:1.45}
+.main{padding:20px 26px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.top{display:flex;align-items:center;gap:12px}
+.top h1{font-size:23px;font-weight:700;letter-spacing:-.7px}.top .sub{font-size:13px;color:var(--ink2);margin-top:3px}
+.sp{flex:1}
+.btn{height:40px;border-radius:11px;display:flex;align-items:center;gap:8px;padding:0 14px;font-size:13px;font-weight:600;border:1px solid var(--line);background:#fff}
+.kpis{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;gap:12px}
+.k{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px 18px}
+.k small{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink2)}
+.k b{display:flex;align-items:baseline;gap:8px;font-size:30px;font-weight:700;letter-spacing:-1.2px;margin-top:10px}
+.k b em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:0;padding:3px 8px;border-radius:999px}
+.k .f{font-size:12px;color:var(--ink3);margin-top:6px}
+.k.hero{background:linear-gradient(135deg,#7C5CFC,#9B7DFF);color:#fff;border:0}
+.k.hero small{color:#E4DCFF}.k.hero .f{color:#E4DCFF}
+.seg{height:8px;border-radius:4px;background:rgba(255,255,255,.25);margin-top:10px;display:flex;overflow:hidden}
+.row{display:grid;gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 20px}
+.ch{display:flex;align-items:center;gap:10px}.ch h3{font-size:15px;font-weight:700;letter-spacing:-.3px}.ch .s{font-size:12.5px;color:var(--ink3)}
+.leg{margin-left:auto;display:flex;gap:14px;font-size:12px;color:var(--ink2)}.leg span{display:flex;align-items:center;gap:6px}.leg i{width:9px;height:9px;border-radius:3px}
+.it{display:grid;grid-template-columns:1fr 70px 60px;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #F1F0F5;font-size:13px}
+.it:last-child{border:0}.it .bar{height:7px;border-radius:4px;background:#F0EEF6;overflow:hidden}
+.it b{font-weight:600}.it small{display:block;font-size:11.5px;color:var(--ink3);margin-top:2px}
+.pct{text-align:right;font-weight:700}
+.chat{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.m{max-width:86%;font-size:12.5px;line-height:1.45;padding:10px 12px;border-radius:14px}
+.m.u{background:#F3F2F7;border-radius:4px 14px 14px 14px}
+.m.a{margin-left:auto;background:var(--pur2);color:#3B2A99;border-radius:14px 4px 14px 14px}
+.m.a b{color:#2A1C80}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px}
+.gap{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #F1F0F5;font-size:13px}
+.gap:last-child{border:0}.gap .n{margin-left:auto;font-size:12px;color:var(--ink3);white-space:nowrap}
+</style></head>
+<body><div class="app">
+<aside class="sb">
+ <div class="logo"><i>{{icon:bot:18:#ffffff:2.2}}</i>Supportly<em>AI</em></div>
+ <div class="nav"><a class="on">{{icon:chart-no-axes-combined:18:#7C5CFC:2.2}}Insights</a><a>{{icon:inbox:18:#5C5970}}Inbox<em>38</em></a><a>{{icon:bot:18:#5C5970}}AI agent</a><a>{{icon:book-open:18:#5C5970}}Knowledge base</a><a>{{icon:workflow:18:#5C5970}}Automations</a></div>
+ <div class="t">TEAM</div>
+ <div class="nav"><a>{{icon:users:18:#5C5970}}Agents<em>14</em></a><a>{{icon:star:18:#5C5970}}Quality</a><a>{{icon:settings:18:#5C5970}}Settings</a></div>
+ <div class="agent"><div class="h"><div class="o">{{icon:sparkles:15:#ffffff:2.4}}</div><div><b>Ava · AI agent</b><small><i></i>Handling 126 chats</small></div></div>
+  <p>Learned 3 new answers from yesterday's human replies.</p></div>
+</aside>
+<main class="main">
+ <div class="top"><div><h1>AI support insights</h1><div class="sub">Last 7 days · Nov 7 – Nov 13 · all channels</div></div><div class="sp"></div>
+  <div class="btn">{{icon:calendar:15:#17142A}}Last 7 days{{icon:chevron-down:15:#17142A}}</div><div class="btn">{{icon:download:15:#17142A}}Export</div></div>
+ <div class="kpis">
+  <div class="k hero"><small>{{icon:sparkles:15:#E4DCFF}}Resolved by AI, no human needed</small><b>68.4%<em style="background:rgba(255,255,255,.2)">+6.1 pts</em></b>
+   <div class="seg"><div style="width:68.4%;background:#fff"></div><div style="width:31.6%;background:rgba(255,255,255,.35)"></div></div><div class="f">6,412 of 9,374 conversations</div></div>
+  <div class="k"><small>{{icon:zap:15:#5C5970}}First response</small><b>9 sec<em style="background:var(--grn2);color:var(--grn)">−4m 51s</em></b><div class="f">was 5 min before AI</div></div>
+  <div class="k"><small>{{icon:smile:15:#5C5970}}CSAT</small><b>4.7<em style="background:var(--grn2);color:var(--grn)">+0.3</em></b><div class="f">1,840 ratings</div></div>
+  <div class="k"><small>{{icon:user-round-check:15:#5C5970}}Handed to humans</small><b>2,962<em style="background:var(--org2);color:#B54708">31.6%</em></b><div class="f">avg handoff after 2.4 msgs</div></div>
+ </div>
+ <div class="row" style="grid-template-columns:1.6fr 1fr">
+  <div class="card"><div class="ch"><h3>Conversations by day</h3><div class="leg"><span><i style="background:var(--pur)"></i>Resolved by AI</span><span><i style="background:#D9D3F7"></i>Human</span></div></div>
+   <svg id="cv" width="100%" height="292" style="margin-top:10px;overflow:visible"></svg></div>
+  <div class="card"><div class="ch"><h3>Live: Ava at work</h3><span class="tag" style="margin-left:auto;background:var(--grn2);color:var(--grn)">{{icon:circle-check:12:#12B76A:2.6}}Resolved</span></div>
+   <div class="chat">
+    <div class="m u">Hi, my order #48213 still says processing. It was supposed to ship Monday?</div>
+    <div class="m a">Sorry about the wait! It left our warehouse <b>this morning at 8:12</b> and should arrive <b>Fri, Nov 15</b>. Here's tracking: TRK-90217.</div>
+    <div class="m u">Perfect, thank you 🙏</div>
+   </div>
+   <div style="display:flex;gap:8px;margin-top:12px;font-size:12px;color:var(--ink2)"><span class="tag" style="background:#F3F2F7;color:var(--ink2)">Order status</span><span class="tag" style="background:#F3F2F7;color:var(--ink2)">Confidence 97%</span><span class="tag" style="background:#F3F2F7;color:var(--ink2)">38 sec</span></div></div>
+ </div>
+ <div class="row" style="grid-template-columns:1fr 1fr;flex:1;min-height:0">
+  <div class="card"><div class="ch"><h3>Top intents</h3><span class="s">AI resolution rate</span></div>
+   <div class="it"><div><b>Where is my order?</b><small>2,318 chats</small></div><div class="bar"><div style="width:91%;height:100%;background:var(--pur)"></div></div><span class="pct">91%</span></div>
+   <div class="it"><div><b>Change delivery address</b><small>1,104 chats</small></div><div class="bar"><div style="width:84%;height:100%;background:var(--pur)"></div></div><span class="pct">84%</span></div>
+   <div class="it"><div><b>Refund request</b><small>962 chats</small></div><div class="bar"><div style="width:52%;height:100%;background:var(--org)"></div></div><span class="pct">52%</span></div>
+   <div class="it"><div><b>Damaged item</b><small>540 chats</small></div><div class="bar"><div style="width:23%;height:100%;background:#F04438"></div></div><span class="pct">23%</span></div>
+   <div class="it"><div><b>Cancel subscription</b><small>410 chats</small></div><div class="bar"><div style="width:76%;height:100%;background:var(--pur)"></div></div><span class="pct">76%</span></div>
+  </div>
+  <div class="card"><div class="ch"><h3>Knowledge gaps</h3><span class="s">Questions Ava couldn't answer</span></div>
+   <div class="gap">{{icon:file-question:18:#F79009}}<span>Can I return a gift without a receipt?</span><span class="n">148 asks</span></div>
+   <div class="gap">{{icon:file-question:18:#F79009}}<span>Do you ship to the Faroe Islands?</span><span class="n">63 asks</span></div>
+   <div class="gap">{{icon:file-question:18:#F79009}}<span>How do I combine two orders?</span><span class="n">41 asks</span></div>
+   <div class="gap">{{icon:file-question:18:#F79009}}<span>Is the winter sale price matched?</span><span class="n">29 asks</span></div>
+   <div class="gap"><span class="tag" style="background:var(--pur);color:#fff;padding:8px 12px;font-size:12px">{{icon:sparkles:13:#ffffff:2.4}}Draft 4 articles with AI</span></div>
+  </div>
+ </div>
+</main></div>
+<script>
+const ai=[812,876,934,905,951,968,966],hu=[480,452,437,418,405,391,379],d=['Fri 7','Sat 8','Sun 9','Mon 10','Tue 11','Wed 12','Thu 13'];
+const s=document.getElementById('cv'),W=s.getBoundingClientRect().width,H=292,pl=40,pb=26,pt=6,iw=W-pl,ih=H-pb-pt,mx=1800,bw=iw/7;let o='';
+for(let g=0;g<=3;g++){const v=g*600,y=pt+ih-v/mx*ih;o+=`<line x1="${pl}" x2="${W}" y1="${y}" y2="${y}" stroke="#F0EEF6"/><text x="${pl-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#9C99AE">${v?(v/1000).toFixed(1)+'k':0}</text>`}
+for(let i=0;i<7;i++){const x=pl+i*bw+bw*.22,w=bw*.56,h1=ai[i]/mx*ih,h2=hu[i]/mx*ih,y1=pt+ih-h1;
+o+=`<rect x="${x}" y="${y1}" width="${w}" height="${h1}" rx="6" fill="${i==6?'#7C5CFC':'#9F86FF'}"/><rect x="${x}" y="${y1-h2-3}" width="${w}" height="${h2}" rx="6" fill="#D9D3F7"/>`;
+o+=`<text x="${x+w/2}" y="${H-6}" text-anchor="middle" font-size="11" fill="${i==6?'#17142A':'#9C99AE'}" font-weight="${i==6?700:400}">${d[i]}</text>`}
+const x6=pl+6*bw+bw*.22+bw*.28;o+=`<g transform="translate(${x6-158},${pt+4})"><rect width="140" height="52" rx="10" fill="#17142A"/><text x="12" y="20" font-size="11" fill="#A9A5C2">Thu 13 · 1,345 chats</text><text x="12" y="39" font-size="13" font-weight="700" fill="#fff">71.8% by AI</text></g>`;
+s.innerHTML=o;
+</script></body></html>

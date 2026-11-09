@@ -26,6 +26,7 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 1. `cd` into the repo clone, `git pull`, then `npm ci --silent` (fonts + icons; needed by the renderer).
 2. Work out the current slot from the Dhaka clock: before 14:00 → today's `am`, otherwise today's `pm`.
    Find it in `calendar.json`. If its status is already `posted`, stop — never post twice.
+   If its status is `ready-pending-approval`, the owner has not approved it yet: do NOT post it; report that it is waiting for approval and stop.
 3. If the slot is `planned`, design and render it now (see below), push, and mark it `ready`.
 4. Post it (see Publishing). Record `media_id`, set `posted`, commit and push.
 5. Prepare the **next** slot the same way (design → render → push → `ready`), so it is waiting before its time.

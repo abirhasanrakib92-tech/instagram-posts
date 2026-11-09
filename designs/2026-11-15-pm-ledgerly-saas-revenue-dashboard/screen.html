@@ -1,0 +1,97 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.ledgerly.com/revenue">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F6F5FA;--line:#E8E6F0;--ink:#16132B;--ink2:#5E5A76;--ink3:#A09CB4;--vio:#5B3DF5;--vio2:#ECE8FF;--lime:#B8F04A;--lime2:#F0FBDC;--red:#EF4A5E;--red2:#FDE9EC}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Urbanist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.app{padding:18px 24px;display:flex;flex-direction:column;gap:14px;height:960px}
+.nav{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px 10px 8px 16px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;letter-spacing:-.5px;margin-right:22px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--ink);display:grid;place-items:center}
+.nav a{font-size:14px;font-weight:600;color:var(--ink2);padding:9px 14px;border-radius:11px}
+.nav a.on{background:var(--ink);color:#fff}
+.sp{flex:1}
+.ib{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center}
+.me{width:40px;height:40px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-weight:800;font-size:13px}
+.hd{display:flex;align-items:flex-end;gap:12px}
+.hd h1{font-size:30px;font-weight:800;letter-spacing:-1px}.hd .sub{font-size:14px;color:var(--ink2);margin-top:2px;font-weight:500}
+.seg{display:flex;background:#fff;border:1px solid var(--line);border-radius:12px;padding:3px}
+.seg span{font-size:13px;font-weight:600;color:var(--ink2);padding:7px 12px;border-radius:9px}.seg span.on{background:var(--vio2);color:var(--vio)}
+.btn{height:40px;border-radius:12px;display:flex;align-items:center;gap:8px;padding:0 14px;font-size:13.5px;font-weight:700;background:var(--vio);color:#fff}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.k{background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px 18px;position:relative;overflow:hidden}
+.k small{font-size:13px;color:var(--ink2);font-weight:600}
+.k b{display:block;font-size:34px;font-weight:800;letter-spacing:-1.4px;margin-top:6px}
+.k .d{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink3);font-weight:500;margin-top:2px}
+.up{color:#3D7A00;background:var(--lime2);font-weight:700;padding:2px 7px;border-radius:999px}
+.dn{color:#C22A3E;background:var(--red2);font-weight:700;padding:2px 7px;border-radius:999px}
+.k svg{position:absolute;right:14px;top:18px}
+.k.dark{background:var(--ink);color:#fff;border:0}.k.dark small{color:#B9B5CF}.k.dark .d{color:#8F8AA8}
+.r{display:grid;gap:12px;flex:1;min-height:0}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 20px;display:flex;flex-direction:column;min-height:0}
+.ch{display:flex;align-items:center;gap:10px}.ch h3{font-size:16px;font-weight:800;letter-spacing:-.3px}.ch .s{font-size:13px;color:var(--ink3);font-weight:500}
+.cohort{display:grid;grid-template-columns:70px repeat(6,1fr);gap:4px;margin-top:12px;font-size:12px;font-weight:600}
+.cohort span{height:34px;border-radius:8px;display:grid;place-items:center}
+.cohort .h{color:var(--ink3);height:22px;font-weight:600}
+.cohort .l{justify-content:start;place-items:center start;color:var(--ink2)}
+.pl{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F1F0F6;font-size:14px}
+.pl:last-child{border:0}.pl i{width:10px;height:10px;border-radius:3px}.pl b{margin-left:auto;font-weight:800}.pl small{color:var(--ink3);font-weight:500;width:70px;text-align:right}
+.acc{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid #F1F0F6}
+.acc:last-child{border:0}.acc .lo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:13px}
+.acc b{display:block;font-size:14px;font-weight:700}.acc small{display:block;font-size:12px;color:var(--ink3);font-weight:500}
+.acc .v{margin-left:auto;text-align:right;font-weight:800;font-size:14px}
+</style></head>
+<body><div class="app">
+ <div class="nav"><div class="logo"><i>{{icon:chart-no-axes-column-increasing:16:#B8F04A:2.6}}</i>Ledgerly</div>
+  <a class="on">Revenue</a><a>Customers</a><a>Plans</a><a>Forecast</a><a>Reports</a><div class="sp"></div>
+  <div class="ib">{{icon:search:17:#16132B}}</div><div class="ib">{{icon:bell:17:#16132B}}</div><div class="me">JM</div></div>
+ <div class="hd"><div><h1>Revenue overview</h1><div class="sub">October 2026 · closed books · all plans</div></div><div class="sp"></div>
+  <div class="seg"><span>MTD</span><span class="on">Monthly</span><span>Quarterly</span><span>Yearly</span></div><div class="btn">{{icon:file-text:16:#ffffff:2.2}}Board report</div></div>
+ <div class="g">
+  <div class="k dark"><small>Monthly recurring revenue</small><b>$482.6k</b><div class="d"><span class="up">+6.8%</span>vs Sep $451.9k</div>
+   <svg width="90" height="40"><path d="M2 34 L15 30 L28 31 L41 24 L54 22 L67 14 L88 6" stroke="#B8F04A" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg></div>
+  <div class="k"><small>Annual run rate</small><b>$5.79M</b><div class="d"><span class="up">+$368k</span>this month</div></div>
+  <div class="k"><small>Net revenue retention</small><b>118%</b><div class="d"><span class="up">+3 pts</span>trailing 12 months</div></div>
+  <div class="k"><small>Logo churn</small><b>1.9%</b><div class="d"><span class="dn">+0.2 pts</span>23 of 1,214 accounts</div></div>
+ </div>
+ <div class="r" style="grid-template-columns:1.5fr 1fr">
+  <div class="card"><div class="ch"><h3>MRR movement</h3><span class="s">September → October</span></div><svg id="wf" width="100%" style="flex:1;margin-top:10px;overflow:visible"></svg></div>
+  <div class="card"><div class="ch"><h3>Cohort retention</h3><span class="s">% of MRR kept</span></div>
+   <div class="cohort" id="co"></div></div>
+ </div>
+ <div class="r" style="grid-template-columns:1fr 1fr 1fr;flex:0 0 238px">
+  <div class="card"><div class="ch"><h3>MRR by plan</h3></div>
+   <div class="pl"><i style="background:var(--vio)"></i>Scale<small>186 acc.</small><b>$241.3k</b></div>
+   <div class="pl"><i style="background:#9C86FF"></i>Growth<small>512 acc.</small><b>$168.9k</b></div>
+   <div class="pl"><i style="background:var(--lime)"></i>Starter<small>516 acc.</small><b>$72.4k</b></div></div>
+  <div class="card"><div class="ch"><h3>Biggest expansions</h3></div>
+   <div class="acc"><div class="lo" style="background:var(--vio2);color:var(--vio)">N</div><div><b>Northwind Logistics</b><small>Growth → Scale · 140 seats</small></div><div class="v" style="color:#3D7A00">+$6.2k</div></div>
+   <div class="acc"><div class="lo" style="background:var(--lime2);color:#3D7A00">H</div><div><b>Halcyon Health</b><small>+60 seats</small></div><div class="v" style="color:#3D7A00">+$3.1k</div></div>
+   <div class="acc"><div class="lo" style="background:#FFF1E2;color:#C26A0A">O</div><div><b>Orbital Studio</b><small>Add-on: SSO</small></div><div class="v" style="color:#3D7A00">+$1.4k</div></div></div>
+  <div class="card"><div class="ch"><h3>At-risk accounts</h3><span class="s" style="margin-left:auto">$9.8k MRR</span></div>
+   <div class="acc"><div class="lo" style="background:var(--red2);color:var(--red)">F</div><div><b>Fernway Retail</b><small>Usage down 64% · renews Dec 2</small></div><div class="v">$4.4k</div></div>
+   <div class="acc"><div class="lo" style="background:var(--red2);color:var(--red)">A</div><div><b>Alpinery Labs</b><small>Champion left company</small></div><div class="v">$3.2k</div></div>
+   <div class="acc"><div class="lo" style="background:#FFF1E2;color:#C26A0A">P</div><div><b>Polymer &amp; Co</b><small>3 failed payments</small></div><div class="v">$2.2k</div></div></div>
+ </div>
+</div>
+<script>
+// waterfall: 451.9 + 28.4 new + 17.6 expansion - 6.1 contraction - 9.2 churn = 482.6
+const s=document.getElementById('wf'),r=s.getBoundingClientRect(),W=r.width,H=r.height,pl=46,pb=30,pt=24,iw=W-pl,ih=H-pb-pt,mn=420,mx=500;
+const y=v=>pt+ih-(v-mn)/(mx-mn)*ih;let o='';
+for(let g=0;g<=4;g++){const v=mn+g*20;o+=`<line x1="${pl}" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="#F1F0F6"/><text x="${pl-10}" y="${y(v)+4}" text-anchor="end" font-size="12" fill="#A09CB4" font-family="Urbanist" font-weight="600">$${v}k</text>`}
+const items=[['Sep MRR',0,451.9,'#16132B'],['New',451.9,480.3,'#5B3DF5'],['Expansion',480.3,497.9,'#9C86FF'],['Contraction',497.9,491.8,'#F6A6B1'],['Churn',491.8,482.6,'#EF4A5E'],['Oct MRR',0,482.6,'#B8F04A']];
+const bw=iw/items.length;
+items.forEach(([l,a,b,c],i)=>{const x=pl+i*bw+bw*.2,w=bw*.6,top=a===0?b:Math.max(a,b),bot=a===0?mn:Math.min(a,b);
+ o+=`<rect x="${x}" y="${y(top)}" width="${w}" height="${y(bot)-y(top)}" rx="8" fill="${c}"/>`;
+ const d=a===0?`$${b}k`:(b>a?'+':'−')+'$'+Math.abs(b-a).toFixed(1)+'k';
+ o+=`<text x="${x+w/2}" y="${y(top)-8}" text-anchor="middle" font-size="13" font-weight="800" fill="#16132B" font-family="Urbanist">${d}</text>`;
+ o+=`<text x="${x+w/2}" y="${H-8}" text-anchor="middle" font-size="12.5" font-weight="600" fill="#5E5A76" font-family="Urbanist">${l}</text>`;
+ if(i<items.length-1){const nx=pl+(i+1)*bw+bw*.2;o+=`<line x1="${x+w}" x2="${nx}" y1="${y(b)}" y2="${y(b)}" stroke="#C9C5DA" stroke-dasharray="3 3"/>`}});
+s.innerHTML=o;
+const co=document.getElementById('co');let c='<span class="h"></span>'+['M1','M2','M3','M4','M5','M6'].map(m=>`<span class="h">${m}</span>`).join('');
+const rows=[['May',[100,104,107,109,112,114]],['Jun',[100,103,106,110,111]],['Jul',[100,98,102,105]],['Aug',[100,102,104]],['Sep',[100,101]],['Oct',[100]]];
+rows.forEach(([m,v])=>{c+=`<span class="l">${m} '26</span>`;for(let i=0;i<6;i++){if(i<v.length){const a=Math.min(1,(v[i]-94)/22);c+=`<span style="background:rgba(91,61,245,${.08+a*.82});color:${a>.5?'#fff':'#16132B'}">${v[i]}%</span>`}else c+='<span style="background:#F6F5FA"></span>'}});
+co.innerHTML=c;
+</script></body></html>

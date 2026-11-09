@@ -1,0 +1,134 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F5F7F4;--ink:#0B1A12;--ink2:#4F5D55;--ink3:#93A098;--line:#DFE5E0;--g:#00C46A;--g2:#DFF8EA;--volt:#B6FF3B}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Geist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.w{width:1260px;margin:0 auto}
+nav{display:flex;align-items:center;height:90px;gap:40px;font-size:15px}
+.lg{display:flex;align-items:center;gap:9px;font-size:22px;font-weight:700;letter-spacing:-.8px}
+.lg i{width:34px;height:34px;border-radius:50%;background:var(--g);display:grid;place-items:center}
+.lk{display:flex;gap:30px;color:var(--ink2);font-weight:500}
+.nr{margin-left:auto;display:flex;gap:10px}
+.b{height:48px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
+.b.g{background:var(--g);color:#fff}.b.d{background:var(--ink);color:#fff}.b.o{background:#fff;border:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:1fr 560px;gap:40px;align-items:center;padding-top:40px}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--g2);color:#047A43;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
+h1{font-size:92px;line-height:.96;letter-spacing:-4px;font-weight:700;margin-top:24px}
+h1 em{font-style:normal;color:var(--g)}
+.lead{font-size:20px;line-height:1.5;color:var(--ink2);margin-top:24px;width:560px}
+.cta{display:flex;gap:12px;margin-top:34px}
+.trust{display:flex;gap:30px;margin-top:42px}
+.trust div b{display:block;font-size:30px;font-weight:700;letter-spacing:-1px}.trust div span{font-size:14px;color:var(--ink3)}
+.mapcard{height:640px;border-radius:36px;background:#E6ECE6;position:relative;overflow:hidden;box-shadow:0 50px 90px -50px rgba(11,26,18,.45)}
+.mapcard>svg{position:absolute;inset:0}
+.pin{position:absolute;display:flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:5px 11px 5px 5px;font-size:13px;font-weight:700;box-shadow:0 8px 18px -8px rgba(11,26,18,.4)}
+.pin i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center}
+.sheet{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:26px;padding:20px}
+.sheet .h{display:flex;align-items:center;gap:12px}
+.sheet .h i{width:46px;height:46px;border-radius:14px;background:var(--ink);display:grid;place-items:center}
+.sheet b{font-size:18px;font-weight:700}.sheet small{display:block;font-size:13.5px;color:var(--ink3);margin-top:2px}
+.ports{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.port{border:1px solid var(--line);border-radius:16px;padding:12px}
+.port small{font-size:12px}.port b{display:block;font-size:20px;margin-top:4px}.port .s{font-size:12px;font-weight:600;margin-top:6px}
+.go{margin-top:14px;height:52px;border-radius:16px;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:16px}
+section{padding-top:140px}
+.ey{font-size:14px;font-weight:600;color:var(--g);letter-spacing:1px;text-transform:uppercase}
+h2{font-size:64px;line-height:1.02;letter-spacing:-2.6px;font-weight:700;margin-top:14px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end}.sh p{width:420px;font-size:18px;line-height:1.55;color:var(--ink2)}
+.f3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.fc{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px;min-height:330px;display:flex;flex-direction:column}
+.fc .ic{width:56px;height:56px;border-radius:18px;background:var(--g2);display:grid;place-items:center}
+.fc h4{font-size:26px;font-weight:700;letter-spacing:-.8px;margin-top:auto}.fc p{font-size:16px;line-height:1.55;color:var(--ink2);margin-top:10px}
+.fc.dk{background:var(--ink);color:#fff;border:0}.fc.dk p{color:#9FB0A6}.fc.dk .ic{background:rgba(182,255,59,.14)}
+.big{font-size:84px;font-weight:700;letter-spacing:-4px;line-height:1;color:var(--volt)}
+.timer{margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:30px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.tm{padding:30px;border-right:1px solid var(--line)}.tm:last-child{border:0}
+.tm small{font-size:14px;color:var(--ink3)}.tm b{display:block;font-size:44px;font-weight:700;letter-spacing:-2px;margin-top:10px}
+.tm .bar{height:10px;border-radius:5px;background:#EEF2EE;margin-top:18px;overflow:hidden}.tm .bar div{height:100%;border-radius:5px;background:var(--g)}
+.tm span{display:block;font-size:14px;color:var(--ink2);margin-top:12px}
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.pc{background:#fff;border:1px solid var(--line);border-radius:30px;padding:32px}
+.pc.hot{background:var(--g);color:#fff;border:0}
+.pc h4{font-size:19px;font-weight:600}.pc .a{font-size:62px;font-weight:700;letter-spacing:-3px;margin-top:18px}.pc .a small{font-size:16px;letter-spacing:0;font-weight:500;opacity:.7}
+.pc p{font-size:15.5px;line-height:1.5;margin-top:8px;opacity:.8}
+.pc ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px;font-size:15.5px}.pc li{display:flex;gap:10px;align-items:center}
+.qt{margin-top:140px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.q{background:#fff;border:1px solid var(--line);border-radius:30px;padding:40px}
+.q blockquote{font-size:30px;line-height:1.25;letter-spacing:-.8px;font-weight:600}
+.q .by{display:flex;align-items:center;gap:12px;margin-top:26px;font-size:15px;color:var(--ink2)}.q .by i{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--ink)}
+.fin{margin-top:140px;border-radius:40px;background:var(--ink);color:#fff;padding:90px 80px;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center;overflow:hidden}
+.fin h2{font-size:80px;letter-spacing:-3.4px}.fin h2 em{font-style:normal;color:var(--volt)}
+.fin p{font-size:19px;color:#9FB0A6;margin-top:20px}
+.phone{height:420px;border-radius:44px;background:#fff;border:10px solid #1D2E24;padding:22px;color:var(--ink)}
+.phone .r{width:200px;height:200px;margin:20px auto 0;border-radius:50%;background:conic-gradient(var(--g) 0 78%,#E7EEE9 78% 100%);display:grid;place-items:center}
+.phone .r div{width:160px;height:160px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center}
+.phone .r b{font-size:46px;font-weight:700;letter-spacing:-2px;display:block}.phone .r small{font-size:13px;color:var(--ink3)}
+footer{display:flex;justify-content:space-between;padding:44px 0 56px;font-size:14px;color:var(--ink3)}
+</style></head>
+<body><div class="w">
+<nav><div class="lg"><i>{{icon:zap:18:#ffffff:2.6}}</i>Voltway</div><div class="lk"><span>Find chargers</span><span>Pricing</span><span>For business</span><span>App</span></div><div class="nr"><span class="b o">Sign in</span><span class="b d">Get the app</span></div></nav>
+
+<section class="hero" style="padding-top:40px">
+ <div><span class="tag">{{icon:map-pin:15:#047A43:2.4}}1,240 fast chargers across 18 states</span>
+  <h1>Charge in the time it takes to <em>grab a coffee.</em></h1>
+  <p class="lead">Voltway's 350 kW chargers add 200 miles in about 15 minutes. Find a free bay, plug in, and pay automatically from the app.</p>
+  <div class="cta"><span class="b g">Find a charger near me {{icon:arrow-right:17:#ffffff:2.4}}</span><span class="b o">See pricing</span></div>
+  <div class="trust"><div><b>99.2%</b><span>charger uptime</span></div><div><b>15 min</b><span>for 10–80%</span></div><div><b>4.8 ★</b><span>from 38k drivers</span></div></div></div>
+ <div class="mapcard">
+  <svg width="560" height="640" viewBox="0 0 560 640"><rect width="560" height="640" fill="#E6ECE6"/>
+   <path d="M-10 250 C120 230 200 300 330 270 S480 200 580 230" stroke="#CDE3E8" stroke-width="40" fill="none"/>
+   <g fill="#D8E5D2"><rect x="40" y="60" width="120" height="80" rx="12"/><rect x="380" y="320" width="140" height="90" rx="12"/></g>
+   <g stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round"><path d="M0 170 L560 140"/><path d="M0 380 L560 360"/><path d="M190 0 L220 640"/><path d="M380 0 L360 640"/></g>
+   <g stroke="#F4F7F4" stroke-width="6" fill="none"><path d="M90 0 L100 640"/><path d="M470 0 L480 640"/><path d="M0 70 L560 50"/><path d="M0 300 L560 290"/></g>
+   <path d="M120 310 L205 300 L215 160 L370 150" stroke="#00C46A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+   <circle cx="120" cy="310" r="11" fill="#0B1A12" stroke="#fff" stroke-width="4"/>
+  </svg>
+  <div class="pin" style="left:330px;top:120px"><i style="background:var(--g)">{{icon:zap:14:#ffffff:2.6}}</i>4 free</div>
+  <div class="pin" style="left:60px;top:190px"><i style="background:var(--g)">{{icon:zap:14:#ffffff:2.6}}</i>2 free</div>
+  <div class="pin" style="left:400px;top:262px"><i style="background:#F2A60C">{{icon:zap:14:#ffffff:2.6}}</i>Busy</div>
+  <div class="sheet"><div class="h"><i>{{icon:zap:22:#B6FF3B:2.4}}</i><div><b>Harbor Market Hub</b><small>0.8 mi · 3 min away · Café, restrooms</small></div><span class="b" style="margin-left:auto;height:36px;background:var(--g2);color:#047A43;font-size:13px;padding:0 12px">Open 24/7</span></div>
+   <div class="ports"><div class="port"><small style="color:var(--ink3)">CCS · 350 kW</small><b>$0.42<span style="font-size:13px;color:var(--ink3);font-weight:500">/kWh</span></b><div class="s" style="color:var(--g)">● 2 free</div></div>
+    <div class="port"><small style="color:var(--ink3)">CCS · 150 kW</small><b>$0.38<span style="font-size:13px;color:var(--ink3);font-weight:500">/kWh</span></b><div class="s" style="color:var(--g)">● 2 free</div></div>
+    <div class="port"><small style="color:var(--ink3)">Type 2 · 22 kW</small><b>$0.29<span style="font-size:13px;color:var(--ink3);font-weight:500">/kWh</span></b><div class="s" style="color:#C98500">● In use</div></div></div>
+   <div class="go">{{icon:navigation:17:#ffffff:2.4}}Reserve &amp; navigate</div></div>
+ </div>
+</section>
+
+<section><div class="sh"><div><div class="ey">Why Voltway</div><h2>Charging that just<br>works, every time.</h2></div><p>We own and maintain every charger, so the bay you reserve is the bay that works.</p></div>
+ <div class="f3">
+  <div class="fc dk"><span class="big">99.2%</span><h4>Uptime you can plan around</h4><p>Every charger reports its health every 30 seconds. Faults are fixed in under 6 hours on average.</p></div>
+  <div class="fc"><div class="ic">{{icon:calendar-check:26:#00A85A:2.2}}</div><h4>Reserve a bay</h4><p>Hold a charger for 15 minutes from the app, free on every plan.</p></div>
+  <div class="fc"><div class="ic">{{icon:credit-card:26:#00A85A:2.2}}</div><h4>Plug in and walk away</h4><p>Your car is recognised on connection. No cards, no apps to open, no QR codes.</p></div>
+ </div></section>
+
+<section><div class="ey">Charge times</div><h2>10% to 80% on a 350 kW charger.</h2>
+ <div class="timer">
+  <div class="tm"><small>Compact hatchback · 58 kWh</small><b>14 min</b><div class="bar"><div style="width:47%"></div></div><span>+190 miles</span></div>
+  <div class="tm"><small>Family SUV · 77 kWh</small><b>18 min</b><div class="bar"><div style="width:60%"></div></div><span>+210 miles</span></div>
+  <div class="tm"><small>Sedan · 82 kWh</small><b>17 min</b><div class="bar"><div style="width:57%"></div></div><span>+240 miles</span></div>
+  <div class="tm"><small>Pickup · 131 kWh</small><b>27 min</b><div class="bar"><div style="width:90%"></div></div><span>+220 miles</span></div>
+ </div></section>
+
+<section><div style="text-align:center"><div class="ey">Pricing</div><h2>Pay per kWh. Save with a plan.</h2></div>
+ <div class="price">
+  <div class="pc"><h4>Pay as you go</h4><div class="a">$0.48<small> /kWh</small></div><p>No monthly fee. Charge anywhere on the network.</p><ul><li>{{icon:check:17:#00A85A:2.6}}All 1,240 chargers</li><li>{{icon:check:17:#00A85A:2.6}}Free 15-min reservations</li></ul></div>
+  <div class="pc hot"><h4>Voltway Plus</h4><div class="a">$0.36<small> /kWh</small></div><p>$9.99 a month. Pays for itself after ~85 kWh.</p><ul><li>{{icon:check:17:#ffffff:2.6}}25% off every session</li><li>{{icon:check:17:#ffffff:2.6}}Priority bay reservations</li><li>{{icon:check:17:#ffffff:2.6}}Off-peak rate $0.29 after 9 PM</li></ul></div>
+  <div class="pc"><h4>Fleet</h4><div class="a">Custom</div><p>For delivery, taxi and company car fleets.</p><ul><li>{{icon:check:17:#00A85A:2.6}}One invoice for every driver</li><li>{{icon:check:17:#00A85A:2.6}}Depot charging setup</li></ul></div>
+ </div></section>
+
+<div class="qt">
+ <div class="q"><blockquote>“I drive 300 miles a week for work. Voltway is the only network where I never wonder if the charger will work.”</blockquote><div class="by"><i style="background:var(--g2)">MC</i>Marcus Chen · Sales rep, 41k miles on Voltway</div></div>
+ <div class="q"><blockquote>“Reserving a bay before I leave home changed road trips for our family. Fifteen minutes, snacks, back on the road.”</blockquote><div class="by"><i style="background:#FFF1D6">AR</i>Aisha Rahman · Weekend road-tripper</div></div>
+</div>
+
+<div class="fin"><div><h2>Your next charge is <em>3 minutes</em> away.</h2><p>Download the app, add your car, and get your first 50 kWh free.</p>
+  <div class="cta"><span class="b" style="background:var(--volt);color:var(--ink)">{{icon:smartphone:17:#0B1A12:2.2}}Get the app</span><span class="b" style="border:1px solid #2A3B31;color:#fff">Find a charger</span></div></div>
+ <div class="phone"><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600"><span>Charging</span><span style="color:var(--g)">● 312 kW</span></div>
+  <div class="r"><div><span><b>78%</b><small>4 min to 80%</small></span></div></div>
+  <div style="display:flex;justify-content:space-between;margin-top:24px;font-size:14px"><span style="color:var(--ink3)">Added</span><b>186 mi · 41.6 kWh</b></div>
+  <div style="display:flex;justify-content:space-between;margin-top:10px;font-size:14px"><span style="color:var(--ink3)">Cost so far</span><b>$14.98</b></div></div>
+</div>
+<footer><span>© 2026 Voltway Energy</span><span>Network map · Business · Careers · Privacy</span></footer>
+</div></body></html>

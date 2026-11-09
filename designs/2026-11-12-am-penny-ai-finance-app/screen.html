@@ -1,0 +1,82 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="AI Finance Assistant">
+<meta name="app-desc" content="An AI money assistant that people simply talk to. Ask anything about your spending and Penny **answers with your real numbers**, plans ahead for big purchases, and **turns every answer into a next step** you can tap.">
+<meta name="fonts" content="Manrope|Modern grotesque with open shapes. It keeps long AI answers readable and makes figures feel precise.">
+<meta name="palette" content="#6C4BFF:Violet|#16122B:Night|#F6F4FF:Lilac Mist|#FFFFFF:White|#2BD9A0:Mint|#FFB648:Amber">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:393px;height:852px;overflow:hidden;background:#F6F4FF;font-family:'Manrope';color:#16122B;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.screen{position:relative;width:393px;height:852px;padding:0 18px;background:radial-gradient(80% 35% at 50% 0%,#E6DFFF 0%,rgba(230,223,255,0) 75%),#F6F4FF}
+.status{height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 14px 0 16px;font-weight:700;font-size:16px}
+.status .r{display:flex;gap:6px;align-items:center}
+.top{display:flex;align-items:center;gap:10px;margin-top:4px}
+.orb{width:42px;height:42px;border-radius:50%;background:conic-gradient(from 200deg,#6C4BFF,#2BD9A0,#B9A6FF,#6C4BFF);display:grid;place-items:center;box-shadow:0 8px 18px -8px rgba(108,75,255,.8)}
+.orb i{width:32px;height:32px;border-radius:50%;background:#16122B;display:grid;place-items:center}
+.top b{display:block;font-size:17px;font-weight:800;letter-spacing:-.3px}
+.top small{display:flex;align-items:center;gap:5px;font-size:12px;color:#7A7594;font-weight:600}
+.top small i{width:7px;height:7px;border-radius:50%;background:#2BD9A0}
+.top .ib{margin-left:auto;width:40px;height:40px;border-radius:14px;background:#fff;display:grid;place-items:center}
+.ins{margin-top:16px;background:#16122B;color:#fff;border-radius:24px;padding:16px;display:flex;gap:12px;align-items:center}
+.ins .ic{width:40px;height:40px;border-radius:13px;background:rgba(43,217,160,.16);display:grid;place-items:center;flex:none}
+.ins b{display:block;font-size:14px;font-weight:700}.ins small{display:block;font-size:12px;color:#B5AFD3;margin-top:3px;line-height:1.35}
+.day{text-align:center;font-size:11.5px;color:#9A95B5;font-weight:600;margin:16px 0 10px}
+.me{margin-left:auto;max-width:78%;background:#6C4BFF;color:#fff;border-radius:22px 22px 6px 22px;padding:12px 15px;font-size:14px;font-weight:600;line-height:1.4;width:fit-content}
+.ai{margin-top:12px;background:#fff;border-radius:6px 24px 24px 24px;padding:15px;font-size:13.5px;line-height:1.5;color:#3D3858;box-shadow:0 1px 0 #ECE8FB}
+.ai p b{color:#16122B}
+.plan{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pl{background:#F6F4FF;border-radius:16px;padding:11px 12px}
+.pl small{font-size:11px;color:#7A7594;font-weight:600}.pl b{display:block;font-size:19px;font-weight:800;letter-spacing:-.6px;margin-top:3px}
+.goal{margin-top:10px;background:#F6F4FF;border-radius:16px;padding:11px 12px}
+.goal .r{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
+.goal .r span:last-child{color:#7A7594;font-weight:600}
+.gb{height:8px;border-radius:4px;background:#E5E0FA;margin-top:8px;overflow:hidden;display:flex}
+.chips{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}
+.chips span{font-size:12px;font-weight:700;padding:8px 11px;border-radius:999px;background:#EFEBFF;color:#5536E0;display:flex;align-items:center;gap:5px}
+.input{position:absolute;left:18px;right:18px;bottom:104px;height:54px;border-radius:999px;background:#fff;display:flex;align-items:center;gap:10px;padding:0 7px 0 18px;font-size:14px;color:#9A95B5;font-weight:600;box-shadow:0 10px 30px -14px rgba(22,18,43,.35)}
+.input .send{margin-left:auto;width:42px;height:42px;border-radius:50%;background:#6C4BFF;display:grid;place-items:center}
+.fade{position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(to bottom,rgba(246,244,255,0),#F6F4FF 45%)}
+.tab{position:absolute;left:18px;right:18px;bottom:26px;height:64px;display:flex;justify-content:space-around;align-items:center;border-radius:24px;background:#16122B;padding:0 8px}
+.tab div{width:48px;height:48px;border-radius:16px;display:grid;place-items:center}
+.tab .on{background:linear-gradient(135deg,#6C4BFF,#8F73FF)}
+.home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#16122B}
+</style></head>
+<body><div class="screen">
+<div class="status"><span>9:41</span><span class="r">
+<svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#16122B"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#16122B"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#16122B"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#16122B"/></svg>
+<svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 3.2c2.4 0 4.6.9 6.2 2.5l1.2-1.2C13.4 2.5 10.8 1.4 8 1.4S2.6 2.5.6 4.5l1.2 1.2C3.4 4.1 5.6 3.2 8 3.2zm0 3.6c1.4 0 2.7.5 3.7 1.4l1.2-1.2C11.6 5.7 9.9 5 8 5s-3.6.7-4.9 2l1.2 1.2c1-.9 2.3-1.4 3.7-1.4zM8 10.3l2-2c-.5-.5-1.2-.8-2-.8s-1.5.3-2 .8l2 2z" fill="#16122B"/></svg>
+<svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="22" height="12" rx="3.8" fill="none" stroke="#16122B" opacity=".35"/><rect x="2" y="2" width="19" height="9" rx="2.5" fill="#16122B"/></svg></span></div>
+
+<div class="top"><div class="orb"><i>{{icon:sparkles:16:#ffffff:2.2}}</i></div>
+ <div><b>Penny</b><small><i></i>Synced with 3 accounts</small></div>
+ <div class="ib">{{icon:history:19:#16122B}}</div></div>
+
+<div class="ins"><div class="ic">{{icon:trending-down:20:#2BD9A0:2.4}}</div>
+ <div><b>Food spending is down 18% this week</b><small>$96 less than your usual. Want me to move it to your Japan fund?</small></div></div>
+
+<div class="day">Today, 9:38 AM</div>
+<div class="me">Can I afford a $1,200 trip to Japan in December?</div>
+<div class="ai">
+ <p>Yes, if you keep this month's pace. After rent and bills you have <b>$1,480 safe to spend</b> until Dec 1, and your Japan fund is already at <b>$740</b>.</p>
+ <div class="plan">
+  <div class="pl"><small>Safe to spend</small><b>$1,480</b></div>
+  <div class="pl"><small>Save per week</small><b style="color:#16A57A">$115</b></div>
+ </div>
+ <div class="goal"><div class="r"><span>Japan fund</span><span>$740 of $1,200</span></div>
+  <div class="gb"><div style="width:62%;background:#6C4BFF;border-radius:4px"></div><div style="width:12%;background:repeating-linear-gradient(-45deg,#2BD9A0 0 3px,#A6EFD7 3px 6px)"></div></div></div>
+ <div class="chips"><span>{{icon:piggy-bank:14:#5536E0:2.2}}Auto-save $115/wk</span><span>{{icon:list:14:#5536E0:2.2}}Show breakdown</span></div>
+</div>
+
+<div class="me" style="margin-top:12px">Yes, set up the auto-save 🙌</div>
+<div class="fade"></div>
+<div class="input">{{icon:plus:20:#9A95B5:2.2}}Ask Penny anything…<div class="send">{{icon:mic:19:#ffffff:2.2}}</div></div>
+<div class="tab">
+ <div class="on">{{icon:message-circle:21:#ffffff:2.2}}</div>
+ <div>{{icon:wallet:21:#8C86A8}}</div>
+ <div>{{icon:chart-pie:21:#8C86A8}}</div>
+ <div>{{icon:target:21:#8C86A8}}</div>
+ <div>{{icon:user-round:21:#8C86A8}}</div>
+</div>
+<div class="home"></div>
+</div></body></html>

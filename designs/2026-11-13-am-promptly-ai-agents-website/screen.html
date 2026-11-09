@@ -1,0 +1,137 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F7F7F4;--ink:#101110;--ink2:#575A55;--ink3:#9A9D97;--line:#E3E4DE;--lime:#D4FF4F;--lime2:#F1FFD0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Bricolage Grotesque';color:var(--ink);-webkit-font-smoothing:antialiased}
+.w{width:1260px;margin:0 auto}
+nav{display:flex;align-items:center;height:88px;gap:38px;font-size:15px}
+.lg{display:flex;align-items:center;gap:9px;font-size:22px;font-weight:700;letter-spacing:-.6px}
+.lg i{width:32px;height:32px;border-radius:10px;background:var(--ink);display:grid;place-items:center}
+.lk{display:flex;gap:30px;color:var(--ink2);font-weight:500}
+.nr{margin-left:auto;display:flex;gap:10px;align-items:center}
+.b{height:46px;padding:0 22px;border-radius:14px;display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
+.b.d{background:var(--ink);color:#fff}.b.l{background:var(--lime);color:var(--ink)}.b.o{border:1px solid var(--line);background:#fff}
+.hero{text-align:center;padding-top:70px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px 6px 6px;font-size:14px;color:var(--ink2)}
+.pill b{background:var(--ink);color:var(--lime);font-size:12px;padding:3px 9px;border-radius:999px}
+h1{font-size:104px;line-height:1.02;letter-spacing:-4.5px;font-weight:700;margin:26px auto 0;width:1040px}
+h1 span{background:var(--lime);padding:0 14px;border-radius:18px}
+.lead{font-size:21px;line-height:1.5;color:var(--ink2);width:700px;margin:26px auto 0}
+.cta{display:flex;gap:12px;justify-content:center;margin-top:34px}
+.canvas{margin:66px auto 0;height:600px;border-radius:30px;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden;
+ background-image:radial-gradient(#E4E5DF 1.2px,transparent 1.2px);background-size:22px 22px;box-shadow:0 60px 100px -60px rgba(16,17,16,.35)}
+.tb{position:absolute;left:20px;right:20px;top:18px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.tb .s{color:var(--ink3);font-weight:500}
+.tb .live{margin-left:auto;display:flex;align-items:center;gap:6px;background:var(--lime2);color:#3D5C00;border-radius:999px;padding:6px 12px;font-size:13px}
+.tb .live i{width:7px;height:7px;border-radius:50%;background:#5C8A00}
+.node{position:absolute;width:260px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 10px 24px -14px rgba(16,17,16,.25);text-align:left}
+.node .h{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+.node .h i{width:34px;height:34px;border-radius:10px;display:grid;place-items:center}
+.node small{display:block;font-size:13px;color:var(--ink2);margin-top:9px;line-height:1.45}
+.node .k{display:inline-block;font-size:11.5px;font-weight:600;color:var(--ink3);letter-spacing:.6px;margin-bottom:8px}
+.node.dark{background:var(--ink);color:#fff;border-color:var(--ink)}.node.dark small{color:#B9BCB5}
+.panel{position:absolute;right:20px;top:66px;bottom:20px;width:330px;background:#FBFBF9;border:1px solid var(--line);border-radius:20px;padding:16px;text-align:left}
+.panel h5{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.log{margin-top:12px;display:flex;flex-direction:column;gap:9px}
+.log div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12.5px;line-height:1.45;color:var(--ink2)}
+.log b{color:var(--ink)}
+.logos{display:flex;justify-content:space-between;align-items:center;margin:70px auto 0;color:#9A9D97;font-size:24px;font-weight:700;letter-spacing:-.5px}
+.logos p{font-size:15px;font-weight:500;width:200px;line-height:1.4;letter-spacing:0;color:var(--ink3)}
+.logos span{display:flex;align-items:center;gap:8px}
+section{padding-top:130px}
+.ey{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink3)}
+h2{font-size:68px;line-height:1;letter-spacing:-2.6px;font-weight:700;margin-top:14px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end}.sh p{width:420px;font-size:18px;line-height:1.55;color:var(--ink2)}
+.bento{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:300px 300px;gap:18px;margin-top:50px}
+.bx{border-radius:28px;padding:28px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.bx h4{font-size:26px;font-weight:700;letter-spacing:-.8px;margin-top:auto}.bx p{font-size:16px;line-height:1.5;color:var(--ink2);margin-top:8px}
+.bx.big{grid-row:span 2;background:var(--ink);color:#fff;border:0}.bx.big p{color:#B9BCB5}
+.bx.lime{background:var(--lime);border:0}.bx.lime p{color:#3A4A10}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tools span{height:84px;border-radius:20px;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.stat{font-size:96px;font-weight:700;letter-spacing:-4px;line-height:1}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.hw{border-top:2px solid var(--ink);padding-top:22px}
+.hw .n{font-size:15px;font-weight:600;color:var(--ink3)}.hw h4{font-size:28px;font-weight:700;letter-spacing:-.8px;margin-top:18px}.hw p{font-size:16.5px;line-height:1.55;color:var(--ink2);margin-top:10px}
+.tpl{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
+.tp{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px}
+.tp i{width:46px;height:46px;border-radius:14px;display:grid;place-items:center}
+.tp b{display:block;font-size:19px;font-weight:700;margin-top:20px;letter-spacing:-.4px}.tp small{display:block;font-size:14.5px;color:var(--ink2);margin-top:6px;line-height:1.45}
+.tp .u{display:flex;justify-content:space-between;margin-top:18px;font-size:13px;color:var(--ink3);border-top:1px solid var(--line);padding-top:14px}
+.qt{display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:end;background:#fff;border:1px solid var(--line);border-radius:32px;padding:56px;margin-top:130px}
+.qt blockquote{font-size:44px;line-height:1.12;letter-spacing:-1.5px;font-weight:600}
+.qt .by{display:flex;align-items:center;gap:12px;margin-top:28px;font-size:15px}.qt .by i{width:48px;height:48px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-style:normal;font-weight:700}
+.qt .m{background:var(--ink);color:#fff;border-radius:22px;padding:24px}.qt .m b{font-size:64px;letter-spacing:-3px;display:block;line-height:1;color:var(--lime)}.qt .m span{font-size:15px;color:#B9BCB5;display:block;margin-top:10px}
+.fin{margin-top:130px;background:var(--ink);color:#fff;border-radius:36px;padding:100px 80px;text-align:center;position:relative;overflow:hidden}
+.fin h2{font-size:96px;letter-spacing:-4px}.fin h2 span{color:var(--lime)}
+.fin p{font-size:19px;color:#B9BCB5;margin-top:20px}
+footer{display:flex;justify-content:space-between;padding:44px 0 56px;font-size:14px;color:var(--ink3)}
+</style></head>
+<body><div class="w">
+<nav><div class="lg"><i>{{icon:sparkle:17:#D4FF4F:2.4}}</i>Promptly</div><div class="lk"><span>Product</span><span>Templates</span><span>Security</span><span>Pricing</span><span>Docs</span></div>
+ <div class="nr"><span style="font-weight:500">Log in</span><span class="b d">Book a demo</span></div></nav>
+
+<div class="hero">
+ <span class="pill"><b>New</b>Agents can now take actions in 120+ tools</span>
+ <h1>Build AI agents that <span>finish the job.</span></h1>
+ <p class="lead">Promptly lets support and ops teams design agents on a visual canvas, connect them to the tools they already use, and keep a human in the loop where it matters.</p>
+ <div class="cta"><span class="b l">Start building free {{icon:arrow-right:17:#101110:2.4}}</span><span class="b o">{{icon:play:15:#101110}}Watch 3-min tour</span></div>
+
+ <div class="canvas">
+  <div class="tb">{{icon:workflow:18:#101110}}Refund agent<span class="s">· v14 · edited 2 min ago</span><span class="live"><i></i>Live · 1,204 runs today</span></div>
+  <svg width="900" height="600" style="position:absolute;left:0;top:0" fill="none" stroke="#C9CBC4" stroke-width="2"><path d="M290 150 C320 150 300 250 330 250"/><path d="M592 250 C630 250 615 160 650 160" stroke="#101110"/><path d="M592 250 C630 250 615 380 650 380" stroke-dasharray="5 5"/><path d="M160 196 V300 C160 330 190 345 220 345"/></svg>
+  <div class="node" style="left:30px;top:90px"><span class="k">TRIGGER</span><div class="h"><i style="background:var(--lime2)">{{icon:mail:17:#3D5C00}}</i>New support ticket</div><small>Tag contains “refund” or “money back”</small></div>
+  <div class="node" style="left:330px;top:190px;width:262px"><span class="k">AI STEP</span><div class="h"><i style="background:var(--ink)">{{icon:sparkles:17:#D4FF4F}}</i>Check eligibility</div><small>Reads order history and the 30-day policy, then decides approve, deny or escalate.</small></div>
+  <div class="node dark" style="left:650px;top:96px;width:220px"><span class="k" style="color:#8D918A">ACTION</span><div class="h"><i style="background:rgba(212,255,79,.15)">{{icon:circle-check:17:#D4FF4F}}</i>Issue refund</div><small>Under $200 · auto-approved</small></div>
+  <div class="node" style="left:650px;top:330px;width:220px"><span class="k">HUMAN</span><div class="h"><i style="background:#FFF1DE">{{icon:user-round:17:#B76E00}}</i>Ask a teammate</div><small>Over $200 or unclear</small></div>
+  <div class="node" style="left:220px;top:300px;width:240px;top:340px"><span class="k">GUARDRAIL</span><div class="h"><i style="background:#FDECEC">{{icon:shield:17:#C4322F}}</i>Spend limit</div><small>Max $2,000 refunds per hour</small></div>
+  <div class="panel"><h5>{{icon:activity:16:#101110}}Live runs</h5>
+   <div class="log">
+    <div><b>#58213 · Approved $48.00</b><br>Late delivery, within 30 days. Refund sent, customer notified. <span style="color:#5C8A00">1.8s</span></div>
+    <div><b>#58219 · Escalated to Maya</b><br>Order $640, outside policy window. Drafted reply for review.</div>
+    <div><b>#58224 · Approved $19.99</b><br>Duplicate charge detected and reversed. <span style="color:#5C8A00">2.1s</span></div>
+    <div><b>#58230 · Denied</b><br>Digital item already downloaded. Sent policy link with a 10% voucher.</div>
+   </div></div>
+ </div>
+</div>
+
+<div class="logos"><p>Running 2M+ agent tasks a week for teams at</p><span>{{icon:hexagon:24:#9A9D97:2.4}}Northwind</span><span>{{icon:mountain:24:#9A9D97:2.4}}Alpinery</span><span>Halcyon</span><span>{{icon:circle-dot:24:#9A9D97:2.4}}orbital</span><span>{{icon:leaf:24:#9A9D97:2.4}}Fernway</span></div>
+
+<section><div class="sh"><div><div class="ey">Platform</div><h2>Everything an agent<br>needs to be trusted.</h2></div><p>Give agents real work, not just chat. Every action is logged, every limit is yours to set.</p></div>
+ <div class="bento">
+  <div class="bx big"><div class="tools"><span>{{icon:message-square:30:#ffffff}}</span><span>{{icon:mail:30:#ffffff}}</span><span>{{icon:database:30:#ffffff}}</span><span>{{icon:credit-card:30:#ffffff}}</span><span>{{icon:calendar:30:#ffffff}}</span><span>{{icon:file-text:30:#ffffff}}</span><span>{{icon:shopping-bag:30:#ffffff}}</span><span style="background:var(--lime)">{{icon:plus:30:#101110:2.4}}</span></div>
+   <h4>Connects to 120+ tools</h4><p>Help desks, CRMs, payments and spreadsheets. Agents read, write and take action with scoped permissions.</p></div>
+  <div class="bx lime"><span class="stat">74%</span><h4>of tickets closed end to end</h4><p>Median across customers in the first 60 days.</p></div>
+  <div class="bx"><div style="display:flex;gap:8px;flex-wrap:wrap"><span class="b o" style="height:38px;font-size:13.5px">{{icon:shield:14:#101110}}Spend limits</span><span class="b o" style="height:38px;font-size:13.5px">{{icon:eye-off:14:#101110}}PII redaction</span><span class="b o" style="height:38px;font-size:13.5px">{{icon:scale:14:#101110}}Policy checks</span></div><h4>Guardrails built in</h4><p>Set hard limits before an agent ever goes live.</p></div>
+  <div class="bx"><div style="display:flex;align-items:flex-end;gap:8px;height:110px">
+    <i style="flex:1;height:40%;background:#ECEDE7;border-radius:8px"></i><i style="flex:1;height:55%;background:#ECEDE7;border-radius:8px"></i><i style="flex:1;height:48%;background:#ECEDE7;border-radius:8px"></i><i style="flex:1;height:72%;background:#ECEDE7;border-radius:8px"></i><i style="flex:1;height:100%;background:var(--ink);border-radius:8px"></i></div>
+   <h4>See every decision</h4><p>Replay any run step by step, with the reasoning attached.</p></div>
+  <div class="bx"><div style="display:flex;align-items:center;gap:10px;background:#FFF6E8;border-radius:16px;padding:14px;font-size:14px">{{icon:hand:20:#B76E00}}<span><b>Needs approval</b><br><span style="color:var(--ink2)">Refund of $640 for #58219</span></span></div>
+   <h4>Humans where it matters</h4><p>Route edge cases to the right person in one click.</p></div>
+ </div></section>
+
+<section><div class="ey">How it works</div><h2>Live in an afternoon.</h2>
+ <div class="how">
+  <div class="hw"><span class="n">01</span><h4>Start from a template</h4><p>Pick refunds, onboarding or invoice chasing and adapt it to your policy.</p></div>
+  <div class="hw"><span class="n">02</span><h4>Test on real history</h4><p>Replay last month's tickets to see exactly what the agent would have done.</p></div>
+  <div class="hw"><span class="n">03</span><h4>Go live gradually</h4><p>Start at 10% of traffic and raise it as confidence grows.</p></div>
+ </div></section>
+
+<section><div class="sh"><div><div class="ey">Templates</div><h2>Start with a proven agent.</h2></div><p>Each template ships with tests, guardrails and a sample policy.</p></div>
+ <div class="tpl">
+  <div class="tp"><i style="background:var(--lime2)">{{icon:receipt:22:#3D5C00}}</i><b>Refund handler</b><small>Checks policy, issues refunds, escalates outliers.</small><div class="u"><span>Support</span><span>3.1k teams</span></div></div>
+  <div class="tp"><i style="background:#EAF1FF">{{icon:user-plus:22:#2F5FD0}}</i><b>Customer onboarding</b><small>Sets up accounts and books the kickoff call.</small><div class="u"><span>Success</span><span>1.8k teams</span></div></div>
+  <div class="tp"><i style="background:#FFF1DE">{{icon:file-clock:22:#B76E00}}</i><b>Invoice chaser</b><small>Follows up on overdue invoices with the right tone.</small><div class="u"><span>Finance</span><span>2.4k teams</span></div></div>
+  <div class="tp"><i style="background:#F2ECFF">{{icon:calendar-check:22:#6A43D9}}</i><b>Meeting scheduler</b><small>Finds a time that works across three calendars.</small><div class="u"><span>Ops</span><span>960 teams</span></div></div>
+ </div></section>
+
+<div class="qt"><div><blockquote>“Our refund queue went from three days to three minutes. The team now spends its time on customers who actually need a person.”</blockquote>
+ <div class="by"><i>EM</i><div><b>Elena Marquez</b><br><span style="color:var(--ink2)">Head of Support, Fernway</span></div></div></div>
+ <div class="m"><b>3 min</b><span>median refund time,<br>down from 3 days</span></div></div>
+
+<div class="fin"><h2>Your first agent is<br><span>one afternoon away.</span></h2><p>Free for 1,000 runs a month. No credit card.</p>
+ <div class="cta"><span class="b l">Start building free {{icon:arrow-right:17:#101110:2.4}}</span><span class="b" style="border:1px solid #3A3C39;color:#fff">Talk to sales</span></div></div>
+<footer><span>© 2026 Promptly Labs</span><span>Privacy · Terms · Security · Status · Careers</span></footer>
+</div></body></html>

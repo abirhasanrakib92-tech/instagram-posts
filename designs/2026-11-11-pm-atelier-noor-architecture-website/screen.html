@@ -1,0 +1,105 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#EFEBE4;--paper:#F7F4EF;--ink:#171512;--ink2:#5E584F;--ink3:#9C958A;--line:#D9D2C6;--clay:#B8693F}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Instrument Sans';color:var(--ink);-webkit-font-smoothing:antialiased}
+.w{width:1280px;margin:0 auto}
+.serif{font-family:'Fraunces';font-weight:300;letter-spacing:-1.5px}
+nav{display:flex;align-items:center;height:96px;font-size:15px}
+nav .b{font-family:'Fraunces';font-size:26px;letter-spacing:-.6px}
+nav .l{display:flex;gap:36px;margin-left:auto;color:var(--ink2)}
+nav .c{margin-left:40px;border:1px solid var(--ink);border-radius:999px;padding:11px 20px;font-weight:600}
+.hero{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:end;padding-top:40px}
+.hero h1{font-size:150px;line-height:.9}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p{font-size:18px;line-height:1.55;color:var(--ink2)}
+.meta{display:flex;gap:22px;margin-top:22px;font-size:13px;color:var(--ink3);text-transform:uppercase;letter-spacing:1px}
+.big{height:640px;margin-top:56px;border-radius:6px;background:url(house.jpg) center 60%/cover;position:relative}
+.big .cap{position:absolute;left:28px;bottom:26px;background:var(--paper);border-radius:999px;padding:12px 20px;font-size:14px;display:flex;gap:14px}
+.big .cap b{font-weight:600}
+.intro{display:grid;grid-template-columns:260px 1fr;gap:60px;padding:140px 0 0}
+.lab{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--ink3);padding-top:12px}
+.intro h2{font-size:58px;line-height:1.08}
+.intro h2 span{color:var(--ink3)}
+.proj{padding-top:140px}
+.ph{display:flex;align-items:flex-end;justify-content:space-between}
+.ph h3{font-size:82px;line-height:1}
+.ph a{font-size:15px;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.pg{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;margin-top:50px}
+.pc .im{border-radius:6px;background-size:cover;background-position:center}
+.pc .r{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
+.pc b{font-family:'Fraunces';font-weight:400;font-size:30px;letter-spacing:-.6px}
+.pc small{font-size:14px;color:var(--ink3)}
+.plan{background:var(--paper);display:grid;place-items:center}
+.appr{padding-top:140px;display:grid;grid-template-columns:260px 1fr;gap:60px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.st{padding:30px 30px 0 0}
+.st .n{font-family:'Fraunces';font-size:20px;color:var(--clay)}
+.st h4{font-family:'Fraunces';font-weight:400;font-size:34px;letter-spacing:-.8px;margin-top:40px}
+.st p{font-size:16px;line-height:1.6;color:var(--ink2);margin-top:12px}
+.nums{margin-top:140px;background:var(--ink);color:var(--paper);border-radius:6px;padding:70px 60px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.nums h3{font-size:44px;line-height:1.08}
+.nums b{display:block;font-family:'Fraunces';font-weight:300;font-size:86px;letter-spacing:-3px;line-height:1}
+.nums span{display:block;font-size:15px;color:#A9A196;margin-top:12px;line-height:1.5}
+.quote{padding:140px 0 0;display:grid;grid-template-columns:1fr 480px;gap:70px;align-items:center}
+.quote blockquote{font-family:'Fraunces';font-weight:300;font-size:50px;line-height:1.15;letter-spacing:-1.2px}
+.quote .by{margin-top:30px;font-size:15px;color:var(--ink2)}
+.quote .im{height:600px;border-radius:6px;background:url(interior.jpg) center/cover}
+.aw{padding-top:140px}
+.row{display:grid;grid-template-columns:120px 1fr 1fr 120px;padding:24px 0;border-bottom:1px solid var(--line);font-size:18px;align-items:center}
+.row:first-of-type{border-top:1px solid var(--line)}
+.row span:first-child,.row span:last-child{color:var(--ink3);font-size:15px}.row span:last-child{text-align:right}
+.cta{margin-top:140px;padding:100px 0 90px;text-align:center;border-top:1px solid var(--line)}
+.cta h2{font-size:120px;line-height:.95}
+.cta h2 em{font-style:italic;color:var(--clay)}
+.cta p{font-size:18px;color:var(--ink2);margin-top:22px}
+.cta .bt{display:inline-flex;align-items:center;gap:10px;margin-top:34px;background:var(--ink);color:var(--paper);border-radius:999px;padding:18px 30px;font-size:16px;font-weight:600}
+footer{display:flex;justify-content:space-between;padding:34px 0 46px;border-top:1px solid var(--line);font-size:14px;color:var(--ink3)}
+</style></head>
+<body><div class="w">
+<nav><span class="b">Atelier Noor</span><div class="l"><span>Projects</span><span>Studio</span><span>Approach</span><span>Journal</span></div><span class="c">Start a project</span></nav>
+
+<section class="hero"><h1 class="serif">Quiet houses,<br>built to <em>last.</em></h1>
+ <div><p>Atelier Noor is an architecture studio designing homes and small public buildings from earth, timber and light. Based in Lisbon, working across southern Europe since 2011.</p>
+ <div class="meta"><span>42 built works</span><span>Est. 2011</span></div></div></section>
+<div class="big"><div class="cap"><b>Casa Alentejo</b><span>Rammed earth residence · Évora, 2025</span></div></div>
+
+<section class="intro"><div class="lab">(01) The studio</div>
+ <h2 class="serif">We draw slowly, build with local materials, and design every room around <span>the way the light moves through a day.</span></h2></section>
+
+<section class="proj"><div class="ph"><h3 class="serif">Selected work</h3><a>All 42 projects →</a></div>
+ <div class="pg">
+  <div class="pc"><div class="im" style="height:560px;background-image:url(house.jpg);background-position:30% 55%"></div><div class="r"><b>Casa Alentejo</b><small>Residence · 2025</small></div></div>
+  <div class="pc"><div class="im" style="height:560px;background-image:url(interior.jpg)"></div><div class="r"><b>The Lime Room</b><small>Interior · 2024</small></div></div>
+  <div class="pc"><div class="im plan" style="height:420px">
+   <svg width="520" height="320" viewBox="0 0 520 320" fill="none" stroke="#171512" stroke-width="2"><rect x="20" y="20" width="480" height="280"/><path d="M200 20 V180 M200 220 V300 M20 160 H160 M240 160 H500 M360 20 V120 M360 160 V300"/><path d="M160 160 A40 40 0 0 1 200 120" stroke-dasharray="4 4"/><circle cx="430" cy="230" r="34" stroke="#B8693F"/><path d="M60 60 h100 v60 h-100z" stroke="#9C958A"/><text x="72" y="240" font-family="Instrument Sans" font-size="13" fill="#5E584F" stroke="none">LIVING · 42 m²</text><text x="250" y="80" font-family="Instrument Sans" font-size="13" fill="#5E584F" stroke="none">COURTYARD</text></svg></div>
+   <div class="r"><b>Pátio House</b><small>Plan study · 2026</small></div></div>
+  <div class="pc"><div class="im plan" style="height:420px;background:#DCD3C4">
+   <svg width="360" height="300" viewBox="0 0 360 300" fill="none" stroke="#171512" stroke-width="2"><path d="M30 270 H330"/><path d="M60 270 V120 L180 40 L300 120 V270"/><path d="M150 270 V190 H210 V270"/><rect x="90" y="140" width="40" height="40"/><rect x="230" y="140" width="40" height="40"/><path d="M180 40 V20" stroke="#B8693F"/></svg></div>
+   <div class="r"><b>Chapel of São Brás</b><small>Public · 2023</small></div></div>
+ </div></section>
+
+<section class="appr"><div class="lab">(02) Approach</div>
+ <div class="steps">
+  <div class="st"><span class="n">01</span><h4>Listen to the site</h4><p>We spend a full day on every plot, tracing sun, wind and views before a single line is drawn.</p></div>
+  <div class="st"><span class="n">02</span><h4>Build with what's near</h4><p>Earth, cork, local stone and timber from within 200 km keep every project honest and low-carbon.</p></div>
+  <div class="st"><span class="n">03</span><h4>Stay until the keys</h4><p>The same architect leads your house from first sketch to the last fitted door.</p></div>
+ </div></section>
+
+<section class="nums"><h3 class="serif">Fifteen years of houses that feel calm on day one and better on day five thousand.</h3>
+ <div><b>42</b><span>homes and public<br>buildings completed</span></div>
+ <div><b>−61%</b><span>embodied carbon vs.<br>a concrete equivalent</span></div>
+ <div><b>11</b><span>national and European<br>architecture awards</span></div></section>
+
+<section class="quote"><div><blockquote>“They gave us a house where the morning light finds the kitchen table at exactly the right time.”</blockquote><div class="by">Inês &amp; Tomás Ribeiro · Casa Alentejo</div></div><div class="im"></div></section>
+
+<section class="aw"><div class="ph" style="margin-bottom:40px"><h3 class="serif">Recognition</h3></div>
+ <div class="row"><span>2025</span><span>Iberian Architecture Prize</span><span>Casa Alentejo</span><span>Winner</span></div>
+ <div class="row"><span>2024</span><span>European Earth Building Award</span><span>The Lime Room</span><span>Shortlist</span></div>
+ <div class="row"><span>2023</span><span>National Heritage Medal</span><span>Chapel of São Brás</span><span>Winner</span></div></section>
+
+<section class="cta"><h2 class="serif">Let's build<br>something <em>quiet.</em></h2><p>Taking on four new residential commissions for 2027.</p><span class="bt">Start a project →</span></section>
+<footer><span>© 2026 Atelier Noor · Rua das Flores 48, Lisbon</span><span>Instagram · Journal · studio@ateliernoor.pt</span></footer>
+</div></body></html>

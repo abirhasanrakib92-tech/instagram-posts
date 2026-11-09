@@ -120,27 +120,28 @@ box-shadow:0 0 0 1px rgba(0,0,0,.05),0 40px 80px -30px rgba(20,20,30,.3)}}</styl
     await shot_html(b, p, work / 'web2.png', {'width': W, 'height': H}, 2)
     save(Image.open(work / 'web2.png').resize((W, H), Image.LANCZOS), f'{prefix}-2.jpg')
 
-    # slides 3..10: whole page rotated 90° counter-clockwise (page top on the left), consecutive bands
-    band = H - 2 * 100
-    s = band / pw
-    rot = page.rotate(90, expand=True).resize((round(ph * s), band), Image.LANCZOS)
-    rw_total = rot.size[0]
-    # The rotated page sits on a long strip with a 150px margin before its top and after its footer.
-    # Split that strip into k equal canvas-wide windows (k = fewest that fit, max 8); any tiny overlap is spread evenly.
+    # slides 3+: whole page rotated 90° counter-clockwise (page top on the left), cut into k slides with
+    # no repeated content. The rotated band height is tuned so the page (plus a 150px margin at each end)
+    # fills exactly k canvases.
     import math
-    span = rw_total + 300
-    k = min(7, max(1, math.ceil(span / W)))   # 2 + 7 + CTA = 10 (Instagram max)
-    step = (span - W) / (k - 1) if k > 1 else 0
+    def fit(k):
+        s_ = (k * W - 300) / ph
+        return s_, round(pw * s_)
+    k = max(2, round((ph * (H - 200) / pw + 300) / W))
+    s_, band = fit(k)
+    while band > H - 90 and k < 7:
+        k += 1; s_, band = fit(k)
+    while band < H - 380 and k > 2 and fit(k - 1)[1] <= H - 90:
+        k -= 1; s_, band = fit(k)
+    rot = page.rotate(90, expand=True).resize((round(ph * s_), band), Image.LANCZOS)
+    strip = Image.new('RGB', (k * W, band), BG)
+    strip.paste(rot, (150, 0))
+    top = (H - band) // 2
     for i in range(k):
         c = Image.new('RGB', (W, H), BG)
-        off = round(150 - i * step)                  # where the rotated page's left edge lands on this canvas
-        a0 = max(0, -off)
-        c.paste(rot.crop((a0, 0, min(rw_total, a0 + W - max(0, off)), band)), (max(0, off), 100))
+        c.paste(strip.crop((i * W, 0, (i + 1) * W, band)), (0, top))
         save(c, f'{prefix}-{i + 3}.jpg')
     save(await cta_slide(b, work), f'{prefix}-{k + 3}.jpg')
-    x = rw_total if span <= 7 * W else 0
-    if x < rw_total:
-        print('WARNING: page longer than 7 rotated slides; shorten the page')
 
 
 def _png_bytes(img):
@@ -229,11 +230,12 @@ async def app(d, work, prefix, b):
 
     # typography
     fam, note = (_meta(html, 'fonts').split('|') + [''])[:2]
+    fs = 190 if len(fam) <= 9 else max(104, int(190 * 9 / len(fam) * 1.25))
     weights = ''.join(f'<div class="w"><span style="font-weight:{w}">Aa</span><small>{n} · {w}</small></div>'
                       for w, n in [(400, 'Regular'), (500, 'Medium'), (600, 'Semibold'), (700, 'Bold')])
     s3 = await _slide(b, work, 'app3', f"""
 <div class="head"><span>Typography</span><span>{year}</span></div>
-<div style="font:600 190px/1 '{fam}';letter-spacing:-7px;margin-top:150px">{fam}</div>
+<div style="font:600 {fs}px/1 '{fam}';letter-spacing:-{fs//27}px;margin-top:150px">{fam}</div>
 <p style="font:400 34px/1.45 '{fam}';color:#8A8A93;margin-top:26px;max-width:860px">{note}</p>
 <div class="ws">{weights}</div>
 <div style="position:absolute;right:80px;bottom:84px;text-align:right;font:500 30px/1.6 '{fam}'">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 $%&amp;@#*()+</div>""",

@@ -1,0 +1,125 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F6F2E9;--paper:#FFFDF8;--ink:#13261C;--ink2:#56645A;--ink3:#9AA39A;--line:#E3DDCF;--f:#1E5A3C;--f2:#E2EEE5;--sun:#F3C24B;--sun2:#FBF0D2;--red:#C8553D}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Inter Tight';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.w{width:1260px;margin:0 auto}
+.se{font-family:'Fraunces';font-weight:400;letter-spacing:-1.6px}
+nav{display:flex;align-items:center;height:90px;gap:40px;font-size:15px}
+.lg{display:flex;align-items:center;gap:9px;font-family:'Fraunces';font-size:25px;letter-spacing:-.6px}
+.lg i{width:32px;height:32px;border-radius:9px;background:var(--f);display:grid;place-items:center}
+.lk{display:flex;gap:30px;color:var(--ink2);font-weight:500}
+.nr{margin-left:auto;display:flex;gap:10px;align-items:center}
+.b{height:48px;padding:0 22px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
+.b.f{background:var(--f);color:#fff}.b.o{background:var(--paper);border:1px solid var(--line)}
+.hero{text-align:center;padding-top:60px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;font-size:14px;color:var(--ink2)}
+.pill b{background:var(--sun);color:var(--ink);font-size:12px;padding:3px 9px;border-radius:999px}
+h1{font-size:94px;line-height:.98;margin:26px auto 0;width:1200px}
+h1 em{font-style:italic;color:var(--f)}
+.lead{font-size:20px;line-height:1.55;color:var(--ink2);width:660px;margin:24px auto 0}
+.cta{display:flex;gap:12px;justify-content:center;margin-top:32px}
+.note{font-size:14px;color:var(--ink3);margin-top:14px}
+.app{margin:60px auto 0;background:var(--paper);border:1px solid var(--line);border-radius:28px;display:grid;grid-template-columns:1fr 380px;overflow:hidden;text-align:left;box-shadow:0 60px 100px -60px rgba(19,38,28,.4)}
+.tx{padding:26px 28px;border-right:1px solid var(--line)}
+.tx .h{display:flex;align-items:center;gap:10px}
+.tx h3{font-size:18px;font-weight:600}.tx .h small{font-size:13px;color:var(--ink3)}
+.ai{margin-left:auto;display:flex;align-items:center;gap:6px;background:var(--f2);color:var(--f);font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:14px}
+th{font-size:12px;font-weight:500;color:var(--ink3);text-align:left;padding:8px;border-bottom:1px solid var(--line)}
+td{padding:12px 8px;border-bottom:1px solid #EFEADF}
+td.r,th.r{text-align:right}
+.cat{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+.conf{font-size:12px;color:var(--ink3)}
+.mer{display:flex;align-items:center;gap:10px}.mer i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:12px}
+.side{padding:26px 24px;background:#FBF8F1}
+.side h4{font-size:15px;font-weight:600}
+.pl{margin-top:16px}
+.pl .r{display:flex;justify-content:space-between;font-size:14px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.pl .r b{font-weight:600}
+.pl .t{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px}
+.pl .t span{font-size:14px;color:var(--ink2)}.pl .t b{font-family:'Fraunces';font-weight:400;font-size:42px;letter-spacing:-1.5px;color:var(--f)}
+.tip{margin-top:18px;background:var(--sun2);border-radius:16px;padding:14px;font-size:13.5px;line-height:1.5;display:flex;gap:10px}
+.logos{display:flex;justify-content:center;gap:70px;margin-top:70px;font-size:15px;color:var(--ink3)}
+.logos b{font-family:'Fraunces';font-weight:400;font-size:24px;color:#8F978E;letter-spacing:-.4px}
+section{padding-top:130px}
+.ey{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--f)}
+h2{font-size:66px;line-height:1.02;margin-top:14px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end}.sh p{width:420px;font-size:18px;line-height:1.55;color:var(--ink2)}
+.f3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.fc{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:30px}
+.fc .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center}
+.fc h4{font-family:'Fraunces';font-weight:400;font-size:30px;letter-spacing:-.8px;margin-top:60px}.fc p{font-size:16px;line-height:1.55;color:var(--ink2);margin-top:10px}
+.band{margin-top:130px;background:var(--f);color:#fff;border-radius:32px;padding:70px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px;align-items:end}
+.band h3{font-family:'Fraunces';font-weight:400;font-size:44px;line-height:1.1;letter-spacing:-1.2px}
+.band b{display:block;font-family:'Fraunces';font-weight:300;font-size:80px;letter-spacing:-3px;line-height:1;color:var(--sun)}
+.band span{display:block;font-size:15px;color:#BFD6C8;margin-top:12px;line-height:1.45}
+.qt{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:130px}
+.q{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:40px}
+.q blockquote{font-family:'Fraunces';font-weight:300;font-size:34px;line-height:1.2;letter-spacing:-.8px}
+.q .by{display:flex;align-items:center;gap:12px;margin-top:26px;font-size:15px;color:var(--ink2)}.q .by i{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;color:var(--ink)}
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.pc{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:32px}
+.pc.hot{background:var(--ink);color:#fff;border:0}
+.pc h4{font-size:18px;font-weight:600}.pc .a{font-family:'Fraunces';font-weight:400;font-size:64px;letter-spacing:-2px;margin-top:16px}.pc .a small{font-family:'Inter Tight';font-size:15px;letter-spacing:0;opacity:.6}
+.pc p{font-size:15.5px;line-height:1.5;margin-top:8px;opacity:.75}
+.pc ul{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px;font-size:15.5px}.pc li{display:flex;gap:10px;align-items:center}
+.pc .b{width:100%;justify-content:center;margin-top:26px}
+.fin{margin-top:130px;text-align:center;padding:100px 0;border-top:1px solid var(--line)}
+.fin h2{font-size:104px;line-height:.98}.fin h2 em{font-style:italic;color:var(--f)}
+.fin p{font-size:19px;color:var(--ink2);margin-top:20px}
+footer{display:flex;justify-content:space-between;padding:36px 0 50px;border-top:1px solid var(--line);font-size:14px;color:var(--ink3)}
+</style></head>
+<body><div class="w">
+<nav><div class="lg"><i>{{icon:book-open-check:17:#F3C24B:2.4}}</i>Tallybook</div><div class="lk"><span>How it works</span><span>Pricing</span><span>For accountants</span><span>Guides</span></div><div class="nr"><span style="font-weight:500">Log in</span><span class="b f">Start free trial</span></div></nav>
+
+<div class="hero"><span class="pill"><b>New</b>Year-end close in one afternoon</span>
+ <h1 class="se">Your books, <em>done</em><br>while you run the business.</h1>
+ <p class="lead">Tallybook's AI categorizes every transaction, reconciles your bank and writes a monthly P&amp;L you can actually read. A real accountant checks the work.</p>
+ <div class="cta"><span class="b f">Connect your bank {{icon:arrow-right:17:#ffffff:2.4}}</span><span class="b o">See a sample report</span></div>
+ <div class="note">14-day free trial · Works with 11,000 banks · Cancel anytime</div>
+
+ <div class="app">
+  <div class="tx"><div class="h"><h3>Transactions</h3><small>October · 214 items</small><span class="ai">{{icon:sparkles:14:#1E5A3C:2.4}}209 sorted by AI</span></div>
+   <table><tr><th>Merchant</th><th>Date</th><th>Category</th><th class="r">Amount</th></tr>
+    <tr><td><div class="mer"><i style="background:#E7EEF9;color:#3E5F9C">CH</i>Cloudhost Pro</div></td><td>Oct 28</td><td><span class="cat" style="background:#E7EEF9;color:#3E5F9C">Software &amp; hosting</span> <span class="conf">99%</span></td><td class="r">−$1,284.10</td></tr>
+    <tr><td><div class="mer"><i style="background:var(--f2);color:var(--f)">SF</i>Storefront payout</div></td><td>Oct 27</td><td><span class="cat" style="background:var(--f2);color:var(--f)">Sales revenue</span> <span class="conf">100%</span></td><td class="r" style="color:var(--f);font-weight:600">+$8,420.55</td></tr>
+    <tr><td><div class="mer"><i style="background:var(--sun2);color:#8A6410">CR</i>Corner Roast Café</div></td><td>Oct 26</td><td><span class="cat" style="background:var(--sun2);color:#8A6410">Meals · client</span> <span class="conf">91%</span></td><td class="r">−$46.80</td></tr>
+    <tr><td><div class="mer"><i style="background:#F6E4DE;color:var(--red)">?</i>Transfer · J. Okafor</div></td><td>Oct 25</td><td><span class="cat" style="background:#F6E4DE;color:var(--red)">{{icon:circle-help:12:#C8553D:2.6}}Needs you</span></td><td class="r">−$1,200.00</td></tr>
+    <tr><td><div class="mer"><i style="background:#EFE9F8;color:#6B4FA8">PR</i>PayRun payroll</div></td><td>Oct 24</td><td><span class="cat" style="background:#EFE9F8;color:#6B4FA8">Payroll</span> <span class="conf">100%</span></td><td class="r">−$12,960.00</td></tr>
+   </table></div>
+  <div class="side"><h4>October profit &amp; loss</h4>
+   <div class="pl"><div class="r"><span>Revenue</span><b>$46,210</b></div><div class="r"><span>Cost of goods</span><b>−$14,380</b></div><div class="r"><span>Payroll</span><b>−$12,960</b></div><div class="r"><span>Software &amp; other</span><b>−$6,092</b></div>
+    <div class="t"><span>Net profit</span><b>$12,778</b></div></div>
+   <div class="tip">{{icon:lightbulb:18:#8A6410:2.2}}<span><b>Set aside $3,450 for Q4 taxes.</b> Your margin is 27.7%, up 4 pts on September.</span></div></div>
+ </div></div>
+
+<div class="logos"><span style="align-self:center">Trusted by 9,000+ small businesses</span><b>Kettle &amp; Co.</b><b>Northwind</b><b>Maison Oak</b><b>Fernway</b></div>
+
+<section><div class="sh"><div><div class="ey">What you get</div><h2 class="se">Bookkeeping that<br>never falls behind.</h2></div><p>No more shoebox of receipts in April. Your books are closed by the 5th of every month.</p></div>
+ <div class="f3">
+  <div class="fc"><div class="ic" style="background:var(--f2)">{{icon:sparkles:26:#1E5A3C:2.2}}</div><h4>AI sorts it all</h4><p>97% of transactions are categorized automatically, learning your rules as you go.</p></div>
+  <div class="fc"><div class="ic" style="background:var(--sun2)">{{icon:user-round-check:26:#8A6410:2.2}}</div><h4>A human checks it</h4><p>A certified accountant reviews every month before your books are closed.</p></div>
+  <div class="fc"><div class="ic" style="background:#E7EEF9">{{icon:file-chart-column:26:#3E5F9C:2.2}}</div><h4>Reports in plain words</h4><p>Your P&amp;L comes with a three-line summary of what changed and why.</p></div>
+ </div></section>
+
+<div class="band"><h3>The average owner gets back a full workday every month.</h3>
+ <div><b>9h</b><span>saved per month<br>on bookkeeping</span></div><div><b>97%</b><span>of transactions<br>sorted by AI</span></div><div><b>5th</b><span>of the month, books<br>closed and reviewed</span></div></div>
+
+<div class="qt">
+ <div class="q"><blockquote>“I used to spend Sunday nights in spreadsheets. Now I read a one-page summary with my coffee on the 5th.”</blockquote><div class="by"><i style="background:var(--sun2)">LP</i>Lena Park · Owner, Kettle &amp; Co. Roasters</div></div>
+ <div class="q"><blockquote>“My accountant says these are the cleanest books she's seen from a business our size.”</blockquote><div class="by"><i style="background:var(--f2)">DO</i>Daniel Osei · Founder, Maison Oak Interiors</div></div>
+</div>
+
+<section><div style="text-align:center"><div class="ey">Pricing</div><h2 class="se">Less than one hour of an accountant's time.</h2></div>
+ <div class="price">
+  <div class="pc"><h4>Starter</h4><div class="a">$49<small> /month</small></div><p>Up to $25k monthly expenses.</p><ul><li>{{icon:check:17:#1E5A3C:2.6}}AI categorization</li><li>{{icon:check:17:#1E5A3C:2.6}}Monthly P&amp;L</li></ul><span class="b o">Start free trial</span></div>
+  <div class="pc hot"><h4>Growth</h4><div class="a">$129<small> /month</small></div><p>Up to $150k monthly expenses.</p><ul><li>{{icon:check:17:#F3C24B:2.6}}Everything in Starter</li><li>{{icon:check:17:#F3C24B:2.6}}Accountant review every month</li><li>{{icon:check:17:#F3C24B:2.6}}Quarterly tax estimates</li></ul><span class="b" style="background:var(--sun);color:var(--ink)">Start free trial</span></div>
+  <div class="pc"><h4>Year-end</h4><div class="a">$890<small> /year</small></div><p>Add-on for any plan.</p><ul><li>{{icon:check:17:#1E5A3C:2.6}}Tax-ready financial statements</li><li>{{icon:check:17:#1E5A3C:2.6}}Sent straight to your CPA</li></ul><span class="b o">Add to plan</span></div>
+ </div></section>
+
+<div class="fin"><h2 class="se">Close your books<br><em>this month.</em></h2><p>Connect your bank in 3 minutes. Your first month is on us.</p><div class="cta"><span class="b f">Start free trial {{icon:arrow-right:17:#ffffff:2.4}}</span></div></div>
+<footer><span>© 2026 Tallybook Inc.</span><span>Security · Privacy · Terms · Careers</span></footer>
+</div></body></html>

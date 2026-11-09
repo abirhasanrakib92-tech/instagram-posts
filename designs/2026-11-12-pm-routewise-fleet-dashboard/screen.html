@@ -1,0 +1,118 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="ops.routewise.io/live">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F3F5F8;--line:#E3E7EE;--ink:#0D1626;--ink2:#566174;--ink3:#98A2B3;--blue:#2563EB;--blue2:#E5EDFF;--amber:#F59E0B;--amber2:#FEF3DC;--green:#16A34A;--red:#E5484D}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Onest';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.app{display:grid;grid-template-columns:232px 1fr 360px;height:960px}
+.sb{background:#fff;border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;padding:0 8px;letter-spacing:-.4px}
+.logo i{width:32px;height:32px;border-radius:10px;background:var(--blue);display:grid;place-items:center}
+.nav{margin-top:26px;display:flex;flex-direction:column;gap:2px}
+.nav a{display:flex;align-items:center;gap:11px;height:40px;padding:0 10px;border-radius:11px;font-size:14px;font-weight:500;color:var(--ink2)}
+.nav a.on{background:var(--ink);color:#fff}
+.nav a em{margin-left:auto;font-style:normal;font-size:11px;font-weight:700;background:var(--amber);color:#fff;border-radius:999px;padding:2px 7px}
+.t{font-size:11px;font-weight:600;letter-spacing:.8px;color:var(--ink3);margin:24px 10px 8px}
+.depot{margin-top:auto;border:1px solid var(--line);border-radius:16px;padding:14px}
+.depot small{font-size:11.5px;color:var(--ink3)}.depot b{display:block;font-size:14px;margin-top:3px}
+.wx{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12.5px;color:var(--ink2)}
+.mid{padding:20px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.top{display:flex;align-items:center;gap:12px}
+.top h1{font-size:22px;font-weight:700;letter-spacing:-.6px}
+.live{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--green);background:#E3F6EA;padding:5px 10px;border-radius:999px}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.sp{flex:1}
+.btn{height:40px;border-radius:11px;display:flex;align-items:center;gap:8px;padding:0 14px;font-size:13px;font-weight:600;border:1px solid var(--line);background:#fff}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.k{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.k small{font-size:12.5px;color:var(--ink2)}
+.k b{display:flex;align-items:baseline;gap:6px;font-size:27px;font-weight:700;letter-spacing:-1px;margin-top:8px}
+.k b em{font-style:normal;font-size:13px;color:var(--ink3);font-weight:500;letter-spacing:0}
+.k .bar{height:6px;border-radius:3px;background:#EEF1F5;margin-top:10px;overflow:hidden}
+.map{flex:1;border-radius:22px;background:#E8ECF1;position:relative;overflow:hidden;border:1px solid var(--line)}
+.map>svg{position:absolute;inset:0}
+.mctl{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:6px}
+.mctl div{width:38px;height:38px;border-radius:11px;background:#fff;display:grid;place-items:center;box-shadow:0 2px 6px rgba(13,22,38,.08)}
+.flt{position:absolute;left:14px;top:14px;display:flex;gap:6px}
+.flt span{font-size:12.5px;font-weight:600;background:#fff;border-radius:999px;padding:8px 13px;box-shadow:0 2px 6px rgba(13,22,38,.08);display:flex;align-items:center;gap:6px}
+.flt span.on{background:var(--ink);color:#fff}
+.van{position:absolute;display:flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:4px 10px 4px 4px;font-size:12px;font-weight:600;box-shadow:0 6px 14px -6px rgba(13,22,38,.35)}
+.van i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center}
+.card{position:absolute;left:14px;bottom:14px;width:330px;background:#fff;border-radius:18px;padding:14px 16px;box-shadow:0 14px 30px -14px rgba(13,22,38,.4)}
+.card .h{display:flex;align-items:center;gap:10px}
+.av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700}
+.card b{font-size:14px}.card small{display:block;font-size:12px;color:var(--ink3)}
+.steps{display:flex;gap:4px;margin-top:12px}.steps i{flex:1;height:6px;border-radius:3px;background:#E7EBF0}
+.right{background:#fff;border-left:1px solid var(--line);padding:20px 18px;display:flex;flex-direction:column;gap:12px}
+.right h3{font-size:16px;font-weight:700;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.right h3 em{margin-left:auto;font-style:normal;font-size:12.5px;color:var(--blue);font-weight:600}
+.tabs{display:flex;gap:4px;background:var(--bg);border-radius:11px;padding:3px}
+.tabs span{flex:1;text-align:center;font-size:12.5px;font-weight:600;color:var(--ink2);padding:7px 0;border-radius:9px}
+.tabs span.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.dr{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #F0F2F6}
+.dr .m{flex:1}.dr b{display:block;font-size:13.5px;font-weight:600}.dr small{display:block;font-size:12px;color:var(--ink3);margin-top:2px}
+.st{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.alert{background:var(--amber2);border-radius:16px;padding:13px;display:flex;gap:10px;font-size:12.5px;line-height:1.45;color:#7A4A05;margin-top:auto}
+.alert b{color:#5C3700}
+</style></head>
+<body><div class="app">
+<aside class="sb">
+ <div class="logo"><i>{{icon:navigation:17:#ffffff:2.4}}</i>Routewise</div>
+ <div class="nav">
+  <a class="on">{{icon:map:18:#ffffff}}Live map</a><a>{{icon:truck:18:#566174}}Vehicles</a><a>{{icon:package:18:#566174}}Deliveries</a><a>{{icon:route:18:#566174}}Routes<em>3</em></a><a>{{icon:users:18:#566174}}Drivers</a>
+ </div>
+ <div class="t">ANALYTICS</div>
+ <div class="nav"><a>{{icon:chart-column:18:#566174}}Performance</a><a>{{icon:fuel:18:#566174}}Fuel &amp; costs</a><a>{{icon:settings:18:#566174}}Settings</a></div>
+ <div class="depot"><small>Depot</small><b>East Harbor Hub</b><div class="wx">{{icon:cloud-drizzle:16:#566174}}Light rain · 11°C · +6 min avg</div></div>
+</aside>
+
+<section class="mid">
+ <div class="top"><h1>Live operations</h1><span class="live"><i></i>Live · updated 4s ago</span><div class="sp"></div>
+  <div class="btn">{{icon:calendar:15:#0D1626}}Wed, 12 Nov</div><div class="btn" style="background:var(--blue);color:#fff;border-color:var(--blue)">{{icon:plus:15:#ffffff:2.4}}Dispatch</div></div>
+ <div class="kpis">
+  <div class="k"><small>Vans on the road</small><b>42<em>of 48</em></b><div class="bar"><div style="width:87.5%;height:100%;background:var(--blue)"></div></div></div>
+  <div class="k"><small>Delivered today</small><b>1,284<em>of 1,620</em></b><div class="bar"><div style="width:79%;height:100%;background:var(--green)"></div></div></div>
+  <div class="k"><small>On-time rate</small><b>96.2%<em style="color:var(--green);font-weight:600">+1.4</em></b><div class="bar"><div style="width:96%;height:100%;background:var(--green)"></div></div></div>
+  <div class="k"><small>Running late</small><b style="color:#B76E00">7<em>vans · avg 14 min</em></b><div class="bar"><div style="width:15%;height:100%;background:var(--amber)"></div></div></div>
+ </div>
+ <div class="map">
+  <svg width="100%" height="100%" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+   <rect width="800" height="600" fill="#E8ECF1"/>
+   <path d="M-20 430 C140 380 260 470 420 420 S650 300 820 340" stroke="#CFE0EE" stroke-width="48" fill="none"/>
+   <g fill="#DCE6D6"><rect x="70" y="80" width="130" height="90" rx="10"/><rect x="560" y="470" width="150" height="80" rx="10"/><rect x="430" y="120" width="90" height="70" rx="10"/></g>
+   <g stroke="#fff" stroke-width="13" fill="none" stroke-linecap="round"><path d="M0 230 L800 190"/><path d="M0 330 L800 300"/><path d="M220 0 L260 600"/><path d="M400 0 L380 600"/><path d="M590 0 L630 600"/><path d="M0 520 L800 560"/><path d="M0 60 L800 40"/></g>
+   <g stroke="#F4F6F8" stroke-width="5" fill="none"><path d="M120 0 L140 600"/><path d="M500 0 L510 600"/><path d="M700 0 L720 600"/><path d="M0 140 L800 110"/></g>
+   <path d="M150 520 L245 512 L240 320 L390 312 L398 200 L600 188 L612 120" stroke="#2563EB" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+   <path d="M150 520 L245 512 L240 320" stroke="#2563EB" stroke-width="6" fill="none" opacity=".25"/>
+   <path d="M60 300 L232 296 L222 140 L420 132" stroke="#F59E0B" stroke-width="5" fill="none" stroke-dasharray="1 10" stroke-linecap="round"/>
+   <g fill="#fff" stroke="#2563EB" stroke-width="4"><circle cx="398" cy="200" r="8"/><circle cx="600" cy="188" r="8"/></g>
+   <circle cx="612" cy="120" r="12" fill="#0D1626"/><path d="M606 120 l4 4 l8 -8" stroke="#fff" stroke-width="3" fill="none"/>
+  </svg>
+  <div class="flt"><span class="on">All 42</span><span>{{icon:circle-alert:14:#B76E00:2.4}}Late 7</span><span>Idle 6</span></div>
+  <div class="mctl"><div>{{icon:plus:17:#0D1626}}</div><div>{{icon:minus:17:#0D1626}}</div><div>{{icon:locate-fixed:17:#0D1626}}</div></div>
+  <div class="van" style="left:330px;top:290px"><i style="background:var(--blue)">{{icon:truck:13:#ffffff:2.4}}</i>V-12</div>
+  <div class="van" style="left:136px;top:180px"><i style="background:var(--amber)">{{icon:truck:13:#ffffff:2.4}}</i>V-07 · +14m</div>
+  <div class="van" style="left:600px;top:330px"><i style="background:var(--blue)">{{icon:truck:13:#ffffff:2.4}}</i>V-31</div>
+  <div class="van" style="left:520px;top:80px"><i style="background:var(--green)">{{icon:truck:13:#ffffff:2.4}}</i>V-22</div>
+  <div class="card"><div class="h"><div class="av" style="background:var(--blue2);color:var(--blue)">MO</div><div><b>V-12 · Marcus Ortiz</b><small>Stop 9 of 14 · next: 88 Linden Ave</small></div><span class="st" style="margin-left:auto;background:#E3F6EA;color:var(--green)">On time</span></div>
+   <div class="steps"><i style="background:var(--blue)"></i><i style="background:var(--blue)"></i><i style="background:var(--blue)"></i><i style="background:var(--blue)"></i><i style="background:var(--blue)"></i><i style="background:var(--blue)"></i><i style="background:var(--blue)"></i><i style="background:var(--blue)"></i><i style="background:var(--blue);opacity:.4"></i><i></i><i></i><i></i><i></i><i></i></div>
+   <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink2);margin-top:9px"><span>ETA 10:42 AM</span><span>2.3 km · 6 min</span><span>Load 61%</span></div></div>
+ </div>
+</section>
+
+<aside class="right">
+ <h3>Fleet <em>See all 48</em></h3>
+ <div class="tabs"><span class="on">Active</span><span>Late</span><span>Idle</span></div>
+ <div>
+  <div class="dr"><div class="av" style="background:var(--amber2);color:#B76E00">PS</div><div class="m"><b>V-07 · Priya Shah</b><small>Traffic on Harbor Bridge · 6 stops left</small></div><span class="st" style="background:var(--amber2);color:#B76E00">+14 min</span></div>
+  <div class="dr"><div class="av" style="background:var(--blue2);color:var(--blue)">MO</div><div class="m"><b>V-12 · Marcus Ortiz</b><small>88 Linden Ave · ETA 10:42</small></div><span class="st" style="background:#E3F6EA;color:var(--green)">On time</span></div>
+  <div class="dr"><div class="av" style="background:#F1EAFE;color:#7C3AED">LK</div><div class="m"><b>V-22 · Lena Kowalski</b><small>Returning to hub · 14/14 done</small></div><span class="st" style="background:#E3F6EA;color:var(--green)">Done</span></div>
+  <div class="dr"><div class="av" style="background:#E6F6FB;color:#0E7490">DA</div><div class="m"><b>V-31 · Daniel Adeyemi</b><small>Stop 5 of 12 · 17 Birch Lane</small></div><span class="st" style="background:#E3F6EA;color:var(--green)">On time</span></div>
+  <div class="dr"><div class="av" style="background:#FDECEC;color:var(--red)">JT</div><div class="m"><b>V-18 · Jun Tanaka</b><small>Customer not home · retry 2 PM</small></div><span class="st" style="background:#FDECEC;color:var(--red)">Failed</span></div>
+  <div class="dr" style="border:0"><div class="av" style="background:var(--blue2);color:var(--blue)">AN</div><div class="m"><b>V-04 · Amara Nwosu</b><small>Stop 11 of 15 · 3 Elm Court</small></div><span class="st" style="background:#E3F6EA;color:var(--green)">On time</span></div>
+ </div>
+ <div class="alert">{{icon:triangle-alert:17:#B76E00:2.2}}<span><b>Harbor Bridge is slow.</b> Re-routing V-07 and V-15 via Dock Road saves 9 min each.<br><span style="font-weight:700;color:#5C3700;text-decoration:underline">Apply re-route</span></span></div>
+</aside>
+</div></body></html>

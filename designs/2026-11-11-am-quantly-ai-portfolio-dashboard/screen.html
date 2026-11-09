@@ -1,0 +1,126 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.quantly.ai/portfolio">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F4F6FA;--card:#fff;--line:#E6EAF2;--ink:#0B1533;--ink2:#56607A;--ink3:#97A0B5;--navy:#0B1533;--lime:#C6F432;--lime2:#EEFBC9;--blue:#3F6BFF;--red:#F0505A}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Sora';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.app{display:grid;grid-template-columns:84px 1fr;height:960px}
+.rail{background:var(--navy);display:flex;flex-direction:column;align-items:center;padding:22px 0;gap:8px}
+.rail .lg{width:44px;height:44px;border-radius:14px;background:var(--lime);display:grid;place-items:center;margin-bottom:22px}
+.rail a{width:48px;height:48px;border-radius:15px;display:grid;place-items:center}
+.rail a.on{background:rgba(198,244,50,.14)}
+.rail .me{margin-top:auto;width:42px;height:42px;border-radius:50%;background:#2A3456;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:600}
+.main{padding:22px 28px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.top{display:flex;align-items:center;gap:14px}
+.top h1{font-size:23px;font-weight:600;letter-spacing:-.8px}
+.top .sub{font-size:12.5px;color:var(--ink2);margin-top:4px}
+.sp{flex:1}
+.seg{display:flex;background:#fff;border:1px solid var(--line);border-radius:12px;padding:3px}
+.seg span{font-size:12.5px;font-weight:500;color:var(--ink2);padding:7px 12px;border-radius:9px}
+.seg span.on{background:var(--navy);color:#fff}
+.btn{height:42px;border-radius:12px;display:flex;align-items:center;gap:8px;padding:0 16px;font-size:13px;font-weight:600;border:1px solid var(--line);background:#fff}
+.btn.pri{background:var(--lime);border-color:var(--lime)}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr 380px;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 20px}
+.k small{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink2)}
+.k b{display:block;font-size:30px;font-weight:600;letter-spacing:-1.4px;margin-top:10px}
+.k b span{font-size:18px;color:var(--ink3)}
+.k .d{display:flex;align-items:center;gap:6px;font-size:12px;margin-top:8px;color:var(--ink2)}
+.up{color:#178A4C;background:#E4F7EC;font-weight:600;padding:3px 8px;border-radius:999px;font-size:11.5px}
+.dn{color:#C9333D;background:#FDE8EA;font-weight:600;padding:3px 8px;border-radius:999px;font-size:11.5px}
+.ai{grid-row:span 3;background:var(--navy);color:#fff;border:0;display:flex;flex-direction:column;gap:12px}
+.ai .h{display:flex;align-items:center;gap:10px}
+.orb{width:38px;height:38px;border-radius:12px;background:conic-gradient(from 120deg,var(--lime),#7DF0FF,var(--lime));display:grid;place-items:center}
+.ai h3{font-size:16px;font-weight:600}.ai .h small{display:block;font-size:11.5px;color:#9AA5C7;margin-top:2px}
+.ins{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px}
+.ins .t{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+.ins p{font-size:13.5px;line-height:1.5;margin-top:8px;color:#E5E9F6}
+.ins p b{color:var(--lime);font-weight:600}
+.ins .a{display:flex;gap:8px;margin-top:12px}
+.ins .a span{font-size:12px;font-weight:600;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.1)}
+.ins .a span.p{background:var(--lime);color:var(--navy)}
+.ask{margin-top:auto;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink3);border-radius:14px;padding:0 6px 0 14px;height:48px;font-size:13px}
+.ask i{margin-left:auto;width:36px;height:36px;border-radius:10px;background:var(--lime);display:grid;place-items:center}
+.chart{grid-column:span 3}
+.ch{display:flex;align-items:center;gap:12px}.ch h3{font-size:15px;font-weight:600}
+.leg{display:flex;gap:16px;font-size:12px;color:var(--ink2);margin-left:auto}
+.leg span{display:flex;align-items:center;gap:6px}.leg i{width:14px;height:3px;border-radius:2px}
+.low{grid-column:span 3;display:grid;grid-template-columns:1.55fr 1fr;gap:14px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{font-size:11.5px;font-weight:500;color:var(--ink3);text-align:left;padding:7px 6px;border-bottom:1px solid var(--line)}
+th:not(:first-child),td:not(:first-child){text-align:right}
+td{padding:9px 6px;border-bottom:1px solid #F0F2F7}tr:last-child td{border-bottom:0}
+.tk{display:flex;align-items:center;gap:10px}.tk i{width:40px;height:34px;border-radius:10px;display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:700;letter-spacing:-.2px}
+.tk b{font-weight:600;display:block}.tk small{color:var(--ink3);font-size:11.5px}
+.donut{display:flex;align-items:center;gap:22px;margin-top:22px}
+.al{flex:1;display:flex;flex-direction:column;gap:9px;font-size:12.5px}
+.al div{display:flex;align-items:center;gap:8px}.al i{width:9px;height:9px;border-radius:3px}.al b{margin-left:auto;font-weight:600}
+</style></head>
+<body><div class="app">
+<aside class="rail">
+ <div class="lg">{{icon:sparkles:22:#0B1533:2.4}}</div>
+ <a class="on">{{icon:layout-dashboard:22:#C6F432}}</a><a>{{icon:chart-candlestick:22:#7C88AD}}</a><a>{{icon:wallet:22:#7C88AD}}</a><a>{{icon:arrow-left-right:22:#7C88AD}}</a><a>{{icon:bell:22:#7C88AD}}</a><a>{{icon:settings:22:#7C88AD}}</a>
+ <div class="me">RK</div>
+</aside>
+<main class="main">
+ <div class="top"><div><h1>Good morning, Rafi</h1><div class="sub">Tue, 11 Nov 2026 · Markets open in 1h 24m</div></div><div class="sp"></div>
+  <div class="seg"><span>1D</span><span>1W</span><span>1M</span><span class="on">6M</span><span>1Y</span><span>All</span></div>
+  <div class="btn">{{icon:download:16:#0B1533}}Export</div><div class="btn pri">{{icon:plus:16:#0B1533:2.4}}Add funds</div></div>
+
+ <div class="grid">
+  <div class="card k"><small>{{icon:briefcase:15:#56607A}}Portfolio value</small><b>$84,312<span>.50</span></b><div class="d"><span class="up">+12.4%</span>since May · +$9,288</div></div>
+  <div class="card k"><small>{{icon:activity:15:#56607A}}Today's change</small><b style="color:#178A4C">+$612<span>.18</span></b><div class="d"><span class="up">+0.73%</span>vs benchmark +0.41%</div></div>
+  <div class="card k"><small>{{icon:shield-alert:15:#56607A}}AI risk score</small><b>62<span>/100</span></b><div class="d"><span class="dn">Elevated</span>tech is 41% of holdings</div></div>
+
+  <div class="card ai">
+   <div class="h"><div class="orb">{{icon:sparkles:18:#0B1533:2.4}}</div><div><h3>Quantly Copilot</h3><small>4 insights from today's data</small></div></div>
+   <div class="ins"><div class="t" style="color:#FFB4B8">{{icon:triangle-alert:14:#FFB4B8:2.4}}Concentration</div>
+    <p>Tech is <b>41%</b> of your portfolio, up from 33% in May. Moving <b>$4,200</b> into broad-market funds brings risk back to 48.</p>
+    <div class="a"><span class="p">Review rebalance</span><span>Why?</span></div></div>
+   <div class="ins"><div class="t" style="color:var(--lime)">{{icon:receipt:14:#C6F432:2.4}}Tax saving</div>
+    <p>Selling 18 shares of NRGY locks in a <b>$1,240 loss</b> to offset this year's gains before Dec 31.</p>
+    <div class="a"><span class="p">See plan</span><span>Dismiss</span></div></div>
+   <div class="ins"><div class="t" style="color:#7DF0FF">{{icon:calendar-clock:14:#7DF0FF:2.4}}Coming up</div>
+    <p>Dividends of <b>$318</b> arrive Nov 14. Auto-reinvest is on for 4 of 6 holdings.</p></div>
+   <div class="ins"><div class="t" style="color:#C9B8FF">{{icon:coins:14:#C9B8FF:2.4}}Idle cash</div>
+    <p>$11,800 is sitting in cash at 0.5%. Parking <b>$6,000</b> in a treasury fund earns about <b>$230</b> a year.</p></div>
+   <div class="ask">{{icon:message-circle:17:#97A0B5}}Ask about your portfolio…<i>{{icon:arrow-up:17:#0B1533:2.6}}</i></div>
+  </div>
+
+  <div class="card chart"><div class="ch"><h3>Performance</h3><span style="font-size:12.5px;color:var(--ink3)">May 11 – Nov 11</span>
+   <div class="leg"><span><i style="background:#3F6BFF"></i>Your portfolio</span><span><i style="background:#C3CADB"></i>Benchmark</span></div></div>
+   <svg id="perf" width="100%" height="296" style="margin-top:8px;overflow:visible"></svg></div>
+
+  <div class="low">
+   <div class="card" style="padding-bottom:8px"><div class="ch"><h3>Top holdings</h3><span style="margin-left:auto;font-size:12.5px;color:var(--blue);font-weight:600">View all 14</span></div>
+    <table><tr><th>Asset</th><th>Value</th><th>Weight</th><th>6M</th></tr>
+     <tr><td><div class="tk"><i style="background:#E8EDFF;color:#3F6BFF">VTI</i><div><b>Total Market ETF</b><small>62 shares</small></div></div></td><td>$18,940</td><td>22.5%</td><td><span class="up">+9.8%</span></td></tr>
+     <tr><td><div class="tk"><i style="background:#F1F0FF;color:#6A55E8">CHIP</i><div><b>Semiconductor ETF</b><small>40 shares</small></div></div></td><td>$14,210</td><td>16.9%</td><td><span class="up">+31.2%</span></td></tr>
+     <tr><td><div class="tk"><i style="background:#FFF1E6;color:#D9731F">NRGY</i><div><b>Clean Energy Fund</b><small>120 shares</small></div></div></td><td>$6,480</td><td>7.7%</td><td><span class="dn">−16.1%</span></td></tr>
+     <tr><td><div class="tk"><i style="background:#EEFBC9;color:#5D7A0B">BND</i><div><b>Total Bond ETF</b><small>210 shares</small></div></div></td><td>$15,170</td><td>18.0%</td><td><span class="up">+2.1%</span></td></tr>
+    </table></div>
+   <div class="card"><div class="ch"><h3>Allocation</h3></div>
+    <div class="donut"><svg width="150" height="150" viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#EEF1F7" stroke-width="6"/>
+     <circle cx="21" cy="21" r="15.9" fill="none" stroke="#0B1533" stroke-width="6" stroke-dasharray="41 59" stroke-dashoffset="25"/>
+     <circle cx="21" cy="21" r="15.9" fill="none" stroke="#3F6BFF" stroke-width="6" stroke-dasharray="27 73" stroke-dashoffset="-16"/>
+     <circle cx="21" cy="21" r="15.9" fill="none" stroke="#C6F432" stroke-width="6" stroke-dasharray="18 82" stroke-dashoffset="-43"/>
+     <circle cx="21" cy="21" r="15.9" fill="none" stroke="#A9B6D6" stroke-width="6" stroke-dasharray="14 86" stroke-dashoffset="-61"/></svg>
+     <div class="al"><div><i style="background:#0B1533"></i>Tech<b>41%</b></div><div><i style="background:#3F6BFF"></i>Broad market<b>27%</b></div><div><i style="background:#C6F432"></i>Bonds<b>18%</b></div><div><i style="background:#A9B6D6"></i>Cash<b>14%</b></div></div></div></div>
+  </div>
+ </div>
+</main></div>
+<script>
+const p=[75,74.2,76.1,77.4,76.8,78.9,80.2,79.1,81.5,82.0,80.7,82.9,83.6,82.4,84.31],q=[75,74.8,75.6,76.2,76.0,77.1,77.9,77.4,78.6,79.0,78.4,79.5,80.1,79.6,80.4];
+const s=document.getElementById('perf'),W=s.getBoundingClientRect().width,H=296,pl=44,pr=10,pt=10,pb=26,iw=W-pl-pr,ih=H-pt-pb,mn=72,mx=86;
+const x=i=>pl+i*iw/(p.length-1),y=v=>pt+ih-(v-mn)/(mx-mn)*ih;let o='';
+for(let g=0;g<=4;g++){const v=mn+g*(mx-mn)/4,yy=y(v);o+=`<line x1="${pl}" x2="${W-pr}" y1="${yy}" y2="${yy}" stroke="#EEF1F7"/><text x="${pl-10}" y="${yy+4}" text-anchor="end" font-size="11" fill="#97A0B5">$${v.toFixed(1)}k</text>`}
+['May','Jun','Jul','Aug','Sep','Oct','Nov'].forEach((m,i)=>o+=`<text x="${pl+i*iw/6}" y="${H-4}" text-anchor="middle" font-size="11" fill="#97A0B5">${m}</text>`);
+const path=a=>a.map((v,i)=>(i?'L':'M')+x(i)+' '+y(v)).join('');
+o+=`<defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3F6BFF" stop-opacity=".22"/><stop offset="1" stop-color="#3F6BFF" stop-opacity="0"/></linearGradient></defs>`;
+o+=`<path d="${path(p)} L${x(p.length-1)} ${pt+ih} L${pl} ${pt+ih}Z" fill="url(#g)"/><path d="${path(q)}" stroke="#C3CADB" stroke-width="2" fill="none" stroke-dasharray="5 4"/><path d="${path(p)}" stroke="#3F6BFF" stroke-width="2.6" fill="none" stroke-linejoin="round"/>`;
+const k=8,kx=x(k),ky=y(p[k]);o+=`<line x1="${kx}" x2="${kx}" y1="${pt}" y2="${pt+ih}" stroke="#0B1533" stroke-opacity=".15" stroke-dasharray="3 3"/><circle cx="${kx}" cy="${ky}" r="5.5" fill="#fff" stroke="#3F6BFF" stroke-width="2.6"/>
+<g transform="translate(${kx+12},${ky-58})"><rect width="150" height="50" rx="11" fill="#0B1533"/><text x="12" y="20" font-size="11" fill="#9AA5C7">Aug 29</text><text x="12" y="39" font-size="13" font-weight="600" fill="#fff">$81,500 · +8.7%</text></g>`;
+s.innerHTML=o;
+</script></body></html>
