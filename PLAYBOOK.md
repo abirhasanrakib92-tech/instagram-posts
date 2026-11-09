@@ -2,6 +2,16 @@
 
 Every scheduled run follows this file. It covers what to post, how to design it, and how to publish it.
 
+## Locked format (approved by the owner on 2026-11-09 — do not change)
+
+Match these approved posts exactly in presentation; only the design inside the screen changes:
+- App → `posts/2026-11/2026-11-09-fintech-home.jpg` (hand holding phone, 4:5 version from `tools/render.py app`)
+- Dashboard → `posts/2026-11/2026-11-09-pm-hospital-ops-dashboard.jpg` (one browser window, centered, single screen, no popup/zoom card)
+- Website → `posts/2026-11/2026-11-10-am-meeting-notes-website.jpg` (two long page cards)
+
+Always: 1080×1350, `#EEEEEE` background, light UI, no CTA bar, no "Designed by" strip, no extra text on the canvas.
+Do not edit `tools/render.py` or the mockup assets unless the owner asks.
+
 ## The schedule
 
 - Two posts a day, Asia/Dhaka time: **morning 08:37** (`am`) and **night 20:39** (`pm`).
