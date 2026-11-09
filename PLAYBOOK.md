@@ -72,6 +72,46 @@ Conventions:
   at most 2 images per post. If generation fails, design without photos.
 - After rendering, **open the JPG and look at it**. Fix anything off, re-render, look again.
 
+
+## Growth rules (owner's standing order: every post should aim to go viral)
+
+Do all of this on **every** post. Nothing here may break the locked format.
+
+### 1. Research before designing (WebSearch, 2–4 searches)
+- What is trending right now in UI for this niche and type (e.g. "dashboard UI trends 2026", "<niche> app design inspiration")?
+  Use it to pick a fresh, scroll-stopping angle: bold hero number, unusual chart, striking accent, a clever detail.
+- The design must earn **saves and shares**: show something useful a designer would want to keep
+  (a smart layout pattern, a well-solved component, realistic data), not just pretty filler.
+
+### 2. Hashtag research (WebSearch every time, never copy last post's set)
+- **Hard limit: 5 hashtags.** Instagram caps posts at 5 (rolled out from Dec 2025); more can fail or be cut.
+- Search what tags designers actively use for this exact niche/type right now, then pick:
+  1 broad design tag (`#uidesign`, `#uxdesign` or `#uiux`), 2 type tags (e.g. `#dashboarddesign`, `#landingpage`, `#mobileappdesign`),
+  2 niche tags (e.g. `#healthtech`, `#fintechdesign`).
+- Never use generic or spammy tags: `#explore #viral #reels #fyp #instagood #likeforlike`.
+- Put the hashtags at the end of the caption.
+
+### 3. Caption SEO (Instagram search and Google index captions)
+- **Line 1 = plain searchable description** with the main keywords, e.g.
+  `Hospital dashboard UI design: bed capacity & patient flow`.
+- Line 2: the hook (the problem this design solves), one emoji max.
+- 1–2 short sentences on the design decisions.
+- A save or share prompt, e.g. `Save this for your next dashboard project 📌` or `Send this to a dev who'd build it`.
+- A question to drive comments, ending with 👇
+- Blank line, then the 5 hashtags. Total under 2,200 characters, English.
+
+### 4. Comment replies (every run, after publishing)
+- Read comments on posts from the last 3 days with Windsor `get_data` (connector `instagram`; call `get_fields` first to find
+  the comment fields; widen the date range if empty).
+- Reply to every new genuine comment with `reply_to_comment`: short, warm, specific to what they said, English,
+  ideally ending with a small question to keep the thread going. Never reply twice to the same comment.
+- Hide obvious spam/scam/bot comments with `hide_comment` (never delete).
+- Note replied comment ids in `calendar.json` under the slot (`replied_comment_ids`) so later runs skip them.
+
+### 5. Learn from results
+- Once a week (Monday morning run), read reach/saves/shares for the last 7 posts with Windsor `get_data` and add a 3-line note
+  to `growth-notes.md`: which niche/style did best and what to do more of. Use those notes when designing.
+
 ## Publishing
 
 1. Commit the design folder + JPG, `git push origin main`.
@@ -79,13 +119,7 @@ Conventions:
    Confirm it returns HTTP 200 and `image/jpeg` before posting.
 3. Post with Windsor.ai: `execute_action`, connector `instagram`, account `17841402898456368`,
    action `create_image_post`, params `{image_url, caption}`.
-4. Caption (English, under 2,200 characters):
-   - Hook line about the problem the design solves (one line, one emoji max)
-   - 1–2 short sentences on the design decisions in this screen
-   - A question to drive comments, ending with 👇
-   - A blank line, then 8–12 hashtags: always `#uidesign #uxdesign #uiux #productdesign`, plus type tags
-     (`#mobileappdesign #appdesign` / `#dashboarddesign #saasdesign #webapp` / `#webdesign #landingpage #websitedesign`)
-     and 2–3 niche tags.
+4. Caption: follow **Growth rules** below (keyword first line, hook, save/share prompt, question, max 5 researched hashtags).
 5. Save the caption, image path and `media_id` in the slot, set `posted`, commit, push.
 
 Commit messages end with:
