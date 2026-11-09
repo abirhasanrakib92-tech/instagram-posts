@@ -57,7 +57,7 @@ The renderer handles the mockup; you only design the screen.
 |---|---|---|
 | app | 393×852 (iPhone) | hand holding the phone (the owner's reference photo) |
 | dashboard | 1440×960, no scroll | one light browser window, centered. **Single screen only: no zoom card, no popup, no modal, no floating overlay** |
-| website | 1440 wide, 4500–8000 tall | two long cards: top of the page in front, lower sections peeking behind |
+| website | 1440 wide, 4500–7000 tall | carousel (see table above): two-column overview, top of page large, rotated page bands |
 
 Conventions:
 - `<link rel="stylesheet" href="../../assets/fonts.css">` — families: Inter Tight, Geist, Manrope, Plus Jakarta Sans, DM Sans,
