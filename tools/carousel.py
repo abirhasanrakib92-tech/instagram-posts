@@ -11,7 +11,7 @@ pan across the same design so people swipe through it.
   dashboard -> 3 slides: full window, left half, right half (owner's spec)
   website   -> whole home page in two columns, top of page large, then the whole page rotated 90°
                in consecutive bands through the footer (owner's spec)
-  app       -> 4 slides: hand+phone cover, then close-ups into the top, middle and bottom of the phone
+  app       -> 5 slides: hand+phone cover, description + nav bar, typography, colors, CTA (owner's spec)
 """
 import asyncio, sys, pathlib, base64
 from PIL import Image
@@ -148,22 +148,108 @@ def _png_bytes(img):
     return bio.getvalue()
 
 
+SLIDE_CSS = """*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#EEEEEE;color:#111114;-webkit-font-smoothing:antialiased}
+.s{position:relative;width:1080px;height:1350px;padding:84px 80px}
+.head{display:flex;justify-content:space-between;font:500 22px 'Inter Tight';letter-spacing:.6px;text-transform:uppercase;color:#111114}
+"""
+
+
+def _meta(html, name):
+    import re
+    m = re.search(rf'<meta name="{name}" content="([^"]*)"', html)
+    return m.group(1) if m else ''
+
+
+async def _slide(b, work, name, body, extra_css=''):
+    p = work / f'{name}.html'
+    p.write_text(f"""<!doctype html><html><head><meta charset=utf-8><link rel=stylesheet href="{(R.ROOT/'assets/fonts.css').as_uri()}">
+<style>{SLIDE_CSS}{extra_css}</style></head><body><div class="s">{body}</div></body></html>""")
+    png = work / f'{name}.png'
+    await shot_html(b, p, png, {'width': W, 'height': H}, 2)
+    return Image.open(png).resize((W, H), Image.LANCZOS)
+
+
+async def cta_slide(b, work):
+    body = """
+<div class="head"><span>Abir Hasan Rakib</span><span>UI/UX Designer</span></div>
+<div style="position:absolute;left:80px;right:80px;top:300px">
+ <div style="font:600 30px 'Inter Tight';color:#6B6B74;letter-spacing:-.3px">Have a product in mind?</div>
+ <div style="font:600 148px/0.95 'Inter Tight';letter-spacing:-6px;margin-top:22px">Open for<br>new <span style="color:#3D5AFE">projects</span></div>
+ <div style="display:flex;gap:12px;margin-top:46px;flex-wrap:wrap">
+  <span class="chip">Mobile Apps</span><span class="chip">Dashboards</span><span class="chip">Websites</span><span class="chip">Landing Pages</span>
+ </div>
+</div>
+<div style="position:absolute;left:80px;right:80px;bottom:84px;display:flex;flex-direction:column;gap:14px">
+ <div class="row"><span class="ic">{{wa}}</span><span><small>WhatsApp</small>+880 1730 402 994</span></div>
+ <div class="row"><span class="ic">{{ig}}</span><span><small>Follow for daily UI</small>@abirhasanrakib_</span><span class="save">Save for later {{bm}}</span></div>
+</div>"""
+    body = body.replace('{{wa}}', R.expand_icons('{{icon:message-circle:30:#111114:2}}')) \
+               .replace('{{ig}}', R.expand_icons('{{icon:at-sign:30:#111114:2}}')) \
+               .replace('{{bm}}', R.expand_icons('{{icon:bookmark:24:#ffffff:2.2}}'))
+    css = """.chip{font:500 24px 'Inter Tight';padding:14px 24px;border-radius:999px;border:1.5px solid #111114}
+.row{display:flex;align-items:center;gap:20px;background:#fff;border-radius:28px;padding:22px 26px;font:600 34px 'Inter Tight';letter-spacing:-.6px}
+.row small{display:block;font:500 20px 'Inter Tight';color:#8A8A93;letter-spacing:0;margin-bottom:4px}
+.ic{width:68px;height:68px;border-radius:20px;background:#EEEEEE;display:grid;place-items:center;flex:none}
+.save{margin-left:auto;display:flex;align-items:center;gap:10px;background:#111114;color:#fff;font:600 22px 'Inter Tight';padding:16px 22px;border-radius:999px;letter-spacing:0}"""
+    return await _slide(b, work, 'cta', body, css)
+
+
 async def app(d, work, prefix, b):
-    scale = 2.4
-    big = work / 'app-big.png'
-    R.compose_app(work / 'screen.png', big, scale=scale)
-    im = Image.open(big)
-    bw, bh = im.size
-    # phone screen centre on the big image (from compose_app geometry)
-    s = W * scale / 957
-    sx0, sy0, sw, sh = (538 - 255) * s, 43 * s, 392 * s, 853 * s
-    cx = sx0 + sw / 2
-    for n, fy in [(2, 0.05), (3, 0.38), (4, 0.70)]:
-        top = sy0 + sh * fy - 120
-        left = cx - W / 2
-        top = max(0, min(bh - H, top))
-        left = max(0, min(bw - W, left))
-        save(im.crop((round(left), round(top), round(left) + W, round(top) + H)), f'{prefix}-{n}.jpg')
+    """Owner's spec (2026-11-09): 1 hand+phone (cover), 2 description + nav bar close-up,
+    3 typography, 4 colors, then the CTA slide."""
+    html = (d / 'screen.html').read_text()
+    name, desc = _meta(html, 'app-name'), _meta(html, 'app-desc')
+    import re
+    desc_html = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', desc)
+    year = '2026'
+
+    # nav bar cut out of the live screen with a transparent background
+    rendered = d / 'screen.rendered.html'
+    rendered.write_text(R.expand_icons(html).replace('</head>',
+        '<style>html,body,.screen{background:transparent!important}.fade,.home{display:none!important}body *{visibility:hidden}[data-nav],[data-nav] *,.tab,.tab *{visibility:visible!important}.tab,[data-nav]{box-shadow:none!important}</style></head>'))
+    pg = await b.new_page(viewport={'width': 393, 'height': 852}, device_scale_factor=6)
+    await pg.goto(rendered.as_uri()); await pg.evaluate('document.fonts.ready'); await pg.wait_for_timeout(300)
+    sel = await pg.evaluate("()=>document.querySelector('[data-nav]')?'[data-nav]':'.tab'")
+    await pg.locator(sel).screenshot(path=str(work / 'nav.png'), omit_background=True)
+    await pg.close(); rendered.unlink()
+    nav = Image.open(work / 'nav.png')
+    nav_uri = 'data:image/png;base64,' + base64.b64encode((work / 'nav.png').read_bytes()).decode()
+    nav_w = 920
+    s2 = await _slide(b, work, 'app2', f"""
+<div class="desc">{desc_html}</div>
+<img src="{nav_uri}" style="position:absolute;left:{(W-nav_w)//2}px;top:{H-300-round(nav.size[1]*nav_w/nav.size[0])}px;width:{nav_w}px;
+ filter:drop-shadow(0 40px 50px rgba(0,0,0,.22))">""",
+        ".desc{font:400 52px/1.2 'Inter Tight';letter-spacing:-1px;text-transform:uppercase;color:#A3A3AB}.desc b{color:#111114;font-weight:600}")
+    save(s2, f'{prefix}-2.jpg')
+
+    # typography
+    fam, note = (_meta(html, 'fonts').split('|') + [''])[:2]
+    weights = ''.join(f'<div class="w"><span style="font-weight:{w}">Aa</span><small>{n} · {w}</small></div>'
+                      for w, n in [(400, 'Regular'), (500, 'Medium'), (600, 'Semibold'), (700, 'Bold')])
+    s3 = await _slide(b, work, 'app3', f"""
+<div class="head"><span>Typography</span><span>{year}</span></div>
+<div style="font:600 190px/1 '{fam}';letter-spacing:-7px;margin-top:150px">{fam}</div>
+<p style="font:400 34px/1.45 '{fam}';color:#8A8A93;margin-top:26px;max-width:860px">{note}</p>
+<div class="ws">{weights}</div>
+<div style="position:absolute;right:80px;bottom:84px;text-align:right;font:500 30px/1.6 '{fam}'">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 $%&amp;@#*()+</div>""",
+        f".ws{{display:flex;gap:16px;margin-top:70px}}.w{{flex:1;background:#fff;border-radius:28px;padding:26px 24px}}"
+        f".w span{{display:block;font-family:'{fam}';font-size:96px;letter-spacing:-3px;line-height:1}}"
+        f".w small{{display:block;font:500 20px 'Inter Tight';color:#8A8A93;margin-top:18px}}")
+    save(s3, f'{prefix}-3.jpg')
+
+    # colors
+    sw = [c.split(':') for c in _meta(html, 'palette').split('|') if c]
+    tiles = ''.join(f'<div class="t"><div class="c" style="background:{h}"></div><div class="l"><span>{n}</span><span>{h.upper()}</span></div></div>' for h, n in sw)
+    s4 = await _slide(b, work, 'app4', f"""
+<div class="head"><span>Colors</span><span>{year}</span></div>
+<div class="g">{tiles}</div>""",
+        ".g{display:grid;grid-template-columns:1fr 1fr;gap:34px 26px;margin-top:56px}"
+        ".c{height:300px;border-radius:30px;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.07)}"
+        ".l{display:flex;justify-content:space-between;font:500 24px 'Inter Tight';margin-top:16px;letter-spacing:.3px}"
+        ".l span:first-child{color:#111114}.l span:last-child{color:#6B6B74;font-family:'JetBrains Mono';font-size:22px}")
+    save(s4, f'{prefix}-4.jpg')
+    save(await cta_slide(b, work), f'{prefix}-5.jpg')
 
 
 async def main(design_dir, kind, prefix):
