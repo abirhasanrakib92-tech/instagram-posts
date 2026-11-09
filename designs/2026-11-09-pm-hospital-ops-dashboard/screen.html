@@ -1,0 +1,189 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="ops.carewell.health">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F5F6F5;--card:#fff;--line:#E8EBEA;--ink:#0F1514;--ink2:#5E6866;--ink3:#9AA3A1;
+--teal:#0E7C70;--teal2:#D9F0EC;--coral:#F2684A;--coral2:#FDE6E0;--amber:#F2A93B;--amber2:#FDF1DC;--blue:#4B78EE;--blue2:#E3EBFD}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Geist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.app{display:grid;grid-template-columns:236px 1fr;height:960px}
+/* sidebar */
+.sb{background:#fff;border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column}
+.logo{display:flex;align-items:center;gap:10px;padding:0 8px;font-weight:600;font-size:17px;letter-spacing:-.4px}
+.logo .mk{width:32px;height:32px;border-radius:10px;background:var(--teal);display:grid;place-items:center}
+.sec-t{font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:.8px;text-transform:uppercase;margin:28px 10px 8px}
+.nav a{display:flex;align-items:center;gap:11px;height:38px;padding:0 10px;border-radius:10px;font-size:13.5px;font-weight:500;color:var(--ink2)}
+.nav a.on{background:var(--teal2);color:var(--teal);font-weight:600}
+.nav a .n{margin-left:auto;font-size:11px;font-weight:600;background:var(--coral);color:#fff;border-radius:999px;padding:2px 7px}
+.hosp{margin-top:auto;border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;gap:10px;align-items:center}
+.hosp .ic{width:36px;height:36px;border-radius:10px;background:var(--bg);display:grid;place-items:center}
+.hosp b{display:block;font-size:13px;font-weight:600}.hosp small{display:block;font-size:11.5px;color:var(--ink3);margin-top:2px}
+/* main */
+.main{padding:20px 26px 22px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.top{display:flex;align-items:center;gap:14px}
+.top h1{font-size:22px;font-weight:600;letter-spacing:-.6px}
+.top .sub{font-size:13px;color:var(--ink2);margin-top:3px}
+.sp{flex:1}
+.search{width:280px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 12px;color:var(--ink3);font-size:13px}
+.search kbd{margin-left:auto;font-family:inherit;font-size:11px;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.btn{height:40px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 14px;font-size:13px;font-weight:500}
+.btn.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+.me{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#CFE9E4,#9ED3C9);display:grid;place-items:center;font-size:13px;font-weight:600;color:#0B5C53}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.kpi .h{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink2);font-weight:500}
+.kpi .h i{width:26px;height:26px;border-radius:8px;display:grid;place-items:center}
+.kpi .v{display:flex;align-items:baseline;gap:8px;margin-top:12px}
+.kpi .v b{font-size:30px;font-weight:600;letter-spacing:-1.2px;line-height:1}
+.kpi .v em{font-style:normal;font-size:13px;color:var(--ink3)}
+.tag{margin-left:auto;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:999px}
+.tag.g{background:#E2F5EC;color:#14794F}.tag.r{background:var(--coral2);color:#C2442A}.tag.a{background:var(--amber2);color:#A86A0C}
+.kpi .foot{font-size:12px;color:var(--ink3);margin-top:10px}
+.meter{display:flex;gap:2px;margin-top:12px;height:6px}.meter span{flex:1;border-radius:2px;background:#E9EDEC}.meter span.f{background:var(--teal)}
+.row{display:grid;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px}
+.ch{display:flex;align-items:center;gap:10px}
+.ch h3{font-size:15px;font-weight:600;letter-spacing:-.3px}
+.ch .s{font-size:12.5px;color:var(--ink3)}
+.seg{margin-left:auto;display:flex;background:var(--bg);border-radius:10px;padding:3px}
+.seg span{font-size:12px;font-weight:500;color:var(--ink2);padding:5px 10px;border-radius:8px}
+.seg span.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.leg{display:flex;gap:16px;font-size:12px;color:var(--ink2);margin-top:12px}
+.leg span{display:flex;align-items:center;gap:6px}.leg i{width:8px;height:8px;border-radius:3px}
+.ward{display:grid;grid-template-columns:118px 1fr 58px;align-items:center;gap:12px;padding:8px 0;font-size:13px}
+.ward b{font-weight:500}
+.ward .track{height:8px;border-radius:4px;background:#EEF1F0;overflow:hidden}
+.ward .track div{height:100%;border-radius:4px}
+.ward .n{text-align:right;color:var(--ink2);font-size:12.5px}.ward .n strong{color:var(--ink);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+th{font-size:11.5px;font-weight:500;color:var(--ink3);text-align:left;padding:8px 8px;border-bottom:1px solid var(--line)}
+td{padding:9px 8px;border-bottom:1px solid #F1F3F2}
+tr:last-child td{border-bottom:0}
+.tri{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 9px 3px 7px;border-radius:999px}
+.tri i{width:7px;height:7px;border-radius:50%}
+.pid{font-family:'JetBrains Mono';font-size:12px;color:var(--ink2)}
+.av{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:10px;font-weight:600;margin-right:7px;vertical-align:middle}
+.wait{font-weight:600}
+.staff{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.st{background:var(--bg);border-radius:14px;padding:12px}
+.st small{font-size:12px;color:var(--ink2)}.st b{display:block;font-size:20px;font-weight:600;letter-spacing:-.6px;margin-top:6px}
+.st b em{font-style:normal;font-size:12.5px;color:var(--ink3);font-weight:500;letter-spacing:0}
+.alert{display:flex;gap:10px;align-items:flex-start;margin-top:12px;background:var(--amber2);border-radius:14px;padding:11px 12px;font-size:12.5px;color:#7A4E08;line-height:1.4}
+.alert b{color:#5E3B03}
+</style></head>
+<body><div class="app">
+<aside class="sb">
+ <div class="logo"><div class="mk">{{icon:heart-pulse:18:#ffffff:2.2}}</div>Carewell Ops</div>
+ <div class="sec-t">Hospital</div>
+ <nav class="nav">
+  <a class="on">{{icon:layout-dashboard:18:#0E7C70}}Overview</a>
+  <a>{{icon:bed-double:18:#5E6866}}Beds &amp; wards</a>
+  <a>{{icon:siren:18:#5E6866}}Emergency<span class="n">12</span></a>
+  <a>{{icon:user-plus:18:#5E6866}}Admissions</a>
+  <a>{{icon:log-out:18:#5E6866}}Discharges</a>
+  <a>{{icon:users:18:#5E6866}}Staffing</a>
+ </nav>
+ <div class="sec-t">Insights</div>
+ <nav class="nav">
+  <a>{{icon:chart-no-axes-column:18:#5E6866}}Reports</a>
+  <a>{{icon:clipboard-check:18:#5E6866}}Quality &amp; safety</a>
+  <a>{{icon:settings:18:#5E6866}}Settings</a>
+ </nav>
+ <div class="hosp"><div class="ic">{{icon:hospital:18:#0F1514}}</div><div><b>St. Aurelia General</b><small>412 beds · 9 wards</small></div>{{icon:chevrons-up-down:15:#9AA3A1}}</div>
+</aside>
+
+<main class="main">
+ <div class="top">
+  <div><h1>Hospital overview</h1><div class="sub">Monday, 9 Nov 2026 · Shift B, 14:00–22:00</div></div>
+  <div class="sp"></div>
+  <div class="search">{{icon:search:16:#9AA3A1}}Search patients, wards, staff<kbd>⌘K</kbd></div>
+  <div class="btn">{{icon:calendar:16:#0F1514}}Today</div>
+  <div class="btn pri">{{icon:plus:16:#ffffff}}New admission</div>
+  <div class="me">MH</div>
+ </div>
+
+ <div class="kpis">
+  <div class="kpi"><div class="h"><i style="background:var(--teal2)">{{icon:bed-double:15:#0E7C70}}</i>Bed occupancy<span class="tag a">High</span></div>
+   <div class="v"><b>87.4%</b><em>358 of 412 beds</em></div>
+   <div class="meter"><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span></span></div></div>
+  <div class="kpi"><div class="h"><i style="background:var(--coral2)">{{icon:timer:15:#F2684A}}</i>Avg. ER wait<span class="tag g">−6 min</span></div>
+   <div class="v"><b>24 min</b><em>target 30</em></div><div class="foot">12 patients waiting · 3 in resus</div></div>
+  <div class="kpi"><div class="h"><i style="background:var(--blue2)">{{icon:user-plus:15:#4B78EE}}</i>Admissions today<span class="tag g">+9%</span></div>
+   <div class="v"><b>62</b><em>vs 57 last Mon</em></div><div class="foot">41 from ER · 21 elective</div></div>
+  <div class="kpi"><div class="h"><i style="background:var(--amber2)">{{icon:log-out:15:#D88B12}}</i>Pending discharges<span class="tag r">7 delayed</span></div>
+   <div class="v"><b>19</b><em>by 18:00</em></div><div class="foot">Frees 19 beds · 5 awaiting pharmacy</div></div>
+ </div>
+
+ <div class="row" style="grid-template-columns:1.62fr 1fr">
+  <div class="card">
+   <div class="ch"><h3>Patient flow</h3><span class="s">Admissions vs discharges, last 24 h</span>
+    <div class="seg"><span class="on">24 h</span><span>7 d</span><span>30 d</span></div></div>
+   <div class="leg"><span><i style="background:var(--teal)"></i>Admissions</span><span><i style="background:#BFE3DC"></i>Discharges</span><span><i style="background:var(--coral);height:2px;border-radius:1px;width:14px"></i>Occupancy %</span></div>
+   <svg id="flow" width="100%" height="214" style="margin-top:6px;overflow:visible"></svg>
+  </div>
+  <div class="card" data-zoom data-zoom-pad="0">
+   <div class="ch"><h3>Ward capacity</h3><span class="s">Live</span><span style="margin-left:auto;font-size:12.5px;color:var(--teal);font-weight:600">View all</span></div>
+   <div style="margin-top:8px">
+    <div class="ward"><b>ICU</b><div class="track"><div style="width:92%;background:var(--coral)"></div></div><div class="n"><strong>22</strong>/24</div></div>
+    <div class="ward"><b>Cardiology</b><div class="track"><div style="width:93%;background:var(--coral)"></div></div><div class="n"><strong>41</strong>/44</div></div>
+    <div class="ward"><b>General medicine</b><div class="track"><div style="width:89%;background:var(--amber)"></div></div><div class="n"><strong>96</strong>/108</div></div>
+    <div class="ward"><b>Orthopedics</b><div class="track"><div style="width:85%;background:var(--amber)"></div></div><div class="n"><strong>34</strong>/40</div></div>
+    <div class="ward"><b>Maternity</b><div class="track"><div style="width:78%;background:var(--teal)"></div></div><div class="n"><strong>28</strong>/36</div></div>
+    <div class="ward"><b>Pediatrics</b><div class="track"><div style="width:63%;background:var(--teal)"></div></div><div class="n"><strong>19</strong>/30</div></div>
+    <div class="ward"><b>Oncology</b><div class="track"><div style="width:81%;background:var(--amber)"></div></div><div class="n"><strong>26</strong>/32</div></div>
+    <div class="ward"><b>Step-down</b><div class="track"><div style="width:85%;background:var(--amber)"></div></div><div class="n"><strong>17</strong>/20</div></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="row" style="grid-template-columns:1.62fr 1fr;flex:1;min-height:0">
+  <div class="card" style="overflow:hidden">
+   <div class="ch"><h3>Emergency queue</h3><span class="s">Sorted by triage priority</span><span style="margin-left:auto" class="btn">{{icon:list-filter:15:#0F1514}}Filter</span></div>
+   <table>
+    <tr><th>Triage</th><th>Patient</th><th>Presenting complaint</th><th>Waiting</th><th>Assigned to</th></tr>
+    <tr><td><span class="tri" style="background:var(--coral2);color:#C2442A"><i style="background:var(--coral)"></i>Emergent</span></td><td class="pid">PT-20431 · M, 64</td><td>Chest pain, shortness of breath</td><td class="wait" style="color:#C2442A">4 min</td><td><span class="av" style="background:var(--teal2);color:var(--teal)">AK</span>Dr. Amir Khan</td></tr>
+    <tr><td><span class="tri" style="background:var(--amber2);color:#A86A0C"><i style="background:var(--amber)"></i>Urgent</span></td><td class="pid">PT-20428 · F, 31</td><td>Fractured wrist after fall</td><td class="wait">18 min</td><td><span class="av" style="background:var(--blue2);color:var(--blue)">LS</span>Dr. Lena Sato</td></tr>
+    <tr><td><span class="tri" style="background:var(--amber2);color:#A86A0C"><i style="background:var(--amber)"></i>Urgent</span></td><td class="pid">PT-20435 · M, 8</td><td>High fever, persistent vomiting</td><td class="wait">22 min</td><td><span class="av" style="background:#F1E6FB;color:#7C3AC4">RP</span>Dr. Ruth Park</td></tr>
+    <tr><td><span class="tri" style="background:var(--blue2);color:#3561D4"><i style="background:var(--blue)"></i>Less urgent</span></td><td class="pid">PT-20419 · F, 47</td><td>Migraine, light sensitivity</td><td class="wait">41 min</td><td style="color:var(--ink3)">Unassigned</td></tr>
+    <tr><td><span class="tri" style="background:#EEF1F0;color:#5E6866"><i style="background:#9AA3A1"></i>Non-urgent</span></td><td class="pid">PT-20422 · M, 23</td><td>Ankle sprain, can bear weight</td><td class="wait">56 min</td><td style="color:var(--ink3)">Unassigned</td></tr>
+   </table>
+  </div>
+  <div class="card">
+   <div class="ch"><h3>Staff on shift</h3><span class="s">Shift B</span></div>
+   <div class="staff">
+    <div class="st"><small>Nurses</small><b>148 <em>/ 156</em></b></div>
+    <div class="st"><small>Physicians</small><b>41 <em>/ 44</em></b></div>
+    <div class="st"><small>Nurse : patient</small><b>1 : 4.2</b></div>
+    <div class="st"><small>Overtime hours</small><b>36 h</b></div>
+   </div>
+   <div class="hand" style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:12.5px;color:var(--ink2)"><span style="display:flex;align-items:center;gap:7px">{{icon:clock-3:15:#5E6866}}Next handover 21:30</span><span style="display:flex"><span class="av" style="background:var(--teal2);color:var(--teal);margin-right:-6px;box-shadow:0 0 0 2px #fff">NB</span><span class="av" style="background:var(--blue2);color:var(--blue);margin-right:-6px;box-shadow:0 0 0 2px #fff">JO</span><span class="av" style="background:var(--amber2);color:#A86A0C;margin-right:0;box-shadow:0 0 0 2px #fff">+6</span></span></div>
+   <div class="alert">{{icon:triangle-alert:16:#B7770F}}<span><b>Cardiology near capacity.</b> 3 beds left. Consider moving 2 stable patients to step-down.</span></div>
+  </div>
+ </div>
+</main>
+</div>
+<script>
+const adm=[2,1,1,0,1,1,2,4,6,5,4,3,4,3,2,3,4,3,2,3,2,2,1,1];
+const dis=[0,0,0,0,0,0,1,1,2,3,4,5,6,5,4,3,2,2,1,1,0,1,0,0];
+const occ=[84,84.2,84.4,84.4,84.6,84.8,85.1,85.8,86.6,87.1,87.2,86.9,86.4,86.1,85.9,86,86.4,86.7,86.9,87.2,87.5,87.6,87.6,87.4];
+const svg=document.getElementById('flow');const Wd=svg.getBoundingClientRect().width,Ht=214,pl=30,pr=34,pt=8,pb=24;
+const iw=Wd-pl-pr,ih=Ht-pt-pb,n=24,bw=iw/n;let s='';
+for(let g=0;g<=4;g++){const y=pt+ih*g/4;s+=`<line x1="${pl}" x2="${Wd-pr}" y1="${y}" y2="${y}" stroke="#EEF1F0" ${g==4?'':'stroke-dasharray="3 4"'}/>`;
+ s+=`<text x="${pl-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#9AA3A1">${8-g*2}</text>`;
+ s+=`<text x="${Wd-pr+8}" y="${y+4}" font-size="11" fill="#9AA3A1">${90-g*1.5}%</text>`}
+for(let i=0;i<n;i++){const x=pl+i*bw;const h1=adm[i]/8*ih,h2=dis[i]/8*ih;
+ s+=`<rect x="${x+bw*.18}" y="${pt+ih-h1}" width="${bw*.28}" height="${Math.max(h1,1.5)}" rx="3" fill="#0E7C70"/>`;
+ s+=`<rect x="${x+bw*.52}" y="${pt+ih-h2}" width="${bw*.28}" height="${Math.max(h2,1.5)}" rx="3" fill="#BFE3DC"/>`;
+ if(i%3==0)s+=`<text x="${x+bw/2}" y="${Ht-4}" text-anchor="middle" font-size="11" fill="#9AA3A1">${String(i+14>23?i-10:i+14).padStart(2,'0')}:00</text>`}
+const py=v=>pt+ih-(v-84)/6*ih;let d='';occ.forEach((v,i)=>{const x=pl+i*bw+bw/2;d+=(i?'L':'M')+x+' '+py(v)});
+s+=`<path d="${d}" fill="none" stroke="#F2684A" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>`;
+const hi=20,hx=pl+hi*bw+bw/2,hy=py(occ[hi]);
+s+=`<line x1="${hx}" x2="${hx}" y1="${pt}" y2="${pt+ih}" stroke="#0F1514" stroke-opacity=".18" stroke-dasharray="3 3"/>`;
+s+=`<circle cx="${hx}" cy="${hy}" r="5" fill="#fff" stroke="#F2684A" stroke-width="2.4"/>`;
+s+=`<g transform="translate(${hx-148},${pt+2})"><rect width="136" height="58" rx="10" fill="#0F1514"/>
+<text x="12" y="20" font-size="11" fill="#9AA3A1">Today, 10:00</text>
+<text x="12" y="40" font-size="13" font-weight="600" fill="#fff">87.5% occupied</text></g>`;
+svg.innerHTML=s;
+</script>
+</body></html>
