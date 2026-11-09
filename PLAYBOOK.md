@@ -7,7 +7,7 @@ Every scheduled run follows this file. It covers what to post, how to design it,
 Match these approved posts exactly in presentation; only the design inside the screen changes:
 - App → `posts/2026-11/2026-11-09-fintech-home.jpg` (hand holding phone, 4:5 version from `tools/render.py app`)
 - Dashboard → `posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-1.jpg` … `-3.jpg` (**3-slide carousel**: full window, left half, right half; no popup/zoom card)
-- Website → `posts/2026-11/2026-11-10-am-meeting-notes-website.jpg` (two long page cards)
+- Website → `posts/2026-11/2026-11-10-am-meeting-notes-website-1.jpg` … `-7.jpg` (**carousel**: whole home page in two columns, top of page large, then the whole page rotated 90° in equal bands through the footer)
 
 Always: 1080×1350, `#EEEEEE` background, light UI, no CTA bar, no "Designed by" strip, no extra text on the canvas.
 Do not edit `tools/render.py` or the mockup assets unless the owner asks.
@@ -37,9 +37,9 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 |---|---|---|---|
 | dashboard | **carousel, exactly 3 slides**: 1 full screen, 2 left half, 3 right half | `python3 tools/carousel.py designs/<dir> dashboard posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg -2.jpg -3.jpg` | Windsor `create_carousel_post` with the 3 URLs in order |
 | app | single image (carousel not approved yet) | `tools/render.py … app` | `create_image_post` |
-| website | single image (carousel not approved yet) | `tools/render.py … website` | `create_image_post` |
+| website | **carousel, 5–10 slides**: 1 whole home page in two columns, 2 top of page large, 3+ whole page rotated 90° in equal bands ending on the footer | `python3 tools/carousel.py designs/<dir> website posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg … -N.jpg` | Windsor `create_carousel_post` with all URLs in order (max 10) |
 
-Only change app/website to carousels if the owner approves it later. Store carousel paths in the slot as `images` (list) and leave `image` null.
+Only change app posts to carousels if the owner approves it later. Keep website pages 4500–7000px tall so the rotated part fits in at most 8 slides. Store carousel paths in the slot as `images` (list) and leave `image` null.
 
 ## Designing a post
 
@@ -128,8 +128,8 @@ Do all of this on **every** post. Nothing here may break the locked format.
 2. Public URL: `https://raw.githubusercontent.com/abirhasanrakib92-tech/instagram-posts/main/<path to jpg>`.
    Confirm it returns HTTP 200 and `image/jpeg` before posting.
 3. Post with Windsor.ai: `execute_action`, connector `instagram`, account `17841402898456368`:
-   dashboards → action `create_carousel_post`, params `{image_urls: [slide1, slide2, slide3], caption}`;
-   app/website → action `create_image_post`, params `{image_url, caption}`.
+   dashboards and websites → action `create_carousel_post`, params `{image_urls: [all slides in order], caption}`;
+   app → action `create_image_post`, params `{image_url, caption}`.
    Verify every URL returns HTTP 200 first.
 4. Caption: follow **Growth rules** below (keyword first line, hook, save/share prompt, question, max 5 researched hashtags).
 5. Save the caption, image path and `media_id` in the slot, set `posted`, commit, push.

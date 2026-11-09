@@ -9,8 +9,8 @@ Style (from the owner's reference posts): every slide uses the same #EEEEEE back
 close-ups are BIG and bleed off the canvas edges, no labels, no extra text, and the slides
 pan across the same design so people swipe through it.
   dashboard -> 3 slides: full window, left half, right half (owner's spec)
-  website   -> 6 slides: two-card overview, top section zoom, then the long page rotated 90°
-               in consecutive bands (page top on the left), bleeding off both sides
+  website   -> whole home page in two columns, top of page large, then the whole page rotated 90°
+               in consecutive bands through the footer (owner's spec)
   app       -> 4 slides: hand+phone cover, then close-ups into the top, middle and bottom of the phone
 """
 import asyncio, sys, pathlib, base64
@@ -79,37 +79,66 @@ async def dashboard(d, work, prefix, b):
 
 
 async def website(d, work, prefix, b):
-    page = Image.open(work / 'screen.png').convert('RGB')     # 1440 css wide at 1.5x, from the cover render
+    """Owner's spec (2026-11-09): 1) whole home page in two columns, 2) top of the page large,
+    3+) the whole home page rotated 90° in consecutive bands, through to the footer."""
+    page = Image.open(work / 'screen.png').convert('RGB')     # 1440 css wide at 1.5x, from R.main
     pw, ph = page.size
-    # slide 2: the top of the page, large, in one card (like the reference's second slide)
-    cw = 900
+    uri = lambda im: 'data:image/png;base64,' + base64.b64encode(_png_bytes(im)).decode()
+
+    # slide 1: left column = page from the top (bleeds off the bottom), right column = page bottom-aligned
+    # (ends at the footer), narrower, so together they show the whole home page.
+    lw, rw, gap, top = 600, 360, 26, 70
+    lx = (W - lw - rw - gap) // 2
+    lsc, rsc = lw / pw, rw / pw
+    left = page.crop((0, 0, pw, min(ph, round((H - top + 40) / lsc))))
+    rh = H - top - 70                           # ends inside the frame so the footer shows
+    right = page.crop((0, max(0, ph - round(rh / rsc)), pw, ph))
+    html = f"""<!doctype html><html><head><meta charset=utf-8><style>{R.STAGE_CSS}
+.col{{position:absolute;top:{top}px;background:#fff;border-radius:6px;overflow:hidden;
+box-shadow:0 0 0 1px rgba(0,0,0,.05),0 30px 60px -30px rgba(20,20,30,.3)}}</style></head><body><div class="stage">
+<div class="col" style="left:{lx}px;width:{lw}px;height:{H-top+40}px;background:url({uri(left)}) 0 0/100% auto no-repeat"></div>
+<div class="col" style="left:{lx+lw+gap}px;width:{rw}px;height:{rh}px;background:url({uri(right)}) 0 100%/100% auto no-repeat"></div>
+</div></body></html>"""
+    p = work / 'web1.html'
+    p.write_text(html)
+    await shot_html(b, p, work / 'web1.png', {'width': W, 'height': H}, 2)
+    save(Image.open(work / 'web1.png').resize((W, H), Image.LANCZOS), f'{prefix}-1.jpg')
+
+    # slide 2: the top of the page, large, centred
+    cw, ctop = 900, 110
     sc = cw / pw
-    card_h = H - 150 - 60
-    top = page.crop((0, 0, pw, round(card_h / sc)))
-    html = f"""<!doctype html><html><head><meta charset=utf-8><style>{R.STAGE_CSS}</style></head><body><div class="stage">
-<div class="frame" style="left:{(W-cw-14)//2}px;top:150px;border-radius:24px"><div class="inner" style="width:{cw}px;height:{card_h}px;border-radius:17px;
-background:url({'data:image/png;base64,' + base64.b64encode(_png_bytes(top)).decode()}) 0 0/100% auto no-repeat"></div></div></div></body></html>"""
+    card_h = H - ctop - 90
+    topimg = page.crop((0, 0, pw, round(card_h / sc)))
+    html = f"""<!doctype html><html><head><meta charset=utf-8><style>{R.STAGE_CSS}
+.col{{position:absolute;background:#fff;border-radius:6px;overflow:hidden;
+box-shadow:0 0 0 1px rgba(0,0,0,.05),0 40px 80px -30px rgba(20,20,30,.3)}}</style></head><body><div class="stage">
+<div class="col" style="left:{(W-cw)//2}px;top:{ctop}px;width:{cw}px;height:{card_h}px;background:url({uri(topimg)}) 0 0/100% auto no-repeat"></div>
+</div></body></html>"""
     p = work / 'web2.html'
     p.write_text(html)
     await shot_html(b, p, work / 'web2.png', {'width': W, 'height': H}, 2)
     save(Image.open(work / 'web2.png').resize((W, H), Image.LANCZOS), f'{prefix}-2.jpg')
-    # slides 3..6: page rotated 90° counter-clockwise (page top on the left), consecutive bands
-    band = H - 2 * 96                       # rotated page height on canvas (= page width)
+
+    # slides 3..10: whole page rotated 90° counter-clockwise (page top on the left), consecutive bands
+    band = H - 2 * 100
     s = band / pw
     rot = page.rotate(90, expand=True).resize((round(ph * s), band), Image.LANCZOS)
-    # rot: x = page y (top at left), y = page x (left edge at bottom)
-    seg = W - 70                             # each slide advances by this much; the next slide starts where this one bleeds off
-    x = 0
-    for n in range(3, 7):
-        if x >= rot.size[0] - 200:
-            break
+    rw_total = rot.size[0]
+    # The rotated page sits on a long strip with a 150px margin before its top and after its footer.
+    # Split that strip into k equal canvas-wide windows (k = fewest that fit, max 8); any tiny overlap is spread evenly.
+    import math
+    span = rw_total + 300
+    k = min(8, max(1, math.ceil(span / W)))
+    step = (span - W) / (k - 1) if k > 1 else 0
+    for i in range(k):
         c = Image.new('RGB', (W, H), BG)
-        start_x = 70 if n == 3 else 0        # first rotated slide shows a small margin on the left, like the reference
-        piece = rot.crop((x, 0, min(x + W - start_x, rot.size[0]), band))
-        c.paste(piece, (start_x, 96))
-        save(c, f'{prefix}-{n}.jpg')
-        x += W - start_x - 0
-    return
+        off = round(150 - i * step)                  # where the rotated page's left edge lands on this canvas
+        a0 = max(0, -off)
+        c.paste(rot.crop((a0, 0, min(rw_total, a0 + W - max(0, off)), band)), (max(0, off), 100))
+        save(c, f'{prefix}-{i + 3}.jpg')
+    x = rw_total if span <= 8 * W else 0
+    if x < rw_total:
+        print('WARNING: page longer than 8 rotated slides; shorten the page')
 
 
 def _png_bytes(img):

@@ -46,10 +46,19 @@
    "palette_hint": "cream + tangerine",
    "status": "ready",
    "design_dir": "designs/2026-11-10-am-meeting-notes-website",
-   "image": "posts/2026-11/2026-11-10-am-meeting-notes-website.jpg",
+   "image": null,
    "caption": "AI meeting notes SaaS landing page design\nNobody wants to be the note-taker. ✍️\n\nThe hero shows the real product (summary, action items, live transcript) instead of a vague illustration, so visitors understand it in five seconds.\n\nSave this for your next landing page 📌\nSerif headline or sans: which works better for SaaS? 👇\n\n#landingpage #webdesign #uidesign #saasdesign #aitools",
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website",
+   "images": [
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-1.jpg",
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-2.jpg",
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-3.jpg",
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-4.jpg",
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-5.jpg",
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-6.jpg",
+    "posts/2026-11/2026-11-10-am-meeting-notes-website-7.jpg"
+   ]
   },
   {
    "id": "2026-11-10-pm",
@@ -97,7 +106,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-12-am",
@@ -145,7 +154,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-13-pm",
@@ -193,7 +202,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-15-am",
@@ -241,7 +250,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-16-pm",
@@ -289,7 +298,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-18-am",
@@ -337,7 +346,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-19-pm",
@@ -385,7 +394,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-21-am",
@@ -433,7 +442,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-22-pm",
@@ -481,7 +490,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-24-am",
@@ -529,7 +538,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-25-pm",
@@ -577,7 +586,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-27-am",
@@ -625,7 +634,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-28-pm",
@@ -673,7 +682,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-11-30-am",
@@ -721,7 +730,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-12-01-pm",
@@ -769,7 +778,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-12-03-am",
@@ -817,7 +826,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-12-04-pm",
@@ -865,7 +874,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-12-06-am",
@@ -913,7 +922,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-12-07-pm",
@@ -961,7 +970,7 @@
    "image": null,
    "caption": null,
    "media_id": null,
-   "format": "single"
+   "format": "carousel-website"
   },
   {
    "id": "2026-12-09-am",
