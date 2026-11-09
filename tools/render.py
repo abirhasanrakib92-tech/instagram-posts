@@ -6,8 +6,7 @@ Usage:
 
 The design dir holds screen.html (plus any images it uses).
   app        -> screen.html is a 393x852 phone screen; composited into the hand-holding-phone photo
-  dashboard  -> screen.html is a 1440x960 web app; shown in a browser window, plus a zoom card of
-                the element marked data-zoom (optional)
+  dashboard  -> screen.html is a 1440x960 web app; shown alone in one browser window (no zoom card)
   website    -> screen.html is a 1440px-wide landing page, 4500-6500px tall; shown as two long cards
 
 Icons: write {{icon:<lucide-name>:<size>:<#hex>[:<stroke-width>]}} anywhere in the HTML.
@@ -170,9 +169,7 @@ async def main(design_dir, kind, out):
         elif kind == 'dashboard':
             pg = await b.new_page(viewport={'width': 1440, 'height': 960}, device_scale_factor=2)
             await shoot(pg, rendered.as_uri(), work / 'screen.png')
-            zoom = await pg.evaluate("""()=>{const e=document.querySelector('[data-zoom]');if(!e)return null;
-              const r=e.getBoundingClientRect();const p=Number(e.dataset.zoomPad||16);
-              return [r.left-p,r.top-p,r.width+2*p,r.height+2*p]}""")
+            zoom = None  # owner wants a single dashboard screen, no zoom/popup card
             url = await pg.evaluate("()=>document.querySelector('meta[name=mock-url]')?.content||'app.example.com'")
             stage = work / 'stage.html'
             stage.write_text(dashboard_stage(b64(work / 'screen.png'), url, zoom))

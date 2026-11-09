@@ -36,7 +36,7 @@ The renderer handles the mockup; you only design the screen.
 | type | screen.html size | mockup the renderer adds |
 |---|---|---|
 | app | 393×852 (iPhone) | hand holding the phone (the owner's reference photo) |
-| dashboard | 1440×960, no scroll | light browser window, centered; plus a zoom card of the element with `data-zoom` |
+| dashboard | 1440×960, no scroll | one light browser window, centered. **Single screen only: no zoom card, no popup, no modal, no floating overlay** |
 | website | 1440 wide, 4500–8000 tall | two long cards: top of the page in front, lower sections peeking behind |
 
 Conventions:
@@ -44,7 +44,7 @@ Conventions:
   Figtree, Onest, Outfit, Sora, Urbanist, Space Grotesk, Bricolage Grotesque, Instrument Sans, Instrument Serif, Fraunces, JetBrains Mono.
   Rotate fonts between posts.
 - Icons: `{{icon:<lucide-name>:<size>:<#hex>[:<stroke>]}}` (names from `node_modules/lucide-static/icons`).
-- Dashboard: `<meta name="mock-url" content="app.<brand>.com">` for the address bar; put `data-zoom` on the one card worth showing up close.
+- Dashboard: `<meta name="mock-url" content="app.<brand>.com">` for the address bar. Design the full screen only; never add popups, modals, dropdowns, toasts or tooltips floating over the layout (a small chart hover label inside a chart is fine).
 - App: draw the iOS status bar (9:41, signal, wifi, battery) at the top 54px and the home indicator at the bottom; the island comes from the photo.
 
 ### Quality bar (check every one before rendering)
