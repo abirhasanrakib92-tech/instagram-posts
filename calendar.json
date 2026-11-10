@@ -80,11 +80,11 @@
    "niche": "Habit tracker with streaks and gentle reminders",
    "brand": "Ripple",
    "palette_hint": "coral + warm white",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-10-pm-ripple-habit-app",
    "image": null,
    "caption": "Your habit app shouldn't make you feel guilty.\nHabit tracker app UI design: streaks, weekly rings and gentle reminders\n\nRipple shows the whole week as progress rings, puts today's score front and centre, and keeps the add button one thumb away.\n\nSave this for your next mobile project\nRings or checkmarks: which keeps you more consistent?\n\n#mobileappdesign #uidesign #appdesign #habittracker #productdesign",
-   "media_id": null,
+   "media_id": "18135927160666584",
    "format": "carousel-app",
    "slug": "ripple-habit-app",
    "ai": false,
@@ -95,7 +95,8 @@
     "posts/2026-11/2026-11-10-pm-ripple-habit-app-3.jpg",
     "posts/2026-11/2026-11-10-pm-ripple-habit-app-4.jpg",
     "posts/2026-11/2026-11-10-pm-ripple-habit-app-5.jpg"
-   ]
+   ],
+   "posted_at": "2026-11-10T20:42+06:00"
   },
   {
    "id": "2026-11-11-am",
