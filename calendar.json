@@ -46,11 +46,11 @@
       "niche": "AI meeting notes SaaS landing page",
       "brand": "Murmur",
       "palette_hint": "cream + tangerine",
-      "status": "ready",
+      "status": "posted",
       "design_dir": "designs/2026-11-10-am-meeting-notes-website",
       "image": null,
       "caption": "AI meeting notes SaaS landing page design\nNobody wants to be the note-taker. ✍️\n\nThe hero shows the real product (summary, action items, live transcript) instead of a vague illustration, so visitors understand it in five seconds.\n\nSave this for your next landing page 📌\nSerif headline or sans: which works better for SaaS? 👇\n\n#landingpage #webdesign #uidesign #saasdesign #aitools",
-      "media_id": null,
+      "media_id": "17896210947615746",
       "format": "carousel-website",
       "images": [
         "posts/2026-11/2026-11-10-am-meeting-notes-website-1.jpg",
@@ -60,7 +60,8 @@
         "posts/2026-11/2026-11-10-am-meeting-notes-website-5.jpg",
         "posts/2026-11/2026-11-10-am-meeting-notes-website-6.jpg",
         "posts/2026-11/2026-11-10-am-meeting-notes-website-7.jpg"
-      ]
+      ],
+      "posted_at": "2026-11-10T08:39+06:00"
     },
     {
       "id": "2026-11-10-pm",
