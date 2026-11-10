@@ -113,7 +113,7 @@ Do all of this on **every** post. Nothing here may break the locked format.
 
 ### 3. Hook first, then SEO (owner's standing order: every post needs a hook)
 Only the first line shows before "more", so **line 1 is always the hook**. Every caption, every platform.
-- **Line 1 = hook**, under ~90 characters, one emoji at the end at most. It must stop the scroll on its own.
+- **Line 1 = hook**, under ~90 characters. It must stop the scroll on its own.
   Hook formulas that work for design content (rotate them, never reuse the same hook twice):
   - Bold opinion: “Your habit app shouldn't make you feel guilty.”
   - Surprising number: “68% of support chats, solved without a human.”
@@ -125,15 +125,16 @@ Only the first line shows before "more", so **line 1 is always the hook**. Every
 - **Line 2 = plain searchable description** with the main keywords (Instagram search and Google index it), e.g.
   `Hospital dashboard UI design: bed capacity & patient flow`.
 - 1–2 short sentences on the design decisions.
-- A save or share prompt, e.g. `Save this for your next dashboard project 📌` or `Send this to a dev who'd build it`.
-- A question to drive comments, ending with 👇
+- A save or share prompt, e.g. `Save this for your next dashboard project` or `Send this to a dev who'd build it`.
+- A question to drive comments.
 - Blank line, then the 5 hashtags. Total under 2,200 characters, English.
 - LinkedIn captions follow the same rule: the first line is the hook.
+- **No emojis anywhere** (captions, LinkedIn posts, comment replies). The owner wants writing that reads like a person, not like AI. Also avoid other AI tells: no "Let's dive in", no "game-changer", no stacked buzzwords.
 
 ### 4. Comment replies (every run, after publishing)
 - Read comments on posts from the last 3 days with Windsor `get_data` (connector `instagram`; call `get_fields` first to find
   the comment fields; widen the date range if empty).
-- Reply to every new genuine comment with `reply_to_comment`: short, warm, specific to what they said, English,
+- Reply to every new genuine comment with `reply_to_comment`: short, warm, specific to what they said, English, no emojis,
   ideally ending with a small question to keep the thread going. Never reply twice to the same comment.
 - Hide obvious spam/scam/bot comments with `hide_comment` (never delete).
 - Note replied comment ids in `calendar.json` under the slot (`replied_comment_ids`) so later runs skip them.
