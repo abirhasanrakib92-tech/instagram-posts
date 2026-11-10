@@ -111,14 +111,24 @@ Do all of this on **every** post. Nothing here may break the locked format.
 - Never use generic or spammy tags: `#explore #viral #reels #fyp #instagood #likeforlike`.
 - Put the hashtags at the end of the caption.
 
-### 3. Caption SEO (Instagram search and Google index captions)
-- **Line 1 = plain searchable description** with the main keywords, e.g.
+### 3. Hook first, then SEO (owner's standing order: every post needs a hook)
+Only the first line shows before "more", so **line 1 is always the hook**. Every caption, every platform.
+- **Line 1 = hook**, under ~90 characters, one emoji at the end at most. It must stop the scroll on its own.
+  Hook formulas that work for design content (rotate them, never reuse the same hook twice):
+  - Bold opinion: “Your habit app shouldn't make you feel guilty.”
+  - Surprising number: “68% of support chats, solved without a human.”
+  - Relatable pain: “Nobody started a business to do bookkeeping.”
+  - Reframe: “Range anxiety is really information anxiety.”
+  - Mini-story / question the user would ask: “I asked my budget app ‘can I afford Japan?’ and it answered.”
+  - Contrast: “Every AI product says ‘automate’. This one shows how.”
+  Avoid weak openers: “Here's my new design”, “Check this out”, “New shot”, “UI design for…”.
+- **Line 2 = plain searchable description** with the main keywords (Instagram search and Google index it), e.g.
   `Hospital dashboard UI design: bed capacity & patient flow`.
-- Line 2: the hook (the problem this design solves), one emoji max.
 - 1–2 short sentences on the design decisions.
 - A save or share prompt, e.g. `Save this for your next dashboard project 📌` or `Send this to a dev who'd build it`.
 - A question to drive comments, ending with 👇
 - Blank line, then the 5 hashtags. Total under 2,200 characters, English.
+- LinkedIn captions follow the same rule: the first line is the hook.
 
 ### 4. Comment replies (every run, after publishing)
 - Read comments on posts from the last 3 days with Windsor `get_data` (connector `instagram`; call `get_fields` first to find
@@ -140,7 +150,7 @@ Do all of this on **every** post. Nothing here may break the locked format.
 3. Post with Windsor.ai: `execute_action`, connector `instagram`, account `17841402898456368`:
    every post → action `create_carousel_post`, params `{image_urls: [all slides in order], caption}`.
    Verify every URL returns HTTP 200 first.
-4. Caption: follow **Growth rules** below (keyword first line, hook, save/share prompt, question, max 5 researched hashtags).
+4. Caption: follow **Growth rules** below (hook on line 1, keywords on line 2, save/share prompt, question, max 5 researched hashtags).
 5. Save the caption, image path and `media_id` in the slot, set `posted`, commit, push.
 
 Commit messages end with:
