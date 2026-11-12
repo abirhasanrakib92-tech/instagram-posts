@@ -168,11 +168,11 @@
    "niche": "AI personal finance assistant (chat + spending insights)",
    "brand": "Penny",
    "palette_hint": "violet + mint",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-12-am-penny-ai-finance-app",
    "image": null,
    "caption": "I asked my budget app “can I afford Japan?” and it actually answered.\nAI personal finance app UI design: chat assistant with real numbers\n\nPenny answers money questions with your actual balance, a savings plan and one-tap actions right inside the chat.\n\nSave this for your next AI app\nWould you rather chat with your budget or scroll through it?\n\n#aidesign #fintechdesign #mobileappdesign #uidesign #chatbotdesign",
-   "media_id": null,
+   "media_id": "18079485848448926",
    "format": "carousel-app",
    "slug": "penny-ai-finance-app",
    "ai": true,
@@ -186,7 +186,8 @@
    ],
    "replied_comment_ids": [
     "18000636189033178"
-   ]
+   ],
+   "permalink": "https://www.instagram.com/p/DfoAK8UAjt6/"
   },
   {
    "id": "2026-11-12-pm",
@@ -197,11 +198,11 @@
    "niche": "Fleet & last-mile delivery tracking with live map",
    "brand": "Routewise",
    "palette_hint": "electric blue + amber",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-12-pm-routewise-fleet-dashboard",
    "image": null,
    "caption": "48 vans, 1,620 deliveries, 3 seconds to spot the problem.\nFleet tracking dashboard UI design: live map and delivery operations\n\nThe live map takes centre stage, late vans are flagged in amber, and the AI suggests a re-route before the delay spreads.\n\nSave this for your next logistics project\nMap first or list first for an ops dashboard?\n\n#dashboarddesign #logisticsdesign #uidesign #saasdesign #dataviz",
-   "media_id": null,
+   "media_id": "18138404431699659",
    "format": "carousel-dashboard",
    "slug": "routewise-fleet-dashboard",
    "ai": false,
