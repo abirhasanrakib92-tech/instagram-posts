@@ -251,25 +251,31 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "Grocery delivery",
-   "brand": "Basketly",
-   "palette_hint": "fresh green + citrus",
-   "status": "posted",
-   "design_dir": "designs/2026-11-13-pm-basketly-grocery-app",
+   "niche": "Reformer pilates studio booking",
+   "brand": "Lumea",
+   "palette_hint": "clay + oat",
+   "status": "ready",
+   "design_dir": "designs/2026-11-13-pm-lumea-pilates-app",
    "image": null,
-   "caption": "Your weekly grocery shop in under 20 minutes, with one thumb.\nGrocery delivery app UI design: fresh, fast and thumb-friendly\n\nDelivery time sits up top, categories are one tap away, and the cart floats above the tab bar so it's always in reach.\n\nSave this for your next e-commerce app\nFloating cart bar: helpful or distracting?\n\n#mobileappdesign #uidesign #appdesign #ecommercedesign #fooddelivery",
-   "media_id": "18140688781630485",
+   "caption": "Booking a class should feel as calm as the class itself.\nPilates studio app UI design: glassmorphism class booking with real photos\n\nThe next class sits on a frosted glass card over the studio photo, with the instructor, time and a one-tap check-in. Monthly progress and the week ahead stay right below.\n\nSave this for your next wellness app\nGlass cards on photos: elegant or hard to read?\n\n#uiux #mobileappdesign #glassmorphism #fitnessapp #pilates",
+   "media_id": null,
    "format": "carousel-app",
-   "slug": "basketly-grocery-app",
-   "ai": false,
+   "slug": "lumea-pilates-app",
+   "ai": true,
    "week1": true,
    "images": [
-    "posts/2026-11/2026-11-13-pm-basketly-grocery-app-1.jpg",
-    "posts/2026-11/2026-11-13-pm-basketly-grocery-app-2.jpg",
-    "posts/2026-11/2026-11-13-pm-basketly-grocery-app-3.jpg",
-    "posts/2026-11/2026-11-13-pm-basketly-grocery-app-4.jpg",
-    "posts/2026-11/2026-11-13-pm-basketly-grocery-app-5.jpg"
-   ]
+    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-1.jpg",
+    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-2.jpg",
+    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-3.jpg",
+    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-4.jpg",
+    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-5.jpg"
+   ],
+   "replaced": {
+    "brand": "Basketly",
+    "media_id": "18140688781630485",
+    "design_dir": "designs/2026-11-13-pm-basketly-grocery-app",
+    "reason": "Owner disliked the design (emoji imagery); asked for a glassmorphism redesign with real photos and to remove the Basketly post manually"
+   }
   },
   {
    "id": "2026-11-14-am",

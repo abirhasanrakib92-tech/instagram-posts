@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Pilates Studio">
+<meta name="app-desc" content="A calm booking app for a reformer pilates studio, where members can **book a class in one tap**, see their instructor and spot, and **track every session** toward their monthly goal.">
+<meta name="fonts" content="Figtree|A soft, friendly sans with generous curves that keeps a wellness product calm, clear and easy to scan.">
+<meta name="palette" content="#B9724F:Clay|#2A2420:Espresso|#F4EEE8:Oat|#FFFFFF:White|#E8D9C9:Linen|#8C9A7E:Sage">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:393px;height:852px;overflow:hidden;background:#F4EEE8;font-family:'Figtree';color:#2A2420;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.screen{position:relative;width:393px;height:852px;background:radial-gradient(120% 60% at 100% 0%,#EADBCB 0%,#F4EEE8 55%);overflow:hidden}
+.status{height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 26px 0 32px;font-weight:600;font-size:16px}
+.status .r{display:flex;gap:6px;align-items:center}
+.top{display:flex;align-items:center;justify-content:space-between;padding:6px 20px 0}
+.top small{font-size:13px;color:#8A7D73;font-weight:500}.top h1{font-size:26px;font-weight:700;letter-spacing:-.8px;margin-top:2px}
+.ib{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.7);border:1px solid #fff;display:grid;place-items:center;position:relative}
+.ib:after{content:"";position:absolute;top:12px;right:13px;width:7px;height:7px;border-radius:50%;background:#B9724F}
+.hero{margin:16px 16px 0;height:392px;border-radius:32px;background:url(photo.jpg) no-repeat;background-size:440px auto;background-position:-30px -60px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,36,32,0) 45%,rgba(42,36,32,.35) 100%)}
+.g{background:rgba(255,255,255,.22);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,.45)}
+.live{position:absolute;left:14px;top:14px;z-index:2;background:rgba(42,36,32,.32);display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:600;color:#fff}
+.live i{width:7px;height:7px;border-radius:50%;background:#9BE07B;box-shadow:0 0 0 3px rgba(155,224,123,.3)}
+.nc{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;border-radius:24px;padding:16px;color:#fff}
+.nc small{font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;opacity:.9}
+.nc h2{font-size:23px;font-weight:700;letter-spacing:-.6px;margin-top:4px}
+.nc .m{display:flex;gap:14px;margin-top:8px;font-size:13px;font-weight:500;opacity:.95}
+.nc .m span{display:flex;align-items:center;gap:5px}
+.nc .b{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.ins{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.ins i{width:32px;height:32px;border-radius:50%;background:#E8D9C9;color:#2A2420;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700}
+.ins small{display:block;font-size:11.5px;opacity:.8;text-transform:none;letter-spacing:0;font-weight:500}
+.btn{height:44px;padding:0 18px;border-radius:999px;background:#fff;color:#2A2420;font-weight:700;font-size:14px;display:flex;align-items:center;gap:6px}
+.stats{display:flex;gap:10px;margin:14px 16px 0}
+.st{flex:1;background:rgba(255,255,255,.75);border:1px solid #fff;border-radius:24px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.st small{white-space:nowrap}.st b{display:block;font-size:21px;white-space:nowrap;font-weight:700;letter-spacing:-.6px}
+.st small{font-size:12px;color:#8A7D73;font-weight:500}
+.ring{width:46px;height:46px;flex:none}
+.week{display:flex;justify-content:space-between;margin:14px 16px 0;background:rgba(255,255,255,.75);border:1px solid #fff;border-radius:24px;padding:10px}
+.d{width:40px;padding:8px 0;border-radius:16px;text-align:center;font-size:11.5px;color:#8A7D73;font-weight:600}
+.d b{display:block;font-size:16px;color:#2A2420;margin-top:3px}
+.d.on{background:#2A2420;color:#E8D9C9}.d.on b{color:#fff}
+.d em{display:block;width:5px;height:5px;border-radius:50%;background:#B9724F;margin:4px auto 0}
+.d.on em{background:#E8D9C9}
+.tab{position:absolute;left:16px;right:16px;bottom:26px;height:68px;border-radius:999px;background:#2A2420;display:flex;align-items:center;justify-content:space-between;padding:0 9px;box-shadow:0 16px 36px rgba(42,36,32,.22)}
+.tab div{width:50px;height:50px;border-radius:50%;display:grid;place-items:center}
+.tab .on{width:auto;padding:0 18px;border-radius:999px;background:#E8D9C9;display:flex;gap:7px;font-size:14px;font-weight:700;color:#2A2420}
+.home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#2A2420}
+</style></head><body><div class="screen">
+<div class="status"><span>9:41</span><span class="r">{{icon:signal:17:#2A2420:2.4}}{{icon:wifi:17:#2A2420:2.4}}{{icon:battery-full:24:#2A2420:1.8}}</span></div>
+<div class="top"><div><small>Friday, 13 November</small><h1>Hi Sara, ready to move?</h1></div><div class="ib">{{icon:bell:20:#2A2420:2}}</div></div>
+<div class="hero">
+ <div class="live g"><i></i>Studio 2 · 6 spots left</div>
+ <div class="nc g">
+  <small>Your next class</small>
+  <h2>Reformer Flow · Level 2</h2>
+  <div class="m"><span>{{icon:clock:14:#fff:2.2}}Tomorrow, 7:30 AM</span><span>{{icon:timer:14:#fff:2.2}}50 min</span></div>
+  <div class="b"><div class="ins"><i>NR</i><div>Nadia Rahman<small>Instructor</small></div></div><div class="btn">Check in {{icon:arrow-up-right:16:#2A2420:2.4}}</div></div>
+ </div>
+</div>
+<div class="stats">
+ <div class="st"><svg class="ring" viewBox="0 0 46 46"><circle cx="23" cy="23" r="19" fill="none" stroke="#EADFD4" stroke-width="5"/><circle cx="23" cy="23" r="19" fill="none" stroke="#B9724F" stroke-width="5" stroke-linecap="round" stroke-dasharray="89.5 119.4" transform="rotate(-90 23 23)"/></svg><div><b>12/16</b><small>This month</small></div></div>
+ <div class="st"><div class="ring" style="border-radius:50%;background:#EEF0E8;display:grid;place-items:center">{{icon:flame:22:#8C9A7E:2.2}}</div><div><b>5 weeks</b><small>Streak</small></div></div>
+</div>
+<div class="week">
+ <div class="d on">Sat<b>14</b><em></em></div><div class="d">Sun<b>15</b></div><div class="d">Mon<b>16</b><em></em></div><div class="d">Tue<b>17</b></div><div class="d">Wed<b>18</b><em></em></div><div class="d">Thu<b>19</b></div><div class="d">Fri<b>20</b></div>
+</div>
+<div class="tab">
+ <div class="on">{{icon:house:20:#2A2420:2.2}}Home</div>
+ <div>{{icon:calendar-days:22:#E8D9C9:2}}</div>
+ <div>{{icon:chart-no-axes-column:22:#E8D9C9:2}}</div>
+ <div>{{icon:user-round:22:#E8D9C9:2}}</div>
+</div>
+<div class="home"></div>
+</div></body></html>
