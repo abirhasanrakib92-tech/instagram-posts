@@ -251,31 +251,39 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "Reformer pilates studio booking",
-   "brand": "Lumea",
-   "palette_hint": "clay + oat",
-   "status": "posted",
-   "design_dir": "designs/2026-11-13-pm-lumea-pilates-app",
+   "niche": "Boutique villa & hotel booking",
+   "brand": "Solace Stays",
+   "palette_hint": "deep sea + sunset",
+   "status": "ready",
+   "design_dir": "designs/2026-11-13-pm-solace-stays-app",
    "image": null,
-   "caption": "Booking a class should feel as calm as the class itself.\nPilates studio app UI design: glassmorphism class booking with real photos\n\nThe next class sits on a frosted glass card over the studio photo, with the instructor, time and a one-tap check-in. Monthly progress and the week ahead stay right below.\n\nSave this for your next wellness app\nGlass cards on photos: elegant or hard to read?\n\n#uiux #mobileappdesign #glassmorphism #fitnessapp #pilates",
-   "media_id": "17937353991407720",
+   "caption": "You'd book this villa before reading a single word.\nTravel booking app UI design: glassmorphism over real photography\n\nThe photo is the interface. Frosted glass cards float over the villa with the rating, key features, live price and a two-tap reserve, so the place sells itself.\n\nSave this for your next travel app\nWould you trust a booking app that shows the view first?\n\n#uiux #mobileappdesign #glassmorphism #travelapp #hotelbooking",
+   "media_id": null,
    "format": "carousel-app",
-   "slug": "lumea-pilates-app",
+   "slug": "solace-stays-app",
    "ai": true,
    "week1": true,
    "images": [
-    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-1.jpg",
-    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-2.jpg",
-    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-3.jpg",
-    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-4.jpg",
-    "posts/2026-11/2026-11-13-pm-lumea-pilates-app-5.jpg"
+    "posts/2026-11/2026-11-13-pm-solace-stays-app-1.jpg",
+    "posts/2026-11/2026-11-13-pm-solace-stays-app-2.jpg",
+    "posts/2026-11/2026-11-13-pm-solace-stays-app-3.jpg",
+    "posts/2026-11/2026-11-13-pm-solace-stays-app-4.jpg",
+    "posts/2026-11/2026-11-13-pm-solace-stays-app-5.jpg"
    ],
-   "replaced": {
-    "brand": "Basketly",
-    "media_id": "18140688781630485",
-    "design_dir": "designs/2026-11-13-pm-basketly-grocery-app",
-    "reason": "Owner disliked the design (emoji imagery); asked for a glassmorphism redesign with real photos and to remove the Basketly post manually"
-   }
+   "replaced": [
+    {
+     "brand": "Basketly",
+     "media_id": "18140688781630485",
+     "design_dir": "designs/2026-11-13-pm-basketly-grocery-app",
+     "reason": "Owner disliked the design (emoji imagery); asked for a glassmorphism redesign with real photos and to remove the Basketly post manually"
+    },
+    {
+     "brand": "Lumea",
+     "media_id": "17937353991407720",
+     "design_dir": "designs/2026-11-13-pm-lumea-pilates-app",
+     "reason": "Owner deleted it and chose the Solace Stays concept instead"
+    }
+   ]
   },
   {
    "id": "2026-11-14-am",
