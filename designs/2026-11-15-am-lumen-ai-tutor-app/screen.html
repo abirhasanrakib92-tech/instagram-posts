@@ -1,85 +1,76 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <meta name="app-name" content="AI Language Tutor">
-<meta name="app-desc" content="An AI language tutor you practice with out loud. Speak naturally, get **gentle corrections in real time**, and see your pronunciation improve with **a score after every sentence** you say.">
-<meta name="fonts" content="Figtree|Clean, friendly sans with generous counters. It keeps mixed-language transcripts easy to read at small sizes.">
-<meta name="palette" content="#2E8BFF:Sky|#0E1B2E:Midnight|#F3F8FF:Cloud|#FFFFFF:White|#FFD23F:Sunshine|#22C38E:Correct">
+<meta name="app-desc" content="An AI language tutor that drops you into **real-life scenes you can actually see**, like ordering breakfast in Seville, and gently corrects you **while you speak, not after**.">
+<meta name="fonts" content="Manrope|A clean, modern sans with open letterforms that stay readable over photos and in two languages at once.">
+<meta name="palette" content="#2C7BE5:Sky|#FFD23F:Sunshine|#0E1B2E:Ink|#EAF3FF:Mist|#FFFFFF:White|#22B573:Correct">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:393px;height:852px;overflow:hidden;background:#F3F8FF;font-family:'Figtree';color:#0E1B2E;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
-.screen{position:relative;width:393px;height:852px;padding:0 18px;background:linear-gradient(180deg,#DDEBFF 0%,#F3F8FF 42%)}
-.status{height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 14px 0 16px;font-weight:700;font-size:16px}
+html,body{width:393px;height:852px;overflow:hidden;background:#0E1B2E;font-family:'Manrope';color:#fff;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.screen{position:relative;width:393px;height:852px;overflow:hidden;background:url(photo.jpg) no-repeat;background-size:auto 900px;background-position:-120px -10px}
+.screen:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,46,.35) 0%,rgba(14,27,46,0) 22%,rgba(14,27,46,.28) 40%,rgba(14,27,46,.55) 70%,rgba(14,27,46,.75) 100%)}
+.screen>*{position:relative;z-index:1}
+.g{background:rgba(255,255,255,.16);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.3)}
+.status{height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 26px 0 32px;font-weight:700;font-size:16px}
 .status .r{display:flex;gap:6px;align-items:center}
-.top{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
-.ib{width:40px;height:40px;border-radius:14px;background:rgba(255,255,255,.8);display:grid;place-items:center}
-.lang{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:6px 14px 6px 6px;font-size:14px;font-weight:700}
-.lang i{width:28px;height:28px;border-radius:50%;background:#FFD23F;display:grid;place-items:center;font-style:normal;font-size:15px}
-.lang small{color:#6B7A92;font-weight:600}
-.tutor{display:flex;flex-direction:column;align-items:center;margin-top:22px}
-.orb{width:108px;height:108px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0%,#9CCBFF 30%,#2E8BFF 70%,#1A5FD0 100%);box-shadow:0 0 0 14px rgba(46,139,255,.12),0 0 0 30px rgba(46,139,255,.06),0 24px 40px -10px rgba(46,139,255,.6);position:relative}
-.orb:after{content:"";position:absolute;right:12px;top:16px;width:26px;height:26px;border-radius:50%;background:#FFD23F;filter:blur(6px);opacity:.9}
-.tutor b{font-size:18px;font-weight:800;margin-top:18px;letter-spacing:-.3px}
-.tutor small{font-size:13px;color:#6B7A92;font-weight:600;margin-top:3px}
-.bub{margin-top:14px;background:#fff;border-radius:6px 22px 22px 22px;padding:14px 15px;box-shadow:0 1px 0 #E3ECF8}
-.bub .es{font-size:15.5px;font-weight:700;line-height:1.4;letter-spacing:-.1px}
-.bub .en{font-size:12.5px;color:#6B7A92;margin-top:5px;line-height:1.4}
-.who{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:#6B7A92;margin-bottom:7px;text-transform:uppercase;letter-spacing:.5px}
-.me{margin-top:10px;background:#0E1B2E;color:#fff;border-radius:22px 6px 22px 22px;padding:14px 15px}
-.me .es{font-size:15.5px;font-weight:600;line-height:1.45}
-.me s{color:#FF8A8A;text-decoration-thickness:2px}
-.me .fix{background:rgba(34,195,142,.22);color:#5BF0BC;border-radius:6px;padding:0 4px}
-.me .who{color:#8EA0BC}
-.score{display:flex;gap:8px;margin-top:12px}
-.sc{flex:1;background:#fff;border-radius:18px;padding:11px 12px}
-.sc small{font-size:11.5px;color:#6B7A92;font-weight:600}
-.sc b{display:block;font-size:22px;font-weight:800;letter-spacing:-.6px;margin-top:2px}
-.sc .m{height:5px;border-radius:3px;background:#E8EFF9;margin-top:6px;overflow:hidden}
-.mic{position:absolute;left:0;right:0;bottom:106px;display:flex;align-items:center;justify-content:center;gap:22px}
-.mic .sm{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 8px 20px -12px rgba(14,27,46,.4)}
-.mic .big{width:78px;height:78px;border-radius:50%;background:#2E8BFF;display:grid;place-items:center;box-shadow:0 0 0 8px rgba(46,139,255,.18),0 16px 26px -10px rgba(46,139,255,.8)}
-.wave{position:absolute;left:0;right:0;bottom:192px;display:flex;justify-content:center;gap:3px;align-items:center;height:28px}
-.wave span{width:3px;border-radius:2px;background:#2E8BFF}
-.tab{position:absolute;left:18px;right:18px;bottom:26px;height:62px;display:flex;justify-content:space-around;align-items:center;border-radius:22px;background:#fff;box-shadow:0 10px 30px -16px rgba(14,27,46,.35)}
-.tab div{width:48px;height:46px;border-radius:15px;display:grid;place-items:center}
-.tab .on{background:#E3EFFF}
-.home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#0E1B2E}
-.lang i.es{font:700 10px/1 'Inter Tight';font-style:normal;color:#fff;background:#C8102E;display:grid;place-items:center;letter-spacing:.3px}
-</style></head>
-<body><div class="screen">
-<div class="status"><span>9:41</span><span class="r">
-<svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#0E1B2E"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#0E1B2E"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#0E1B2E"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#0E1B2E"/></svg>
-<svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 3.2c2.4 0 4.6.9 6.2 2.5l1.2-1.2C13.4 2.5 10.8 1.4 8 1.4S2.6 2.5.6 4.5l1.2 1.2C3.4 4.1 5.6 3.2 8 3.2zm0 3.6c1.4 0 2.7.5 3.7 1.4l1.2-1.2C11.6 5.7 9.9 5 8 5s-3.6.7-4.9 2l1.2 1.2c1-.9 2.3-1.4 3.7-1.4zM8 10.3l2-2c-.5-.5-1.2-.8-2-.8s-1.5.3-2 .8l2 2z" fill="#0E1B2E"/></svg>
-<svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="22" height="12" rx="3.8" fill="none" stroke="#0E1B2E" opacity=".35"/><rect x="2" y="2" width="19" height="9" rx="2.5" fill="#0E1B2E"/></svg></span></div>
-
-<div class="top"><div class="ib">{{icon:x:20:#0E1B2E:2.2}}</div>
- <div class="lang"><i class="es">ES</i>Spanish <small>· B1</small></div>
- <div class="ib">{{icon:languages:19:#0E1B2E}}</div></div>
-
-<div class="tutor"><div class="orb"></div><b>Talking with Sofía</b><small>Ordering at a market · 4:12</small></div>
-
-<div class="bub"><div class="who">{{icon:sparkles:12:#2E8BFF:2.4}}Sofía</div>
- <div class="es">¡Qué bien! ¿Y qué compraste en el mercado ayer?</div>
- <div class="en">Nice! And what did you buy at the market yesterday?</div></div>
-
-<div class="me"><div class="who">{{icon:mic:12:#8EA0BC:2.4}}You</div>
- <div class="es">Ayer <s>compro</s> <span class="fix">compré</span> unas manzanas y <s>un</s> <span class="fix">una</span> sandía muy grande.</div></div>
-
-<div class="score">
- <div class="sc"><small>Pronunciation</small><b style="color:#16A374">92</b><div class="m"><div style="width:92%;height:100%;background:#22C38E"></div></div></div>
- <div class="sc"><small>Grammar</small><b>2 fixes</b><div class="m"><div style="width:80%;height:100%;background:#FFD23F"></div></div></div>
- <div class="sc"><small>Streak</small><b>34 days</b><div class="m"><div style="width:100%;height:100%;background:#2E8BFF"></div></div></div>
+.top{display:flex;align-items:center;justify-content:space-between;padding:8px 18px 0}
+.ib{width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.lang{display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 6px;border-radius:999px;font-size:14px;font-weight:700}
+.lang i{width:32px;height:32px;border-radius:50%;background:#FFD23F;color:#0E1B2E;display:grid;place-items:center;font:800 11px 'Manrope';font-style:normal}
+.lang span{opacity:.75;font-weight:600}
+.scene{position:absolute;left:20px;right:20px;top:262px}
+.scene small{background:rgba(14,27,46,.35);display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px}
+.scene small i{width:7px;height:7px;border-radius:50%;background:#FF5A5F;box-shadow:0 0 0 3px rgba(255,90,95,.3)}
+.scene h1{font-size:30px;line-height:1.08;font-weight:800;letter-spacing:-1px;margin-top:12px;text-shadow:0 2px 20px rgba(14,27,46,.25)}
+.scene h1 span{color:#FFD23F}
+.chat{position:absolute;left:16px;right:16px;top:400px;display:flex;flex-direction:column;gap:10px}
+.b{border-radius:22px;padding:13px 15px}
+.b .who{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;opacity:.9}
+.b .who img{width:26px;height:26px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(255,255,255,.8)}
+.b p{font-size:16px;font-weight:700;line-height:1.3;margin-top:8px;letter-spacing:-.2px}
+.b em{display:block;font-style:normal;font-size:12.5px;opacity:.75;font-weight:500;margin-top:4px}
+.t{border-top-left-radius:8px;margin-right:34px}
+.me{margin-left:34px;border-top-right-radius:8px;background:rgba(255,255,255,.92);color:#0E1B2E;border:1px solid #fff}
+.me .who{color:#5B6B82;opacity:1;justify-content:flex-end}
+.me p{text-align:right}
+.me u{text-decoration:none;background:rgba(34,181,115,.16);color:#14935C;border-radius:6px;padding:0 4px}
+.tip{display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-top:8px;font-size:12px;font-weight:700;color:#14935C}
+.wave{display:flex;align-items:center;justify-content:center;gap:3px;height:26px;margin-top:2px}
+.wave i{width:3px;border-radius:2px;background:rgba(255,255,255,.85)}
+.ctl{position:absolute;left:0;right:0;bottom:104px;display:flex;align-items:center;justify-content:center;gap:28px}
+.cb{width:50px;height:50px;border-radius:50%;display:grid;place-items:center}
+.mic{width:78px;height:78px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#5FA2FF,#2C7BE5 65%);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(44,123,229,.25),0 0 0 16px rgba(255,255,255,.08),0 18px 40px rgba(44,123,229,.45)}
+.tab{position:absolute;left:50%;transform:translateX(-50%);bottom:26px;height:64px;width:290px;border-radius:999px;background:rgba(14,27,46,.55);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:space-between;padding:0 8px}
+.tab div{width:48px;height:48px;border-radius:50%;display:grid;place-items:center}
+.tab .on{width:auto;padding:0 18px;border-radius:999px;background:#FFD23F;display:flex;gap:7px;font-size:14px;font-weight:800;color:#0E1B2E}
+.home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#fff}
+</style></head><body><div class="screen">
+<div class="status"><span>9:41</span><span class="r">{{icon:signal:17:#fff:2.4}}{{icon:wifi:17:#fff:2.4}}{{icon:battery-full:24:#fff:1.8}}</span></div>
+<div class="top">
+ <div class="ib g">{{icon:x:20:#fff:2.2}}</div>
+ <div class="lang g"><i>ES</i>Spanish <span>· B1</span></div>
+ <div class="ib g">{{icon:languages:20:#fff:2}}</div>
 </div>
-
-<div class="wave" id="w"></div>
-<div class="mic"><div class="sm">{{icon:lightbulb:21:#0E1B2E}}</div><div class="big">{{icon:mic:30:#ffffff:2.4}}</div><div class="sm">{{icon:rotate-ccw:21:#0E1B2E}}</div></div>
+<div class="scene"><small class="g"><i></i>Live scene · 4:12</small>
+<h1>Ordering breakfast<br>in <span>Seville</span></h1></div>
+<div class="chat">
+ <div class="b t g"><div class="who"><img src="tutor.jpg">Sofía · AI tutor</div>
+  <p>¡Buenos días! ¿Qué te pongo?</p><em>Good morning! What can I get you?</em></div>
+ <div class="b me"><div class="who">You · just now</div>
+  <p><u>Quisiera</u> un café con leche y una tostada, por favor.</p>
+  <div class="tip">{{icon:circle-check:14:#14935C:2.4}}More polite than “quiero”. Nice!</div></div>
+</div>
+<div class="ctl">
+ <div class="cb g">{{icon:lightbulb:21:#fff:2}}</div>
+ <div class="mic">{{icon:mic:30:#fff:2.2}}</div>
+ <div class="cb g">{{icon:rotate-ccw:21:#fff:2}}</div>
+</div>
 <div class="tab">
- <div class="on">{{icon:message-circle:21:#2E8BFF:2.4}}</div>
- <div>{{icon:book-open:21:#8EA0BC}}</div>
- <div>{{icon:trophy:21:#8EA0BC}}</div>
- <div>{{icon:user-round:21:#8EA0BC}}</div>
+ <div class="on">{{icon:message-circle:20:#0E1B2E:2.2}}Speak</div>
+ <div>{{icon:book-open:22:#fff:2}}</div>
+ <div>{{icon:trophy:22:#fff:2}}</div>
+ <div>{{icon:user-round:22:#fff:2}}</div>
 </div>
 <div class="home"></div>
-</div>
-<script>let h='';for(let i=0;i<34;i++){const v=5+Math.abs(Math.sin(i*.7)*Math.cos(i*.23))*22;h+=`<span style="height:${v}px;opacity:${.35+Math.abs(Math.sin(i*.4))*.65}"></span>`}document.getElementById('w').innerHTML=h;</script>
-</body></html>
+</div></body></html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="AI Meal Planner">
+<meta name="app-desc" content="An AI meal planner that starts with **one photo of your fridge**. It spots every ingredient, flags what expires first, and suggests **dinner you can cook tonight** without another trip to the shop.">
+<meta name="fonts" content="DM Sans|A friendly low-contrast sans that keeps labels, quantities and cooking times calm and easy to read in the kitchen.">
+<meta name="palette" content="#E8492F:Tomato|#2B1D18:Cocoa|#FBF6EE:Cream|#FFFFFF:White|#F4D9B8:Crust|#4E8F55:Basil">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:393px;height:852px;overflow:hidden;background:#FBF6EE;font-family:'DM Sans';color:#2B1D18;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.screen{position:relative;width:393px;height:852px;background:#FBF6EE;overflow:hidden}
+.status{height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 26px 0 32px;font-weight:600;font-size:16px}
+.status .r{display:flex;gap:6px;align-items:center}
+.top{display:flex;align-items:center;justify-content:space-between;padding:4px 20px 0}
+.top small{font-size:13px;color:#8C7B70;font-weight:500}.top h1{font-size:25px;font-weight:700;letter-spacing:-.8px;margin-top:1px}
+.top h1 span{color:#E8492F}
+.ib{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 1px 0 #F0E6D8}
+.cam{position:relative;margin:14px 16px 0;height:318px;border-radius:30px;overflow:hidden;background:url(fridge.jpg) no-repeat;background-size:400px auto;background-position:-21px -150px}
+.cam:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,29,24,.08),rgba(43,29,24,0) 40%,rgba(43,29,24,.45))}
+.g{background:rgba(255,255,255,.22);backdrop-filter:blur(16px) saturate(170%);-webkit-backdrop-filter:blur(16px) saturate(170%);border:1px solid rgba(255,255,255,.5)}
+.br{position:absolute;width:26px;height:26px;border:3px solid #fff;z-index:2}
+.tag{position:absolute;z-index:2;display:flex;align-items:center;gap:6px;padding:5px 10px 5px 6px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;background:rgba(43,29,24,.35)}
+.tag i{width:18px;height:18px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.tag.w i{background:#E8492F}
+.box{position:absolute;z-index:2;border:2px solid rgba(255,255,255,.9);border-radius:12px;box-shadow:0 0 0 999px rgba(0,0,0,0)}
+.found{position:absolute;left:10px;right:10px;bottom:10px;z-index:2;height:56px;border-radius:20px;display:flex;align-items:center;gap:10px;padding:0 8px 0 14px;color:#fff;background:rgba(43,29,24,.32)}
+.found b{font-size:15px;font-weight:700;display:block}.found small{font-size:12px;opacity:.85}
+.found .btn{margin-left:auto;height:40px;padding:0 14px;border-radius:14px;background:#fff;color:#2B1D18;font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:6px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;padding:0 20px;margin-top:16px}
+.sh h3{font-size:17px;font-weight:700;letter-spacing:-.4px}.sh a{font-size:13px;color:#E8492F;font-weight:700}
+.rc{margin:10px 16px 0;background:#fff;border-radius:26px;padding:10px;display:flex;gap:12px;box-shadow:0 1px 0 #F0E6D8}
+.rc .ph{width:112px;height:118px;border-radius:20px;background:url(dish.jpg) center/150% no-repeat;flex:none;position:relative}
+.rc .ph span{position:absolute;left:8px;top:8px;font-size:11px;font-weight:700;padding:4px 8px;border-radius:999px;color:#2B1D18;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.rc .in{flex:1;padding:4px 4px 0 0;display:flex;flex-direction:column}
+.rc h4{font-size:16.5px;font-weight:700;letter-spacing:-.4px;line-height:1.15}
+.rc .m{display:flex;gap:10px;font-size:12px;color:#8C7B70;margin-top:6px;font-weight:500}
+.rc .m span{display:flex;align-items:center;gap:4px}
+.use{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.use small{font-size:12px;font-weight:700;color:#4E8F55;display:flex;align-items:center;gap:4px}
+.go{width:40px;height:40px;border-radius:14px;background:#E8492F;display:grid;place-items:center}
+.bar{height:6px;border-radius:3px;background:#EEF3EC;margin:8px 0 10px;overflow:hidden}.bar i{display:block;height:100%;width:86%;background:#4E8F55;border-radius:3px}
+.uf{display:flex;gap:10px;margin:10px 16px 0}.uf div{flex:1;background:#fff;border-radius:20px;padding:10px;display:flex;align-items:center;gap:10px;box-shadow:0 1px 0 #F0E6D8}.uf i{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;flex:none}.uf b{display:block;font-size:13.5px;font-weight:700;letter-spacing:-.2px}.uf small{font-size:11.5px;color:#8C7B70;font-weight:500}
+.tab{position:absolute;left:50%;transform:translateX(-50%);bottom:26px;height:66px;width:300px;border-radius:999px;background:#2B1D18;display:flex;align-items:center;justify-content:space-between;padding:0 8px;box-shadow:0 16px 36px rgba(43,29,24,.25)}
+.tab div{width:50px;height:50px;border-radius:50%;display:grid;place-items:center}
+.tab .on{width:auto;padding:0 18px;border-radius:999px;background:#E8492F;display:flex;gap:7px;font-size:14px;font-weight:700;color:#fff}
+.home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#2B1D18}
+</style></head><body><div class="screen">
+<div class="status"><span>9:41</span><span class="r">{{icon:signal:17:#2B1D18:2.4}}{{icon:wifi:17:#2B1D18:2.4}}{{icon:battery-full:24:#2B1D18:1.8}}</span></div>
+<div class="top"><div><small>Wednesday · 6:20 pm</small><h1>What's for <span>dinner?</span></h1></div><div class="ib">{{icon:bell:20:#2B1D18:2}}</div></div>
+<div class="cam">
+ <div class="br" style="left:14px;top:14px;border-right:0;border-bottom:0;border-radius:10px 0 0 0"></div>
+ <div class="br" style="right:14px;top:14px;border-left:0;border-bottom:0;border-radius:0 10px 0 0"></div>
+ <div class="tag g w" style="left:24px;top:30px"><i>{{icon:clock:11:#fff:3}}</i>Cherry tomatoes · 1 day</div>
+ <div class="tag g" style="right:24px;top:60px"><i>{{icon:check:11:#2B1D18:3}}</i>Feta 200 g</div>
+ <div class="tag g" style="left:30px;top:130px"><i>{{icon:check:11:#2B1D18:3}}</i>Bell peppers × 3</div>
+ <div class="tag g" style="right:26px;top:176px"><i>{{icon:check:11:#2B1D18:3}}</i>Lemons × 4</div>
+ <div class="tag g" style="left:24px;top:200px"><i>{{icon:check:11:#2B1D18:3}}</i>Greek yogurt × 4</div>
+ <div class="found g"><div>{{icon:scan-line:22:#fff:2}}</div><div><b>14 ingredients found</b><small>2 expire in the next 2 days</small></div><div class="btn">{{icon:sparkles:15:#E8492F:2.2}}Plan meals</div></div>
+</div>
+<div class="sh"><h3>Cook tonight</h3><a>3 more ideas</a></div>
+<div class="rc">
+ <div class="ph"><span>Best match</span></div>
+ <div class="in">
+  <h4>Spinach &amp; feta shakshuka</h4>
+  <div class="m"><span>{{icon:timer:13:#8C7B70:2.2}}25 min</span><span>{{icon:flame:13:#8C7B70:2.2}}412 kcal</span><span>{{icon:users:13:#8C7B70:2.2}}2</span></div>
+  <div class="bar"><i></i></div>
+  <div class="use"><small>{{icon:circle-check:13:#4E8F55:2.4}}6 of 7 in your fridge</small><div class="go">{{icon:arrow-right:18:#fff:2.4}}</div></div>
+ </div>
+</div>
+<div class="sh" style="margin-top:16px"><h3>Use first</h3><a>See all</a></div>
+<div class="uf"><div><i style="background:#FDE5E0">{{icon:clock:16:#E8492F:2.2}}</i><span><b>Cherry tomatoes</b><small>Expires tomorrow</small></span></div><div><i style="background:#E7F0E6">{{icon:leaf:16:#4E8F55:2.2}}</i><span><b>Spinach</b><small>In 2 days</small></span></div></div>
+<div class="tab">
+ <div class="on">{{icon:scan-line:20:#fff:2.2}}Scan</div>
+ <div>{{icon:calendar-days:22:#F4D9B8:2}}</div>
+ <div>{{icon:shopping-basket:22:#F4D9B8:2}}</div>
+ <div>{{icon:user-round:22:#F4D9B8:2}}</div>
+</div>
+<div class="home"></div>
+</div></body></html>
