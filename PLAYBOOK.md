@@ -88,9 +88,16 @@ Conventions:
 - **No real brands or logos** (fictional brand from the calendar; plain-text mentions of common tools are fine),
   no real people's photos, no copyrighted characters.
 - People: initials avatars by default. For a photo (avatar, hero image), generate it with Figma `generate_image`
-  in file `BJu214JqvIholCIGac8Bbo` (team "FB Post"), save it in the design folder, and use it. AI credits are limited:
+  in file `IVWMA2qO8U4XdLphCuds1y` (owner drafts), save it in the design folder, and use it. AI credits are limited:
   at most 2 images per post. If generation fails, design without photos.
 - After rendering, **open the JPG and look at it**. Fix anything off, re-render, look again.
+- **Owner's style order (2026-11-13, after the Basketly post was rejected):** never use emoji, flag emoji or cartoon/clip-art
+  imagery anywhere in a design (no emoji as product images, icons or badges). Use Lucide icons, text badges, or **realistic photos**
+  (Figma `generate_image`; crop one photo several ways with `background-position` for product thumbnails).
+  App designs must look premium and unique: neat, clean, gorgeous, with **glassmorphism** (frosted `backdrop-filter` cards and
+  pills over a real photo) as the default look. Reference picks the owner liked: `designs/2026-11-13-pm-lumea-pilates-app`,
+  `designs/2026-11-13-pm-solace-stays-app`, `designs/2026-11-13-pm-mossa-grocery-app`.
+- Figma file for generated photos: `IVWMA2qO8U4XdLphCuds1y` ("IG app photos", owner's drafts); the old file `BJu214JqvIholCIGac8Bbo` is not editable.
 
 
 ## Growth rules (owner's standing order: every post should aim to go viral)
