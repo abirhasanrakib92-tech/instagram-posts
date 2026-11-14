@@ -1,0 +1,187 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.ledgerly.com/revenue">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F3F2F8;--card:#fff;--line:#ECEAF3;--ink:#17132E;--ink2:#6E6987;--ink3:#A09CB4;--vio:#5B3DF5;--vio2:#EFEBFF;--lime:#C6F24E;--red:#EF4A5E;--red2:#FDECEF;--amb:#C9820A;--amb2:#FFF3DC}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Manrope';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.page{padding:20px 24px}
+.card{background:var(--card);border-radius:24px;padding:20px 22px;position:relative}
+.ph{background-size:cover;background-position:center;border-radius:50%;flex:none}
+.ic{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;flex:none}
+.chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:var(--bg);font-size:12.5px;font-weight:600;color:var(--ink2)}
+.up{display:inline-flex;align-items:center;gap:3px;height:22px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:700}
+.up.g{background:#EAF8D2;color:#4B6B05}.up.r{background:var(--red2);color:#C23246}
+.t{font-size:15px;font-weight:700;letter-spacing:-.2px}
+.s{font-size:12.5px;color:var(--ink3);font-weight:500}
+
+/* top bar */
+.top{display:flex;align-items:center;height:56px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:-.6px;background:#fff;height:52px;padding:0 18px 0 8px;border-radius:999px}
+.logo i{width:38px;height:38px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.nav{display:flex;gap:4px;background:#fff;border-radius:999px;padding:6px;margin-left:16px}
+.nav span{height:40px;padding:0 18px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink2)}
+.nav span.on{background:var(--ink);color:#fff}
+.tr{margin-left:auto;display:flex;align-items:center;gap:10px}
+.round{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative}
+.round em{position:absolute;top:14px;right:15px;width:8px;height:8px;border-radius:50%;background:var(--red);border:2px solid #fff}
+.me{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;height:52px;padding:0 16px 0 6px}
+.me b{font-size:14px;display:block}.me span{font-size:12px;color:var(--ink3)}
+
+/* greet */
+.greet{display:flex;align-items:flex-end;margin-top:18px}
+.greet h1{font-size:34px;font-weight:700;letter-spacing:-1.2px}
+.greet p{font-size:14.5px;color:var(--ink2);margin-top:6px}
+.greet p b{color:var(--ink)}
+.gr{margin-left:auto;display:flex;gap:10px;align-items:center}
+.btn{height:44px;padding:0 18px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;background:#fff}
+.btn.v{background:var(--vio);color:#fff}
+.team{display:flex;align-items:center;background:#fff;border-radius:999px;height:44px;padding:0 12px 0 6px;gap:8px;font-size:13px;font-weight:600;color:var(--ink2)}
+.team .st{display:flex}.team .st i{width:32px;height:32px;border-radius:50%;border:2px solid #fff;margin-left:-8px;background-size:cover}.team .st i:first-child{margin-left:0}
+
+/* grid */
+.row{display:grid;gap:16px;margin-top:16px}
+.r1{grid-template-columns:430px 560px 1fr;margin-top:18px}
+.r2{grid-template-columns:470px 470px 1fr;height:452px}
+
+/* hero */
+.hero{background:#1A1438;color:#fff;overflow:hidden;padding:22px 24px}
+.hero .glow{position:absolute;border-radius:50%;filter:blur(40px)}
+.hero .in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column}
+.hero .hd{display:flex;align-items:center;justify-content:space-between}
+.hero .hd .l{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#D6D0EE}
+.hero .hd .l i{width:34px;height:34px;border-radius:11px;background:rgba(255,255,255,.12);display:grid;place-items:center}
+.hero .pill{height:28px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);font-size:12px;display:flex;align-items:center;color:#E3DEF7}
+.hero .big{font-size:54px;font-weight:700;letter-spacing:-2.4px;margin-top:14px;line-height:1}
+.hero .big small{font-size:28px;color:#B6AEDB;letter-spacing:-1px}
+.hero .chg{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:13px;color:#B6AEDB}
+.hero .chg .up{background:var(--lime);color:var(--ink)}
+.mix{margin-top:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px 16px;backdrop-filter:blur(12px)}
+.mix .bar{display:flex;gap:4px;height:12px}
+.mix .bar i{border-radius:6px}
+.mix .lg{display:flex;justify-content:space-between;margin-top:12px}
+.mix .lg div{font-size:12px;color:#B6AEDB}
+.mix .lg b{display:block;font-size:15px;color:#fff;margin-top:2px}
+.mix .lg em{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:6px}
+
+/* kpi */
+.kpis{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
+.kpi{background:#fff;border-radius:24px;padding:18px 18px;display:flex;flex-direction:column}
+.kpi .h{display:flex;align-items:center;justify-content:space-between}
+.kpi .v{font-size:28px;font-weight:700;letter-spacing:-1px;margin-top:auto}
+.kpi .f{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--ink3)}
+
+/* cards head */
+.ch{display:flex;align-items:center;justify-content:space-between}
+.seg{display:flex;background:var(--bg);border-radius:999px;padding:3px}
+.seg span{height:28px;padding:0 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink2);display:flex;align-items:center}
+.seg span.on{background:var(--ink);color:#fff}
+
+/* heatmap */
+.hm{margin-top:16px;display:grid;gap:7px}
+.hm-h,.hm-r{display:grid;grid-template-columns:88px repeat(6,1fr);gap:7px;align-items:center}
+.hm-h span{font-size:11.5px;color:var(--ink3);font-weight:600;text-align:center}
+.hm-h span:first-child{text-align:left}
+.hm-r span b{font-size:13px;display:block}.hm-r span small{font-size:11px;color:var(--ink3)}
+.hm-r i{height:38px;border-radius:10px;display:grid;place-items:center;font-style:normal;font-size:12.5px;font-weight:700}
+.hm-r i.e{background:repeating-linear-gradient(45deg,#F6F5FA 0 6px,#F0EEF6 6px 12px)}
+.hm-l{display:flex;gap:14px;margin-top:14px;font-size:11.5px;color:var(--ink2);align-items:center}
+.hm-l em{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* risk */
+.risk .sum{display:flex;align-items:flex-end;gap:10px;margin-top:8px}
+.risk .sum b{font-size:30px;font-weight:700;letter-spacing:-1px}
+.rl{margin-top:10px;display:grid;gap:7px}
+.ri{display:flex;align-items:center;gap:12px;padding:7px 12px;border-radius:16px;background:#FAF9FD;border:1px solid var(--line)}
+.ri .ph{width:40px;height:40px}
+.ri .n b{font-size:13.5px;display:block}.ri .n span{font-size:12px;color:var(--ink3)}
+.ri .m{margin-left:auto;text-align:right}
+.ri .m b{font-size:14px;display:block}
+.tag{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 8px;border-radius:999px;font-size:11px;font-weight:700;margin-top:3px}
+.tag.r{background:var(--red2);color:#C23246}.tag.a{background:var(--amb2);color:#A06508}.tag.v{background:var(--vio2);color:#4A2FD6}
+.risk .go{margin-top:10px;height:44px;border-radius:999px;background:var(--vio);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:700}
+</style></head><body><div class="page">
+
+<div class="top">
+ <div class="logo"><i>{{icon:chart-no-axes-combined:19:#C6F24E:2.4}}</i>Ledgerly</div>
+ <div class="nav"><span class="on">{{icon:layout-grid:16:#fff}}Overview</span><span>Revenue</span><span>Customers</span><span>Cohorts</span><span>Plans</span><span>Forecast</span></div>
+ <div class="tr">
+  <div class="round">{{icon:search:20:#17132E}}</div>
+  <div class="round">{{icon:bell:20:#17132E}}<em></em></div>
+  <div class="me"><span class="ph" style="width:40px;height:40px;background-image:url(sofia.jpg)"></span><div><b>Sofia Alvarez</b><span>Head of Finance</span></div>{{icon:chevron-down:16:#6E6987}}</div>
+ </div>
+</div>
+
+<div class="greet">
+ <div><h1>Good evening, Sofia</h1><p>MRR is up <b>$24,290</b> this month. <b>4 accounts</b> need a save before renewal.</p></div>
+ <div class="gr">
+  <div class="team"><div class="st"><i style="background-image:url(amara.jpg)"></i><i style="background-image:url(rohan.jpg)"></i><i style="background-image:url(kenji.jpg)"></i><i style="background-image:url(daniel.jpg)"></i></div>Finance team</div>
+  <span class="btn">{{icon:calendar:16:#17132E}}1 – 14 Nov 2026</span>
+  <span class="btn">{{icon:download:16:#17132E}}Export</span>
+  <span class="btn v">{{icon:sparkles:16:#C6F24E}}Ask Ledgerly AI</span>
+ </div>
+</div>
+
+<div class="row r1">
+ <div class="card hero">
+  <span class="glow" style="width:320px;height:320px;background:#5B3DF5;right:-90px;top:-120px;opacity:.75"></span>
+  <span class="glow" style="width:180px;height:180px;background:#C6F24E;right:40px;top:60px;opacity:.28"></span>
+  <div class="in">
+   <div class="hd"><span class="l"><i>{{icon:repeat:17:#C6F24E:2.4}}</i>Monthly recurring revenue</span><span class="pill">Live · Nov 14</span></div>
+   <div class="big">$284,620<small>.00</small></div>
+   <div class="chg"><span class="up">{{icon:trending-up:12:#17132E:2.6}} 9.3%</span>vs. $260,330 in October</div>
+   <div class="mix">
+    <div class="bar"><i style="width:18%;background:#9C88FF"></i><i style="width:47%;background:#C6F24E"></i><i style="width:35%;background:#fff"></i></div>
+    <div class="lg">
+     <div><em style="background:#9C88FF"></em>Starter 18%<b>$51,232</b></div>
+     <div><em style="background:#C6F24E"></em>Growth 47%<b>$133,771</b></div>
+     <div><em style="background:#fff"></em>Scale 35%<b>$99,617</b></div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="card">
+  <div class="ch"><div><div class="t">MRR bridge</div><div class="s">What moved revenue from October to November</div></div><div class="seg"><span class="on">Month</span><span>Quarter</span></div></div>
+  <div style="margin-top:10px"><svg width="530" height="196" viewBox="0 0 530 196"><line x1="40" x2="520" y1="168.0" y2="168.0" stroke="#EEECF4" stroke-dasharray="0"/><text x="32" y="172.0" text-anchor="end" font-size="11" fill="#A09CB4">240k</text><line x1="40" x2="520" y1="139.6" y2="139.6" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="32" y="143.6" text-anchor="end" font-size="11" fill="#A09CB4">250k</text><line x1="40" x2="520" y1="111.3" y2="111.3" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="32" y="115.3" text-anchor="end" font-size="11" fill="#A09CB4">260k</text><line x1="40" x2="520" y1="82.9" y2="82.9" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="32" y="86.9" text-anchor="end" font-size="11" fill="#A09CB4">270k</text><line x1="40" x2="520" y1="54.5" y2="54.5" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="32" y="58.5" text-anchor="end" font-size="11" fill="#A09CB4">280k</text><line x1="40" x2="520" y1="26.2" y2="26.2" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="32" y="30.2" text-anchor="end" font-size="11" fill="#A09CB4">290k</text><rect x="44" y="110.3" width="56" height="57.7" rx="10" fill="#DCD8EA"/><text x="72.0" y="102.3" text-anchor="middle" font-size="12" font-weight="700" fill="#17132E">260.3k</text><text x="72.0" y="188" text-anchor="middle" font-size="11.5" fill="#6E6987">Oct</text><rect x="130" y="49.6" width="56" height="60.7" rx="10" fill="#5B3DF5"/><line x1="100" x2="130" y1="110.3" y2="110.3" stroke="#B9B3CF" stroke-dasharray="2 3"/><text x="158.0" y="41.6" text-anchor="middle" font-size="12" font-weight="700" fill="#17132E">+21.4k</text><text x="158.0" y="188" text-anchor="middle" font-size="11.5" fill="#6E6987">New</text><rect x="216" y="21.7" width="56" height="27.9" rx="10" fill="#9C88FF"/><line x1="186" x2="216" y1="49.6" y2="49.6" stroke="#B9B3CF" stroke-dasharray="2 3"/><text x="244.0" y="13.7" text-anchor="middle" font-size="12" font-weight="700" fill="#17132E">+9.9k</text><text x="244.0" y="188" text-anchor="middle" font-size="11.5" fill="#6E6987">Expansion</text><rect x="302" y="21.7" width="56" height="5.3" rx="10" fill="#F5A3B0"/><line x1="272" x2="302" y1="21.7" y2="21.7" stroke="#B9B3CF" stroke-dasharray="2 3"/><text x="330.0" y="13.7" text-anchor="middle" font-size="12" font-weight="700" fill="#17132E">−1.9k</text><text x="330.0" y="188" text-anchor="middle" font-size="11.5" fill="#6E6987">Contraction</text><rect x="388" y="27.0" width="56" height="14.4" rx="10" fill="#EF4A5E"/><line x1="358" x2="388" y1="27.0" y2="27.0" stroke="#B9B3CF" stroke-dasharray="2 3"/><text x="416.0" y="19.0" text-anchor="middle" font-size="12" font-weight="700" fill="#17132E">−5.1k</text><text x="416.0" y="188" text-anchor="middle" font-size="11.5" fill="#6E6987">Churn</text><rect x="474" y="41.4" width="56" height="126.6" rx="10" fill="#C6F24E"/><text x="502.0" y="33.4" text-anchor="middle" font-size="12" font-weight="700" fill="#17132E">284.6k</text><text x="502.0" y="188" text-anchor="middle" font-size="11.5" fill="#6E6987">Nov</text></svg></div>
+ </div>
+
+ <div class="kpis">
+  <div class="kpi"><div class="h"><span class="s" style="color:var(--ink2);font-weight:600">Subscribers</span><span class="ic" style="background:var(--vio2)">{{icon:users:17:#5B3DF5}}</span></div><div class="v">3,482</div><div class="f"><span class="up g">+86</span>this month</div></div>
+  <div class="kpi"><div class="h"><span class="s" style="color:var(--ink2);font-weight:600">ARPA</span><span class="ic" style="background:#F2FBDD">{{icon:wallet:17:#4B6B05}}</span></div><div class="v">$81.74</div><div class="f"><span class="up g">+3.1%</span>per account</div></div>
+  <div class="kpi"><div class="h"><span class="s" style="color:var(--ink2);font-weight:600">Logo churn</span><span class="ic" style="background:var(--red2)">{{icon:user-minus:17:#EF4A5E}}</span></div><div class="v">1.9%</div><div class="f"><span class="up g">−0.4 pt</span>66 accounts</div></div>
+  <div class="kpi" style="background:var(--lime)"><div class="h"><span class="s" style="color:#3D4A12;font-weight:600">Quick ratio</span><span class="ic" style="background:rgba(23,19,46,.08)">{{icon:gauge:17:#17132E}}</span></div><div class="v">4.5</div><div class="f" style="color:#3D4A12">Healthy above 4.0</div></div>
+ </div>
+</div>
+
+<div class="row r2">
+ <div class="card">
+  <div class="ch"><div><div class="t">MRR growth</div><div class="s">Last 12 months</div></div><div class="seg"><span>Weekly</span><span class="on">Monthly</span></div></div>
+  <div style="display:flex;gap:24px;margin-top:14px">
+   <div><div class="s">Added this year</div><div style="font-size:22px;font-weight:700;letter-spacing:-.6px">+$116,200</div></div>
+   <div><div class="s">Avg. monthly growth</div><div style="font-size:22px;font-weight:700;letter-spacing:-.6px">4.9%</div></div>
+  </div>
+  <div style="margin-top:6px"><svg width="440" height="272" viewBox="0 0 440 272"><defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#F1EFF7"/><line x1="0" y1="0" x2="0" y2="7" stroke="#E2DEEE" stroke-width="3"/></pattern><linearGradient id="vg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7B61FF"/><stop offset="1" stop-color="#5B3DF5"/></linearGradient></defs><line x1="44" x2="436" y1="246.0" y2="246.0" stroke="#EEECF4" stroke-dasharray="0"/><text x="34" y="250.0" text-anchor="end" font-size="11" fill="#A09CB4">0k</text><line x1="44" x2="436" y1="170.7" y2="170.7" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="34" y="174.7" text-anchor="end" font-size="11" fill="#A09CB4">100k</text><line x1="44" x2="436" y1="95.3" y2="95.3" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="34" y="99.3" text-anchor="end" font-size="11" fill="#A09CB4">200k</text><line x1="44" x2="436" y1="20.0" y2="20.0" stroke="#EEECF4" stroke-dasharray="3 4"/><text x="34" y="24.0" text-anchor="end" font-size="11" fill="#A09CB4">300k</text><rect x="54.0" y="119.1" width="22" height="126.9" rx="11" fill="url(#hatch)"/><text x="65.0" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Dec</text><rect x="86.6" y="113.3" width="22" height="132.7" rx="11" fill="url(#hatch)"/><text x="97.6" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Jan</text><rect x="119.2" y="106.6" width="22" height="139.4" rx="11" fill="url(#hatch)"/><text x="130.2" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Feb</text><rect x="151.8" y="100.5" width="22" height="145.5" rx="11" fill="url(#hatch)"/><text x="162.8" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Mar</text><rect x="184.4" y="94.1" width="22" height="151.9" rx="11" fill="url(#hatch)"/><text x="195.4" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Apr</text><rect x="217.0" y="86.1" width="22" height="159.9" rx="11" fill="url(#hatch)"/><text x="228.0" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">May</text><rect x="249.6" y="79.5" width="22" height="166.5" rx="11" fill="url(#hatch)"/><text x="260.6" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Jun</text><rect x="282.2" y="70.9" width="22" height="175.1" rx="11" fill="url(#hatch)"/><text x="293.2" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Jul</text><rect x="314.8" y="64.4" width="22" height="181.6" rx="11" fill="url(#hatch)"/><text x="325.8" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Aug</text><rect x="347.4" y="57.2" width="22" height="188.8" rx="11" fill="url(#hatch)"/><text x="358.4" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Sep</text><rect x="380.0" y="49.9" width="22" height="196.1" rx="11" fill="url(#hatch)"/><text x="391.0" y="266" text-anchor="middle" font-size="11" fill="#A09CB4" font-weight="500">Oct</text><rect x="412.6" y="31.6" width="22" height="214.4" rx="11" fill="url(#vg)"/><text x="423.6" y="266" text-anchor="middle" font-size="11" fill="#17132E" font-weight="700">Nov</text><circle cx="423.6" cy="31.6" r="6" fill="#fff" stroke="#5B3DF5" stroke-width="3"/><g transform="translate(301.6,37.6)"><rect width="104" height="38" rx="10" fill="#17132E"/><text x="12" y="16" font-size="11" fill="#B6B0CC">Nov 14</text><text x="12" y="31" font-size="13" font-weight="700" fill="#fff">$284.6k</text><rect x="64" y="20" width="34" height="14" rx="7" fill="#C6F24E"/><text x="81" y="31" text-anchor="middle" font-size="9.5" font-weight="800" fill="#17132E">+9.3%</text></g></svg></div>
+ </div>
+
+ <div class="card">
+  <div class="ch"><div><div class="t">Revenue retention by cohort</div><div class="s">% of starting MRR kept, by signup month</div></div><span class="chip">{{icon:sliders-horizontal:14:#6E6987}}All plans</span></div>
+  <div class="hm"><div class="hm-h"><span>Cohort</span><span>M0</span><span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span></div><div class="hm-r"><span><b>Jun</b><small>214 accts</small></span><i style="background:#5B3DF5;color:#fff">100%</i><i style="background:rgba(91,61,245,0.43);color:#2B2163">96%</i><i style="background:rgba(91,61,245,0.30);color:#2B2163">94%</i><i style="background:rgba(91,61,245,0.49);color:#2B2163">97%</i><i style="background:rgba(198,242,78,0.57);color:#2E3A0A">101%</i><i style="background:rgba(198,242,78,0.95);color:#2E3A0A">104%</i></div><div class="hm-r"><span><b>Jul</b><small>238 accts</small></span><i style="background:#5B3DF5;color:#fff">100%</i><i style="background:rgba(91,61,245,0.37);color:#2B2163">95%</i><i style="background:rgba(91,61,245,0.43);color:#2B2163">96%</i><i style="background:rgba(91,61,245,0.62);color:#fff">99%</i><i style="background:rgba(198,242,78,0.70);color:#2E3A0A">102%</i><i class="e"></i></div><div class="hm-r"><span><b>Aug</b><small>251 accts</small></span><i style="background:#5B3DF5;color:#fff">100%</i><i style="background:rgba(91,61,245,0.49);color:#2B2163">97%</i><i style="background:rgba(91,61,245,0.62);color:#fff">99%</i><i style="background:rgba(198,242,78,0.82);color:#2E3A0A">103%</i><i class="e"></i><i class="e"></i></div><div class="hm-r"><span><b>Sep</b><small>266 accts</small></span><i style="background:#5B3DF5;color:#fff">100%</i><i style="background:rgba(91,61,245,0.30);color:#2B2163">94%</i><i style="background:rgba(91,61,245,0.49);color:#2B2163">97%</i><i class="e"></i><i class="e"></i><i class="e"></i></div><div class="hm-r"><span><b>Oct</b><small>289 accts</small></span><i style="background:#5B3DF5;color:#fff">100%</i><i style="background:rgba(91,61,245,0.55);color:#fff">98%</i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i></div><div class="hm-r"><span><b>Nov</b><small>312 accts</small></span><i style="background:#5B3DF5;color:#fff">100%</i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i></div></div>
+  <div class="hm-l"><span><em style="background:rgba(91,61,245,.3)"></em>Below 100%</span><span><em style="background:#5B3DF5"></em>Start</span><span><em style="background:#C6F24E"></em>Expansion</span><span style="margin-left:auto;font-weight:700;color:var(--ink)">Jun cohort: 104% at M5</span></div>
+ </div>
+
+ <div class="card risk">
+  <div class="ch"><div><div class="t">Accounts at risk</div><div class="s">Renewing in the next 30 days</div></div><span class="chip">See all</span></div>
+  <div class="sum"><b>$5,160</b><span class="s" style="margin-bottom:6px">MRR across 4 accounts</span></div>
+  <div class="rl">
+   <div class="ri"><span class="ph" style="background-image:url(olivia.jpg)"></span><div class="n"><b>Olivia Grant</b><span>Northbeam Studio · Scale</span></div><div class="m"><b>$2,400</b><span class="tag r">{{icon:credit-card:11:#C23246:2.4}}Card failed ×2</span></div></div>
+   <div class="ri"><span class="ph" style="background-image:url(karim.jpg)"></span><div class="n"><b>Karim Haddad</b><span>Parcel &amp; Pine · Growth</span></div><div class="m"><b>$1,180</b><span class="tag a">{{icon:trending-down:11:#A06508:2.4}}Usage −42%</span></div></div>
+   <div class="ri"><span class="ph" style="background-image:url(mei.jpg)"></span><div class="n"><b>Mei Tanaka</b><span>Fieldnote Labs · Growth</span></div><div class="m"><b>$860</b><span class="tag a">{{icon:arrow-down-right:11:#A06508:2.4}}Asked to downgrade</span></div></div>
+   <div class="ri"><span class="ph" style="background-image:url(marcus.jpg)"></span><div class="n"><b>Marcus Reed</b><span>Orbit Dental · Starter</span></div><div class="m"><b>$720</b><span class="tag v">{{icon:armchair:11:#4A2FD6:2.4}}60% seats idle</span></div></div>
+  </div>
+  <div class="go">{{icon:life-buoy:16:#C6F24E:2.4}}Start save playbook</div>
+ </div>
+</div>
+
+</div></body></html>

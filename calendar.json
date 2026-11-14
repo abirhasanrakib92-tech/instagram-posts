@@ -391,19 +391,26 @@
    "brand": "Ledgerly",
    "palette_hint": "violet + lime",
    "status": "ready",
-   "design_dir": "designs/2026-11-15-pm-ledgerly-saas-revenue-dashboard",
+   "design_dir": "designs/2026-11-15-pm-ledgerly-revenue-dashboard",
    "image": null,
-   "caption": "Your board asks one question: where did the money move?\nSaaS revenue dashboard UI design: MRR, churn and cohort retention\n\nAn MRR waterfall answers it in one chart, with cohort retention, plan mix and at-risk accounts right below.\n\nSave this for your next SaaS dashboard\nWaterfall or line chart for MRR?\n\n#dashboarddesign #saasdesign #uidesign #dataviz #fintechdesign",
+   "caption": "Churn is a lagging number. The cohort grid tells you first.\nSaaS revenue dashboard design: MRR bridge, cohort retention, accounts at risk\n\nThe MRR bridge shows exactly where this month's $24,290 came from, and the at-risk list puts a face and a reason next to every dollar about to leave.\n\nSave this for your next SaaS dashboard\nWhich card would you open first on a Monday?\n\n#dashboarddesign #saasdesign #uiux #productdesign #fintech",
    "media_id": null,
    "format": "carousel-dashboard",
-   "slug": "ledgerly-saas-revenue-dashboard",
+   "slug": "ledgerly-revenue-dashboard",
    "ai": false,
    "week1": true,
    "images": [
-    "posts/2026-11/2026-11-15-pm-ledgerly-saas-revenue-dashboard-1.jpg",
-    "posts/2026-11/2026-11-15-pm-ledgerly-saas-revenue-dashboard-2.jpg",
-    "posts/2026-11/2026-11-15-pm-ledgerly-saas-revenue-dashboard-3.jpg",
-    "posts/2026-11/2026-11-15-pm-ledgerly-saas-revenue-dashboard-4.jpg"
+    "posts/2026-11/2026-11-15-pm-ledgerly-revenue-dashboard-1.jpg",
+    "posts/2026-11/2026-11-15-pm-ledgerly-revenue-dashboard-2.jpg",
+    "posts/2026-11/2026-11-15-pm-ledgerly-revenue-dashboard-3.jpg",
+    "posts/2026-11/2026-11-15-pm-ledgerly-revenue-dashboard-4.jpg"
+   ],
+   "replaced": [
+    {
+     "brand": "Ledgerly",
+     "design_dir": "designs/2026-11-15-pm-ledgerly-saas-revenue-dashboard",
+     "reason": "Rebuilt before posting in the owner's new dashboard style (reference/dashboard-style, real photo avatars)"
+    }
    ]
   },
   {

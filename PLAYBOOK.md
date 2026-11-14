@@ -87,7 +87,7 @@ Conventions:
 - Charts are hand-built SVG with axes, gridlines and a highlighted point or tooltip.
 - **No real brands or logos** (fictional brand from the calendar; plain-text mentions of common tools are fine),
   no real people's photos, no copyrighted characters.
-- People: initials avatars by default. For a photo (avatar, hero image), generate it with Figma `generate_image`
+- People: always real photo avatars (see Dashboard style standard; avatar bank in `assets/avatars/`), never initials. For other photos (hero image, product), generate them with Figma `generate_image`
   in file `IVWMA2qO8U4XdLphCuds1y` (owner drafts), save it in the design folder, and use it. AI credits are limited:
   at most 2 images per app/dashboard post and 3–4 per website post (see Design style standard). If generation fails, retry once with a simpler prompt before designing without photos.
 - After rendering, **open the JPG and look at it**. Fix anything off, re-render, look again.
@@ -124,6 +124,31 @@ What the references have in common (do all of it):
 - Check slide 1 like the owner will on the phone: both columns full, no empty band, nothing clipped, words not orphaned
   (force line breaks in headings when a single word would wrap alone).
 - Same quality bar for apps and dashboards: real photos where they make sense, glass, deep brand color + bright accent, bento layout.
+
+
+## Dashboard style standard (owner's order, 2026-11-14 — every dashboard from now on)
+
+The owner rejected the earlier dashboard look and gave 14 references: `reference/dashboard-style/ref-01.jpg … ref-14.jpg`
+(Payno, Noteflow, Atur HR, Veloxa fleet, HR portal, Task.iq, nursing, MediCore, Monetra, Shopeers, Finexy, Salezy, property finance).
+**Open and study them before designing.** Approved example: `designs/2026-11-15-pm-ledgerly-revenue-dashboard`.
+Every dashboard must look like a professional product designer made it, and each one must be unique (new layout skeleton,
+new hero component, new chart mix, new palette) so no two posts look alike.
+
+- **Images go where images belong. Never put initials or text in an image slot.** Profile/user avatars, team stacks,
+  customer/patient/driver rows, doctor lists, contact cards and "send money" recipients all use real photos.
+  Use the avatar bank in `assets/avatars/` (amara, rohan, mei, daniel, sofia, karim, olivia, kenji, marcus; copy the
+  files into the design folder). When a design needs a product/vehicle/property/hero photo, generate it with Figma
+  `generate_image`; for more faces, generate one 3x3 headshot grid and crop it (one credit, nine avatars), then add them to the bank.
+- **Structure:** soft tinted canvas (#F3F2F8, #EEF0EC …), white cards with 20–24px radius and 16px gutters,
+  a pill top nav (dark active pill) or a slim icon rail, round icon buttons, user pill with photo + name + role.
+- **Greeting header** ("Good evening, Sofia" + one sentence with bold real numbers) with actions on the right
+  (date range pill, Export, a primary or AI button, team avatar stack).
+- **One hero card** in the deep brand color or a soft gradient/glass (big number 48–56px, delta pill, mini breakdown),
+  balanced by KPI tiles where one tile is filled with the accent color.
+- **Charts that designers save:** highlighted bar with a dark tooltip and hatched/muted other bars, segmented gauges,
+  waterfall/bridge, cohort heatmap, dot matrix, timeline with avatar chips. Hand-built SVG, real axes, numbers that add up.
+- **Lists/tables** with photo, name + secondary line, amount, and colored status pills.
+- Fill the full 1440×960 with no dead space and nothing clipped: check the bottom row and every card edge on slides 2 and 3.
 
 
 ## Growth rules (owner's standing order: every post should aim to go viral)
