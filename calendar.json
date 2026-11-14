@@ -422,8 +422,8 @@
    "niche": "AI bookkeeping for small businesses",
    "brand": "Tallybook",
    "palette_hint": "forest green + cream",
-   "status": "ready",
-   "design_dir": "designs/2026-11-16-am-tallybook-ai-bookkeeping-website",
+   "status": "planned",
+   "design_dir": null,
    "image": null,
    "caption": "Nobody started a business to do bookkeeping.\nAI bookkeeping website design for small businesses\n\nTallybook's landing page leads with the product: AI-sorted transactions and a plain-English P&L, with warm serif type for trust.\n\nSave this for your next fintech landing page\nDoes a serif headline feel more trustworthy for finance?\n\n#landingpage #fintechdesign #aidesign #webdesign #uidesign",
    "media_id": null,
@@ -431,13 +431,13 @@
    "slug": "tallybook-ai-bookkeeping-website",
    "ai": true,
    "week1": true,
-   "images": [
-    "posts/2026-11/2026-11-16-am-tallybook-ai-bookkeeping-website-1.jpg",
-    "posts/2026-11/2026-11-16-am-tallybook-ai-bookkeeping-website-2.jpg",
-    "posts/2026-11/2026-11-16-am-tallybook-ai-bookkeeping-website-3.jpg",
-    "posts/2026-11/2026-11-16-am-tallybook-ai-bookkeeping-website-4.jpg",
-    "posts/2026-11/2026-11-16-am-tallybook-ai-bookkeeping-website-5.jpg",
-    "posts/2026-11/2026-11-16-am-tallybook-ai-bookkeeping-website-6.jpg"
+   "images": [],
+   "replaced": [
+    {
+     "brand": "Tallybook",
+     "design_dir": "designs/2026-11-16-am-tallybook-ai-bookkeeping-website",
+     "reason": "Old style (blank band on slide 1, no photos, initials avatars); reset to planned so the next run rebuilds it per the Design style standard"
+    }
    ]
   },
   {
