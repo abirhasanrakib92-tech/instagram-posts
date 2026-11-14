@@ -136,13 +136,15 @@ Only the first line shows before "more", so **line 1 is always the hook**. Every
 - A question to drive comments.
 - Blank line, then the 5 hashtags. Total under 2,200 characters, English.
 - LinkedIn captions follow the same rule: the first line is the hook.
-- **No emojis anywhere** (captions, LinkedIn posts, comment replies). The owner wants writing that reads like a person, not like AI. Also avoid other AI tells: no "Let's dive in", no "game-changer", no stacked buzzwords.
+- **No emojis anywhere** (captions, LinkedIn posts). Comment replies are the one exception, see section 4. The owner wants writing that reads like a person, not like AI. Also avoid other AI tells: no "Let's dive in", no "game-changer", no stacked buzzwords.
 
 ### 4. Comment replies (every run, after publishing)
 - Read comments on posts from the last 3 days with Windsor `get_data` (connector `instagram`; call `get_fields` first to find
   the comment fields; widen the date range if empty).
-- Reply to every new genuine comment with `reply_to_comment`: short, warm, specific to what they said, English, no emojis,
-  ideally ending with a small question to keep the thread going. Never reply twice to the same comment.
+- Reply to every new genuine comment with `reply_to_comment` using a very short reply in the owner's style (owner's order,
+  2026-11-14), e.g. "Appreciate it! ❤️", "Thanks! ❤️", "Thank You! 🙌". Rotate these so neighbouring replies are not identical;
+  one emoji (❤️ or 🙌) at the end is fine. No long replies and no follow-up questions. Exception: hiring or pricing questions get
+  a short thank-you plus WhatsApp +8801730402994 or abirhasanrakib92@gmail.com. Never reply twice to the same comment.
 - Hide obvious spam/scam/bot comments with `hide_comment` (never delete).
 - Note replied comment ids in `calendar.json` under the slot (`replied_comment_ids`) so later runs skip them.
 
