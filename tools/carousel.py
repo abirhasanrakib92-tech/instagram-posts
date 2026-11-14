@@ -53,13 +53,15 @@ def window_html(shot_uri, url, k, x, y):
 # on every design slide of every type. The CTA slide is left unchanged. BRAND=0 turns it off.
 import os
 BRAND = os.environ.get('BRAND', '1') == '1'
-BRAND_TOP, BRAND_BOT = 150, 120          # canvas space the chrome takes (top bar, bottom pill)
+BRAND_TOP, BRAND_BOT = 150, 120          # canvas space the chrome takes (top bar, bottom WhatsApp pill)
+BRAND_BOT_NOWA = 56                      # bottom margin when there is no WhatsApp pill (app, website)
 
 
-def brand_html(bg_uri):
+def brand_html(bg_uri, wa=True):
     av = R.b64(R.ROOT / 'assets/brand/abir.jpg')
     heart = '<svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z" fill="#E8453C"/></svg>'
     bm = '<svg width="26" height="30" viewBox="0 0 20 24"><path d="M2 2.5C2 1.7 2.7 1 3.5 1h13c.8 0 1.5.7 1.5 1.5V23l-8-5.2L2 23z" fill="#111"/></svg>'
+    WA = f"""<div class="wa"><i>{R.expand_icons('{{icon:phone:22:#fff:2.4}}')}</i><small>WhatsApp</small><span class="sep"></span><b>+880 1730 402 994</b></div>"""
     return f"""<!doctype html><html><head><meta charset=utf-8><link rel=stylesheet href="{(R.ROOT/'assets/fonts.css').as_uri()}"><style>{R.STAGE_CSS}
 .bg{{position:absolute;inset:0;background:url({bg_uri}) 0 0/1080px 1350px no-repeat}}
 .tb{{position:absolute;left:56px;right:56px;top:30px;height:88px;border-radius:44px;background:#fff;display:flex;align-items:center;padding:0 34px 0 14px;
@@ -81,7 +83,7 @@ def brand_html(bg_uri):
 <div class="tb"><div class="who"><span class="av"></span><div><small>Designed by</small><b>Abir Hasan <i>Rakib</i></b></div></div>
  <div class="mid">{heart}{R.expand_icons('{{icon:message-circle:32:#111:1.9}}{{icon:send:31:#111:1.9}}')}</div>
  <div class="sv"><span><b>SAVE</b> <em>for</em> <b>LATER</b></span>{bm}</div></div>
-<div class="wa"><i>{R.expand_icons('{{icon:phone:22:#fff:2.4}}')}</i><small>WhatsApp</small><span class="sep"></span><b>+880 1730 402 994</b></div>
+{WA if wa else ''}
 </div></body></html>"""
 
 
@@ -93,16 +95,16 @@ def make_room(jpg, mode):
     if mode == 'shift':
         c.paste(im, (0, BRAND_TOP - 20))
     else:
-        s_ = (H - BRAND_TOP - BRAND_BOT) / H
+        s_ = (H - BRAND_TOP - BRAND_BOT_NOWA) / H
         sm = im.resize((round(W * s_), round(H * s_)), Image.LANCZOS)
         c.paste(sm, ((W - sm.width) // 2, BRAND_TOP))
     c.save(jpg, quality=95)
 
 
-async def brand(b, work, jpg):
-    """Overlay the brand chrome on a finished design slide (in place)."""
+async def brand(b, work, jpg, wa=True):
+    """Overlay the brand chrome on a finished design slide (in place). Owner: WhatsApp pill on dashboards only."""
     p = work / 'brand.html'
-    p.write_text(brand_html(R.b64(pathlib.Path(jpg))))
+    p.write_text(brand_html(R.b64(pathlib.Path(jpg)), wa))
     await shot_html(b, p, work / 'brand.png', {'width': W, 'height': H}, 2)
     save(Image.open(work / 'brand.png').resize((W, H), Image.LANCZOS), jpg)
 
@@ -163,7 +165,7 @@ async def website(d, work, prefix, b):
     rh = H - top - 70                           # ends inside the frame so the footer shows
     if BRAND:
         top = BRAND_TOP + 12
-        lh = rh = H - top - BRAND_BOT - 12
+        lh = rh = H - top - BRAND_BOT_NOWA
     lx = (W - lw - rw - gap) // 2
     lsc, rsc = lw / pw, rw / pw
     left = page.crop((0, 0, pw, min(ph, round(lh / lsc))))
@@ -185,7 +187,7 @@ box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</sty
     card_h = H - ctop - 90
     if BRAND:
         ctop = BRAND_TOP + 12
-        card_h = H - ctop - BRAND_BOT - 12
+        card_h = H - ctop - BRAND_BOT_NOWA
     topimg = page.crop((0, 0, pw, round(card_h / sc)))
     html = f"""<!doctype html><html><head><meta charset=utf-8><style>{R.STAGE_CSS}
 .col{{position:absolute;background:#fff;border-radius:6px;overflow:hidden;
@@ -204,7 +206,7 @@ box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</sty
     def fit(k):
         s_ = (k * W - 300) / ph
         return s_, round(pw * s_)
-    maxb = H - BRAND_TOP - BRAND_BOT - 24 if BRAND else H - 90
+    maxb = H - BRAND_TOP - BRAND_BOT_NOWA - 12 if BRAND else H - 90
     k = max(2, round((ph * (maxb - 110) / pw + 300) / W))
     s_, band = fit(k)
     while band > maxb and k < 7:
@@ -223,7 +225,7 @@ box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</sty
         save(c, f'{prefix}-{i + 3}.jpg')
     if BRAND:
         for i in range(1, k + 3):
-            await brand(b, work, f'{prefix}-{i}.jpg')
+            await brand(b, work, f'{prefix}-{i}.jpg', wa=False)
     save(await cta_slide(b, work), f'{prefix}-{k + 3}.jpg')
 
 
@@ -341,7 +343,7 @@ async def app(d, work, prefix, b):
     if BRAND:
         for i in range(1, 5):
             make_room(f'{prefix}-{i}.jpg', 'shift' if i == 1 else 'scale')
-            await brand(b, work, f'{prefix}-{i}.jpg')
+            await brand(b, work, f'{prefix}-{i}.jpg', wa=False)
     save(await cta_slide(b, work), f'{prefix}-5.jpg')
 
 

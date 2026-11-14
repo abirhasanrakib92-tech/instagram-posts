@@ -9,7 +9,7 @@ Match these approved posts exactly in presentation; only the design inside the s
 - Dashboard → `posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-1.jpg` … `-4.jpg` (**carousel**: full window, left half, right half, CTA; no popup/zoom card)
 - Website → `posts/2026-11/2026-11-10-am-meeting-notes-website-1.jpg` … `-8.jpg` (**carousel**: whole home page in two columns, top of page large, the whole page rotated 90° in equal bands through the footer, CTA)
 
-Always: 1080×1350, `#EEEEEE` background, light UI, the brand chrome ("Designed by" bar + WhatsApp pill, see below) on the design slides; the fixed CTA slide stays last.
+Always: 1080×1350, `#EEEEEE` background, light UI, the brand chrome ("Designed by" bar on all types, WhatsApp pill on dashboards only, see below) on the design slides; the fixed CTA slide stays last.
 Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 
 ## The schedule
@@ -155,7 +155,8 @@ new hero component, new chart mix, new palette) so no two posts look alike.
 
 Every design slide (not the CTA slide) carries the owner's chrome, added automatically by tools/carousel.py:
 a top pill with his photo (`assets/brand/abir.jpg`), "Designed by / Abir Hasan *Rakib*", heart/comment/share icons and
-"SAVE for LATER" + bookmark, and a WhatsApp pill (+880 1730 402 994) at the bottom. Layouts leave room for it
+"SAVE for LATER" + bookmark on EVERY post type; the WhatsApp pill (+880 1730 402 994) at the bottom goes on
+**dashboards only** (owner, 2026-11-14) — app and website slides get the top bar only. Layouts leave room for it
 (dashboard halves pan from each edge, website columns/bands sit between the bars, app slides shift/scale down).
 Mockup shadows are deliberately faint (owner: the old shadow was too heavy): 1px hairline + a soft, low-opacity drop.
 Do not darken them again. If the owner sends a sharper profile photo, replace `assets/brand/abir.jpg`.
