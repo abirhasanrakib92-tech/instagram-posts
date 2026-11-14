@@ -151,6 +151,14 @@ new hero component, new chart mix, new palette) so no two posts look alike.
 - Fill the full 1440×960 with no dead space and nothing clipped: check the bottom row and every card edge on slides 2 and 3.
 
 
+## Brand chrome (preview 2026-11-14, WAITING for owner approval — do not use yet)
+
+Owner asked for a "Designed by" bar like `reference/dashboard-style` Orbix example: top pill with his photo
+(`assets/brand/abir.jpg`), "Designed by / Abir Hasan Rakib", heart/comment/share icons, "SAVE for LATER" + bookmark,
+and a WhatsApp pill (+880 1730 402 994) at the bottom. Built into tools/carousel.py behind `BRAND=1` (dashboards so far).
+Only switch it on (and extend it to app and website slides) after the owner approves the Ledgerly preview.
+
+
 ## Growth rules (owner's standing order: every post should aim to go viral)
 
 Do all of this on **every** post. Nothing here may break the locked format.

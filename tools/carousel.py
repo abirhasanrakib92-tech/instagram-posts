@@ -49,6 +49,50 @@ def window_html(shot_uri, url, k, x, y):
 </div></div></div></div></body></html>""", iw + 14, ih + 14
 
 
+# ---- Owner's brand chrome (preview 2026-11-14, pending approval): "Designed by" bar on top, WhatsApp pill at the bottom.
+# Enabled with BRAND=1 in the environment. The CTA slide is left unchanged.
+import os
+BRAND = os.environ.get('BRAND') == '1'
+BRAND_TOP, BRAND_BOT = 150, 120          # canvas space the chrome takes (top bar, bottom pill)
+
+
+def brand_html(bg_uri):
+    av = R.b64(R.ROOT / 'assets/brand/abir.jpg')
+    heart = '<svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z" fill="#E8453C"/></svg>'
+    bm = '<svg width="26" height="30" viewBox="0 0 20 24"><path d="M2 2.5C2 1.7 2.7 1 3.5 1h13c.8 0 1.5.7 1.5 1.5V23l-8-5.2L2 23z" fill="#111"/></svg>'
+    return f"""<!doctype html><html><head><meta charset=utf-8><link rel=stylesheet href="{(R.ROOT/'assets/fonts.css').as_uri()}"><style>{R.STAGE_CSS}
+.bg{{position:absolute;inset:0;background:url({bg_uri}) 0 0/1080px 1350px no-repeat}}
+.tb{{position:absolute;left:56px;right:56px;top:30px;height:88px;border-radius:44px;background:#fff;display:flex;align-items:center;padding:0 34px 0 14px;
+ box-shadow:0 1px 0 rgba(0,0,0,.03),0 14px 30px -18px rgba(20,20,30,.25)}}
+.who{{display:flex;align-items:center;gap:14px}}
+.av{{width:62px;height:62px;border-radius:50%;background:url({av}) center/cover;box-shadow:0 0 0 3px #fff,0 0 0 4px #E6E6E6}}
+.who small{{display:block;font-size:15px;color:#8A8A8A;font-family:'Inter Tight';letter-spacing:-.1px}}
+.who b{{display:block;font-size:27px;font-weight:600;color:#111;letter-spacing:-.8px;line-height:1.05;font-family:'Inter Tight'}}
+.who b i{{font-family:'Instrument Serif';font-weight:400;font-size:31px;letter-spacing:-.3px}}
+.mid{{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:26px;align-items:center}}
+.sv{{margin-left:auto;display:flex;align-items:center;gap:14px;font-family:'Inter Tight';font-size:21px;font-weight:600;color:#111;letter-spacing:-.3px}}
+.sv span b{{font-weight:600}} .sv span em{{font-style:normal;font-weight:400}}
+.wa{{position:absolute;left:50%;transform:translateX(-50%);bottom:40px;height:64px;border-radius:32px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 28px 0 10px;
+ font-family:'Inter Tight';box-shadow:0 14px 30px -18px rgba(20,20,30,.25);white-space:nowrap}}
+.wa i{{width:46px;height:46px;border-radius:50%;background:#25D366;display:grid;place-items:center}}
+.wa small{{font-size:16px;color:#8A8A8A}} .wa b{{font-size:22px;font-weight:600;color:#111;letter-spacing:-.2px}}
+.wa .sep{{width:1px;height:26px;background:#E3E3E3}}
+</style></head><body><div class="stage"><div class="bg"></div>
+<div class="tb"><div class="who"><span class="av"></span><div><small>Designed by</small><b>Abir Hasan <i>Rakib</i></b></div></div>
+ <div class="mid">{heart}{R.expand_icons('{{icon:message-circle:32:#111:1.9}}{{icon:send:31:#111:1.9}}')}</div>
+ <div class="sv"><span><b>SAVE</b> <em>for</em> <b>LATER</b></span>{bm}</div></div>
+<div class="wa"><i>{R.expand_icons('{{icon:phone:22:#fff:2.4}}')}</i><small>WhatsApp</small><span class="sep"></span><b>+880 1730 402 994</b></div>
+</div></body></html>"""
+
+
+async def brand(b, work, jpg):
+    """Overlay the brand chrome on a finished design slide (in place)."""
+    p = work / 'brand.html'
+    p.write_text(brand_html(R.b64(pathlib.Path(jpg))))
+    await shot_html(b, p, work / 'brand.png', {'width': W, 'height': H}, 2)
+    save(Image.open(work / 'brand.png').resize((W, H), Image.LANCZOS), jpg)
+
+
 async def dashboard(d, work, prefix, b):
     rendered = d / 'screen.rendered.html'
     rendered.write_text(R.expand_icons((d / 'screen.html').read_text()))
@@ -68,6 +112,10 @@ async def dashboard(d, work, prefix, b):
         (k, W - fw * k / 2, y),        # left half: window midline sits on the canvas right edge
         (k, -fw * k / 2, y),           # right half: window midline sits on the canvas left edge
     ]
+    if BRAND:   # leave room for the top bar and the WhatsApp pill; pan from the left edge, then the right edge
+        k = (H - BRAND_TOP - BRAND_BOT - 24) / fh
+        y = BRAND_TOP + 12
+        views = [(k, 56, y), (k, W - 56 - fw * k, y)]
     n = 2
     for k, x, y in views:
         html, _, _ = window_html(uri, url, k, round(x), round(y))
@@ -76,6 +124,9 @@ async def dashboard(d, work, prefix, b):
         await shot_html(b, p, work / f'zoom{n}.png', {'width': W, 'height': H}, 2)
         save(Image.open(work / f'zoom{n}.png').resize((W, H), Image.LANCZOS), f'{prefix}-{n}.jpg')
         n += 1
+    if BRAND:
+        for i in range(1, n):
+            await brand(b, work, f'{prefix}-{i}.jpg')
     save(await cta_slide(b, work), f'{prefix}-{n}.jpg')
 
 
