@@ -9,7 +9,7 @@ Match these approved posts exactly in presentation; only the design inside the s
 - Dashboard → `posts/2026-11/2026-11-09-pm-hospital-ops-dashboard-1.jpg` … `-4.jpg` (**carousel**: full window, left half, right half, CTA; no popup/zoom card)
 - Website → `posts/2026-11/2026-11-10-am-meeting-notes-website-1.jpg` … `-8.jpg` (**carousel**: whole home page in two columns, top of page large, the whole page rotated 90° in equal bands through the footer, CTA)
 
-Always: 1080×1350, `#EEEEEE` background, light UI, no CTA bar or "Designed by" strip on the design slides; the only CTA is the fixed last slide.
+Always: 1080×1350, `#EEEEEE` background, light UI, the brand chrome ("Designed by" bar + WhatsApp pill, see below) on the design slides; the fixed CTA slide stays last.
 Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 
 ## The schedule
@@ -60,7 +60,7 @@ Folder: `designs/<slot-id>-<short-slug>/screen.html` (+ any images it uses). Out
 python3 tools/carousel.py designs/<dir> <app|dashboard|website> posts/<YYYY-MM>/<slot-id>-<short-slug>
 ```
 
-Canvas for every post: 1080×1350, flat `#EEEEEE` studio background, **no CTA bar, no "Designed by", no logo strip**.
+Canvas for every post: 1080×1350, flat `#EEEEEE` studio background; carousel.py adds the approved brand chrome.
 The renderer handles the mockup; you only design the screen.
 
 | type | screen.html size | mockup the renderer adds |
@@ -151,12 +151,14 @@ new hero component, new chart mix, new palette) so no two posts look alike.
 - Fill the full 1440×960 with no dead space and nothing clipped: check the bottom row and every card edge on slides 2 and 3.
 
 
-## Brand chrome (preview 2026-11-14, WAITING for owner approval — do not use yet)
+## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
 
-Owner asked for a "Designed by" bar like `reference/dashboard-style` Orbix example: top pill with his photo
-(`assets/brand/abir.jpg`), "Designed by / Abir Hasan Rakib", heart/comment/share icons, "SAVE for LATER" + bookmark,
-and a WhatsApp pill (+880 1730 402 994) at the bottom. Built into tools/carousel.py behind `BRAND=1` (dashboards so far).
-Only switch it on (and extend it to app and website slides) after the owner approves the Ledgerly preview.
+Every design slide (not the CTA slide) carries the owner's chrome, added automatically by tools/carousel.py:
+a top pill with his photo (`assets/brand/abir.jpg`), "Designed by / Abir Hasan *Rakib*", heart/comment/share icons and
+"SAVE for LATER" + bookmark, and a WhatsApp pill (+880 1730 402 994) at the bottom. Layouts leave room for it
+(dashboard halves pan from each edge, website columns/bands sit between the bars, app slides shift/scale down).
+Mockup shadows are deliberately faint (owner: the old shadow was too heavy): 1px hairline + a soft, low-opacity drop.
+Do not darken them again. If the owner sends a sharper profile photo, replace `assets/brand/abir.jpg`.
 
 
 ## Growth rules (owner's standing order: every post should aim to go viral)

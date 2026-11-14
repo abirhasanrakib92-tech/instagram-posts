@@ -81,7 +81,7 @@ STAGE_CSS = """
 html,body{width:1080px;height:1350px;overflow:hidden;background:#EEEEEE;font-family:'Inter Tight',sans-serif;-webkit-font-smoothing:antialiased}
 .stage{position:relative;width:1080px;height:1350px;background:#EEEEEE}
 .frame{position:absolute;padding:7px;border-radius:26px;background:rgba(255,255,255,.55);
-  box-shadow:0 0 0 1px rgba(0,0,0,.04),0 40px 80px -30px rgba(20,20,30,.28),0 12px 24px -12px rgba(20,20,30,.12)}
+  box-shadow:0 0 0 1px rgba(0,0,0,.035),0 24px 48px -30px rgba(20,20,30,.10),0 4px 10px -6px rgba(20,20,30,.04)}
 .inner{border-radius:19px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
 .bar{height:38px;display:flex;align-items:center;padding:0 14px;gap:12px;background:#F7F7F8;border-bottom:1px solid #EBEBEE}
 .dots{display:flex;gap:7px}.dots i{width:11px;height:11px;border-radius:50%;display:block}

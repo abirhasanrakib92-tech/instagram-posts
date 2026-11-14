@@ -49,10 +49,10 @@ def window_html(shot_uri, url, k, x, y):
 </div></div></div></div></body></html>""", iw + 14, ih + 14
 
 
-# ---- Owner's brand chrome (preview 2026-11-14, pending approval): "Designed by" bar on top, WhatsApp pill at the bottom.
-# Enabled with BRAND=1 in the environment. The CTA slide is left unchanged.
+# ---- Owner's brand chrome (approved 2026-11-14): "Designed by" bar on top, WhatsApp pill at the bottom,
+# on every design slide of every type. The CTA slide is left unchanged. BRAND=0 turns it off.
 import os
-BRAND = os.environ.get('BRAND') == '1'
+BRAND = os.environ.get('BRAND', '1') == '1'
 BRAND_TOP, BRAND_BOT = 150, 120          # canvas space the chrome takes (top bar, bottom pill)
 
 
@@ -63,7 +63,7 @@ def brand_html(bg_uri):
     return f"""<!doctype html><html><head><meta charset=utf-8><link rel=stylesheet href="{(R.ROOT/'assets/fonts.css').as_uri()}"><style>{R.STAGE_CSS}
 .bg{{position:absolute;inset:0;background:url({bg_uri}) 0 0/1080px 1350px no-repeat}}
 .tb{{position:absolute;left:56px;right:56px;top:30px;height:88px;border-radius:44px;background:#fff;display:flex;align-items:center;padding:0 34px 0 14px;
- box-shadow:0 1px 0 rgba(0,0,0,.03),0 14px 30px -18px rgba(20,20,30,.25)}}
+ box-shadow:0 0 0 1px rgba(0,0,0,.025),0 10px 24px -20px rgba(20,20,30,.12)}}
 .who{{display:flex;align-items:center;gap:14px}}
 .av{{width:62px;height:62px;border-radius:50%;background:url({av}) center/cover;box-shadow:0 0 0 3px #fff,0 0 0 4px #E6E6E6}}
 .who small{{display:block;font-size:15px;color:#8A8A8A;font-family:'Inter Tight';letter-spacing:-.1px}}
@@ -73,7 +73,7 @@ def brand_html(bg_uri):
 .sv{{margin-left:auto;display:flex;align-items:center;gap:14px;font-family:'Inter Tight';font-size:21px;font-weight:600;color:#111;letter-spacing:-.3px}}
 .sv span b{{font-weight:600}} .sv span em{{font-style:normal;font-weight:400}}
 .wa{{position:absolute;left:50%;transform:translateX(-50%);bottom:40px;height:64px;border-radius:32px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 28px 0 10px;
- font-family:'Inter Tight';box-shadow:0 14px 30px -18px rgba(20,20,30,.25);white-space:nowrap}}
+ font-family:'Inter Tight';box-shadow:0 0 0 1px rgba(0,0,0,.025),0 10px 24px -20px rgba(20,20,30,.12);white-space:nowrap}}
 .wa i{{width:46px;height:46px;border-radius:50%;background:#25D366;display:grid;place-items:center}}
 .wa small{{font-size:16px;color:#8A8A8A}} .wa b{{font-size:22px;font-weight:600;color:#111;letter-spacing:-.2px}}
 .wa .sep{{width:1px;height:26px;background:#E3E3E3}}
@@ -83,6 +83,20 @@ def brand_html(bg_uri):
  <div class="sv"><span><b>SAVE</b> <em>for</em> <b>LATER</b></span>{bm}</div></div>
 <div class="wa"><i>{R.expand_icons('{{icon:phone:22:#fff:2.4}}')}</i><small>WhatsApp</small><span class="sep"></span><b>+880 1730 402 994</b></div>
 </div></body></html>"""
+
+
+def make_room(jpg, mode):
+    """Free the top/bottom bands for the chrome on a slide laid out without it (app slides).
+    shift: move everything down (hand+phone photo that bleeds off the bottom); scale: shrink into the free box."""
+    im = Image.open(jpg).convert('RGB')
+    c = Image.new('RGB', (W, H), BG)
+    if mode == 'shift':
+        c.paste(im, (0, BRAND_TOP - 20))
+    else:
+        s_ = (H - BRAND_TOP - BRAND_BOT) / H
+        sm = im.resize((round(W * s_), round(H * s_)), Image.LANCZOS)
+        c.paste(sm, ((W - sm.width) // 2, BRAND_TOP))
+    c.save(jpg, quality=95)
 
 
 async def brand(b, work, jpg):
@@ -145,15 +159,19 @@ async def website(d, work, prefix, b):
     # slide 1: left column = page from the top (bleeds off the bottom), right column = page bottom-aligned
     # (ends at the footer), narrower, so together they show the whole home page.
     lw, rw, gap, top = 600, 360, 26, 70
+    lh = H - top + 40                           # left column bleeds off the bottom
+    rh = H - top - 70                           # ends inside the frame so the footer shows
+    if BRAND:
+        top = BRAND_TOP + 12
+        lh = rh = H - top - BRAND_BOT - 12
     lx = (W - lw - rw - gap) // 2
     lsc, rsc = lw / pw, rw / pw
-    left = page.crop((0, 0, pw, min(ph, round((H - top + 40) / lsc))))
-    rh = H - top - 70                           # ends inside the frame so the footer shows
+    left = page.crop((0, 0, pw, min(ph, round(lh / lsc))))
     right = page.crop((0, max(0, ph - round(rh / rsc)), pw, ph))
     html = f"""<!doctype html><html><head><meta charset=utf-8><style>{R.STAGE_CSS}
 .col{{position:absolute;top:{top}px;background:#fff;border-radius:6px;overflow:hidden;
-box-shadow:0 0 0 1px rgba(0,0,0,.05),0 30px 60px -30px rgba(20,20,30,.3)}}</style></head><body><div class="stage">
-<div class="col" style="left:{lx}px;width:{lw}px;height:{H-top+40}px;background:url({uri(left)}) 0 0/100% auto no-repeat"></div>
+box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</style></head><body><div class="stage">
+<div class="col" style="left:{lx}px;width:{lw}px;height:{lh}px;background:url({uri(left)}) 0 0/100% auto no-repeat"></div>
 <div class="col" style="left:{lx+lw+gap}px;width:{rw}px;height:{rh}px;background:url({uri(right)}) 0 100%/100% auto no-repeat"></div>
 </div></body></html>"""
     p = work / 'web1.html'
@@ -165,10 +183,13 @@ box-shadow:0 0 0 1px rgba(0,0,0,.05),0 30px 60px -30px rgba(20,20,30,.3)}}</styl
     cw, ctop = 900, 110
     sc = cw / pw
     card_h = H - ctop - 90
+    if BRAND:
+        ctop = BRAND_TOP + 12
+        card_h = H - ctop - BRAND_BOT - 12
     topimg = page.crop((0, 0, pw, round(card_h / sc)))
     html = f"""<!doctype html><html><head><meta charset=utf-8><style>{R.STAGE_CSS}
 .col{{position:absolute;background:#fff;border-radius:6px;overflow:hidden;
-box-shadow:0 0 0 1px rgba(0,0,0,.05),0 40px 80px -30px rgba(20,20,30,.3)}}</style></head><body><div class="stage">
+box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</style></head><body><div class="stage">
 <div class="col" style="left:{(W-cw)//2}px;top:{ctop}px;width:{cw}px;height:{card_h}px;background:url({uri(topimg)}) 0 0/100% auto no-repeat"></div>
 </div></body></html>"""
     p = work / 'web2.html'
@@ -183,20 +204,26 @@ box-shadow:0 0 0 1px rgba(0,0,0,.05),0 40px 80px -30px rgba(20,20,30,.3)}}</styl
     def fit(k):
         s_ = (k * W - 300) / ph
         return s_, round(pw * s_)
-    k = max(2, round((ph * (H - 200) / pw + 300) / W))
+    maxb = H - BRAND_TOP - BRAND_BOT - 24 if BRAND else H - 90
+    k = max(2, round((ph * (maxb - 110) / pw + 300) / W))
     s_, band = fit(k)
-    while band > H - 90 and k < 7:
+    while band > maxb and k < 7:
         k += 1; s_, band = fit(k)
-    while band < H - 380 and k > 2 and fit(k - 1)[1] <= H - 90:
+    while band < maxb - 290 and k > 2 and fit(k - 1)[1] <= maxb:
         k -= 1; s_, band = fit(k)
     rot = page.rotate(90, expand=True).resize((round(ph * s_), band), Image.LANCZOS)
     strip = Image.new('RGB', (k * W, band), BG)
     strip.paste(rot, (150, 0))
     top = (H - band) // 2
+    if BRAND:
+        top = BRAND_TOP + 12 + (maxb - band) // 2
     for i in range(k):
         c = Image.new('RGB', (W, H), BG)
         c.paste(strip.crop((i * W, 0, (i + 1) * W, band)), (0, top))
         save(c, f'{prefix}-{i + 3}.jpg')
+    if BRAND:
+        for i in range(1, k + 3):
+            await brand(b, work, f'{prefix}-{i}.jpg')
     save(await cta_slide(b, work), f'{prefix}-{k + 3}.jpg')
 
 
@@ -311,6 +338,10 @@ async def app(d, work, prefix, b):
         ".l{display:flex;justify-content:space-between;font:500 24px 'Inter Tight';margin-top:16px;letter-spacing:.3px}"
         ".l span:first-child{color:#111114}.l span:last-child{color:#6B6B74;font-family:'JetBrains Mono';font-size:22px}")
     save(s4, f'{prefix}-4.jpg')
+    if BRAND:
+        for i in range(1, 5):
+            make_room(f'{prefix}-{i}.jpg', 'shift' if i == 1 else 'scale')
+            await brand(b, work, f'{prefix}-{i}.jpg')
     save(await cta_slide(b, work), f'{prefix}-5.jpg')
 
 
