@@ -1,0 +1,364 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F6F5F1;--card:#FFFFFF;--sand:#EEECE5;--ink:#0E1A14;--ink2:#56615B;--ink3:#8E968F;--line:#E2DFD6;--forest:#12291D;--g:#1FBF63;--g2:#E2F5E8;--lime:#C8F560}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Inter Tight';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.w{width:1320px;margin:0 auto}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-.5px}
+.ph{background-size:cover;background-repeat:no-repeat}
+.pill{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:600;color:var(--ink2)}
+.b{height:52px;padding:0 8px 0 24px;border-radius:999px;display:inline-flex;align-items:center;gap:14px;font-size:15px;font-weight:600}
+.b i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center}
+.b.l{background:var(--lime);color:var(--ink)}.b.l i{background:var(--ink)}
+.b.d{background:var(--ink);color:#fff}.b.d i{background:var(--lime)}
+.b.o{background:#fff;border:1px solid var(--line);padding:0 24px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--g)}
+h2{font-size:56px;line-height:1.02;letter-spacing:-2.2px;font-weight:600}
+h2 .serif{font-size:64px;color:var(--g)}
+.sub{font-size:17px;line-height:1.55;color:var(--ink2)}
+
+/* nav */
+nav{display:flex;align-items:center;height:96px}
+.lg{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:700;letter-spacing:-.8px}
+.lg i{width:36px;height:36px;border-radius:11px;background:var(--forest);display:grid;place-items:center}
+.lk{display:flex;gap:6px;margin-left:72px}
+.lk span{height:40px;padding:0 18px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:var(--ink2)}
+.lk span.on{background:#fff;color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.nr{margin-left:auto;display:flex;gap:10px;align-items:center}
+
+/* hero */
+.hero{display:grid;grid-template-columns:560px 1fr;gap:16px;height:720px}
+.hl{background:var(--forest);border-radius:32px;padding:48px;color:#fff;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hl .tag{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:13px;font-weight:500;color:#D7E3DB}
+.hl h1{font-size:78px;line-height:.98;letter-spacing:-3.4px;font-weight:600;margin-top:28px}
+.hl h1 .serif{font-size:88px;color:var(--lime);letter-spacing:-1.5px}
+.hl p{font-size:18px;line-height:1.55;color:#B9C7BE;margin-top:24px;width:430px}
+.hl .cta{display:flex;gap:12px;margin-top:auto;align-items:center}
+.hl .ghost{height:52px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;font-size:15px;font-weight:600}
+.hl .meta{display:flex;gap:28px;margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12)}
+.hl .meta b{display:block;font-size:30px;font-weight:600;letter-spacing:-1px}
+.hl .meta span{font-size:13px;color:#93A69A}
+.hr{border-radius:32px;position:relative;overflow:hidden;background:url(hero.jpg) 46% 60%/cover}
+.glass{background:rgba(255,255,255,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.6)}
+.hr .big{position:absolute;top:28px;right:28px;border-radius:24px;padding:20px 24px;width:250px}
+.hr .big b{font-size:52px;font-weight:600;letter-spacing:-2px;line-height:1}
+.hr .big p{font-size:14px;color:var(--ink2);margin-top:8px;line-height:1.4}
+.station{position:absolute;left:28px;bottom:28px;width:400px;border-radius:24px;padding:18px;background:rgba(255,255,255,.86);backdrop-filter:blur(18px)}
+.station .h{display:flex;align-items:center;gap:12px}
+.station .h i{width:44px;height:44px;border-radius:13px;background:var(--forest);display:grid;place-items:center}
+.station .h b{font-size:16px;font-weight:600;display:block}
+.station .h span{font-size:13px;color:var(--ink2)}
+.station .open{margin-left:auto;font-size:12px;font-weight:600;color:#0E7A3C;background:var(--g2);border-radius:999px;padding:6px 10px}
+.ports{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.ports div{background:#fff;border-radius:14px;padding:10px 12px;border:1px solid var(--line)}
+.ports small{font-size:11px;color:var(--ink3);display:block}
+.ports b{font-size:18px;font-weight:600;letter-spacing:-.4px}.ports b sub{font-size:11px;color:var(--ink3);font-weight:500;vertical-align:baseline}
+.ports em{font-style:normal;font-size:12px;font-weight:600;display:flex;align-items:center;gap:5px;margin-top:2px}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.live{position:absolute;right:28px;bottom:28px;border-radius:999px;height:44px;padding:0 16px 0 8px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+.live i{width:30px;height:30px;border-radius:50%;background:var(--g);display:grid;place-items:center}
+
+/* features strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);margin-top:16px;background:#fff;border-radius:24px;border:1px solid var(--line)}
+.strip>div{display:flex;align-items:center;gap:14px;padding:24px 28px}
+.strip>div+div{border-left:1px solid var(--line)}
+.strip i{width:46px;height:46px;border-radius:14px;background:var(--g2);display:grid;place-items:center;flex:none}
+.strip b{font-size:16px;font-weight:600;display:block}
+.strip span{font-size:13px;color:var(--ink3)}
+
+/* who */
+.sec{padding-top:150px}
+.head{display:grid;grid-template-columns:260px 1fr 360px;gap:40px;align-items:start}
+.head .sub{padding-top:10px}
+.head>div{padding-top:12px}
+.who{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px;margin-top:56px}
+.wc{height:520px;border-radius:28px;position:relative;overflow:hidden}
+.wc .cap{position:absolute;left:16px;right:16px;bottom:16px;border-radius:20px;padding:20px 22px}
+.wc .cap b{font-size:22px;font-weight:600;letter-spacing:-.5px}
+.wc .cap p{font-size:14px;color:var(--ink2);margin-top:6px;line-height:1.45}
+.wc .cap .r{display:flex;align-items:center;justify-content:space-between}
+.wc .cap .r i{width:36px;height:36px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.wc .chip{position:absolute;top:16px;left:16px;height:32px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:600;display:flex;align-items:center}
+.wc.dark{background:var(--forest);color:#fff;padding:32px;display:flex;flex-direction:column}
+.wc.dark h3{font-size:34px;line-height:1.08;letter-spacing:-1.2px;font-weight:600}
+.wc.dark h3 .serif{color:var(--lime);font-size:40px}
+.wc.dark .kp{margin-top:auto;display:grid;gap:10px}
+.wc.dark .kp div{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:14px;color:#C7D3CB}
+.wc.dark .kp b{color:#fff;font-size:18px;font-weight:600}
+
+/* how */
+.how{display:grid;grid-template-columns:600px 1fr;gap:64px;align-items:stretch;margin-top:56px}
+.howimg{border-radius:28px;position:relative;overflow:hidden;background:url(plug.jpg) 40% 50%/cover;min-height:600px}
+.howimg .tip{position:absolute;left:20px;top:20px;border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:center;width:300px}
+.howimg .tip i{width:40px;height:40px;border-radius:12px;background:var(--g);display:grid;place-items:center;flex:none}
+.howimg .tip b{font-size:15px;font-weight:600;display:block}.howimg .tip span{font-size:13px;color:var(--ink2)}
+.howimg .meter{position:absolute;right:20px;bottom:20px;width:230px;border-radius:22px;padding:18px}
+.meter .row{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2)}
+.meter .pct{font-size:44px;font-weight:600;letter-spacing:-1.8px;margin-top:4px}
+.bar{height:8px;border-radius:9px;background:#E3E6E1;margin-top:10px;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);border-radius:9px}
+.acc{display:flex;flex-direction:column}
+.acc .it{display:flex;align-items:center;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}
+.acc .it .n{font-size:15px;font-weight:600;color:var(--ink3);width:30px}
+.acc .it b{font-size:22px;font-weight:600;letter-spacing:-.5px}
+.acc .it .p{margin-left:auto;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.acc .open{background:var(--forest);color:#fff;border-radius:24px;padding:28px;margin:8px 0}
+.acc .open .t{display:flex;align-items:center;gap:22px}
+.acc .open .n{font-size:15px;font-weight:600;color:var(--lime);width:30px}
+.acc .open b{font-size:24px;font-weight:600;letter-spacing:-.5px}
+.acc .open .p{margin-left:auto;width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+.acc .open p{font-size:15px;line-height:1.6;color:#B9C7BE;margin:14px 0 0 52px;width:520px}
+.acc .open .steps{display:flex;gap:8px;margin:20px 0 0 52px}
+.acc .open .steps span{height:32px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:13px;display:flex;align-items:center;gap:6px;color:#DDE6E0}
+
+/* network banner */
+.net{height:620px;border-radius:32px;position:relative;overflow:hidden;background:url(hub.jpg) 50% 55%/cover;margin-top:56px}
+.net::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,22,15,.82) 0%,rgba(9,22,15,.45) 45%,rgba(9,22,15,0) 75%)}
+.net .in{position:absolute;inset:0;z-index:1;padding:56px;display:flex;flex-direction:column;color:#fff}
+.net h2{color:#fff;width:600px}
+.net h2 .serif{color:var(--lime)}
+.net .sub{color:#C4D0C8;width:460px;margin-top:20px}
+.net .stats{margin-top:auto;display:grid;grid-template-columns:repeat(4,240px);gap:12px}
+.net .stats div{border-radius:20px;padding:20px 22px;background:rgba(255,255,255,.1);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18)}
+.net .stats b{font-size:40px;font-weight:600;letter-spacing:-1.6px;display:block}
+.net .stats span{font-size:13px;color:#C4D0C8}
+
+/* pricing */
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.pc{background:#fff;border:1px solid var(--line);border-radius:28px;padding:32px;display:flex;flex-direction:column;min-height:470px}
+.pc .t{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600}
+.pc .amt{font-size:64px;font-weight:600;letter-spacing:-3px;margin-top:28px;line-height:1}
+.pc .amt small{font-size:16px;font-weight:500;letter-spacing:0;color:var(--ink3);margin-left:4px}
+.pc .d{font-size:15px;color:var(--ink2);margin-top:12px;line-height:1.5}
+.pc ul{list-style:none;margin-top:24px;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:12px}
+.pc li{display:flex;gap:10px;align-items:center;font-size:15px}
+.pc li i{width:22px;height:22px;border-radius:50%;background:var(--g2);display:grid;place-items:center;flex:none}
+.pc .btn{margin-top:auto;height:52px;border-radius:999px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
+.pc.hot{background:var(--forest);color:#fff;border-color:var(--forest)}
+.pc.hot .d{color:#B9C7BE}.pc.hot ul{border-color:rgba(255,255,255,.12)}.pc.hot .amt small{color:#93A69A}
+.pc.hot li i{background:rgba(200,245,96,.16)}
+.pc.hot .btn{background:var(--lime);color:var(--ink);border:0}
+.save{font-size:12px;font-weight:600;background:var(--lime);color:var(--ink);border-radius:999px;padding:6px 10px}
+
+/* testimonial */
+.tst{display:grid;grid-template-columns:480px 1fr;gap:16px;margin-top:56px}
+.tp{border-radius:28px;background:url(driver.jpg) 50% 22%/cover;height:560px;position:relative;overflow:hidden}
+.tp .nm{position:absolute;left:16px;right:16px;bottom:16px;border-radius:20px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between}
+.tp .nm b{font-size:17px;font-weight:600;display:block}.tp .nm span{font-size:13px;color:var(--ink2)}
+.tq{background:#fff;border:1px solid var(--line);border-radius:28px;padding:48px;display:flex;flex-direction:column}
+.tq .q{font-family:'Instrument Serif';font-size:110px;line-height:.6;color:var(--g);height:44px}
+.tq blockquote{font-size:38px;line-height:1.18;letter-spacing:-1.2px;font-weight:500;margin-top:18px}
+.tq blockquote .serif{color:var(--g);font-size:44px}
+.tq .bot{margin-top:auto;display:grid;grid-template-columns:200px 1fr 1fr;gap:16px;align-items:stretch}
+.tq .rate{background:var(--g2);border-radius:20px;padding:18px 20px}
+.tq .rate b{font-size:44px;font-weight:600;letter-spacing:-1.6px}.tq .rate b small{font-size:16px;color:var(--ink2);font-weight:500}
+.tq .rate span{display:block;font-size:13px;color:var(--ink2)}
+.stars{display:flex;gap:2px;margin-top:4px}
+.mini{border:1px solid var(--line);border-radius:20px;padding:18px 20px;font-size:14px;line-height:1.5;color:var(--ink2)}
+.mini .who2{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:13px}
+.av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700}
+.mini .who2 b{color:var(--ink);font-weight:600}
+
+/* app cta */
+.app{margin-top:150px;background:var(--lime);border-radius:32px;height:520px;display:grid;grid-template-columns:1fr 520px;overflow:hidden;position:relative}
+.app .l{padding:64px}
+.app h2 .serif{color:var(--forest)}
+.app .sub{color:#2F4A39;width:470px;margin-top:20px}
+.app .ctas{display:flex;gap:12px;margin-top:36px}
+.app .r{position:relative}
+.sess{position:absolute;left:30px;top:64px;width:420px;background:#fff;border-radius:28px;padding:24px;box-shadow:0 40px 80px -40px rgba(14,26,20,.5)}
+.sess .h{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600}
+.sess .ring{display:flex;align-items:center;gap:24px;margin-top:18px}
+.sess .kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.sess .kv div{background:var(--bg);border-radius:14px;padding:12px 14px}
+.sess .kv small{font-size:12px;color:var(--ink3);display:block}.sess .kv b{font-size:18px;font-weight:600}
+.sess .stop{margin-top:14px;height:48px;border-radius:999px;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
+
+/* footer */
+footer{margin-top:16px;background:var(--forest);border-radius:32px 32px 0 0;color:#fff;padding:64px 64px 0;overflow:hidden}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.4fr;gap:40px}
+.ft h5{font-size:13px;font-weight:600;color:#93A69A;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:16px}
+.ft p,.ft li{font-size:15px;color:#D2DDD6;line-height:1.5}
+.ft ul{list-style:none;display:grid;gap:10px}
+.news{display:flex;height:52px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);align-items:center;padding:0 6px 0 20px;margin-top:16px;font-size:14px;color:#93A69A}
+.news span{margin-left:auto;height:40px;padding:0 18px;border-radius:999px;background:var(--lime);color:var(--ink);font-weight:600;display:flex;align-items:center}
+.word{font-size:286px;font-weight:700;letter-spacing:-13px;line-height:1;margin-top:40px;padding-bottom:24px;color:var(--lime);white-space:nowrap;text-align:center}
+.legal{display:flex;justify-content:space-between;font-size:13px;color:#93A69A;padding:22px 0 26px;border-top:1px solid rgba(255,255,255,.1)}
+</style></head><body>
+<div class="w">
+<nav>
+ <div class="lg"><i>{{icon:zap:19:#C8F560:2.4}}</i>Voltway</div>
+ <div class="lk"><span class="on">Home</span><span>Find chargers</span><span>Pricing</span><span>For fleets</span><span>Host a site</span></div>
+ <div class="nr"><span class="pill" style="height:44px;padding:0 18px;font-size:14px">{{icon:map-pin:15:#1FBF63}} Austin, TX</span><span class="b d" style="height:48px">Get the app<i>{{icon:arrow-up-right:17:#0E1A14:2.4}}</i></span></div>
+</nav>
+
+<section class="hero">
+ <div class="hl">
+  <span class="tag">{{icon:zap:14:#C8F560:2.4}} 1,240 fast chargers across 18 states</span>
+  <h1>Charge in the time it takes to <span class="serif">grab a coffee.</span></h1>
+  <p>350 kW chargers that add 200 miles in about 15 minutes. Reserve a bay, plug in, and pay automatically from the app.</p>
+  <div class="cta"><span class="b l">Find a charger<i>{{icon:arrow-right:17:#C8F560:2.4}}</i></span><span class="ghost">See pricing</span></div>
+  <div class="meta"><div><b>99.2%</b><span>charger uptime</span></div><div><b>15 min</b><span>10% to 80%</span></div><div><b>4.8</b><span>from 38k drivers</span></div></div>
+ </div>
+ <div class="hr">
+  <div class="big glass"><b>1,240</b><p>Fast chargers, owned and maintained by Voltway</p></div>
+  <div class="station">
+   <div class="h"><i>{{icon:zap:20:#C8F560:2.4}}</i><div><b>Harbor Market Hub</b><span>0.8 mi · Café, restrooms, Wi-Fi</span></div><span class="open">4 of 6 free</span></div>
+   <div class="ports">
+    <div><small>CCS · 350 kW</small><b>$0.42<sub>/kWh</sub></b><em style="color:#0E7A3C"><i class="dot" style="background:#1FBF63"></i>2 free</em></div>
+    <div><small>CCS · 150 kW</small><b>$0.38<sub>/kWh</sub></b><em style="color:#0E7A3C"><i class="dot" style="background:#1FBF63"></i>2 free</em></div>
+    <div><small>NACS · 250 kW</small><b>$0.40<sub>/kWh</sub></b><em style="color:#B26A00"><i class="dot" style="background:#F2A20C"></i>In use</em></div>
+   </div>
+  </div>
+  <div class="live glass"><i>{{icon:navigation:15:#fff:2.4}}</i>3 min away</div>
+ </div>
+</section>
+
+<section class="strip">
+ <div><i>{{icon:gauge:22:#0E7A3C}}</i><div><b>Up to 350 kW</b><span>200 miles in 15 minutes</span></div></div>
+ <div><i>{{icon:calendar-check:22:#0E7A3C}}</i><div><b>Reserve a bay</b><span>Held free for 15 minutes</span></div></div>
+ <div><i>{{icon:plug-zap:22:#0E7A3C}}</i><div><b>Plug and charge</b><span>No cards, no QR codes</span></div></div>
+ <div><i>{{icon:headset:22:#0E7A3C}}</i><div><b>24/7 driver support</b><span>Real people, under 2 min</span></div></div>
+</section>
+
+<section class="sec">
+ <div class="head">
+  <div><span class="pill">Who it's for</span></div>
+  <h2>One network for every driver, <span class="serif">fleet and host</span></h2>
+  <p class="sub">Whether you charge twice a week or run 300 delivery vans, Voltway works the same way: open the app, see a free bay, plug in.</p>
+ </div>
+ <div class="who">
+  <div class="wc ph" style="background-image:url(driver.jpg);background-position:50% 30%">
+   <span class="chip glass">Everyday drivers</span>
+   <div class="cap glass"><div class="r"><b>Commutes and road trips</b><i>{{icon:arrow-up-right:16:#fff:2.4}}</i></div><p>Live availability, reservations and one price per kWh at every station.</p></div>
+  </div>
+  <div class="wc ph" style="background-image:url(hub.jpg);background-position:30% 50%">
+   <span class="chip glass">Fleets</span>
+   <div class="cap glass"><div class="r"><b>Delivery and taxi fleets</b><i>{{icon:arrow-up-right:16:#fff:2.4}}</i></div><p>One invoice for every driver, with depot charging set up by our team.</p></div>
+  </div>
+  <div class="wc dark">
+   <span class="pill" style="align-self:flex-start;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#D7E3DB">Site hosts</span>
+   <h3 style="margin-top:24px">Turn your parking lot into a <span class="serif">charging stop</span></h3>
+   <p style="font-size:15px;line-height:1.55;color:#B9C7BE;margin-top:16px">We fund, install and run the chargers. You get busier aisles and a monthly revenue share.</p>
+   <div class="kp">
+    <div>Install cost to you<b>$0</b></div>
+    <div>Avg. dwell time in store<b>+22 min</b></div>
+    <div>Revenue share, paid monthly<b>12%</b></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="head" style="grid-template-columns:260px 1fr">
+  <div><span class="pill">How it works</span></div>
+  <h2>From empty to road trip <span class="serif">in four steps</span></h2>
+ </div>
+ <div class="how">
+  <div class="howimg">
+   <div class="tip glass"><i>{{icon:shield-check:20:#fff:2.2}}</i><div><b>Recognised on connection</b><span>Billing starts when power flows</span></div></div>
+   <div class="meter glass"><div class="row"><span>Charging</span><span style="color:#0E7A3C;font-weight:600">312 kW</span></div><div class="pct">78%</div><div class="bar"><i style="width:78%"></i></div><div class="row" style="margin-top:10px"><span>4 min to 80%</span><span>$14.98</span></div></div>
+  </div>
+  <div class="acc">
+   <div class="it"><span class="n">01</span><b>Find a free charger near you</b><span class="p">{{icon:plus:16:#0E1A14}}</span></div>
+   <div class="open">
+    <div class="t"><span class="n">02</span><b>Reserve your bay before you arrive</b><span class="p">{{icon:minus:16:#0E1A14:2.4}}</span></div>
+    <p>Tap reserve and the charger is held for you for 15 minutes, free on every plan. Running late? Extend once from the app, or let it go with no fee.</p>
+    <div class="steps"><span>{{icon:clock-3:14:#C8F560}} 15 min hold</span><span>{{icon:refresh-cw:14:#C8F560}} 1 free extension</span><span>{{icon:x:14:#C8F560}} No cancel fee</span></div>
+   </div>
+   <div class="it"><span class="n">03</span><b>Plug in and walk away</b><span class="p">{{icon:plus:16:#0E1A14}}</span></div>
+   <div class="it"><span class="n">04</span><b>Get a receipt when you unplug</b><span class="p">{{icon:plus:16:#0E1A14}}</span></div>
+   <div style="display:flex;gap:16px;margin-top:auto;padding-top:28px">
+    <div style="flex:1;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 22px"><span style="font-size:13px;color:var(--ink3)">Average stop</span><div style="font-size:34px;font-weight:600;letter-spacing:-1.2px;margin-top:4px">17 min</div></div>
+    <div style="flex:1;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 22px"><span style="font-size:13px;color:var(--ink3)">Faults fixed within</span><div style="font-size:34px;font-weight:600;letter-spacing:-1.2px;margin-top:4px">6 hours</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="net">
+ <div class="in">
+  <span class="eyebrow" style="color:var(--lime)">The network</span>
+  <h2 style="margin-top:16px">Hubs built for <span class="serif">people,</span> not just cars</h2>
+  <p class="sub">Every Voltway hub has a canopy, lighting, restrooms and a café or store within a 2-minute walk. Solar roofs cover 31% of what we deliver.</p>
+  <div class="stats">
+   <div><b>1,240</b><span>fast chargers</span></div>
+   <div><b>212</b><span>hubs in 18 states</span></div>
+   <div><b>99.2%</b><span>uptime, last 90 days</span></div>
+   <div><b>31%</b><span>solar from our own roofs</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="head">
+  <div><span class="pill">Pricing</span></div>
+  <h2>Pay per kWh.<br><span class="serif">Save with a plan.</span></h2>
+  <p class="sub">The price on the map is the price you pay. No session fees, no idle fees until you're 10 minutes past full.</p>
+ </div>
+ <div class="price">
+  <div class="pc"><div class="t">Pay as you go<span class="pill" style="height:30px">Default</span></div><div class="amt">$0.48<small>/kWh</small></div><p class="d">No monthly fee. Charge anywhere on the network.</p>
+   <ul><li><i>{{icon:check:13:#0E7A3C:3}}</i>All 1,240 chargers</li><li><i>{{icon:check:13:#0E7A3C:3}}</i>Free 15-min reservations</li><li><i>{{icon:check:13:#0E7A3C:3}}</i>Receipts by email</li></ul><span class="btn">Start charging</span></div>
+  <div class="pc hot"><div class="t">Voltway Plus<span class="save">Save 25%</span></div><div class="amt">$0.36<small>/kWh</small></div><p class="d">$9.99 a month. Pays for itself after about 85 kWh.</p>
+   <ul><li><i>{{icon:check:13:#C8F560:3}}</i>25% off every session</li><li><i>{{icon:check:13:#C8F560:3}}</i>Priority bay reservations</li><li><i>{{icon:check:13:#C8F560:3}}</i>Off-peak $0.29 after 9 PM</li></ul><span class="btn">Try 30 days free</span></div>
+  <div class="pc"><div class="t">Fleet<span class="pill" style="height:30px">10+ vehicles</span></div><div class="amt">Custom</div><p class="d">For delivery, taxi and company car fleets.</p>
+   <ul><li><i>{{icon:check:13:#0E7A3C:3}}</i>One invoice for every driver</li><li><i>{{icon:check:13:#0E7A3C:3}}</i>Depot charging setup</li><li><i>{{icon:check:13:#0E7A3C:3}}</i>Dedicated account manager</li></ul><span class="btn">Talk to sales</span></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="head" style="grid-template-columns:260px 1fr 360px">
+  <div><span class="pill">Driver stories</span></div>
+  <h2>38,000 drivers<br><span class="serif">stopped worrying</span></h2>
+  <p class="sub">Rated 4.8 out of 5 across the App Store and Google Play.</p>
+ </div>
+ <div class="tst">
+  <div class="tp"><div class="nm glass"><div><b>Aisha Rahman</b><span>Weekend road-tripper · 9k miles</span></div><span class="pill" style="height:30px">{{icon:badge-check:14:#1FBF63}} Verified</span></div></div>
+  <div class="tq">
+   <div class="q">“</div>
+   <blockquote>Reserving a bay before I leave home changed our road trips. <span class="serif">Fifteen minutes,</span> a coffee, and we're back on the road.</blockquote>
+   <div class="bot">
+    <div class="rate"><b>4.8<small>/5</small></b><div class="stars"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6-4.9-4.5 6.6-.8z" fill="#1FBF63"/></svg><svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6-4.9-4.5 6.6-.8z" fill="#1FBF63"/></svg><svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6-4.9-4.5 6.6-.8z" fill="#1FBF63"/></svg><svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6-4.9-4.5 6.6-.8z" fill="#1FBF63"/></svg><svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.5 1.3 6.6L12 17.2l-5.9 3.3 1.3-6.6-4.9-4.5 6.6-.8z" fill="#1FBF63"/></svg></div><span>12,400 reviews</span></div>
+    <div class="mini">“I drive 300 miles a week for work. I never wonder if the charger will work.”<div class="who2"><span class="av" style="background:var(--g2);color:#0E7A3C">MC</span><div><b>Marcus Chen</b> · Sales rep</div></div></div>
+    <div class="mini">“Our 40 vans charge overnight at the depot and top up on Voltway by day.”<div class="who2"><span class="av" style="background:#F3EEDD;color:#8A6A1E">DO</span><div><b>Dana Ortiz</b> · Fleet lead</div></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="app">
+ <div class="l">
+  <span class="eyebrow" style="color:var(--forest)">The Voltway app</span>
+  <h2 style="margin-top:16px">Your next charge is<br><span class="serif">3 minutes away</span></h2>
+  <p class="sub">Download the app, add your car, and get your first 50 kWh free. That's about 180 miles on us.</p>
+  <div class="ctas"><span class="b d">Get the app<i>{{icon:arrow-up-right:17:#0E1A14:2.4}}</i></span><span class="b o" style="border-color:rgba(14,26,20,.15);background:rgba(255,255,255,.5)">Find a charger</span></div>
+ </div>
+ <div class="r">
+  <div class="sess">
+   <div class="h"><span style="display:flex;align-items:center;gap:8px">{{icon:zap:16:#1FBF63:2.4}} Charging · Harbor Market</span><span style="color:#0E7A3C">312 kW</span></div>
+   <div class="ring">
+    <svg width="150" height="150" viewBox="0 0 150 150"><circle cx="75" cy="75" r="62" fill="none" stroke="#EEECE5" stroke-width="14"/><circle cx="75" cy="75" r="62" fill="none" stroke="#1FBF63" stroke-width="14" stroke-linecap="round" stroke-dasharray="303.8 389.6" transform="rotate(-90 75 75)"/><text x="75" y="80" text-anchor="middle" font-family="Inter Tight" font-size="34" font-weight="600" fill="#0E1A14">78%</text><text x="75" y="102" text-anchor="middle" font-family="Inter Tight" font-size="12" fill="#8E968F">4 min to 80%</text></svg>
+    <div style="display:grid;gap:12px;font-size:14px;color:var(--ink2)"><div>Range added<b style="display:block;font-size:22px;color:var(--ink);font-weight:600">186 mi</b></div><div>Energy<b style="display:block;font-size:22px;color:var(--ink);font-weight:600">41.6 kWh</b></div></div>
+   </div>
+   <div class="kv"><div><small>Cost so far</small><b>$14.98</b></div><div><small>Time plugged in</small><b>13 min</b></div></div>
+   <div class="stop">Stop charging</div>
+  </div>
+ </div>
+</section>
+</div>
+
+<div class="w">
+<footer>
+ <div class="ft">
+  <div><div class="lg"><i style="background:var(--lime)">{{icon:zap:19:#12291D:2.4}}</i>Voltway</div><p style="margin-top:16px;width:260px;color:#93A69A">Fast, reliable EV charging across 18 states. Owned, run and fixed by us.</p></div>
+  <div><h5>Drivers</h5><ul><li>Find chargers</li><li>Pricing</li><li>Voltway Plus</li><li>Help center</li></ul></div>
+  <div><h5>Business</h5><ul><li>Fleets</li><li>Host a site</li><li>Partners</li><li>Press</li></ul></div>
+  <div><h5>Company</h5><ul><li>About</li><li>Careers</li><li>Sustainability</li><li>Contact</li></ul></div>
+  <div><h5>Stay charged</h5><p>New hubs and member offers, once a month.</p><div class="news">you@email.com<span>Subscribe</span></div></div>
+ </div>
+ <div class="word">Voltway</div>
+ <div class="legal"><span>© 2026 Voltway Energy, Inc.</span><span>Privacy · Terms · Accessibility · Cookies</span></div>
+</footer>
+</div>
+</body></html>

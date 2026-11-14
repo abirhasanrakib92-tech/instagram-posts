@@ -84,6 +84,11 @@ async def website(d, work, prefix, b):
     3+) the whole home page rotated 90° in consecutive bands, through to the footer."""
     page = Image.open(work / 'screen.png').convert('RGB')     # 1440 css wide at 1.5x, from R.main
     pw, ph = page.size
+    # Owner, 2026-11-14: the right column must start where the page has content, never with a blank band.
+    # It shows the last 4840 css px, so the page must be at least that tall.
+    css_h = ph * 1440 / pw
+    if css_h < 4900:
+        raise SystemExit(f'website page is {css_h:.0f}px tall; it must be 4900-7000px or slide 1 gets a blank band')
     uri = lambda im: 'data:image/png;base64,' + base64.b64encode(_png_bytes(im)).decode()
 
     # slide 1: left column = page from the top (bleeds off the bottom), right column = page bottom-aligned

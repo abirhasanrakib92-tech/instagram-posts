@@ -41,7 +41,7 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 | website | **5–10 slides**: 1 whole home page in two columns, 2 top of page large, 3+ whole page rotated 90° in equal bands ending on the footer (max 7), last CTA | `python3 tools/carousel.py designs/<dir> website posts/<YYYY-MM>/<slot-id>-<slug>` → `-1.jpg … -N.jpg` | `create_carousel_post` with all URLs in order (max 10) |
 
 The CTA slide is fixed (tools/carousel.py `cta_slide`): Abir Hasan Rakib · UI/UX Designer, "Open for new projects", WhatsApp +880 1730 402 994, Email abirhasanrakib92@gmail.com, @abirhasanrakib_, Save for later. Never change it unless the owner asks.
-Keep website pages 4500–7000px tall so the rotated part fits in 7 slides. Store slide paths in the slot as `images` (list) and leave `image` null.
+Keep website pages 5000–7000px tall so slide 1 has no blank band and the rotated part fits in 7 slides. Store slide paths in the slot as `images` (list) and leave `image` null.
 
 App designs must include these in `<head>` (they feed slides 2–4), and the bottom nav bar must have class `tab` or attribute `data-nav`:
 ```
@@ -67,7 +67,7 @@ The renderer handles the mockup; you only design the screen.
 |---|---|---|
 | app | 393×852 (iPhone) | hand holding the phone (the owner's reference photo) |
 | dashboard | 1440×960, no scroll | one light browser window, centered. **Single screen only: no zoom card, no popup, no modal, no floating overlay** |
-| website | 1440 wide, 4500–7000 tall | carousel (see table above): two-column overview, top of page large, rotated page bands |
+| website | 1440 wide, 5000–7000 tall | carousel (see table above): two-column overview, top of page large, rotated page bands |
 
 Conventions:
 - `<link rel="stylesheet" href="../../assets/fonts.css">` — families: Inter Tight, Geist, Manrope, Plus Jakarta Sans, DM Sans,
@@ -89,7 +89,7 @@ Conventions:
   no real people's photos, no copyrighted characters.
 - People: initials avatars by default. For a photo (avatar, hero image), generate it with Figma `generate_image`
   in file `IVWMA2qO8U4XdLphCuds1y` (owner drafts), save it in the design folder, and use it. AI credits are limited:
-  at most 2 images per post. If generation fails, design without photos.
+  at most 2 images per app/dashboard post and 3–4 per website post (see Design style standard). If generation fails, retry once with a simpler prompt before designing without photos.
 - After rendering, **open the JPG and look at it**. Fix anything off, re-render, look again.
 - **Owner's style order (2026-11-13, after the Basketly post was rejected):** never use emoji, flag emoji or cartoon/clip-art
   imagery anywhere in a design (no emoji as product images, icons or badges). Use Lucide icons, text badges, or **realistic photos**
@@ -98,6 +98,32 @@ Conventions:
   pills over a real photo) as the default look. Reference picks the owner liked: `designs/2026-11-13-pm-lumea-pilates-app`,
   `designs/2026-11-13-pm-solace-stays-app`, `designs/2026-11-13-pm-mossa-grocery-app`.
 - Figma file for generated photos: `IVWMA2qO8U4XdLphCuds1y` ("IG app photos", owner's drafts); the old file `BJu214JqvIholCIGac8Bbo` is not editable.
+
+
+## Design style standard (owner's order, 2026-11-14 — applies to EVERY post from now on)
+
+The owner rejected the first Voltway website (flat, text-heavy, no photos, blank band in the right column of slide 1)
+and gave six references: `reference/website-style/ref-1.jpg … ref-6.jpg` (DermaCare, Archi Studio, Terra Estate,
+NOVA, Formo Academy, Cosmico). **Open and study them before designing.** Approved example in this style:
+`designs/2026-11-14-pm-voltway-ev-website`. Every post must look like it belongs next to these: unique, premium, best-in-class UI.
+
+What the references have in common (do all of it):
+- **Photo-led.** Large realistic photos carry the page: hero photo, photo cards, a full-width photo banner, a portrait
+  for testimonials/team. Generate 3–4 photos per website post with Figma `generate_image` (file `IVWMA2qO8U4XdLphCuds1y`)
+  and reuse them with different crops (`background-position`). Never ship a website without photos.
+- **Hero as a composed block**, not text on a blank page: a dark or tinted rounded card with the headline + CTA beside a big
+  photo, with glass overlay cards on the photo (a key number, a live status card, a small badge).
+- **Typography with contrast:** a clean grotesk for headings (tight tracking, 56–90px) with **one or two accent words in an italic
+  serif** (Instrument Serif / Fraunces) or in the accent color. Small uppercase eyebrows or pill labels ("Who it's for").
+- **Bento sections:** 3-up photo cards with glass captions and arrow buttons; a dark card mixed into light rows;
+  numbered 01–04 accordion with the active item filled dark; stat cards; pricing with the hero plan in the dark brand color.
+- **Two-tone palette:** warm off-white page + one deep brand color (forest, charcoal, terracotta, navy) + one bright accent
+  (lime, orange, blue). Rounded 24–32px containers, soft borders, generous 120–150px gaps between sections.
+- **Ending:** a bold accent-color CTA band, then a dark footer with link columns, newsletter field and a **giant brand wordmark**.
+- **Page height 5000–6500px** (carousel.py refuses under 4900) so slide 1's right column starts with content, never blank.
+- Check slide 1 like the owner will on the phone: both columns full, no empty band, nothing clipped, words not orphaned
+  (force line breaks in headings when a single word would wrap alone).
+- Same quality bar for apps and dashboards: real photos where they make sense, glass, deep brand color + bright accent, bento layout.
 
 
 ## Growth rules (owner's standing order: every post should aim to go viral)

@@ -327,22 +327,32 @@
    "niche": "EV charging network",
    "brand": "Voltway",
    "palette_hint": "electric green + white",
-   "status": "posted",
-   "design_dir": "designs/2026-11-14-pm-voltway-ev-charging-website",
+   "status": "ready",
+   "design_dir": "designs/2026-11-14-pm-voltway-ev-website",
    "image": null,
-   "caption": "Range anxiety is really information anxiety.\nEV charging website design: find a charger, reserve, plug in\n\nThe hero is a working map card with live availability and prices per port, so drivers see a free charger before they read a word.\n\nSave this for your next landing page\nShow the product in the hero, or a hero photo?\n\n#webdesign #websitedesign #landingpage #evcharging #uidesign",
-   "media_id": "17967627912212062",
+   "caption": "A charging stop should feel like a coffee break, not a gamble.\nEV charging website design: live charger map, bay reservations, pricing\n\nRebuilt photo-first: the hero pairs a dark headline card with a live station card on the photo, so drivers see a free bay and the price before they scroll.\n\nSave this for your next landing page\nDark hero card or full-bleed photo, which would you ship?\n\n#webdesign #landingpagedesign #uiux #evcharging #electricvehicles",
+   "media_id": null,
    "format": "carousel-website",
-   "slug": "voltway-ev-charging-website",
+   "slug": "voltway-ev-website",
    "ai": false,
    "week1": true,
    "images": [
-    "posts/2026-11/2026-11-14-pm-voltway-ev-charging-website-1.jpg",
-    "posts/2026-11/2026-11-14-pm-voltway-ev-charging-website-2.jpg",
-    "posts/2026-11/2026-11-14-pm-voltway-ev-charging-website-3.jpg",
-    "posts/2026-11/2026-11-14-pm-voltway-ev-charging-website-4.jpg",
-    "posts/2026-11/2026-11-14-pm-voltway-ev-charging-website-5.jpg",
-    "posts/2026-11/2026-11-14-pm-voltway-ev-charging-website-6.jpg"
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-1.jpg",
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-2.jpg",
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-3.jpg",
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-4.jpg",
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-5.jpg",
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-6.jpg",
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-7.jpg",
+    "posts/2026-11/2026-11-14-pm-voltway-ev-website-8.jpg"
+   ],
+   "replaced": [
+    {
+     "brand": "Voltway",
+     "media_id": "17967627912212062",
+     "design_dir": "designs/2026-11-14-pm-voltway-ev-charging-website",
+     "reason": "Owner deleted it: plain text-heavy design and a blank band at the top of slide 1's right column; asked for a redesign in the style of reference/website-style"
+    }
    ]
   },
   {
