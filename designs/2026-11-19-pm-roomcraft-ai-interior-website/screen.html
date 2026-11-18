@@ -1,0 +1,294 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#EDE4D6;--cream:#F7F2EA;--ink:#1A221D;--ink2:#5D625B;--ink3:#959889;--line:#DDD2C0;--gr:#1F3A30;--gr2:#2E5244;--sage:#D5DDCF;--tc:#D9663D;--tc2:#F6DCCF}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Instrument Sans';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.w{width:1320px;margin:0 auto}
+.se{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+.ph{background-size:cover;background-repeat:no-repeat}
+.glass{background:rgba(255,255,255,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.6)}
+.dglass{background:rgba(20,32,26,.42);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.22);color:#fff}
+.eb{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--cream);font-size:13px;font-weight:600;color:var(--ink2);text-transform:uppercase;letter-spacing:1px}
+.eb .dot{width:7px;height:7px;border-radius:50%;background:var(--tc)}
+.b{height:56px;padding:0 8px 0 26px;border-radius:999px;display:inline-flex;align-items:center;gap:14px;font-size:15px;font-weight:600}
+.b i{width:42px;height:42px;border-radius:50%;display:grid;place-items:center}
+.b.t{background:var(--tc);color:#fff}.b.t i{background:#fff}
+.b.d{background:var(--gr);color:#fff}.b.d i{background:var(--tc)}
+.b.o{border:1px solid rgba(255,255,255,.3);color:#fff;padding:0 26px}
+h2{font-weight:600;font-size:64px;line-height:1;letter-spacing:-2.6px}
+h2 .se{font-size:72px;letter-spacing:-1px;color:var(--tc)}
+.sub{font-size:17px;line-height:1.6;color:var(--ink2)}
+.av{width:40px;height:40px;border-radius:50%;background-size:cover;background-position:center;border:3px solid var(--gr)}
+.sec{margin-top:140px}
+.shd{display:flex;align-items:flex-end;justify-content:space-between}
+.shd .sub{width:420px}
+
+nav{display:flex;align-items:center;height:100px}
+.lg{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:700;letter-spacing:-.8px}
+.lg i{width:40px;height:40px;border-radius:13px;background:var(--gr);display:grid;place-items:center}
+.lk{display:flex;gap:6px;margin-left:72px;background:var(--cream);border-radius:999px;padding:6px}
+.lk span{height:40px;padding:0 18px;border-radius:999px;display:flex;align-items:center;font-size:14.5px;font-weight:500;color:var(--ink2)}
+.lk span.on{background:var(--gr);color:#fff}
+.nr{margin-left:auto;display:flex;gap:18px;align-items:center;font-size:15px;font-weight:600}
+.nr .b{height:50px}.nr .b i{width:36px;height:36px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:560px 1fr;gap:16px;margin-top:16px;height:760px}
+.hl{background:var(--gr);border-radius:32px;padding:48px 48px 44px;color:#fff;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hl .eb{align-self:flex-start;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#D6E2DA}
+.hl h1{font-weight:600;font-size:80px;line-height:.98;letter-spacing:-3.4px;margin-top:30px}
+.hl h1 .se{font-size:90px;letter-spacing:-1.4px;color:#F2A27F}
+.hl p{font-size:18px;line-height:1.6;color:#C6D3CA;margin-top:24px;width:440px}
+.hl .cta{display:flex;gap:10px;margin-top:36px}
+.trust{margin-top:auto;display:flex;align-items:center;gap:14px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)}
+.stack{display:flex}.stack .av{margin-left:-10px}.stack .av:first-child{margin-left:0}
+.trust b{font-size:15px;display:block}.trust span{font-size:13.5px;color:#AFC0B5}
+.hr{border-radius:32px;position:relative;overflow:hidden;background-image:url(living.jpg);background-position:58% 50%}
+.split{position:absolute;inset:0;width:38%;background-image:url(before.jpg);background-size:auto 100%;background-position:28% 50%;border-right:3px solid #fff}
+.handle{position:absolute;top:50%;left:38%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.lab{position:absolute;top:24px;height:34px;padding:0 14px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.prm{position:absolute;left:24px;right:24px;bottom:24px;border-radius:24px;padding:14px 14px 14px 22px;display:flex;align-items:center;gap:14px}
+.prm .tx{font-size:15px;color:var(--ink)}
+.prm .tx small{display:block;font-size:12px;color:var(--ink2);margin-bottom:3px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.prm .chips{margin-left:auto;display:flex;gap:6px}
+.prm .chips span{white-space:nowrap;height:34px;padding:0 14px;border-radius:999px;background:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;color:var(--ink2)}
+.prm .chips span.on{background:var(--gr);color:#fff}
+.prm .go{width:50px;height:50px;border-radius:50%;background:var(--tc);display:grid;place-items:center}
+.rt{position:absolute;right:24px;top:24px;width:240px;border-radius:22px;padding:18px}
+.rt small{font-size:12.5px;color:#D7E0DA}
+.rt b{display:block;font-size:44px;font-weight:600;letter-spacing:-1.8px;line-height:1.05;margin-top:4px}
+.rt .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.2);margin-top:12px;overflow:hidden}
+.rt .bar i{display:block;height:100%;width:100%;background:#F2A27F;border-radius:3px}
+.rt .f{display:flex;justify-content:space-between;font-size:12px;color:#D7E0DA;margin-top:8px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.st{background:var(--cream);border-radius:28px;padding:28px 30px;display:flex;align-items:flex-end;justify-content:space-between}
+.st b{font-size:52px;font-weight:600;letter-spacing:-2.2px;line-height:1}
+.st span{font-size:14.5px;color:var(--ink2);display:block;margin-top:10px}
+.st i{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.st.dk{background:var(--tc);color:#fff}.st.dk span{color:#FCE3D8}.st.dk i{background:rgba(255,255,255,.2)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:1fr 600px;gap:16px;margin-top:56px;height:640px}
+.acc{display:flex;flex-direction:column;gap:12px}
+.ac{background:var(--cream);border-radius:28px;padding:26px 30px;display:flex;gap:24px;align-items:center}
+.ac em{font-style:normal;font-size:15px;font-weight:600;color:var(--ink3);width:30px}
+.ac b{font-size:24px;font-weight:600;letter-spacing:-.6px}
+.ac .pl{margin-left:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.ac.on{background:var(--gr);color:#fff;flex-direction:column;align-items:flex-start;padding:30px 30px 32px;gap:0;flex:1}
+.ac.on .r1{display:flex;gap:24px;align-items:center;width:100%}
+.ac.on em{color:#F2A27F}
+.ac.on .pl{background:var(--tc);border:0}
+.ac.on p{font-size:16.5px;line-height:1.6;color:#C6D3CA;margin:16px 0 0 54px;width:520px}
+.ac.on .ups{display:flex;gap:10px;margin:auto 0 0 54px}
+.ups .u{width:120px;height:86px;border-radius:16px;position:relative}
+.ups .u span{position:absolute;left:8px;bottom:8px;font-size:11px;font-weight:600;background:rgba(255,255,255,.88);color:var(--ink);border-radius:999px;padding:3px 8px}
+.stp{border-radius:32px;position:relative;overflow:hidden;background-image:url(bedroom.jpg);background-position:50% 40%}
+.det{position:absolute;border-radius:999px;height:36px;padding:0 6px 0 14px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.det i{width:26px;height:26px;border-radius:50%;background:var(--tc);display:grid;place-items:center}
+.det::before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.35);left:-26px;top:12px}
+.pal{position:absolute;left:24px;right:24px;bottom:24px;border-radius:24px;padding:18px 20px}
+.pal .h{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--ink2)}
+.pal .sw{display:flex;gap:8px;margin-top:12px}
+.pal .sw div{flex:1;height:56px;border-radius:14px;position:relative}
+.pal .sw div span{position:absolute;left:8px;bottom:6px;font-size:11px;font-weight:600;font-family:'JetBrains Mono'}
+
+/* styles bento */
+.bento{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:56px;height:560px}
+.sc{border-radius:32px;position:relative;overflow:hidden}
+.sc .cap{position:absolute;left:16px;right:16px;bottom:16px;border-radius:22px;padding:18px 18px 18px 22px;display:flex;align-items:center}
+.sc .cap b{font-size:22px;font-weight:600;letter-spacing:-.6px;display:block}
+.sc .cap span{font-size:13.5px;color:var(--ink2)}
+.sc .cap i{margin-left:auto;width:46px;height:46px;border-radius:50%;background:var(--gr);display:grid;place-items:center}
+.sc .n{position:absolute;left:20px;top:20px;height:32px;padding:0 14px;border-radius:999px;font-size:12.5px;font-weight:600;display:flex;align-items:center}
+
+/* shop the look */
+.shop{display:grid;grid-template-columns:1fr 520px;gap:16px;margin-top:56px;height:600px}
+.sl{border-radius:32px;position:relative;overflow:hidden;background-image:url(living.jpg);background-position:50% 60%;background-size:150%}
+.pin{position:absolute;width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:14px;font-weight:700;box-shadow:0 0 0 8px rgba(255,255,255,.35)}
+.pin.on{background:var(--tc);color:#fff}
+.sr{background:var(--gr);border-radius:32px;padding:36px;color:#fff;display:flex;flex-direction:column}
+.sr .t{font-size:30px;font-weight:600;letter-spacing:-1px}
+.sr .s{font-size:15px;color:#AFC0B5;margin-top:6px}
+.pr{display:flex;align-items:center;gap:16px;padding:16px;border-radius:20px;background:rgba(255,255,255,.06);margin-top:12px}
+.pr.on{background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 1.5px rgba(242,162,127,.6)}
+.pr .im{width:64px;height:64px;border-radius:14px;flex:none}
+.pr b{font-size:16px;display:block}.pr span{font-size:13px;color:#AFC0B5}
+.pr .p{margin-left:auto;text-align:right}
+.pr .p b{font-size:17px}
+.sr .tot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
+.sr .tot b{font-size:32px;letter-spacing:-1px;font-weight:600}
+
+/* testimonial */
+.tm{display:grid;grid-template-columns:440px 1fr;gap:16px;height:520px}
+.tm .p{border-radius:32px;background-image:url(olivia.jpg);background-position:50% 30%;position:relative}
+.tm .p .nm{position:absolute;left:16px;right:16px;bottom:16px;border-radius:22px;padding:18px 20px}
+.tm .p .nm b{font-size:18px;display:block}.tm .p .nm span{font-size:13.5px;color:var(--ink2)}
+.tm .q{background:var(--cream);border-radius:32px;padding:52px 56px;display:flex;flex-direction:column}
+.tm .q blockquote{font-size:42px;line-height:1.18;letter-spacing:-1.4px;font-weight:500}
+.tm .q blockquote .se{color:var(--tc);font-size:46px}
+.tm .q .row{margin-top:auto;display:flex;gap:16px}
+.tm .q .row div{flex:1;background:#fff;border-radius:22px;padding:20px 22px}
+.tm .q .row b{font-size:34px;font-weight:600;letter-spacing:-1.2px;display:block}
+.tm .q .row span{font-size:14px;color:var(--ink2)}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:56px}
+.pl{background:var(--cream);border-radius:32px;padding:36px;display:flex;flex-direction:column;height:500px}
+.pl .nm{font-size:20px;font-weight:600}
+.pl .pz{font-size:64px;font-weight:600;letter-spacing:-2.6px;margin-top:20px}
+.pl .pz small{font-size:17px;color:var(--ink2);letter-spacing:0;font-weight:500}
+.pl .ds{font-size:15px;color:var(--ink2);margin-top:8px}
+.pl ul{list-style:none;margin-top:26px;display:grid;gap:14px;font-size:15.5px}
+.pl li{display:flex;gap:12px;align-items:center}
+.pl li i{width:24px;height:24px;border-radius:50%;background:var(--sage);display:grid;place-items:center;flex:none}
+.pl .b{margin-top:auto;justify-content:space-between}
+.pl.hot{background:var(--gr);color:#fff}
+.pl.hot .pz small,.pl.hot .ds{color:#AFC0B5}
+.pl.hot li i{background:rgba(242,162,127,.25)}
+.pl .badge{margin-left:auto;font-size:12px;font-weight:700;background:var(--tc);color:#fff;border-radius:999px;padding:6px 12px}
+
+/* cta + footer */
+.band{margin-top:140px;background:var(--tc);border-radius:36px;padding:64px 64px;display:flex;align-items:center;color:#fff;position:relative;overflow:hidden}
+.band h2{font-size:68px;width:720px}
+.band h2 .se{color:var(--gr);font-size:76px}
+.band .r{margin-left:auto;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.band .r p{font-size:16px;color:#FCE3D8;width:340px;text-align:right;line-height:1.55}
+.band .ring{position:absolute;right:-120px;top:-160px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,255,255,.08)}
+footer{margin-top:16px;background:var(--gr);border-radius:36px 36px 0 0;padding:64px 64px 0;color:#fff;overflow:hidden}
+.fg{display:grid;grid-template-columns:440px 1fr 1fr 1fr;gap:40px}
+.fg h5{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:#8FA698;margin-bottom:18px;font-weight:600}
+.fg ul{list-style:none;display:grid;gap:12px;font-size:15.5px;color:#DCE5DF}
+.nl{display:flex;height:58px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:6px 6px 6px 22px;align-items:center;margin-top:18px}
+.nl span{font-size:15px;color:#8FA698}
+.nl b{margin-left:auto;height:46px;padding:0 22px;border-radius:999px;background:var(--tc);display:flex;align-items:center;font-size:14.5px}
+.fb{display:flex;justify-content:space-between;font-size:13.5px;color:#8FA698;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.word{font-size:268px;font-weight:600;letter-spacing:-14px;line-height:.78;margin-top:28px;color:#2A4A3D;white-space:nowrap}
+.word .se{color:#F2A27F;letter-spacing:-6px}
+</style></head><body>
+<div class="w">
+<nav>
+ <div class="lg"><i>{{icon:sofa:21:#F2A27F:2.2}}</i>Roomcraft</div>
+ <div class="lk"><span class="on">Redesign</span><span>Styles</span><span>Shop the look</span><span>For pros</span><span>Pricing</span></div>
+ <div class="nr"><span>Log in</span><span class="b d">Try it free<i>{{icon:arrow-up-right:18:#fff:2.4}}</i></span></div>
+</nav>
+
+<section class="hero">
+ <div class="hl">
+  <span class="eb"><span class="dot"></span>AI interior design</span>
+  <h1>Redesign<br>any room<br>from <span class="se">one photo.</span></h1>
+  <p>Snap the room as it is. Pick a style, keep the walls and windows, and get a photo-real redesign with every piece you can actually buy.</p>
+  <div class="cta"><span class="b t">Upload a room photo<i>{{icon:camera:18:#D9663D:2.4}}</i></span><span class="b o">See examples</span></div>
+  <div class="trust"><div class="stack"><span class="av" style="background-image:url(amara.jpg)"></span><span class="av" style="background-image:url(kenji.jpg)"></span><span class="av" style="background-image:url(olivia.jpg)"></span></div><div><b>4.9 from 18,400 reviews</b><span>Loved by renters, owners and stagers</span></div></div>
+ </div>
+ <div class="hr ph">
+  <div class="split ph"></div>
+  <div class="handle">{{icon:move-horizontal:24:#1F3A30:2.4}}</div>
+  <span class="lab glass" style="left:24px">Before</span>
+  <span class="lab dglass" style="left:calc(38% + 20px)">{{icon:sparkles:14:#F2A27F:2.4}}After · Japandi</span>
+  <div class="rt dglass"><small>Rendered in</small><b>9.2 s</b><div class="bar"><i></i></div><div class="f"><span>Layout kept</span><span>14 pieces found</span></div></div>
+  <div class="prm glass">
+   <div class="tx"><small>Your prompt</small>Calm, warm, keep the window, sofa under $1.5k</div>
+   <div class="chips"><span class="on">Japandi</span><span>Warm minimal</span><span>Med</span></div>
+   <span class="go">{{icon:arrow-right:22:#fff:2.4}}</span>
+  </div>
+ </div>
+</section>
+
+<section class="stats">
+ <div class="st"><div><b>1.2M</b><span>rooms redesigned</span></div><i>{{icon:home:20:#1F3A30}}</i></div>
+ <div class="st"><div><b>42</b><span>styles, from Japandi to Art Deco</span></div><i>{{icon:palette:20:#1F3A30}}</i></div>
+ <div class="st dk"><div><b>9 s</b><span>average render time</span></div><i>{{icon:zap:20:#fff}}</i></div>
+ <div class="st"><div><b>$0</b><span>to try your first 3 rooms</span></div><i>{{icon:gift:20:#1F3A30}}</i></div>
+</section>
+
+<section class="sec">
+ <div class="shd"><div><span class="eb"><span class="dot"></span>How it works</span><h2 style="margin-top:20px">From messy room<br>to <span class="se">moodboard</span> in four steps</h2></div><p class="sub">No 3D model, no measuring tape. Roomcraft reads the walls, windows and light from your photo and designs around them.</p></div>
+ <div class="steps">
+  <div class="acc">
+   <div class="ac on">
+    <div class="r1"><em>01</em><b>Upload a photo of your room</b><span class="pl">{{icon:minus:18:#fff:2.4}}</span></div>
+    <p>One phone photo is enough. Roomcraft maps the walls, floor, windows and light so the redesign keeps your real layout.</p>
+    <div class="ups"><div class="u ph" style="background-image:url(before.jpg);background-position:30% 50%"><span>Living</span></div><div class="u ph" style="background-image:url(before.jpg);background-position:85% 70%;background-size:240%"><span>Corner</span></div><div class="u ph" style="background-image:url(bedroom.jpg);background-position:50% 70%"><span>Bedroom</span></div></div>
+   </div>
+   <div class="ac"><em>02</em><b>Pick a style or describe it</b><span class="pl">{{icon:plus:18:#1A221D:2.4}}</span></div>
+   <div class="ac"><em>03</em><b>Swap single pieces you don't love</b><span class="pl">{{icon:plus:18:#1A221D:2.4}}</span></div>
+   <div class="ac"><em>04</em><b>Shop the look or send it to your designer</b><span class="pl">{{icon:plus:18:#1A221D:2.4}}</span></div>
+  </div>
+  <div class="stp ph">
+   <span class="det glass" style="left:300px;top:150px">Plaster wall · Terracotta<i>{{icon:check:14:#fff:2.6}}</i></span>
+   <span class="det glass" style="left:200px;top:340px">Brass lamp<i>{{icon:check:14:#fff:2.6}}</i></span>
+   <span class="det glass" style="left:380px;top:420px">Linen bedding<i>{{icon:check:14:#fff:2.6}}</i></span>
+   <div class="pal glass"><div class="h"><span>Palette pulled from this room</span><span>5 colors</span></div><div class="sw"><div style="background:#C2673F"><span style="color:#fff">#C2673F</span></div><div style="background:#E9DFD0"><span style="color:#5D625B">#E9DFD0</span></div><div style="background:#6B4A33"><span style="color:#fff">#6B4A33</span></div><div style="background:#B8935A"><span style="color:#fff">#B8935A</span></div><div style="background:#7D8A63"><span style="color:#fff">#7D8A63</span></div></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="shd"><div><span class="eb"><span class="dot"></span>Most loved styles</span><h2 style="margin-top:20px">42 styles, all <span class="se">livable.</span></h2></div><p class="sub">Every style is tuned on real rooms, so the results look like a home, not a showroom render.</p></div>
+ <div class="bento">
+  <div class="sc ph" style="background-image:url(living.jpg);background-position:30% 50%"><span class="n glass">312k rooms</span><div class="cap glass"><div><b>Japandi</b><span>Oak, linen, quiet light</span></div><i>{{icon:arrow-up-right:20:#fff:2.4}}</i></div></div>
+  <div class="sc ph" style="background-image:url(bedroom.jpg);background-position:50% 30%"><span class="n glass">228k rooms</span><div class="cap glass"><div><b>Mediterranean</b><span>Clay walls, arches, warmth</span></div><i>{{icon:arrow-up-right:20:#fff:2.4}}</i></div></div>
+  <div class="sc ph" style="background-image:url(living.jpg);background-position:92% 40%;background-size:auto 150%"><span class="n glass">196k rooms</span><div class="cap glass"><div><b>Warm minimal</b><span>Boucle, travertine, calm</span></div><i>{{icon:arrow-up-right:20:#fff:2.4}}</i></div></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="shd"><div><span class="eb"><span class="dot"></span>Shop the look</span><h2 style="margin-top:20px">Every piece in the render<br>is <span class="se">one tap</span> from your cart</h2></div><p class="sub">Roomcraft matches each item to real products in your budget and shows the total before you fall in love.</p></div>
+ <div class="shop">
+  <div class="sl ph">
+   <span class="pin on" style="left:52%;top:52%">1</span>
+   <span class="pin" style="left:30%;top:70%">2</span>
+   <span class="pin" style="left:14%;top:32%">3</span>
+   <span class="pin" style="left:80%;top:76%">4</span>
+  </div>
+  <div class="sr">
+   <div class="t">Japandi living room</div><div class="s">4 pieces matched · ships in 5–9 days</div>
+   <div class="pr on"><span class="im ph" style="background-image:url(living.jpg);background-position:72% 55%;background-size:500%"></span><div><b>Ren boucle sofa</b><span>3-seat · cream · 228 cm</span></div><div class="p"><b>$1,390</b><span style="display:block">Under budget</span></div></div>
+   <div class="pr"><span class="im ph" style="background-image:url(living.jpg);background-position:40% 75%;background-size:500%"></span><div><b>Travertine block table</b><span>Honed stone · 110 × 60 cm</span></div><div class="p"><b>$640</b></div></div>
+   <div class="pr"><span class="im ph" style="background-image:url(living.jpg);background-position:6% 30%;background-size:500%"></span><div><b>Oak low sideboard</b><span>Solid oak · 180 cm</span></div><div class="p"><b>$820</b></div></div>
+   <div class="pr"><span class="im ph" style="background-image:url(living.jpg);background-position:55% 85%;background-size:500%"></span><div><b>Hand-loomed wool rug</b><span>Oat · 200 × 300 cm</span></div><div class="p"><b>$410</b></div></div>
+   <div class="tot"><div><span style="font-size:14px;color:#AFC0B5">Total for the room</span><b style="display:block">$3,260</b></div><span class="b t">Add all to cart<i>{{icon:shopping-bag:18:#D9663D:2.4}}</i></span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec tm">
+ <div class="p ph"><div class="nm glass"><b>Olivia Grant</b><span>Home stager, Austin</span></div></div>
+ <div class="q">
+  <span class="eb" style="align-self:flex-start"><span class="dot"></span>From our users</span>
+  <blockquote style="margin-top:28px">“I show sellers three styles of their own living room <span class="se">before</span> we move a single chair. Listings sell faster and nobody argues about taste.”</blockquote>
+  <div class="row"><div><b>3×</b><span>more listings staged a month</span></div><div><b>11 days</b><span>faster to sale, on average</span></div><div><b>$0</b><span>spent on test furniture</span></div></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="shd"><div><span class="eb"><span class="dot"></span>Pricing</span><h2 style="margin-top:20px">Start free, <span class="se">upgrade</span> when it clicks</h2></div><p class="sub">Every plan keeps your rooms private and lets you download in full resolution.</p></div>
+ <div class="plans">
+  <div class="pl"><div class="nm">Free</div><div class="pz">$0<small> / forever</small></div><div class="ds">For trying a style on one room.</div><ul><li><i>{{icon:check:14:#1F3A30:2.6}}</i>3 room redesigns</li><li><i>{{icon:check:14:#1F3A30:2.6}}</i>12 starter styles</li><li><i>{{icon:check:14:#1F3A30:2.6}}</i>Shop the look</li></ul><span class="b d">Start free<i>{{icon:arrow-right:18:#fff:2.4}}</i></span></div>
+  <div class="pl hot"><div style="display:flex;align-items:center"><div class="nm">Home</div><span class="badge">Most popular</span></div><div class="pz">$12<small> / month</small></div><div class="ds">For a full home, one room at a time.</div><ul><li><i>{{icon:check:14:#F2A27F:2.6}}</i>Unlimited redesigns</li><li><i>{{icon:check:14:#F2A27F:2.6}}</i>All 42 styles + text prompts</li><li><i>{{icon:check:14:#F2A27F:2.6}}</i>Swap single pieces</li><li><i>{{icon:check:14:#F2A27F:2.6}}</i>4K downloads</li></ul><span class="b t">Get Home<i>{{icon:arrow-right:18:#D9663D:2.4}}</i></span></div>
+  <div class="pl"><div class="nm">Studio</div><div class="pz">$39<small> / month</small></div><div class="ds">For stagers, agents and designers.</div><ul><li><i>{{icon:check:14:#1F3A30:2.6}}</i>Everything in Home</li><li><i>{{icon:check:14:#1F3A30:2.6}}</i>Client boards and sharing</li><li><i>{{icon:check:14:#1F3A30:2.6}}</i>Branded exports</li><li><i>{{icon:check:14:#1F3A30:2.6}}</i>3 team seats</li></ul><span class="b d">Talk to us<i>{{icon:arrow-right:18:#fff:2.4}}</i></span></div>
+ </div>
+</section>
+
+<section class="band">
+ <span class="ring"></span>
+ <h2>Your room is one photo<br>away from <span class="se">done.</span></h2>
+ <div class="r"><p>Three free redesigns. No card, no 3D model, no measuring tape.</p><span class="b d">Upload a room photo<i>{{icon:camera:18:#fff:2.4}}</i></span></div>
+</section>
+</div>
+
+<div class="w"><footer>
+ <div class="fg">
+  <div><div class="lg"><i style="background:var(--tc)">{{icon:sofa:21:#fff:2.2}}</i>Roomcraft</div><p style="font-size:15.5px;line-height:1.6;color:#AFC0B5;margin-top:18px;width:360px">One new room idea every Sunday, with the pieces to make it real.</p><div class="nl"><span>you@email.com</span><b>Subscribe</b></div></div>
+  <div><h5>Product</h5><ul><li>Redesign</li><li>Styles</li><li>Shop the look</li><li>Mobile app</li></ul></div>
+  <div><h5>For pros</h5><ul><li>Home stagers</li><li>Real estate agents</li><li>Interior designers</li><li>API</li></ul></div>
+  <div><h5>Company</h5><ul><li>About</li><li>Careers</li><li>Help center</li><li>Privacy</li></ul></div>
+ </div>
+ <div class="fb"><span>© 2026 Roomcraft AI, Inc.</span><span>Made for people who live in their homes</span></div>
+ <div class="word">Room<span class="se">craft</span></div>
+</footer></div>
+</body></html>

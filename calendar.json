@@ -524,14 +524,27 @@
    "niche": "AI interior design generator",
    "brand": "Roomcraft AI",
    "palette_hint": "oak beige + deep green",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-19-pm-roomcraft-ai-interior-website",
    "image": null,
-   "caption": null,
+   "caption": "Nobody can picture a room from a mood board. Show them their own room.\nAI interior design website UI: before/after hero, shop the look, style bento\n\nThe hero is a live before/after slider on a real photo, and the shop section pins every piece in the render to a product with a running room total ($3,260), so the page sells the result, not the feature list.\n\nSave this for your next landing page\nBefore/after slider or a single hero shot: which converts better?\n\n#uidesign #webdesign #landingpage #interiordesign #aidesign",
    "media_id": null,
    "format": "carousel-website",
    "ai": true,
-   "originally": "2026-11-17-pm"
+   "originally": "2026-11-17-pm",
+   "slug": "roomcraft-ai-interior-website",
+   "images": [
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-1.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-2.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-3.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-4.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-5.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-6.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-7.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-8.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-9.jpg",
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-10.jpg"
+   ]
   },
   {
    "id": "2026-11-20-am",
