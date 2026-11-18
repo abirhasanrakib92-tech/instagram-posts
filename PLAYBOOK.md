@@ -17,7 +17,7 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 - Two posts a day, Asia/Dhaka time: **morning 08:37** (`am`) and **night 20:39** (`pm`).
 - Rotation never breaks: **app → dashboard → website → app → …** across consecutive slots.
   On a 3-column Instagram grid this keeps each column one type, which is the look the owner wants.
-- `calendar.json` lists every slot from 2026-11-09 pm to 2026-12-09 pm: type, niche, brand name, palette hint, status.
+- `calendar.json` lists every slot from 2026-11-09 pm to 2026-12-11 pm (shifted 4 slots on 2026-11-18 after missed runs): type, niche, brand name, palette hint, status.
   Status goes `planned` → `ready` (designed, rendered, pushed) → `posted`.
 - Every post is a **different niche**. Never reuse a niche, brand name, layout skeleton or color scheme from an earlier slot.
 
