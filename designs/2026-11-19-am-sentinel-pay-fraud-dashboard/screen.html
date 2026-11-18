@@ -1,217 +1,170 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<meta name="mock-url" content="app.sentinelpay.com/risk">
+<meta name="mock-url" content="app.sentinelpay.com/overview">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
-:root{--bg:#EEF1F7;--card:#fff;--line:#E6E9F2;--ink:#0E1633;--ink2:#5C6585;--ink3:#9AA1B5;--co:#2F5BFF;--co2:#1F3FE0;--co3:#EAF0FF;--red:#F0384A;--red2:#FFEBED;--amb:#B87503;--amb2:#FFF4DE;--grn:#0F9F6E;--grn2:#E3F7EF}
+:root{--bg:#F3F4F9;--card:#fff;--line:#E9EBF2;--ink:#0B1230;--ink2:#5A6283;--ink3:#9BA1B6;--co:#3355FF;--co2:#E8EDFF;--red:#FF4D5E;--red2:#FFECEE;--amb:#D08A12;--amb2:#FFF3DD;--grn:#0E9F6E;--grn2:#E2F6EE}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Geist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
-.wrap{display:flex;height:960px}
-.rail{width:84px;flex:none;display:flex;flex-direction:column;align-items:center;padding:20px 0;gap:10px}
-.rail .lg{width:48px;height:48px;border-radius:16px;background:var(--co);display:grid;place-items:center;margin-bottom:14px;box-shadow:0 6px 16px rgba(47,91,255,.28)}
-.rail .it{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;position:relative}
-.rail .it.on{background:var(--ink)}
-.rail .it em{position:absolute;top:9px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--red);border:2px solid var(--bg)}
-.rail .sp{flex:1}
-.rail .av{width:44px;height:44px;border-radius:50%;background:url(daniel.jpg) center/cover;border:3px solid #fff}
-.main{flex:1;padding:20px 24px 20px 4px;min-width:0}
-.top{display:flex;align-items:center;gap:12px;height:52px}
-.srch{width:380px;height:48px;border-radius:999px;background:#fff;display:flex;align-items:center;gap:10px;padding:0 18px;font-size:14px;color:var(--ink3)}
-.srch kbd{margin-left:auto;font-family:'JetBrains Mono';font-size:11.5px;background:var(--bg);border-radius:8px;padding:4px 8px;color:var(--ink2)}
-.live{display:flex;align-items:center;gap:8px;height:48px;padding:0 16px;background:#fff;border-radius:999px;font-size:13.5px;font-weight:600}
-.live i{width:8px;height:8px;border-radius:50%;background:var(--grn);box-shadow:0 0 0 4px var(--grn2)}
-.tr{margin-left:auto;display:flex;gap:10px;align-items:center}
-.round{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative}
-.round em{position:absolute;top:12px;right:13px;width:8px;height:8px;border-radius:50%;background:var(--red);border:2px solid #fff}
-.me{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;height:48px;padding:0 16px 0 5px}
-.me .ph{width:38px;height:38px}
-.me b{font-size:14px;display:block}.me span{font-size:12px;color:var(--ink3)}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Figtree';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+/* three columns whose gutters sit exactly where carousel slides 2 and 3 are cut */
+.page{display:grid;grid-template-columns:411px 534px 415px;gap:16px;padding:20px 24px;height:960px}
+.col{display:flex;flex-direction:column;gap:16px;min-height:0}
+.card{background:var(--card);border-radius:26px;padding:22px 24px;position:relative;overflow:hidden}
 .ph{background-size:cover;background-position:center;border-radius:50%;flex:none}
-.greet{display:flex;align-items:flex-end;margin-top:18px}
-.greet h1{font-size:34px;font-weight:700;letter-spacing:-1.3px}
-.greet p{font-size:14.5px;color:var(--ink2);margin-top:6px}
-.greet p b{color:var(--ink)}
-.gr{margin-left:auto;display:flex;gap:10px}
-.btn{height:44px;padding:0 18px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;background:#fff}
-.btn.d{background:var(--ink);color:#fff}
-.team{display:flex;align-items:center;background:#fff;border-radius:999px;height:44px;padding:0 14px 0 6px;gap:8px;font-size:13px;font-weight:600;color:var(--ink2)}
-.team .st{display:flex}.team .st i{width:32px;height:32px;border-radius:50%;border:2px solid #fff;margin-left:-8px;background-size:cover}.team .st i:first-child{margin-left:0}
-.row{display:grid;gap:16px;margin-top:16px}
-.r1{grid-template-columns:392px 548px 1fr;grid-template-rows:300px;margin-top:18px}
-.r2{grid-template-columns:700px 1fr;grid-template-rows:448px}
-.card{background:#fff;border-radius:24px;padding:20px 22px;position:relative;overflow:hidden}
-.t{font-size:15px;font-weight:700;letter-spacing:-.2px}
-.s{font-size:12.5px;color:var(--ink3);font-weight:500}
-.ch{display:flex;align-items:center;justify-content:space-between}
+.t{font-size:16px;font-weight:700;letter-spacing:-.2px}
+.s{font-size:12.5px;color:var(--ink3);font-weight:500;margin-top:2px}
+.ch{display:flex;align-items:flex-start;justify-content:space-between}
 .chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:var(--bg);font-size:12.5px;font-weight:600;color:var(--ink2)}
+.pill{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:700}
+.pill.g{background:var(--grn2);color:#0A7A55}
+.lgd{display:flex;gap:16px;font-size:12px;color:var(--ink2);margin-top:12px}
+.lgd em{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px}
+.lgd b{color:var(--ink)}
+
+/* A: hero panel */
+.hero{flex:1;border-radius:30px;background:radial-gradient(120% 70% at 85% 0%,#5D7BFF 0%,rgba(93,123,255,0) 60%),radial-gradient(80% 50% at 0% 100%,rgba(255,77,94,.35) 0%,rgba(255,77,94,0) 70%),linear-gradient(170deg,#2443F0 0%,#1730B8 55%,#0F1F7A 100%);color:#fff;padding:24px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:-.5px}
+.brand i{width:40px;height:40px;border-radius:13px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center}
+.live{margin-left:auto;display:flex;align-items:center;gap:7px;height:30px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);font-size:12px;font-weight:600}
+.live b{width:7px;height:7px;border-radius:50%;background:#7CF2B4;box-shadow:0 0 0 4px rgba(124,242,180,.25)}
+.gw{position:relative;width:236px;height:236px;margin:22px auto 0}
+.gw .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.gw .c small{font-size:12.5px;color:#C5CFFF}
+.gw .c b{font-size:40px;font-weight:700;letter-spacing:-1.8px;line-height:1.05;margin-top:4px}
+.gw .c span{margin-top:8px;font-size:11.5px;font-weight:700;background:#7CF2B4;color:#063C27;border-radius:999px;padding:3px 9px}
+.gl{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);border-radius:20px}
+.brk{display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 4px;margin-top:6px}
+.brk div{padding:0 14px;font-size:11.5px;color:#C5CFFF}
+.brk div+div{border-left:1px solid rgba(255,255,255,.16)}
+.brk em{display:inline-block;width:7px;height:7px;border-radius:2px;margin-right:5px}
+.brk b{display:block;font-size:18px;color:#fff;margin-top:4px;letter-spacing:-.4px}
+.alh{display:flex;justify-content:space-between;align-items:center;margin-top:22px;font-size:14px;font-weight:700}
+.alh span{font-size:12px;color:#C5CFFF;font-weight:500}
+.als{display:grid;gap:8px;margin-top:12px}
+.al{display:flex;align-items:center;gap:12px;padding:12px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.ai{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;flex:none}
+.al b{font-size:13.5px;display:block}.al span{font-size:11.5px;color:#C5CFFF}
+.al em{margin-left:auto;font-style:normal;font-size:11.5px;color:#C5CFFF;align-self:flex-start}
+.team{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.team .st{display:flex}.team .st i{width:32px;height:32px;border-radius:50%;border:2px solid #2340E0;margin-left:-8px;background-size:cover}.team .st i:first-child{margin-left:0}
+.team b{font-size:13px;display:block}.team span{font-size:11.5px;color:#C5CFFF}
+.team .go{margin-left:auto;width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center}
+
+.wk{margin-top:auto;padding:14px 16px 10px}
+.wk .wh{display:flex;justify-content:space-between;align-items:flex-start}
+.wk small{font-size:11.5px;color:#C5CFFF}.wk b{display:block;font-size:20px;letter-spacing:-.5px;margin-top:2px}
+.wk .wh span{font-size:11px;font-weight:600;background:rgba(255,255,255,.14);border-radius:999px;padding:4px 9px}
+.wk svg{display:block;margin-top:4px}
+.wk .dy{display:flex;justify-content:space-between;padding:0 4px;font-size:10.5px;color:#C5CFFF;margin-top:2px}
+.team{margin-top:14px !important}
+/* B */
+.greet{padding:6px 4px 0;height:96px}
+.greet .d{font-size:13px;color:var(--ink3);font-weight:600;display:flex;align-items:center;gap:6px}
+.greet h1{font-size:32px;font-weight:700;letter-spacing:-1.2px;margin-top:6px}
+.greet p{font-size:14px;color:var(--ink2);margin-top:4px}.greet p b{color:var(--ink)}
+.kpis{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;height:128px}
+.kpi{background:#fff;border-radius:22px;padding:16px 16px;display:flex;flex-direction:column}
+.kpi .h{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:600;color:var(--ink2)}
+.ic{width:30px;height:30px;border-radius:10px;display:grid;place-items:center}
+.kpi .v{font-size:26px;font-weight:700;letter-spacing:-1px;margin-top:auto}
+.kpi .f{display:flex;gap:6px;align-items:center;font-size:11.5px;color:var(--ink3);margin-top:4px}
+.kpi.on{background:var(--ink);color:#fff}.kpi.on .h{color:#AEB6D6}.kpi.on .f{color:#AEB6D6}
 .seg{display:flex;background:var(--bg);border-radius:999px;padding:3px}
 .seg span{height:28px;padding:0 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--ink2);display:flex;align-items:center}
 .seg span.on{background:var(--ink);color:#fff}
-.pill{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:700}
-.pill.g{background:var(--grn2);color:#08754F}.pill.r{background:var(--red2);color:#C21F32}.pill.a{background:var(--amb2);color:#9A6100}.pill.b{background:var(--co3);color:var(--co2)}
-/* hero */
-.hero{background:linear-gradient(150deg,#2F5BFF 0%,#1F3FE0 55%,#1631B8 100%);color:#fff;padding:20px 22px}
-.hero .gl{position:absolute;border-radius:50%;filter:blur(36px)}
-.hero .in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column}
-.hero .hd{display:flex;align-items:center;justify-content:space-between}
-.hero .hd .l{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#DCE4FF}
-.hero .hd .l i{width:34px;height:34px;border-radius:11px;background:rgba(255,255,255,.16);display:grid;place-items:center}
-.gp{height:28px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);font-size:12px;display:flex;align-items:center;gap:6px}
-.gwrap{position:relative;width:300px;height:156px;margin:10px auto 0}
-.gwrap .c{position:absolute;left:0;right:0;bottom:4px;text-align:center}
-.gwrap .c b{font-size:44px;font-weight:700;letter-spacing:-2px;line-height:1;display:block}
-.gwrap .c span{font-size:12.5px;color:#C9D4FF}
-.glass{margin-top:auto;display:grid;grid-template-columns:1fr 1fr 1fr;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:12px 14px;backdrop-filter:blur(12px)}
-.glass div{font-size:11.5px;color:#C9D4FF}
-.glass div+div{border-left:1px solid rgba(255,255,255,.18);padding-left:12px}
-.glass b{display:block;font-size:16px;color:#fff;margin-top:3px;letter-spacing:-.3px}
-.glass em{display:inline-block;width:7px;height:7px;border-radius:2px;margin-right:5px}
-/* kpis */
-.kpis{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
-.kpi{background:#fff;border-radius:24px;padding:16px 18px;display:flex;flex-direction:column}
-.kpi .h{display:flex;align-items:center;justify-content:space-between}
-.kpi .h span:first-child{font-size:12.5px;font-weight:600;color:var(--ink2)}
-.ic{width:34px;height:34px;border-radius:11px;display:grid;place-items:center}
-.kpi .v{font-size:28px;font-weight:700;letter-spacing:-1px;margin-top:auto}
-.kpi .f{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--ink3)}
-.kpi.red{background:var(--red);color:#fff}
-.kpi.red .h span:first-child,.kpi.red .f{color:#FFE1E4}
-/* histogram legend */
-.lgd{display:flex;gap:16px;font-size:12px;color:var(--ink2);margin-top:2px}
-.lgd em{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
-.lgd b{color:var(--ink)}
-/* queue */
-.q{margin-top:12px}
-.qh,.qr{display:grid;grid-template-columns:178px 96px 88px 1fr 76px;align-items:center;gap:10px}
-.qh{font-size:11.5px;font-weight:600;color:var(--ink3);padding:0 12px 8px;border-bottom:1px solid var(--line)}
-.qr{padding:12px 12px;border-bottom:1px solid var(--line)}
-.qr.sel{background:#F4F7FF;border-radius:16px;border-bottom-color:transparent;box-shadow:inset 0 0 0 1.5px #C9D4FF}
-.qr .who{display:flex;align-items:center;gap:10px}
-.qr .who .ph{width:38px;height:38px}
-.qr .who b{font-size:13.5px;display:block}.qr .who span{font-size:11.5px;color:var(--ink3)}
-.qr .amt b{font-size:14px;display:block}.qr .amt span{font-size:11.5px;color:var(--ink3)}
-.sc{display:flex;align-items:center;gap:8px}
-.sc .bar{width:46px;height:6px;border-radius:3px;background:#EEF0F5;overflow:hidden}
-.sc .bar i{display:block;height:100%;border-radius:3px}
-.sc b{font-size:14px}
-.sig{display:flex;flex-wrap:wrap;gap:5px}
-.sig span{white-space:nowrap;font-size:11px;font-weight:600;color:var(--ink2);background:var(--bg);border-radius:8px;padding:4px 7px}
-.act{display:flex;gap:6px;justify-content:flex-end}
-.act i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center}
-/* r2 right */
-.rr{display:grid;grid-template-columns:1fr 330px;gap:16px}
-.why{background:#0E1633;color:#fff}
-.why .s{color:#8F9AC2}
-.why .tx{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
-.why .tx .ph{width:40px;height:40px}
-.why .tx b{font-size:14px;display:block}.why .tx span{font-size:11.5px;color:#8F9AC2}
-.why .score{margin-left:auto;text-align:right}
-.why .score b{font-size:24px;color:#FF6B79;letter-spacing:-.8px}
-.shap{margin-top:12px;display:grid;gap:9px}
-.shap .l{display:flex;justify-content:space-between;font-size:12.5px;color:#D5DBF2}
-.shap .l b{color:#fff}
-.shap .b{height:8px;border-radius:4px;background:rgba(255,255,255,.08);margin-top:6px;overflow:hidden}
-.shap .b i{display:block;height:100%;border-radius:4px}
-.why .btns{position:absolute;left:22px;right:22px;bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.why .btns span{height:42px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:13.5px;font-weight:700}
-</style></head><body><div class="wrap">
+.queue{flex:1}
+.qr{display:flex;align-items:center;gap:12px;padding:7px 0;border-top:1px solid var(--line)}
+.qr:first-of-type{border-top:0}
+.qr .ph{width:38px;height:38px}
+.qr .nm{width:150px}.qr .nm b{font-size:13.5px;display:block}.qr .nm span{font-size:11.5px;color:var(--ink3)}
+.qr .am{width:100px}.qr .am b{font-size:13.5px;display:block}.qr .am span{font-size:11.5px;color:var(--ink3)}
+.qr .sc{width:44px;height:28px;border-radius:999px;display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--c);background:var(--amb2)}
+.qr .ac{margin-left:auto;display:flex;gap:6px}
+.qr .ac i{width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+.ok{background:var(--grn2)}.no{background:var(--red2)}
 
-<div class="rail">
- <div class="lg">{{icon:shield-check:24:#fff:2.4}}</div>
- <div class="it on">{{icon:layout-dashboard:21:#fff}}</div>
- <div class="it">{{icon:activity:21:#5C6585}}</div>
- <div class="it">{{icon:list-checks:21:#5C6585}}<em></em></div>
- <div class="it">{{icon:git-branch:21:#5C6585}}</div>
- <div class="it">{{icon:users:21:#5C6585}}</div>
- <div class="it">{{icon:file-text:21:#5C6585}}</div>
- <div class="sp"></div>
- <div class="it">{{icon:settings:21:#5C6585}}</div>
- <div class="av"></div>
-</div>
+/* C */
+.topr{display:flex;align-items:center;gap:10px;height:52px}
+.rd{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative;flex:none}
+.rd em{position:absolute;top:12px;right:13px;width:8px;height:8px;border-radius:50%;background:var(--red);border:2px solid #fff}
+.me{margin-left:auto;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;height:48px;padding:0 14px 0 5px}
+.me .ph{width:38px;height:38px}.me b{font-size:14px;display:block}.me span{font-size:12px;color:var(--ink3)}
+.acts{display:flex;gap:8px;height:44px;margin-top:-4px}
+.btn{height:44px;padding:0 16px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;background:#fff;white-space:nowrap}
+.btn.p{background:var(--co);color:#fff;flex:1;justify-content:center}
+.why{flex:1;display:flex;flex-direction:column}
+.why .tx{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px;border-radius:20px;background:var(--bg)}
+.why .tx .ph{width:46px;height:46px}
+.why .tx b{font-size:15px;display:block}.why .tx span{font-size:12px;color:var(--ink3)}
+.why .tx svg{margin-left:auto}
+.why .lbl{font-size:12px;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.8px;margin-top:18px}
+.sg{display:grid;gap:8px;margin-top:10px}
+.sg .l{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2)}
+.sg .l b{color:var(--ink)}
+.sg .b{height:8px;border-radius:4px;background:#F0F1F6;margin-top:6px;overflow:hidden}
+.sg .b i{display:block;height:100%;border-radius:4px}
+.why .sum{display:flex;justify-content:space-between;align-items:center;margin:12px 0 14px;padding-top:12px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink2)}
+.why .sum b{color:var(--ink)}
+.why .bt{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.why .bt span{height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13.5px;font-weight:700}
+</style></head><body><div class="page">
 
-<div class="main">
- <div class="top">
-  <div class="srch">{{icon:search:18:#9AA1B5}}Search payment ID, card, email or IP<kbd>⌘K</kbd></div>
-  <div class="live"><i></i>Model v4.2 live · 84 ms avg</div>
-  <div class="tr">
-   <div class="round">{{icon:bell:20:#0E1633}}<em></em></div>
-   <div class="me"><span class="ph" style="background-image:url(daniel.jpg)"></span><div><b>Daniel Brooks</b><span>Risk Lead</span></div>{{icon:chevron-down:16:#5C6585}}</div>
+<div class="col">
+ <div class="hero">
+  <div style="display:flex;align-items:center"><div class="brand"><i>{{icon:shield-check:21:#fff:2.4}}</i>Sentinel Pay</div><span class="live"><b></b>Model v4.2 live</span></div>
+  <div class="gw"><svg width="236" height="236" viewBox="0 0 236 236"><path d="M43.1,190.1 A104,104 0 0 1 39.6,186.4 L53.2,174.5 A86,86 0 0 0 56.0,177.6Z" fill="rgba(255,255,255,.95)"/><path d="M37.1,183.3 A104,104 0 0 1 34.0,179.3 L48.5,168.7 A86,86 0 0 0 51.1,172.0Z" fill="rgba(255,255,255,.95)"/><path d="M31.7,176.0 A104,104 0 0 1 28.9,171.7 L44.4,162.4 A86,86 0 0 0 46.6,166.0Z" fill="rgba(255,255,255,.95)"/><path d="M27.0,168.3 A104,104 0 0 1 24.6,163.8 L40.8,155.8 A86,86 0 0 0 42.7,159.6Z" fill="rgba(255,255,255,.95)"/><path d="M22.9,160.1 A104,104 0 0 1 21.0,155.4 L37.8,149.0 A86,86 0 0 0 39.4,152.8Z" fill="rgba(255,255,255,.95)"/><path d="M19.6,151.7 A104,104 0 0 1 18.1,146.8 L35.4,141.8 A86,86 0 0 0 36.6,145.9Z" fill="rgba(255,255,255,.95)"/><path d="M17.0,143.0 A104,104 0 0 1 15.9,138.0 L33.6,134.6 A86,86 0 0 0 34.5,138.7Z" fill="rgba(255,255,255,.95)"/><path d="M15.3,134.1 A104,104 0 0 1 14.6,129.1 L32.5,127.1 A86,86 0 0 0 33.0,131.3Z" fill="rgba(255,255,255,.95)"/><path d="M14.2,125.1 A104,104 0 0 1 14.0,120.0 L32.0,119.7 A86,86 0 0 0 32.2,123.8Z" fill="rgba(255,255,255,.95)"/><path d="M14.0,116.0 A104,104 0 0 1 14.2,110.9 L32.2,112.2 A86,86 0 0 0 32.0,116.3Z" fill="rgba(255,255,255,.95)"/><path d="M14.6,106.9 A104,104 0 0 1 15.3,101.9 L33.0,104.7 A86,86 0 0 0 32.5,108.9Z" fill="rgba(255,255,255,.95)"/><path d="M15.9,98.0 A104,104 0 0 1 17.0,93.0 L34.5,97.3 A86,86 0 0 0 33.6,101.4Z" fill="rgba(255,255,255,.95)"/><path d="M18.1,89.2 A104,104 0 0 1 19.6,84.3 L36.6,90.1 A86,86 0 0 0 35.4,94.2Z" fill="rgba(255,255,255,.95)"/><path d="M21.0,80.6 A104,104 0 0 1 22.9,75.9 L39.4,83.2 A86,86 0 0 0 37.8,87.0Z" fill="rgba(255,255,255,.95)"/><path d="M24.6,72.2 A104,104 0 0 1 27.0,67.7 L42.7,76.4 A86,86 0 0 0 40.8,80.2Z" fill="rgba(255,255,255,.95)"/><path d="M28.9,64.3 A104,104 0 0 1 31.7,60.0 L46.6,70.0 A86,86 0 0 0 44.4,73.6Z" fill="rgba(255,255,255,.95)"/><path d="M34.0,56.7 A104,104 0 0 1 37.1,52.7 L51.1,64.0 A86,86 0 0 0 48.5,67.3Z" fill="rgba(255,255,255,.95)"/><path d="M39.6,49.6 A104,104 0 0 1 43.1,45.9 L56.0,58.4 A86,86 0 0 0 53.2,61.5Z" fill="rgba(255,255,255,.95)"/><path d="M45.9,43.1 A104,104 0 0 1 49.6,39.6 L61.5,53.2 A86,86 0 0 0 58.4,56.0Z" fill="rgba(255,255,255,.95)"/><path d="M52.7,37.1 A104,104 0 0 1 56.7,34.0 L67.3,48.5 A86,86 0 0 0 64.0,51.1Z" fill="rgba(255,255,255,.95)"/><path d="M60.0,31.7 A104,104 0 0 1 64.3,28.9 L73.6,44.4 A86,86 0 0 0 70.0,46.6Z" fill="rgba(255,255,255,.95)"/><path d="M67.7,27.0 A104,104 0 0 1 72.2,24.6 L80.2,40.8 A86,86 0 0 0 76.4,42.7Z" fill="rgba(255,255,255,.95)"/><path d="M75.9,22.9 A104,104 0 0 1 80.6,21.0 L87.0,37.8 A86,86 0 0 0 83.2,39.4Z" fill="rgba(255,255,255,.95)"/><path d="M84.3,19.6 A104,104 0 0 1 89.2,18.1 L94.2,35.4 A86,86 0 0 0 90.1,36.6Z" fill="rgba(255,255,255,.95)"/><path d="M93.0,17.0 A104,104 0 0 1 98.0,15.9 L101.4,33.6 A86,86 0 0 0 97.3,34.5Z" fill="rgba(255,255,255,.95)"/><path d="M101.9,15.3 A104,104 0 0 1 106.9,14.6 L108.9,32.5 A86,86 0 0 0 104.7,33.0Z" fill="rgba(255,255,255,.95)"/><path d="M110.9,14.2 A104,104 0 0 1 116.0,14.0 L116.3,32.0 A86,86 0 0 0 112.2,32.2Z" fill="rgba(255,255,255,.95)"/><path d="M120.0,14.0 A104,104 0 0 1 125.1,14.2 L123.8,32.2 A86,86 0 0 0 119.7,32.0Z" fill="rgba(255,255,255,.95)"/><path d="M129.1,14.6 A104,104 0 0 1 134.1,15.3 L131.3,33.0 A86,86 0 0 0 127.1,32.5Z" fill="rgba(255,255,255,.95)"/><path d="M138.0,15.9 A104,104 0 0 1 143.0,17.0 L138.7,34.5 A86,86 0 0 0 134.6,33.6Z" fill="rgba(255,255,255,.95)"/><path d="M146.8,18.1 A104,104 0 0 1 151.7,19.6 L145.9,36.6 A86,86 0 0 0 141.8,35.4Z" fill="rgba(255,255,255,.95)"/><path d="M155.4,21.0 A104,104 0 0 1 160.1,22.9 L152.8,39.4 A86,86 0 0 0 149.0,37.8Z" fill="rgba(255,255,255,.95)"/><path d="M163.8,24.6 A104,104 0 0 1 168.3,27.0 L159.6,42.7 A86,86 0 0 0 155.8,40.8Z" fill="rgba(255,255,255,.95)"/><path d="M171.7,28.9 A104,104 0 0 1 176.0,31.7 L166.0,46.6 A86,86 0 0 0 162.4,44.4Z" fill="rgba(255,255,255,.95)"/><path d="M179.3,34.0 A104,104 0 0 1 183.3,37.1 L172.0,51.1 A86,86 0 0 0 168.7,48.5Z" fill="rgba(255,255,255,.95)"/><path d="M186.4,39.6 A104,104 0 0 1 190.1,43.1 L177.6,56.0 A86,86 0 0 0 174.5,53.2Z" fill="rgba(255,255,255,.95)"/><path d="M192.9,45.9 A104,104 0 0 1 196.4,49.6 L182.8,61.5 A86,86 0 0 0 180.0,58.4Z" fill="rgba(255,255,255,.95)"/><path d="M198.9,52.7 A104,104 0 0 1 202.0,56.7 L187.5,67.3 A86,86 0 0 0 184.9,64.0Z" fill="rgba(255,255,255,.95)"/><path d="M204.3,60.0 A104,104 0 0 1 207.1,64.3 L191.6,73.6 A86,86 0 0 0 189.4,70.0Z" fill="rgba(255,255,255,.95)"/><path d="M209.0,67.7 A104,104 0 0 1 211.4,72.2 L195.2,80.2 A86,86 0 0 0 193.3,76.4Z" fill="rgba(255,255,255,.95)"/><path d="M213.1,75.9 A104,104 0 0 1 215.0,80.6 L198.2,87.0 A86,86 0 0 0 196.6,83.2Z" fill="rgba(255,255,255,.55)"/><path d="M216.4,84.3 A104,104 0 0 1 217.9,89.2 L200.6,94.2 A86,86 0 0 0 199.4,90.1Z" fill="rgba(255,255,255,.55)"/><path d="M219.0,93.0 A104,104 0 0 1 220.1,98.0 L202.4,101.4 A86,86 0 0 0 201.5,97.3Z" fill="rgba(255,255,255,.55)"/><path d="M220.7,101.9 A104,104 0 0 1 221.4,106.9 L203.5,108.9 A86,86 0 0 0 203.0,104.7Z" fill="rgba(255,255,255,.55)"/><path d="M221.8,110.9 A104,104 0 0 1 222.0,116.0 L204.0,116.3 A86,86 0 0 0 203.8,112.2Z" fill="rgba(255,255,255,.55)"/><path d="M222.0,120.0 A104,104 0 0 1 221.8,125.1 L203.8,123.8 A86,86 0 0 0 204.0,119.7Z" fill="rgba(255,255,255,.55)"/><path d="M221.4,129.1 A104,104 0 0 1 220.7,134.1 L203.0,131.3 A86,86 0 0 0 203.5,127.1Z" fill="#FFC062"/><path d="M220.1,138.0 A104,104 0 0 1 219.0,143.0 L201.5,138.7 A86,86 0 0 0 202.4,134.6Z" fill="#FFC062"/><path d="M217.9,146.8 A104,104 0 0 1 216.4,151.7 L199.4,145.9 A86,86 0 0 0 200.6,141.8Z" fill="#FFC062"/><path d="M215.0,155.4 A104,104 0 0 1 213.1,160.1 L196.6,152.8 A86,86 0 0 0 198.2,149.0Z" fill="#FFC062"/><path d="M211.4,163.8 A104,104 0 0 1 209.0,168.3 L193.3,159.6 A86,86 0 0 0 195.2,155.8Z" fill="#FFC062"/><path d="M207.1,171.7 A104,104 0 0 1 204.3,176.0 L189.4,166.0 A86,86 0 0 0 191.6,162.4Z" fill="#FF6B79"/><path d="M202.0,179.3 A104,104 0 0 1 198.9,183.3 L184.9,172.0 A86,86 0 0 0 187.5,168.7Z" fill="#FF6B79"/><path d="M196.4,186.4 A104,104 0 0 1 192.9,190.1 L180.0,177.6 A86,86 0 0 0 182.8,174.5Z" fill="#FF6B79"/></svg><div class="c"><small>Fraud prevented today</small><b>$48,920</b><span>+18% vs yesterday</span></div></div>
+  <div class="gl brk">
+   <div><em style="background:#fff"></em>Approved<b>186,404</b></div>
+   <div><em style="background:#FFC062"></em>Challenged<b>1,284</b></div>
+   <div><em style="background:#FF6B79"></em>Blocked<b>312</b></div>
   </div>
- </div>
-
- <div class="greet">
-  <div><h1>Good evening, Daniel</h1><p>Sentinel stopped <b>$48,920</b> in fraud today. <b>7 payments</b> are waiting for a human decision.</p></div>
-  <div class="gr">
-   <div class="team"><div class="st"><i style="background-image:url(amara.jpg)"></i><i style="background-image:url(kenji.jpg)"></i><i style="background-image:url(sofia.jpg)"></i></div>3 analysts online</div>
-   <span class="btn">{{icon:calendar:16:#0E1633}}Today, 18 Nov</span>
-   <span class="btn">{{icon:download:16:#0E1633}}Export</span>
-   <span class="btn d">{{icon:sparkles:16:#8FA8FF}}Ask Sentinel AI</span>
-  </div>
- </div>
-
- <div class="row r1">
-  <div class="card hero">
-   <span class="gl" style="width:260px;height:260px;background:#7FA0FF;right:-90px;top:-110px;opacity:.55"></span>
-   <span class="gl" style="width:160px;height:160px;background:#FF5A6A;left:-60px;bottom:-70px;opacity:.35"></span>
-   <div class="in">
-    <div class="hd"><span class="l"><i>{{icon:shield-check:17:#fff:2.4}}</i>Fraud prevented today</span><span class="gp">{{icon:trending-up:12:#fff:2.6}}18% vs yesterday</span></div>
-    <div class="gwrap"><svg width="300" height="160" viewBox="0 0 300 160"><path d="M22.0,148.5 A128,128 0 0 1 22.4,140.4 L48.3,142.3 A102,102 0 0 0 48.0,148.8Z" fill="#ffffff" fill-opacity="0.95"/><path d="M22.6,137.3 A128,128 0 0 1 23.7,129.3 L49.3,133.5 A102,102 0 0 0 48.5,139.9Z" fill="#ffffff" fill-opacity="0.95"/><path d="M24.2,126.3 A128,128 0 0 1 26.0,118.4 L51.2,124.8 A102,102 0 0 0 49.8,131.1Z" fill="#ffffff" fill-opacity="0.95"/><path d="M26.8,115.4 A128,128 0 0 1 29.2,107.7 L53.7,116.3 A102,102 0 0 0 51.8,122.4Z" fill="#ffffff" fill-opacity="0.95"/><path d="M30.3,104.8 A128,128 0 0 1 33.4,97.3 L57.0,108.0 A102,102 0 0 0 54.6,114.0Z" fill="#ffffff" fill-opacity="0.95"/><path d="M34.7,94.5 A128,128 0 0 1 38.4,87.3 L61.1,100.1 A102,102 0 0 0 58.1,105.8Z" fill="#ffffff" fill-opacity="0.95"/><path d="M39.9,84.7 A128,128 0 0 1 44.3,77.8 L65.8,92.5 A102,102 0 0 0 62.3,97.9Z" fill="#ffffff" fill-opacity="0.95"/><path d="M46.0,75.3 A128,128 0 0 1 51.0,68.9 L71.1,85.4 A102,102 0 0 0 67.2,90.5Z" fill="#ffffff" fill-opacity="0.95"/><path d="M52.9,66.6 A128,128 0 0 1 58.4,60.6 L77.0,78.7 A102,102 0 0 0 72.7,83.5Z" fill="#ffffff" fill-opacity="0.95"/><path d="M60.6,58.4 A128,128 0 0 1 66.6,52.9 L83.5,72.7 A102,102 0 0 0 78.7,77.0Z" fill="#ffffff" fill-opacity="0.95"/><path d="M68.9,51.0 A128,128 0 0 1 75.3,46.0 L90.5,67.2 A102,102 0 0 0 85.4,71.1Z" fill="#ffffff" fill-opacity="0.95"/><path d="M77.8,44.3 A128,128 0 0 1 84.7,39.9 L97.9,62.3 A102,102 0 0 0 92.5,65.8Z" fill="#ffffff" fill-opacity="0.95"/><path d="M87.3,38.4 A128,128 0 0 1 94.5,34.7 L105.8,58.1 A102,102 0 0 0 100.1,61.1Z" fill="#ffffff" fill-opacity="0.95"/><path d="M97.3,33.4 A128,128 0 0 1 104.8,30.3 L114.0,54.6 A102,102 0 0 0 108.0,57.0Z" fill="#ffffff" fill-opacity="0.95"/><path d="M107.7,29.2 A128,128 0 0 1 115.4,26.8 L122.4,51.8 A102,102 0 0 0 116.3,53.7Z" fill="#ffffff" fill-opacity="0.95"/><path d="M118.4,26.0 A128,128 0 0 1 126.3,24.2 L131.1,49.8 A102,102 0 0 0 124.8,51.2Z" fill="#ffffff" fill-opacity="0.95"/><path d="M129.3,23.7 A128,128 0 0 1 137.3,22.6 L139.9,48.5 A102,102 0 0 0 133.5,49.3Z" fill="#ffffff" fill-opacity="0.95"/><path d="M140.4,22.4 A128,128 0 0 1 148.5,22.0 L148.8,48.0 A102,102 0 0 0 142.3,48.3Z" fill="#ffffff" fill-opacity="0.95"/><path d="M151.5,22.0 A128,128 0 0 1 159.6,22.4 L157.7,48.3 A102,102 0 0 0 151.2,48.0Z" fill="#ffffff" fill-opacity="0.95"/><path d="M162.7,22.6 A128,128 0 0 1 170.7,23.7 L166.5,49.3 A102,102 0 0 0 160.1,48.5Z" fill="#ffffff" fill-opacity="0.95"/><path d="M173.7,24.2 A128,128 0 0 1 181.6,26.0 L175.2,51.2 A102,102 0 0 0 168.9,49.8Z" fill="#ffffff" fill-opacity="0.95"/><path d="M184.6,26.8 A128,128 0 0 1 192.3,29.2 L183.7,53.7 A102,102 0 0 0 177.6,51.8Z" fill="#ffffff" fill-opacity="0.95"/><path d="M195.2,30.3 A128,128 0 0 1 202.7,33.4 L192.0,57.0 A102,102 0 0 0 186.0,54.6Z" fill="#ffffff" fill-opacity="0.95"/><path d="M205.5,34.7 A128,128 0 0 1 212.7,38.4 L199.9,61.1 A102,102 0 0 0 194.2,58.1Z" fill="#ffffff" fill-opacity="0.95"/><path d="M215.3,39.9 A128,128 0 0 1 222.2,44.3 L207.5,65.8 A102,102 0 0 0 202.1,62.3Z" fill="#ffffff" fill-opacity="0.95"/><path d="M224.7,46.0 A128,128 0 0 1 231.1,51.0 L214.6,71.1 A102,102 0 0 0 209.5,67.2Z" fill="#ffffff" fill-opacity="0.95"/><path d="M233.4,52.9 A128,128 0 0 1 239.4,58.4 L221.3,77.0 A102,102 0 0 0 216.5,72.7Z" fill="#ffffff" fill-opacity="0.95"/><path d="M241.6,60.6 A128,128 0 0 1 247.1,66.6 L227.3,83.5 A102,102 0 0 0 223.0,78.7Z" fill="#ffffff" fill-opacity="0.95"/><path d="M249.0,68.9 A128,128 0 0 1 254.0,75.3 L232.8,90.5 A102,102 0 0 0 228.9,85.4Z" fill="#ffffff" fill-opacity="0.95"/><path d="M255.7,77.8 A128,128 0 0 1 260.1,84.7 L237.7,97.9 A102,102 0 0 0 234.2,92.5Z" fill="#ffffff" fill-opacity="0.95"/><path d="M261.6,87.3 A128,128 0 0 1 265.3,94.5 L241.9,105.8 A102,102 0 0 0 238.9,100.1Z" fill="#ffffff" fill-opacity="0.95"/><path d="M266.6,97.3 A128,128 0 0 1 269.7,104.8 L245.4,114.0 A102,102 0 0 0 243.0,108.0Z" fill="#FFC24B" fill-opacity="1"/><path d="M270.8,107.7 A128,128 0 0 1 273.2,115.4 L248.2,122.4 A102,102 0 0 0 246.3,116.3Z" fill="#FFC24B" fill-opacity="1"/><path d="M274.0,118.4 A128,128 0 0 1 275.8,126.3 L250.2,131.1 A102,102 0 0 0 248.8,124.8Z" fill="#FF5A6A" fill-opacity="1"/><path d="M276.3,129.3 A128,128 0 0 1 277.4,137.3 L251.5,139.9 A102,102 0 0 0 250.7,133.5Z" fill="#FF5A6A" fill-opacity="1"/><path d="M277.6,140.4 A128,128 0 0 1 278.0,148.5 L252.0,148.8 A102,102 0 0 0 251.7,142.3Z" fill="#FF5A6A" fill-opacity="1"/></svg><div class="c"><b>$48,920</b><span>avg risk score 23 / 100</span></div></div>
-    <div class="glass">
-     <div><em style="background:#fff"></em>Approved<b>186,404</b></div>
-     <div><em style="background:#FFC24B"></em>Challenged<b>1,284</b></div>
-     <div><em style="background:#FF5A6A"></em>Blocked<b>312</b></div>
-    </div>
-   </div>
-  </div>
-
-  <div class="card">
-   <div class="ch"><div><div class="t">Risk score distribution</div><div class="s">188,000 payments scored today · log scale</div></div><div class="seg"><span class="on">Today</span><span>7 days</span></div></div>
-   <div class="lgd" style="margin-top:12px"><span><em style="background:#C1CEFF"></em>Approve <b>99.15%</b></span><span><em style="background:#F5A524"></em>3-D Secure <b>0.68%</b></span><span><em style="background:#F0384A"></em>Block <b>0.17%</b></span></div>
-   <div style="margin-top:6px"><svg width="500" height="182" viewBox="0 0 500 182"><line x1="40" x2="496" y1="118.0" y2="118.0" stroke="#EDEFF5" stroke-dasharray="3 4"/><text x="32" y="122.0" text-anchor="end" font-size="11" fill="#9AA1B5">100</text><line x1="40" x2="496" y1="82.0" y2="82.0" stroke="#EDEFF5" stroke-dasharray="3 4"/><text x="32" y="86.0" text-anchor="end" font-size="11" fill="#9AA1B5">1k</text><line x1="40" x2="496" y1="46.0" y2="46.0" stroke="#EDEFF5" stroke-dasharray="3 4"/><text x="32" y="50.0" text-anchor="end" font-size="11" fill="#9AA1B5">10k</text><line x1="40" x2="496" y1="154" y2="154" stroke="#E3E6EE"/><rect x="42.0" y="18.9" width="18.6" height="135.1" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="64.6" y="25.0" width="18.6" height="129.0" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="87.2" y="30.0" width="18.6" height="124.0" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="109.8" y="35.3" width="18.6" height="118.7" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="132.4" y="40.6" width="18.6" height="113.4" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="155.0" y="45.7" width="18.6" height="108.3" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="177.6" y="50.9" width="18.6" height="103.1" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="200.2" y="56.2" width="18.6" height="97.8" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="222.8" y="61.6" width="18.6" height="92.4" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="245.4" y="75.7" width="18.6" height="78.3" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="268.0" y="82.3" width="18.6" height="71.7" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="290.6" y="89.0" width="18.6" height="65.0" rx="5" fill="#2F5BFF" fill-opacity="0.28"/><rect x="313.2" y="95.2" width="18.6" height="58.8" rx="5" fill="#F5A524" fill-opacity="1"/><rect x="335.8" y="99.8" width="18.6" height="54.2" rx="5" fill="#F5A524" fill-opacity="1"/><rect x="358.4" y="104.3" width="18.6" height="49.7" rx="5" fill="#F5A524" fill-opacity="1"/><rect x="381.0" y="109.7" width="18.6" height="44.3" rx="5" fill="#F5A524" fill-opacity="1"/><rect x="403.6" y="114.6" width="18.6" height="39.4" rx="5" fill="#F5A524" fill-opacity="1"/><rect x="426.2" y="110.7" width="18.6" height="43.3" rx="5" fill="#F0384A" fill-opacity="1"/><rect x="448.8" y="118.3" width="18.6" height="35.7" rx="5" fill="#F0384A" fill-opacity="1"/><rect x="471.4" y="127.6" width="18.6" height="26.4" rx="5" fill="#F0384A" fill-opacity="1"/><line x1="311.2" x2="311.2" y1="14" y2="154" stroke="#B87503" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="424.2" x2="424.2" y1="14" y2="154" stroke="#D32436" stroke-width="1.5" stroke-dasharray="4 3"/><text x="40.0" y="172" text-anchor="middle" font-size="11" fill="#9AA1B5">0</text><text x="130.4" y="172" text-anchor="middle" font-size="11" fill="#9AA1B5">20</text><text x="220.8" y="172" text-anchor="middle" font-size="11" fill="#9AA1B5">40</text><text x="311.2" y="172" text-anchor="middle" font-size="11" fill="#9AA1B5">60</text><text x="401.6" y="172" text-anchor="middle" font-size="11" fill="#9AA1B5">80</text><text x="492.0" y="172" text-anchor="end" font-size="11" fill="#9AA1B5">100</text><g transform="translate(260.2,16)"><rect width="160" height="40" rx="10" fill="#0E1633"/><text x="12" y="16" font-size="11" fill="#A9B3D6">Blocked automatically</text><text x="12" y="32" font-size="13" font-weight="700" fill="#fff">312 payments</text><rect x="114" y="21" width="36" height="14" rx="7" fill="#F0384A"/><text x="132" y="31.5" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">0.17%</text></g></svg></div>
-  </div>
-
-  <div class="kpis">
-   <div class="kpi"><div class="h"><span>Fraud rate</span><span class="ic" style="background:var(--co3)">{{icon:percent:17:#2F5BFF}}</span></div><div class="v">0.026%</div><div class="f"><span class="pill g">−0.011</span>of volume</div></div>
-   <div class="kpi"><div class="h"><span>False positives</span><span class="ic" style="background:var(--amb2)">{{icon:user-check:17:#B87503}}</span></div><div class="v">1.8%</div><div class="f"><span class="pill g">−0.6 pt</span>of blocks</div></div>
-   <div class="kpi"><div class="h"><span>Chargebacks</span><span class="ic" style="background:var(--grn2)">{{icon:receipt:17:#0F9F6E}}</span></div><div class="v">23</div><div class="f"><span class="pill g">−9</span>this week</div></div>
-   <div class="kpi red"><div class="h"><span>Active attack</span><span class="ic" style="background:rgba(255,255,255,.18)">{{icon:siren:17:#fff}}</span></div><div class="v" style="font-size:22px;letter-spacing:-.6px">Card testing</div><div class="f">BIN 4147 · 41 tries</div></div>
-  </div>
- </div>
-
- <div class="row r2">
-  <div class="card">
-   <div class="ch"><div><div class="t">Review queue</div><div class="s">Scored 60–84 · oldest first · SLA 15 min</div></div><div style="display:flex;gap:8px"><span class="chip">{{icon:sliders-horizontal:14:#5C6585}}All channels</span><span class="chip" style="background:var(--red2);color:#C21F32">{{icon:clock:14:#C21F32}}2 near SLA</span></div></div>
-   <div class="q">
-    <div class="qh"><span>Customer</span><span>Amount</span><span>Risk score</span><span>Top signals</span><span style="text-align:right">Decide</span></div>
-    <div class="qr sel"><div class="who"><span class="ph" style="background-image:url(marcus.jpg)"></span><div><b>Marcus Reed</b><span>Electronics · Web</span></div></div><div class="amt"><b>$1,849.00</b><span>4 min ago</span></div><div class="sc"><div class="bar"><i style="width:82%;background:#F0384A"></i></div><b>82</b></div><div class="sig"><span>New device</span><span>IP +3,200 km</span></div><div class="act"><i style="background:var(--grn2)">{{icon:check:16:#0F9F6E:2.6}}</i><i style="background:var(--red2)">{{icon:x:16:#F0384A:2.6}}</i></div></div>
-    <div class="qr"><div class="who"><span class="ph" style="background-image:url(olivia.jpg)"></span><div><b>Olivia Grant</b><span>Travel · App</span></div></div><div class="amt"><b>$2,312.40</b><span>6 min ago</span></div><div class="sc"><div class="bar"><i style="width:77%;background:#F5A524"></i></div><b>77</b></div><div class="sig"><span>New email</span><span>Velocity ×5</span></div><div class="act"><i style="background:var(--grn2)">{{icon:check:16:#0F9F6E:2.6}}</i><i style="background:var(--red2)">{{icon:x:16:#F0384A:2.6}}</i></div></div>
-    <div class="qr"><div class="who"><span class="ph" style="background-image:url(karim.jpg)"></span><div><b>Karim Haddad</b><span>Gift cards · Web</span></div></div><div class="amt"><b>$500.00</b><span>9 min ago</span></div><div class="sc"><div class="bar"><i style="width:74%;background:#F5A524"></i></div><b>74</b></div><div class="sig"><span>Gift card ×3</span><span>Proxy IP</span></div><div class="act"><i style="background:var(--grn2)">{{icon:check:16:#0F9F6E:2.6}}</i><i style="background:var(--red2)">{{icon:x:16:#F0384A:2.6}}</i></div></div>
-    <div class="qr"><div class="who"><span class="ph" style="background-image:url(mei.jpg)"></span><div><b>Mei Tanaka</b><span>Fashion · App</span></div></div><div class="amt"><b>$426.90</b><span>11 min ago</span></div><div class="sc"><div class="bar"><i style="width:68%;background:#F5A524"></i></div><b>68</b></div><div class="sig"><span>Ship ≠ bill</span><span>First order</span></div><div class="act"><i style="background:var(--grn2)">{{icon:check:16:#0F9F6E:2.6}}</i><i style="background:var(--red2)">{{icon:x:16:#F0384A:2.6}}</i></div></div>
-    <div class="qr" style="border-bottom:0"><div class="who"><span class="ph" style="background-image:url(rohan.jpg)"></span><div><b>Rohan Mehta</b><span>Groceries · Web</span></div></div><div class="amt"><b>$212.15</b><span>13 min ago</span></div><div class="sc"><div class="bar"><i style="width:63%;background:#F5A524"></i></div><b>63</b></div><div class="sig"><span>Card added today</span></div><div class="act"><i style="background:var(--grn2)">{{icon:check:16:#0F9F6E:2.6}}</i><i style="background:var(--red2)">{{icon:x:16:#F0384A:2.6}}</i></div></div>
-   </div>
-  </div>
-
-  <div class="rr">
-   <div class="card" style="display:flex;flex-direction:column">
-    <div class="ch"><div><div class="t">Attacks by hour</div><div class="s">223 attempts blocked since midnight</div></div></div>
-    <div class="lgd" style="margin-top:12px"><span><em style="background:#2F5BFF"></em>Card testing <b>164</b></span><span><em style="background:#F0384A"></em>Takeover <b>59</b></span></div>
-    <div style="margin-top:8px"><svg width="246" height="206" viewBox="0 0 246 206"><line x1="26" x2="246" y1="172.0" y2="172.0" stroke="#EDEFF5" stroke-dasharray="0"/><text x="20" y="176.0" text-anchor="end" font-size="11" fill="#9AA1B5">0</text><line x1="26" x2="246" y1="119.3" y2="119.3" stroke="#EDEFF5" stroke-dasharray="3 4"/><text x="20" y="123.3" text-anchor="end" font-size="11" fill="#9AA1B5">10</text><line x1="26" x2="246" y1="66.7" y2="66.7" stroke="#EDEFF5" stroke-dasharray="3 4"/><text x="20" y="70.7" text-anchor="end" font-size="11" fill="#9AA1B5">20</text><line x1="26" x2="246" y1="14.0" y2="14.0" stroke="#EDEFF5" stroke-dasharray="3 4"/><text x="20" y="18.0" text-anchor="end" font-size="11" fill="#9AA1B5">30</text><rect x="27.5" y="150.9" width="6.0" height="21.1" rx="2.5" fill="#C9D4FF"/><rect x="27.5" y="145.7" width="6.0" height="3.8" rx="2.5" fill="#FBC3C9"/><rect x="36.5" y="156.2" width="6.0" height="15.8" rx="2.5" fill="#C9D4FF"/><rect x="36.5" y="150.9" width="6.0" height="3.8" rx="2.5" fill="#FBC3C9"/><rect x="45.5" y="161.5" width="6.0" height="10.5" rx="2.5" fill="#C9D4FF"/><rect x="45.5" y="161.5" width="6.0" height="-1.5" rx="2.5" fill="#FBC3C9"/><rect x="54.5" y="140.4" width="6.0" height="31.6" rx="2.5" fill="#C9D4FF"/><rect x="54.5" y="135.1" width="6.0" height="3.8" rx="2.5" fill="#FBC3C9"/><rect x="63.5" y="77.2" width="6.0" height="94.8" rx="2.5" fill="#C9D4FF"/><rect x="63.5" y="66.7" width="6.0" height="9.0" rx="2.5" fill="#FBC3C9"/><rect x="72.5" y="56.1" width="6.0" height="115.9" rx="2.5" fill="#2F5BFF"/><rect x="72.5" y="40.3" width="6.0" height="14.3" rx="2.5" fill="#F0384A"/><rect x="81.5" y="124.6" width="6.0" height="47.4" rx="2.5" fill="#C9D4FF"/><rect x="81.5" y="114.1" width="6.0" height="9.0" rx="2.5" fill="#FBC3C9"/><rect x="90.5" y="156.2" width="6.0" height="15.8" rx="2.5" fill="#C9D4FF"/><rect x="90.5" y="150.9" width="6.0" height="3.8" rx="2.5" fill="#FBC3C9"/><rect x="99.5" y="161.5" width="6.0" height="10.5" rx="2.5" fill="#C9D4FF"/><rect x="99.5" y="156.2" width="6.0" height="3.8" rx="2.5" fill="#FBC3C9"/><rect x="108.5" y="161.5" width="6.0" height="10.5" rx="2.5" fill="#C9D4FF"/><rect x="108.5" y="150.9" width="6.0" height="9.0" rx="2.5" fill="#FBC3C9"/><rect x="117.5" y="156.2" width="6.0" height="15.8" rx="2.5" fill="#C9D4FF"/><rect x="117.5" y="145.7" width="6.0" height="9.0" rx="2.5" fill="#FBC3C9"/><rect x="126.5" y="150.9" width="6.0" height="21.1" rx="2.5" fill="#C9D4FF"/><rect x="126.5" y="135.1" width="6.0" height="14.3" rx="2.5" fill="#FBC3C9"/><rect x="135.5" y="156.2" width="6.0" height="15.8" rx="2.5" fill="#C9D4FF"/><rect x="135.5" y="145.7" width="6.0" height="9.0" rx="2.5" fill="#FBC3C9"/><rect x="144.5" y="161.5" width="6.0" height="10.5" rx="2.5" fill="#C9D4FF"/><rect x="144.5" y="150.9" width="6.0" height="9.0" rx="2.5" fill="#FBC3C9"/><rect x="153.5" y="150.9" width="6.0" height="21.1" rx="2.5" fill="#C9D4FF"/><rect x="153.5" y="135.1" width="6.0" height="14.3" rx="2.5" fill="#FBC3C9"/><rect x="162.5" y="145.7" width="6.0" height="26.3" rx="2.5" fill="#C9D4FF"/><rect x="162.5" y="129.9" width="6.0" height="14.3" rx="2.5" fill="#FBC3C9"/><rect x="171.5" y="140.4" width="6.0" height="31.6" rx="2.5" fill="#C9D4FF"/><rect x="171.5" y="119.3" width="6.0" height="19.6" rx="2.5" fill="#FBC3C9"/><rect x="180.5" y="129.9" width="6.0" height="42.1" rx="2.5" fill="#C9D4FF"/><rect x="180.5" y="114.1" width="6.0" height="14.3" rx="2.5" fill="#FBC3C9"/><rect x="189.5" y="124.6" width="6.0" height="47.4" rx="2.5" fill="#C9D4FF"/><rect x="189.5" y="103.5" width="6.0" height="19.6" rx="2.5" fill="#FBC3C9"/><rect x="198.5" y="108.8" width="6.0" height="63.2" rx="2.5" fill="#C9D4FF"/><rect x="198.5" y="82.5" width="6.0" height="24.8" rx="2.5" fill="#FBC3C9"/><rect x="207.5" y="98.3" width="6.0" height="73.7" rx="2.5" fill="#C9D4FF"/><rect x="207.5" y="71.9" width="6.0" height="24.8" rx="2.5" fill="#FBC3C9"/><rect x="216.5" y="114.1" width="6.0" height="57.9" rx="2.5" fill="#C9D4FF"/><rect x="216.5" y="93.0" width="6.0" height="19.6" rx="2.5" fill="#FBC3C9"/><rect x="225.5" y="135.1" width="6.0" height="36.9" rx="2.5" fill="#C9D4FF"/><rect x="225.5" y="119.3" width="6.0" height="14.3" rx="2.5" fill="#FBC3C9"/><rect x="234.5" y="145.7" width="6.0" height="26.3" rx="2.5" fill="#C9D4FF"/><rect x="234.5" y="135.1" width="6.0" height="9.0" rx="2.5" fill="#FBC3C9"/><text x="30.5" y="190" text-anchor="middle" font-size="11" fill="#9AA1B5">00</text><text x="84.5" y="190" text-anchor="middle" font-size="11" fill="#9AA1B5">06</text><text x="138.5" y="190" text-anchor="middle" font-size="11" fill="#9AA1B5">12</text><text x="192.5" y="190" text-anchor="middle" font-size="11" fill="#9AA1B5">18</text><text x="237.5" y="190" text-anchor="middle" font-size="11" fill="#9AA1B5">23</text><g transform="translate(65.5,6)"><rect width="128" height="40" rx="10" fill="#0E1633"/><text x="12" y="16" font-size="11" fill="#A9B3D6">05:00 – 06:00</text><text x="12" y="32" font-size="13" font-weight="700" fill="#fff">25 attempts</text></g></svg></div>
-    <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding:12px 14px;border-radius:16px;background:var(--co3)"><span class="ic" style="background:#fff">{{icon:sparkles:16:#2F5BFF}}</span><div style="font-size:12.5px;line-height:1.45;color:var(--ink2)"><b style="color:var(--ink)">Peak at 05:00</b>, same BIN range as last Tuesday. Rate limit for BIN 4147 is on.</div></div>
-   </div>
-   <div class="card why">
-    <div class="ch"><div><div class="t">Why Sentinel flagged it</div><div class="s">Payment #PX-88214 · Marcus Reed</div></div><span class="pill" style="background:rgba(255,107,121,.16);color:#FF8A95">Review</span></div>
-    <div class="tx"><span class="ph" style="background-image:url(marcus.jpg)"></span><div><b>$1,849.00</b><span>MacBook Air · Visa ••4417</span></div><div class="score"><b>82</b><span style="display:block">/ 100</span></div></div>
-    <div class="shap">
-     <div><div class="l"><span>New device, first seen today</span><b>+31</b></div><div class="b"><i style="width:78%;background:#FF5A6A"></i></div></div>
-     <div><div class="l"><span>IP 3,200 km from billing city</span><b>+24</b></div><div class="b"><i style="width:60%;background:#FF5A6A"></i></div></div>
-     <div><div class="l"><span>Order 6× usual basket</span><b>+19</b></div><div class="b"><i style="width:48%;background:#FFC24B"></i></div></div>
-     <div><div class="l"><span>Customer for 3 years</span><b>−12</b></div><div class="b"><i style="width:30%;background:#7FA0FF"></i></div></div>
-     <div><div class="l"><span>Billing ZIP matches card</span><b>−8</b></div><div class="b"><i style="width:20%;background:#7FA0FF"></i></div></div>
-     <div style="font-size:12px;color:#8F9AC2;line-height:1.45;margin-top:2px">Base 28 + signals = <b style="color:#fff">82</b> · 9 in 10 lookalikes were fraud</div>
-    </div>
-    <div class="btns"><span style="background:rgba(255,255,255,.1)">{{icon:smartphone:15:#fff}}3-D Secure</span><span style="background:#F0384A">{{icon:ban:15:#fff}}Block</span></div>
-   </div>
-  </div>
+  <div class="alh">Live alerts<span>Last 15 min</span></div>
+  <div class="als"><div class="al"><span class="ai" style="background:#FF4D5E">{{icon:zap:16:#fff:2.4}}</span><div><b>Card testing on BIN 4147</b><span>41 tries in 6 min · rate limit on</span></div><em>now</em></div><div class="al"><span class="ai" style="background:#FF8A3D">{{icon:user-x:16:#fff:2.4}}</span><div><b>Account takeover blocked</b><span>New device + password reset</span></div><em>4m</em></div><div class="al"><span class="ai" style="background:#5B7BFF">{{icon:globe:16:#fff:2.4}}</span><div><b>Proxy cluster detected</b><span>18 IPs · same fingerprint</span></div><em>12m</em></div></div>
+  <div class="gl wk"><div class="wh"><div><small>Blocked this week</small><b>$270,000</b></div><span>7 days</span></div><svg width="330" height="70" viewBox="0 0 330 70"><defs><linearGradient id="sa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><path d="M10.0,49.1 L61.7,39.1 L113.3,52.4 L165.0,31.6 L216.7,35.9 L268.3,26.1 L320.0,17.5 L320.0,70 L10.0,70Z" fill="url(#sa)"/><path d="M10.0,49.1 L61.7,39.1 L113.3,52.4 L165.0,31.6 L216.7,35.9 L268.3,26.1 L320.0,17.5" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="320.0" cy="17.5" r="5" fill="#7CF2B4" stroke="#fff" stroke-width="2"/></svg><div class="dy"><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span></div></div>
+  <div class="gl team"><div class="st"><i style="background-image:url(amara.jpg)"></i><i style="background-image:url(kenji.jpg)"></i><i style="background-image:url(sofia.jpg)"></i></div><div><b>3 analysts on shift</b><span>Avg decision 2m 40s</span></div><span class="go">{{icon:arrow-up-right:17:#1730B8:2.4}}</span></div>
  </div>
 </div>
+
+<div class="col">
+ <div class="greet"><div class="d">{{icon:calendar:14:#9BA1B6}}Thursday, 19 Nov 2026</div><h1>Good morning, Daniel</h1><p>Overnight Sentinel scored <b>188,000 payments</b>. <b>6</b> are waiting for you.</p></div>
+ <div class="kpis">
+  <div class="kpi"><div class="h">Fraud rate<span class="ic" style="background:var(--co2)">{{icon:percent:15:#3355FF:2.4}}</span></div><div class="v">0.026%</div><div class="f"><span class="pill g">−0.011</span>of volume</div></div>
+  <div class="kpi"><div class="h">False positives<span class="ic" style="background:var(--amb2)">{{icon:user-check:15:#D08A12:2.4}}</span></div><div class="v">1.8%</div><div class="f"><span class="pill g">−0.6 pt</span>of blocks</div></div>
+  <div class="kpi on"><div class="h">Decision time<span class="ic" style="background:rgba(255,255,255,.12)">{{icon:timer:15:#fff:2.4}}</span></div><div class="v">84 ms</div><div class="f"><span class="pill" style="background:#3355FF;color:#fff">p95 120</span>per payment</div></div>
+ </div>
+ <div class="card">
+  <div class="ch"><div><div class="t">Risk score distribution</div><div class="s">Every payment today · log scale</div></div><div class="seg"><span class="on">Today</span><span>7 days</span></div></div>
+  <div class="lgd"><span><em style="background:#C7D2FF"></em>Approve <b>99.15%</b></span><span><em style="background:#FFB547"></em>3-D Secure <b>0.68%</b></span><span><em style="background:#FF4D5E"></em>Block <b>0.17%</b></span></div>
+  <div style="margin-top:10px"><svg width="486" height="190" viewBox="0 0 486 190"><line x1="34" x2="486" y1="123.5" y2="123.5" stroke="#ECEEF5" stroke-dasharray="3 4"/><text x="26" y="127.5" text-anchor="end" font-size="11" fill="#9BA1B6">100</text><line x1="34" x2="486" y1="86.9" y2="86.9" stroke="#ECEEF5" stroke-dasharray="3 4"/><text x="26" y="90.9" text-anchor="end" font-size="11" fill="#9BA1B6">1k</text><line x1="34" x2="486" y1="50.4" y2="50.4" stroke="#ECEEF5" stroke-dasharray="3 4"/><text x="26" y="54.4" text-anchor="end" font-size="11" fill="#9BA1B6">10k</text><rect x="36.5" y="22.9" width="17.4" height="137.1" rx="5" fill="#C7D2FF"/><rect x="58.9" y="29.1" width="17.4" height="130.9" rx="5" fill="#C7D2FF"/><rect x="81.3" y="34.1" width="17.4" height="125.9" rx="5" fill="#C7D2FF"/><rect x="103.7" y="39.6" width="17.4" height="120.4" rx="5" fill="#C7D2FF"/><rect x="126.1" y="45.0" width="17.4" height="115.0" rx="5" fill="#C7D2FF"/><rect x="148.5" y="50.1" width="17.4" height="109.9" rx="5" fill="#C7D2FF"/><rect x="170.9" y="55.4" width="17.4" height="104.6" rx="5" fill="#C7D2FF"/><rect x="193.3" y="60.8" width="17.4" height="99.2" rx="5" fill="#C7D2FF"/><rect x="215.7" y="66.2" width="17.4" height="93.8" rx="5" fill="#C7D2FF"/><rect x="238.1" y="80.5" width="17.4" height="79.5" rx="5" fill="#C7D2FF"/><rect x="260.5" y="87.3" width="17.4" height="72.7" rx="5" fill="#C7D2FF"/><rect x="282.9" y="94.0" width="17.4" height="66.0" rx="5" fill="#C7D2FF"/><rect x="305.3" y="100.3" width="17.4" height="59.7" rx="5" fill="#FFB547"/><rect x="327.7" y="105.0" width="17.4" height="55.0" rx="5" fill="#FFB547"/><rect x="350.1" y="109.6" width="17.4" height="50.4" rx="5" fill="#FFB547"/><rect x="372.5" y="115.1" width="17.4" height="44.9" rx="5" fill="#FFB547"/><rect x="394.9" y="120.1" width="17.4" height="39.9" rx="5" fill="#FFB547"/><rect x="417.3" y="116.0" width="17.4" height="44.0" rx="5" fill="#FF4D5E"/><rect x="439.7" y="123.8" width="17.4" height="36.2" rx="5" fill="#FF4D5E"/><rect x="462.1" y="133.2" width="17.4" height="26.8" rx="5" fill="#FF4D5E"/><line x1="302.8" x2="302.8" y1="12" y2="160" stroke="#D08A12" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="414.8" x2="414.8" y1="12" y2="160" stroke="#E5384A" stroke-width="1.5" stroke-dasharray="4 3"/><text x="34.0" y="180" text-anchor="middle" font-size="11" fill="#9BA1B6">0</text><text x="123.6" y="180" text-anchor="middle" font-size="11" fill="#9BA1B6">20</text><text x="213.2" y="180" text-anchor="middle" font-size="11" fill="#9BA1B6">40</text><text x="302.8" y="180" text-anchor="middle" font-size="11" fill="#9BA1B6">60</text><text x="392.4" y="180" text-anchor="middle" font-size="11" fill="#9BA1B6">80</text><text x="482.0" y="180" text-anchor="end" font-size="11" fill="#9BA1B6">100</text><g transform="translate(238.8,14)"><rect width="162" height="42" rx="12" fill="#0B1230"/><text x="14" y="17" font-size="11" fill="#9DA8D6">Blocked automatically</text><text x="14" y="33" font-size="13.5" font-weight="700" fill="#fff">312 payments</text><rect x="110" y="21" width="40" height="15" rx="7.5" fill="#FF4D5E"/><text x="130" y="32" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">0.17%</text></g></svg></div>
+ </div>
+ <div class="card queue">
+  <div class="ch"><div><div class="t">Review queue</div><div class="s">Score 60–84 · oldest first</div></div><span class="chip" style="background:var(--red2);color:#D42E40">{{icon:clock:13:#D42E40:2.4}}2 near SLA</span></div>
+  <div style="margin-top:8px"><div class="qr"><span class="ph" style="background-image:url(olivia.jpg)"></span><div class="nm"><b>Olivia Grant</b><span>Travel · App</span></div><div class="am"><b>$2,312.40</b><span>6 min ago</span></div><span class="sc" style="--c:#D08A12">77</span><div class="ac"><i class="ok">{{icon:check:15:#0E9F6E:2.8}}</i><i class="no">{{icon:x:15:#E5384A:2.8}}</i></div></div><div class="qr"><span class="ph" style="background-image:url(karim.jpg)"></span><div class="nm"><b>Karim Haddad</b><span>Gift cards · Web</span></div><div class="am"><b>$500.00</b><span>9 min ago</span></div><span class="sc" style="--c:#D08A12">74</span><div class="ac"><i class="ok">{{icon:check:15:#0E9F6E:2.8}}</i><i class="no">{{icon:x:15:#E5384A:2.8}}</i></div></div><div class="qr"><span class="ph" style="background-image:url(mei.jpg)"></span><div class="nm"><b>Mei Tanaka</b><span>Fashion · App</span></div><div class="am"><b>$426.90</b><span>11 min ago</span></div><span class="sc" style="--c:#D08A12">68</span><div class="ac"><i class="ok">{{icon:check:15:#0E9F6E:2.8}}</i><i class="no">{{icon:x:15:#E5384A:2.8}}</i></div></div><div class="qr"><span class="ph" style="background-image:url(rohan.jpg)"></span><div class="nm"><b>Rohan Mehta</b><span>Groceries · Web</span></div><div class="am"><b>$212.15</b><span>13 min ago</span></div><span class="sc" style="--c:#D08A12">63</span><div class="ac"><i class="ok">{{icon:check:15:#0E9F6E:2.8}}</i><i class="no">{{icon:x:15:#E5384A:2.8}}</i></div></div><div class="qr"><span class="ph" style="background-image:url(sofia.jpg)"></span><div class="nm"><b>Sofia Alvarez</b><span>Home · Web</span></div><div class="am"><b>$96.40</b><span>14 min ago</span></div><span class="sc" style="--c:#D08A12">61</span><div class="ac"><i class="ok">{{icon:check:15:#0E9F6E:2.8}}</i><i class="no">{{icon:x:15:#E5384A:2.8}}</i></div></div></div>
+ </div>
+</div>
+
+<div class="col">
+ <div class="topr"><div class="rd">{{icon:search:20:#0B1230}}</div><div class="rd">{{icon:bell:20:#0B1230}}<em></em></div><div class="me"><span class="ph" style="background-image:url(daniel.jpg)"></span><div><b>Daniel Brooks</b><span>Risk Lead</span></div>{{icon:chevron-down:16:#5A6283}}</div></div>
+ <div class="acts"><span class="btn">{{icon:download:16:#0B1230}}Export</span><span class="btn p">{{icon:sparkles:16:#fff}}Ask Sentinel AI</span></div>
+ <div class="card why">
+  <div class="ch"><div><div class="t">Why Sentinel flagged it</div><div class="s">Payment #PX-88214 · 4 min ago</div></div><span class="pill" style="background:var(--red2);color:#D42E40;height:26px;padding:0 10px">Needs review</span></div>
+  <div class="tx"><span class="ph" style="background-image:url(marcus.jpg)"></span><div><b>Marcus Reed</b><span>$1,849.00 · Visa ••4417</span></div><svg width="84" height="84" viewBox="0 0 84 84"><circle cx="42" cy="42" r="34" fill="none" stroke="#FFE3E6" stroke-width="9"/><circle cx="42" cy="42" r="34" fill="none" stroke="#FF4D5E" stroke-width="9" stroke-linecap="round" stroke-dasharray="175.2 213.6" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-size="22" font-weight="700" fill="#0B1230">82</text></svg></div>
+  <div class="lbl">What moved the score</div>
+  <div class="sg">
+   <div><div class="l"><span>New device, first seen today</span><b>+31</b></div><div class="b"><i style="width:78%;background:#FF4D5E"></i></div></div>
+   <div><div class="l"><span>IP 3,200 km from billing city</span><b>+24</b></div><div class="b"><i style="width:60%;background:#FF4D5E"></i></div></div>
+   <div><div class="l"><span>Basket 6× his usual order</span><b>+19</b></div><div class="b"><i style="width:48%;background:#FFB547"></i></div></div>
+   <div><div class="l"><span>Customer for 3 years</span><b>−12</b></div><div class="b"><i style="width:30%;background:#3355FF"></i></div></div>
+   <div><div class="l"><span>Billing ZIP matches card</span><b>−8</b></div><div class="b"><i style="width:20%;background:#3355FF"></i></div></div>
+  </div>
+  <div class="sum"><span>Base 28 + signals</span><b>= 82 / 100</b></div>
+  <div class="bt"><span style="background:var(--bg)">{{icon:smartphone:15:#0B1230}}3-D Secure</span><span style="background:var(--red);color:#fff">{{icon:ban:15:#fff}}Block</span></div>
+ </div>
+ <div class="card" style="height:270px;flex:none">
+  <div class="ch"><div><div class="t">Attacks by hour</div><div class="s">223 blocked since midnight</div></div></div>
+  <div class="lgd"><span><em style="background:#3355FF"></em>Card testing <b>164</b></span><span><em style="background:#FF4D5E"></em>Takeover <b>59</b></span></div>
+  <div style="margin-top:6px"><svg width="371" height="170" viewBox="0 0 371 170"><line x1="24" x2="371" y1="142.0" y2="142.0" stroke="#ECEEF5" stroke-dasharray="0"/><text x="18" y="146.0" text-anchor="end" font-size="11" fill="#9BA1B6">0</text><line x1="24" x2="371" y1="98.0" y2="98.0" stroke="#ECEEF5" stroke-dasharray="3 4"/><text x="18" y="102.0" text-anchor="end" font-size="11" fill="#9BA1B6">10</text><line x1="24" x2="371" y1="54.0" y2="54.0" stroke="#ECEEF5" stroke-dasharray="3 4"/><text x="18" y="58.0" text-anchor="end" font-size="11" fill="#9BA1B6">20</text><line x1="24" x2="371" y1="10.0" y2="10.0" stroke="#ECEEF5" stroke-dasharray="3 4"/><text x="18" y="14.0" text-anchor="end" font-size="11" fill="#9BA1B6">30</text><rect x="26.0" y="124.4" width="10.5" height="17.6" rx="3" fill="#D3DBFF"/><rect x="26.0" y="120.0" width="10.5" height="2.4" rx="3" fill="#FFC9CE"/><rect x="40.5" y="128.8" width="10.5" height="13.2" rx="3" fill="#D3DBFF"/><rect x="40.5" y="124.4" width="10.5" height="2.4" rx="3" fill="#FFC9CE"/><rect x="54.9" y="133.2" width="10.5" height="8.8" rx="3" fill="#D3DBFF"/><rect x="54.9" y="133.2" width="10.5" height="0.0" rx="3" fill="#FFC9CE"/><rect x="69.4" y="115.6" width="10.5" height="26.4" rx="3" fill="#D3DBFF"/><rect x="69.4" y="111.2" width="10.5" height="2.4" rx="3" fill="#FFC9CE"/><rect x="83.8" y="62.8" width="10.5" height="79.2" rx="3" fill="#D3DBFF"/><rect x="83.8" y="54.0" width="10.5" height="6.8" rx="3" fill="#FFC9CE"/><rect x="98.3" y="45.2" width="10.5" height="96.8" rx="3" fill="#3355FF"/><rect x="98.3" y="32.0" width="10.5" height="11.2" rx="3" fill="#FF4D5E"/><rect x="112.8" y="102.4" width="10.5" height="39.6" rx="3" fill="#D3DBFF"/><rect x="112.8" y="93.6" width="10.5" height="6.8" rx="3" fill="#FFC9CE"/><rect x="127.2" y="128.8" width="10.5" height="13.2" rx="3" fill="#D3DBFF"/><rect x="127.2" y="124.4" width="10.5" height="2.4" rx="3" fill="#FFC9CE"/><rect x="141.7" y="133.2" width="10.5" height="8.8" rx="3" fill="#D3DBFF"/><rect x="141.7" y="128.8" width="10.5" height="2.4" rx="3" fill="#FFC9CE"/><rect x="156.1" y="133.2" width="10.5" height="8.8" rx="3" fill="#D3DBFF"/><rect x="156.1" y="124.4" width="10.5" height="6.8" rx="3" fill="#FFC9CE"/><rect x="170.6" y="128.8" width="10.5" height="13.2" rx="3" fill="#D3DBFF"/><rect x="170.6" y="120.0" width="10.5" height="6.8" rx="3" fill="#FFC9CE"/><rect x="185.0" y="124.4" width="10.5" height="17.6" rx="3" fill="#D3DBFF"/><rect x="185.0" y="111.2" width="10.5" height="11.2" rx="3" fill="#FFC9CE"/><rect x="199.5" y="128.8" width="10.5" height="13.2" rx="3" fill="#D3DBFF"/><rect x="199.5" y="120.0" width="10.5" height="6.8" rx="3" fill="#FFC9CE"/><rect x="214.0" y="133.2" width="10.5" height="8.8" rx="3" fill="#D3DBFF"/><rect x="214.0" y="124.4" width="10.5" height="6.8" rx="3" fill="#FFC9CE"/><rect x="228.4" y="124.4" width="10.5" height="17.6" rx="3" fill="#D3DBFF"/><rect x="228.4" y="111.2" width="10.5" height="11.2" rx="3" fill="#FFC9CE"/><rect x="242.9" y="120.0" width="10.5" height="22.0" rx="3" fill="#D3DBFF"/><rect x="242.9" y="106.8" width="10.5" height="11.2" rx="3" fill="#FFC9CE"/><rect x="257.3" y="115.6" width="10.5" height="26.4" rx="3" fill="#D3DBFF"/><rect x="257.3" y="98.0" width="10.5" height="15.6" rx="3" fill="#FFC9CE"/><rect x="271.8" y="106.8" width="10.5" height="35.2" rx="3" fill="#D3DBFF"/><rect x="271.8" y="93.6" width="10.5" height="11.2" rx="3" fill="#FFC9CE"/><rect x="286.2" y="102.4" width="10.5" height="39.6" rx="3" fill="#D3DBFF"/><rect x="286.2" y="84.8" width="10.5" height="15.6" rx="3" fill="#FFC9CE"/><rect x="300.7" y="89.2" width="10.5" height="52.8" rx="3" fill="#D3DBFF"/><rect x="300.7" y="67.2" width="10.5" height="20.0" rx="3" fill="#FFC9CE"/><rect x="315.2" y="80.4" width="10.5" height="61.6" rx="3" fill="#D3DBFF"/><rect x="315.2" y="58.4" width="10.5" height="20.0" rx="3" fill="#FFC9CE"/><rect x="329.6" y="93.6" width="10.5" height="48.4" rx="3" fill="#D3DBFF"/><rect x="329.6" y="76.0" width="10.5" height="15.6" rx="3" fill="#FFC9CE"/><rect x="344.1" y="111.2" width="10.5" height="30.8" rx="3" fill="#D3DBFF"/><rect x="344.1" y="98.0" width="10.5" height="11.2" rx="3" fill="#FFC9CE"/><rect x="358.5" y="120.0" width="10.5" height="22.0" rx="3" fill="#D3DBFF"/><rect x="358.5" y="111.2" width="10.5" height="6.8" rx="3" fill="#FFC9CE"/><text x="31.2" y="162" text-anchor="middle" font-size="11" fill="#9BA1B6">00:00</text><text x="118.0" y="162" text-anchor="middle" font-size="11" fill="#9BA1B6">06:00</text><text x="204.7" y="162" text-anchor="middle" font-size="11" fill="#9BA1B6">12:00</text><text x="291.5" y="162" text-anchor="middle" font-size="11" fill="#9BA1B6">18:00</text><g transform="translate(115.5,8)"><rect width="122" height="42" rx="12" fill="#0B1230"/><text x="12" y="17" font-size="11" fill="#9DA8D6">05:00 – 06:00</text><text x="12" y="33" font-size="13.5" font-weight="700" fill="#fff">25 attempts</text></g></svg></div>
+ </div>
+</div>
+
 </div></body></html>

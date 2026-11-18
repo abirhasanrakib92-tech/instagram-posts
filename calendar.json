@@ -527,7 +527,7 @@
    "status": "ready-pending-approval",
    "design_dir": "designs/2026-11-19-pm-roomcraft-ai-interior-website",
    "image": null,
-   "caption": "Nobody can picture a room from a mood board. Show them their own room.\nAI interior design website UI: before/after hero, shop the look, style bento\n\nThe hero is a live before/after slider on a real photo, and the shop section pins every piece in the render to a product with a running room total ($3,260), so the page sells the result, not the feature list.\n\nSave this for your next landing page\nBefore/after slider or a single hero shot: which converts better?\n\n#uidesign #webdesign #landingpage #interiordesign #aidesign",
+   "caption": "Nobody can picture a room from a mood board. Show them their own room.\nAI interior design website UI: editorial layout, arch photos, swap-a-piece panel\n\nThe hero puts the actual editor on top of the render (style, prompt, budget, palette pulled from your photo), and the swap panel shows three sofas that fit 228 cm with the room total updating against the budget.\n\nSave this for your next landing page\nWould you trust AI to redesign your living room?\n\n#uidesign #webdesign #landingpage #interiordesign #aidesign",
    "media_id": null,
    "format": "carousel-website",
    "ai": true,
@@ -541,9 +541,7 @@
     "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-5.jpg",
     "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-6.jpg",
     "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-7.jpg",
-    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-8.jpg",
-    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-9.jpg",
-    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-10.jpg"
+    "posts/2026-11/2026-11-19-pm-roomcraft-ai-interior-website-8.jpg"
    ]
   },
   {
