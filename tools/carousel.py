@@ -128,10 +128,8 @@ async def dashboard(d, work, prefix, b):
         (k, W - fw * k / 2, y),        # left half: window midline sits on the canvas right edge
         (k, -fw * k / 2, y),           # right half: window midline sits on the canvas left edge
     ]
-    if BRAND:   # leave room for the top bar and the WhatsApp pill; pan from the left edge, then the right edge
-        k = (H - BRAND_TOP - BRAND_BOT - 24) / fh
-        y = BRAND_TOP + 12
-        views = [(k, 56, y), (k, W - 56 - fw * k, y)]
+    # Owner, 2026-11-18: slides 2 and 3 are exactly the left and right half (cut at the window midline) and carry
+    # NO brand chrome; only slide 1 (full screen) gets the "Designed by" bar and the WhatsApp pill.
     n = 2
     for k, x, y in views:
         html, _, _ = window_html(uri, url, k, round(x), round(y))
@@ -141,8 +139,7 @@ async def dashboard(d, work, prefix, b):
         save(Image.open(work / f'zoom{n}.png').resize((W, H), Image.LANCZOS), f'{prefix}-{n}.jpg')
         n += 1
     if BRAND:
-        for i in range(1, n):
-            await brand(b, work, f'{prefix}-{i}.jpg')
+        await brand(b, work, f'{prefix}-1.jpg')
     save(await cta_slide(b, work), f'{prefix}-{n}.jpg')
 
 

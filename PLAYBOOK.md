@@ -153,10 +153,11 @@ new hero component, new chart mix, new palette) so no two posts look alike.
 
 ## Owner's feedback, 2026-11-18 (applies from now on)
 
-- **Dashboard carousel cuts:** slides 2 and 3 show design x≈0–997 and x≈443–1440. Lay dashboards out as three columns
-  `411px | 534px | 415px` with 16px gaps and 24px side padding (gutters at 435–451 and 985–1001), so slide 2 shows the
-  left two columns whole and slide 3 the right two whole. Never let a card cross those gutters. Approved example:
-  `designs/2026-11-19-am-sentinel-pay-fraud-dashboard` (hero panel full height in column 1, calm white cards, more air).
+- **Dashboard carousel (owner, 2026-11-18, replaces earlier rules):** slide 1 = full screen WITH the brand chrome
+  ("Designed by" bar + WhatsApp pill); slide 2 = exactly the left half of the window, slide 3 = exactly the right half,
+  cut at the window midline (design x=720), with NO brand chrome (same look as the approved 2026-11-09 Carewell post).
+  Lay dashboards out as two 688px halves (24–712 and 728–1416, 16px gutter at x=712–728) so no card crosses the midline.
+  Example: `designs/2026-11-19-am-sentinel-pay-fraud-dashboard`.
 - **Websites must not all look the same.** The dark hero card + stat row + bento + 01–04 accordion + 3 pricing cards +
   dark footer with giant wordmark has been used enough. Each website picks a different skeleton (e.g. editorial serif
   layout, full-bleed photo hero with the product UI on it, arch/shaped photos, pricing as a comparison table, light footer).
@@ -165,7 +166,7 @@ new hero component, new chart mix, new palette) so no two posts look alike.
 
 ## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
 
-Every design slide (not the CTA slide) carries the owner's chrome, added automatically by tools/carousel.py:
+Every design slide (not the CTA slide, and not dashboard slides 2–3, see the 2026-11-18 feedback) carries the owner's chrome, added automatically by tools/carousel.py:
 a top pill with his photo (`assets/brand/abir.jpg`), "Designed by / Abir Hasan *Rakib*", heart/comment/share icons and
 "SAVE for LATER" + bookmark on EVERY post type; the WhatsApp pill (+880 1730 402 994) at the bottom goes on
 **dashboards only** (owner, 2026-11-14) — app and website slides get the top bar only. Layouts leave room for it
