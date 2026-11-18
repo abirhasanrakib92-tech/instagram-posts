@@ -499,14 +499,21 @@
    "niche": "AI fraud detection for payments",
    "brand": "Sentinel Pay",
    "palette_hint": "cobalt + red alerts",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-19-am-sentinel-pay-fraud-dashboard",
    "image": null,
-   "caption": null,
+   "caption": "Every fraud tool says “AI flagged it”. This one shows the math.\nFraud detection dashboard UI design: risk score distribution, review queue, explainable AI\n\nThe flagged payment breaks down signal by signal (new device +31, IP 3,200 km away +24, 3-year customer −12), so the analyst decides in seconds instead of guessing. The histogram puts the review and block thresholds right on the curve.\n\nSave this for your next fintech dashboard\nWould you approve or block Marcus's $1,849 order?\n\n#uiux #dashboarddesign #saasdesign #fintechdesign #frauddetection",
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": true,
-   "originally": "2026-11-17-am"
+   "originally": "2026-11-17-am",
+   "slug": "sentinel-pay-fraud-dashboard",
+   "images": [
+    "posts/2026-11/2026-11-19-am-sentinel-pay-fraud-dashboard-1.jpg",
+    "posts/2026-11/2026-11-19-am-sentinel-pay-fraud-dashboard-2.jpg",
+    "posts/2026-11/2026-11-19-am-sentinel-pay-fraud-dashboard-3.jpg",
+    "posts/2026-11/2026-11-19-am-sentinel-pay-fraud-dashboard-4.jpg"
+   ]
   },
   {
    "id": "2026-11-19-pm",
