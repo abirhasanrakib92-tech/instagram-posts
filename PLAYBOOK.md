@@ -164,6 +164,19 @@ new hero component, new chart mix, new palette) so no two posts look alike.
   Example of the new direction: `designs/2026-11-19-pm-roomcraft-ai-interior-website`.
 
 
+## App style (owner, 2026-11-20 — applies to every app post)
+
+- The owner's favourite references: viral light app shots with photo-led screens, soft gradients, frosted glass,
+  dot-matrix numbers (font Doto), big light/medium type, slide-to-act buttons. **Light UI only** (no dark versions for now).
+- **Every app must look different:** rotate the style (glass over photo / soft gradient / solid colour / neutral product),
+  never reuse a colour scheme, and never repeat a niche.
+- **Not only home screens:** pick the most interesting screen for the niche (player, product detail / add to cart,
+  booking, recording, device control, checkout, onboarding...).
+- **Design app screens in Figma** (file `IVWMA2qO8U4XdLphCuds1y`, row at y=2000) with `use_figma`, export the frame at 3x as
+  `figma.png` and the nav bar node at 4x as `nav.png` (round its corners to a pill with PIL), then wrap them in a `screen.html`
+  (`<img src="figma.png">` + `<img data-nav src="nav.png" style="visibility:hidden">` at the nav position + the 4 meta tags).
+  Example: `designs/2026-11-21-pm-hush-sleep-app`. Slide 1 keeps the approved hand mockup on #EEEEEE.
+
 ## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
 
 Every design slide (not the CTA slide, and not dashboard slides 2–3, see the 2026-11-18 feedback) carries the owner's chrome, added automatically by tools/carousel.py:

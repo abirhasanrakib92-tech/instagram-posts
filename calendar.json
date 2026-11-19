@@ -620,14 +620,23 @@
    "niche": "Meditation & sleep",
    "brand": "Hush",
    "palette_hint": "lavender + soft white",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-21-pm-hush-sleep-app",
    "image": null,
-   "caption": null,
+   "caption": "Your sleep app shouldn't feel like another to-do list.\nMeditation and sleep app UI design: breathing player, dot-matrix timer, glass controls\n\nOne calm photo, a soft lavender-to-peach wash, and a timer you can read with half-closed eyes. The breathing phases sit right under it, so you always know what to do next.\n\nSave this for your next wellness app\nWhat helps you fall asleep faster: music, breathing or silence?\n\n#uiux #mobileappdesign #appdesign #meditationapp #wellnessapp",
    "media_id": null,
    "format": "carousel-app",
    "ai": false,
-   "originally": "2026-11-19-pm"
+   "originally": "2026-11-19-pm",
+   "slug": "hush-sleep-app",
+   "images": [
+    "posts/2026-11/2026-11-21-pm-hush-sleep-app-1.jpg",
+    "posts/2026-11/2026-11-21-pm-hush-sleep-app-2.jpg",
+    "posts/2026-11/2026-11-21-pm-hush-sleep-app-3.jpg",
+    "posts/2026-11/2026-11-21-pm-hush-sleep-app-4.jpg",
+    "posts/2026-11/2026-11-21-pm-hush-sleep-app-5.jpg"
+   ],
+   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y"
   },
   {
    "id": "2026-11-22-am",
@@ -674,14 +683,23 @@
    "niche": "Travel itinerary planner",
    "brand": "Wander",
    "palette_hint": "ocean blue + sand",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-23-am-wander-travel-app",
    "image": null,
-   "caption": null,
+   "caption": "The best trip plans fit on one screen.\nTravel itinerary app UI design: day-by-day route, bookings and tickets on one timeline\n\nThe photo sells the day, the day chips switch it, and every stop shows its status (done, now, ticket) so you never dig through emails on holiday.\n\nSave this for your next travel app project\nDo you plan every hour of a trip or just wing it?\n\n#uiux #mobileappdesign #appdesign #travelapp #traveltech",
    "media_id": null,
    "format": "carousel-app",
    "ai": false,
-   "originally": "2026-11-21-am"
+   "originally": "2026-11-21-am",
+   "slug": "wander-travel-app",
+   "images": [
+    "posts/2026-11/2026-11-23-am-wander-travel-app-1.jpg",
+    "posts/2026-11/2026-11-23-am-wander-travel-app-2.jpg",
+    "posts/2026-11/2026-11-23-am-wander-travel-app-3.jpg",
+    "posts/2026-11/2026-11-23-am-wander-travel-app-4.jpg",
+    "posts/2026-11/2026-11-23-am-wander-travel-app-5.jpg"
+   ],
+   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y"
   },
   {
    "id": "2026-11-23-pm",
@@ -728,14 +746,23 @@
    "niche": "AI voice journal",
    "brand": "Daybook AI",
    "palette_hint": "peach + plum",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-24-pm-daybook-voice-journal-app",
    "image": null,
-   "caption": null,
+   "caption": "Nobody keeps a journal. Everybody likes to talk about their day.\nAI voice journal app UI design: voice orb, live transcript, mood tags\n\nOne question on a solid rose screen, a soft voice orb with a dot-matrix timer, and the AI tagging moments (family, gratitude, mood) while you talk.\n\nSave this for your next AI app idea\nWould you journal more if you could just talk?\n\n#uiux #mobileappdesign #aidesign #journalapp #appdesign",
    "media_id": null,
    "format": "carousel-app",
    "ai": true,
-   "originally": "2026-11-22-pm"
+   "originally": "2026-11-22-pm",
+   "slug": "daybook-voice-journal-app",
+   "images": [
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-1.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-2.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-3.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-4.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-5.jpg"
+   ],
+   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y"
   },
   {
    "id": "2026-11-25-am",
@@ -782,14 +809,23 @@
    "niche": "Smart home control",
    "brand": "Haven",
    "palette_hint": "warm grey + amber",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-26-am-haven-smart-home-app",
    "image": null,
-   "caption": null,
+   "caption": "Smart home apps forgot the most important thing: the device.\nSmart home app UI design: thermostat control, dot-matrix temperature, room modes\n\nThe real thermostat sits front and centre, the target temperature reads like its own display, and a tick ruler replaces the usual slider so 0.5° steps feel precise.\n\nSave this for your next IoT project\nThermostat on the wall or in the app: which do you actually use?\n\n#uiux #mobileappdesign #appdesign #smarthome #iotdesign",
    "media_id": null,
    "format": "carousel-app",
    "ai": false,
-   "originally": "2026-11-24-am"
+   "originally": "2026-11-24-am",
+   "slug": "haven-smart-home-app",
+   "images": [
+    "posts/2026-11/2026-11-26-am-haven-smart-home-app-1.jpg",
+    "posts/2026-11/2026-11-26-am-haven-smart-home-app-2.jpg",
+    "posts/2026-11/2026-11-26-am-haven-smart-home-app-3.jpg",
+    "posts/2026-11/2026-11-26-am-haven-smart-home-app-4.jpg",
+    "posts/2026-11/2026-11-26-am-haven-smart-home-app-5.jpg"
+   ],
+   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y"
   },
   {
    "id": "2026-11-26-pm",
