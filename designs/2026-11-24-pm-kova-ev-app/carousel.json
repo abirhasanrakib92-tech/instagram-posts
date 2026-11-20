@@ -1,7 +1,7 @@
 {
  "v4": {
   "screen": "auto",
-  "flat": false,
+  "flat": true,
   "name": "Kova",
   "category": "EV companion",
   "tagline": "Charge, range and cabin over a real view of your car.",
@@ -13,7 +13,7 @@
    "#3A4249",
    "#0E1215"
   ],
-  "paper": "#EEF0F1",
+  "paper": "#EEEEEE",
   "palette": [
    [
     "#D4FF3F",
@@ -205,6 +205,10 @@
     -2,
     1
    ]
-  ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#0E1215",
+  "s4_ink": "#0E1215"
  }
 }

@@ -1,7 +1,7 @@
 {
  "v4": {
   "screen": "auto",
-  "flat": false,
+  "flat": true,
   "name": "Aural",
   "category": "Headphones companion",
   "tagline": "Battery for each ear cup, noise in one tap, your sound in one curve.",
@@ -13,7 +13,7 @@
    "#7A63C9",
    "#2A2238"
   ],
-  "paper": "#F5F1F7",
+  "paper": "#EEEEEE",
   "palette": [
    [
     "#6E56CF",
@@ -213,6 +213,10 @@
     -2,
     1
    ]
-  ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#2A2238",
+  "s4_ink": "#2A2238"
  }
 }

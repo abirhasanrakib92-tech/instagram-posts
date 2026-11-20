@@ -1,7 +1,7 @@
 {
  "v4": {
   "screen": "auto",
-  "flat": false,
+  "flat": true,
   "name": "Lot &amp; Light",
   "category": "Live art auctions",
   "tagline": "See the real painting on the wall. Slide once to bid, with every fee shown.",
@@ -13,7 +13,7 @@
    "#7A1F1F",
    "#2A2522"
   ],
-  "paper": "#F4EEE4",
+  "paper": "#EEEEEE",
   "palette": [
    [
     "#7A1F1F",
@@ -206,6 +206,10 @@
     4,
     1
    ]
-  ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#2A2522",
+  "s4_ink": "#2A2522"
  }
 }

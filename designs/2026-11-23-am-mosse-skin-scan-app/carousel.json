@@ -11,7 +11,7 @@
    "#4E6B57",
    "#13231A"
   ],
-  "paper": "#F3EFE8",
+  "paper": "#EEEEEE",
   "palette": [
    [
     "#1F3A2B",
@@ -163,6 +163,10 @@
    ]
   ],
   "screen": "auto",
-  "flat": false
+  "flat": true,
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#13231A",
+  "s4_ink": "#13231A"
  }
 }

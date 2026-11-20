@@ -1,7 +1,7 @@
 {
  "v4": {
   "screen": "auto",
-  "flat": false,
+  "flat": true,
   "name": "Ridge",
   "category": "Trail guide",
   "tagline": "See the climb, the water and the daylight before your first step.",
@@ -13,7 +13,7 @@
    "#3E5068",
    "#1C2735"
   ],
-  "paper": "#EEF1F4",
+  "paper": "#EEEEEE",
   "palette": [
    [
     "#F6B48A",
@@ -230,6 +230,10 @@
     -1,
     1
    ]
-  ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#1C2735",
+  "s4_ink": "#1C2735"
  }
 }
