@@ -1,0 +1,392 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* Shop-first skeleton: full-bleed photo hero with a live roast log, labelled bag product grid, taste radar + subscription builder,
+   farm-to-cup timeline, recipe cards over a brew photo, reviews, caramel band, espresso footer */
+:root{--paper:#FBF7F1;--cream:#F3EADD;--latte:#E7D8C4;--ink:#2A1C15;--ink2:#6E5C50;--ink3:#A39385;--rule:#E8DDCF;--esp:#2B1D16;--esp2:#4A3327;--car:#C8743A;--car2:#F1DCC6;--sage:#7E8B6A}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--paper);font-family:'Figtree';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.w{width:1328px;margin:0 auto}
+.bg{font-family:'Bricolage Grotesque';letter-spacing:-.035em}
+.se{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-.01em}
+.ph{background-size:cover;background-repeat:no-repeat;background-position:center}
+.pill{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.2px}
+.eb{font-size:13px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--car)}
+.btn{height:56px;padding:0 28px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:700}
+.btn.d{background:var(--esp);color:#fff}
+.btn.c{background:var(--car);color:#fff}
+.btn.o{border:1.5px solid var(--ink);color:var(--ink)}
+.sec{margin-top:130px}
+.h2{font-size:76px;line-height:.98;font-weight:600}
+.h2 .se{font-size:84px;color:var(--car)}
+.lead{font-size:18px;line-height:1.6;color:var(--ink2)}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+
+.ann{background:var(--esp);color:#EADCCB;height:44px;display:flex;align-items:center;justify-content:center;gap:28px;font-size:14px;font-weight:600}
+.ann b{color:#fff}.ann i{width:4px;height:4px;border-radius:50%;background:var(--car)}
+nav{display:flex;align-items:center;height:96px}
+nav .lg{display:flex;align-items:center;gap:12px;font-family:'Bricolage Grotesque';font-size:30px;font-weight:700;letter-spacing:-1.2px}
+nav .lg .m{width:44px;height:44px;border-radius:50%;background:var(--esp);display:grid;place-items:center}
+nav .lg .se{font-weight:400;color:var(--car);font-size:32px;margin:0 -2px}
+nav .lk{display:flex;gap:6px;margin-left:56px;background:#fff;border:1px solid var(--rule);border-radius:999px;padding:5px}
+nav .lk span{height:40px;padding:0 18px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:600;color:var(--ink2)}
+nav .lk span.on{background:var(--cream);color:var(--ink)}
+nav .r{margin-left:auto;display:flex;align-items:center;gap:12px}
+nav .ic{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--rule);display:grid;place-items:center}
+nav .cart{height:48px;padding:0 8px 0 20px;border-radius:999px;background:var(--esp);color:#fff;display:flex;align-items:center;gap:12px;font-size:15px;font-weight:700}
+nav .cart em{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--car);display:grid;place-items:center;font-size:14px}
+
+/* hero */
+.hero{height:780px;border-radius:32px;position:relative;overflow:hidden;background-image:url(roastery.jpg);background-position:50% 40%}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,18,12,.86) 0%,rgba(28,18,12,.55) 42%,rgba(28,18,12,0) 70%)}
+.hero .tx{position:absolute;left:64px;top:64px;bottom:64px;width:800px;color:#fff;display:flex;flex-direction:column}
+.hero .tag{background:rgba(255,255,255,.14);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.22);color:#fff;align-self:flex-start}
+.hero .tag i{width:8px;height:8px;border-radius:50%;background:#7FD18B;box-shadow:0 0 0 4px rgba(127,209,139,.25)}
+.hero h1{font-family:'Bricolage Grotesque';font-size:96px;line-height:.92;letter-spacing:-.045em;font-weight:600;margin-top:32px}
+.hero h1 .se{font-size:106px;color:#F2B98A;letter-spacing:-.02em}
+.hero p{font-size:19px;line-height:1.6;color:#E6D8CA;margin-top:28px;width:540px}
+.hero .cta{display:flex;gap:12px;margin-top:auto;align-items:center}
+.hero .cta .btn.g{background:rgba(255,255,255,.14);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);color:#fff}
+.hero .rv{display:flex;align-items:center;gap:14px;margin-left:16px}
+.hero .rv .st{display:flex;gap:2px}
+.hero .rv b{font-size:15px;display:block}.hero .rv span{font-size:13px;color:#D8C7B6}
+.avs{display:flex}.avs i{width:36px;height:36px;border-radius:50%;border:2px solid #fff;margin-left:-10px;background-size:cover}.avs i:first-child{margin-left:0}
+.log{position:absolute;right:32px;top:32px;width:384px;background:rgba(251,247,241,.93);backdrop-filter:blur(20px);border-radius:26px;padding:24px}
+.log .t{display:flex;justify-content:space-between;align-items:center}
+.log .t b{font-size:16px}.log .t span{font-size:12.5px;font-weight:700;color:var(--car);background:var(--car2);border-radius:999px;padding:5px 10px}
+.log .nm{font-family:'Bricolage Grotesque';font-size:30px;font-weight:600;letter-spacing:-1px;margin-top:14px}
+.log .nm small{display:block;font-family:'Figtree';font-size:14px;font-weight:500;color:var(--ink2);letter-spacing:0;margin-top:2px}
+.log svg{display:block;margin-top:14px}
+.log .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.log .g3 div{background:#fff;border-radius:14px;padding:10px 12px}
+.log .g3 span{font-size:12px;color:var(--ink2);font-weight:600;display:block}
+.log .g3 b{font-size:19px}
+.ship{position:absolute;right:32px;bottom:32px;width:384px;display:flex;align-items:center;gap:14px;background:rgba(251,247,241,.93);backdrop-filter:blur(20px);border-radius:22px;padding:14px 18px 14px 14px}
+.ship .ib{width:48px;height:48px;border-radius:14px;background:var(--esp);display:grid;place-items:center;flex:none}
+.ship b{font-size:15.5px;display:block}.ship span{font-size:13px;color:var(--ink2)}
+.ship .ct{margin-left:auto;text-align:right;font-family:'Bricolage Grotesque';font-size:24px;font-weight:600;letter-spacing:-.5px;line-height:1}
+.ship .ct small{display:block;font-family:'Figtree';font-size:11.5px;font-weight:600;color:var(--ink3);letter-spacing:.3px;margin-top:4px}
+
+/* proof strip */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);margin-top:28px;background:#fff;border:1px solid var(--rule);border-radius:24px}
+.proof>div{padding:22px 28px;display:flex;align-items:center;gap:16px}
+.proof>div+div{border-left:1px solid var(--rule)}
+.proof .ib{width:48px;height:48px;border-radius:50%;background:var(--cream);display:grid;place-items:center;flex:none}
+.proof b{font-size:17px;display:block}.proof span{font-size:14px;color:var(--ink2)}
+
+/* products */
+.tabs{display:flex;gap:8px}
+.tabs span{height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--rule);display:flex;align-items:center;font-size:15px;font-weight:600;color:var(--ink2);background:#fff}
+.tabs span.on{background:var(--esp);color:#fff;border-color:var(--esp)}
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.pc{background:#fff;border:1px solid var(--rule);border-radius:28px;padding:12px;display:flex;flex-direction:column}
+.pc .im{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:550/700;background:url(bagcrop.jpg) center 0/100% auto}
+.pc .lb{position:absolute;left:36%;top:40.6%;width:40.9%;height:44%;background:#FBF6EE;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05);padding:10px 9px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.pc .lb .bd{width:100%;height:12px;border-radius:2px}
+.pc .lb small{font-size:7.5px;font-weight:800;letter-spacing:1.2px;margin-top:10px;color:var(--ink)}
+.pc .lb strong{font-family:'Instrument Serif';font-weight:400;font-size:20px;line-height:1;margin-top:8px;letter-spacing:-.3px}
+.pc .lb em{font-style:normal;font-size:7.5px;font-weight:700;letter-spacing:1px;color:var(--ink2);margin-top:auto;text-transform:uppercase}
+.pc .bdg{position:absolute;left:12px;top:12px}
+.pc .fav{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);display:grid;place-items:center}
+.pc .bd2{padding:18px 10px 8px;display:flex;flex-direction:column;flex:1}
+.pc .o{font-size:13px;font-weight:700;color:var(--ink3);letter-spacing:1.2px;text-transform:uppercase}
+.pc h4{font-family:'Bricolage Grotesque';font-size:26px;font-weight:600;letter-spacing:-.8px;margin-top:6px}
+.pc .n{font-size:15px;color:var(--ink2);margin-top:4px}
+.rl{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:13px;font-weight:600;color:var(--ink2)}
+.rl .dots{display:flex;gap:4px}.rl .dots i{width:20px;height:6px;border-radius:3px;background:var(--rule)}
+.pc .ft{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule)}
+.pc .ft b{font-size:22px}.pc .ft b small{font-size:13px;font-weight:600;color:var(--ink3)}
+.pc .ad{height:44px;padding:0 18px;border-radius:999px;background:var(--cream);display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700}
+
+/* taste + subscribe */
+.ts{display:grid;grid-template-columns:520px 1fr;gap:20px;margin-top:56px}
+.taste{background:var(--cream);border-radius:32px;padding:36px;display:flex;flex-direction:column}
+.taste .top{display:flex;justify-content:space-between;align-items:flex-start}
+.taste h3{font-family:'Bricolage Grotesque';font-size:32px;font-weight:600;letter-spacing:-1px}
+.taste .top span{font-size:14px;color:var(--ink2)}
+.rad{display:flex;align-items:center;gap:24px;margin-top:12px}
+.sc{display:grid;gap:12px;flex:1}.taste .rad{margin-top:20px}
+.sc .r{display:grid;grid-template-columns:80px 1fr 16px;align-items:center;gap:12px;font-size:14.5px;font-weight:600}
+.sc .r .tr{height:6px;border-radius:3px;background:#fff;overflow:hidden}.sc .r .tr i{display:block;height:100%;border-radius:3px;background:var(--car)}
+.sc .r b{text-align:right;font-size:14.5px}
+.nts{display:flex;gap:8px;margin-top:20px}.nts span{height:36px;padding:0 14px;border-radius:999px;background:#fff;display:flex;align-items:center;font-size:14px;font-weight:600}
+.taste .cmp{margin-top:20px;display:flex;align-items:center;gap:14px;background:#fff;border-radius:20px;padding:14px 18px}
+.taste .cmp .ib{width:44px;height:44px;border-radius:12px;background:var(--car2);display:grid;place-items:center;flex:none}
+.taste .cmp p{font-size:14.5px;line-height:1.45;color:var(--ink2)}.taste .cmp p b{color:var(--ink)}
+.sub{background:#fff;border:1px solid var(--rule);border-radius:32px;padding:36px;display:grid;grid-template-columns:1fr 300px;gap:28px}
+.sub h3{font-family:'Bricolage Grotesque';font-size:32px;font-weight:600;letter-spacing:-1px}
+.stp{margin-top:20px}
+.stp .k{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700}
+.stp .k i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--esp);color:#fff;display:grid;place-items:center;font-size:12.5px}
+.ch{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.ch span{height:40px;padding:0 14px;border-radius:14px;border:1px solid var(--rule);display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--ink2)}
+.ch span.on{border:2px solid var(--esp);color:var(--ink);background:var(--paper)}
+.ch span small{font-size:12px;color:var(--ink3);font-weight:600}
+.sum{background:var(--esp);border-radius:24px;padding:24px;color:#fff;display:flex;flex-direction:column}
+.sum .h{font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#C8B4A2}
+.sum .it{display:flex;gap:12px;align-items:center;margin-top:16px}
+.sum .it .t{width:52px;height:64px;border-radius:10px;background:url(bagcrop.jpg) 50% 30%/170% auto;flex:none}
+.sum .it b{font-size:15.5px;display:block}.sum .it span{font-size:13px;color:#C8B4A2}
+.sum .ln{display:flex;justify-content:space-between;font-size:14.5px;color:#E3D4C5;margin-top:12px}
+.sum .ln:first-of-type{margin-top:20px}
+.sum .ln.g b{color:#9FD8A6}
+.sum hr{border:0;border-top:1px dashed rgba(255,255,255,.2);margin:16px 0 0}
+.sum .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px}
+.sum .tot b{font-family:'Bricolage Grotesque';font-size:40px;font-weight:600;letter-spacing:-1.2px}
+.sum .tot span{font-size:13px;color:#C8B4A2}
+.sum .pc2{font-size:13px;color:#C8B4A2;margin-top:4px}
+.sch{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:18px}.sch div{background:rgba(255,255,255,.07);border-radius:12px;padding:10px}.sch i{display:block;width:8px;height:8px;border-radius:50%;background:var(--car)}.sch div+div i{background:rgba(255,255,255,.3)}.sch b{display:block;font-size:14.5px;margin-top:8px}.sch span{font-size:12px;color:#C8B4A2}
+.sum .go{margin-top:auto;height:52px;border-radius:999px;background:var(--car);display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:700}
+
+/* origin */
+.org{display:grid;grid-template-columns:520px 1fr;gap:20px}
+.org .p{height:640px;border-radius:32px;position:relative;background-image:url(farmer.jpg);background-position:50% 30%}
+.org .p .cap{position:absolute;left:20px;right:20px;bottom:20px;background:rgba(251,247,241,.92);backdrop-filter:blur(16px);border-radius:22px;padding:18px 20px;display:flex;align-items:center;gap:14px}
+.org .p .cap .ib{width:44px;height:44px;border-radius:50%;background:var(--esp);display:grid;place-items:center;flex:none}
+.org .p .cap b{font-size:16px;display:block}.org .p .cap span{font-size:13.5px;color:var(--ink2)}
+.org .r{background:#fff;border:1px solid var(--rule);border-radius:32px;padding:48px;display:flex;flex-direction:column}
+.org blockquote{font-family:'Instrument Serif';font-size:46px;line-height:1.12;letter-spacing:-.6px;margin-top:24px}
+.org blockquote i{color:var(--car)}
+.org .by{font-size:15px;color:var(--ink2);margin-top:18px}.org .by b{color:var(--ink)}
+.org .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+.org .nums div{background:var(--paper);border-radius:20px;padding:20px 22px}
+.org .nums b{font-family:'Bricolage Grotesque';font-size:40px;font-weight:600;letter-spacing:-1.4px;display:block}
+.org .nums span{font-size:14px;color:var(--ink2)}
+.tl{margin-top:auto;position:relative;display:grid;grid-template-columns:repeat(5,1fr)}
+.tl::before{content:"";position:absolute;left:10px;right:10px;top:10px;height:2px;background:repeating-linear-gradient(90deg,var(--latte) 0 8px,transparent 8px 14px)}
+.tl::after{content:"";position:absolute;left:10px;width:78%;top:10px;height:2px;background:var(--car)}
+.tl div{position:relative;z-index:1}
+.tl i{display:block;width:22px;height:22px;border-radius:50%;background:var(--car);border:5px solid #FBE9DA}
+.tl div:last-child i{background:#fff;border:2px solid var(--car)}
+.tl b{display:block;font-size:15px;margin-top:14px}.tl span{font-size:13.5px;color:var(--ink2)}
+
+/* brew banner */
+.brew{height:640px;border-radius:32px;position:relative;overflow:hidden;background-image:url(brew.jpg);background-position:50% 50%}
+.brew::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,18,12,0) 30%,rgba(28,18,12,.6) 100%)}
+.brew .hd3{position:absolute;left:48px;top:44px;background:rgba(251,247,241,.92);backdrop-filter:blur(16px);border-radius:24px;padding:22px 26px}
+.brew .hd3 h3{font-family:'Bricolage Grotesque';font-size:40px;font-weight:600;letter-spacing:-1.4px;line-height:1}
+.brew .hd3 h3 .se{color:var(--car);font-size:44px}
+.brew .hd3 p{font-size:15px;color:var(--ink2);margin-top:8px}
+.rc{position:absolute;left:48px;right:48px;bottom:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rc>div{background:rgba(251,247,241,.93);backdrop-filter:blur(18px);border-radius:24px;padding:22px 24px}
+.rc .t{display:flex;justify-content:space-between;align-items:center}
+.rc .t b{font-family:'Bricolage Grotesque';font-size:24px;font-weight:600;letter-spacing:-.6px}
+.rc .t span{font-size:13px;font-weight:700;color:var(--ink2)}
+.rc .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.rc .g4 div{background:#fff;border-radius:14px;padding:10px 12px}
+.rc .g4 span{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink2);font-weight:600}
+.rc .g4 b{font-size:18px;display:block;margin-top:4px}
+.rc>div.on{background:var(--esp);color:#fff}
+.rc>div.on .t span{color:#C8B4A2}
+.rc>div.on .g4 div{background:rgba(255,255,255,.08)}
+.rc>div.on .g4 span{color:#C8B4A2}
+
+/* reviews */
+.rvs{display:grid;grid-template-columns:400px 1fr 1fr;gap:20px;margin-top:56px}
+.score{background:var(--car);color:#fff;border-radius:28px;padding:36px;display:flex;flex-direction:column}
+.score b{font-family:'Bricolage Grotesque';font-size:120px;font-weight:600;letter-spacing:-5px;line-height:.9}
+.score .st{display:flex;gap:4px;margin-top:16px}
+.score p{font-size:16px;color:#FBE4D2;margin-top:12px}
+.score .bars{margin-top:auto;display:grid;gap:8px}
+.score .bars div{display:grid;grid-template-columns:16px 1fr 48px;gap:10px;align-items:center;font-size:13px;font-weight:700}
+.score .bars i{height:6px;border-radius:3px;background:rgba(255,255,255,.25);overflow:hidden}.score .bars i em{display:block;height:100%;background:#fff}
+.score .bars span{text-align:right;color:#FBE4D2}
+.rv2{background:#fff;border:1px solid var(--rule);border-radius:28px;padding:32px;display:flex;flex-direction:column}
+.rv2 .st{display:flex;gap:3px}
+.rv2 p{font-family:'Instrument Serif';font-size:30px;line-height:1.18;margin-top:20px;letter-spacing:-.2px}
+.rv2 .by{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:24px}
+.rv2 .by .av{width:52px;height:52px;border-radius:50%}
+.rv2 .by b{font-size:16px;display:block}.rv2 .by span{font-size:13.5px;color:var(--ink2)}
+.rv2 .by .bt{margin-left:auto;background:var(--cream);font-size:12.5px;font-weight:700;border-radius:999px;padding:6px 12px}
+
+/* band + footer */
+.band{margin-top:130px;background:var(--car2);border-radius:32px;padding:56px 64px;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:center;position:relative;overflow:hidden}
+.band h2{font-family:'Bricolage Grotesque';font-size:66px;font-weight:600;letter-spacing:-2.6px;line-height:.98}
+.band h2 .se{color:var(--car);font-size:74px}
+.band .r{display:flex;flex-direction:column;gap:12px}
+.band .r .btn{justify-content:center}
+.band .r .nt{font-size:14px;color:var(--ink2);text-align:center}
+footer{margin-top:28px;background:var(--esp);color:#E3D4C5;border-radius:32px 32px 0 0;padding:56px 64px 40px}
+.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.4fr;gap:48px}
+.fg .lg{display:flex;align-items:center;gap:12px;font-family:'Bricolage Grotesque';font-size:30px;font-weight:700;letter-spacing:-1.2px;color:#fff}
+.fg .lg .se{font-weight:400;color:#F2B98A}
+.fg .lg .m{width:44px;height:44px;border-radius:50%;background:var(--car);display:grid;place-items:center}
+.fg p{font-size:15px;line-height:1.6;color:#C8B4A2;margin-top:16px;width:300px}
+.fg h5{font-size:12.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#A38C79;margin-bottom:16px}
+.fg ul{list-style:none;display:grid;gap:12px;font-size:15.5px}
+.cafe{display:grid;gap:12px}
+.cafe div{display:flex;justify-content:space-between;font-size:15px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1)}
+.cafe span{color:#A38C79}
+.nl{display:flex;height:56px;border-radius:999px;background:rgba(255,255,255,.08);align-items:center;padding:0 6px 0 22px;font-size:15px;color:#A38C79;margin-top:6px}
+.nl b{margin-left:auto;height:44px;padding:0 20px;border-radius:999px;background:var(--car);color:#fff;display:flex;align-items:center;gap:8px;font-size:14px}
+.fb{display:flex;justify-content:space-between;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13.5px;color:#A38C79}
+</style></head><body>
+<div class="ann"><span>Roasted every <b>Tuesday</b> in Oakland</span><i></i><span>Free shipping over <b>$35</b></span><i></i><span>Subscribers save <b>15%</b> on every bag</span></div>
+<div class="w">
+<nav>
+ <div class="lg"><span class="m">{{icon:coffee:22:#F2B98A:2}}</span>Kettle <span class="se">&amp;</span> Crow</div>
+ <div class="lk"><span class="on">Shop coffee</span><span>Subscribe</span><span>Brew guides</span><span>Our farmers</span><span>Cafés</span></div>
+ <div class="r"><span class="ic">{{icon:search:20:#2A1C15:2}}</span><span class="ic">{{icon:user:20:#2A1C15:2}}</span><span class="cart">{{icon:shopping-bag:18:#fff:2}}Cart<em>2</em></span></div>
+</nav>
+
+<section class="hero ph">
+ <div class="tx">
+  <span class="pill tag"><i></i>Batch 0418 roasting now</span>
+  <h1>Roasted Tuesday.<br>In your cup<br><span class="se">by Friday.</span></h1>
+  <p>Small-batch specialty coffee from six farms we know by name. We roast to order, so your bag is never more than three days old when it lands.</p>
+  <div class="cta"><span class="btn c">Shop this week's roasts {{icon:arrow-right:18:#fff:2.4}}</span><span class="btn g">Build a subscription</span></div>
+ </div>
+ <div class="log">
+  <div class="t"><b>Roast log</b><span>Live · Oakland</span></div>
+  <div class="nm">Guji Highlands<small>Ethiopia · washed · light roast</small></div>
+  <svg width="336" height="112" viewBox="0 0 336 112">
+   <g stroke="#E8DDCF" stroke-width="1"><line x1="0" y1="10" x2="336" y2="10"/><line x1="0" y1="45" x2="336" y2="45"/><line x1="0" y1="80" x2="336" y2="80"/></g>
+   <rect x="262" y="4" width="74" height="96" fill="#F1DCC6" opacity=".6" rx="6"/>
+   <path d="M0 96 C30 70 40 64 60 62 S110 52 150 42 S220 28 262 22 S310 16 336 14" fill="none" stroke="#C8743A" stroke-width="3" stroke-linecap="round"/>
+   <path d="M0 30 C40 40 80 52 120 58 S200 70 262 76 S310 82 336 84" fill="none" stroke="#2B1D16" stroke-width="2" stroke-dasharray="4 4" opacity=".45"/>
+   <circle cx="262" cy="22" r="6" fill="#fff" stroke="#C8743A" stroke-width="3"/>
+   <text x="268" y="94" font-family="Figtree" font-size="11" font-weight="700" fill="#A0602E">1st crack</text>
+   <text x="0" y="110" font-family="Figtree" font-size="11" font-weight="600" fill="#A39385">0:00</text>
+   <text x="306" y="110" font-family="Figtree" font-size="11" font-weight="600" fill="#A39385">9:42</text>
+  </svg>
+  <div class="g3"><div><span>Drop temp</span><b>204°C</b></div><div><span>Time</span><b>9:42</b></div><div><span>Develop</span><b>18%</b></div></div>
+ </div>
+ <div class="ship">
+  <span class="ib">{{icon:truck:22:#F2B98A:2}}</span>
+  <div><b>Order by Wed, 11:59 pm</b><span>Ships Thursday from this batch</span></div>
+  <div class="ct">31h 20m<small>LEFT</small></div>
+ </div>
+</section>
+
+<div class="proof">
+ <div><span class="ib">{{icon:flame:22:#C8743A:2}}</span><div><b>Roasted to order</b><span>Never sits on a shelf</span></div></div>
+ <div><span class="ib">{{icon:leaf:22:#7E8B6A:2}}</span><div><b>$4.10 / lb to farmers</b><span>Paid direct, every lot</span></div></div>
+ <div><span class="ib">{{icon:repeat:22:#C8743A:2}}</span><div><b>Skip or pause anytime</b><span>Two taps, no emails</span></div></div>
+ <div><span class="avs"><i style="background-image:url(mei.jpg)"></i><i style="background-image:url(marcus.jpg)"></i><i style="background-image:url(sofia.jpg)"></i></span><div><b>4.9 · 2,184 reviews</b><span>12,600 cups a week</span></div></div>
+</div>
+
+<section class="sec">
+ <div class="hd"><div><div class="eb">This week's roasts</div><h2 class="bg h2" style="margin-top:18px">Four coffees.<br>Each one <span class="se">tastes like a place.</span></h2></div><div class="tabs"><span class="on">All 4</span><span>Light</span><span>Medium</span><span>Espresso</span></div></div>
+ <div class="prods">
+  <div class="pc"><div class="im"><div class="lb"><i class="bd" style="background:#C8743A"></i><small>KETTLE &amp; CROW</small><strong>Guji<br>Highlands</strong><em>Ethiopia · 12 oz</em></div><span class="pill bdg" style="background:var(--esp);color:#fff">Best seller</span><span class="fav">{{icon:heart:18:#2A1C15:2}}</span></div>
+   <div class="bd2"><div class="o">Ethiopia · Washed</div><h4>Guji Highlands</h4><div class="n">Peach, jasmine, bergamot</div><div class="rl"><span class="dots"><i style="background:var(--car)"></i><i></i><i></i><i></i></span>Light roast</div><div class="ft"><b>$22 <small>/ 12 oz</small></b><span class="ad">{{icon:plus:16:#2A1C15:2.4}}Add</span></div></div></div>
+  <div class="pc"><div class="im"><div class="lb"><i class="bd" style="background:#7E8B6A"></i><small>KETTLE &amp; CROW</small><strong>Huila<br>Reserva</strong><em>Colombia · 12 oz</em></div><span class="fav">{{icon:heart:18:#2A1C15:2}}</span></div>
+   <div class="bd2"><div class="o">Colombia · Honey</div><h4>Huila Reserva</h4><div class="n">Red apple, panela, cocoa</div><div class="rl"><span class="dots"><i style="background:var(--car)"></i><i style="background:var(--car)"></i><i></i><i></i></span>Medium roast</div><div class="ft"><b>$19 <small>/ 12 oz</small></b><span class="ad">{{icon:plus:16:#2A1C15:2.4}}Add</span></div></div></div>
+  <div class="pc"><div class="im"><div class="lb"><i class="bd" style="background:#2B1D16"></i><small>KETTLE &amp; CROW</small><strong>Crow's Nest<br>Espresso</strong><em>Blend · 12 oz</em></div><span class="pill bdg" style="background:#fff;color:var(--ink)">For milk drinks</span><span class="fav">{{icon:heart:18:#2A1C15:2}}</span></div>
+   <div class="bd2"><div class="o">Brazil + Guatemala</div><h4>Crow's Nest</h4><div class="n">Dark chocolate, hazelnut, molasses</div><div class="rl"><span class="dots"><i style="background:var(--car)"></i><i style="background:var(--car)"></i><i style="background:var(--car)"></i><i></i></span>Medium-dark</div><div class="ft"><b>$18 <small>/ 12 oz</small></b><span class="ad">{{icon:plus:16:#2A1C15:2.4}}Add</span></div></div></div>
+  <div class="pc"><div class="im"><div class="lb"><i class="bd" style="background:#9C4A5A"></i><small>KETTLE &amp; CROW</small><strong>Kirinyaga<br>AA</strong><em>Kenya · 12 oz</em></div><span class="pill bdg" style="background:var(--car);color:#fff">Only 38 left</span><span class="fav">{{icon:heart:18:#2A1C15:2}}</span></div>
+   <div class="bd2"><div class="o">Kenya · Washed</div><h4>Kirinyaga AA</h4><div class="n">Blackcurrant, grapefruit, brown sugar</div><div class="rl"><span class="dots"><i style="background:var(--car)"></i><i></i><i></i><i></i></span>Light roast</div><div class="ft"><b>$24 <small>/ 12 oz</small></b><span class="ad">{{icon:plus:16:#2A1C15:2.4}}Add</span></div></div></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="hd"><div><div class="eb">Taste first, then subscribe</div><h2 class="bg h2" style="margin-top:18px">Know how it tastes<br><span class="se">before it ships.</span></h2></div><p class="lead" style="width:420px">Every coffee gets a five-point taste profile from our cupping table, so you can pick by flavor, not by guesswork.</p></div>
+ <div class="ts">
+  <div class="taste">
+   <div class="top"><div><h3>Guji Highlands</h3><span>Cupped Nov 17 · score 88.5</span></div><span class="pill" style="background:#fff;color:var(--ink)">{{icon:coffee:15:#C8743A:2.2}}Best as pour-over</span></div>
+   <div class="rad">
+    <svg width="230" height="250" viewBox="-125 -128 250 270">
+     <g fill="none" stroke="#DCCBB6" stroke-width="1">
+      <polygon points="0,-100 95.1,-30.9 58.8,80.9 -58.8,80.9 -95.1,-30.9"/>
+      <polygon points="0,-75 71.3,-23.2 44.1,60.7 -44.1,60.7 -71.3,-23.2"/>
+      <polygon points="0,-50 47.6,-15.5 29.4,40.5 -29.4,40.5 -47.6,-15.5"/>
+      <polygon points="0,-25 23.8,-7.7 14.7,20.2 -14.7,20.2 -23.8,-7.7"/>
+      <line x1="0" y1="0" x2="0" y2="-100"/><line x1="0" y1="0" x2="95.1" y2="-30.9"/><line x1="0" y1="0" x2="58.8" y2="80.9"/><line x1="0" y1="0" x2="-58.8" y2="80.9"/><line x1="0" y1="0" x2="-95.1" y2="-30.9"/>
+     </g>
+     <polygon points="0,-80 85.6,-27.8 23.5,32.4 -41.2,56.6 -76.1,-24.7" fill="#C8743A" fill-opacity=".22" stroke="#C8743A" stroke-width="2.5" stroke-linejoin="round"/>
+     <polygon points="0,-40 38,-12.4 47,64.7 -35.3,48.5 -47.6,-15.5" fill="none" stroke="#2B1D16" stroke-width="1.5" stroke-dasharray="4 4" opacity=".5"/>
+     <g font-family="Figtree" font-size="12" font-weight="700" fill="#6E5C50" text-anchor="middle"><text x="0" y="-108">Acidity</text><text x="-96" y="-42">Floral</text><text x="96" y="-42">Fruit</text><text x="62" y="102">Body</text><text x="-62" y="102">Sweet</text></g><g fill="#fff" stroke="#C8743A" stroke-width="2.5"><circle cx="0" cy="-80" r="5"/><circle cx="85.6" cy="-27.8" r="5"/><circle cx="23.5" cy="32.4" r="5"/><circle cx="-41.2" cy="56.6" r="5"/><circle cx="-76.1" cy="-24.7" r="5"/></g>
+    </svg>
+    <div class="sc">
+     <div class="r"><span>Acidity</span><span class="tr"><i style="width:80%"></i></span><b>8</b></div>
+     <div class="r"><span>Fruit</span><span class="tr"><i style="width:90%"></i></span><b>9</b></div>
+     <div class="r"><span>Body</span><span class="tr"><i style="width:40%"></i></span><b>4</b></div>
+     <div class="r"><span>Sweetness</span><span class="tr"><i style="width:70%"></i></span><b>7</b></div>
+     <div class="r"><span>Floral</span><span class="tr"><i style="width:80%"></i></span><b>8</b></div>
+    </div>
+   </div>
+   <div class="nts"><span>Peach</span><span>Jasmine</span><span>Bergamot</span><span>Honey</span></div><div class="cmp"><span class="ib">{{icon:git-compare:20:#C8743A:2}}</span><p>Dashed line: <b>Crow's Nest</b>. Pick Guji if you like it bright and juicy, Crow's Nest if you take milk.</p></div>
+  </div>
+  <div class="sub">
+   <div>
+    <h3>Build your subscription</h3>
+    <div class="stp"><div class="k"><i>1</i>Coffee</div><div class="ch"><span class="on">Guji</span><span>Huila</span><span>Crow's Nest</span><span>Kirinyaga</span></div></div>
+    <div class="stp"><div class="k"><i>2</i>Grind</div><div class="ch"><span>Whole bean</span><span class="on">Pour-over</span><span>Espresso</span></div></div>
+    <div class="stp"><div class="k"><i>3</i>How much</div><div class="ch"><span>1 bag</span><span class="on">2 bags <small>~45 cups</small></span><span>3 bags</span></div></div>
+    <div class="stp"><div class="k"><i>4</i>Every</div><div class="ch"><span>1 week</span><span class="on">2 weeks</span><span>Month</span></div></div>
+   </div>
+   <div class="sum">
+    <div class="h">Your box</div>
+    <div class="it"><span class="t"></span><div><b>2 × Guji Highlands</b><span>Pour-over grind · every 2 weeks</span></div></div>
+    <div class="ln"><span>2 × $22.00</span><span>$44.00</span></div>
+    <div class="ln g"><span>Subscriber 15%</span><b>−$6.60</b></div>
+    <div class="ln g"><span>Shipping</span><b>Free</b></div>
+    <hr>
+    <div class="tot"><b>$37.40</b><span>per delivery</span></div>
+    <div class="pc2">That's $0.83 a cup.</div><div class="sch"><div><i></i><b>Nov 26</b><span>First box</span></div><div><i></i><b>Dec 10</b><span>Next</span></div><div><i></i><b>Dec 24</b><span>Skip?</span></div></div>
+    <div class="go">Start subscription {{icon:arrow-right:17:#fff:2.4}}</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="hd" style="margin-bottom:56px"><div><div class="eb">Our farmers</div><h2 class="bg h2" style="margin-top:18px">From her hillside<br>to your <span class="se">kitchen in 49 days.</span></h2></div><p class="lead" style="width:420px">We buy from the same six farms every year and print the harvest date on every bag. No mystery blends.</p></div>
+ <div class="org">
+  <div class="p ph"><div class="cap"><span class="ib">{{icon:map-pin:20:#F2B98A:2}}</span><div><b>Tigist Alemu</b><span>Hambela washing station · Guji, Ethiopia · 2,100 m</span></div></div></div>
+  <div class="r">
+   <div class="eb">Six harvests together</div>
+   <blockquote>“They come back every year and pay before the cherries are picked. That is <i>why</i> I can grow the slow, careful lots.”</blockquote>
+   <div class="by"><b>Tigist Alemu</b> · grower for Guji Highlands since 2020</div>
+   <div class="nums"><div><b>$4.10</b><span>per lb, paid direct</span></div><div><b>6 yrs</b><span>buying from her station</span></div><div><b>3,400</b><span>bags of her coffee this year</span></div></div>
+   <div class="tl">
+    <div><i></i><b>Picked</b><span>Oct 2</span></div>
+    <div><i></i><b>Dried 14 days</b><span>Oct 16</span></div>
+    <div><i></i><b>Landed Oakland</b><span>Nov 3</span></div>
+    <div><i></i><b>Roasted</b><span>Nov 17</span></div>
+    <div><i></i><b>Your door</b><span>Nov 20</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec brew ph">
+ <div class="hd3"><h3>Brew it <span class="se">like we do.</span></h3><p>Our cafe recipes for this week's Guji. Tap one to start a timer.</p></div>
+ <div class="rc">
+  <div class="on"><div class="t"><b>V60 pour-over</b><span>1 : 16.7</span></div><div class="g4"><div><span>{{icon:bean:13:#C8B4A2:2}}Coffee</span><b>15 g</b></div><div><span>{{icon:droplet:13:#C8B4A2:2}}Water</span><b>250 g</b></div><div><span>{{icon:thermometer:13:#C8B4A2:2}}Temp</span><b>94°C</b></div><div><span>{{icon:timer:13:#C8B4A2:2}}Time</span><b>3:00</b></div></div></div>
+  <div><div class="t"><b>AeroPress</b><span>1 : 12.9</span></div><div class="g4"><div><span>{{icon:bean:13:#6E5C50:2}}Coffee</span><b>17 g</b></div><div><span>{{icon:droplet:13:#6E5C50:2}}Water</span><b>220 g</b></div><div><span>{{icon:thermometer:13:#6E5C50:2}}Temp</span><b>88°C</b></div><div><span>{{icon:timer:13:#6E5C50:2}}Time</span><b>2:00</b></div></div></div>
+  <div><div class="t"><b>French press</b><span>1 : 16.7</span></div><div class="g4"><div><span>{{icon:bean:13:#6E5C50:2}}Coffee</span><b>30 g</b></div><div><span>{{icon:droplet:13:#6E5C50:2}}Water</span><b>500 g</b></div><div><span>{{icon:thermometer:13:#6E5C50:2}}Temp</span><b>96°C</b></div><div><span>{{icon:timer:13:#6E5C50:2}}Time</span><b>4:00</b></div></div></div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="hd"><div><div class="eb">Reviews</div><h2 class="bg h2" style="margin-top:18px">People who <span class="se">stopped</span><br>buying supermarket beans.</h2></div></div>
+ <div class="rvs">
+  <div class="score"><b>4.9</b><div class="st"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#fff"/></svg><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#fff"/></svg><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#fff"/></svg><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#fff"/></svg><svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#fff"/></svg></div><p>2,184 verified reviews</p>
+   <div class="bars"><div>5<i><em style="width:91%"></em></i><span>1,988</span></div><div>4<i><em style="width:7%"></em></i><span>153</span></div><div>3<i><em style="width:2%"></em></i><span>43</span></div></div></div>
+  <div class="rv2"><div class="st"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg></div><p>“The Guji smells like peaches when I open the bag. I didn't know coffee could do that. Two-week subscription, never skipped.”</p><div class="by"><span class="av ph" style="background-image:url(mei.jpg)"></span><div><b>Mei Tanaka</b><span>Subscriber since March</span></div><span class="bt">Guji Highlands</span></div></div>
+  <div class="rv2"><div class="st"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#C8743A"/></svg></div><p>“Crow's Nest is the first espresso I've pulled at home that tastes like the café. The roast date on the bag is the whole trick.”</p><div class="by"><span class="av ph" style="background-image:url(marcus.jpg)"></span><div><b>Marcus Bell</b><span>Home barista, Seattle</span></div><span class="bt">Crow's Nest</span></div></div>
+ </div>
+</section>
+
+<section class="band">
+ <h2>Your first bag<br>is on us <span class="se">when you subscribe.</span></h2>
+ <div class="r"><span class="btn d">Start with a free bag {{icon:arrow-right:18:#fff:2.4}}</span><span class="btn o">Take the 60-second taste quiz</span><span class="nt">Pause, skip or cancel anytime</span></div>
+</section>
+</div>
+
+<div class="w">
+<footer>
+ <div class="fg">
+  <div><div class="lg"><span class="m">{{icon:coffee:22:#fff:2}}</span>Kettle <span class="se">&amp;</span> Crow</div><p>Small-batch specialty coffee, roasted every Tuesday in Oakland since 2017.</p></div>
+  <div><h5>Shop</h5><ul><li>All coffee</li><li>Subscriptions</li><li>Gift cards</li><li>Brew gear</li><li>Wholesale</li></ul></div>
+  <div><h5>Learn</h5><ul><li>Brew guides</li><li>Our farmers</li><li>Roast log</li><li>Journal</li><li>Help</li></ul></div>
+  <div><h5>Visit our cafés</h5><div class="cafe"><div><b>Temescal</b><span>7 am – 4 pm</span></div><div><b>Jack London Sq.</b><span>7 am – 6 pm</span></div></div>
+   <h5 style="margin-top:24px">Roast day letter</h5><div class="nl">you@email.com<b>Join {{icon:arrow-right:15:#fff:2.4}}</b></div></div>
+ </div>
+ <div class="fb"><span>© 2026 Kettle &amp; Crow Coffee Roasters</span><span>Privacy · Terms · Shipping · Returns</span></div>
+</footer>
+</div>
+<div style="height:1px"></div>
+</body></html>
