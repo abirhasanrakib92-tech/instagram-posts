@@ -1,0 +1,235 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": false,
+  "name": "Ridge",
+  "category": "Trail guide",
+  "tagline": "See the climb, the water and the daylight before your first step.",
+  "font": "Inter Tight",
+  "font_note": "Light, tight numerals for distance and height, with a Doto dot-matrix readout like a trail GPS.",
+  "gradient": [
+   "#F6B48A",
+   "#E98A5B",
+   "#3E5068",
+   "#1C2735"
+  ],
+  "paper": "#EEF1F4",
+  "palette": [
+   [
+    "#F6B48A",
+    "Sunrise peach"
+   ],
+   [
+    "#E98A5B",
+    "Apricot"
+   ],
+   [
+    "#3E5068",
+    "Slate"
+   ],
+   [
+    "#1C2735",
+    "Night ridge"
+   ],
+   [
+    "#EEF1F4",
+    "Mist"
+   ],
+   [
+    "#FFFFFF",
+    "Glass white"
+   ]
+  ],
+  "zoom": [
+   0,
+   500,
+   393,
+   250
+  ],
+  "zoom_title": "Know the climb<br>before the first step.",
+  "components_title": "Glass over<br>first light.",
+  "elements": {
+   "dist": {
+    "box": [
+     12,
+     510,
+     131,
+     100
+    ],
+    "r": 24
+   },
+   "climb": {
+    "box": [
+     147,
+     510,
+     115,
+     100
+    ],
+    "r": 24
+   },
+   "time": {
+    "box": [
+     266,
+     510,
+     115,
+     100
+    ],
+    "r": 24
+   },
+   "el": {
+    "box": [
+     12,
+     614,
+     369,
+     132
+    ],
+    "r": 27
+   },
+   "sl": {
+    "box": [
+     12,
+     760,
+     369,
+     68
+    ],
+    "r": 34
+   },
+   "summit": {
+    "box": [
+     174,
+     316,
+     164,
+     42
+    ],
+    "r": 21
+   },
+   "spring": {
+    "box": [
+     14,
+     378,
+     124,
+     42
+    ],
+    "r": 21
+   },
+   "chips": {
+    "box": [
+     22,
+     252,
+     349,
+     36
+    ],
+    "r": 17
+   },
+   "book": {
+    "box": [
+     329,
+     60,
+     46,
+     46
+    ],
+    "shape": "circle"
+   }
+  },
+  "s2_floats": [
+   [
+    "summit",
+    380,
+    50,
+    760,
+    -4,
+    3
+   ],
+   [
+    "dist",
+    300,
+    40,
+    890,
+    4,
+    3
+   ],
+   [
+    "sl",
+    560,
+    30,
+    1170,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "book",
+    140,
+    860,
+    100,
+    0,
+    1
+   ],
+   [
+    "chips",
+    900,
+    90,
+    300,
+    0,
+    1
+   ],
+   [
+    "summit",
+    440,
+    90,
+    430,
+    -3,
+    1
+   ],
+   [
+    "spring",
+    340,
+    600,
+    440,
+    4,
+    1
+   ],
+   [
+    "dist",
+    300,
+    90,
+    590,
+    0,
+    1
+   ],
+   [
+    "climb",
+    260,
+    410,
+    590,
+    0,
+    1
+   ],
+   [
+    "time",
+    260,
+    690,
+    590,
+    0,
+    1
+   ],
+   [
+    "el",
+    860,
+    110,
+    840,
+    0,
+    1
+   ],
+   [
+    "sl",
+    820,
+    130,
+    1170,
+    -1,
+    1
+   ]
+  ]
+ }
+}

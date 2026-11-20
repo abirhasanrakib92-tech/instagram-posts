@@ -1,0 +1,210 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": false,
+  "name": "Kova",
+  "category": "EV companion",
+  "tagline": "Charge, range and cabin over a real view of your car.",
+  "font": "Inter Tight",
+  "font_note": "Thin technical numerals for charge and range, with a Doto dot-matrix battery reading.",
+  "gradient": [
+   "#D7DCE0",
+   "#8A939B",
+   "#3A4249",
+   "#0E1215"
+  ],
+  "paper": "#EEF0F1",
+  "palette": [
+   [
+    "#D4FF3F",
+    "Volt lime"
+   ],
+   [
+    "#1E2328",
+    "Graphite"
+   ],
+   [
+    "#8A939B",
+    "Steel"
+   ],
+   [
+    "#C9CED2",
+    "Concrete"
+   ],
+   [
+    "#F2F4F5",
+    "Pearl"
+   ],
+   [
+    "#0E1215",
+    "Ink"
+   ]
+  ],
+  "zoom": [
+   0,
+   110,
+   393,
+   330
+  ],
+  "zoom_title": "Your car, live,<br>right where it's parked.",
+  "components_title": "Glass over<br>concrete.",
+  "elements": {
+   "rng": {
+    "box": [
+     260,
+     119,
+     118,
+     100
+    ],
+    "r": 22
+   },
+   "lv": {
+    "box": [
+     21,
+     119,
+     147,
+     36
+    ],
+    "r": 18
+   },
+   "pin": {
+    "box": [
+     115,
+     328,
+     166,
+     42
+    ],
+    "r": 21
+   },
+   "lim": {
+    "box": [
+     24,
+     488,
+     345,
+     111
+    ],
+    "r": 16
+   },
+   "cabin": {
+    "box": [
+     26,
+     603,
+     188,
+     86
+    ],
+    "r": 22
+   },
+   "seat": {
+    "box": [
+     216,
+     603,
+     151,
+     86
+    ],
+    "r": 22
+   },
+   "sl": {
+    "box": [
+     26,
+     727,
+     341,
+     66
+    ],
+    "r": 33
+   },
+   "car": {
+    "box": [
+     15,
+     57,
+     152,
+     50
+    ],
+    "r": 25
+   }
+  },
+  "s2_floats": [
+   [
+    "rng",
+    300,
+    60,
+    720,
+    -5,
+    3
+   ],
+   [
+    "pin",
+    420,
+    40,
+    1000,
+    3,
+    3
+   ],
+   [
+    "sl",
+    560,
+    30,
+    1130,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "rng",
+    280,
+    720,
+    90,
+    4,
+    1
+   ],
+   [
+    "car",
+    400,
+    80,
+    300,
+    -3,
+    1
+   ],
+   [
+    "pin",
+    420,
+    540,
+    360,
+    3,
+    1
+   ],
+   [
+    "lim",
+    900,
+    90,
+    490,
+    0,
+    1
+   ],
+   [
+    "cabin",
+    480,
+    80,
+    820,
+    -2,
+    1
+   ],
+   [
+    "seat",
+    390,
+    600,
+    820,
+    3,
+    1
+   ],
+   [
+    "sl",
+    900,
+    90,
+    1090,
+    -2,
+    1
+   ]
+  ]
+ }
+}

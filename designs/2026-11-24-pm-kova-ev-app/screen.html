@@ -1,0 +1,96 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Kova">
+<meta name="app-desc" content="An EV companion that shows **charge, range and cabin** over a real view of your car, and warms it up with **one slide** before you leave.">
+<meta name="fonts" content="Inter Tight|Thin, technical numerals for charge and range, with a Doto dot-matrix battery reading like a dashboard display.">
+<meta name="palette" content="#D4FF3F:Volt lime|#1E2328:Graphite|#C9CED2:Concrete|#F2F4F5:Pearl|#8A939B:Steel|#0E1215:Ink">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#0E1215;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#8E959B}
+.bg{position:absolute;inset:0;background:url(car.jpg) 100% -64px/auto 720px no-repeat,#6B7177}
+.fd{position:absolute;left:0;right:0;top:560px;height:100px;background:linear-gradient(rgba(107,113,119,0),#6B7177)}
+.sh{position:absolute;left:0;right:0;top:0;height:330px;background:linear-gradient(rgba(12,15,18,.42),rgba(12,15,18,.18) 60%,rgba(12,15,18,0))}
+.gl{color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(255,255,255,.55)}
+.sb{color:#fff;position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;gap:10px}
+.top .car{height:44px;padding:0 16px 0 6px;border-radius:999px;display:flex;align-items:center;gap:10px}
+.top .car i{width:32px;height:32px;border-radius:50%;background:#1E2328;display:grid;place-items:center}
+.top .car b{font-size:14.5px;font-weight:600;display:block;line-height:1.1}.top .car small{font-size:11.5px;font-weight:500;color:rgba(255,255,255,.75)}
+.cb{width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.top .cb:first-of-type{margin-left:auto}
+.hero{position:absolute;left:24px;top:122px;color:#fff}
+.lv{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px 0 10px;border-radius:999px;font-size:12.5px;font-weight:600}
+.lv i{width:8px;height:8px;border-radius:50%;background:#D4FF3F;box-shadow:0 0 0 4px rgba(212,255,63,.35),0 0 10px #D4FF3F}
+.pc{font-family:'Doto';font-weight:900;font-size:92px;line-height:.86;letter-spacing:-3px;margin-top:12px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.pc span{font-family:'Inter Tight';font-weight:200;font-size:44px;letter-spacing:-1px;margin-left:2px}
+.hero p{font-size:14px;color:#2A3137;margin-top:10px;font-weight:500}
+.hero p b{font-weight:700;color:#0E1215}
+.hero h2{font-weight:300;font-size:22px;letter-spacing:-.6px;margin-top:4px;color:#fff}
+.hero h2 i{font-family:'Instrument Serif';font-weight:400;font-size:25px;letter-spacing:-.2px}
+.rng{position:absolute;right:18px;top:122px;width:112px;border-radius:22px;padding:12px 14px}
+.rng small{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.75);display:block}
+.rng b{font-weight:300;font-size:32px;letter-spacing:-1.4px;display:block;margin-top:2px;line-height:1}
+.rng b span{font-size:13px;letter-spacing:0;font-weight:500;color:rgba(255,255,255,.8)}
+.rng em{display:block;font-style:normal;font-size:11.5px;color:rgba(255,255,255,.8);margin-top:6px;font-weight:500}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:#D4FF3F;box-shadow:0 0 0 6px rgba(212,255,63,.35),0 0 14px #D4FF3F}
+.ln{position:absolute;height:1px;background:rgba(255,255,255,.9)}
+.pin{position:absolute;display:flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 6px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap;background:rgba(20,24,28,.42);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.pin i{width:24px;height:24px;border-radius:50%;background:#D4FF3F;display:grid;place-items:center}
+.pin b{font-weight:700}
+.dk{position:absolute;left:10px;right:10px;bottom:10px;height:368px;border-radius:38px;padding:18px 18px 14px;background:rgba(242,244,245,.66);backdrop-filter:blur(26px) saturate(1.3);-webkit-backdrop-filter:blur(26px) saturate(1.3);border:1px solid rgba(255,255,255,.75)}
+.lim .r{display:flex;justify-content:space-between;align-items:baseline}
+.lim .r small{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#4A535A}
+.lim .r b{font-weight:300;font-size:26px;letter-spacing:-1px}
+.lim .r b span{font-size:13px;color:#4A535A;font-weight:500;letter-spacing:0}
+.tr{position:relative;height:40px;margin-top:10px;border-radius:999px;background:rgba(255,255,255,.7);overflow:hidden}
+.tr .f{position:absolute;left:0;top:0;bottom:0;width:78%;background:#1E2328;border-radius:999px}
+.tr .t{position:absolute;left:0;top:0;bottom:0;width:80%;background:repeating-linear-gradient(90deg,rgba(212,255,63,.0) 0 4px,rgba(30,35,40,.18) 4px 6px)}
+.tr .k{position:absolute;left:calc(80% - 18px);top:4px;width:32px;height:32px;border-radius:50%;background:#D4FF3F;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.tr .tx{position:absolute;left:14px;top:0;bottom:0;display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:#fff}
+.tk{display:flex;justify-content:space-between;font-size:11.5px;color:#5A646B;font-weight:500;margin-top:6px;padding:0 2px}
+.tk b{color:#0E1215;font-weight:600}
+.cl{display:grid;grid-template-columns:1.25fr 1fr;gap:8px;margin-top:12px}
+.cl>div{background:rgba(255,255,255,.62);border-radius:22px;padding:12px 12px 12px 14px}
+.cl small{font-size:11.5px;font-weight:600;color:#4A535A;display:flex;align-items:center;gap:5px}
+.tmp{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.tmp b{font-weight:200;font-size:36px;letter-spacing:-1.6px;line-height:1}
+.tmp b sup{font-size:16px;font-weight:300;vertical-align:top;position:relative;top:3px;letter-spacing:0}
+.pm{display:flex;gap:6px}.pm span{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.st{display:flex;gap:4px;margin-top:12px}.st i{flex:1;height:6px;border-radius:3px;background:rgba(30,35,40,.14)}.st i.on{background:#1E2328}
+.sv{font-size:12px;color:#4A535A;margin-top:6px;font-weight:500}
+.cost{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:12.5px;color:#3A4249;font-weight:500;padding:0 4px}
+.cost .av{width:26px;height:26px;border-radius:50%;background:url(daniel.jpg) center/cover;flex:none}
+.cost b{color:#0E1215;font-weight:700}
+.sl{margin-top:10px;height:60px;border-radius:999px;background:#1E2328;display:flex;align-items:center;padding:6px;position:relative}
+.sl .k{width:48px;height:48px;border-radius:50%;background:#D4FF3F;display:grid;place-items:center;position:relative;z-index:1}
+.sl .tx{position:absolute;left:0;right:0;text-align:center;color:#fff;font-size:15.5px;font-weight:500}
+.sl .tx span{color:#9AA3AA;font-weight:400}
+.sl .ch{position:absolute;right:22px;display:flex;opacity:.45}
+.hi{position:absolute;left:50%;bottom:7px;width:134px;height:5px;border-radius:3px;background:#0E1215;transform:translateX(-50%)}
+</style></head><body>
+<div class="bg"></div><div class="fd"></div><div class="sh"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#fff:2.6}}{{icon:wifi:17:#fff:2.6}}{{icon:battery-full:24:#fff:2}}</span></div>
+<div class="top"><span class="car gl"><i>{{icon:car-front:17:#D4FF3F:2}}</i><span><b>Kova K1</b><small>Pearl · in garage</small></span></span><span class="cb gl">{{icon:lock:18:#fff:1.9}}</span><span class="cb gl">{{icon:settings-2:18:#fff:1.9}}</span></div>
+<div class="hero">
+ <span class="lv gl"><i></i>Charging · 7.4 kW</span>
+ <div class="pc">78<span>%</span></div>
+ <h2>Ready by <i>morning.</i></h2>
+</div>
+<div class="rng gl"><small>Range</small><b>312<span> km</span></b><em>80% in 13 min</em></div>
+<span class="dot" style="left:326px;top:343px"></span><span class="ln" style="left:256px;top:349px;width:70px"></span>
+<div class="pin" style="left:118px;top:331px"><i>{{icon:zap:14:#14181C:2.4}}</i><span><b>+38 km</b> every hour</span></div>
+<div class="dk">
+ <div class="lim"><div class="r"><small>Charge limit</small><b>80<span>% · daily</span></b></div>
+  <div class="tr"><span class="f"></span><span class="t"></span><span class="tx">{{icon:battery-charging:15:#D4FF3F:2}}78%</span><span class="k"></span></div>
+  <div class="tk"><span>50%</span><span><b>Daily 80%</b></span><span>Trip 100%</span></div></div>
+ <div class="cl">
+  <div><small>{{icon:thermometer:13:#4A535A:2}}Cabin · now 9°</small><div class="tmp"><b>21.5<sup>°C</sup></b><div class="pm"><span>{{icon:minus:14:#0E1215:2}}</span><span>{{icon:plus:14:#0E1215:2}}</span></div></div></div>
+  <div><small>{{icon:armchair:13:#4A535A:2}}Seat heat</small><div class="st"><i class="on"></i><i class="on"></i><i></i></div><div class="sv">Level 2 · driver</div></div>
+ </div>
+ <div class="cost"><span class="av"></span><span>This charge <b>9.8 kWh · $1.47</b> at night rate $0.15</span></div>
+ <div class="sl" data-nav><span class="k">{{icon:flame:20:#1E2328:2.2}}</span><span class="tx">Slide to pre-heat <span>· 12 min</span></span><span class="ch">{{icon:chevrons-right:20:#fff:2}}</span></div>
+</div>
+<div class="hi"></div>
+</body></html>

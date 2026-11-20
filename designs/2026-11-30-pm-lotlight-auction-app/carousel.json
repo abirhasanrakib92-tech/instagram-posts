@@ -1,0 +1,211 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": false,
+  "name": "Lot &amp; Light",
+  "category": "Live art auctions",
+  "tagline": "See the real painting on the wall. Slide once to bid, with every fee shown.",
+  "font": "Inter Tight",
+  "font_note": "Thin gallery-label type, an Instrument Serif title and a Doto dot-matrix clock for the live lot.",
+  "gradient": [
+   "#EADFD0",
+   "#B3443A",
+   "#7A1F1F",
+   "#2A2522"
+  ],
+  "paper": "#F4EEE4",
+  "palette": [
+   [
+    "#7A1F1F",
+    "Oxblood"
+   ],
+   [
+    "#2A2522",
+    "Charcoal"
+   ],
+   [
+    "#B8892F",
+    "Brass"
+   ],
+   [
+    "#D9CDBB",
+    "Linen"
+   ],
+   [
+    "#F4EEE4",
+    "Gallery ivory"
+   ],
+   [
+    "#FFFFFF",
+    "Glass white"
+   ]
+  ],
+  "zoom": [
+   0,
+   456,
+   393,
+   300
+  ],
+  "zoom_title": "The clock, the bid<br>and every fee.",
+  "components_title": "Gallery glass,<br>a live clock.",
+  "elements": {
+   "tc": {
+    "box": [
+     10,
+     456,
+     373,
+     98
+    ],
+    "r": 30
+   },
+   "ck": {
+    "box": [
+     236,
+     464,
+     138,
+     82
+    ],
+    "r": 24
+   },
+   "cur": {
+    "box": [
+     24,
+     574,
+     345,
+     64
+    ],
+    "r": 12
+   },
+   "hs": {
+    "box": [
+     27,
+     640,
+     339,
+     51
+    ],
+    "r": 18
+   },
+   "chips": {
+    "box": [
+     27,
+     695,
+     339,
+     42
+    ],
+    "r": 19
+   },
+   "sl": {
+    "box": [
+     27,
+     762,
+     339,
+     60
+    ],
+    "r": 30
+   },
+   "pin1": {
+    "box": [
+     226,
+     164,
+     134,
+     38
+    ],
+    "r": 19
+   },
+   "pin2": {
+    "box": [
+     20,
+     344,
+     148,
+     38
+    ],
+    "r": 19
+   },
+   "lv": {
+    "box": [
+     117,
+     63,
+     159,
+     40
+    ],
+    "r": 20
+   }
+  },
+  "s2_floats": [
+   [
+    "ck",
+    300,
+    60,
+    800,
+    -5,
+    3
+   ],
+   [
+    "sl",
+    560,
+    30,
+    1090,
+    3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "lv",
+    360,
+    640,
+    150,
+    0,
+    1
+   ],
+   [
+    "tc",
+    900,
+    90,
+    320,
+    0,
+    1
+   ],
+   [
+    "hs",
+    860,
+    110,
+    600,
+    -2,
+    1
+   ],
+   [
+    "chips",
+    900,
+    90,
+    770,
+    0,
+    1
+   ],
+   [
+    "sl",
+    900,
+    90,
+    930,
+    2,
+    1
+   ],
+   [
+    "pin1",
+    380,
+    80,
+    1140,
+    -3,
+    1
+   ],
+   [
+    "pin2",
+    420,
+    540,
+    1150,
+    4,
+    1
+   ]
+  ]
+ }
+}

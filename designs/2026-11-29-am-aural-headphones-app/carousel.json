@@ -1,0 +1,218 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": false,
+  "name": "Aural",
+  "category": "Headphones companion",
+  "tagline": "Battery for each ear cup, noise in one tap, your sound in one curve.",
+  "font": "Inter Tight",
+  "font_note": "Thin grotesk for calm controls. A Doto dot-matrix battery reads like a hi-fi display.",
+  "gradient": [
+   "#F6D3C3",
+   "#C9B8E6",
+   "#7A63C9",
+   "#2A2238"
+  ],
+  "paper": "#F5F1F7",
+  "palette": [
+   [
+    "#6E56CF",
+    "Violet"
+   ],
+   [
+    "#B9A8DE",
+    "Lilac"
+   ],
+   [
+    "#F6D3C3",
+    "Peach"
+   ],
+   [
+    "#F5F1F7",
+    "Pearl"
+   ],
+   [
+    "#2A2238",
+    "Plum ink"
+   ],
+   [
+    "#FFFFFF",
+    "Glass"
+   ]
+  ],
+  "zoom": [
+   0,
+   580,
+   393,
+   262
+  ],
+  "zoom_title": "One curve shapes<br>every song.",
+  "components_title": "Battery per cup,<br>sound by curve.",
+  "elements": {
+   "dv": {
+    "box": [
+     18,
+     60,
+     166,
+     44
+    ],
+    "r": 22
+   },
+   "case": {
+    "box": [
+     263,
+     126,
+     112,
+     78
+    ],
+    "r": 20
+   },
+   "anc": {
+    "box": [
+     323,
+     258,
+     56,
+     200
+    ],
+    "r": 28
+   },
+   "pinL": {
+    "box": [
+     16,
+     500,
+     95,
+     34
+    ],
+    "r": 17
+   },
+   "pinR": {
+    "box": [
+     186,
+     548,
+     102,
+     34
+    ],
+    "r": 17
+   },
+   "hero": {
+    "box": [
+     20,
+     118,
+     200,
+     110
+    ],
+    "r": 8
+   },
+   "eq": {
+    "box": [
+     22,
+     655,
+     349,
+     118
+    ],
+    "r": 16
+   },
+   "sl": {
+    "box": [
+     29,
+     779,
+     335,
+     58
+    ],
+    "r": 29
+   }
+  },
+  "s2_floats": [
+   [
+    "case",
+    300,
+    60,
+    760,
+    -5,
+    3
+   ],
+   [
+    "pinL",
+    300,
+    40,
+    1000,
+    4,
+    3
+   ],
+   [
+    "sl",
+    560,
+    30,
+    1150,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "anc",
+    150,
+    870,
+    110,
+    0,
+    1
+   ],
+   [
+    "dv",
+    460,
+    80,
+    300,
+    -3,
+    1
+   ],
+   [
+    "hero",
+    460,
+    80,
+    470,
+    0,
+    1
+   ],
+   [
+    "case",
+    280,
+    560,
+    480,
+    5,
+    1
+   ],
+   [
+    "pinL",
+    300,
+    560,
+    700,
+    -4,
+    1
+   ],
+   [
+    "pinR",
+    320,
+    80,
+    750,
+    3,
+    1
+   ],
+   [
+    "eq",
+    820,
+    120,
+    890,
+    0,
+    1
+   ],
+   [
+    "sl",
+    700,
+    190,
+    1180,
+    -2,
+    1
+   ]
+  ]
+ }
+}
