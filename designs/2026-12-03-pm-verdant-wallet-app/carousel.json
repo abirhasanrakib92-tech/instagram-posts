@@ -1,7 +1,7 @@
 {
  "v4": {
   "screen": "auto",
-  "flat": false,
+  "flat": true,
   "name": "Verdant",
   "category": "Crypto & savings wallet",
   "tagline": "Swap in one slide. Watch every round-up grow a real goal.",
@@ -14,7 +14,7 @@
    "#062A1E"
   ],
   "aa_fill": "linear-gradient(135deg,#9FF0CF,#2FD39A 40%,#0E5C42 75%,#B7A4FF)",
-  "paper": "#EEF7F2",
+  "paper": "#EEEEEE",
   "palette": [
    [
     "#9FF0CF",
@@ -180,6 +180,10 @@
     0,
     1
    ]
-  ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#062A1E",
+  "s4_ink": "#062A1E"
  }
 }

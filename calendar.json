@@ -1114,17 +1114,27 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "niche": "Parking finder",
-   "brand": "Spotly",
-   "palette_hint": "teal + yellow",
-   "status": "planned",
-   "design_dir": null,
-   "image": null,
-   "caption": null,
-   "media_id": null,
-   "format": "carousel-app",
+   "brand": "Halo",
+   "niche": "Smart ring health tracking",
+   "palette_hint": "silver blue + graphite + coral",
+   "slug": "halo-ring-app",
+   "caption": "Your ring knew you'd sleep badly before you did.\nSmart ring health app UI design: readiness score, heart rate and sleep tracking\n\nHalo turns a whole night of sensor data into one dot-matrix number, then shows the three things it was built from, right over a real photo of the ring.\n\nSave this for your next health or wearable app\nWould you trust one readiness number, or do you want every metric?\n\n#uidesign #mobileappdesign #healthapp #wearabletech #smartring",
+   "status": "ready",
+   "approved": "owner asked to schedule all app designs (2026-11-21)",
+   "replaces": "Spotly",
+   "format": "carousel-app-v4",
    "ai": false,
-   "originally": "2026-11-30-am"
+   "design_dir": "designs/2026-12-02-am-halo-ring-app",
+   "images": [
+    "posts/2026-12/2026-12-02-am-halo-ring-app-1.jpg",
+    "posts/2026-12/2026-12-02-am-halo-ring-app-2.jpg",
+    "posts/2026-12/2026-12-02-am-halo-ring-app-3.jpg",
+    "posts/2026-12/2026-12-02-am-halo-ring-app-4.jpg",
+    "posts/2026-12/2026-12-02-am-halo-ring-app-5.jpg",
+    "posts/2026-12/2026-12-02-am-halo-ring-app-6.jpg"
+   ],
+   "image": null,
+   "media_id": null
   },
   {
    "id": "2026-12-02-pm",
@@ -1168,17 +1178,27 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "Wardrobe & outfit planner",
-   "brand": "Closet",
-   "palette_hint": "blush + charcoal",
-   "status": "planned",
-   "design_dir": null,
-   "image": null,
-   "caption": null,
-   "media_id": null,
-   "format": "carousel-app",
+   "brand": "Verdant",
+   "niche": "Crypto & savings wallet",
+   "palette_hint": "mint + emerald + lilac",
+   "slug": "verdant-wallet-app",
+   "caption": "Saving for a cabin feels different when you can see the cabin.\nCrypto wallet app UI design: one-card swap, savings goal and slide to confirm\n\nVerdant keeps the swap honest: rate, fee and what you actually get, all in one glass card. Round-ups then grow a goal with a real photo, not a bar chart.\n\nSave this for your next fintech app project\nWould you keep crypto and savings in one app, or split them?\n\n#uidesign #mobileappdesign #fintechdesign #cryptowallet #glassmorphism",
+   "status": "ready",
+   "approved": "owner asked to schedule all app designs (2026-11-21)",
+   "replaces": "Closet",
+   "format": "carousel-app-v4",
    "ai": false,
-   "originally": "2026-12-01-pm"
+   "design_dir": "designs/2026-12-03-pm-verdant-wallet-app",
+   "images": [
+    "posts/2026-12/2026-12-03-pm-verdant-wallet-app-1.jpg",
+    "posts/2026-12/2026-12-03-pm-verdant-wallet-app-2.jpg",
+    "posts/2026-12/2026-12-03-pm-verdant-wallet-app-3.jpg",
+    "posts/2026-12/2026-12-03-pm-verdant-wallet-app-4.jpg",
+    "posts/2026-12/2026-12-03-pm-verdant-wallet-app-5.jpg",
+    "posts/2026-12/2026-12-03-pm-verdant-wallet-app-6.jpg"
+   ],
+   "image": null,
+   "media_id": null
   },
   {
    "id": "2026-12-04-am",
@@ -1222,17 +1242,27 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "niche": "Barber booking",
-   "brand": "Fade",
-   "palette_hint": "black + gold",
-   "status": "planned",
-   "design_dir": null,
-   "image": null,
-   "caption": null,
-   "media_id": null,
-   "format": "carousel-app",
+   "brand": "Rally",
+   "niche": "Padel court booking",
+   "palette_hint": "court blue + sunset coral",
+   "slug": "rally-padel-app",
+   "caption": "Booking padel shouldn't end with a group chat about who owes €9.50.\nPadel court booking app UI design: time slots, cost split and slide to book\n\nRally shows the real court at the hour you'll play, prices every slot up front, and splits the bill four ways before you book.\n\nSave this for your next booking app project\nWould you book the 19:30 golden hour slot or the cheaper 22:30?\n\n#uidesign #mobileappdesign #bookingapp #padel #sportsapp",
+   "status": "ready",
+   "approved": "owner asked to schedule all app designs (2026-11-21)",
+   "replaces": "Fade",
+   "format": "carousel-app-v4",
    "ai": false,
-   "originally": "2026-12-03-am"
+   "design_dir": "designs/2026-12-05-am-rally-padel-app",
+   "images": [
+    "posts/2026-12/2026-12-05-am-rally-padel-app-1.jpg",
+    "posts/2026-12/2026-12-05-am-rally-padel-app-2.jpg",
+    "posts/2026-12/2026-12-05-am-rally-padel-app-3.jpg",
+    "posts/2026-12/2026-12-05-am-rally-padel-app-4.jpg",
+    "posts/2026-12/2026-12-05-am-rally-padel-app-5.jpg",
+    "posts/2026-12/2026-12-05-am-rally-padel-app-6.jpg"
+   ],
+   "image": null,
+   "media_id": null
   },
   {
    "id": "2026-12-05-pm",
@@ -1465,19 +1495,5 @@
    "originally": "2026-12-09-pm"
   }
  ],
- "note_resequence": "2026-11-18: runs stalled after 2026-11-16 am; the 4 missed slots and everything after were shifted forward 4 slots (rotation kept). 'originally' keeps the old slot id; file paths keep the old ids. Owner asked to see all designs before posting: ready slots are 'ready-pending-approval' until he approves. Owner approved on 2026-11-18; ready slots are 'ready' again.",
- "unscheduled_designs": [
-  {
-   "brand": "Halo",
-   "dir": "designs/unscheduled-halo-ring-app"
-  },
-  {
-   "brand": "Verdant",
-   "dir": "designs/unscheduled-verdant-wallet-app"
-  },
-  {
-   "brand": "Rally",
-   "dir": "designs/unscheduled-rally-padel-app"
-  }
- ]
+ "note_resequence": "2026-11-18: runs stalled after 2026-11-16 am; the 4 missed slots and everything after were shifted forward 4 slots (rotation kept). 'originally' keeps the old slot id; file paths keep the old ids. Owner asked to see all designs before posting: ready slots are 'ready-pending-approval' until he approves. Owner approved on 2026-11-18; ready slots are 'ready' again."
 }

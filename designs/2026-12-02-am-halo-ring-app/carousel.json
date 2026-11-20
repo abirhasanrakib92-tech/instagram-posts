@@ -1,0 +1,198 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Halo",
+  "category": "Smart ring health",
+  "tagline": "Wear it to bed. Wake up to one number that says how ready you are.",
+  "font": "Inter Tight",
+  "font_note": "Light, tight grotesk for calm health labels, with Doto dot-matrix for the live score.",
+  "gradient": [
+   "#E9EFF5",
+   "#A9BCD0",
+   "#56677C",
+   "#0E141C"
+  ],
+  "s2_ink": "#0E141C",
+  "paper": "#EEEEEE",
+  "palette": [
+   [
+    "#DCE6F0",
+    "Morning mist"
+   ],
+   [
+    "#8FA6BF",
+    "Steel blue"
+   ],
+   [
+    "#2E3A4A",
+    "Graphite"
+   ],
+   [
+    "#0E141C",
+    "Ink"
+   ],
+   [
+    "#FF6B5A",
+    "Pulse coral"
+   ],
+   [
+    "#5BD99A",
+    "Sensor green"
+   ]
+  ],
+  "zoom": [
+   0,
+   526,
+   393,
+   244
+  ],
+  "zoom_title": "Your whole night,<br>in one heart-rate line.",
+  "components_title": "Frosted glass<br>over real skin.",
+  "elements": {
+   "who": {
+    "box": [
+     16,
+     60,
+     172,
+     46
+    ],
+    "r": 23
+   },
+   "bell": {
+    "box": [
+     331,
+     60,
+     46,
+     46
+    ],
+    "shape": "circle"
+   },
+   "rd": {
+    "box": [
+     14,
+     118,
+     186,
+     170
+    ],
+    "r": 24
+   },
+   "ct": {
+    "box": [
+     237,
+     132,
+     140,
+     142
+    ],
+    "r": 24
+   },
+   "hr": {
+    "box": [
+     10,
+     534,
+     373,
+     160
+    ],
+    "r": 32
+   },
+   "tl": {
+    "box": [
+     10,
+     702,
+     373,
+     60
+    ],
+    "r": 22
+   },
+   "nv": {
+    "box": [
+     59,
+     776,
+     275,
+     56
+    ],
+    "r": 28
+   },
+   "pin": {
+    "box": [
+     236,
+     450,
+     122,
+     36
+    ],
+    "r": 18
+   }
+  },
+  "s2_floats": [
+   [
+    "ct",
+    290,
+    60,
+    760,
+    6,
+    3
+   ],
+   [
+    "hr",
+    480,
+    24,
+    1110,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "bell",
+    130,
+    870,
+    100,
+    0,
+    1
+   ],
+   [
+    "rd",
+    330,
+    80,
+    320,
+    -3,
+    1
+   ],
+   [
+    "ct",
+    290,
+    700,
+    300,
+    5,
+    1
+   ],
+   [
+    "hr",
+    820,
+    130,
+    650,
+    0,
+    1
+   ],
+   [
+    "tl",
+    860,
+    110,
+    1030,
+    -1,
+    1
+   ],
+   [
+    "nv",
+    520,
+    280,
+    1240,
+    0,
+    1
+   ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s4_ink": "#0E141C"
+ }
+}
