@@ -177,7 +177,7 @@ new hero component, new chart mix, new palette) so no two posts look alike.
   (`<img src="figma.png">` + `<img data-nav src="nav.png" style="visibility:hidden">` at the nav position + the 4 meta tags).
   Example: `designs/2026-11-21-pm-hush-sleep-app`. Slide 1 keeps the approved hand mockup on #EEEEEE.
 
-## App style v4 (owner, 2026-11-20 evening — REPLACES "App style" above for every app post from 2026-11-21)
+## App style v4 — REJECTED by the owner (2026-11-20 night). Do not use the flat colour-block style. Kept only for history.
 
 The owner said every earlier app style was bad (glass over photo, warm gradients, Figma-built screens) and asked for a
 completely new style and new niches. Approved direction to preview: **flat colour-block style**.
@@ -190,6 +190,18 @@ completely new style and new niches. Approved direction to preview: **flat colou
   made with `python3 tools/app_carousel_v4.py designs/<dir> posts/<YYYY-MM>/<slot-id>-<slug>` from `carousel.json` "v4".
   Examples: `designs/2026-11-21-pm-matinee-cinema-app`, `-23-am-dosely-medication-app`, `-26-am-spinly-laundry-app`, `-27-pm-groove-vinyl-app`.
 - App posts are `ready-pending-approval` until the owner approves them; runs must not post them before that.
+
+## App style standard (owner, 2026-11-20 night — the ONLY app style from now on)
+
+References: `reference/app-style/ref-sheet-1.png … -4.png` (owner's picks; also his favourite Dribbble/Behance profiles:
+Nixtio, awsmd, Conceptzilla, vlad_g, zeeroocanvas, rondesignlab). **Open them before every app design.**
+- Warm or soft gradients, frosted glass sheets/pills over a **real-looking photo** (product shots, portraits, places), thin light type
+  (Inter Tight 200–300) mixed with an Instrument Serif italic word, dot-matrix numbers (font `Doto`, now in fonts.css), slide-to-act buttons,
+  photo hotspot pins with glass labels, big hero numbers.
+- **Photos must look real, never fake/AI-looking.** Generate with Figma `generate_image` model `gpt-image-2.5-sunburst`, prompt as professional
+  product/editorial photography; put brand text on blank labels with a multiply overlay so packaging looks printed.
+- Approved direction sample: `designs/2026-11-21-pm-mosse-skincare-app` (v1 product detail, v2 skin scan, v3 evening ritual).
+- Carousel format: the Daybook 6-slide format (`tools/app_carousel_v3.py` / `app_carousel_v4.py` with glass/gradient settings, not flat).
 
 ## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
 

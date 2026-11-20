@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Mossé">
+<meta name="app-desc" content="A two-minute **skin scan** that reads hydration, texture and redness, then shows **the one product** your skin needs tonight.">
+<meta name="fonts" content="Doto|Dot-matrix numerals make the skin score feel like a live reading, with Inter Tight light for everything else.">
+<meta name="palette" content="#1F3A2B:Deep moss|#D9E6D3:Sage mist|#F3EFE8:Cream|#FFFFFF:Glass white|#E8B49A:Blush|#0F1A13:Ink">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#0F1A13;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.bg{position:absolute;inset:0;background:url(face.jpg) 50% 0/auto 900px no-repeat}
+.gl{background:rgba(255,255,255,.3);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid rgba(255,255,255,.55)}
+.sb{color:#fff;position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;justify-content:space-between}
+.cb{width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
+.lv{height:36px;padding:0 14px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.lv i{width:8px;height:8px;border-radius:50%;background:#E5533D;box-shadow:0 0 0 4px rgba(229,83,61,.25)}
+.cr{position:absolute;width:30px;height:30px;border:2.5px solid #fff;opacity:.95}
+.tag{position:absolute;display:flex;align-items:center;gap:8px;height:34px;padding:0 12px 0 5px;border-radius:999px;font-size:12px;font-weight:500;white-space:nowrap}
+.tag i{width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center;font-style:normal}
+.tag b{font-weight:700}
+.dot{position:absolute;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.35)}
+.sh{position:absolute;left:10px;right:10px;bottom:10px;height:384px;border-radius:38px;padding:18px 18px 14px;background:rgba(246,244,239,.66);backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);border:1px solid rgba(255,255,255,.7)}
+.sc{display:flex;align-items:flex-end;justify-content:space-between}
+.sc small{font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#4F6355}
+.sc .n{font-family:'Doto';font-weight:900;font-size:68px;line-height:.85;letter-spacing:-2px;margin-top:8px;color:#1F3A2B}
+.sc .n span{font-family:'Inter Tight';font-weight:300;font-size:22px;letter-spacing:0;color:#5B6E60;margin-left:4px}
+.sc .d{text-align:right}
+.sc .d b{display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 10px;border-radius:999px;background:#1F3A2B;color:#fff;font-size:12.5px;font-weight:600}
+.sc .d p{font-size:13px;color:#4F6355;margin-top:8px;font-weight:500;line-height:1.35}
+.m3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.m3 div{background:rgba(255,255,255,.6);border-radius:20px;padding:10px 12px 12px}
+.m3 span{display:block;font-size:11.5px;font-weight:600;color:#5B6E60}
+.m3 b{display:block;font-weight:300;font-size:26px;letter-spacing:-1px;margin-top:2px}
+.m3 b small{font-size:13px;letter-spacing:0;color:#5B6E60}
+.bar{display:flex;gap:2px;margin-top:8px}.bar i{flex:1;height:5px;border-radius:2px;background:rgba(31,58,43,.14)}.bar i.on{background:#1F3A2B}
+.rec{display:flex;align-items:center;gap:12px;margin-top:10px;background:rgba(255,255,255,.72);border-radius:22px;padding:8px 8px 8px 8px}
+.rec .t{width:56px;height:56px;border-radius:16px;background:url(jar_thumb.jpg) center/cover;flex:none}
+.rec small{display:block;font-size:11.5px;color:#5B6E60;font-weight:600}
+.rec b{display:block;font-size:15px;font-weight:600;margin-top:1px}
+.rec span{font-size:12.5px;color:#4F6355}
+.rec .ad{margin-left:auto;width:44px;height:44px;border-radius:50%;background:#1F3A2B;display:grid;place-items:center;flex:none}
+.bt{display:flex;gap:8px;margin-top:10px}
+.bt span{height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:500}
+.bt .a{flex:1;background:#1F3A2B;color:#fff}
+.bt .b{width:50px;background:rgba(255,255,255,.7)}
+.hi{position:absolute;left:50%;bottom:7px;width:134px;height:5px;border-radius:3px;background:#0F1A13;transform:translateX(-50%)}
+</style></head><body>
+<div class="bg"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#fff:2.6}}{{icon:wifi:17:#fff:2.6}}{{icon:battery-full:24:#fff:2}}</span></div>
+<div class="top"><span class="cb gl">{{icon:x:20:#0F1A13:2}}</span><span class="lv gl"><i></i>Scan complete · 1:58</span><span class="cb gl">{{icon:sun:19:#0F1A13:1.8}}</span></div>
+<span class="cr" style="left:70px;top:132px;border-right:0;border-bottom:0;border-radius:12px 0 0 0"></span>
+<span class="cr" style="left:293px;top:132px;border-left:0;border-bottom:0;border-radius:0 12px 0 0"></span>
+<span class="cr" style="left:70px;top:420px;border-right:0;border-top:0;border-radius:0 0 0 12px"></span>
+<span class="cr" style="left:293px;top:420px;border-left:0;border-top:0;border-radius:0 0 12px 0"></span>
+<span class="dot" style="left:236px;top:238px"></span>
+<div class="tag gl" style="left:252px;top:226px"><i>{{icon:droplet:13:#1F3A2B:2.2}}</i><span><b>74%</b> hydrated</span></div>
+<span class="dot" style="left:146px;top:296px"></span>
+<div class="tag gl" style="left:14px;top:310px"><i>{{icon:scan-face:13:#1F3A2B:2.2}}</i><span>Texture <b>smooth</b></span></div>
+<span class="dot" style="left:226px;top:366px"></span>
+<div class="tag gl" style="left:242px;top:380px"><i>{{icon:flame:13:#C4573A:2.2}}</i><span>Redness <b>low</b></span></div>
+<div class="sh">
+ <div class="sc"><div><small>Skin score</small><div class="n">86<span>/100</span></div></div><div class="d"><b>{{icon:trending-up:14:#fff:2.4}}+4</b><p>Glowing.<br>Best since Oct 2</p></div></div>
+ <div class="m3">
+  <div><span>Hydration</span><b>74<small>%</small></b><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+  <div><span>Texture</span><b>81<small>/100</small></b><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+  <div><span>Redness</span><b>12<small>%</small></b><div class="bar"><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+ </div>
+ <div class="rec"><span class="t"></span><div><small>Tonight, add</small><b>Moss Recovery Cream</b><span>50 ml · $48.90</span></div><span class="ad">{{icon:plus:20:#fff:2.2}}</span></div>
+ <div class="bt" data-nav><span class="a">{{icon:sparkles:18:#fff:1.8}}See my night routine</span><span class="b">{{icon:share:18:#0F1A13:1.8}}</span></div>
+</div>
+<div class="hi"></div>
+</body></html>

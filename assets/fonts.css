@@ -179,3 +179,7 @@
 @font-face{font-family:'Urbanist';src:url(../node_modules/@fontsource/urbanist/files/urbanist-latin-800-normal.woff2) format('woff2');font-weight:800;font-style:normal;font-display:block}
 @font-face{font-family:'Urbanist';src:url(../node_modules/@fontsource/urbanist/files/urbanist-latin-900-italic.woff2) format('woff2');font-weight:900;font-style:italic;font-display:block}
 @font-face{font-family:'Urbanist';src:url(../node_modules/@fontsource/urbanist/files/urbanist-latin-900-normal.woff2) format('woff2');font-weight:900;font-style:normal;font-display:block}
+@font-face{font-family:'Doto';src:url(../node_modules/@fontsource/doto/files/doto-latin-400-normal.woff2) format('woff2');font-weight:400}
+@font-face{font-family:'Doto';src:url(../node_modules/@fontsource/doto/files/doto-latin-600-normal.woff2) format('woff2');font-weight:600}
+@font-face{font-family:'Doto';src:url(../node_modules/@fontsource/doto/files/doto-latin-800-normal.woff2) format('woff2');font-weight:800}
+@font-face{font-family:'Doto';src:url(../node_modules/@fontsource/doto/files/doto-latin-900-normal.woff2) format('woff2');font-weight:900}
