@@ -204,5 +204,109 @@
    "#F5F2F0",
    "Warm white"
   ]
- ]
+ ],
+ "v3": {
+  "screen": "versions/v2-home.png",
+  "name": "Daybook",
+  "category": "AI voice journal",
+  "tagline": "Talk about your day. The AI writes the page.",
+  "font": "Onest",
+  "font_note": "Soft geometric sans. Light enough for big, friendly questions.",
+  "gradient": [
+   "#F7A25A",
+   "#E8721F",
+   "#B8360F",
+   "#3E1208"
+  ],
+  "paper": "#F6EFE8",
+  "palette": [
+   [
+    "#F7A25A",
+    "Apricot"
+   ],
+   [
+    "#E8721F",
+    "Ember"
+   ],
+   [
+    "#D2401A",
+    "Hot coral"
+   ],
+   [
+    "#7A2410",
+    "Rust"
+   ],
+   [
+    "#3E1208",
+    "Cocoa"
+   ],
+   [
+    "#F5F2F0",
+    "Warm white"
+   ]
+  ],
+  "zoom": [
+   0,
+   286,
+   393,
+   400
+  ],
+  "zoom_title": "One question. Three easy ways to start.",
+  "elements": {
+   "card": {
+    "box": [
+     24,
+     410,
+     120,
+     98
+    ],
+    "r": 22
+   },
+   "card2": {
+    "box": [
+     152,
+     410,
+     120,
+     98
+    ],
+    "r": 22
+   },
+   "orb": {
+    "box": [
+     297,
+     728,
+     72,
+     72
+    ],
+    "shape": "circle"
+   },
+   "chip": {
+    "box": [
+     40,
+     604,
+     313,
+     62
+    ],
+    "r": 18
+   },
+   "mood": {
+    "box": [
+     92,
+     742,
+     118,
+     44
+    ],
+    "r": 22
+   },
+   "bell": {
+    "box": [
+     285,
+     60,
+     40,
+     40
+    ],
+    "shape": "circle"
+   }
+  }
+ }
 }
