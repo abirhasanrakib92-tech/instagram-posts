@@ -1,0 +1,199 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* Website style v2 (ref-01 Nexwell direction): cinematic product-in-forest hero, glass pill nav, thin type, two-tone statements, giant wordmark footer */
+:root{--cream:#F1ECE4;--paper:#F7F3EC;--ink:#1E1712;--ink2:#6C6158;--grey:#A69C92;--esp:#2B1D16;--forest:#2F3D2A;--moss:#5E6E46;--line:#DED6CB}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--cream);font-family:'Inter Tight';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.ph{background-size:cover;background-repeat:no-repeat;background-position:center}
+.gl{background:rgba(255,255,255,.16);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(255,255,255,.28)}
+.chip{display:inline-flex;align-items:center;height:30px;padding:0 12px;background:#E6DFD4;font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#4E443B;border-radius:4px}
+.btn{display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 8px 0 22px;border-radius:999px;font-size:15px;font-weight:500}
+.btn i{width:38px;height:38px;border-radius:50%;display:grid;place-items:center}
+.wm{font-family:'Inter Tight';font-weight:500;letter-spacing:-.04em}
+.wm em{font-style:normal;font-family:'Instrument Serif';font-weight:400;font-style:italic;letter-spacing:-.01em}
+
+/* hero */
+.hero{margin:24px 24px 0;height:880px;border-radius:30px;position:relative;overflow:hidden;background-image:url(forest_l.jpg);background-position:72% 38%;background-size:auto 1080px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,22,14,.62) 0%,rgba(18,22,14,.25) 38%,rgba(18,22,14,0) 60%),linear-gradient(0deg,rgba(18,22,14,.45) 0%,rgba(18,22,14,0) 30%)}
+.nav{position:absolute;left:50%;top:28px;transform:translateX(-50%);width:820px;height:64px;border-radius:16px;display:flex;align-items:center;padding:0 10px 0 24px;color:#fff}
+.nav .wm{font-size:26px}
+.nav .lk{display:flex;gap:30px;margin-left:56px;font-size:14.5px;font-weight:400;opacity:.92}
+.nav .r{margin-left:auto;display:flex;align-items:center;gap:10px;height:44px;padding:0 6px 0 18px;border-radius:12px;background:#EDE6D9;color:var(--ink);font-size:14px;font-weight:500}
+.nav .r i{width:32px;height:32px;border-radius:8px;background:var(--esp);color:#fff;display:grid;place-items:center;font-style:normal;font-size:12.5px;font-weight:600}
+.hero h1{position:absolute;left:64px;top:190px;color:#fff;font-weight:300;font-size:78px;line-height:1.02;letter-spacing:-3px}
+.hero h1 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-1px;font-size:86px;color:#EBD9BE}
+.hero .cta{position:absolute;left:64px;top:390px}
+.hero .cta .btn{background:#EDE6D9;color:var(--ink)}
+.hero .cta .btn i{background:var(--esp)}
+.hero .tl{position:absolute;left:64px;bottom:56px;width:380px;color:#EEE6DA;font-size:16px;line-height:1.6}
+.hero .tl b{color:#fff;font-weight:600}
+.hero .rl{position:absolute;left:64px;top:470px;display:flex;align-items:center;gap:14px;color:#fff;font-size:13.5px}
+.hero .rl .av{display:flex}.hero .rl .av i{width:34px;height:34px;border-radius:50%;border:2px solid rgba(255,255,255,.8);margin-left:-10px;background-size:cover}.hero .rl .av i:first-child{margin-left:0}
+.pc{position:absolute;right:32px;bottom:32px;width:300px;border-radius:22px;padding:10px}
+.pc .t{height:180px;border-radius:14px;background:url(forest_l.jpg) 66% 40%/auto 520px no-repeat}
+.pc .b{display:flex;justify-content:space-between;align-items:flex-end;padding:14px 8px 6px;color:#fff}
+.pc small{display:block;font-size:12px;opacity:.8}
+.pc b{display:block;font-size:17px;font-weight:500;margin-top:2px}
+.pc .p{font-size:26px;font-weight:300;letter-spacing:-.8px}
+.rd{position:absolute;right:32px;top:130px;width:230px;border-radius:18px;padding:14px 16px;color:#fff}
+.rd small{font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;opacity:.8}
+.rd b{display:block;font-family:'Doto';font-weight:900;font-size:40px;line-height:1;margin-top:8px}
+.rd span{font-size:12.5px;opacity:.85}
+.hpin{position:absolute;display:flex;align-items:center;gap:10px;height:38px;padding:0 14px 0 6px;border-radius:999px;color:#fff;font-size:13px}
+.hpin i{width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center}
+
+/* philosophy */
+.phil{padding:150px 88px 0;display:grid;grid-template-columns:1fr}
+.phil p.big{font-size:46px;line-height:1.24;letter-spacing:-1.4px;font-weight:400;margin-top:26px;width:1080px}
+.phil p.big span{color:var(--grey)}
+.phil .row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:72px}
+.phil .row .im{display:flex;gap:12px}
+.phil .row .im div{width:140px;height:140px;border-radius:14px}
+.phil .row p{width:330px;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+
+/* principles */
+.pr{position:relative;height:880px;margin-top:130px}
+.pr .hd{text-align:center}
+.pr .hd h2{font-size:56px;font-weight:300;letter-spacing:-2px;margin-top:20px}
+.pr .hd p{font-size:16px;color:var(--ink2);margin-top:12px}
+.pr .obj{position:absolute;left:50%;top:230px;width:560px;height:560px;transform:translateX(-50%);background:url(beans.jpg) center/cover;mix-blend-mode:multiply;border-radius:50%;-webkit-mask-image:radial-gradient(circle,#000 58%,transparent 72%);mask-image:radial-gradient(circle,#000 58%,transparent 72%)}
+.pp{position:absolute;width:300px}
+.pp small{font-size:13px;color:var(--grey);font-weight:600}
+.pp h4{font-size:24px;font-weight:400;letter-spacing:-.6px;margin-top:10px}
+.pp p{font-size:14.5px;line-height:1.55;color:var(--ink2);margin-top:8px}
+.pp .ln{height:1px;background:var(--line);margin-top:18px}
+
+/* shop bento */
+.shop{padding:0 24px;margin-top:40px;display:grid;grid-template-columns:560px 1fr 330px;gap:16px;height:620px}
+.sb1{border-radius:26px;position:relative;overflow:hidden;background-image:url(forest_l.jpg);background-position:64% 38%;background-size:auto 1080px}
+.sb1 .tg{position:absolute;left:20px;top:20px;height:34px;padding:0 14px;border-radius:999px;display:flex;align-items:center;gap:8px;color:#fff;font-size:13px}
+.sb1 .tg i{width:8px;height:8px;border-radius:50%;background:#B8D58A}
+.sb2{border-radius:26px;background:var(--esp);color:#F1E7DA;padding:36px;display:flex;flex-direction:column}
+.sb2 small{font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:#B8A796}
+.sb2 h3{font-size:40px;font-weight:300;letter-spacing:-1.4px;margin-top:12px;line-height:1.08}
+.sb2 h3 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;color:#E7C9A4;font-size:44px}
+.rr{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:20px;padding:18px 0;border-top:1px solid rgba(255,255,255,.1)}
+.rr:first-of-type{margin-top:28px}
+.rr b{font-size:19px;font-weight:500;color:#fff;display:block}
+.rr span{font-size:13.5px;color:#B8A796}
+.rr .d{display:flex;gap:4px}.rr .d i{width:16px;height:5px;border-radius:3px;background:rgba(255,255,255,.18)}.rr .d i.on{background:#E7C9A4}
+.rr .p{font-size:22px;font-weight:300;color:#fff;letter-spacing:-.5px}
+.sb2 .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.sb2 .ft .btn{background:#EDE6D9;color:var(--ink)}
+.sb2 .ft .btn i{background:var(--esp)}
+.sb2 .ft span{font-size:14px;color:#B8A796}
+.sb3{display:grid;grid-template-rows:1fr 1fr;gap:16px}
+.st{border-radius:26px;background:var(--paper);border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.st small{font-size:13px;color:var(--ink2)}
+.st b{font-size:76px;font-weight:200;letter-spacing:-4px;line-height:.9}
+.st b sup{font-size:30px;letter-spacing:0;font-weight:300;vertical-align:top}
+.st p{font-size:14px;color:var(--ink2);line-height:1.5}
+.st.g{background:var(--moss);color:#fff;border:0;position:relative;overflow:hidden}
+.st.g small,.st.g p{color:#DDE3D0}
+
+/* testimonials */
+.ts{margin-top:150px;text-align:center;position:relative;height:640px}
+.ts h2{font-size:52px;font-weight:300;letter-spacing:-1.8px;line-height:1.08;margin-top:18px}
+.tc{position:absolute;width:340px;height:330px;background:#FBF8F3;border:1px solid var(--line);border-radius:6px;padding:30px;text-align:left;box-shadow:0 30px 60px -30px rgba(43,29,22,.25)}
+.tc .q{font-family:'Instrument Serif';font-size:56px;line-height:.6;color:var(--esp)}
+.tc p{font-size:17px;line-height:1.5;margin-top:18px}
+.tc .by{position:absolute;left:30px;bottom:26px;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500}
+.tc .by i{width:32px;height:32px;border-radius:50%;background-size:cover}
+.tc .by span{color:var(--ink2);font-weight:400}
+.fa{position:absolute;width:56px;height:56px;border-radius:50%;background-size:cover;border:3px solid #fff;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+
+/* cta over hills */
+.ctaw{position:relative;margin-top:110px;height:820px;background:url(hills.jpg) 50% 60%/cover}
+.ctaw::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--cream) 0%,rgba(241,236,228,.85) 20%,rgba(241,236,228,0) 52%)}
+.ctaw .in{position:relative;text-align:center;padding-top:40px}
+.ctaw h2{font-size:54px;font-weight:300;letter-spacing:-1.8px;line-height:1.1;margin-top:18px}
+.ctaw h2 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-size:58px;color:var(--moss)}
+.ctaw p{font-size:16px;color:var(--ink2);margin-top:16px}
+.ctaw .btn{background:var(--esp);color:#fff;margin-top:28px}
+.ctaw .btn i{background:#EDE6D9}
+.ctaw .chips{display:flex;justify-content:center;gap:10px;margin-top:22px}
+.ctaw .chips span{height:34px;padding:0 14px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:13px;background:rgba(255,255,255,.55);backdrop-filter:blur(10px)}
+
+/* footer */
+footer{position:relative;margin:-150px 24px 0;background:#1C1511;border-radius:28px 28px 0 0;color:#D9CDBF;padding:52px 56px 0;overflow:hidden}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fg p{font-size:17px;line-height:1.45;color:#F1E7DA;width:340px}
+.nl{margin-top:22px;width:330px;height:48px;border-radius:999px;background:rgba(255,255,255,.08);display:flex;align-items:center;padding:0 6px 0 18px;font-size:14px;color:#8F8173}
+.nl i{margin-left:auto;width:36px;height:36px;border-radius:50%;background:#EDE6D9;display:grid;place-items:center}
+.fg h5{font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:#7F7164;margin-bottom:14px}
+.fg ul{list-style:none;display:grid;gap:10px;font-size:15px}
+.giant{font-size:278px;line-height:.8;color:#F1E7DA;margin-top:70px;margin-left:-8px;white-space:nowrap;letter-spacing:-.06em}
+.giant em{color:#C99E72}
+.fb{display:flex;justify-content:space-between;font-size:13px;color:#7F7164;padding:26px 0 30px}
+</style></head><body>
+
+<section class="hero">
+ <div class="nav gl"><span class="wm">kettle<em>&amp;</em>crow</span><div class="lk"><span>Coffee</span><span>Subscriptions</span><span>Origins</span><span>Journal</span></div><span class="r">Cart <i>2</i></span></div>
+ <h1>Coffee that tastes<br>like <em>where it grew.</em></h1>
+ <div class="cta"><span class="btn">Shop the winter roasts <i>{{icon:arrow-up-right:18:#fff:2}}</i></span></div>
+ <div class="rl"><span class="av"><i style="background-image:url(mei.jpg)"></i><i style="background-image:url(marcus.jpg)"></i><i style="background-image:url(olivia.jpg)"></i></span><span><b style="font-weight:600">4.9</b> from 2,184 morning people</span></div>
+ <div class="rd gl"><small>Roasted this week</small><b>17.11</b><span>Batch 0418 · ships Thursday</span></div>
+ <div class="hpin gl" style="left:1000px;top:258px"><i>{{icon:mountain:14:#2B1D16:2}}</i>Grown at 2,100 m</div>
+ <p class="tl">Small-batch specialty coffee from <b>six farms we know by name</b>, roasted to order in Oakland and at your door within three days.</p>
+ <div class="pc gl"><div class="t"></div><div class="b"><div><small>Guji Highlands · Ethiopia</small><b>Peach, jasmine, bergamot</b></div><span class="p">$22</span></div></div>
+</section>
+
+<section class="phil">
+ <span class="chip" style="align-self:start;width:max-content">Philosophy</span>
+ <p class="big">We believe a good cup shouldn't need a manual. Kettle &amp; Crow roasts coffee the week you order it, <span>from farms we visit every harvest, so the flavour you taste is the place it came from, not the shelf it sat on.</span></p>
+ <div class="row"><div class="im"><div class="ph" style="background-image:url(cup.jpg);background-position:45% 55%"></div><div class="ph" style="background-image:url(hills.jpg);background-position:40% 70%"></div></div><p>Roasted on Tuesdays, rested four days, shipped Thursdays. Every bag carries its roast date and the name of the farm.</p></div>
+</section>
+
+<section class="pr">
+ <div class="hd"><span class="chip">The Kettle &amp; Crow standard</span><h2>Four promises in every bag</h2><p>The small, boring decisions that make a morning cup taste better.</p></div>
+ <div class="obj"></div>
+ <div class="pp" style="left:88px;top:300px"><small>01</small><h4>Roasted to order</h4><p>Your bag is roasted after you buy it, never before. Nothing waits on a shelf.</p><div class="ln"></div></div>
+ <div class="pp" style="right:88px;top:300px;text-align:right"><small>02</small><h4>Six farms, by name</h4><p>Every lot comes from a grower we have met, with the harvest date printed on it.</p><div class="ln"></div></div>
+ <div class="pp" style="left:88px;top:600px"><small>03</small><h4>Paid direct</h4><p>$4.10 per pound goes straight to the farm, agreed before the cherries are picked.</p><div class="ln"></div></div>
+ <div class="pp" style="right:88px;top:600px;text-align:right"><small>04</small><h4>Rested four days</h4><p>Beans settle before they ship, so the first cup tastes as good as the last.</p><div class="ln"></div></div>
+</section>
+
+<section class="shop">
+ <div class="sb1"><span class="tg gl"><i></i>Fresh batch · 214 bags left</span></div>
+ <div class="sb2">
+  <small>This week's roasts</small>
+  <h3>Three coffees.<br>Each one <em>a place.</em></h3>
+  <div class="rr"><div><b>Guji Highlands</b><span>Ethiopia · peach, jasmine, bergamot</span></div><span class="d"><i class="on"></i><i></i><i></i></span><span class="p">$22</span></div>
+  <div class="rr"><div><b>Huila Reserva</b><span>Colombia · red apple, panela, cocoa</span></div><span class="d"><i class="on"></i><i class="on"></i><i></i></span><span class="p">$19</span></div>
+  <div class="rr"><div><b>Crow's Nest Espresso</b><span>Brazil + Guatemala · dark chocolate, hazelnut</span></div><span class="d"><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="p">$18</span></div>
+  <div class="ft"><span class="btn">Build a subscription <i>{{icon:arrow-up-right:18:#fff:2}}</i></span><span>Subscribers save 15%</span></div>
+ </div>
+ <div class="sb3">
+  <div class="st"><small>Farm to cup</small><b>49<sup>days</sup></b><p>From Tigist's hillside in Guji to your kitchen in Oakland.</p></div>
+  <div class="st g"><small>Every week</small><b>12.6<sup>k</sup></b><p>cups brewed by our subscribers, roasted the same Tuesday.</p></div>
+ </div>
+</section>
+
+<section class="ts">
+ <span class="chip">Community</span>
+ <h2>Small rituals create<br>better mornings.</h2>
+ <span class="fa" style="left:150px;top:330px;background-image:url(olivia.jpg)"></span>
+ <span class="fa" style="right:150px;top:300px;background-image:url(kenji.jpg)"></span>
+ <div class="tc" style="left:200px;top:250px;transform:rotate(-5deg)"><span class="q">“</span><p>The Guji smells like peaches when I open the bag. I didn't know coffee could do that.</p><div class="by"><i style="background-image:url(olivia.jpg)"></i>Olivia G. <span>· subscriber since March</span></div></div>
+ <div class="tc" style="left:550px;top:220px;z-index:2"><span class="q">“</span><p>Crow's Nest is the first espresso I've pulled at home that tastes like the café. The roast date on the bag is the whole trick.</p><div class="by"><i style="background-image:url(marcus.jpg)"></i>Marcus B. <span>· home barista</span></div></div>
+ <div class="tc" style="left:900px;top:250px;transform:rotate(5deg)"><span class="q">“</span><p>Two bags every two weeks, never skipped once. It is the only subscription I look forward to.</p><div class="by"><i style="background-image:url(kenji.jpg)"></i>Kenji T. <span>· Seattle</span></div></div>
+</section>
+
+<section class="ctaw">
+ <div class="in"><span class="chip">Start your ritual</span><h2>Wake up to a bag roasted<br><em>this very week.</em></h2><p>First bag ships free. Pause, skip or switch roasts whenever you like.</p><span class="btn">Build your box <i>{{icon:arrow-up-right:18:#2B1D16:2}}</i></span>
+ <div class="chips"><span>{{icon:flame:14:#2B1D16:2}}Roasted Tuesdays</span><span>{{icon:truck:14:#2B1D16:2}}Free shipping over $35</span><span>{{icon:leaf:14:#2B1D16:2}}Paid direct to farms</span></div></div>
+</section>
+
+<footer>
+ <div class="fg">
+  <div><p>Be the first to taste new harvests, roast notes and limited lots.</p><div class="nl">you@email.com<i>{{icon:arrow-up-right:16:#1C1511:2}}</i></div></div>
+  <div><h5>Coffee</h5><ul><li>Guji Highlands</li><li>Huila Reserva</li><li>Crow's Nest Espresso</li><li>Gift cards</li></ul></div>
+  <div><h5>Company</h5><ul><li>Our farmers</li><li>Roast log</li><li>Journal</li><li>Cafés</li></ul></div>
+  <div><h5>Support</h5><ul><li>Shipping</li><li>Subscriptions</li><li>Returns</li><li>Contact</li></ul></div>
+ </div>
+ <div class="giant wm">kettle<em>&amp;</em>crow</div>
+ <div class="fb"><span>© 2026 Kettle &amp; Crow Coffee Roasters, Oakland</span><span>Privacy · Terms</span></div>
+</footer>
+</body></html>

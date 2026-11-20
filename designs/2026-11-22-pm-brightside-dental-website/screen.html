@@ -1,0 +1,272 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* Website style v2 (owner refs 2026-11-21): giant thin wordmark over a colour-washed portrait, editorial grid lines, two-tone statements, glass cards on warm photos, giant footer wordmark */
+:root{--wh:#FAF8F3;--ink:#13224A;--ink2:#5E6A86;--ink3:#A3ABBE;--line:#E6E3DA;--mint:#9ED9BF;--mint2:#D9F1E5;--lem:#ECEFA0;--nav:#13224A}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--wh);font-family:'Geist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.ph{background-size:cover;background-repeat:no-repeat;background-position:center}
+.se{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-.01em}
+.gl{background:rgba(255,255,255,.18);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border:1px solid rgba(255,255,255,.35)}
+.lbl{font-size:13px;font-weight:500;color:var(--ink2);letter-spacing:.2px}
+.pill{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;font-size:12.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+
+/* hero */
+.hero{margin:24px 24px 0;height:880px;border-radius:28px;position:relative;overflow:hidden;background:url(smile.jpg) 70% 30%/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(158,217,191,.82) 0%,rgba(190,228,190,.55) 34%,rgba(236,239,160,.25) 58%,rgba(236,239,160,0) 75%),linear-gradient(180deg,rgba(19,34,74,0) 55%,rgba(19,34,74,.45) 100%)}
+.wm{position:absolute;left:52px;top:36px;font-weight:200;font-size:196px;letter-spacing:-11px;line-height:1;color:#fff}
+.wm sup{font-size:60px;letter-spacing:0;vertical-align:top;position:relative;top:22px;margin-left:6px}
+.burger{position:absolute;right:56px;top:72px;width:172px;display:grid;gap:30px}
+.burger i{height:3px;background:#fff;border-radius:2px}
+.vlab{position:absolute;right:56px;top:390px;display:grid;gap:12px;justify-items:end}
+.vlab span{font-size:12.5px;font-weight:600;letter-spacing:.8px;color:#fff;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+.vlab span.on{background:rgba(255,255,255,.22);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.4)}
+.tc{position:absolute;left:52px;top:440px;width:330px;border-radius:20px;padding:12px;display:flex;gap:14px}
+.tc .t{width:96px;height:104px;border-radius:14px;background:url(room.jpg) 30% 50%/260%;flex:none}
+.tc .pill{height:26px;font-size:10.5px;background:rgba(255,255,255,.3);color:#fff}
+.tc p{font-size:14px;line-height:1.45;color:#fff;margin-top:8px}
+.hh{position:absolute;left:52px;bottom:52px;color:#fff}
+.hh h1{font-weight:300;font-size:78px;line-height:1.02;letter-spacing:-3.2px}
+.hh h1 .se{font-size:86px}
+.hcta{position:absolute;right:56px;bottom:56px;width:420px;text-align:right}
+.hcta .b{display:inline-flex;align-items:center;gap:12px;height:58px;padding:0 26px;background:#fff;color:var(--ink);border-radius:8px;font-size:15px;font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+.hcta p{font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.88);margin-top:22px}
+
+/* grid section */
+.gr{margin:0 24px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.row{display:grid;border-bottom:1px solid var(--line)}
+.c{padding:28px}
+.c+.c{border-left:1px solid var(--line)}
+.no{font-size:14px;color:var(--ink2)}
+.st{grid-template-columns:240px 1fr 240px;height:400px}
+.st .mid{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.st .ic{width:52px;height:52px;border-radius:50%;background:var(--mint);display:grid;place-items:center}
+.st h2{font-weight:300;font-size:66px;line-height:1.04;letter-spacing:-2.6px;margin-top:30px}
+.st h2 .se{font-size:72px}
+.um{grid-template-columns:1fr 1fr 1fr;height:210px;align-items:center}
+.um .av{display:flex;gap:18px;align-items:center;height:100%}
+.um .av i{width:120px;height:120px;border-radius:50%;background-size:cover;background-position:center}
+.um .tx{text-align:center}
+.um .tx b{font-size:22px;font-weight:500;letter-spacing:-.4px}
+.um .tx p{font-size:16px;color:var(--ink2);margin-top:8px;line-height:1.5}
+.um .ar{display:flex;justify-content:flex-end;align-items:center;height:100%}
+.um .ar span{width:120px;height:120px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.nm{grid-template-columns:300px 1fr 1fr;height:200px;align-items:center}
+.nm .k{font-size:20px;font-weight:500}
+.nm .v{font-weight:200;font-size:110px;letter-spacing:-6px;text-align:center;line-height:1}
+.nm .v small{font-size:60px;letter-spacing:-2px}
+.nm .d{font-size:18px;color:var(--ink3);line-height:1.5}
+
+/* signals */
+.sg{display:grid;grid-template-columns:520px 1fr;gap:0;margin:0 24px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sg .l{padding:56px 40px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.sg .l h3{font-weight:300;font-size:44px;line-height:1.1;letter-spacing:-1.4px}
+.sg .l .chips{display:flex;gap:8px;margin-top:auto}
+.sg .l .chips span{height:40px;padding:0 18px;border-radius:999px;border:1px solid var(--line);display:flex;align-items:center;font-size:13px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;background:#fff}
+.sg .l .chips span.on{background:var(--lem);border-color:var(--lem)}
+.sg .l .q{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;gap:18px;align-items:center}
+.sg .l .q i{width:84px;height:84px;border-radius:50%;background:url(amara.jpg) center/cover;flex:none;position:relative}
+.sg .l .q p{font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.sg .l .q b{display:block;color:var(--ink);font-weight:600;margin-top:8px;font-size:14px}
+.sg .r{padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pc{height:640px;border-radius:24px;position:relative;overflow:hidden}
+.g1{position:absolute;left:22px;right:22px;top:26px;border-radius:20px;padding:22px;color:#fff;background:rgba(80,60,40,.28);backdrop-filter:blur(22px) saturate(1.3);border:1px solid rgba(255,255,255,.28)}
+.g1 small{font-size:12px;opacity:.75;letter-spacing:.3px}
+.g1 .big{display:flex;align-items:flex-start;gap:12px;margin-top:6px}
+.g1 .big b{font-weight:200;font-size:88px;letter-spacing:-5px;line-height:.9}
+.g1 .big span{margin-top:12px;font-size:12.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.22)}
+.g1 .pr{font-size:12px;opacity:.7;margin-top:18px}
+.bar{margin-top:16px}
+.bar .h{display:flex;justify-content:space-between;font-size:14.5px}
+.bar .h em{font-style:normal;font-size:12px;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.2)}
+.bar .tr{height:6px;border-radius:3px;background:rgba(255,255,255,.22);margin-top:10px}
+.bar .tr i{display:block;height:100%;border-radius:3px;background:var(--lem)}
+.who{position:absolute;left:22px;right:22px;bottom:22px;border-radius:18px;padding:12px 14px;display:flex;align-items:center;gap:12px;color:#fff;background:rgba(80,60,40,.3);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.28)}
+.who i{width:44px;height:44px;border-radius:50%;background-size:cover}
+.who b{font-size:16px;font-weight:500;display:block}.who span{font-size:12px;opacity:.75}
+.who em{margin-left:auto;font-style:normal;font-size:13px;font-weight:600;color:var(--ink);background:var(--lem);padding:6px 12px;border-radius:999px}
+.g2{position:absolute;left:22px;right:22px;top:110px;border-radius:20px;padding:18px;color:#fff;background:rgba(40,60,50,.32);backdrop-filter:blur(22px) saturate(1.3);border:1px solid rgba(255,255,255,.3)}
+.tabs{display:flex;gap:6px;position:absolute;left:22px;top:30px}
+.tabs span{height:36px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:13px;font-weight:500;color:#fff;background:rgba(255,255,255,.18);backdrop-filter:blur(10px)}
+.tabs span.on{background:var(--lem);color:var(--ink)}
+.g2 .th{display:grid;grid-template-columns:1fr 92px 92px;font-size:12px;opacity:.75;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.2)}
+.g2 .tr2{display:grid;grid-template-columns:1fr 92px 92px;align-items:center;font-size:14.5px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.g2 .tr2:last-child{border-bottom:0}
+.g2 em{font-style:normal;font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.2);justify-self:start}
+.g2 em.ok{background:#9ED9BF;color:var(--ink)}
+.g2 em.lm{background:var(--lem);color:var(--ink)}
+.tip{position:absolute;left:150px;bottom:150px;background:#fff;color:var(--ink);font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px}
+
+/* two-tone statement */
+.tt{padding:150px 64px 130px}
+.tt .no{margin-bottom:30px}
+.tt p{font-weight:300;font-size:72px;line-height:1.08;letter-spacing:-3px}
+.tt p span{color:#B9BFCC}
+.tt p .se{font-size:82px}
+
+/* services */
+.sv{margin:0 24px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px}
+.svc{border-radius:24px;padding:30px;height:520px;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden}
+.svc .n{font-size:14px;color:var(--ink2)}
+.svc h4{font-weight:300;font-size:38px;letter-spacing:-1.2px;line-height:1.08;margin-top:auto}
+.svc p{font-size:15.5px;color:var(--ink2);line-height:1.55;margin-top:12px}
+.svc .pz{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:15px}
+.svc .pz b{font-weight:400;font-size:26px;letter-spacing:-.8px}
+.shd{margin-top:22px}.sw{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.sw i{height:44px;border-radius:10px}.sr{display:flex;justify-content:space-between;font-size:13px;color:#A9B3CF;margin-top:10px}.sr b{color:#fff;font-weight:600}.smile{height:120px;border-radius:14px;margin-top:14px;background:url(smile.jpg) 64% 66%/300% auto}
+.svc.dk{background:var(--nav);color:#fff;border:0}
+.svc.dk .n,.svc.dk p{color:#A9B3CF}
+.svc.dk .pz{border-color:rgba(255,255,255,.14)}
+.svc.ph2{border:0;color:#fff;background:url(room.jpg) 70% 50%/cover}
+.svc.ph2::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(19,34,74,0) 35%,rgba(19,34,74,.72))}
+.svc.ph2>*{position:relative;z-index:1}
+.svc.ph2 .n{color:#fff}
+.svc.ph2 p{color:rgba(255,255,255,.85)}
+.svc.ph2 .pz{border-color:rgba(255,255,255,.25)}
+.prog{margin-top:22px;background:var(--mint2);border-radius:18px;padding:18px}.ph3 b{font-weight:200;font-size:64px;letter-spacing:-3px;line-height:1}.ph3 span{font-size:15px;color:var(--ink2);margin-left:8px}.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:14px}.dots i{height:10px;border-radius:5px;background:#fff}.dots i.on{background:var(--ink)}.nx{font-size:13px;color:var(--ink2);margin-top:12px}
+.mini i{flex:1;height:44px;border-radius:10px}
+
+.sv2{margin:20px 24px 0;display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:20px}
+
+/* team */
+.tm{margin:130px 24px 0;display:grid;grid-template-columns:560px minmax(0,1fr);gap:20px;height:700px}
+.tm .p{border-radius:24px;background:url(doctor.jpg) 50% 22%/cover;position:relative}
+.tm .p .gl{position:absolute;left:20px;bottom:20px;right:20px;border-radius:18px;padding:16px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center;background:rgba(19,34,74,.28)}
+.tm .p .gl b{font-size:18px;font-weight:500;display:block}.tm .p .gl span{font-size:13px;opacity:.8}
+.tm .r{border:1px solid var(--line);border-radius:24px;padding:56px;display:flex;flex-direction:column;background:#fff}
+.tm .r blockquote{font-weight:300;font-size:46px;line-height:1.14;letter-spacing:-1.6px;margin-top:22px}
+.tm .r blockquote .se{font-size:50px}
+.tm .r .by{font-size:15px;color:var(--ink2);margin-top:22px}
+.tm .team{margin-top:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tm .team>div{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;background:var(--wh)}
+.tm .team i{width:52px;height:52px;border-radius:50%;background-size:cover;flex:none}
+.tm .team b{font-size:15px;font-weight:600;display:block}.tm .team span{font-size:13px;color:var(--ink2)}
+
+/* booking */
+.bk{margin:130px 24px 0;border-radius:28px;height:620px;position:relative;overflow:hidden;background:linear-gradient(110deg,#9ED9BF 0%,#C7E7C8 45%,#ECEFA0 100%);display:grid;grid-template-columns:1fr 600px;align-items:center;padding:0 64px}
+.bk::before{content:"";position:absolute;right:-120px;top:-160px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55),rgba(255,255,255,0) 65%)}
+.bk h2{font-weight:300;font-size:84px;line-height:1;letter-spacing:-3.6px;position:relative}
+.bk h2 .se{font-size:90px}
+.bk .l p{font-size:18px;color:#2E4A5A;margin-top:26px;width:440px;line-height:1.55}
+.bk .w{position:relative;background:rgba(255,255,255,.62);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.8);border-radius:24px;padding:28px}
+.bk .w .t{display:flex;justify-content:space-between;align-items:center}
+.bk .w .t b{font-size:20px;font-weight:500}
+.bk .w .t span{font-size:13px;color:var(--ink2)}
+.dts{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:20px}
+.dts div{height:76px;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.dts span{font-size:12.5px;color:var(--ink2)}.dts b{font-weight:400;font-size:26px;letter-spacing:-.6px}
+.dts div.on{background:var(--ink);color:#fff}.dts div.on span{color:#A9B3CF}
+.sl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.sl span{height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+.sl span.on{background:var(--lem);font-weight:600}
+.sl span.x{background:transparent;border:1px dashed #B9C3CF;color:var(--ink3)}
+.bk .go{margin-top:18px;height:60px;border-radius:12px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:12px;font-size:15.5px;font-weight:600;letter-spacing:.4px}
+.bk .ft{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2);margin-top:14px}
+
+/* footer */
+footer{margin:130px 24px 24px;border-top:1px solid var(--line);padding-top:56px}
+.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;gap:40px;padding:0 40px}
+.fg h5{font-size:12.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3);margin-bottom:16px}
+.fg ul{list-style:none;display:grid;gap:12px;font-size:16px}
+.fg p{font-size:16px;line-height:1.55;color:var(--ink2);width:300px}
+.nl{display:flex;height:56px;border-radius:999px;border:1px solid var(--line);background:#fff;align-items:center;padding:0 6px 0 22px;font-size:15px;color:var(--ink3);margin-top:6px}
+.nl b{margin-left:auto;width:44px;height:44px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.gw{font-weight:200;font-size:330px;letter-spacing:-20px;line-height:.86;margin-top:70px;padding:0 24px;white-space:nowrap}
+.gw sup{font-size:70px;letter-spacing:0;vertical-align:top;position:relative;top:30px}
+.fb{display:flex;justify-content:space-between;padding:26px 40px 10px;font-size:14px;color:var(--ink3);border-top:1px solid var(--line);margin-top:40px}
+</style></head><body>
+
+<section class="hero">
+ <div class="wm">BRIGHTSIDE<sup>®</sup></div>
+ <div class="burger"><i></i><i></i><i></i></div>
+ <div class="tc gl"><span class="t"></span><div><span class="pill">Your plan</span><p>Cleaning, whitening and aligners in one plan, with every price shown before you sit down.</p></div></div>
+ <div class="vlab"><span>Checkups</span><span class="on">Invisible aligners</span><span>Whitening</span><span>Implants</span></div>
+ <div class="hh"><h1>Dentistry that feels<br>like a <span class="se">good day.</span></h1></div>
+ <div class="hcta"><span class="b">Book a visit {{icon:arrow-right:18:#13224A:2}}</span><p>Same-week appointments in Brooklyn, a calm room with a window, and a dentist who explains every step.</p></div>
+</section>
+
+<div class="gr">
+ <div class="row st"><div class="c no">(01)</div><div class="c mid"><span class="ic">{{icon:smile:24:#13224A:2}}</span><h2>Your smile is more than<br>a six-month <span class="se">checkup.</span></h2></div><div class="c no" style="text-align:right">©2026</div></div>
+ <div class="row um"><div class="c av"><i style="background-image:url(mei.jpg)"></i><i style="background-image:url(olivia.jpg)"></i></div><div class="c tx"><b>See the whole picture</b><p>Scans, x-rays and notes from every visit,<br>side by side in one simple timeline.</p></div><div class="c ar"><span>{{icon:arrow-up-right:40:#fff:1.6}}</span></div></div>
+ <div class="row nm"><div class="c k">Patients cared for</div><div class="c v">18,400<small>+</small></div><div class="c d">Since 2014, from first baby teeth to full smile makeovers, with a 4.9 rating from 2,960 reviews.</div></div>
+</div>
+
+<section class="sg">
+ <div class="l">
+  <div class="no">(02)</div>
+  <h3 style="margin-top:26px">Every visit connected.<br>See your teeth the<br>way we do.</h3>
+  <div class="q"><i></i><div><p>"I finally understand what my dentist is looking at. The plan shows what's done, what's next and what it costs."</p><b>Amara Okafor · patient since 2022</b></div></div>
+  <div class="chips"><span class="on">Smile index</span><span>X-rays</span><span>Plan</span></div>
+ </div>
+ <div class="r">
+  <div class="pc ph" style="background-image:url(smile.jpg);background-position:72% 40%;background-size:auto 130%">
+   <div class="g1"><small>Smile health index</small><div class="big"><b>92%</b><span>+6 since May</span></div><div class="pr">Priorities</div>
+    <div class="bar"><div class="h"><span>1. Gum health</span><em>88%</em></div><div class="tr"><i style="width:88%"></i></div></div>
+    <div class="bar"><div class="h"><span>2. Enamel strength</span><em>95%</em></div><div class="tr"><i style="width:95%"></i></div></div>
+    <div class="bar"><div class="h"><span>3. Alignment</span><em>71%</em></div><div class="tr"><i style="width:71%"></i></div></div>
+   </div>
+   <div class="who"><i style="background-image:url(amara.jpg)"></i><div><b>Amara Okafor</b><span>Female · 29 y.o.</span></div><em>Improving</em></div>
+  </div>
+  <div class="pc ph" style="background-image:url(room.jpg);background-position:42% 50%;background-size:auto 100%">
+   <div class="tabs"><span class="on">Treatment plan</span><span>Visits</span><span>Costs</span></div>
+   <div class="g2">
+    <div class="th"><span>Step</span><span>Status</span><span>Price</span></div>
+    <div class="tr2"><span>Cleaning + x-rays</span><em class="ok">Done</em><span>$140</span></div>
+    <div class="tr2"><span>Whitening</span><em class="lm">Dec 4</em><span>$340</span></div>
+    <div class="tr2"><span>Aligners, 20 sets</span><em>Set 12</em><span>$2,900</span></div>
+    <div class="tr2"><span>Retainer</span><em>Spring</em><span>$220</span></div>
+    <div class="tr2" style="font-weight:600"><span>Plan total</span><span></span><span>$3,600</span></div>
+   </div>
+   <span class="tip">Insurance covers $1,150</span>
+  </div>
+ </div>
+</section>
+
+<section class="tt">
+ <div class="no">(03)</div>
+ <p>Thoughtfully designed to bring calm, clarity and <span class="se" style="color:var(--ink)">confidence</span> to every chair,<br><span>and to every step of your smile journey.</span></p>
+</section>
+
+<section class="sv">
+ <div class="svc ph2"><div class="n">01 · Most booked</div><h4>Checkups &amp;<br>cleaning</h4><p>Gentle cleaning, digital x-rays and a plain-English summary on your phone before you leave.</p><div class="pz"><span>45 min</span><b>$140</b></div></div>
+ <div class="svc"><div class="n">02</div><div class="prog"><div class="ph3"><b>12</b><span>of 20 sets</span></div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="nx">Next check-in · Dec 9</div></div><h4>Invisible<br>aligners</h4><p>Clear aligners planned from a 3D scan, with check-ins every six weeks.</p><div class="pz"><span>from</span><b>$2,900</b></div></div>
+ <div class="svc dk"><div class="n">03</div><div class="shd"><div class="sw"><i style="background:#D9C29A"></i><i style="background:#E3D2AE"></i><i style="background:#EADFC4"></i><i style="background:#F1E9D6"></i><i style="background:#F6F1E4"></i><i style="background:#FBF8EF"></i><i style="background:#FFFFFF"></i></div><div class="sr"><span>A3 today</span><b>B1 after</b></div><div class="smile ph"></div></div><h4>Whitening<br>in one visit</h4><p>Up to eight shades brighter in 90 minutes, without the sensitivity.</p><div class="pz"><span>90 min</span><b>$340</b></div></div>
+</section>
+
+<section class="tm">
+ <div class="p"><div class="gl"><div><b>Dr. Hannah Reyes</b><span>Lead dentist · 16 years</span></div>{{icon:arrow-up-right:22:#fff:2}}</div></div>
+ <div class="r">
+  <div class="no">(04) Our team</div>
+  <blockquote>"Nobody should leave the chair <span class="se">confused.</span> We show you every scan and every price before we start."</blockquote>
+  <div class="by">Dr. Hannah Reyes, founder of Brightside</div>
+  <div class="team">
+   <div><i style="background-image:url(rohan.jpg)"></i><div><b>Dr. Rohan Mehta</b><span>Orthodontics</span></div></div>
+   <div><i style="background-image:url(mei.jpg)"></i><div><b>Mei Tanaka</b><span>Hygienist</span></div></div>
+   <div><i style="background-image:url(daniel.jpg)"></i><div><b>Dr. Daniel Brooks</b><span>Implants</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="bk">
+ <div class="l"><h2>Book in<br>under a <span class="se">minute.</span></h2><p>Pick a day and a time. New patients get a full checkup and x-rays for $140, or $0 with most insurance.</p></div>
+ <div class="w">
+  <div class="t"><b>New patient visit</b><span>Brooklyn · Atlantic Ave</span></div>
+  <div class="dts"><div><span>Mon</span><b>23</b></div><div><span>Tue</span><b>24</b></div><div class="on"><span>Thu</span><b>26</b></div><div><span>Fri</span><b>27</b></div><div><span>Sat</span><b>28</b></div></div>
+  <div class="sl"><span class="x">09:00</span><span class="on">10:30</span><span>13:15</span><span>16:40</span></div>
+  <div class="go">Book Thu, Nov 26 at 10:30 {{icon:arrow-right:18:#fff:2}}</div>
+  <div class="ft"><span>Free cancellation up to 24 h</span><span>4.9 from 2,960 reviews</span></div>
+ </div>
+</section>
+
+<footer>
+ <div class="fg">
+  <div><p>Calm, modern dentistry in Brooklyn. Every scan explained, every price shown first.</p><div class="nl">Your email for reminders<b>{{icon:arrow-right:18:#fff:2}}</b></div></div>
+  <div><h5>Treatments</h5><ul><li>Checkups</li><li>Aligners</li><li>Whitening</li><li>Implants</li></ul></div>
+  <div><h5>Clinic</h5><ul><li>Our team</li><li>Insurance</li><li>Prices</li><li>Visit us</li></ul></div>
+  <div><h5>Hours</h5><ul><li>Mon–Fri 8–19</li><li>Sat 9–15</li><li>Sun closed</li></ul></div>
+  <div><h5>Contact</h5><ul><li>218 Atlantic Ave, Brooklyn</li><li>(718) 555-0142</li><li>hello@brightside.dental</li></ul></div>
+ </div>
+ <div class="gw">Brightside<sup>®</sup></div>
+ <div class="fb"><span>© 2026 Brightside Dental Studio</span><span>Privacy · Terms · Accessibility</span></div>
+</footer>
+</body></html>

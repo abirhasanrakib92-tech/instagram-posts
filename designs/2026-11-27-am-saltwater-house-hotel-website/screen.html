@@ -1,0 +1,248 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* Website style v2: clean white page, big rounded photo hero, thin grotesk, two-tone statements, bento, giant wordmark footer */
+:root{--ink:#0E1B2C;--ink2:#5C6878;--ink3:#9AA3AE;--line:#E6E9EC;--sand:#F3EDE3;--sand2:#E8DCC8;--teal:#1F8A8A;--teal2:#BFE3E0;--navy:#0F1F33;--bg:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Inter Tight';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.w{width:1328px;margin:0 auto}
+.ph{background-size:cover;background-repeat:no-repeat;background-position:center}
+.se{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-.01em}
+.pill{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;background:var(--navy);color:#fff;font-size:16px;font-weight:500}
+.btn.l{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.gl{background:rgba(255,255,255,.22);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(255,255,255,.4)}
+.gw{background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.8)}
+.sec{margin-top:140px}
+.h2{font-weight:300;font-size:64px;line-height:1.02;letter-spacing:-2.6px}
+.two{font-weight:300;font-size:36px;line-height:1.28;letter-spacing:-1.1px}
+.two span{color:var(--ink3)}
+
+nav{height:100px;display:flex;align-items:center}
+nav .lg{font-size:24px;font-weight:500;letter-spacing:-.8px;display:flex;align-items:center;gap:10px}
+nav .lg i{width:34px;height:34px;border-radius:50%;background:var(--teal);display:grid;place-items:center}
+nav .lk{display:flex;gap:44px;margin:0 auto;font-size:16px;color:var(--ink2)}
+nav .lk span.on{color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin:-7px -15px}
+nav .btn{height:46px;padding:0 22px;font-size:15px}
+
+.hero{height:800px;border-radius:32px;position:relative;overflow:hidden;background-image:url(pool.jpg);background-position:50% 62%}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,50,.28) 0%,rgba(10,30,50,0) 38%,rgba(10,30,50,0) 70%,rgba(10,30,50,.35) 100%)}
+.hero .c{position:absolute;left:0;right:0;top:92px;text-align:center;color:#fff}
+.hero h1{text-shadow:0 2px 24px rgba(10,30,50,.25);font-weight:300;font-size:76px;line-height:1.02;letter-spacing:-3px}
+.hero h1 .se{font-size:84px}
+.hero p{font-size:19px;line-height:1.55;color:rgba(255,255,255,.92);margin-top:24px}
+.hero .c .btn{margin-top:30px}
+.wx{position:absolute;right:28px;top:28px;height:44px;padding:0 18px;border-radius:999px;display:flex;align-items:center;gap:10px;color:#fff;font-size:14.5px;font-weight:500}
+.wx b{font-weight:600}
+.gs{position:absolute;left:28px;bottom:28px;display:flex;align-items:center;gap:14px;padding:8px 18px 8px 8px;border-radius:999px;color:#fff;font-size:14px;line-height:1.35}
+.avs{display:flex}.avs i{width:40px;height:40px;border-radius:50%;border:2px solid #fff;margin-left:-12px;background-size:cover;background-position:center}.avs i:first-child{margin-left:0}
+.so{position:absolute;right:32px;bottom:36px;display:flex;gap:26px;color:#fff;font-size:14.5px;font-weight:500}
+.so span{display:flex;align-items:center;gap:4px}
+.bk{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;align-items:center;gap:0;border-radius:24px;padding:8px}
+.bk div{padding:8px 22px;border-right:1px solid rgba(14,27,44,.12)}
+.bk div:last-of-type{border-right:0}
+.bk small{display:block;font-size:12px;color:var(--ink2);font-weight:500}
+.bk b{font-size:16px;font-weight:600}
+.bk .btn{height:48px;margin-left:6px}
+
+.ab{display:grid;grid-template-columns:420px 1fr;gap:40px;align-items:start}
+.ab .two{font-size:38px}
+
+.bento{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:64px;height:440px}
+.bento>div{border-radius:28px;position:relative;overflow:hidden}
+.dk{background:var(--navy);color:#fff;padding:36px;display:flex;flex-direction:column}
+.dk .ic{width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.dk p{font-weight:300;font-size:29px;line-height:1.24;letter-spacing:-.8px;margin-top:auto}
+.dk p span{color:#7D8CA0}
+.dk .tg{display:flex;align-items:center;gap:12px;margin-top:28px;font-size:16px;color:#9AA7B8}
+.dk .tg i{width:52px;height:30px;border-radius:999px;background:var(--teal);position:relative}
+.dk .tg i::after{content:"";position:absolute;right:4px;top:4px;width:22px;height:22px;border-radius:50%;background:#fff}
+.pc{background-image:url(cove.jpg);background-position:50% 40%}
+.pc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,50,0) 55%,rgba(10,30,50,.55))}
+.pc .lb{z-index:1;position:absolute;left:24px;top:24px;height:48px;padding:0 22px;border-radius:999px;display:flex;align-items:center;gap:8px;color:#fff;font-size:17px;font-weight:500;white-space:nowrap}
+.pc .cap{z-index:1;position:absolute;left:24px;bottom:24px;color:#fff;font-size:14.5px;line-height:1.4}
+.st{background:#F6F7F8;padding:36px;display:flex;flex-direction:column}
+.st b{font-weight:300;font-size:96px;letter-spacing:-4px;line-height:.9}
+.st b sup{font-size:40px;letter-spacing:-1px;vertical-align:top;position:relative;top:8px}
+.st h4{font-size:19px;font-weight:500;margin-top:14px}
+.st p{font-size:15px;color:var(--ink2);margin-top:6px;line-height:1.45}
+.dots{margin-top:auto;display:grid;gap:14px}
+.dots div{display:grid;grid-template-columns:110px 1fr 28px;align-items:center;font-size:14.5px;color:var(--ink2)}
+.dots .d{display:flex;gap:6px}.dots .d i{width:14px;height:14px;border-radius:50%;background:var(--teal)}
+.dots b{font-size:15px;font-weight:600;color:var(--ink);text-align:right;letter-spacing:0}
+
+.nums{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.nums .t{grid-column:1/-1;font-weight:300;font-size:26px;letter-spacing:-.6px;margin-bottom:44px}
+.nums b{display:block;font-weight:300;font-size:64px;letter-spacing:-2.4px;line-height:1}
+.nums span{display:block;font-size:16px;color:var(--ink2);margin-top:10px}
+
+.rooms{display:grid;grid-template-columns:400px 1fr 1fr;gap:20px;align-items:stretch}
+.rooms .l{display:flex;flex-direction:column}
+.rooms .l .two{font-size:34px;margin-top:22px}
+.rooms .l .fx{display:grid;gap:14px;margin-top:36px;font-size:16px;color:var(--ink2)}.rooms .l .fx span{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.rooms .l .nav{margin-top:auto;display:flex;align-items:center;gap:12px}
+.rooms .l .nav span.a{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.rm{height:600px;border-radius:28px;position:relative;overflow:hidden}
+.rm .tl{position:absolute;left:20px;top:20px;height:36px;padding:0 16px;border-radius:999px;display:flex;align-items:center;color:#fff;font-size:14px;font-weight:500}
+.rm .bt{position:absolute;left:16px;right:16px;bottom:16px;border-radius:22px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+.rm .bt h5{font-size:21px;font-weight:500;letter-spacing:-.5px}
+.rm .bt p{font-size:14px;color:var(--ink2);margin-top:4px}
+.rm .bt .pr{text-align:right}
+.rm .bt .pr b{font-weight:400;font-size:30px;letter-spacing:-1px}
+.rm .bt .pr small{display:block;font-size:12.5px;color:var(--ink2)}
+.rm .ar{position:absolute;right:20px;top:20px;width:44px;height:44px;border-radius:50%;background:var(--navy);display:grid;place-items:center}
+
+.book{display:grid;grid-template-columns:1fr 560px;gap:20px;height:680px}
+.book .ph{border-radius:28px;position:relative;background-image:url(breakfast.jpg);background-position:40% 50%}
+.book .ph .tl{position:absolute;left:24px;bottom:24px;height:40px;padding:0 18px;border-radius:999px;display:flex;align-items:center;gap:8px;color:#fff;font-size:15px;font-weight:500}
+.card{background:var(--sand);border-radius:28px;padding:36px;display:flex;flex-direction:column}
+.card h3{font-weight:300;font-size:40px;letter-spacing:-1.4px;line-height:1.05}
+.card .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.card .f{background:#fff;border-radius:18px;padding:14px 18px}
+.card .f small{display:block;font-size:12.5px;color:var(--ink2);font-weight:500}
+.card .f b{font-size:18px;font-weight:500;display:block;margin-top:4px}
+.card .ln{display:flex;justify-content:space-between;font-size:15.5px;color:var(--ink2);margin-top:14px}
+.card .ln:first-of-type{margin-top:24px}
+.card .ln b{color:var(--ink);font-weight:500}
+.card hr{border:0;border-top:1px dashed #CFC3AE;margin-top:18px}
+.card .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
+.card .tot span{font-size:16px;color:var(--ink2)}
+.card .tot b{font-weight:300;font-size:52px;letter-spacing:-2px}
+.card .btn{margin-top:auto;justify-content:center;height:58px}
+
+.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.q{border:1px solid var(--line);border-radius:28px;padding:32px;display:flex;flex-direction:column;height:340px}
+.q .st2{display:flex;gap:3px}
+.q p{font-weight:300;font-size:23px;line-height:1.36;letter-spacing:-.4px;margin-top:20px}
+.q .by{display:flex;align-items:center;gap:12px;margin-top:auto}
+.q .by i{width:46px;height:46px;border-radius:50%;background-size:cover;background-position:center}
+.q .by b{font-size:15.5px;font-weight:600;display:block}.q .by span{font-size:13.5px;color:var(--ink2)}
+
+footer{margin-top:140px;background:var(--navy);border-radius:32px 32px 0 0;color:#C9D2DE;padding:64px 64px 0;overflow:hidden}
+.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px}
+.ft .nl p{font-size:20px;font-weight:300;color:#fff;line-height:1.4;letter-spacing:-.3px;width:380px}
+.ft .nl .in{margin-top:24px;width:380px;height:56px;border-radius:999px;background:rgba(255,255,255,.08);display:flex;align-items:center;padding:0 6px 0 22px;font-size:15px;color:#7D8CA0}
+.ft .nl .in b{margin-left:auto;height:44px;padding:0 20px;border-radius:999px;background:#fff;color:var(--navy);display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600}
+.ft h5{font-size:13px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;color:#7D8CA0;margin-bottom:18px}
+.ft ul{list-style:none;display:grid;gap:12px;font-size:16px}
+.wm{font-weight:400;font-size:318px;letter-spacing:-17px;color:#fff;line-height:.8;margin-top:72px;white-space:nowrap;display:flex;align-items:flex-start}
+.wm sup{font-size:60px;letter-spacing:0;margin-left:14px;margin-top:10px;font-weight:300}
+.fb{display:flex;justify-content:space-between;padding:28px 0 32px;margin-top:36px;border-top:1px solid rgba(255,255,255,.1);font-size:14px;color:#7D8CA0}
+</style></head><body>
+<div class="w">
+<nav>
+ <div class="lg"><i>{{icon:waves:18:#fff:2}}</i>Saltwater House</div>
+ <div class="lk"><span class="on">About Us</span><span>Rooms</span><span>Dining</span><span>Experiences</span><span>Contact</span></div>
+ <span class="btn">Book now {{icon:arrow-up-right:17:#fff:2}}</span>
+</nav>
+
+<section class="hero ph">
+ <span class="wx gl">{{icon:sun:16:#fff:2}}<b>Paros</b> · 24° air · 21° sea</span>
+ <div class="c">
+  <h1>Where the sea sets<br>the pace of <span class="se">your day.</span></h1>
+  <p>Twelve white rooms above a quiet cove on Paros. Slow breakfasts,<br>a pool that meets the horizon, and nothing to rush for.</p>
+ </div>
+ <div class="gs gl"><span class="avs"><i style="background-image:url(olivia.jpg)"></i><i style="background-image:url(marcus.jpg)"></i><i style="background-image:url(mei.jpg)"></i></span><span>Loved by 3,400 guests<br>since 2015</span></div>
+ <div class="bk gw">
+  <div><small>Check in</small><b>Thu, 4 Jun</b></div>
+  <div><small>Check out</small><b>Sun, 7 Jun</b></div>
+  <div><small>Guests</small><b>2 adults</b></div>
+  <span class="btn">Check availability {{icon:arrow-right:17:#fff:2}}</span>
+ </div>
+ <div class="so"><span>Instagram {{icon:arrow-up-right:14:#fff:2}}</span><span>Pinterest {{icon:arrow-up-right:14:#fff:2}}</span></div>
+</section>
+
+<section class="sec ab">
+ <span class="pill" style="justify-self:start">About Saltwater</span>
+ <p class="two">We are a family-run hotel on a white cliff above Agios Fokas cove. Since 2015 we have kept it to twelve rooms, <span>so mornings stay quiet, the pool is never crowded and every guest is known by name.</span></p>
+</section>
+
+<section class="bento">
+ <div class="dk">
+  <span class="ic">{{icon:sunset:24:#BFE3E0:1.8}}</span>
+  <p>Twelve rooms carved into the cliff, <span>with sea views, slow mornings and no crowds, in any season.</span></p>
+  <div class="tg"><i></i>Sunset dinner on the terrace</div>
+ </div>
+ <div class="pc ph">
+  <span class="lb gl">{{icon:map-pin:17:#fff:2}}Private cove, 38 m below</span>
+  <span class="cap">Steps cut into the rock lead<br>straight down to the water.</span>
+ </div>
+ <div class="st">
+  <b>12</b>
+  <h4>Rooms, never more</h4>
+  <p>Every room faces the sea or the olive garden.</p>
+  <div class="dots">
+   <div><span>Sea view</span><span class="d"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b>8</b></div>
+   <div><span>Garden</span><span class="d"><i></i><i></i><i></i></span><b>3</b></div>
+   <div><span>Cliff suite</span><span class="d"><i style="background:var(--navy)"></i></span><b>1</b></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec nums">
+ <div class="t">A few things guests ask us about</div>
+ <div><b>4.9</b><span>Guest rating, 1,180 reviews</span></div>
+ <div><b>38 m</b><span>From your bed to the sea</span></div>
+ <div><b>21°C</b><span>Sea temperature in June</span></div>
+ <div><b>78%</b><span>Of guests come back</span></div>
+</section>
+
+<section class="sec rooms">
+ <div class="l">
+  <span class="pill" style="align-self:flex-start">Rooms &amp; suites</span>
+  <p class="two">Linen, lime plaster and an open window. <span>Every room is built around the view.</span></p>
+  <div class="fx"><span>{{icon:wind:18:#1F8A8A:1.8}}No air-con hum: sea breeze through shutters</span><span>{{icon:bed-double:18:#1F8A8A:1.8}}Hand-loomed linen from a Naxos workshop</span><span>{{icon:wifi-off:18:#1F8A8A:1.8}}No TVs, on purpose</span></div>
+  <div class="nav"><span class="btn">Explore rooms {{icon:arrow-up-right:16:#fff:2}}</span><span class="a">{{icon:arrow-left:18:#0E1B2C:1.8}}</span><span class="a">{{icon:arrow-right:18:#0E1B2C:1.8}}</span></div>
+ </div>
+ <div class="rm ph" style="background-image:url(room.jpg);background-position:50% 50%">
+  <span class="tl gl">8 rooms</span><span class="ar">{{icon:arrow-up-right:18:#fff:2}}</span>
+  <div class="bt gw"><div><h5>Sea View Room</h5><p>28 m² · king bed · balcony</p></div><div class="pr"><b>€240</b><small>per night</small></div></div>
+ </div>
+ <div class="rm ph" style="background-image:url(pool.jpg);background-position:22% 70%;background-size:auto 130%">
+  <span class="tl gl">1 suite</span><span class="ar">{{icon:arrow-up-right:18:#fff:2}}</span>
+  <div class="bt gw"><div><h5>Cliff Suite</h5><p>52 m² · private plunge pool</p></div><div class="pr"><b>€420</b><small>per night</small></div></div>
+ </div>
+</section>
+
+<section class="sec book">
+ <div class="ph"><span class="tl gl">{{icon:coffee:16:#fff:2}}Breakfast on the terrace, always included</span></div>
+ <div class="card">
+  <span class="pill" style="align-self:flex-start;background:#fff;border-color:#fff">Plan your stay</span>
+  <h3 style="margin-top:20px">Three nights in<br>a Sea View Room</h3>
+  <div class="g2">
+   <div class="f"><small>Check in</small><b>Thu, 4 Jun</b></div>
+   <div class="f"><small>Check out</small><b>Sun, 7 Jun</b></div>
+   <div class="f"><small>Guests</small><b>2 adults</b></div>
+   <div class="f"><small>Room</small><b>Sea View</b></div>
+  </div>
+  <div class="ln"><span>€240 × 3 nights</span><b>€720</b></div>
+  <div class="ln"><span>Island tax (€4 × 2 guests × 3 nights)</span><b>€24</b></div>
+  <div class="ln"><span>Breakfast &amp; sunset aperitivo</span><b>Included</b></div>
+  <hr>
+  <div class="tot"><span>Total</span><b>€744</b></div>
+  <span class="btn">Reserve, pay at the hotel {{icon:arrow-right:17:#fff:2}}</span>
+ </div>
+</section>
+
+<section class="sec">
+ <div style="display:flex;justify-content:space-between;align-items:flex-end"><h2 class="h2">Postcards from <span class="se" style="font-size:70px">our guests</span></h2><span class="pill">4.9 · 1,180 reviews</span></div>
+ <div class="qs">
+  <div class="q"><div class="st2"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg></div><p>"We swam before breakfast every day. The cove felt like it was ours."</p><div class="by"><i style="background-image:url(olivia.jpg)"></i><div><b>Olivia Grant</b><span>London · June 2026</span></div></div></div>
+  <div class="q"><div class="st2"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg></div><p>"Twelve rooms means nobody fights for a lounger. We're already booked for next year."</p><div class="by"><i style="background-image:url(marcus.jpg)"></i><div><b>Marcus Bell</b><span>Seattle · August 2026</span></div></div></div>
+  <div class="q"><div class="st2"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#1F8A8A"/></svg></div><p>"Eleni knew our coffee order by the second morning. That's the whole place."</p><div class="by"><i style="background-image:url(mei.jpg)"></i><div><b>Mei Tanaka</b><span>Tokyo · September 2026</span></div></div></div>
+ </div>
+</section>
+
+<footer>
+ <div class="ft">
+  <div class="nl"><p>Quiet island news: open dates, the fig harvest and the first warm swim.</p><div class="in">your@email.com<b>Subscribe {{icon:arrow-right:15:#0F1F33:2}}</b></div></div>
+  <div><h5>Stay</h5><ul><li>Rooms &amp; suites</li><li>Dining</li><li>Experiences</li><li>Gift a stay</li></ul></div>
+  <div><h5>Hotel</h5><ul><li>About us</li><li>Getting here</li><li>Journal</li><li>Careers</li></ul></div>
+  <div><h5>Contact</h5><ul><li>stay@saltwater.house</li><li>+30 2284 041 220</li><li>Agios Fokas, Paros</li><li>Open April to October</li></ul></div>
+ </div>
+ <div class="wm">Saltwater<sup>®</sup></div>
+ <div class="fb"><span>© 2026 Saltwater House, Paros</span><span>Privacy · Terms · Cookies</span></div>
+</footer>
+</div>
+</body></html>

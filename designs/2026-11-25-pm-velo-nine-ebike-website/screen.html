@@ -1,0 +1,211 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* Website style v2: cinematic photo hero in a rounded frame, thin type, mono labels, glass cards, giant wordmark footer */
+:root{--bg:#F4F4F1;--ink:#1B1E1B;--ink2:#6E726C;--ink3:#A7AAA3;--line:#E2E3DE;--moss:#3E5A2E;--moss2:#7E9A5B;--gph:#2A2D2B;--sig:#E8F24A}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:#fff;font-family:'Inter Tight';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.w{width:1360px;margin:0 auto}
+.mono{font-family:'JetBrains Mono';font-size:13px;letter-spacing:1.6px;text-transform:uppercase}
+.ph{background-size:cover;background-repeat:no-repeat;background-position:center}
+.gl{background:rgba(255,255,255,.42);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid rgba(255,255,255,.6)}
+.sec{margin-top:140px}
+.pill{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border-radius:999px}
+
+/* hero */
+.hero{margin-top:40px;height:860px;border-radius:30px;position:relative;overflow:hidden;background:url(hero.jpg) 50% 78%/1500px auto no-repeat}
+.nav{position:absolute;left:40px;right:40px;top:28px;height:64px;display:flex;align-items:center;padding:0 10px 0 28px;border-radius:999px}
+.nav .lg{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:500;letter-spacing:-.4px}
+.nav .lg i{width:28px;height:28px;border-radius:50%;background:var(--gph);display:grid;place-items:center}
+.nav .lk{display:flex;gap:6px;margin-left:120px;color:#4B4F4A}
+.nav .lk span{padding:0 18px;border-left:1px solid rgba(0,0,0,.12)}.nav .lk span:first-child{border:0}
+.nav .r{margin-left:auto;display:flex;gap:8px;align-items:center}
+.nav .tg{height:44px;width:84px;border-radius:999px;background:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:space-around}
+.nav .tg i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center}.nav .tg i.on{background:var(--sig)}
+.nav .cta{height:44px;padding:0 20px;border-radius:999px;background:#fff;display:flex;align-items:center;gap:10px}
+.h1{position:absolute;left:72px;top:138px;font-weight:200;font-size:128px;line-height:.92;letter-spacing:-6px;color:#20241F;white-space:nowrap}
+.h1 .l2{}
+.hb{position:absolute;left:76px;top:282px;display:flex;gap:10px}.hb .bt{height:48px;gap:10px;padding:0 22px;border-radius:999px;font-family:'JetBrains Mono';font-size:13px;letter-spacing:1.6px;display:flex;align-items:center;white-space:nowrap}
+.sub{position:absolute;left:72px;bottom:72px;width:470px;color:#fff}
+.sub .mono{color:rgba(255,255,255,.85);margin-bottom:16px}
+.sub p{font-size:24px;line-height:1.35;font-weight:300;letter-spacing:-.3px;text-shadow:0 1px 18px rgba(0,0,0,.25)}
+.how{position:absolute;left:640px;bottom:300px;height:46px;padding:0 20px;border-radius:999px;font-family:'JetBrains Mono';font-size:13px;letter-spacing:1.4px;display:flex;align-items:center;gap:10px}
+.acc{position:absolute;right:48px;bottom:48px;width:280px;border-radius:26px;padding:16px;text-align:center}
+.acc .im{height:150px;border-radius:18px;background:url(studio.jpg) 66% 48%/430% auto;position:relative}
+.acc .im span{position:absolute;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:1.2px;background:rgba(255,255,255,.85);border-radius:8px;padding:4px 7px}
+.acc h4{font-family:'JetBrains Mono';font-weight:500;font-size:15px;letter-spacing:2px;margin-top:14px}
+.acc p{font-size:13px;color:#4B4F4A;margin-top:6px;line-height:1.4}
+.acc .b{margin:14px auto 0;height:40px;width:170px;border-radius:999px;background:var(--gph);color:#fff;font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.4px;display:flex;align-items:center;justify-content:center;gap:8px}
+.st{position:absolute;right:48px;top:250px;display:grid;gap:10px}
+.st div{border-radius:20px;padding:14px 18px;width:200px}
+.st small{font-family:'JetBrains Mono';font-size:11px;letter-spacing:1.4px;color:#4B4F4A}
+.st b{display:block;font-weight:300;font-size:38px;letter-spacing:-1.5px;margin-top:2px}
+.st b em{font-style:normal;font-size:16px;letter-spacing:0;color:#4B4F4A;margin-left:4px}
+
+/* statement */
+.stmt{display:grid;grid-template-columns:300px 1fr 80px;gap:40px}
+.tiles{display:flex;gap:12px}
+.tiles i{width:96px;height:96px;border-radius:20px;display:block}
+.stmt h2{font-weight:300;font-size:52px;line-height:1.14;letter-spacing:-1.8px}
+.stmt h2 span{color:var(--ink3)}
+.stmt .dot{width:64px;height:64px;border-radius:50%;background:var(--sig);display:grid;place-items:center}
+.stmt .bl{margin-top:72px;display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:end}
+.stmt .bl h5{font-size:22px;font-weight:500;letter-spacing:-.4px;line-height:1.25}
+.stmt .bl p{font-size:16px;color:var(--ink2);line-height:1.6;margin-top:14px}
+
+/* range gauge */
+.rg{height:760px;border-radius:30px;position:relative;overflow:hidden;background:url(hills.jpg) 50% 72%/cover}
+.rg::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.75) 24%,rgba(255,255,255,0) 52%)}
+.rg .t{position:absolute;left:64px;top:56px}
+.rg .t h3{font-weight:300;font-size:64px;line-height:1;letter-spacing:-2.6px}
+.rg .t h3 i{font-family:'Instrument Serif';font-weight:400;letter-spacing:-1px}
+.rg .d{position:absolute;right:64px;top:64px;width:360px;font-size:16px;line-height:1.6;color:var(--ink2)}
+.gauge{position:absolute;left:50%;top:250px;transform:translateX(-50%);width:420px;height:440px;border-radius:36px;padding:28px;text-align:center}
+.gauge .mono{color:#3B403A}
+.gauge svg{display:block;margin:20px auto 0}
+.gauge .n{display:flex;align-items:flex-end;justify-content:space-between;margin-top:18px}
+.gauge .n b{font-weight:200;font-size:72px;letter-spacing:-3px;line-height:.9}
+.gauge .n b em{font-style:normal;font-size:20px;letter-spacing:0;color:#4B4F4A;margin-left:6px}
+.gauge .n span{font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.4px;text-align:right;line-height:1.6}
+.rg .sp{position:absolute;bottom:40px;height:46px;padding:0 18px;border-radius:999px;display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:1.3px}
+
+/* product */
+.pr{text-align:center}
+.pr h2{font-weight:300;font-size:84px;letter-spacing:-3.4px;line-height:1}
+.pr .mono{color:var(--ink2)}
+.stage{position:relative;height:720px;margin-top:40px;border-radius:30px;background:url(studio.jpg) 50% 50%/1360px auto no-repeat #EDEDEA}
+.buy{position:absolute;left:96px;top:300px;width:400px;border-radius:28px;padding:16px;display:flex;gap:16px;align-items:center;text-align:left}
+.buy .im{width:150px;height:170px;border-radius:18px;background:url(rider.jpg) 34% 55%/360% auto;flex:none}
+.buy h4{font-family:'JetBrains Mono';font-size:14px;font-weight:500;letter-spacing:1.8px;line-height:1.35}
+.buy p{font-size:13px;color:#4B4F4A;line-height:1.45;margin-top:8px}
+.buy b{display:block;font-weight:300;font-size:36px;letter-spacing:-1.2px;margin-top:10px}
+.buy .bt{margin-top:10px;height:40px;width:160px;border-radius:999px;background:var(--gph);color:#fff;font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.4px;display:flex;align-items:center;justify-content:center;gap:8px}
+.spec{position:absolute;display:flex;align-items:center;gap:10px;height:42px;padding:0 16px 0 6px;border-radius:999px;font-size:14px;font-weight:500;white-space:nowrap}
+.spec i{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.dt{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--sig);box-shadow:0 0 0 6px rgba(232,242,74,.35)}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;text-align:left}
+.cols div{border-top:1px solid var(--line);padding-top:20px}
+.cols span{font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.4px;color:var(--ink3)}
+.cols h5{font-size:22px;font-weight:500;letter-spacing:-.5px;margin-top:10px}
+.cols p{font-size:15px;color:var(--ink2);line-height:1.55;margin-top:8px}
+
+/* bento */
+.bento{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px}
+.bento>div{height:420px;border-radius:26px;padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.b1{background:#F2F2EF}.b2{background:var(--gph);color:#fff}.b3{background:#F2F2EF}.b4{color:#fff}
+.bento small{font-size:15px;color:var(--ink2)}
+.bento .big{font-weight:200;font-size:88px;letter-spacing:-4px;line-height:1;margin-top:auto}
+.bento .big sup{font-size:34px;letter-spacing:0;vertical-align:top;position:relative;top:10px}
+.avg{display:grid;grid-template-columns:repeat(4,64px);gap:8px}
+.avg i{width:64px;height:64px;border-radius:50%;display:block;background-size:cover}
+.b2 small{color:#B9BDB6}.b2 p{font-size:15px;color:#B9BDB6;line-height:1.5;margin-top:14px}
+.b2 .ring{position:absolute;right:24px;top:24px;width:92px;height:92px;border-radius:50%;border:1.5px dashed rgba(232,242,74,.6);display:grid;place-items:center}
+.b3 .ph2{height:150px;border-radius:18px;background:url(rider.jpg) 40% 50%/cover;margin-top:18px}
+.b4{background:url(hills.jpg) 30% 60%/cover}
+.b4::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,15,.55),rgba(20,30,15,.05) 45%,rgba(20,30,15,.6))}
+.b4>*{position:relative}.b4 small{color:#E7EBE2}.b4 p{font-size:15px;color:#E7EBE2;line-height:1.5;margin-top:10px}
+
+/* footer */
+.ft{margin-top:140px;height:820px;border-radius:30px 30px 0 0;position:relative;overflow:hidden;background:url(hills.jpg) 50% 85%/cover}
+.ft::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.9) 34%,rgba(255,255,255,0) 62%)}
+.ft>*{position:relative}
+.ft .tp{display:flex;justify-content:space-between;padding:56px 64px 0}
+.ft .tp h4{font-size:26px;font-weight:400;letter-spacing:-.6px;line-height:1.2}
+.ft .tp p{width:340px;font-size:14px;color:var(--ink2);line-height:1.55}
+.wm{display:flex;align-items:center;gap:24px;padding:40px 56px 0;color:#CFD2CA;white-space:nowrap}
+.wm span{font-weight:200;font-size:236px;letter-spacing:-12px;line-height:.9}
+.fl{display:grid;grid-template-columns:1fr 1fr 1fr 1.3fr;gap:40px;margin:70px 40px 0;padding:32px;border-radius:26px;background:rgba(255,255,255,.55);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.7)}
+.fl h5{font-family:'JetBrains Mono';font-size:14px;font-weight:500;letter-spacing:1.6px;margin-bottom:14px}
+.fl ul{list-style:none;display:grid;gap:9px;font-size:15px;color:#3B403A}
+.fl .r p{font-size:15px;margin-bottom:12px}
+.fl .r .bt{height:48px;width:240px;border-radius:999px;background:var(--gph);color:#fff;font-family:'JetBrains Mono';font-size:12.5px;letter-spacing:1.4px;display:flex;align-items:center;justify-content:center;gap:10px}
+.fb{position:absolute;left:64px;right:64px;bottom:32px;display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.2px;color:#fff}
+</style></head><body>
+<div class="w">
+<section class="hero">
+ <div class="nav gl">
+  <div class="lg"><i>{{icon:asterisk:16:#E8F24A:2.4}}</i>Velo Nine</div>
+  <div class="lk mono"><span>The bike</span><span>Battery</span><span>Journal</span><span>Test ride</span></div>
+  <div class="r"><span class="tg"><i class="on">{{icon:sun:17:#1B1E1B:2}}</i><i>{{icon:moon:16:#1B1E1B:2}}</i></span><span class="cta mono">Order + Nine {{icon:arrow-up-right:15:#1B1E1B:2}}</span></div>
+ </div>
+ <h1 class="h1">Ride the <span style="font-family:'Instrument Serif';font-weight:400;letter-spacing:-3px">quiet</span> hills</h1>
+ <div class="hb"><span class="bt gl">Discover Nine</span><span class="bt gl">How it rides {{icon:play:13:#1B1E1B:2.2}}</span></div>
+ <div class="st"><div class="gl"><small>RANGE</small><b>120<em>km</em></b></div><div class="gl"><small>WEIGHT</small><b>16.4<em>kg</em></b></div></div>
+ <div class="sub"><div class="mono">+ Ride, charge, repeat +</div><p>A graphite e-bike that weighs less than a suitcase, climbs like it has a tailwind and charges from any wall socket in three hours.</p></div>
+ <div class="acc gl">
+  <div class="im"><span style="left:10px;top:10px">FORK</span><span style="right:10px;bottom:10px">SIGNAL</span></div>
+  <h4>SIGNAL FORK</h4><p>The yellow you see from 300 m away, built into the carbon fork.</p>
+  <span class="b">EXPLORE COLOURS</span>
+ </div>
+</section>
+
+<section class="sec stmt">
+ <div class="tiles"><i class="ph" style="background-image:url(rider.jpg);background-position:35% 40%;background-size:300% auto"></i><i class="ph" style="background-image:url(hero.jpg);background-position:55% 70%;background-size:420% auto"></i></div>
+ <div><div class="mono" style="color:var(--ink2);margin-bottom:26px">+ Engineered for calm × built for hills +</div>
+ <h2>Your commute should feel like a ride you'd take on Sunday. Velo Nine pairs a silent hub motor with a <span>frame light enough to carry up three flights of stairs.</span></h2></div>
+ <div class="dot">{{icon:wind:26:#1B1E1B:2}}</div>
+ <div class="bl" style="grid-column:1/3"><div><h5>Quiet power,<br>no noise.</h5><p>A 250 W rear hub with a torque sensor, so the bike pushes exactly as hard as you do.</p></div>
+  <div style="display:flex;justify-content:flex-end;gap:12px"><span class="pill mono" style="border:1px solid var(--line)">250 W hub</span><span class="pill mono" style="border:1px solid var(--line)">Torque sensor</span><span class="pill mono" style="border:1px solid var(--line)">Belt drive</span><span class="pill mono" style="background:var(--gph);color:#fff">3 h charge</span></div></div>
+</section>
+
+<section class="sec rg">
+ <div class="t"><div class="mono" style="color:var(--ink2);margin-bottom:18px">+ The battery +</div><h3>Ride further.<br><i>Charge less.</i></h3></div>
+ <p class="d">The 540 Wh battery sits inside the down tube and comes out with one key, so you can charge it at your desk while the bike stays downstairs.</p>
+ <div class="gauge gl">
+  <div class="mono">Battery · live</div>
+  <svg width="300" height="190" viewBox="0 0 300 190">
+   <g fill="#3B403A" opacity=".35">
+    <circle cx="30" cy="160" r="3"/><circle cx="38" cy="122" r="3"/><circle cx="56" cy="88" r="3"/><circle cx="82" cy="58" r="3"/><circle cx="114" cy="38" r="3"/><circle cx="150" cy="31" r="3"/><circle cx="186" cy="38" r="3"/><circle cx="218" cy="58" r="3"/><circle cx="244" cy="88" r="3"/><circle cx="262" cy="122" r="3"/><circle cx="270" cy="160" r="3"/>
+   </g>
+   <path d="M30 160 A120 120 0 0 1 244 88" fill="none" stroke="#2A2D2B" stroke-width="5" stroke-linecap="round"/>
+   <circle cx="244" cy="88" r="10" fill="#E8F24A" stroke="#2A2D2B" stroke-width="3"/>
+   <text x="150" y="122" text-anchor="middle" font-family="Inter Tight" font-weight="200" font-size="58" fill="#1B1E1B" letter-spacing="-2">82%</text>
+   <text x="150" y="150" text-anchor="middle" font-family="JetBrains Mono" font-size="12" letter-spacing="1.5" fill="#4B4F4A">ECO MODE</text>
+   <text x="22" y="184" font-family="JetBrains Mono" font-size="11" fill="#4B4F4A">LOW</text>
+   <text x="252" y="184" font-family="JetBrains Mono" font-size="11" fill="#4B4F4A">FULL</text>
+  </svg>
+  <div class="n"><b>98<em>km left</em></b><span>443 / 540 Wh<br>full by 18:40</span></div>
+ </div>
+ <span class="sp gl" style="left:64px">{{icon:plug-zap:16:#1B1E1B:2}} Any wall socket</span>
+ <span class="sp gl" style="right:64px">{{icon:key-round:16:#1B1E1B:2}} Removable in 4 s</span>
+</section>
+
+<section class="sec pr">
+ <div class="mono">+ The Velo Nine One +</div>
+ <h2 style="margin-top:18px">One bike. <span style="font-family:'Instrument Serif';font-weight:400;letter-spacing:-1.5px">Every hill.</span></h2>
+ <div class="stage">
+  <div class="buy gl"><span class="im"></span><div><h4>RIDE IT<br>BEFORE YOU BUY</h4><p>Free 7-day test ride, delivered to your door.</p><b>$2,890</b><span class="bt">BUY NOW {{icon:arrow-up-right:14:#fff:2}}</span></div></div>
+  <span class="dt" style="left:1010px;top:330px"></span><div class="spec gl" style="left:1032px;top:308px"><i>{{icon:zap:14:#1B1E1B:2}}</i>Signal carbon fork</div>
+  <span class="dt" style="left:640px;top:438px"></span><div class="spec gl" style="left:560px;top:478px"><i>{{icon:battery-full:14:#1B1E1B:2}}</i>540 Wh in the down tube</div>
+  <span class="dt" style="left:820px;top:150px"></span><div class="spec gl" style="left:840px;top:110px"><i>{{icon:monitor-smartphone:14:#1B1E1B:2}}</i>Phone mount + app</div>
+ </div>
+ <div class="cols">
+  <div><span>01</span><h5>Belt, not chain</h5><p>No grease on your trousers and 30,000 km before it needs a look.</p></div>
+  <div><span>02</span><h5>Hydraulic discs</h5><p>Stops from 25 km/h in 3.1 m, wet or dry.</p></div>
+  <div><span>03</span><h5>Lights built in</h5><p>Front and rear lights wired to the battery. Nothing to charge, nothing to steal.</p></div>
+ </div>
+</section>
+
+<section class="sec bento">
+ <div class="b1"><div class="avg"><i style="background-image:url(olivia.jpg)"></i><i style="background-image:url(marcus.jpg)"></i><i style="background-image:url(kenji.jpg)"></i><i style="background:var(--sig);display:grid;place-items:center;font-size:15px;font-weight:600">+18k</i></div><small style="margin-top:18px">Riders across 14 cities</small><div class="big">18.4<sup>k</sup></div></div>
+ <div class="b2"><span class="ring">{{icon:shield-check:30:#E8F24A:1.6}}</span><small>Warranty</small><div class="big">5<sup>yr</sup></div><p>On frame and motor. Battery covered for 1,000 full charges.</p></div>
+ <div class="b3"><small>Kilometres ridden this year</small><div class="ph2"></div><div class="big" style="margin-top:auto">2.1<sup>M</sup></div></div>
+ <div class="b4 ph"><small>Average daily commute</small><p>Most riders go 14 km a day, so one charge lasts a full working week.</p><div class="big">14<sup>km</sup></div></div>
+</section>
+</div>
+
+<div class="w">
+<footer class="ft">
+ <div class="tp"><h4>Better rides.<br>Quieter cities.</h4><p>Velo Nine builds light electric bikes for people who would rather ride than sit in traffic. Designed in Copenhagen, assembled in Porto.</p></div>
+ <div class="wm"><span>{{icon:asterisk:170:#CFD2CA:1.2}}</span><span>VELO NINE</span></div>
+ <div class="fl">
+  <div><h5>BIKE</h5><ul><li>Velo Nine One</li><li>Battery</li><li>Accessories</li></ul></div>
+  <div><h5>EXPLORE</h5><ul><li>Test ride</li><li>Journal</li><li>Stores</li></ul></div>
+  <div><h5>SUPPORT</h5><ul><li>Service</li><li>Warranty</li><li>Contact</li></ul></div>
+  <div class="r"><p>Your first ride is on us.</p><span class="bt">BOOK A TEST RIDE {{icon:arrow-up-right:14:#fff:2}}</span></div>
+ </div>
+ <div class="fb"><span>© 2026 VELO NINE</span><span>PRIVACY · TERMS · COOKIES</span></div>
+</footer>
+</div>
+</body></html>
