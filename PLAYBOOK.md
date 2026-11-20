@@ -202,7 +202,7 @@ Nixtio, awsmd, Conceptzilla, vlad_g, zeeroocanvas, rondesignlab). **Open them be
   product/editorial photography; put brand text on blank labels with a multiply overlay so packaging looks printed.
 - Approved direction sample: `designs/2026-11-21-pm-mosse-skincare-app` (v1 product detail, v2 skin scan, v3 evening ritual).
 - **App slots always need the owner's approval:** a run that designs an app sets it `ready-pending-approval` and never posts it until the owner approves.
-- Mossé is one app shown over 3 weeks (owner, 2026-11-20): v1 on 2026-11-21 pm, v2 on 2026-11-30 pm, v3 on 2026-12-06 pm.
+- Mossé is one app shown over 3 weeks (owner, 2026-11-20): v1 on 2026-11-23 am (swapped with Halo on owner request), v2 on 2026-11-30 pm, v3 on 2026-12-06 pm.
 - Carousel format: the Daybook 6-slide format (`tools/app_carousel_v3.py` / `app_carousel_v4.py` with glass/gradient settings, not flat).
 
 ## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
