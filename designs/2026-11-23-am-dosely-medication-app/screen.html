@@ -1,0 +1,98 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Dosely">
+<meta name="app-desc" content="A medication reminder that shows **the one pill to take right now**, tracks your week, and **orders refills before you run out**.">
+<meta name="fonts" content="Geist|A calm, precise grotesk. Big dose times stay readable at arm's length, small labels stay clinical and clear.">
+<meta name="palette" content="#2B59FF:Cobalt|#7BE0B0:Mint|#111318:Ink|#EEF1F6:Cool white|#FFFFFF:Paper|#C9D3FF:Cobalt tint">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* New app style: flat colour blocks, oversized type, crisp outlines. No glass, no blur, no gradients. */
+:root{--bg:#EEF1F6;--ink:#111318;--ink2:#5F6673;--co:#2B59FF;--co2:#C9D3FF;--mint:#7BE0B0;--line:#D3D9E3}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;background:var(--bg);font-family:'Geist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.sb{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-size:16px;font-weight:600}
+.sb .r{display:flex;gap:6px;align-items:center}
+.hd{display:flex;align-items:center;gap:12px;padding:4px 20px 0}
+.hd .av{width:44px;height:44px;border-radius:50%;background:url(amara.jpg) center/cover;border:1.5px solid var(--ink)}
+.hd small{display:block;font-size:12.5px;color:var(--ink2);font-weight:500}
+.hd b{font-size:19px;font-weight:600;letter-spacing:-.5px}
+.hd .st{margin-left:auto;white-space:nowrap;height:36px;padding:0 12px 0 8px;border-radius:999px;background:var(--ink);color:#fff;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600}
+.hd .bl{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;position:relative}
+.hd .bl i{position:absolute;top:9px;right:10px;width:8px;height:8px;border-radius:50%;background:var(--co);border:1.5px solid var(--bg)}
+.now{margin:12px 12px 0;background:var(--co);border-radius:32px;padding:16px 16px 12px;color:#fff;position:relative;overflow:hidden}
+.now .k{display:flex;justify-content:space-between;align-items:center}
+.now .k span{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#DCE3FF}
+.now .k em{font-style:normal;height:28px;padding:0 10px;border-radius:999px;background:#fff;color:var(--co);font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:5px}
+.now .tm{font-size:78px;font-weight:600;letter-spacing:-5px;line-height:.9;margin-top:10px}
+.now .tm small{font-size:26px;letter-spacing:-.5px;font-weight:500;margin-left:4px;color:#DCE3FF}
+.now h2{font-size:22px;font-weight:600;letter-spacing:-.6px;margin-top:10px}
+.now p{font-size:14px;color:#DCE3FF;margin-top:3px}
+.pill{position:absolute;right:30px;top:30px;width:96px;height:42px;border-radius:21px;transform:rotate(-28deg);display:flex;overflow:hidden;border:2px solid var(--ink)}
+.pill i{flex:1;background:#fff}.pill i+i{background:var(--mint);border-left:2px solid var(--ink)}
+.pill2{position:absolute;right:26px;top:112px;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.pill2::after{content:"";position:absolute;left:7px;right:7px;top:17px;height:2px;background:var(--ink)}
+.sl{margin-top:14px;height:58px;border-radius:999px;background:#fff;display:flex;align-items:center;padding:5px;position:relative}
+.sl .kn{position:relative;z-index:1;width:50px;height:50px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.sl .tx{position:absolute;left:0;right:0;text-align:center;font-size:15.5px;font-weight:600;color:var(--ink)}
+.sl .ch{position:absolute;right:20px;display:flex;opacity:.35}
+.wk{margin:10px 12px 0;background:#fff;border:1.5px solid var(--ink);border-radius:24px;padding:10px 14px;display:flex;align-items:center;gap:12px}
+.wk .pc{font-size:30px;font-weight:600;letter-spacing:-1.5px;line-height:1}
+.wk .pc small{display:block;font-size:11.5px;font-weight:500;color:var(--ink2);letter-spacing:0;margin-top:3px}
+.days{display:flex;gap:5px;margin-left:auto}
+.days div{width:26px;text-align:center}
+.days div span{display:block;font-size:10.5px;font-weight:600;color:var(--ink2);margin-bottom:4px}
+.days div i{display:block;width:26px;height:26px;border-radius:9px;background:var(--mint);display:grid;place-items:center}
+.days div i.h{background:linear-gradient(var(--mint),var(--mint)) bottom/100% 75% no-repeat,#E4E9F1}
+.days div i.td{background:#fff;border:1.5px dashed var(--co)}
+.tl{margin:10px 20px 0}
+.tl .hh{display:flex;justify-content:space-between;align-items:baseline}
+.tl .hh b{font-size:17px;font-weight:600;letter-spacing:-.4px}.tl .hh span{font-size:12.5px;color:var(--ink2);font-weight:500}
+.it{display:flex;align-items:center;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+.it .t{width:48px;font-size:15px;font-weight:600}
+.it .dt{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink);flex:none}
+.it .dt.ok{background:var(--mint);border-color:var(--mint)}
+.it .dt.nw{background:var(--co);border-color:var(--co);box-shadow:0 0 0 4px var(--co2)}
+.it b{font-size:15px;font-weight:600;display:block}.it span{font-size:12.5px;color:var(--ink2)}
+.it .s{margin-left:auto;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;background:#E4E9F1;color:var(--ink2)}
+.it .s.ok{background:#DDF6EA;color:#13744A}
+.it .s.nw{background:var(--co);color:#fff}
+.rf{margin:8px 12px 0;background:var(--mint);border-radius:24px;padding:12px 12px 12px 16px;display:flex;align-items:center;gap:12px}
+.rf .n{font-size:34px;font-weight:600;letter-spacing:-1.8px;line-height:1}
+.rf .n small{display:block;font-size:11px;font-weight:600;letter-spacing:0;color:#1E5B40}
+.rf .m b{font-size:14.5px;font-weight:600;display:block}.rf .m span{font-size:12px;color:#1E5B40}
+.rf .bars{display:flex;gap:2px;margin-top:6px}.rf .bars i{width:3px;height:10px;border-radius:2px;background:rgba(17,19,24,.18)}.rf .bars i.f{background:var(--ink)}
+.rf .go{margin-left:auto;height:40px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.nav{position:absolute;left:20px;right:20px;bottom:22px;height:58px;border-radius:999px;background:#fff;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 6px}
+.nav span{height:44px;width:44px;border-radius:50%;display:grid;place-items:center}
+.nav span.on{width:auto;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;display:flex;gap:8px;font-size:14.5px;font-weight:600}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:var(--ink);transform:translateX(-50%)}
+</style></head><body>
+<div class="sb"><span>9:41</span><span class="r">{{icon:signal:17:#111318:2.6}}{{icon:wifi:17:#111318:2.6}}{{icon:battery-full:24:#111318:2}}</span></div>
+<div class="hd"><span class="av"></span><div><small>Mon, 23 Nov</small><b>Hi, Amara</b></div><span class="st">{{icon:flame:16:#7BE0B0:2.4}}12 days</span><span class="bl">{{icon:bell:19:#111318:2}}<i></i></span></div>
+
+<div class="now">
+ <div class="k"><span>Take now</span></div>
+ <div class="tm">08:00</div>
+ <span class="pill"><i></i><i></i></span><span class="pill2"></span>
+ <h2>Metformin 500 mg</h2>
+ <p>1 tablet · with breakfast · 2 of 4 today</p>
+ <div class="sl"><span class="kn">{{icon:check:24:#7BE0B0:3}}</span><span class="tx">Slide when taken</span><span class="ch">{{icon:chevrons-right:20:#111318:2.4}}</span></div>
+</div>
+
+<div class="wk"><div class="pc">96%<small>24 of 25 doses</small></div>
+ <div class="days"><div><span>T</span><i>{{icon:check:14:#111318:3}}</i></div><div><span>W</span><i>{{icon:check:14:#111318:3}}</i></div><div><span>T</span><i class="h"></i></div><div><span>F</span><i>{{icon:check:14:#111318:3}}</i></div><div><span>S</span><i>{{icon:check:14:#111318:3}}</i></div><div><span>S</span><i>{{icon:check:14:#111318:3}}</i></div><div><span style="color:var(--co)">M</span><i class="td"></i></div></div>
+</div>
+
+<div class="tl">
+ <div class="hh"><b>Today</b><span>1 taken · 3 to go</span></div>
+ <div class="it"><span class="t">07:00</span><i class="dt ok"></i><div><b>Vitamin D3 1000 IU</b><span>Taken at 07:04</span></div><span class="s ok">Done</span></div>
+ <div class="it"><span class="t">08:00</span><i class="dt nw"></i><div><b>Metformin 500 mg</b><span>With breakfast</span></div><span class="s nw">Now</span></div>
+ <div class="it"><span class="t">13:00</span><i class="dt"></i><div><b>Lisinopril 10 mg</b><span>After lunch</span></div><span class="s">In 5h</span></div>
+ <div class="it" style="border:0"><span class="t">21:00</span><i class="dt"></i><div><b>Atorvastatin 20 mg</b><span>Before bed</span></div><span class="s">Tonight</span></div>
+</div>
+
+<div class="rf"><div class="n">6<small>LEFT</small></div><div class="m"><b>Atorvastatin runs out Nov 29</b><div class="bars"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><span class="go">Refill</span></div>
+
+<div class="nav" data-nav><span class="on">{{icon:house:19:#fff:2.2}}Today</span><span>{{icon:pill:21:#111318:2}}</span><span>{{icon:calendar:21:#111318:2}}</span><span>{{icon:package:21:#111318:2}}</span><span>{{icon:user:21:#111318:2}}</span></div>
+<div class="hi"></div>
+</body></html>

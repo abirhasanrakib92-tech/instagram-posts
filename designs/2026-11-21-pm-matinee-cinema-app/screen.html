@@ -1,0 +1,80 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Matinee">
+<meta name="app-desc" content="Cinema tickets with a **seat map you can read at a glance**, and a **slide to pay** that books two seats in one move.">
+<meta name="fonts" content="Space Grotesk|A sturdy grotesk with quirky numerals that make showtimes, seats and prices read like a ticket stub.">
+<meta name="palette" content="#E8402E:Cherry|#161412:Ink|#F5F1E8:Popcorn|#FFD54A:Butter|#FFFFFF:Ticket white|#D9D2C4:Taken grey">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* New app style (2026-11-20): flat colour blocks, oversized type, crisp outlines. No glass, no blur, no gradients. */
+:root{--bg:#F5F1E8;--ink:#161412;--ink2:#6F685E;--red:#E8402E;--butter:#FFD54A;--line:#D9D2C4}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;background:var(--bg);font-family:'Space Grotesk';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.sb{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-size:16px;font-weight:600}
+.sb .r{display:flex;gap:6px;align-items:center}
+.top{display:flex;align-items:center;justify-content:space-between;padding:6px 20px 0}
+.cb{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center}
+.top .t{text-align:center}.top .t b{font-size:15px;display:block}.top .t span{font-size:12px;color:var(--ink2);font-weight:500}
+.film{margin:14px 20px 0;display:flex;gap:14px;align-items:center;background:#fff;border:1.5px solid var(--ink);border-radius:24px;padding:10px 14px 10px 10px}
+.film .po{width:64px;height:84px;border-radius:14px;background:url(still.jpg) 50% 40%/cover;flex:none}
+.film h1{font-size:24px;font-weight:700;letter-spacing:-.8px;line-height:1}
+.film .m{font-size:12.5px;color:var(--ink2);font-weight:500;margin-top:6px}
+.film .tg{display:flex;gap:6px;margin-top:8px}
+.film .tg span{font-size:11px;font-weight:700;padding:4px 8px;border-radius:999px;background:var(--butter)}
+.film .tg span+span{background:var(--bg)}
+.film .rt{margin-left:auto;align-self:flex-start;text-align:right}
+.film .rt b{font-size:22px;letter-spacing:-.5px}.film .rt span{display:block;font-size:11px;color:var(--ink2);font-weight:600}
+.days{display:flex;gap:8px;padding:0 20px;margin-top:14px}
+.days div{flex:1;height:64px;border-radius:20px;border:1.5px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff}
+.days div span{font-size:11.5px;font-weight:600;color:var(--ink2)}.days div b{font-size:20px;letter-spacing:-.5px}
+.days div.on{background:var(--red);border-color:var(--red);color:#fff}.days div.on span{color:#FFD9D3}
+.times{display:flex;gap:8px;padding:0 20px;margin-top:10px}
+.times span{flex:1;height:38px;border-radius:999px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;background:#fff}
+.times span.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.times span.x{color:#B5AEA2;text-decoration:line-through;background:transparent}
+.scr{margin-top:14px;text-align:center}
+.scr svg{display:block;margin:0 auto}
+.scr span{font-size:10.5px;font-weight:700;letter-spacing:3px;color:var(--ink2)}
+.grid{margin-top:8px;display:grid;gap:5px;justify-content:center}
+.row{display:flex;gap:5px;align-items:center}
+.rl{width:14px;font-size:11px;font-weight:700;color:#A79F92;text-align:center}
+.ai{width:10px}
+.s{width:25px;height:23px;border-radius:7px 7px 5px 5px;background:#fff;border:1.5px solid #CFC7B8;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:700;color:#fff}
+.s.p{width:25px;border-color:#E9C23A;background:#FFF4CC}
+.s.t{background:var(--line);border-color:var(--line)}
+.s.on{background:var(--red);border-color:var(--red)}
+.lg{display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:12px;font-weight:600;color:var(--ink2)}
+.lg span{display:flex;align-items:center;gap:6px}
+.lg i{width:14px;height:13px;border-radius:4px 4px 3px 3px;border:1.5px solid #CFC7B8;background:#fff}
+.pay{position:absolute;left:12px;right:12px;bottom:26px;background:var(--red);border-radius:34px;padding:16px 16px 12px;color:#fff}
+.pay .a{display:flex;justify-content:space-between;align-items:flex-end;padding:0 6px}
+.pay .a small{display:block;font-size:12px;font-weight:600;color:#FFD9D3}
+.pay .a b{font-size:17px;font-weight:700}
+.pay .a .pr{font-size:40px;font-weight:700;letter-spacing:-1.8px;line-height:.95;text-align:right}
+.sl{margin-top:12px;height:58px;border-radius:999px;background:var(--ink);display:flex;align-items:center;padding:5px;position:relative}
+.sl .k{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;background:var(--butter);display:grid;place-items:center}
+.sl span{position:absolute;left:0;right:0;text-align:center;font-size:15px;font-weight:600;letter-spacing:.2px}
+.sl .ch{position:absolute;left:auto;right:20px;display:flex;opacity:.5}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:var(--ink);transform:translateX(-50%)}
+</style></head><body>
+<div class="sb"><span>9:41</span><span class="r">{{icon:signal:17:#161412:2.6}}{{icon:wifi:17:#161412:2.6}}{{icon:battery-full:24:#161412:2}}</span></div>
+<div class="top"><span class="cb">{{icon:arrow-left:20:#161412:2.2}}</span><div class="t"><b>Pick your seats</b><span>Rivoli Picturehouse · Screen 4</span></div><span class="cb">{{icon:share:18:#161412:2.2}}</span></div>
+<div class="film"><span class="po"></span><div><h1>Salt &amp; Sunday</h1><div class="m">2h 04m · Drama · 12A</div><div class="tg"><span>Dolby Atmos</span><span>English</span></div></div><div class="rt"><b>8.4</b><span>Critics</span></div></div>
+<div class="days"><div><span>Thu</span><b>20</b></div><div class="on"><span>Fri</span><b>21</b></div><div><span>Sat</span><b>22</b></div><div><span>Sun</span><b>23</b></div><div><span>Mon</span><b>24</b></div></div>
+<div class="times"><span class="x">15:10</span><span class="on">18:40</span><span>21:15</span><span>23:30</span></div>
+<div class="scr"><svg width="300" height="22" viewBox="0 0 300 22"><path d="M6 18 Q150 -8 294 18" fill="none" stroke="#E8402E" stroke-width="4" stroke-linecap="round"/></svg><span>SCREEN</span></div>
+<div class="grid"><div class="row"><span class="rl">A</span><i class="s t"></i><i class="s t"></i><i class="s"></i><i class="s"></i><i class="s"></i><span class="ai"></span><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><span class="rl">A</span></div>
+<div class="row"><span class="rl">B</span><i class="s"></i><i class="s"></i><i class="s"></i><i class="s t"></i><i class="s t"></i><span class="ai"></span><i class="s t"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s"></i><span class="rl">B</span></div>
+<div class="row"><span class="rl">C</span><i class="s"></i><i class="s"></i><i class="s t"></i><i class="s"></i><i class="s"></i><span class="ai"></span><i class="s"></i><i class="s t"></i><i class="s t"></i><i class="s"></i><i class="s"></i><span class="rl">C</span></div>
+<div class="row"><span class="rl">D</span><i class="s t"></i><i class="s t"></i><i class="s"></i><i class="s"></i><i class="s"></i><span class="ai"></span><i class="s"></i><i class="s"></i><i class="s"></i><i class="s t"></i><i class="s t"></i><span class="rl">D</span></div>
+<div class="row"><span class="rl">E</span><i class="s"></i><i class="s"></i><i class="s"></i><i class="s t"></i><i class="s t"></i><span class="ai"></span><i class="s t"></i><i class="s t"></i><i class="s"></i><i class="s"></i><i class="s"></i><span class="rl">E</span></div>
+<div class="row"><span class="rl">F</span><i class="s t"></i><i class="s"></i><i class="s"></i><i class="s"></i><i class="s on">5</i><span class="ai"></span><i class="s on">6</i><i class="s"></i><i class="s"></i><i class="s t"></i><i class="s t"></i><span class="rl">F</span></div>
+<div class="row"><span class="rl">G</span><i class="s"></i><i class="s"></i><i class="s t"></i><i class="s t"></i><i class="s t"></i><span class="ai"></span><i class="s"></i><i class="s"></i><i class="s t"></i><i class="s"></i><i class="s"></i><span class="rl">G</span></div>
+<div class="row"><span class="rl">H</span><i class="s p"></i><i class="s p"></i><i class="s p"></i><i class="s p"></i><i class="s p"></i><span class="ai"></span><i class="s p"></i><i class="s p"></i><i class="s p"></i><i class="s p"></i><i class="s p"></i><span class="rl">H</span></div></div>
+<div class="lg"><span><i></i>Free 55</span><span><i style="background:var(--line);border-color:var(--line)"></i>Taken</span><span><i style="background:#FFF4CC;border-color:#E9C23A"></i>Recliner</span><span><i style="background:var(--red);border-color:var(--red)"></i>Yours</span></div>
+<div class="pay" data-nav>
+ <div class="a"><div><small>2 seats · Row F</small><b>F5, F6 · Fri 18:40</b></div><div class="pr">$28<span style="font-size:22px;letter-spacing:-.5px">.00</span></div></div>
+ <div class="sl"><span class="k">{{icon:arrow-right:22:#161412:2.6}}</span><span>Slide to pay</span><span class="ch">{{icon:chevrons-right:20:#fff:2.2}}</span></div>
+</div>
+<div class="hi"></div>
+</body></html>

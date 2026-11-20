@@ -1,0 +1,80 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Groove">
+<meta name="app-desc" content="A record shop where you **preview every track before you buy**, pick the pressing you want and **slide it into your crate**.">
+<meta name="fonts" content="Bricolage Grotesque|A chunky grotesk with a hand-cut feel, loud enough for record titles and calm enough for tracklists.">
+<meta name="palette" content="#C6F432:Acid lime|#141414:Ink|#F4F2EC:Sleeve paper|#FF5A1F:Needle orange|#FFFFFF:Label white|#D8D5CC:Groove grey">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* New app style (2026-11-20): flat colour blocks, oversized type, crisp outlines. No glass, no blur, no gradients. */
+:root{--bg:#F4F2EC;--ink:#141414;--ink2:#6B6860;--lime:#C6F432;--or:#FF5A1F;--line:#D8D5CC}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;background:var(--bg);font-family:'Bricolage Grotesque';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.sb{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-size:16px;font-weight:600}
+.sb .r{display:flex;gap:6px;align-items:center}
+.top{display:flex;align-items:center;justify-content:space-between;padding:4px 20px 0}
+.cb{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;position:relative;background:var(--bg)}
+.cb em{position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:var(--or);color:#fff;font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center}
+.top .t{font-size:15px;font-weight:700;display:flex;gap:6px;align-items:center}
+.top .t span{font-weight:500;color:var(--ink2)}
+.hero{margin:12px 20px 0;height:226px;background:var(--lime);border:1.5px solid var(--ink);border-radius:28px;position:relative;overflow:hidden}
+.disc{position:absolute;left:118px;top:20px;width:186px;height:186px;border-radius:50%;background:repeating-radial-gradient(circle,#141414 0 2px,#262626 2px 4px);border:1.5px solid var(--ink)}
+.disc::after{content:"";position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px;border-radius:50%;background:var(--or);box-shadow:inset 0 0 0 26px var(--or),0 0 0 0 #000}
+.disc i{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px;border-radius:50%;background:var(--bg);z-index:1}
+.sleeve{position:absolute;left:16px;top:20px;width:186px;height:186px;border-radius:6px;background:url(sleeve.jpg) center/cover;border:1.5px solid var(--ink)}
+.hero .st{position:absolute;right:14px;top:14px;z-index:2;display:grid;gap:6px;justify-items:end}
+.hero .st span{font-size:11px;font-weight:700;padding:5px 9px;border-radius:999px;background:var(--ink);color:var(--lime)}
+.hero .st span+span{background:var(--bg);color:var(--ink);border:1.5px solid var(--ink)}
+.hero .rpm{position:absolute;right:16px;bottom:14px;text-align:right;line-height:.9}
+.hero .rpm b{font-size:44px;font-weight:800;letter-spacing:-2px}
+.hero .rpm small{display:block;font-size:11px;font-weight:700;letter-spacing:1px}
+.ti{padding:14px 20px 0;display:flex;justify-content:space-between;align-items:flex-end}
+.ti h1{font-size:33px;font-weight:800;letter-spacing:-1.4px;line-height:.95}
+.ti .a{font-size:13.5px;color:var(--ink2);font-weight:500;margin-top:6px}
+.ti .hb{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;flex:none}
+.pk{display:flex;gap:8px;padding:0 20px;margin-top:12px}
+.pk div{flex:1;border:1.5px solid var(--line);background:#fff;border-radius:18px;padding:9px 10px}
+.pk div span{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--ink2)}
+.pk div span i{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink)}
+.pk div b{display:block;font-size:19px;font-weight:800;letter-spacing:-.6px;margin-top:4px}
+.pk div.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.pk div.on span{color:var(--lime)}
+.tl{margin:12px 20px 0}
+.tl .h{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--ink2);text-transform:uppercase}
+.tr{display:flex;align-items:center;gap:12px;height:40px;border-bottom:1.5px solid var(--line);font-size:14.5px;font-weight:600}
+.tr .n{width:22px;font-size:12px;font-weight:700;color:var(--ink2)}
+.tr .d{margin-left:auto;font-size:13px;color:var(--ink2);font-weight:500}
+.tr.on{height:58px;margin:6px 0;border:0;background:var(--lime);border-radius:18px;padding:0 12px 0 8px;border:1.5px solid var(--ink)}
+.tr.on .pb{width:40px;height:40px;border-radius:50%;background:var(--ink);display:grid;place-items:center;flex:none}
+.tr.on .w{display:flex;gap:2px;align-items:center;height:22px;margin-left:auto}
+.tr.on .w i{width:3px;border-radius:2px;background:rgba(20,20,20,.25)}
+.tr.on .w i.on{background:var(--ink)}
+.tr.on .nm{line-height:1.1;white-space:nowrap}.tr.on .nm small{display:block;font-size:11.5px;font-weight:600;color:#3d4a12}
+.add{position:absolute;left:12px;right:12px;bottom:26px;background:var(--ink);border-radius:32px;padding:14px 14px 12px;color:#fff}
+.add .a{display:flex;justify-content:space-between;align-items:center;padding:0 6px}
+.add .a small{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#A9A69E}
+.add .a b{font-size:15px;font-weight:700;display:block;margin-top:2px}
+.add .a .pr{font-size:36px;font-weight:800;letter-spacing:-1.6px;color:var(--lime)}
+.sl{margin-top:10px;height:56px;border-radius:999px;background:var(--lime);display:flex;align-items:center;padding:5px;position:relative;color:var(--ink)}
+.sl .k{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.sl .tx{position:absolute;left:0;right:0;text-align:center;font-size:15.5px;font-weight:700}
+.sl .ch{position:absolute;right:18px;display:flex;opacity:.45}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:var(--ink);transform:translateX(-50%)}
+</style></head><body>
+<div class="sb"><span>9:41</span><span class="r">{{icon:signal:17:#141414:2.6}}{{icon:wifi:17:#141414:2.6}}{{icon:battery-full:24:#141414:2}}</span></div>
+<div class="top"><span class="cb">{{icon:arrow-left:20:#141414:2.2}}</span><span class="t">New in <span>· Jazz</span></span><span class="cb">{{icon:shopping-bag:19:#141414:2.2}}<em>3</em></span></div>
+<div class="hero"><span class="disc"><i></i></span><span class="sleeve"></span><div class="st"><span>Just pressed</span><span>Ltd. 500</span><span>33 RPM · 180 g</span></div></div>
+<div class="ti"><div><h1>Low Tide Radio</h1><div class="a">Mara Okoye Quartet · LP · 2026 · 8 tracks</div></div><span class="hb">{{icon:heart:19:#141414:2.2}}</span></div>
+<div class="pk"><div><span><i></i>Black</span><b>$34</b></div><div class="on"><span><i style="background:var(--lime);border-color:var(--lime)"></i>Clear lime</span><b>$42</b></div><div><span><i style="background:#fff;border-style:dashed"></i>Test press</span><b>$68</b></div></div>
+<div class="tl">
+ <div class="h"><span>Side A · preview</span><span>4 tracks · 19:48</span></div>
+ <div class="tr"><span class="n">A1</span>Salt Window<span class="d">5:12</span></div>
+ <div class="tr on"><span class="pb">{{icon:pause:18:#C6F432:2.6}}</span><span class="nm">Harbour Lights<small>A2 · 1:24 / 6:03</small></span><span class="w"><i style="height:15px" class="on"></i><i style="height:16px" class="on"></i><i style="height:8px" class="on"></i><i style="height:12px" class="on"></i><i style="height:20px" class="on"></i><i style="height:16px" class="on"></i><i style="height:10px" class="on"></i><i style="height:16px" class="on"></i><i style="height:9px" class="on"></i><i style="height:16px" class="on"></i><i style="height:6px" class="on"></i><i style="height:10px" class="on"></i><i style="height:18px" class="on"></i><i style="height:8px" class="on"></i><i style="height:15px" class="on"></i><i style="height:15px" class="on"></i><i style="height:10px" class="on"></i><i style="height:8px" class="on"></i><i style="height:8px" class="on"></i><i style="height:10px" class=""></i><i style="height:14px" class=""></i><i style="height:12px" class=""></i></span></div>
+ <div class="tr"><span class="n">A3</span>Ferry at Four<span class="d">4:41</span></div>
+</div>
+<div class="add" data-nav>
+ <div class="a"><div><small>{{icon:truck:14:#A9A69E:2.2}}Ships Mon · free over $60</small><b>Clear lime · 1 LP</b></div><div class="pr">$42.00</div></div>
+ <div class="sl"><span class="k">{{icon:disc-3:22:#C6F432:2.2}}</span><span class="tx">Slide into your crate</span><span class="ch">{{icon:chevrons-right:20:#141414:2.4}}</span></div>
+</div>
+<div class="hi"></div>
+</body></html>

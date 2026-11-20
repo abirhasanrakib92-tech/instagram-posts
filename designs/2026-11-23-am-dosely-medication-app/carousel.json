@@ -1,0 +1,32 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Dosely",
+  "category": "Medication reminder",
+  "tagline": "One pill, one time, one slide. Refills order before you run out.",
+  "font": "Geist",
+  "font_note": "Calm, precise grotesk. Dose times read at arm's length, labels stay clinical.",
+  "gradient": ["#7BE0B0", "#2B59FF", "#1C3BC4", "#111318"],
+  "aa_fill": "#2B59FF",
+  "bg2": "#7BE0B0",
+  "s2_ink": "#111318",
+  "bg4": "#111318",
+  "paper": "#EEF1F6",
+  "palette": [["#2B59FF", "Cobalt"], ["#7BE0B0", "Mint"], ["#111318", "Ink"], ["#C9D3FF", "Cobalt tint"], ["#EEF1F6", "Cool white"], ["#FFFFFF", "Paper"]],
+  "zoom": [0, 370, 393, 320],
+  "zoom_title": "Your whole day of doses,<br>in one glance.",
+  "components_title": "Big times,<br>flat blocks.",
+  "elements": {
+   "now": {"box": [12, 114, 369, 252], "r": 32},
+   "wk": {"box": [12, 376, 369, 67], "r": 24},
+   "rf": {"box": [12, 694, 369, 69], "r": 24},
+   "nav": {"box": [20, 772, 353, 58], "r": 29},
+   "streak": {"box": [224, 62, 93, 36], "r": 18},
+   "row": {"box": [20, 528, 353, 53], "r": 14},
+   "bell": {"box": [329, 56, 44, 44], "shape": "circle"}
+  },
+  "s2_floats": [["now", 470, 30, 790, 5, 3], ["rf", 500, 40, 1160, -3, 3]],
+  "s4_floats": [["bell", 130, 870, 100, 0, 1], ["streak", 330, 70, 380, -5, 1], ["now", 560, 450, 300, 4, 1], ["wk", 900, 90, 730, -1, 1], ["rf", 820, 80, 930, 2, 1], ["nav", 860, 110, 1130, 0, 1]]
+ }
+}

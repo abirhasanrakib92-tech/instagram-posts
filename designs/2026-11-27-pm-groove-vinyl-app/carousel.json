@@ -1,0 +1,31 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Groove",
+  "category": "Vinyl record shop",
+  "tagline": "Preview every track, pick your pressing, slide it into your crate.",
+  "font": "Bricolage Grotesque",
+  "font_note": "Chunky grotesk with a hand-cut feel. Loud for titles, calm for tracklists.",
+  "gradient": ["#C6F432", "#C6F432", "#FF5A1F", "#141414"],
+  "aa_fill": "#141414",
+  "bg2": "#C6F432",
+  "s2_ink": "#141414",
+  "bg4": "#FF5A1F",
+  "paper": "#F4F2EC",
+  "palette": [["#C6F432", "Acid lime"], ["#141414", "Ink"], ["#FF5A1F", "Needle"], ["#D8D5CC", "Groove grey"], ["#F4F2EC", "Sleeve"], ["#FFFFFF", "Label"]],
+  "zoom": [0, 106, 393, 380],
+  "zoom_title": "Big sleeve first.<br>Then everything else.",
+  "components_title": "Lime, ink and<br>one loud orange.",
+  "elements": {
+   "hero": {"box": [20, 114, 353, 226], "r": 28},
+   "pick": {"box": [140, 420, 112, 61], "r": 18},
+   "picker": {"box": [20, 420, 353, 61], "r": 18},
+   "track": {"box": [20, 553, 353, 58], "r": 18},
+   "add": {"box": [12, 691, 369, 135], "r": 32},
+   "back": {"box": [20, 58, 44, 44], "shape": "circle"}
+  },
+  "s2_floats": [["picker", 500, 40, 820, 5, 3], ["add", 520, 30, 1050, -4, 3]],
+  "s4_floats": [["back", 130, 870, 100, 0, 1], ["hero", 600, 80, 300, -3, 1], ["pick", 230, 770, 340, 7, 1], ["track", 900, 90, 730, 2, 1], ["add", 840, 120, 935, -2, 1]]
+ }
+}

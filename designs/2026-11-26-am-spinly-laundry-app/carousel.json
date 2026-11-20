@@ -1,0 +1,172 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Spinly",
+  "category": "Laundry pickup & delivery",
+  "tagline": "Watch your laundry move from bag to drum to door, and pay by the kilo.",
+  "font": "Urbanist",
+  "font_note": "Round geometric sans that stays friendly at huge sizes. Status reads from across the room.",
+  "gradient": [
+   "#FF8AB4",
+   "#1CC5B5",
+   "#0E8F84",
+   "#10201E"
+  ],
+  "aa_fill": "#1CC5B5",
+  "bg2": "#FF8AB4",
+  "s2_ink": "#10201E",
+  "bg4": "#0E8F84",
+  "paper": "#F2F6F4",
+  "palette": [
+   [
+    "#1CC5B5",
+    "Spin aqua"
+   ],
+   [
+    "#FF8AB4",
+    "Bubblegum"
+   ],
+   [
+    "#10201E",
+    "Ink"
+   ],
+   [
+    "#FFE0EC",
+    "Soft pink"
+   ],
+   [
+    "#D3DEDB",
+    "Line grey"
+   ],
+   [
+    "#F2F6F4",
+    "Fresh white"
+   ]
+  ],
+  "zoom": [
+   0,
+   334,
+   393,
+   250
+  ],
+  "zoom_title": "Six stages, one glance.<br>No more guessing.",
+  "components_title": "Big status,<br>small print.",
+  "elements": {
+   "hero": {
+    "box": [
+     12,
+     114,
+     369,
+     214
+    ],
+    "r": 32
+   },
+   "drum": {
+    "box": [
+     247,
+     130,
+     118,
+     118
+    ],
+    "shape": "circle"
+   },
+   "active": {
+    "box": [
+     20,
+     419,
+     353,
+     41
+    ],
+    "r": 12
+   },
+   "billtx": {
+    "box": [
+     128,
+     588,
+     253,
+     134
+    ],
+    "r": 24
+   },
+   "rider": {
+    "box": [
+     12,
+     756,
+     369,
+     72
+    ],
+    "r": 36
+   },
+   "help": {
+    "box": [
+     329,
+     58,
+     44,
+     44
+    ],
+    "shape": "circle"
+   }
+  },
+  "s2_floats": [
+   [
+    "hero",
+    480,
+    40,
+    760,
+    5,
+    3
+   ],
+   [
+    "rider",
+    560,
+    30,
+    1110,
+    -4,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "help",
+    130,
+    870,
+    100,
+    0,
+    1
+   ],
+   [
+    "hero",
+    640,
+    80,
+    320,
+    -3,
+    1
+   ],
+   [
+    "billtx",
+    380,
+    660,
+    770,
+    6,
+    2
+   ],
+   [
+    "active",
+    580,
+    70,
+    850,
+    2,
+    1
+   ],
+   [
+    "rider",
+    900,
+    90,
+    1080,
+    -2,
+    1
+   ]
+  ]
+ }
+}

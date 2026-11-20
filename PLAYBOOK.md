@@ -177,6 +177,20 @@ new hero component, new chart mix, new palette) so no two posts look alike.
   (`<img src="figma.png">` + `<img data-nav src="nav.png" style="visibility:hidden">` at the nav position + the 4 meta tags).
   Example: `designs/2026-11-21-pm-hush-sleep-app`. Slide 1 keeps the approved hand mockup on #EEEEEE.
 
+## App style v4 (owner, 2026-11-20 evening — REPLACES "App style" above for every app post from 2026-11-21)
+
+The owner said every earlier app style was bad (glass over photo, warm gradients, Figma-built screens) and asked for a
+completely new style and new niches. Approved direction to preview: **flat colour-block style**.
+- Off-white canvas, ONE loud signature colour used as big solid blocks (the key action / status), one contrasting accent, ink black.
+- Oversized type (hero numbers 40–64px), crisp 1.5px outlines, pill controls, chunky rounded tiles, slide-to-act button.
+- **No glass, no blur, no gradients, no photo-behind-glass.** Photos only inside tiles (thumbnail, sleeve, product).
+- Every app: new niche, new signature colour, new font, new screen type (not a home screen by default).
+- Screens are built in HTML (393x852, `screen.html` with the 4 meta tags) and rendered at 3x automatically.
+- Carousel = the Daybook format (6 slides: hand mockup with "Designed by" bar, intro on a flat colour, close-up, components, style guide, fixed CTA),
+  made with `python3 tools/app_carousel_v4.py designs/<dir> posts/<YYYY-MM>/<slot-id>-<slug>` from `carousel.json` "v4".
+  Examples: `designs/2026-11-21-pm-matinee-cinema-app`, `-23-am-dosely-medication-app`, `-26-am-spinly-laundry-app`, `-27-pm-groove-vinyl-app`.
+- App posts are `ready-pending-approval` until the owner approves them; runs must not post them before that.
+
 ## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
 
 Every design slide (not the CTA slide, and not dashboard slides 2–3, see the 2026-11-18 feedback) carries the owner's chrome, added automatically by tools/carousel.py:

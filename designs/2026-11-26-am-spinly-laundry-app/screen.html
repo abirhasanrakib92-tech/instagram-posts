@@ -1,0 +1,98 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Spinly">
+<meta name="app-desc" content="Laundry pickup and delivery that shows **every wash stage live**, with a **price by the kilo** you can check line by line.">
+<meta name="fonts" content="Urbanist|A clean, round geometric sans that stays friendly at huge sizes, so the live status reads from across the room.">
+<meta name="palette" content="#1CC5B5:Spin aqua|#FF8AB4:Bubblegum|#10201E:Ink|#F2F6F4:Fresh white|#FFE0EC:Soft pink|#D3DEDB:Line grey">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* New app style (2026-11-20): flat colour blocks, oversized type, crisp outlines. No glass, no blur, no gradients. */
+:root{--bg:#F2F6F4;--ink:#10201E;--ink2:#5E6E6B;--aq:#1CC5B5;--aq2:#0E8F84;--pk:#FF8AB4;--pk2:#FFE0EC;--line:#D3DEDB}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;background:var(--bg);font-family:'Urbanist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.sb{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-size:16px;font-weight:700}
+.sb .r{display:flex;gap:6px;align-items:center}
+.top{display:flex;align-items:center;gap:12px;padding:4px 20px 0}
+.top .t b{font-size:17px;font-weight:800;display:block;letter-spacing:-.2px}.top .t span{font-size:12.5px;color:var(--ink2);font-weight:600}
+.cb{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;flex:none;background:#fff}
+.top .cb:last-child{margin-left:auto}
+.hero{margin:12px 12px 0;background:var(--aq);border-radius:32px;padding:18px 18px 16px 20px;position:relative;height:214px}
+.hero .eb{font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#0B5C55}
+.hero h1{font-size:54px;font-weight:800;letter-spacing:-2.4px;line-height:.9;margin-top:10px}
+.hero .sub{font-size:14px;font-weight:700;margin-top:8px}
+.drum{position:absolute;right:16px;top:16px;width:118px;height:118px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:grid;place-items:center}
+.drum .in{width:90px;height:90px;border-radius:50%;background:var(--ink);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.drum .in b{font-size:36px;font-weight:800;letter-spacing:-1.5px;line-height:.9}
+.drum .in span{font-size:11px;font-weight:700;color:#9FE7DF;letter-spacing:.5px}
+.drum svg{position:absolute;inset:-1.5px}
+.seg{position:absolute;left:20px;right:18px;bottom:16px}
+.seg .bar{display:flex;gap:5px}
+.seg .bar i{flex:1;height:10px;border-radius:5px;background:rgba(16,32,30,.16)}
+.seg .bar i.d{background:var(--ink)}
+.seg .bar i.n{background:linear-gradient(90deg,var(--ink) 0 55%,rgba(16,32,30,.16) 55%)}
+.seg .lb{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;font-weight:700;color:#0B5C55}
+.seg .lb b{color:var(--ink)}
+.eta{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:var(--pk);font-size:13px;font-weight:800;margin-top:12px}
+.st{margin:12px 12px 0;background:#fff;border:1.5px solid var(--ink);border-radius:28px;padding:6px 16px}
+.st .r{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:12px;height:37px;position:relative}
+.st .r+.r{border-top:1px solid #E6EDEB}
+.st .ic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1.5px solid var(--line)}
+.st .r.d .ic{background:var(--ink);border-color:var(--ink)}
+.st .r.n .ic{background:var(--aq);border-color:var(--ink)}
+.st b{font-size:15px;font-weight:700}
+.st .r.f b{color:var(--ink2);font-weight:600}
+.st .tm{font-size:13px;font-weight:700;color:var(--ink2)}
+.st .r.n .tm{background:var(--pk2);color:#B3346A;border-radius:999px;padding:3px 9px}
+.bill{margin:12px 12px 0;display:grid;grid-template-columns:104px 1fr;gap:12px;align-items:stretch}
+.bill .ph{border-radius:24px;background:url(laundry.jpg) 50% 52%/150% auto;border:1.5px solid var(--ink)}
+.bill .tx{background:var(--pk2);border-radius:24px;padding:14px 14px 12px}
+.bill .ln{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:#6B3A50}
+.bill .ln+.ln{margin-top:6px}
+.bill .ln b{color:var(--ink);font-weight:700}
+.bill .tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px dashed #F3A9C6;margin-top:10px;padding-top:8px}
+.bill .tot span{font-size:13px;font-weight:700}
+.bill .tot b{font-size:26px;font-weight:800;letter-spacing:-1px}
+.rider{position:absolute;left:12px;right:12px;bottom:24px;height:72px;background:var(--ink);border-radius:999px;display:flex;align-items:center;padding:0 8px 0 8px;color:#fff;gap:12px}
+.rider .av{width:56px;height:56px;border-radius:50%;background:url(karim.jpg) center/cover;border:2px solid var(--aq);flex:none}
+.rider b{font-size:15.5px;font-weight:800;display:block}.rider span{font-size:12.5px;font-weight:600;color:#9FB3AF}
+.rider .bt{margin-left:auto;display:flex;gap:6px}
+.rider .bt i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#24403C}
+.rider .bt i.p{background:var(--pk)}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:var(--ink);transform:translateX(-50%)}
+</style></head><body>
+<div class="sb"><span>9:41</span><span class="r">{{icon:signal:17:#10201E:2.6}}{{icon:wifi:17:#10201E:2.6}}{{icon:battery-full:24:#10201E:2}}</span></div>
+<div class="top"><span class="cb">{{icon:arrow-left:20:#10201E:2.2}}</span><div class="t"><b>Order SP-2041</b><span>Thu 26 Nov · 2 bags · 6.4 kg</span></div><span class="cb">{{icon:circle-help:20:#10201E:2.2}}</span></div>
+
+<div class="hero">
+ <div class="eb">Live · Machine 7</div>
+ <h1>Washing</h1>
+ <div class="sub">Cold 30° · eco detergent</div>
+ <div class="drum"><svg width="118" height="118" viewBox="0 0 118 118"><circle cx="59" cy="59" r="53" fill="none" stroke="#FFE0EC" stroke-width="7"/><circle cx="59" cy="59" r="53" fill="none" stroke="#FF8AB4" stroke-width="7" stroke-linecap="round" stroke-dasharray="333" stroke-dasharray="183 333" stroke-dashoffset="0" transform="rotate(-90 59 59)" style="stroke-dasharray:150 333"/></svg><div class="in"><b>38</b><span>MIN LEFT</span></div></div>
+ <div class="seg"><div class="bar"><i class="d"></i><i class="d"></i><i class="n"></i><i></i><i></i><i></i></div><div class="lb"><span>Stage <b>3 of 6</b></span><span>Back tonight <b>7:10–7:30 pm</b></span></div></div>
+</div>
+
+<div class="st">
+ <div class="r d"><span class="ic">{{icon:check:15:#fff:3}}</span><b>Picked up by Karim</b><span class="tm">9:12 am</span></div>
+ <div class="r d"><span class="ic">{{icon:check:15:#fff:3}}</span><b>Sorted &amp; weighed · 6.4 kg</b><span class="tm">10:05 am</span></div>
+ <div class="r n"><span class="ic">{{icon:washing-machine:16:#10201E:2.2}}</span><b>Washing</b><span class="tm">until 11:58</span></div>
+ <div class="r f"><span class="ic">{{icon:wind:15:#5E6E6B:2.2}}</span><b>Drying</b><span class="tm">12:40 pm</span></div>
+ <div class="r f"><span class="ic">{{icon:shirt:15:#5E6E6B:2.2}}</span><b>Folding &amp; packing</b><span class="tm">2:10 pm</span></div>
+ <div class="r f"><span class="ic">{{icon:bike:15:#5E6E6B:2.2}}</span><b>Out for delivery</b><span class="tm">7:10 pm</span></div>
+</div>
+
+<div class="bill">
+ <div class="ph"></div>
+ <div class="tx">
+  <div class="ln"><span>Everyday · 4.8 kg × $2.40</span><b>$11.52</b></div>
+  <div class="ln"><span>Delicates · 1.6 kg × $3.50</span><b>$5.60</b></div>
+  <div class="ln"><span>Pickup &amp; delivery</span><b>Free</b></div>
+  <div class="tot"><span>Total</span><b>$17.12</b></div>
+ </div>
+</div>
+
+<div class="rider" data-nav>
+ <span class="av"></span><div><b>Karim brings it back</b><span>On a cargo bike · 4.9 rating</span></div>
+ <div class="bt"><i>{{icon:message-circle:22:#fff:2.2}}</i><i class="p">{{icon:phone:21:#10201E:2.4}}</i></div>
+</div>
+<div class="hi"></div>
+</body></html>

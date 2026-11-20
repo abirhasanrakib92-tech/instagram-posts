@@ -1,0 +1,31 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Matinee",
+  "category": "Cinema tickets",
+  "tagline": "Pick a seat you can actually see from. Slide once to pay.",
+  "font": "Space Grotesk",
+  "font_note": "Sturdy grotesk with quirky numerals. Showtimes and seats read like a ticket stub.",
+  "gradient": ["#FFD54A", "#E8402E", "#B82A1C", "#161412"],
+  "aa_fill": "#E8402E",
+  "bg2": "#FFD54A",
+  "s2_ink": "#161412",
+  "bg4": "#161412",
+  "paper": "#F5F1E8",
+  "palette": [["#E8402E", "Cherry"], ["#FFD54A", "Butter"], ["#161412", "Ink"], ["#D9D2C4", "Taken"], ["#F5F1E8", "Popcorn"], ["#FFFFFF", "Ticket"]],
+  "zoom": [0, 360, 393, 300],
+  "zoom_title": "Every seat, readable<br>at a glance.",
+  "components_title": "Flat colour,<br>loud type.",
+  "elements": {
+   "film": {"box": [20, 118, 353, 106], "r": 24},
+   "day": {"box": [92, 238, 64, 64], "r": 20},
+   "times": {"box": [20, 312, 353, 38], "r": 19},
+   "row": {"box": [20, 548, 353, 37], "r": 10},
+   "pay": {"box": [12, 690, 369, 136], "r": 34},
+   "back": {"box": [20, 57, 44, 44], "shape": "circle"}
+  },
+  "s2_floats": [["film", 470, 40, 790, 5, 3], ["pay", 520, 30, 1060, -4, 3]],
+  "s4_floats": [["back", 130, 870, 100, 0, 1], ["film", 620, 80, 330, -3, 1], ["day", 200, 790, 320, 8, 1], ["times", 900, 90, 600, 0, 1], ["row", 900, 90, 760, 2, 1], ["pay", 840, 120, 960, -2, 1]]
+ }
+}
