@@ -1,0 +1,178 @@
+{
+ "name": "Daybook AI",
+ "category": "AI voice journal \u00b7 iOS app",
+ "tagline": "Talk about your day. The AI writes the page and tracks how you feel.",
+ "screens": [
+  "v1-listening.png",
+  "v2-home.png",
+  "v3-moods.png"
+ ],
+ "closeup": {
+  "screen": 2,
+  "callouts": [
+   {
+    "text": "Glass bubbles = share of each mood",
+    "side": "left",
+    "y": 470,
+    "line": 70
+   },
+   {
+    "text": "Rim arc shows the %",
+    "side": "right",
+    "y": 360,
+    "line": 60
+   },
+   {
+    "text": "Two-tone total",
+    "side": "left",
+    "y": 930,
+    "line": 90
+   },
+   {
+    "text": "Week at a glance",
+    "side": "right",
+    "y": 1160,
+    "line": 60
+   }
+  ]
+ },
+ "components": [
+  {
+   "screen": 2,
+   "crop": [
+    130,
+    144,
+    184,
+    184
+   ],
+   "box": [
+    80,
+    220,
+    440,
+    440
+   ],
+   "w": 440,
+   "label": "Mood bubble",
+   "fg": "#fff"
+  },
+  {
+   "screen": 1,
+   "crop": [
+    285,
+    716,
+    96,
+    96
+   ],
+   "box": [
+    560,
+    220,
+    440,
+    210
+   ],
+   "w": 210,
+   "label": "Voice orb",
+   "fg": "#fff",
+   "bg": "#5A1A0B"
+  },
+  {
+   "screen": 2,
+   "crop": [
+    70,
+    750,
+    252,
+    66
+   ],
+   "box": [
+    560,
+    450,
+    440,
+    210
+   ],
+   "w": 400,
+   "label": "Tab bar",
+   "bg": "#FFFFFF"
+  },
+  {
+   "screen": 0,
+   "crop": [
+    0,
+    500,
+    393,
+    86
+   ],
+   "box": [
+    80,
+    690,
+    920,
+    180
+   ],
+   "w": 920,
+   "label": "Listening pill",
+   "fg": "#fff"
+  },
+  {
+   "screen": 1,
+   "crop": [
+    0,
+    396,
+    393,
+    124
+   ],
+   "box": [
+    80,
+    890,
+    920,
+    250
+   ],
+   "w": 920,
+   "label": "Prompt cards",
+   "fg": "#fff"
+  },
+  {
+   "screen": 2,
+   "crop": [
+    24,
+    580,
+    345,
+    100
+   ],
+   "box": [
+    80,
+    1160,
+    920,
+    170
+   ],
+   "w": 580,
+   "label": "Stat cards",
+   "bg": "#FFFFFF"
+  }
+ ],
+ "font": "Onest",
+ "font_note": "Friendly geometric sans with soft corners, light enough for big two-tone numbers.",
+ "palette": [
+  [
+   "#E8721F",
+   "Ember orange"
+  ],
+  [
+   "#D2401A",
+   "Hot coral"
+  ],
+  [
+   "#7A2410",
+   "Rust"
+  ],
+  [
+   "#3E1208",
+   "Burnt cocoa"
+  ],
+  [
+   "#F7A25A",
+   "Apricot"
+  ],
+  [
+   "#F5F2F0",
+   "Warm white"
+  ]
+ ]
+}
