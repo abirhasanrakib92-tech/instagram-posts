@@ -206,6 +206,18 @@ Nixtio, awsmd, Conceptzilla, vlad_g, zeeroocanvas, rondesignlab). **Open them be
 - **Carousel backgrounds (owner, 2026-11-21):** every slide uses the same flat `#EEEEEE` background as slide 1 (set bg2/bg4/paper to #EEEEEE, flat:true, dark ink), and the fixed CTA slide is always last.
 - Carousel format: the Daybook 6-slide format (`tools/app_carousel_v3.py` / `app_carousel_v4.py` with glass/gradient settings, not flat).
 
+## Website style v2 (owner, 2026-11-21 — every website from now on)
+
+References: `reference/website-style-v2/ref-01.png … ref-10.png` (Nexwell, SERE, Wellmo, Avela, Lumóra, Horizon Courts, Stodio, Synais,
+AirLume, Enblox). Open them before every website. The owner wants scroll-stopping, unique designs:
+- Hero = one cinematic, REAL-looking photo (product floating in nature, close-up portrait with colour wash, surreal landscape, hand holding
+  the product) inside a rounded frame, with a glass pill nav and glass product/stat cards on the photo.
+- Big thin grotesk type (Inter Tight / Geist 200–400, tight tracking), optional Instrument Serif italic accent, small mono/uppercase labels.
+- Two-tone statement paragraphs (dark first half, grey second half), lots of white space, airy grid lines.
+- Bento cards mixing photos, big numbers and one dark card; soft gradient blobs or particle flowers where it fits.
+- Ending: giant brand wordmark (often over a landscape photo or in a dark footer) with link columns.
+- Every website a different skeleton and palette. Website posts need the owner's "done" before posting.
+
 ## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
 
 Every design slide (not the CTA slide, and not dashboard slides 2–3, see the 2026-11-18 feedback) carries the owner's chrome, added automatically by tools/carousel.py:

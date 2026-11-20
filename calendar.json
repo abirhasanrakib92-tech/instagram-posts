@@ -642,7 +642,7 @@
    "niche": "Specialty coffee roaster shop",
    "brand": "Kettle & Crow",
    "palette_hint": "espresso brown + cream",
-   "status": "ready",
+   "status": "ready-pending-approval",
    "design_dir": "designs/2026-11-21-am-kettle-crow-coffee-website",
    "image": null,
    "caption": "Most coffee bags hide the one number that matters: the roast date.\nSpecialty coffee roaster website UI design: shop, taste profile and subscription builder\n\nKettle & Crow puts a live roast log in the hero and a five-point taste radar next to the subscription builder, so you pick by flavor and see the price per cup before you check out.\n\nSave this for your next e-commerce or subscription page\nWould you pick a coffee from the radar chart, or do you still read the tasting notes?\n\n#uiux #websitedesign #landingpagedesign #specialtycoffee #coffeeroaster",
@@ -659,7 +659,8 @@
     "posts/2026-11/2026-11-21-am-kettle-crow-coffee-website-5.jpg",
     "posts/2026-11/2026-11-21-am-kettle-crow-coffee-website-6.jpg",
     "posts/2026-11/2026-11-21-am-kettle-crow-coffee-website-7.jpg"
-   ]
+   ],
+   "note": "redesign in reference/website-style-v2 (owner 2026-11-21); post only after owner says done"
   },
   {
    "id": "2026-11-21-pm",
@@ -724,7 +725,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-11-20-pm"
+   "originally": "2026-11-20-pm",
+   "note": "redesign in reference/website-style-v2 (owner 2026-11-21); post only after owner says done"
   },
   {
    "id": "2026-11-23-am",
@@ -789,7 +791,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": true,
-   "originally": "2026-11-22-am"
+   "originally": "2026-11-22-am",
+   "note": "redesign in reference/website-style-v2 (owner 2026-11-21); post only after owner says done"
   },
   {
    "id": "2026-11-24-pm",
@@ -852,7 +855,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-11-23-pm"
+   "originally": "2026-11-23-pm",
+   "note": "redesign in reference/website-style-v2 (owner 2026-11-21); post only after owner says done"
   },
   {
    "id": "2026-11-26-am",
@@ -917,7 +921,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-11-25-am"
+   "originally": "2026-11-25-am",
+   "note": "redesign in reference/website-style-v2 (owner 2026-11-21); post only after owner says done"
   },
   {
    "id": "2026-11-27-pm",
@@ -980,7 +985,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-11-26-pm"
+   "originally": "2026-11-26-pm",
+   "note": "redesign in reference/website-style-v2 (owner 2026-11-21); post only after owner says done"
   },
   {
    "id": "2026-11-29-am",
