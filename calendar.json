@@ -754,23 +754,25 @@
    "niche": "AI voice journal",
    "brand": "Daybook AI",
    "palette_hint": "peach + plum",
-   "status": "ready-pending-approval",
+   "status": "posted",
    "design_dir": "designs/2026-11-24-pm-daybook-voice-journal-app",
    "image": null,
-   "caption": "Nobody keeps a journal. Everybody likes to talk about their day.\nAI voice journal app UI design: golden-hour photo, dot-matrix timer, glass transcript\n\nA real moment fills the screen, a dot-matrix timer counts the voice note, and the AI writes today's page on frosted glass with your moods tagged.\n\nSave this for your next AI app idea\nWould you journal more if you could just talk?\n\n#uiux #mobileappdesign #aidesign #journalapp #appdesign",
-   "media_id": null,
-   "format": "carousel-app",
+   "caption": "Nobody keeps a journal. Everybody likes to talk about their day.\nAI voice journal app UI design: warm gradient, glass prompt cards, glowing mic\n\nOne question in big type, three glass cards to get you started, and a glowing mic that turns a minute of talking into today's page.\n\nSave this for your next AI app idea\nWould you journal more if you could just talk?\n\n#uiux #uidesign #mobileappdesign #appdesign #aidesign",
+   "media_id": "18136365202748457",
+   "format": "carousel-app-v3",
    "ai": true,
    "originally": "2026-11-22-pm",
    "slug": "daybook-voice-journal-app",
    "images": [
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-1.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-2.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-3.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-4.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-5.jpg"
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-1.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-2.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-3.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-4.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-5.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-6.jpg"
    ],
-   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y"
+   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y",
+   "posted_at": "2026-11-20 (early, owner asked)"
   },
   {
    "id": "2026-11-25-am",
