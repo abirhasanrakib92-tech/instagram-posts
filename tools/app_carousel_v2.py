@@ -67,8 +67,12 @@ async def main(design_dir, prefix):
         name, tag = cfg['name'], cfg['tagline']
 
         # 2: three screens side by side
-        sw = 300; gap = 28; x0 = (W - 3 * sw - 2 * gap) // 2; y = 420
-        phones = ''.join(f'<div class="ph" style="left:{x0+i*(sw+gap)}px;top:{y + (0 if i==1 else 40)}px;width:{sw}px;border-radius:44px"><img src="{uri(s)}"></div>' for i, s in enumerate(shots))
+        if len(shots) == 1:   # single-screen post: the screen big, cropped by the bottom edge
+            sw = 520
+            phones = f'<div class="ph" style="left:{(W-sw)//2}px;top:430px;width:{sw}px;border-radius:72px"><img src="{uri(shots[0])}"></div>'
+        else:
+            sw = 300; gap = 28; x0 = (W - 3 * sw - 2 * gap) // 2; y = 420
+            phones = ''.join(f'<div class="ph" style="left:{x0+i*(sw+gap)}px;top:{y + (0 if i==1 else 40)}px;width:{sw}px;border-radius:44px"><img src="{uri(s)}"></div>' for i, s in enumerate(shots))
         s2 = await shot(b, work, 's2', page(f"""
 <div style="position:absolute;left:80px;right:80px;top:{TOP+40}px">
  <div class="lab">{cfg['category']}</div>
@@ -79,15 +83,25 @@ async def main(design_dir, prefix):
 
         # 3: one screen large, tilted, with callouts
         hero = shots[cfg['closeup']['screen']]
-        cw = 560
+        cw = cfg['closeup'].get('width', 560)
+        px = cfg['closeup'].get('x', (W - cw) // 2)
+        tilt = cfg['closeup'].get('tilt', -4)
         callouts = ''
-        for c in cfg['closeup']['callouts']:
+        if cfg['closeup'].get('anchor'):   # callouts on the right, lines run to points on the screen
+            k = cw / 393; y0 = TOP + 50
+            for c in cfg['closeup']['callouts']:
+                tx, ty = px + c['at'][0] * k, y0 + c['at'][1] * k
+                callouts += f"""<div style="position:absolute;left:{tx-6:.0f}px;right:56px;top:{ty-27:.0f}px;display:flex;align-items:center">
+ <span style="width:12px;height:12px;border-radius:50%;background:#111114;box-shadow:0 0 0 4px rgba(255,255,255,.8);flex:none"></span>
+ <span style="flex:1;height:1.5px;background:#111114;margin-right:-1px"></span>
+ <span style="background:#fff;border-radius:999px;padding:14px 22px;font:500 24px 'Inter Tight';box-shadow:0 10px 30px -18px rgba(0,0,0,.3);white-space:nowrap">{c['text']}</span></div>"""
+        for c in ([] if cfg['closeup'].get('anchor') else cfg['closeup']['callouts']):
             side = c['side']
             callouts += f"""<div style="position:absolute;top:{c['y']}px;{'left:56px' if side=='left' else 'right:56px'};display:flex;align-items:center;gap:14px;flex-direction:{'row' if side=='left' else 'row-reverse'}">
  <span style="background:#fff;border-radius:999px;padding:14px 22px;font:500 24px 'Inter Tight';box-shadow:0 10px 30px -18px rgba(0,0,0,.3);white-space:nowrap">{c['text']}</span>
  <span style="width:{c['line']}px;height:1.5px;background:#111114"></span><span style="width:12px;height:12px;border-radius:50%;background:#111114;margin-{'left' if side=='left' else 'right'}:-6px"></span></div>"""
         s3 = await shot(b, work, 's3', page(f"""
-<div class="ph" style="left:{(W-cw)//2}px;top:{TOP+50}px;width:{cw}px;border-radius:78px;transform:rotate(-4deg)"><img src="{uri(hero)}"></div>
+<div class="ph" style="left:{px}px;top:{TOP+50}px;width:{cw}px;border-radius:78px;transform:rotate({tilt}deg)"><img src="{uri(hero)}"></div>
 {callouts}"""))
         C.save(s3, prefix + '-3.jpg')
 

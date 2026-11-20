@@ -1,49 +1,62 @@
 {
  "name": "Daybook AI",
  "category": "AI voice journal \u00b7 iOS app",
- "tagline": "Talk about your day. The AI writes the page and tracks how you feel.",
+ "tagline": "Talk about your day. Daybook writes the page, you just answer one question.",
  "screens": [
-  "v1-listening.png",
-  "v2-home.png",
-  "v3-moods.png"
+  "v2-home.png"
  ],
  "closeup": {
-  "screen": 2,
+  "screen": 0,
+  "anchor": true,
+  "x": 64,
+  "width": 500,
+  "tilt": 0,
   "callouts": [
    {
-    "text": "Glass bubbles = share of each mood",
-    "side": "left",
-    "y": 470,
-    "line": 70
+    "text": "Greeting + streak",
+    "at": [
+     212,
+     72
+    ]
    },
    {
-    "text": "Rim arc shows the %",
-    "side": "right",
-    "y": 360,
-    "line": 60
+    "text": "One question, big type",
+    "at": [
+     288,
+     360
+    ]
    },
    {
-    "text": "Two-tone total",
-    "side": "left",
-    "y": 930,
-    "line": 90
+    "text": "Swipeable prompt cards",
+    "at": [
+     240,
+     414
+    ]
    },
    {
-    "text": "Week at a glance",
-    "side": "right",
-    "y": 1160,
-    "line": 60
+    "text": "Last entry as glass chip",
+    "at": [
+     300,
+     636
+    ]
+   },
+   {
+    "text": "Glowing mic, tap to talk",
+    "at": [
+     333,
+     764
+    ]
    }
   ]
  },
  "components": [
   {
-   "screen": 2,
+   "screen": 0,
    "crop": [
-    130,
-    144,
-    184,
-    184
+    24,
+    410,
+    120,
+    98
    ],
    "box": [
     80,
@@ -51,12 +64,12 @@
     440,
     440
    ],
-   "w": 440,
-   "label": "Mood bubble",
-   "fg": "#fff"
+   "w": 470,
+   "label": "Prompt card",
+   "bg": "#B83911"
   },
   {
-   "screen": 1,
+   "screen": 0,
    "crop": [
     285,
     716,
@@ -71,16 +84,15 @@
    ],
    "w": 210,
    "label": "Voice orb",
-   "fg": "#fff",
-   "bg": "#5A1A0B"
+   "bg": "#5B1B0C"
   },
   {
-   "screen": 2,
+   "screen": 0,
    "crop": [
-    70,
-    750,
-    252,
-    66
+    278,
+    54,
+    104,
+    52
    ],
    "box": [
     560,
@@ -88,16 +100,16 @@
     440,
     210
    ],
-   "w": 400,
-   "label": "Tab bar",
-   "bg": "#FFFFFF"
+   "w": 330,
+   "label": "Glass buttons",
+   "bg": "#F59D46"
   },
   {
    "screen": 0,
    "crop": [
-    0,
-    500,
-    393,
+    24,
+    592,
+    345,
     86
    ],
    "box": [
@@ -106,35 +118,53 @@
     920,
     180
    ],
-   "w": 920,
-   "label": "Listening pill",
-   "fg": "#fff"
+   "w": 900,
+   "label": "Last entry chip",
+   "bg": "#7A2410"
   },
   {
-   "screen": 1,
+   "screen": 0,
    "crop": [
-    0,
-    396,
-    393,
-    124
+    18,
+    52,
+    194,
+    56
    ],
    "box": [
     80,
     890,
-    920,
+    440,
     250
    ],
-   "w": 920,
-   "label": "Prompt cards",
-   "fg": "#fff"
+   "w": 420,
+   "label": "Greeting",
+   "bg": "#F49C46"
   },
   {
-   "screen": 2,
+   "screen": 0,
    "crop": [
-    24,
-    580,
-    345,
-    100
+    18,
+    298,
+    300,
+    110
+   ],
+   "box": [
+    560,
+    890,
+    440,
+    250
+   ],
+   "w": 400,
+   "label": "Headline",
+   "bg": "#D9551A"
+  },
+  {
+   "screen": 0,
+   "crop": [
+    16,
+    728,
+    361,
+    76
    ],
    "box": [
     80,
@@ -142,9 +172,9 @@
     920,
     170
    ],
-   "w": 580,
-   "label": "Stat cards",
-   "bg": "#FFFFFF"
+   "w": 860,
+   "label": "Input bar",
+   "bg": "#591B0C"
   }
  ],
  "font": "Onest",
