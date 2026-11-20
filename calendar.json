@@ -16,6 +16,37 @@
     "18081301538727762",
     "18106379408381929"
    ]
+  },
+  {
+   "date": "2026-11-20",
+   "type": "app",
+   "niche": "AI voice journal",
+   "brand": "Daybook AI",
+   "palette_hint": "peach + plum",
+   "status": "posted",
+   "design_dir": "designs/2026-11-24-pm-daybook-voice-journal-app",
+   "image": null,
+   "caption": "Nobody keeps a journal. Everybody likes to talk about their day.\nAI voice journal app UI design: warm gradient, glass prompt cards, glowing mic\n\nOne question in big type, three glass cards to get you started, and a glowing mic that turns a minute of talking into today's page.\n\nSave this for your next AI app idea\nWould you journal more if you could just talk?\n\n#uiux #uidesign #mobileappdesign #appdesign #aidesign",
+   "media_id": "18136365202748457",
+   "format": "carousel-app-v3",
+   "ai": true,
+   "originally": "2026-11-22-pm",
+   "slug": "daybook-voice-journal-app",
+   "images": [
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-1.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-2.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-3.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-4.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-5.jpg",
+    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-6.jpg"
+   ],
+   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y",
+   "posted_at": "2026-11-20 (early, owner asked)",
+   "replied_comment_ids": [
+    "18134551237789757"
+   ],
+   "slot": "early",
+   "note": "posted early on owner request; its 2026-11-24-pm slot was reused"
   }
  ],
  "slots": [
@@ -636,28 +667,28 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "Smart ring health tracking",
-   "brand": "Halo",
-   "palette_hint": "silver blue + graphite + coral",
+   "niche": "Skincare shop: product detail",
+   "brand": "Mossé",
+   "palette_hint": "moss green + mist",
    "status": "ready",
-   "design_dir": "designs/2026-11-21-pm-halo-ring-app",
+   "design_dir": "designs/2026-11-21-pm-mosse-skincare-app",
    "image": null,
-   "caption": "Your ring knew you'd sleep badly before you did.\nSmart ring health app UI design: readiness score, heart rate and sleep tracking\n\nHalo turns a whole night of sensor data into one dot-matrix number, then shows the three things it was built from, right over a real photo of the ring.\n\nSave this for your next health or wearable app\nWould you trust one readiness number, or do you want every metric?\n\n#uidesign #mobileappdesign #healthapp #wearabletech #smartring",
+   "caption": "A cream should look like this before you ever open the jar.\nSkincare app UI design: product detail with real photography, glass hotspots and slide to add\n\nMossé lets the product photo do the selling. Glass pins point at what's inside, and the size, price and checkout all live in one frosted sheet under the jar.\n\nSave this for your next e-commerce product page\nWould you add it to your bag from this screen?\n\n#uidesign #mobileappdesign #glassmorphism #skincareapp #beautytech",
    "media_id": null,
    "format": "carousel-app-v4",
    "ai": false,
    "originally": "2026-11-19-pm",
-   "slug": "halo-ring-app",
+   "slug": "mosse-skincare-app",
    "images": [
-    "posts/2026-11/2026-11-21-pm-halo-ring-app-1.jpg",
-    "posts/2026-11/2026-11-21-pm-halo-ring-app-2.jpg",
-    "posts/2026-11/2026-11-21-pm-halo-ring-app-3.jpg",
-    "posts/2026-11/2026-11-21-pm-halo-ring-app-4.jpg",
-    "posts/2026-11/2026-11-21-pm-halo-ring-app-5.jpg",
-    "posts/2026-11/2026-11-21-pm-halo-ring-app-6.jpg"
+    "posts/2026-11/2026-11-21-pm-mosse-skincare-app-1.jpg",
+    "posts/2026-11/2026-11-21-pm-mosse-skincare-app-2.jpg",
+    "posts/2026-11/2026-11-21-pm-mosse-skincare-app-3.jpg",
+    "posts/2026-11/2026-11-21-pm-mosse-skincare-app-4.jpg",
+    "posts/2026-11/2026-11-21-pm-mosse-skincare-app-5.jpg",
+    "posts/2026-11/2026-11-21-pm-mosse-skincare-app-6.jpg"
    ],
-   "replaces": "Wander (travel app, rejected old style)",
-   "approved": "owner approved Halo and asked to post it as the next app (2026-11-20 night); swapped with Mossé v1"
+   "replaces": "Halo (moved to unscheduled on owner request)",
+   "approved": "owner approved Mossé v1 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am"
   },
   {
    "id": "2026-11-22-am",
@@ -701,28 +732,28 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "niche": "Skincare shop: product detail",
+   "niche": "Skincare: skin scan",
    "brand": "Mossé",
-   "palette_hint": "moss green + mist",
+   "palette_hint": "moss green + blush",
    "status": "ready",
-   "design_dir": "designs/2026-11-23-am-mosse-skincare-app",
+   "design_dir": "designs/2026-11-23-am-mosse-skin-scan-app",
    "image": null,
-   "caption": "A cream should look like this before you ever open the jar.\nSkincare app UI design: product detail with real photography, glass hotspots and slide to add\n\nMossé lets the product photo do the selling. Glass pins point at what's inside, and the size, price and checkout all live in one frosted sheet under the jar.\n\nSave this for your next e-commerce product page\nWould you add it to your bag from this screen?\n\n#uidesign #mobileappdesign #glassmorphism #skincareapp #beautytech",
+   "caption": "Two minutes with your camera, and your skin gets a score out of 100.\nSkin scan app UI design: AI skin analysis, dot-matrix score and product match\n\nMossé reads hydration, texture and redness straight off a real face, pins each result where it was found, and suggests the one product your skin needs tonight.\n\nSave this for your next AI or health app idea\nWould you trust an app to score your skin?\n\n#uiux #appdesign #skincaretech #aiapp #beautyapp",
    "media_id": null,
    "format": "carousel-app-v4",
    "ai": false,
    "originally": "2026-11-21-am",
-   "slug": "mosse-skincare-app",
+   "slug": "mosse-skin-scan-app",
    "images": [
-    "posts/2026-11/2026-11-23-am-mosse-skincare-app-1.jpg",
-    "posts/2026-11/2026-11-23-am-mosse-skincare-app-2.jpg",
-    "posts/2026-11/2026-11-23-am-mosse-skincare-app-3.jpg",
-    "posts/2026-11/2026-11-23-am-mosse-skincare-app-4.jpg",
-    "posts/2026-11/2026-11-23-am-mosse-skincare-app-5.jpg",
-    "posts/2026-11/2026-11-23-am-mosse-skincare-app-6.jpg"
+    "posts/2026-11/2026-11-23-am-mosse-skin-scan-app-1.jpg",
+    "posts/2026-11/2026-11-23-am-mosse-skin-scan-app-2.jpg",
+    "posts/2026-11/2026-11-23-am-mosse-skin-scan-app-3.jpg",
+    "posts/2026-11/2026-11-23-am-mosse-skin-scan-app-4.jpg",
+    "posts/2026-11/2026-11-23-am-mosse-skin-scan-app-5.jpg",
+    "posts/2026-11/2026-11-23-am-mosse-skin-scan-app-6.jpg"
    ],
-   "replaces": "Hush, then Matinee (flat style rejected by owner)",
-   "approved": "owner approved the design 2026-11-20 night (Mossé v1 of 3)"
+   "replaces": "Mossé v1 (moved to 21-pm)",
+   "approved": "owner approved Mossé v2 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am"
   },
   {
    "id": "2026-11-23-pm",
@@ -766,31 +797,14 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "AI voice journal",
-   "brand": "Daybook AI",
-   "palette_hint": "peach + plum",
-   "status": "posted",
-   "design_dir": "designs/2026-11-24-pm-daybook-voice-journal-app",
+   "status": "planned",
+   "niche": null,
+   "brand": null,
+   "palette_hint": null,
+   "design_dir": null,
    "image": null,
-   "caption": "Nobody keeps a journal. Everybody likes to talk about their day.\nAI voice journal app UI design: warm gradient, glass prompt cards, glowing mic\n\nOne question in big type, three glass cards to get you started, and a glowing mic that turns a minute of talking into today's page.\n\nSave this for your next AI app idea\nWould you journal more if you could just talk?\n\n#uiux #uidesign #mobileappdesign #appdesign #aidesign",
-   "media_id": "18136365202748457",
-   "format": "carousel-app-v3",
-   "ai": true,
-   "originally": "2026-11-22-pm",
-   "slug": "daybook-voice-journal-app",
-   "images": [
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-1.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-2.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-3.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-4.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-5.jpg",
-    "posts/2026-11/2026-11-24-pm-daybook-voice-journal-app-v3-6.jpg"
-   ],
-   "designed_in": "Figma IVWMA2qO8U4XdLphCuds1y",
-   "posted_at": "2026-11-20 (early, owner asked)",
-   "replied_comment_ids": [
-    "18134551237789757"
-   ]
+   "media_id": null,
+   "note": "new reference-style app (owner 2026-11-21); needs owner approval before posting"
   },
   {
    "id": "2026-11-25-am",
@@ -834,27 +848,28 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "niche": "Crypto & savings wallet",
-   "brand": "Verdant",
-   "palette_hint": "mint + emerald + lilac",
-   "status": "ready-pending-approval",
-   "design_dir": "designs/2026-11-26-am-verdant-wallet-app",
+   "niche": "Skincare: evening ritual timer",
+   "brand": "Mossé",
+   "palette_hint": "golden hour orange + terracotta",
+   "status": "ready",
+   "design_dir": "designs/2026-11-26-am-mosse-evening-ritual-app",
    "image": null,
-   "caption": "Saving for a cabin feels different when you can see the cabin.\nCrypto wallet app UI design: one-card swap, savings goal and slide to confirm\n\nVerdant keeps the swap honest: rate, fee and what you actually get, all in one glass card. Round-ups then grow a goal with a real photo, not a bar chart.\n\nSave this for your next fintech app project\nWould you keep crypto and savings in one app, or split them?\n\n#uidesign #mobileappdesign #fintechdesign #cryptowallet #glassmorphism",
+   "caption": "Most people rush skincare in 40 seconds. This screen makes it six calm minutes.\nSkincare routine app UI design: guided evening ritual with a dot-matrix timer\n\nMossé walks you through each step with the real product on screen, times the massage for you, and keeps a streak so the habit sticks.\n\nSave this for your next wellness app project\nMorning routine or evening routine: which one do you never skip?\n\n#uidesign #mobileappdesign #wellnessapp #skincareroutine #glassmorphism",
    "media_id": null,
    "format": "carousel-app-v4",
    "ai": false,
    "originally": "2026-11-24-am",
-   "slug": "verdant-wallet-app",
+   "slug": "mosse-evening-ritual-app",
    "images": [
-    "posts/2026-11/2026-11-26-am-verdant-wallet-app-1.jpg",
-    "posts/2026-11/2026-11-26-am-verdant-wallet-app-2.jpg",
-    "posts/2026-11/2026-11-26-am-verdant-wallet-app-3.jpg",
-    "posts/2026-11/2026-11-26-am-verdant-wallet-app-4.jpg",
-    "posts/2026-11/2026-11-26-am-verdant-wallet-app-5.jpg",
-    "posts/2026-11/2026-11-26-am-verdant-wallet-app-6.jpg"
+    "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-1.jpg",
+    "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-2.jpg",
+    "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-3.jpg",
+    "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-4.jpg",
+    "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-5.jpg",
+    "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-6.jpg"
    ],
-   "replaces": "Haven (smart home app, rejected old style)"
+   "replaces": "Verdant (unscheduled)",
+   "approved": "owner approved Mossé v3 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am"
   },
   {
    "id": "2026-11-26-pm",
@@ -898,27 +913,14 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "Padel court booking",
-   "brand": "Rally",
-   "palette_hint": "court blue + sunset coral",
-   "status": "ready-pending-approval",
-   "design_dir": "designs/2026-11-27-pm-rally-padel-app",
+   "status": "planned",
+   "niche": null,
+   "brand": null,
+   "palette_hint": null,
+   "design_dir": null,
    "image": null,
-   "caption": "Booking padel shouldn't end with a group chat about who owes €9.50.\nPadel court booking app UI design: time slots, cost split and slide to book\n\nRally shows the real court at the hour you'll play, prices every slot up front, and splits the bill four ways before you book.\n\nSave this for your next booking app project\nWould you book the 19:30 golden hour slot or the cheaper 22:30?\n\n#uidesign #mobileappdesign #bookingapp #padel #sportsapp",
    "media_id": null,
-   "format": "carousel-app-v4",
-   "ai": false,
-   "originally": "2026-11-25-pm",
-   "slug": "rally-padel-app",
-   "images": [
-    "posts/2026-11/2026-11-27-pm-rally-padel-app-1.jpg",
-    "posts/2026-11/2026-11-27-pm-rally-padel-app-2.jpg",
-    "posts/2026-11/2026-11-27-pm-rally-padel-app-3.jpg",
-    "posts/2026-11/2026-11-27-pm-rally-padel-app-4.jpg",
-    "posts/2026-11/2026-11-27-pm-rally-padel-app-5.jpg",
-    "posts/2026-11/2026-11-27-pm-rally-padel-app-6.jpg"
-   ],
-   "replaces": "Drivo (car rental, planned)"
+   "note": "new reference-style app (owner 2026-11-21); needs owner approval before posting"
   },
   {
    "id": "2026-11-28-am",
@@ -962,17 +964,14 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "niche": "Plant care reminders",
-   "brand": "Leafy",
-   "palette_hint": "sage + clay",
    "status": "planned",
+   "niche": null,
+   "brand": null,
+   "palette_hint": null,
    "design_dir": null,
    "image": null,
-   "caption": null,
    "media_id": null,
-   "format": "carousel-app",
-   "ai": false,
-   "originally": "2026-11-27-am"
+   "note": "new reference-style app (owner 2026-11-21); needs owner approval before posting"
   },
   {
    "id": "2026-11-29-pm",
@@ -1016,28 +1015,14 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "Skincare: skin scan",
-   "brand": "Mossé",
-   "palette_hint": "moss green + blush",
-   "status": "ready",
-   "design_dir": "designs/2026-11-30-pm-mosse-skin-scan-app",
+   "status": "planned",
+   "niche": null,
+   "brand": null,
+   "palette_hint": null,
+   "design_dir": null,
    "image": null,
-   "caption": "Two minutes with your camera, and your skin gets a score out of 100.\nSkin scan app UI design: AI skin analysis, dot-matrix score and product match\n\nMossé reads hydration, texture and redness straight off a real face, pins each result where it was found, and suggests the one product your skin needs tonight.\n\nSave this for your next AI or health app idea\nWould you trust an app to score your skin?\n\n#uiux #appdesign #skincaretech #aiapp #beautyapp",
    "media_id": null,
-   "format": "carousel-app-v4",
-   "ai": false,
-   "originally": "2026-11-28-pm",
-   "replaces": "Retouch",
-   "approved": "owner approved the design 2026-11-20 night (Mossé v2 of 3)",
-   "slug": "mosse-skin-scan-app",
-   "images": [
-    "posts/2026-11/2026-11-30-pm-mosse-skin-scan-app-1.jpg",
-    "posts/2026-11/2026-11-30-pm-mosse-skin-scan-app-2.jpg",
-    "posts/2026-11/2026-11-30-pm-mosse-skin-scan-app-3.jpg",
-    "posts/2026-11/2026-11-30-pm-mosse-skin-scan-app-4.jpg",
-    "posts/2026-11/2026-11-30-pm-mosse-skin-scan-app-5.jpg",
-    "posts/2026-11/2026-11-30-pm-mosse-skin-scan-app-6.jpg"
-   ]
+   "note": "new reference-style app (owner 2026-11-21); needs owner approval before posting"
   },
   {
    "id": "2026-12-01-am",
@@ -1243,28 +1228,13 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "niche": "Skincare: evening ritual timer",
-   "brand": "Mossé",
-   "palette_hint": "golden hour orange + terracotta",
-   "status": "ready",
-   "design_dir": "designs/2026-12-06-pm-mosse-evening-ritual-app",
+   "niche": "Reading tracker / book club",
+   "brand": "Shelf",
+   "palette_hint": "",
+   "status": "planned",
+   "design_dir": null,
    "image": null,
-   "caption": "Most people rush skincare in 40 seconds. This screen makes it six calm minutes.\nSkincare routine app UI design: guided evening ritual with a dot-matrix timer\n\nMossé walks you through each step with the real product on screen, times the massage for you, and keeps a streak so the habit sticks.\n\nSave this for your next wellness app project\nMorning routine or evening routine: which one do you never skip?\n\n#uidesign #mobileappdesign #wellnessapp #skincareroutine #glassmorphism",
-   "media_id": null,
-   "format": "carousel-app-v4",
-   "ai": false,
-   "originally": "2026-12-04-pm",
-   "replaces": "Shelf",
-   "approved": "owner approved the design 2026-11-20 night (Mossé v3 of 3)",
-   "slug": "mosse-evening-ritual-app",
-   "images": [
-    "posts/2026-12/2026-12-06-pm-mosse-evening-ritual-app-1.jpg",
-    "posts/2026-12/2026-12-06-pm-mosse-evening-ritual-app-2.jpg",
-    "posts/2026-12/2026-12-06-pm-mosse-evening-ritual-app-3.jpg",
-    "posts/2026-12/2026-12-06-pm-mosse-evening-ritual-app-4.jpg",
-    "posts/2026-12/2026-12-06-pm-mosse-evening-ritual-app-5.jpg",
-    "posts/2026-12/2026-12-06-pm-mosse-evening-ritual-app-6.jpg"
-   ]
+   "media_id": null
   },
   {
    "id": "2026-12-07-am",
@@ -1447,5 +1417,19 @@
    "originally": "2026-12-09-pm"
   }
  ],
- "note_resequence": "2026-11-18: runs stalled after 2026-11-16 am; the 4 missed slots and everything after were shifted forward 4 slots (rotation kept). 'originally' keeps the old slot id; file paths keep the old ids. Owner asked to see all designs before posting: ready slots are 'ready-pending-approval' until he approves. Owner approved on 2026-11-18; ready slots are 'ready' again."
+ "note_resequence": "2026-11-18: runs stalled after 2026-11-16 am; the 4 missed slots and everything after were shifted forward 4 slots (rotation kept). 'originally' keeps the old slot id; file paths keep the old ids. Owner asked to see all designs before posting: ready slots are 'ready-pending-approval' until he approves. Owner approved on 2026-11-18; ready slots are 'ready' again.",
+ "unscheduled_designs": [
+  {
+   "brand": "Halo",
+   "dir": "designs/unscheduled-halo-ring-app"
+  },
+  {
+   "brand": "Verdant",
+   "dir": "designs/unscheduled-verdant-wallet-app"
+  },
+  {
+   "brand": "Rally",
+   "dir": "designs/unscheduled-rally-padel-app"
+  }
+ ]
 }
