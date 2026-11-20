@@ -1,0 +1,159 @@
+{
+ "v4": {
+  "name": "Mossé",
+  "category": "Evening ritual",
+  "tagline": "Every step timed for you, with the real products in front of you.",
+  "font": "Inter Tight",
+  "font_note": "Inter Tight light for the interface, a Doto dot-matrix timer for each step.",
+  "gradient": [
+   "#F7A25A",
+   "#E2662B",
+   "#9C3415",
+   "#3B1609"
+  ],
+  "paper": "#F6EFE8",
+  "palette": [
+   [
+    "#F59A4C",
+    "Golden hour"
+   ],
+   [
+    "#E2662B",
+    "Ember"
+   ],
+   [
+    "#9C3415",
+    "Terracotta"
+   ],
+   [
+    "#3B1609",
+    "Dusk"
+   ],
+   [
+    "#FFE7D1",
+    "Peach glass"
+   ],
+   [
+    "#FFFFFF",
+    "White"
+   ]
+  ],
+  "zoom": [
+   0,
+   270,
+   393,
+   330
+  ],
+  "zoom_title": "One step at a time,<br>timed for you.",
+  "components_title": "Warm glass,<br>golden hour.",
+  "elements": {
+   "st": {
+    "box": [
+     266,
+     62,
+     109,
+     40
+    ],
+    "r": 20
+   },
+   "tm": {
+    "box": [
+     32,
+     488,
+     223,
+     92
+    ],
+    "r": 16
+   },
+   "ct": {
+    "box": [
+     219,
+     288,
+     146,
+     103
+    ],
+    "r": 22
+   },
+   "step": {
+    "box": [
+     14,
+     610,
+     365,
+     56
+    ],
+    "r": 20
+   },
+   "p": {
+    "box": [
+     82,
+     764,
+     229,
+     64
+    ],
+    "r": 32
+   }
+  },
+  "s2_floats": [
+   [
+    "ct",
+    330,
+    60,
+    780,
+    5,
+    3
+   ],
+   [
+    "step",
+    560,
+    30,
+    1100,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "st",
+    300,
+    720,
+    110,
+    0,
+    1
+   ],
+   [
+    "tm",
+    600,
+    80,
+    330,
+    -3,
+    1
+   ],
+   [
+    "ct",
+    380,
+    680,
+    360,
+    6,
+    1
+   ],
+   [
+    "step",
+    900,
+    90,
+    700,
+    0,
+    1
+   ],
+   [
+    "p",
+    600,
+    240,
+    1000,
+    0,
+    1
+   ]
+  ],
+  "screen": "auto",
+  "flat": false
+ }
+}

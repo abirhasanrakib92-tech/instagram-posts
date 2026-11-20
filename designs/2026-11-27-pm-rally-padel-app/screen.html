@@ -1,0 +1,86 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Rally">
+<meta name="app-desc" content="Padel booking that shows **the real court at the real hour**, then **splits the bill four ways** before you even slide to book.">
+<meta name="fonts" content="Inter Tight|Thin, fast type for times and prices, with Doto dot-matrix slots that read like a club scoreboard.">
+<meta name="palette" content="#1F4FBF:Court blue|#FF7A59:Sunset coral|#FFD9C7:Peach glass|#0E1A33:Night ink|#E8EEFB:Line white|#F6C26B:Golden hour">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#0E1A33;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#1F4FBF}
+.bg{position:absolute;inset:0;background:url(court.jpg) 50% 0/auto 852px no-repeat}
+.sh0{position:absolute;left:0;right:0;top:0;height:250px;background:linear-gradient(180deg,rgba(20,14,8,.42),rgba(20,14,8,0))}
+.gl{background:rgba(255,255,255,.2);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.4)}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600;color:#fff}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;justify-content:space-between;color:#fff}
+.cb{width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
+.dp{height:40px;padding:0 16px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600}
+.hd{position:absolute;left:24px;top:124px;color:#fff}
+.hd small{font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;opacity:.85;display:flex;align-items:center;gap:6px}
+.hd h1{font-weight:300;font-size:42px;line-height:.98;letter-spacing:-1.8px;margin-top:8px}
+.hd h1 i{font-family:'Instrument Serif';font-weight:400;font-size:46px;letter-spacing:-.4px;color:#FFD9C7}
+.wx{position:absolute;right:18px;top:210px;width:118px;border-radius:22px;padding:10px 12px;color:#fff}
+.wx b{display:block;font-weight:300;font-size:30px;letter-spacing:-1px;line-height:1}
+.wx span{display:block;font-size:11.5px;font-weight:500;opacity:.9;margin-top:4px}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.35)}
+.ln{position:absolute;height:1px;background:rgba(255,255,255,.9)}
+.pin{position:absolute;white-space:nowrap;display:flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 5px;border-radius:999px;font-size:12.5px;font-weight:500;color:#fff}
+.pin i{width:26px;height:26px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.pin b{font-weight:700}
+.slot{position:absolute;left:10px;right:10px;top:414px;border-radius:30px;padding:12px 12px 12px;color:#fff;background:rgba(20,40,110,.28)}
+.slot .h{display:flex;justify-content:space-between;align-items:center;padding:0 6px;font-size:13px;font-weight:600}
+.slot .h span{display:flex;align-items:center;gap:4px;opacity:.9;font-weight:500}
+.sl4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.sl4 div{height:66px;border-radius:20px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sl4 b{font-family:'Doto';font-weight:900;font-size:22px;letter-spacing:-.5px;line-height:1}
+.sl4 span{font-size:11px;font-weight:600;margin-top:5px;opacity:.85}
+.sl4 .x{opacity:.42}
+.sl4 .on{background:#fff;color:#0E1A33;border-color:#fff}
+.sl4 .on span{color:#FF7A59;opacity:1}
+.sh{position:absolute;left:10px;right:10px;bottom:10px;height:276px;border-radius:36px;padding:18px 18px 14px;background:rgba(255,236,226,.84);backdrop-filter:blur(26px) saturate(1.5);-webkit-backdrop-filter:blur(26px) saturate(1.5);border:1px solid rgba(255,255,255,.75)}
+.sh .r{display:flex;justify-content:space-between;align-items:center}
+.sh .r b{font-size:16px;font-weight:600}
+.sh .r span{font-size:12.5px;font-weight:600;color:#4A5675;display:flex;align-items:center;gap:6px}
+.pl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.pl div{display:flex;flex-direction:column;align-items:center;font-size:12px;font-weight:600}
+.pl .a{width:56px;height:56px;border-radius:50%;background-size:cover;background-position:center;border:2.5px solid #fff;position:relative}
+.pl .a em{position:absolute;right:-3px;bottom:-1px;width:20px;height:20px;border-radius:50%;background:#2BB673;border:2px solid #fff;display:grid;place-items:center}
+.pl .a.inv{border:1.5px dashed #4A5675;background:rgba(255,255,255,.5);display:grid;place-items:center}
+.pl small{margin-top:6px}.pl .iv{color:#4A5675}
+.pr{display:flex;align-items:flex-end;justify-content:space-between;margin-top:14px}
+.pr b{font-weight:200;font-size:46px;letter-spacing:-2.2px;line-height:.9}
+.pr b sup{font-size:22px;font-weight:300;letter-spacing:-.4px;vertical-align:top;position:relative;top:3px}
+.pr small{display:block;font-size:12px;color:#4A5675;font-weight:500;margin-top:6px}
+.pr .eq{text-align:right;font-size:12.5px;color:#4A5675;font-weight:500;line-height:1.5}
+.pr .eq strong{color:#0E1A33;font-weight:600}
+.go{margin-top:12px;height:60px;border-radius:999px;background:#FF7A59;display:flex;align-items:center;padding:6px;position:relative}
+.go .k{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative;z-index:1}
+.go .tx{position:absolute;left:0;right:0;text-align:center;color:#fff;font-size:15.5px;font-weight:600}
+.go .ch{position:absolute;right:22px;display:flex;opacity:.6}
+.hi{position:absolute;left:50%;bottom:7px;width:134px;height:5px;border-radius:3px;background:#0E1A33;transform:translateX(-50%)}
+</style></head><body>
+<div class="bg"></div><div class="sh0"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#fff:2.6}}{{icon:wifi:17:#fff:2.6}}{{icon:battery-full:24:#fff:2}}</span></div>
+<div class="top"><span class="cb gl">{{icon:chevron-left:22:#fff:2}}</span><span class="dp gl">{{icon:calendar:15:#fff:2}}Sat, 28 Nov · 90 min</span><span class="cb gl">{{icon:heart:19:#fff:1.8}}</span></div>
+<div class="hd"><small>{{icon:map-pin:13:#fff:2.2}}Arena Sol Club · 2.4 km</small><h1>Court 3,<br><i>golden hour.</i></h1></div>
+<div class="wx gl"><b>22°</b><span>Clear · 8 km/h</span></div>
+<span class="dot" style="left:206px;top:330px"></span><span class="ln" style="left:218px;top:336px;width:20px"></span>
+<div class="pin gl" style="left:236px;top:318px"><i>{{icon:sun:14:#FF7A59:2.2}}</i><span>Sun till <b>19:52</b></span></div>
+<div class="slot gl">
+ <div class="h"><b>Pick a time</b><span>Panoramic court {{icon:chevron-down:14:#fff:2.2}}</span></div>
+ <div class="sl4"><div class="x"><b>18:00</b><span>Taken</span></div><div class="on"><b>19:30</b><span>€38</span></div><div><b>21:00</b><span>€32</span></div><div><b>22:30</b><span>€28</span></div></div>
+</div>
+<div class="sh">
+ <div class="r"><b>Split with your four</b><span>{{icon:users:14:#4A5675:2.2}}3 joined</span></div>
+ <div class="pl">
+  <div><span class="a" style="background-image:url(rohan.jpg)"><em>{{icon:check:11:#fff:3.2}}</em></span><small>You</small></div>
+  <div><span class="a" style="background-image:url(mei.jpg)"><em>{{icon:check:11:#fff:3.2}}</em></span><small>Mei</small></div>
+  <div><span class="a" style="background-image:url(daniel.jpg)"><em>{{icon:check:11:#fff:3.2}}</em></span><small>Daniel</small></div>
+  <div><span class="a inv">{{icon:plus:20:#4A5675:2}}</span><small class="iv">Invite</small></div>
+ </div>
+ <div class="pr"><div><b>€9<sup>.50</sup></b><small>your share, each</small></div><div class="eq">Court 19:30–21:00<br><strong>€38 ÷ 4 players</strong></div></div>
+ <div class="go" data-nav><span class="k">{{icon:arrow-right:20:#FF7A59:2.4}}</span><span class="tx">Slide to book Court 3</span><span class="ch">{{icon:chevrons-right:20:#fff:2}}</span></div>
+</div>
+<div class="hi"></div>
+</body></html>

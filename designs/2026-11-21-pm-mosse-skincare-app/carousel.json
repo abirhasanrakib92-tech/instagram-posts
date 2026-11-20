@@ -1,0 +1,201 @@
+{
+ "v4": {
+  "name": "Mossé",
+  "category": "Skincare shop",
+  "tagline": "Every product shot like the real thing. Slide once to add.",
+  "font": "Inter Tight",
+  "font_note": "Thin, tight numerals for prices and scores. Instrument Serif carries the brand.",
+  "gradient": [
+   "#C9D8C4",
+   "#7E9C80",
+   "#2F5240",
+   "#0F1A13"
+  ],
+  "paper": "#EEF2EB",
+  "palette": [
+   [
+    "#1F3A2B",
+    "Deep moss"
+   ],
+   [
+    "#7E9C80",
+    "Sage"
+   ],
+   [
+    "#C9D8C4",
+    "Dew"
+   ],
+   [
+    "#E9EFE6",
+    "Mist"
+   ],
+   [
+    "#0F1A13",
+    "Ink"
+   ],
+   [
+    "#FFFFFF",
+    "Glass"
+   ]
+  ],
+  "zoom": [
+   0,
+   300,
+   393,
+   320
+  ],
+  "zoom_title": "Real product.<br>Real dew on the jar.",
+  "components_title": "Glass over<br>real moss.",
+  "elements": {
+   "pin": {
+    "box": [
+     264,
+     354,
+     113,
+     36
+    ],
+    "r": 18
+   },
+   "pin2": {
+    "box": [
+     14,
+     428,
+     150,
+     36
+    ],
+    "r": 18
+   },
+   "sl": {
+    "box": [
+     31,
+     757,
+     331,
+     62
+    ],
+    "r": 31
+   },
+   "seg": {
+    "box": [
+     31,
+     575,
+     331,
+     46
+    ],
+    "r": 23
+   },
+   "pr": {
+    "box": [
+     24,
+     671,
+     345,
+     76
+    ],
+    "r": 16
+   },
+   "cart": {
+    "box": [
+     329,
+     60,
+     46,
+     46
+    ],
+    "shape": "circle"
+   },
+   "r1": {
+    "box": [
+     31,
+     541,
+     331,
+     24
+    ],
+    "r": 8
+   }
+  },
+  "s2_floats": [
+   [
+    "pin",
+    300,
+    60,
+    800,
+    -4,
+    3
+   ],
+   [
+    "pin2",
+    360,
+    40,
+    940,
+    3,
+    3
+   ],
+   [
+    "sl",
+    560,
+    30,
+    1100,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "cart",
+    140,
+    860,
+    100,
+    0,
+    1
+   ],
+   [
+    "seg",
+    900,
+    90,
+    330,
+    0,
+    1
+   ],
+   [
+    "pin",
+    380,
+    90,
+    495,
+    -4,
+    1
+   ],
+   [
+    "pin2",
+    420,
+    560,
+    495,
+    4,
+    1
+   ],
+   [
+    "pr",
+    900,
+    90,
+    670,
+    2,
+    1
+   ],
+   [
+    "sl",
+    900,
+    90,
+    920,
+    -2,
+    1
+   ],
+   [
+    "r1",
+    900,
+    90,
+    1140,
+    0,
+    1
+   ]
+  ],
+  "screen": "auto",
+  "flat": false
+ }
+}

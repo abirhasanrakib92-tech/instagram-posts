@@ -1,0 +1,168 @@
+{
+ "v4": {
+  "name": "Mossé",
+  "category": "Skin scan",
+  "tagline": "Two minutes, one score, the one product your skin needs tonight.",
+  "font": "Inter Tight",
+  "font_note": "Inter Tight light for the interface, Doto dot-matrix for the live score.",
+  "gradient": [
+   "#E9EFE6",
+   "#B9CDB5",
+   "#4E6B57",
+   "#13231A"
+  ],
+  "paper": "#F3EFE8",
+  "palette": [
+   [
+    "#1F3A2B",
+    "Deep moss"
+   ],
+   [
+    "#D9E6D3",
+    "Sage mist"
+   ],
+   [
+    "#E8B49A",
+    "Blush"
+   ],
+   [
+    "#F3EFE8",
+    "Cream"
+   ],
+   [
+    "#0F1A13",
+    "Ink"
+   ],
+   [
+    "#FFFFFF",
+    "Glass"
+   ]
+  ],
+  "zoom": [
+   0,
+   110,
+   393,
+   330
+  ],
+  "zoom_title": "A two-minute scan<br>that reads your skin.",
+  "components_title": "Dot-matrix score,<br>soft glass.",
+  "elements": {
+   "tag": {
+    "box": [
+     252,
+     226,
+     126,
+     34
+    ],
+    "r": 17
+   },
+   "lv": {
+    "box": [
+     111,
+     65,
+     171,
+     36
+    ],
+    "r": 18
+   },
+   "sc": {
+    "box": [
+     22,
+     472,
+     350,
+     96
+    ],
+    "r": 12
+   },
+   "m3": {
+    "box": [
+     29,
+     577,
+     335,
+     104
+    ],
+    "r": 20
+   },
+   "rec": {
+    "box": [
+     29,
+     691,
+     335,
+     72
+    ],
+    "r": 22
+   },
+   "bt": {
+    "box": [
+     29,
+     773,
+     335,
+     50
+    ],
+    "r": 25
+   }
+  },
+  "s2_floats": [
+   [
+    "tag",
+    330,
+    50,
+    800,
+    -5,
+    3
+   ],
+   [
+    "rec",
+    600,
+    30,
+    1060,
+    3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "lv",
+    460,
+    80,
+    330,
+    -3,
+    1
+   ],
+   [
+    "tag",
+    330,
+    700,
+    320,
+    5,
+    1
+   ],
+   [
+    "sc",
+    760,
+    90,
+    470,
+    0,
+    1
+   ],
+   [
+    "m3",
+    900,
+    90,
+    700,
+    0,
+    1
+   ],
+   [
+    "rec",
+    900,
+    90,
+    1010,
+    -2,
+    1
+   ]
+  ],
+  "screen": "auto",
+  "flat": false
+ }
+}

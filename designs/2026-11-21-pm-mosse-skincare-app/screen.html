@@ -1,0 +1,67 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Mossé">
+<meta name="app-desc" content="A skincare shop where every product is **shot like the real thing**, with a **slide to add** that feels as calm as the cream.">
+<meta name="fonts" content="Inter Tight|Thin, tight numerals for prices and scores, paired with Instrument Serif for the brand.">
+<meta name="palette" content="#1F3A2B:Deep moss|#9DB89A:Sage|#E9EFE6:Mist|#FFFFFF:Glass white|#C9D8C4:Dew|#0F1A13:Ink">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#0F1A13;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.bg{position:absolute;inset:0;background:url(jar_l.jpg) 50% 86%/auto 1000px no-repeat}
+.gl{background:rgba(255,255,255,.34);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.55)}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;justify-content:space-between}
+.cb{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;position:relative}
+.cb em{position:absolute;top:-2px;right:-2px;width:18px;height:18px;border-radius:50%;background:#1F3A2B;color:#fff;font-style:normal;font-size:10.5px;font-weight:700;display:grid;place-items:center}
+.top .t{font-size:15px;font-weight:500}
+.hd{position:absolute;left:24px;top:128px}
+.hd small{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2D4A37;opacity:.8}
+.hd h1{font-weight:300;font-size:44px;line-height:.98;letter-spacing:-1.8px;margin-top:8px;color:#14261B}
+.hd h1 i{font-family:'Instrument Serif';font-weight:400;letter-spacing:-.5px;font-size:48px}
+.pin{position:absolute;white-space:nowrap;display:flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 6px;border-radius:999px;font-size:12.5px;font-weight:500}
+.pin i{width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.pin b{font-weight:700}
+.ln{position:absolute;height:1px;background:rgba(255,255,255,.9)}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.35)}
+.sh{position:absolute;left:10px;right:10px;bottom:10px;height:318px;border-radius:38px;padding:20px 20px 14px;background:rgba(246,249,244,.62);backdrop-filter:blur(26px) saturate(1.5);-webkit-backdrop-filter:blur(26px) saturate(1.5);border:1px solid rgba(255,255,255,.7)}
+.r1{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:500;color:#3C5444}
+.r1 .st{display:flex;align-items:center;gap:5px;color:#0F1A13;font-weight:600}
+.r1 .ok{display:flex;align-items:center;gap:6px}.r1 .ok i{width:7px;height:7px;border-radius:50%;background:#4DA36A}
+.seg{display:flex;gap:6px;margin-top:14px;padding:4px;border-radius:999px;background:rgba(255,255,255,.55)}
+.seg span{flex:1;height:38px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:13.5px;font-weight:500;color:#3C5444}
+.seg span.on{background:#fff;color:#0F1A13;font-weight:600;box-shadow:0 4px 14px rgba(31,58,43,.12)}
+.seg small{font-size:11px;color:#7C8E80;font-weight:500}
+.ing{display:flex;gap:6px;margin-top:12px}
+.ing span{white-space:nowrap;height:28px;padding:0 11px;border-radius:999px;border:1px solid rgba(31,58,43,.18);display:flex;align-items:center;font-size:12px;font-weight:500;color:#2D4A37}
+.pr{display:flex;align-items:flex-end;justify-content:space-between;margin-top:14px}
+.pr b{font-weight:200;font-size:52px;letter-spacing:-2.6px;line-height:.9}
+.pr b sup{font-size:24px;letter-spacing:-.5px;vertical-align:top;position:relative;top:4px;font-weight:300}
+.pr small{display:block;font-size:12px;color:#5B6E60;margin-top:6px;font-weight:500}
+.qt{display:flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.6)}
+.qt span{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#fff}
+.qt b{font-size:16px;font-weight:600;width:24px;text-align:center}
+.sl{margin-top:14px;height:62px;border-radius:999px;background:#1F3A2B;display:flex;align-items:center;padding:6px;position:relative}
+.sl .k{width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative;z-index:1}
+.sl .tx{position:absolute;left:0;right:0;text-align:center;color:#fff;font-size:15.5px;font-weight:500;letter-spacing:.1px}
+.sl .ch{position:absolute;right:22px;display:flex;opacity:.45}
+.hi{position:absolute;left:50%;bottom:7px;width:134px;height:5px;border-radius:3px;background:#0F1A13;transform:translateX(-50%)}
+</style></head><body>
+<div class="bg"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#0F1A13:2.6}}{{icon:wifi:17:#0F1A13:2.6}}{{icon:battery-full:24:#0F1A13:2}}</span></div>
+<div class="top"><span class="cb gl">{{icon:chevron-left:22:#0F1A13:2}}</span><span class="t">Product detail</span><span class="cb gl">{{icon:shopping-bag:19:#0F1A13:1.8}}<em>2</em></span></div>
+<div class="hd"><small>Night cream · 50 ml</small><h1>Moss<br><i>Recovery</i></h1></div>
+<span class="dot" style="left:232px;top:366px"></span><span class="ln" style="left:244px;top:372px;width:22px"></span>
+<div class="pin gl" style="left:264px;top:354px;padding-right:14px"><i>{{icon:leaf:14:#1F3A2B:2}}</i><span><b>12%</b> moss</span></div>
+<span class="dot" style="left:150px;top:440px"></span><span class="ln" style="left:140px;top:446px;width:12px"></span>
+<div class="pin gl" style="left:14px;top:428px;padding-left:12px">{{icon:droplets:14:#1F3A2B:2}}<span><b>72h</b> hydration</span></div>
+<div class="sh">
+ <div class="r1"><span class="st">{{icon:star:14:#0F1A13:2.2}}4.9 <span style="font-weight:500;color:#5B6E60">(2,318)</span></span><span class="ok"><i></i>In stock · ships today</span></div>
+ <div class="seg"><span>30 ml <small>$32</small></span><span class="on">50 ml <small>$48.90</small></span><span>100 ml <small>$84</small></span></div>
+ <div class="ing"><span>Icelandic moss</span><span>Ceramide NP</span><span>Squalane</span></div>
+ <div class="pr"><div><b>$48<sup>.90</sup></b><small>Free shipping over $40</small></div><div class="qt"><span>{{icon:minus:16:#0F1A13:2}}</span><b>1</b><span>{{icon:plus:16:#0F1A13:2}}</span></div></div>
+ <div class="sl" data-nav><span class="k">{{icon:arrow-right:20:#1F3A2B:2.2}}</span><span class="tx">Slide to add to bag</span><span class="ch">{{icon:chevrons-right:20:#fff:2}}</span></div>
+</div>
+<div class="hi"></div>
+</body></html>

@@ -1,0 +1,185 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": false,
+  "name": "Verdant",
+  "category": "Crypto & savings wallet",
+  "tagline": "Swap in one slide. Watch every round-up grow a real goal.",
+  "font": "Inter Tight",
+  "font_note": "Thin, tight numerals keep big balances calm. Doto dot-matrix digits for the live crypto amount.",
+  "gradient": [
+   "#CFFBE6",
+   "#2FD39A",
+   "#0E5C42",
+   "#062A1E"
+  ],
+  "aa_fill": "linear-gradient(135deg,#9FF0CF,#2FD39A 40%,#0E5C42 75%,#B7A4FF)",
+  "paper": "#EEF7F2",
+  "palette": [
+   [
+    "#9FF0CF",
+    "Mint"
+   ],
+   [
+    "#2FD39A",
+    "Emerald"
+   ],
+   [
+    "#0E5C42",
+    "Deep emerald"
+   ],
+   [
+    "#D8CBFF",
+    "Lilac"
+   ],
+   [
+    "#0B1F17",
+    "Ink"
+   ],
+   [
+    "#F4FBF7",
+    "Morning white"
+   ]
+  ],
+  "zoom": [
+   0,
+   248,
+   393,
+   296
+  ],
+  "zoom_title": "One card to swap.<br>No exchange maze.",
+  "components_title": "Mint glass,<br>thin numbers.",
+  "elements": {
+   "swap": {
+    "box": [
+     12,
+     254,
+     369,
+     285
+    ],
+    "r": 34
+   },
+   "goal": {
+    "box": [
+     12,
+     552,
+     369,
+     114
+    ],
+    "r": 30
+   },
+   "slide": {
+    "box": [
+     12,
+     760,
+     369,
+     64
+    ],
+    "r": 32
+   },
+   "earn": {
+    "box": [
+     295,
+     684,
+     86,
+     52
+    ],
+    "r": 20
+   },
+   "usdc": {
+    "box": [
+     233,
+     331,
+     115,
+     40
+    ],
+    "r": 20
+   },
+   "swapbtn": {
+    "box": [
+     176,
+     379,
+     42,
+     42
+    ],
+    "shape": "circle"
+   }
+  },
+  "s2_floats": [
+   [
+    "earn",
+    230,
+    90,
+    740,
+    -6,
+    3
+   ],
+   [
+    "usdc",
+    300,
+    50,
+    935,
+    5,
+    3
+   ],
+   [
+    "goal",
+    560,
+    30,
+    1100,
+    -4,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "swapbtn",
+    140,
+    860,
+    96,
+    0,
+    1
+   ],
+   [
+    "swap",
+    640,
+    80,
+    300,
+    -3,
+    1
+   ],
+   [
+    "usdc",
+    260,
+    760,
+    370,
+    8,
+    1
+   ],
+   [
+    "earn",
+    220,
+    770,
+    580,
+    -6,
+    1
+   ],
+   [
+    "goal",
+    900,
+    90,
+    840,
+    -2,
+    1
+   ],
+   [
+    "slide",
+    880,
+    100,
+    1150,
+    0,
+    1
+   ]
+  ]
+ }
+}

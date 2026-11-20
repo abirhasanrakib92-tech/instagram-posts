@@ -1,0 +1,90 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Halo">
+<meta name="app-desc" content="A titanium smart ring that reads your night and tells you, **in one number, how ready you are**, with heart rate and sleep **you never have to log**.">
+<meta name="fonts" content="Doto|Dot-matrix numerals turn the readiness score into a live reading, with Inter Tight light for calm, clinical labels.">
+<meta name="palette" content="#DCE6F0:Morning mist|#8FA6BF:Steel blue|#2E3A4A:Graphite|#0E141C:Ink|#FF6B5A:Pulse coral|#5BD99A:Sensor green">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#0E141C;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#C9D6E3}
+.bg{position:absolute;inset:0;background:url(ring.jpg) -128px -208px/auto 1060px no-repeat}
+.gl{background:rgba(255,255,255,.3);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.6)}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:60px;left:16px;right:16px;display:flex;align-items:center;gap:10px}
+.who{height:46px;padding:0 16px 0 4px;border-radius:999px;display:flex;align-items:center;gap:10px}
+.who i{width:38px;height:38px;border-radius:50%;background:url(mei.jpg) center/cover}
+.who small{display:block;font-size:11.5px;color:#4A5868;font-weight:500}.who b{font-size:14px;font-weight:600}
+.cb{margin-left:auto;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;position:relative}
+.cb em{position:absolute;top:11px;right:12px;width:8px;height:8px;border-radius:50%;background:#FF6B5A;border:1.5px solid #fff}
+.cb+.cb{margin-left:0}
+.rd{position:absolute;left:22px;top:124px}
+.rd small{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#3B4A5C}
+.rd .n{font-family:'Doto';font-weight:900;font-size:104px;line-height:.82;letter-spacing:-3px;margin-top:10px;color:#0E141C;display:flex;align-items:flex-end}
+.rd .n span{font-family:'Inter Tight';font-weight:300;font-size:20px;letter-spacing:0;color:#4A5868;margin:0 0 6px 6px}
+.rd p{font-weight:300;font-size:26px;letter-spacing:-.8px;margin-top:10px;line-height:1}
+.rd p i{font-family:'Instrument Serif';font-size:30px;letter-spacing:-.3px}
+.ct{position:absolute;right:16px;top:132px;width:140px;border-radius:24px;padding:12px 14px;display:grid;gap:9px}
+.ct div{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:500;color:#3B4A5C}
+.ct b{font-weight:600;color:#0E141C;font-size:13px}
+.ct .bar{height:4px;border-radius:2px;background:rgba(14,20,28,.12);position:relative;margin-top:-4px}
+.ct .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:#2E3A4A}
+.ct h5{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#5D6B7B}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:#5BD99A;box-shadow:0 0 0 6px rgba(91,217,154,.3),0 0 0 12px rgba(255,255,255,.25)}
+.ln{position:absolute;height:1px;background:rgba(255,255,255,.95)}
+.pin{position:absolute;white-space:nowrap;display:flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 6px;border-radius:999px;font-size:12.5px;font-weight:500}
+.pin i{width:24px;height:24px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.pin b{font-weight:700}
+.hr{position:absolute;left:10px;right:10px;top:534px;height:160px;border-radius:32px;padding:16px 18px 12px;background:rgba(241,245,249,.6);backdrop-filter:blur(26px) saturate(1.5);-webkit-backdrop-filter:blur(26px) saturate(1.5);border:1px solid rgba(255,255,255,.75)}
+.hr .h{display:flex;justify-content:space-between;align-items:flex-start}
+.hr small{font-size:12px;font-weight:600;color:#4A5868}
+.hr .v{font-weight:200;font-size:40px;letter-spacing:-1.8px;line-height:1;margin-top:2px}
+.hr .v span{font-size:15px;letter-spacing:0;font-weight:400;color:#4A5868;margin-left:4px}
+.hr .tg{display:flex;gap:4px;padding:3px;border-radius:999px;background:rgba(255,255,255,.6)}
+.hr .tg span{height:28px;padding:0 11px;border-radius:999px;display:flex;align-items:center;font-size:12px;font-weight:600;color:#5D6B7B}
+.hr .tg span.on{background:#0E141C;color:#fff}
+.hr svg{display:block;margin-top:4px}
+.tl{position:absolute;left:10px;right:10px;top:702px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tl div{height:60px;border-radius:22px;padding:9px 12px;background:rgba(241,245,249,.6);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.7)}
+.tl span{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#4A5868}
+.tl b{display:block;font-weight:300;font-size:21px;letter-spacing:-.8px;margin-top:2px}
+.tl b small{font-size:12px;letter-spacing:0;color:#4A5868;font-weight:500}
+.nv{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);height:56px;padding:5px;border-radius:999px;display:flex;align-items:center;gap:4px;background:rgba(14,20,28,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.nv span{width:52px;height:46px;border-radius:999px;display:grid;place-items:center}
+.nv span.on{width:auto;padding:0 16px;background:#fff;display:flex;gap:8px;font-size:14px;font-weight:600}
+.hi{position:absolute;left:50%;bottom:7px;width:134px;height:5px;border-radius:3px;background:#0E141C;transform:translateX(-50%)}
+</style></head><body>
+<div class="bg"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#0E141C:2.6}}{{icon:wifi:17:#0E141C:2.6}}{{icon:battery-full:24:#0E141C:2}}</span></div>
+<div class="top"><div class="who gl"><i></i><div><small>Sun, 23 Nov · 07:12</small><b>Morning, Mei</b></div></div><span class="cb gl">{{icon:bell:19:#0E141C:1.8}}<em></em></span></div>
+<div class="rd"><small>Readiness</small><div class="n">92<span>/100</span></div><p>Primed to <i>push.</i></p></div>
+<div class="ct gl">
+ <h5>Built from</h5>
+ <div><span>Sleep</span><b>88</b></div><div class="bar"><i style="width:88%"></i></div>
+ <div><span>HRV balance</span><b>94</b></div><div class="bar"><i style="width:94%"></i></div>
+ <div><span>Resting HR</span><b>96</b></div><div class="bar"><i style="width:96%"></i></div>
+</div>
+<span class="dot" style="left:178px;top:462px"></span><span class="ln" style="left:190px;top:468px;width:48px"></span>
+<div class="pin gl" style="left:236px;top:450px"><i>{{icon:thermometer:13:#2E3A4A:2.2}}</i><span>Skin <b>+0.2°C</b></span></div>
+<div class="pin gl" style="left:150px;top:316px"><i>{{icon:battery-medium:13:#2E3A4A:2.2}}</i><span><b>64%</b> · 5 days left</span></div>
+<div class="hr">
+ <div class="h"><div><small>Resting heart rate · last night</small><div class="v">52<span>bpm</span></div></div><div class="tg"><span class="on">Night</span><span>Week</span></div></div>
+ <svg width="337" height="74" viewBox="0 0 355 74" preserveAspectRatio="none">
+  <g stroke="rgba(14,20,28,.1)" stroke-width="1"><line x1="0" y1="14" x2="355" y2="14"/><line x1="0" y1="40" x2="355" y2="40"/><line x1="0" y1="66" x2="355" y2="66"/></g>
+  <path d="M0 22 C20 26 34 30 52 34 S88 40 108 44 S150 52 172 56 S206 62 224 60 S262 52 284 46 S326 34 355 30" fill="none" stroke="#FF6B5A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M0 22 C20 26 34 30 52 34 S88 40 108 44 S150 52 172 56 S206 62 224 60 S262 52 284 46 S326 34 355 30 L355 74 L0 74Z" fill="#FF6B5A" opacity=".1"/>
+  <line x1="214" y1="0" x2="214" y2="74" stroke="#0E141C" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+  <circle cx="214" cy="61" r="5.5" fill="#fff" stroke="#FF6B5A" stroke-width="2.5"/>
+  <rect x="226" y="0" width="94" height="24" rx="12" fill="#0E141C"/>
+  <text x="273" y="16" font-family="Inter Tight" font-size="11.5" font-weight="600" fill="#fff" text-anchor="middle">48 bpm · 03:40</text>
+ </svg>
+</div>
+<div class="tl">
+ <div><span>{{icon:moon:12:#4A5868:2.2}}Sleep</span><b>7h 48<small>m</small></b></div>
+ <div><span>{{icon:activity:12:#4A5868:2.2}}HRV</span><b>68<small> ms</small></b></div>
+ <div><span>{{icon:footprints:12:#4A5868:2.2}}Steps</span><b>1,204</b></div>
+</div>
+<div class="nv" data-nav><span class="on">{{icon:circle-dot:18:#0E141C:2}}Today</span><span>{{icon:moon:20:#fff:1.8}}</span><span>{{icon:heart-pulse:20:#fff:1.8}}</span><span>{{icon:user:20:#fff:1.8}}</span></div>
+<div class="hi"></div>
+</body></html>

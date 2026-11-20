@@ -1,0 +1,87 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Verdant">
+<meta name="app-desc" content="A crypto and savings wallet where you **swap in one slide** and every round-up grows **a goal you can actually see**.">
+<meta name="fonts" content="Inter Tight|Thin, tight numerals keep big balances calm, with Doto dot-matrix digits for the live crypto amount.">
+<meta name="palette" content="#0E5C42:Deep emerald|#2FD39A:Emerald|#9FF0CF:Mint|#D8CBFF:Lilac|#F4FBF7:Morning white|#0B1F17:Ink">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#0B1F17;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#F4FBF7}
+.bg{position:absolute;inset:0;background:
+ radial-gradient(60% 38% at 10% 2%,#9FF0CF 0%,rgba(159,240,207,0) 100%),
+ radial-gradient(55% 40% at 105% 30%,rgba(47,211,154,.85) 0%,rgba(47,211,154,0) 100%),
+ radial-gradient(70% 40% at -5% 78%,rgba(216,203,255,.95) 0%,rgba(216,203,255,0) 100%),
+ radial-gradient(60% 35% at 100% 100%,rgba(120,230,190,.8) 0%,rgba(120,230,190,0) 100%),#F4FBF7}
+.gl{background:rgba(255,255,255,.42);backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);border:1px solid rgba(255,255,255,.75)}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;gap:10px}
+.av{width:44px;height:44px;border-radius:50%;background:url(olivia.jpg) center/cover;border:2px solid #fff}
+.top .t small{display:block;font-size:12px;color:#3D5A4C;font-weight:500}.top .t b{font-size:15px;font-weight:600}
+.cb{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;position:relative}
+.cb em{position:absolute;top:10px;right:11px;width:8px;height:8px;border-radius:50%;background:#7B5CFF;border:1.5px solid #fff}
+.bal{position:absolute;left:24px;right:24px;top:124px}
+.bal small{font-size:12px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#3D5A4C}
+.bal .n{font-weight:200;font-size:56px;letter-spacing:-2.8px;line-height:1;margin-top:6px}
+.bal .n sup{font-size:24px;letter-spacing:-.5px;vertical-align:top;position:relative;top:8px;font-weight:300}
+.bal .rw{display:flex;align-items:center;gap:8px;margin-top:10px}
+.bal .up{height:28px;padding:0 10px;border-radius:999px;background:#0E5C42;color:#fff;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:4px}
+.bal .rw span{font-size:13px;color:#3D5A4C;font-weight:500}.bal .rw span.up{color:#fff;font-size:12.5px;font-weight:600}
+.sw{position:absolute;left:12px;right:12px;top:254px;border-radius:34px;padding:16px}
+.sw .h{display:flex;justify-content:space-between;align-items:center;padding:0 4px}
+.sw .h b{font-size:16px;font-weight:600}
+.sw .h span{font-size:12px;font-weight:600;color:#0E5C42;background:rgba(255,255,255,.7);height:26px;padding:0 10px;border-radius:999px;display:flex;align-items:center;gap:5px}
+.box{background:rgba(255,255,255,.66);border-radius:24px;padding:12px 16px;margin-top:10px;display:flex;align-items:center;justify-content:space-between}
+.box small{display:block;font-size:12px;color:#5A7266;font-weight:500}
+.box .v{font-weight:300;font-size:30px;letter-spacing:-1.4px;line-height:1.05;margin-top:2px}
+.box .d{font-family:'Doto';font-weight:900;font-size:36px;letter-spacing:-1px;line-height:1;margin-top:4px;color:#0E5C42}
+.box .s{font-size:11.5px;color:#5A7266;margin-top:2px;font-weight:500}
+.tk{height:40px;padding:0 12px 0 5px;border-radius:999px;background:#fff;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;flex:none}
+.tk i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:700;color:#fff}
+.mid{position:relative;height:0}
+.mid span{position:absolute;left:50%;top:-17px;transform:translateX(-50%);width:42px;height:42px;border-radius:50%;background:#0B1F17;display:grid;place-items:center;border:4px solid rgba(235,250,243,1);z-index:2}
+.ft{display:flex;justify-content:space-between;align-items:center;white-space:nowrap;font-size:12px;color:#3D5A4C;font-weight:500;margin-top:10px;padding:0 6px}.ft span{display:flex;align-items:center;gap:4px}
+.ft b{font-weight:600;color:#0B1F17}
+.goal{position:absolute;left:12px;right:12px;top:552px;height:114px;border-radius:30px;padding:8px;display:flex;gap:14px}
+.goal .p{width:112px;border-radius:24px;background:url(cabin.jpg) 72% 50%/cover;flex:none;position:relative}
+.goal .p span{position:absolute;left:8px;bottom:8px;height:24px;padding:0 8px;border-radius:999px;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);font-size:11px;font-weight:700;display:flex;align-items:center}
+.goal .tx{flex:1;padding:6px 8px 4px 0;display:flex;flex-direction:column}
+.goal .tx small{font-size:11.5px;font-weight:600;color:#5A7266;letter-spacing:1.4px;text-transform:uppercase}
+.goal .tx h3{font-weight:400;font-size:20px;letter-spacing:-.6px;margin-top:2px}
+.goal .tx h3 i{font-family:'Instrument Serif';font-size:23px;letter-spacing:-.2px}
+.goal .am{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto}
+.goal .am b{font-size:17px;font-weight:600}.goal .am b span{font-weight:400;color:#5A7266;font-size:13px}
+.goal .am em{font-style:normal;font-size:12px;color:#0E5C42;font-weight:600}
+.goal .pb{height:6px;border-radius:3px;background:rgba(14,92,66,.14);margin-top:8px;overflow:hidden}.goal .pb i{display:block;height:100%;width:65.5%;border-radius:3px;background:linear-gradient(90deg,#2FD39A,#0E5C42)}
+.qa{position:absolute;left:12px;right:12px;top:684px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.qa div{height:52px;border-radius:20px;display:flex;align-items:center;justify-content:center;gap:5px;font-size:13px;white-space:nowrap;font-weight:600}
+.qa div.on{background:rgba(216,203,255,.7);font-size:12.5px;gap:4px;color:#2E1C86}
+.sl{position:absolute;left:12px;right:12px;bottom:28px;height:64px;border-radius:999px;background:#0E5C42;display:flex;align-items:center;padding:6px}
+.sl .k{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative;z-index:1}
+.sl .tx{position:absolute;left:0;right:0;text-align:center;color:#fff;font-size:15.5px;font-weight:500}
+.sl .tx b{font-weight:600}
+.sl .ch{position:absolute;right:22px;display:flex;opacity:.5}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:#0B1F17;transform:translateX(-50%)}
+</style></head><body>
+<div class="bg"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#0B1F17:2.6}}{{icon:wifi:17:#0B1F17:2.6}}{{icon:battery-full:24:#0B1F17:2}}</span></div>
+<div class="top"><span class="av"></span><div class="t"><small>Good morning</small><b>Olivia</b></div><span style="flex:1"></span><span class="cb gl">{{icon:scan-line:19:#0B1F17:1.8}}</span><span class="cb gl">{{icon:bell:19:#0B1F17:1.8}}<em></em></span></div>
+<div class="bal"><small>Total balance</small><div class="n">$12,480<sup>.36</sup></div><div class="rw"><span class="up">{{icon:trending-up:14:#fff:2.4}}+3.42%</span><span>+$412.80 this week</span></div></div>
+<div class="sw gl">
+ <div class="h"><b>Swap</b><span>{{icon:refresh-cw:12:#0E5C42:2.4}}1 BTC = $98,090</span></div>
+ <div class="box"><div><small>You pay</small><div class="v">250.00</div><div class="s">Balance 1,820.40 USDC</div></div><span class="tk"><i style="background:#2F7DE1">$</i>USDC{{icon:chevron-down:14:#0B1F17:2.2}}</span></div>
+ <div class="mid"><span>{{icon:arrow-down-up:18:#fff:2.2}}</span></div>
+ <div class="box" style="margin-top:6px"><div><small>You get</small><div class="d">0.002541</div><div class="s">After fee · $249.25</div></div><span class="tk"><i style="background:#F2A23A">B</i>BTC{{icon:chevron-down:14:#0B1F17:2.2}}</span></div>
+ <div class="ft"><span>Fee 0.3% · <b>$0.75</b></span><span>{{icon:zap:11:#0E5C42:2.4}} Arrives <b>instantly</b></span></div>
+</div>
+<div class="goal gl">
+ <div class="p"><span>65%</span></div>
+ <div class="tx"><small>Savings goal</small><h3>Cabin in <i>Asturias</i></h3>
+  <div class="am"><b>$5,240 <span>/ $8,000</span></b><em>May 2027</em></div>
+  <div class="pb"><i></i></div></div>
+</div>
+<div class="qa"><div class="gl">{{icon:plus:16:#0B1F17:2}}Buy</div><div class="gl">{{icon:arrow-up-right:16:#0B1F17:2}}Send</div><div class="gl">{{icon:arrow-down-left:16:#0B1F17:2}}Get</div><div class="gl on">{{icon:sprout:15:#4B2FC4:2}}Earn 4.1%</div></div>
+<div class="sl" data-nav><span class="k">{{icon:arrow-right:20:#0E5C42:2.2}}</span><span class="tx">Slide to swap <b>$250</b></span><span class="ch">{{icon:chevrons-right:20:#fff:2}}</span></div>
+<div class="hi"></div>
+</body></html>

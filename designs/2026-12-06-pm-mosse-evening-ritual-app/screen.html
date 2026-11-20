@@ -1,0 +1,63 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Mossé">
+<meta name="app-desc" content="An evening skincare ritual that **times every step for you**, with the real products in front of you and **one tap to keep your streak**.">
+<meta name="fonts" content="Doto|A dot-matrix timer that counts down like a kitchen clock, softened by Inter Tight light headlines.">
+<meta name="palette" content="#F59A4C:Golden hour|#E2662B:Ember|#9C3415:Terracotta|#3B1609:Dusk|#FFE7D1:Peach glass|#FFFFFF:White">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#fff;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#9C3415}
+.bg{position:absolute;inset:-60px;background:url(golden.jpg) 40% 50%/cover;filter:blur(38px) saturate(1.35)}
+.ov{position:absolute;inset:0;background:radial-gradient(120% 70% at 80% 0%,rgba(255,190,120,.55),rgba(232,102,43,.25) 45%,rgba(90,25,8,.55) 100%)}
+.gl{background:rgba(255,255,255,.14);backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);border:1px solid rgba(255,255,255,.26)}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;gap:10px}
+.av{width:44px;height:44px;border-radius:50%;background:url(sofia.jpg) center/cover;border:2px solid rgba(255,255,255,.6)}
+.top .t small{display:block;font-size:12px;opacity:.75;font-weight:500}.top .t b{font-size:15px;font-weight:600}
+.top .st{margin-left:auto;height:40px;padding:0 14px;border-radius:999px;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600}
+.hd{position:absolute;left:24px;top:128px;right:24px}
+.hd small{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.75}
+.hd h1{font-weight:300;font-size:40px;line-height:1;letter-spacing:-1.6px;margin-top:8px}
+.hd h1 i{font-family:'Instrument Serif';font-weight:400;font-size:44px;letter-spacing:-.4px}
+.seg{position:absolute;left:24px;right:24px;top:254px;display:flex;gap:6px}
+.seg i{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.28)}.seg i.on{background:#fff}.seg i.h{background:linear-gradient(90deg,#fff 46%,rgba(255,255,255,.28) 46%)}
+.card{position:absolute;left:14px;right:14px;top:274px;height:322px;border-radius:34px;overflow:hidden;background:url(golden.jpg) 46% 62%/150% auto}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(40,12,3,.55))}
+.card .pl{position:absolute;left:14px;top:14px;height:30px;padding:0 12px;border-radius:999px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;z-index:1}
+.card .tm{position:absolute;left:18px;bottom:16px;z-index:1}
+.card .tm small{font-size:12.5px;font-weight:500;opacity:.85}
+.card .tm b{display:block;font-family:'Doto';font-weight:900;font-size:76px;line-height:.9;letter-spacing:-1px;margin-top:4px}
+.card .ct{position:absolute;right:14px;top:14px;z-index:1;width:146px;border-radius:22px;padding:12px 14px}
+.card .ct small{font-size:11.5px;opacity:.8;font-weight:500}.card .ct b{display:block;font-size:15px;font-weight:600;margin-top:2px;line-height:1.2}
+.card .ct span{display:block;font-size:12px;opacity:.85;margin-top:4px}
+.stp{position:absolute;left:14px;right:14px;top:610px;display:grid;gap:8px}
+.stp div{height:56px;border-radius:20px;display:flex;align-items:center;gap:12px;padding:0 14px 0 8px;font-size:14.5px;font-weight:500}
+.stp .n{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;font-weight:600;font-size:14px;background:rgba(255,255,255,.18)}
+.stp .dn .n{background:#fff}
+.stp small{display:block;font-size:12px;opacity:.72;font-weight:500}
+.stp .r{margin-left:auto;font-size:12.5px;font-weight:600;opacity:.85}
+.stp .nx{opacity:.7}
+.ctl{position:absolute;left:14px;right:14px;bottom:24px;display:flex;align-items:center;justify-content:space-between}
+.ctl .s{width:58px;height:58px;border-radius:50%;display:grid;place-items:center}
+.ctl .p{flex:1;margin:0 10px;height:64px;border-radius:999px;background:#fff;color:#9C3415;display:flex;align-items:center;justify-content:center;gap:10px;font-size:16px;font-weight:600}
+.hi{position:absolute;left:50%;bottom:7px;width:134px;height:5px;border-radius:3px;background:#fff;transform:translateX(-50%)}
+</style></head><body>
+<div class="bg"></div><div class="ov"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#fff:2.6}}{{icon:wifi:17:#fff:2.6}}{{icon:battery-full:24:#fff:2}}</span></div>
+<div class="top"><span class="av"></span><div class="t"><small>Good evening</small><b>Sofia</b></div><span class="st gl">{{icon:flame:15:#fff:2}}21 nights</span></div>
+<div class="hd"><small>Evening ritual · 3 steps · 6 min</small><h1>Press it in,<br><i>slowly.</i></h1></div>
+<div class="seg"><i class="on"></i><i class="h"></i><i></i></div>
+<div class="card">
+ <span class="pl gl">{{icon:droplet:13:#fff:2.2}}Step 2 of 3</span>
+ <div class="tm"><small>Massage for</small><b>01:24</b></div>
+ <div class="ct gl"><small>Now using</small><b>Golden Dew Serum</b><span>3 drops, warmed</span></div>
+</div>
+<div class="stp">
+ <div class="gl dn"><span class="n">{{icon:check:18:#9C3415:2.6}}</span><span>Cleanse<small>Oat milk cleanser · 1 min</small></span><span class="r">Done 21:04</span></div>
+ <div class="gl nx"><span class="n">3</span><span>Moss Recovery Cream<small>Pea-size · 2 min</small></span><span class="r">Next</span></div>
+</div>
+<div class="ctl" data-nav><span class="s gl">{{icon:skip-back:20:#fff:2}}</span><span class="p">{{icon:pause:20:#9C3415:2.4}}Pause</span><span class="s gl">{{icon:skip-forward:20:#fff:2}}</span></div>
+<div class="hi"></div>
+</body></html>
