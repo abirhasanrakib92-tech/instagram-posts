@@ -20,6 +20,11 @@ import render as R
 import carousel as C
 
 W, H = 1080, 1350
+
+# max-quality JPEGs (owner wants high resolution): 4:4:4 chroma, quality 100
+def _save(img, out):
+    img.convert('RGB').save(out, quality=100, subsampling=0); print('wrote', out)
+C.save = _save
 S = 3  # export scale
 
 
