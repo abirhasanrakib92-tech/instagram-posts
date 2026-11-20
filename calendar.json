@@ -585,14 +585,21 @@
    "niche": "Fashion e-commerce store analytics",
    "brand": "Loomline",
    "palette_hint": "black + soft rose",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready",
+   "design_dir": "designs/2026-11-20-pm-loomline-fashion-dashboard",
    "image": null,
-   "caption": null,
+   "caption": "A best seller can look healthy while it's sold out in the one size everyone wants.\nFashion e-commerce dashboard UI design: net sales, sell-through, size curve and returns\n\nThe size curve heatmap shows the gap a sales chart hides: medium wool coats are gone while XS and XL still sit on the shelf. Returns are split by reason, so the team can see that 58% of them are fit issues.\n\nSave this for your next e-commerce dashboard\nWhich card would you open first as a store owner?\n\n#uidesign #dashboarddesign #saasdesign #fashiontech #ecommercedesign",
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-11-18-pm"
+   "originally": "2026-11-18-pm",
+   "slug": "loomline-fashion-dashboard",
+   "images": [
+    "posts/2026-11/2026-11-20-pm-loomline-fashion-dashboard-1.jpg",
+    "posts/2026-11/2026-11-20-pm-loomline-fashion-dashboard-2.jpg",
+    "posts/2026-11/2026-11-20-pm-loomline-fashion-dashboard-3.jpg",
+    "posts/2026-11/2026-11-20-pm-loomline-fashion-dashboard-4.jpg"
+   ]
   },
   {
    "id": "2026-11-21-am",

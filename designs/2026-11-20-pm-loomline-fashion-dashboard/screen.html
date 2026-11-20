@@ -1,0 +1,223 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.loomline.com/overview">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F6F1F0;--card:#fff;--line:#F0E8E8;--ink:#141213;--ink2:#6B6164;--ink3:#A39A9C;--rose:#F2C9D1;--rose2:#FBEAED;--rd:#C2566E;--grn:#1E9E6A;--grn2:#E3F5EC;--amb:#B7791F;--amb2:#FCF1DF}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Instrument Sans';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.page{display:grid;grid-template-columns:688px 688px;gap:16px;padding:20px 24px;height:960px}
+.half{display:flex;flex-direction:column;gap:16px;min-height:0}
+.card{background:var(--card);border-radius:24px;padding:20px;position:relative;overflow:hidden}
+.ph{background-size:cover;background-position:center;border-radius:50%;flex:none}
+.t{font-size:16px;font-weight:600;letter-spacing:-.2px}
+.s{font-size:12.5px;color:var(--ink3);font-weight:500;margin-top:3px}
+.ch{display:flex;align-items:flex-start;justify-content:space-between}
+.pill{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 9px;border-radius:999px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:0}
+.ib{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;position:relative}
+.ib b{position:absolute;top:9px;right:10px;width:7px;height:7px;border-radius:50%;background:var(--rd);border:1.5px solid #fff}
+/* top bars */
+.top{height:52px;display:flex;align-items:center;gap:10px}
+.logo{display:flex;align-items:center;gap:9px;font-size:21px;font-weight:600;letter-spacing:-.6px;margin-right:6px}
+.logo i{width:38px;height:38px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.nav{display:flex;gap:2px;background:#fff;border-radius:999px;padding:4px}
+.nav a{height:36px;padding:0 15px;border-radius:999px;display:flex;align-items:center;font-size:13.5px;font-weight:500;color:var(--ink2)}
+.nav a.on{background:var(--ink);color:#fff}
+.srch{flex:1;height:44px;background:#fff;border-radius:999px;display:flex;align-items:center;gap:8px;padding:0 16px;font-size:13px;color:var(--ink3)}
+.srch kbd{margin-left:auto;font-family:inherit;font-size:11px;border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.aib{height:44px;padding:0 16px;border-radius:999px;background:var(--rose);color:var(--ink);display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600}
+.user{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:4px 14px 4px 4px;height:48px}
+.user b{display:block;font-size:13px;font-weight:600}.user span{font-size:11.5px;color:var(--ink3)}
+/* greeting */
+.greet{display:flex;justify-content:space-between;align-items:flex-end;height:84px}
+.greet h1{font-size:34px;font-weight:500;letter-spacing:-1.3px;line-height:1.05}
+.greet h1 .serif{font-size:40px}
+.greet p{font-size:14px;color:var(--ink2);margin-top:8px;line-height:1.45}.greet p b{color:var(--ink);font-weight:600}
+.acts{display:flex;gap:8px}
+.btn{height:40px;padding:0 14px;border-radius:999px;background:#fff;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;white-space:nowrap}
+/* hero */
+.hero{height:340px;background:var(--ink);border-radius:28px;color:#fff;display:grid;grid-template-columns:1fr 268px;padding:10px;gap:0}
+.hl{padding:16px 14px 12px 14px;display:flex;flex-direction:column}
+.hl .k{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#BDB4B6}
+.hl .k span{font-size:11.5px;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:4px 10px}
+.big{font-size:58px;font-weight:500;letter-spacing:-2.6px;line-height:1;margin-top:16px}
+.big small{font-size:30px;color:#8F8789;letter-spacing:-1px}
+.dl{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12.5px;color:#BDB4B6}
+.dl .pill{background:var(--rose);color:var(--ink)}
+.chn{margin-top:auto;display:grid;gap:12px}
+.cr{display:grid;grid-template-columns:116px 1fr 76px;align-items:center;gap:12px;font-size:12.5px;color:#D9D1D3}
+.cr .bar{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.cr .bar i{display:block;height:100%;border-radius:99px}
+.cr b{text-align:right;color:#fff;font-weight:600;font-size:13px}
+.cr span{display:flex;align-items:center;gap:7px}
+.photo{border-radius:20px;background:url(model.jpg) center 22%/cover;position:relative}
+.gl{position:absolute;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:16px;color:#fff}
+.g1{background:rgba(20,18,19,.42);border-color:rgba(255,255,255,.25);top:12px;left:12px;display:flex;align-items:center;gap:7px;height:30px;padding:0 11px;font-size:12px;font-weight:600;border-radius:999px}
+.g1 em{width:7px;height:7px;border-radius:50%;background:#7CF2B4;box-shadow:0 0 0 3px rgba(124,242,180,.3)}
+.g2{left:12px;right:12px;bottom:12px;padding:12px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.82);color:var(--ink);border-color:rgba(255,255,255,.7)}
+.g2 .th{width:44px;height:44px;border-radius:12px;background:#F4EFEC url(p-coat.jpg) center/cover;flex:none}
+.g2 b{font-size:13px;font-weight:600;display:block}.g2 span{font-size:11.5px;color:var(--ink2)}
+.g2 .n{margin-left:auto;text-align:right}.g2 .n b{font-size:16px}
+/* bottom row left */
+.row{display:flex;gap:16px;flex:1;min-height:0}
+.chart{width:424px}
+.tip{position:absolute;background:var(--ink);color:#fff;border-radius:12px;padding:8px 11px;font-size:11.5px;line-height:1.35;white-space:nowrap}
+.tip b{font-size:14px;display:block}
+.tip:after{content:"";position:absolute;left:50%;bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:var(--ink)}
+.chfoot{display:flex;gap:10px;margin-top:6px}
+.chfoot div{flex:1;background:#FAF6F5;border-radius:14px;padding:9px 12px;font-size:11.5px;color:var(--ink3)}
+.chfoot b{display:block;font-size:15px;color:var(--ink);font-weight:600;margin-top:2px}
+.rets{flex:1}
+.seg{display:flex;gap:3px;height:12px;margin-top:16px}.seg i{border-radius:4px}
+.rr{display:grid;grid-template-columns:10px 1fr 30px 34px;gap:8px;align-items:center;font-size:12.5px;color:var(--ink2);padding:10px 0;border-bottom:1px solid var(--line)}
+.rr em{width:10px;height:10px;border-radius:3px}.rr b{text-align:right;color:var(--ink);font-weight:600}.rr small{text-align:right;font-size:11.5px;color:var(--ink3)}
+.rlist{margin-top:10px}
+.ins{margin-top:12px;background:var(--rose2);border-radius:14px;padding:10px 12px;font-size:12px;line-height:1.4;color:#5B3540;display:flex;gap:8px}
+.ins b{color:var(--ink);font-weight:600}
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;height:116px}
+.kpi{background:#fff;border-radius:22px;padding:16px;display:flex;flex-direction:column}
+.kpi .h{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--ink2);font-weight:500}
+.kpi .h i{width:28px;height:28px;border-radius:50%;background:var(--bg);display:grid;place-items:center}
+.kpi .v{font-size:28px;font-weight:500;letter-spacing:-1px;margin-top:auto}
+.kpi .d{font-size:11.5px;color:var(--ink3);margin-top:3px;display:flex;align-items:center;gap:5px}
+.up{color:var(--grn);font-weight:600}.dn{color:var(--rd);font-weight:600}
+.kpi.acc{background:var(--rose)}.kpi.acc .h{color:#5B3540}.kpi.acc .h i{background:rgba(255,255,255,.55)}.kpi.acc .d{color:#7A4B57}
+/* products */
+.prods{height:296px}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.pc .im{height:124px;border-radius:16px;background-color:#F4EFEC;background-size:cover;background-position:center;position:relative}
+.pc .im .pill{position:absolute;top:8px;left:8px;background:rgba(255,255,255,.88);color:var(--ink)}
+.pc .im .pill.w{background:var(--ink);color:#fff}
+.pc .nm{font-size:13px;font-weight:600;margin-top:10px;display:flex;justify-content:space-between}
+.pc .nm span{font-weight:500;color:var(--ink2)}
+.pc .mt{font-size:11.5px;color:var(--ink3);margin-top:3px}
+.st{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:11.5px;font-weight:600}
+.st .bar{flex:1;height:6px;background:#F3ECEC;border-radius:99px;overflow:hidden}.st .bar i{display:block;height:100%;border-radius:99px;background:var(--ink)}
+.tabs{display:flex;gap:4px;background:var(--bg);border-radius:999px;padding:3px}
+.tabs a{height:28px;padding:0 11px;border-radius:999px;display:flex;align-items:center;font-size:12px;font-weight:500;color:var(--ink2)}
+.tabs a.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(20,18,19,.06)}
+/* heat */
+.heat{width:376px}
+.hm{display:grid;grid-template-columns:104px repeat(5,1fr);gap:5px;margin-top:14px}
+.hh{font-size:11.5px;color:var(--ink3);text-align:center;font-weight:600;padding-bottom:2px}
+.hn{font-size:12.5px;color:var(--ink2);display:flex;align-items:center;font-weight:500}
+.hc{height:48px;border-radius:10px;display:grid;place-items:center;font-size:12px;font-weight:600}
+.hc.so{font-size:11px}
+.hlg{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:11.5px;color:var(--ink3)}
+.hlg i{flex:1;height:8px;border-radius:99px;background:linear-gradient(90deg,#FCF2F4,#F6CCD5,#E597AA,#C2566E)}
+.hlg span.so{display:flex;align-items:center;gap:5px;margin-left:6px}.hlg span.so em{width:10px;height:10px;border-radius:3px;background:var(--ink)}
+.ords{flex:1}
+.or{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.or:last-child{border:0}
+.or b{display:block;font-size:13px;font-weight:600}.or span{font-size:11.5px;color:var(--ink3)}
+.or .r{margin-left:auto;text-align:right}.or .r b{font-size:13px}
+.or .pill{margin-top:3px;height:20px;font-size:11px}
+.pg2{background:var(--grn2);color:#147A51}.pa{background:var(--amb2);color:#94600F}.pr{background:var(--rose2);color:var(--rd)}.pk{background:#F1EEEE;color:var(--ink2)}
+.tg{margin-top:22px}
+.tgh{display:flex;justify-content:space-between;font-size:12px;color:#BDB4B6}
+.tgh b{color:#fff;font-weight:600;font-size:13px}.tgh em{font-style:normal;color:#8F8789;font-weight:500;font-size:12px}
+.tgb{display:flex;gap:3px;margin-top:9px;height:22px}
+.tgb i{flex:1;border-radius:3px;background:rgba(255,255,255,.12)}
+.tgb i.f{background:var(--rose)}
+</style></head><body>
+<div class="page">
+<!-- LEFT HALF -->
+<div class="half">
+  <div class="top">
+    <div class="logo"><i>{{icon:scissors:18:#F2C9D1:2}}</i>Loomline</div>
+    <div class="nav"><a class="on">Overview</a><a>Products</a><a>Orders</a><a>Customers</a><a>Campaigns</a></div>
+  </div>
+  <div class="greet">
+    <div>
+      <h1>Good evening, <span class="serif">Sofia</span></h1>
+      <p>Sales are up <b>23.6%</b> and <b>medium wool coats</b> sold out today.</p>
+    </div>
+    <div class="acts">
+      <div class="btn">{{icon:calendar-days:15:#141213}}Nov 1 – 20{{icon:chevron-down:14:#A39A9C}}</div>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="hl">
+      <div class="k">Net sales · month to date<span>vs Oct 1 – 20</span></div>
+      <div class="big">$184,260<small>.40</small></div>
+      <div class="dl"><span class="pill">{{icon:trending-up:13:#141213:2.2}}+23.6%</span>$35,180 more than last month</div>
+      <div class="tg"><div class="tgh"><span>November target</span><b>84% <em>of $220,000</em></b></div><div class="tgb"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="chn">
+        <div class="cr"><span>{{icon:monitor:14:#F2C9D1}}Online store</span><div class="bar"><i style="width:61%;background:#F2C9D1"></i></div><b>$112,980</b></div>
+        <div class="cr"><span>{{icon:smartphone:14:#E8A5B3}}Mobile app</span><div class="bar"><i style="width:26%;background:#E8A5B3"></i></div><b>$48,340</b></div>
+        <div class="cr"><span>{{icon:store:14:#BDB4B6}}Wholesale</span><div class="bar"><i style="width:13%;background:#8F8789"></i></div><b>$22,940</b></div>
+      </div>
+    </div>
+    <div class="photo">
+      <div class="gl g1"><em></em>Winter Edit · live</div>
+      <div class="gl g2"><div class="th"></div><div><b>Camel Wool Coat</b><span>#1 this month</span></div><div class="n"><b>214</b><span>sold</span></div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card chart">
+      <div class="ch"><div><div class="t">Daily net sales</div><div class="s">November 1 – 20</div></div><div class="ib" style="background:var(--bg);width:34px;height:34px">{{icon:arrow-up-right:15:#141213}}</div></div>
+      <div style="position:relative;margin-top:8px"><svg width="380" height="254" viewBox="0 0 380 254">
+<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+<rect width="6" height="6" fill="#F7DCE2"/><line x1="0" y1="0" x2="0" y2="6" stroke="#EBB8C3" stroke-width="2.4"/></pattern></defs>
+<line x1="34" x2="376" y1="228.0" y2="228.0" stroke="#EFE8E9" stroke-dasharray="0"/><text x="26" y="232.0" text-anchor="end" font-size="11" fill="#A39A9C">0k</text><line x1="34" x2="376" y1="174.5" y2="174.5" stroke="#EFE8E9" stroke-dasharray="3 4"/><text x="26" y="178.5" text-anchor="end" font-size="11" fill="#A39A9C">4k</text><line x1="34" x2="376" y1="121.0" y2="121.0" stroke="#EFE8E9" stroke-dasharray="3 4"/><text x="26" y="125.0" text-anchor="end" font-size="11" fill="#A39A9C">8k</text><line x1="34" x2="376" y1="67.5" y2="67.5" stroke="#EFE8E9" stroke-dasharray="3 4"/><text x="26" y="71.5" text-anchor="end" font-size="11" fill="#A39A9C">12k</text><line x1="34" x2="376" y1="14.0" y2="14.0" stroke="#EFE8E9" stroke-dasharray="3 4"/><text x="26" y="18.0" text-anchor="end" font-size="11" fill="#A39A9C">16k</text>
+<line x1="34" x2="376" y1="104.8" y2="104.8" stroke="#C2566E" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="40" y="97.8" text-anchor="start" font-size="11" font-weight="600" fill="#C2566E">avg $9.2k</text>
+<rect x="36.5" y="135.7" width="12" height="92.3" rx="5" fill="url(#hatch)"/><text x="42.5" y="246" text-anchor="middle" font-size="11" fill="#A39A9C" font-weight="500">1</text><rect x="53.7" y="126.4" width="12" height="101.6" rx="5" fill="url(#hatch)"/><rect x="70.8" y="125.0" width="12" height="103.0" rx="5" fill="url(#hatch)"/><rect x="87.9" y="117.0" width="12" height="111.0" rx="5" fill="url(#hatch)"/><rect x="105.0" y="100.9" width="12" height="127.1" rx="5" fill="url(#hatch)"/><text x="111.0" y="246" text-anchor="middle" font-size="11" fill="#A39A9C" font-weight="500">5</text><rect x="122.0" y="83.5" width="12" height="144.5" rx="5" fill="url(#hatch)"/><rect x="139.2" y="92.9" width="12" height="135.1" rx="5" fill="url(#hatch)"/><rect x="156.3" y="133.0" width="12" height="95.0" rx="5" fill="url(#hatch)"/><rect x="173.4" y="123.7" width="12" height="104.3" rx="5" fill="url(#hatch)"/><rect x="190.5" y="114.3" width="12" height="113.7" rx="5" fill="url(#hatch)"/><text x="196.5" y="246" text-anchor="middle" font-size="11" fill="#A39A9C" font-weight="500">10</text><rect x="207.6" y="109.0" width="12" height="119.0" rx="5" fill="url(#hatch)"/><rect x="224.7" y="103.6" width="12" height="124.4" rx="5" fill="url(#hatch)"/><rect x="241.8" y="88.9" width="12" height="139.1" rx="5" fill="url(#hatch)"/><rect x="258.9" y="29.8" width="12" height="198.2" rx="5" fill="#141213"/><text x="264.9" y="246" text-anchor="middle" font-size="11" fill="#141213" font-weight="600">14</text><rect x="276.0" y="75.5" width="12" height="152.5" rx="5" fill="url(#hatch)"/><rect x="293.1" y="106.3" width="12" height="121.7" rx="5" fill="url(#hatch)"/><rect x="310.2" y="115.6" width="12" height="112.4" rx="5" fill="url(#hatch)"/><rect x="327.3" y="113.0" width="12" height="115.0" rx="5" fill="url(#hatch)"/><rect x="344.4" y="106.3" width="12" height="121.7" rx="5" fill="url(#hatch)"/><rect x="361.5" y="95.1" width="12" height="132.9" rx="5" fill="url(#hatch)"/><text x="367.5" y="246" text-anchor="middle" font-size="11" fill="#A39A9C" font-weight="500">20</text>
+</svg>
+        <div class="tip" style="left:195px;top:-34px"><b>$14,820</b>Nov 14 · Winter Edit drop</div>
+      </div>
+      <div class="chfoot"><div>Best day<b>Sat, Nov 14</b></div><div>Daily average<b>$9,213</b></div></div>
+    </div>
+    <div class="card rets">
+      <div class="t">Why items come back</div><div class="s">182 returns this month</div>
+      <div class="seg"><i style="flex:64;background:#141213"></i><i style="flex:41;background:#C2566E"></i><i style="flex:33;background:#E8A5B3"></i><i style="flex:25;background:#F2C9D1"></i><i style="flex:19;background:#E6DFE0"></i></div>
+      <div class="rlist"><div class="rr"><em style="background:#141213"></em><span>Runs small</span><b>64</b><small>35%</small></div><div class="rr"><em style="background:#C2566E"></em><span>Runs large</span><b>41</b><small>23%</small></div><div class="rr"><em style="background:#E8A5B3"></em><span>Looks different</span><b>33</b><small>18%</small></div><div class="rr"><em style="background:#F2C9D1"></em><span>Changed mind</span><b>25</b><small>14%</small></div><div class="rr"><em style="background:#E6DFE0"></em><span>Quality</span><b>19</b><small>10%</small></div></div>
+      <div class="ins">{{icon:sparkles:15:#C2566E}}<span><b>58% are fit issues.</b> Add a size note to the wool coat.</span></div>
+    </div>
+  </div>
+</div>
+<!-- RIGHT HALF -->
+<div class="half">
+  <div class="top">
+    <div class="srch">{{icon:search:16:#A39A9C}}Search orders, products, customers<kbd>⌘K</kbd></div>
+    <div class="ib">{{icon:bell:17:#141213}}<b></b></div>
+    <div class="aib">{{icon:sparkles:16:#141213}}Ask Loom</div>
+    <div class="user"><div class="ph" style="width:40px;height:40px;background-image:url(sofia.jpg)"></div><div><b>Sofia Alvarez</b><span>Head of E-commerce</span></div></div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="h">Orders<i>{{icon:shopping-bag:14:#141213}}</i></div><div class="v">1,532</div><div class="d"><span class="up">+18.2%</span>vs October</div></div>
+    <div class="kpi"><div class="h">Avg order value<i>{{icon:receipt:14:#141213}}</i></div><div class="v">$120.27</div><div class="d"><span class="up">+4.6%</span>vs October</div></div>
+    <div class="kpi"><div class="h">Conversion<i>{{icon:mouse-pointer-click:14:#141213}}</i></div><div class="v">3.4%</div><div class="d"><span class="up">+0.5 pt</span>45,060 visits</div></div>
+    <div class="kpi acc"><div class="h">Return rate<i>{{icon:rotate-ccw:14:#141213}}</i></div><div class="v">11.9%</div><div class="d"><span style="color:#141213;font-weight:600">−2.1 pt</span>182 of 1,532</div></div>
+  </div>
+  <div class="card prods">
+    <div class="ch"><div><div class="t">Best sellers <span class="serif" style="font-size:19px;color:var(--rd)">this month</span></div><div class="s">Sell-through of the Winter Edit drop</div></div><div class="tabs"><a class="on">Units</a><a>Revenue</a><a>Margin</a></div></div>
+    <div class="pg">
+      <div class="pc"><div class="im" style="background-image:url(p-coat.jpg)"><span class="pill w">#1</span></div><div class="nm">Wool Coat<span>$289</span></div><div class="mt">214 sold · 47 left</div><div class="st"><div class="bar"><i style="width:82%"></i></div>82%</div></div>
+      <div class="pc"><div class="im" style="background-image:url(p-sweater.jpg)"><span class="pill">#2</span></div><div class="nm">Rose Knit<span>$148</span></div><div class="mt">306 sold · 108 left</div><div class="st"><div class="bar"><i style="width:74%"></i></div>74%</div></div>
+      <div class="pc"><div class="im" style="background-image:url(p-boots.jpg)"><span class="pill">#3</span></div><div class="nm">Ankle Boot<span>$219</span></div><div class="mt">168 sold · 75 left</div><div class="st"><div class="bar"><i style="width:69%"></i></div>69%</div></div>
+      <div class="pc"><div class="im" style="background-image:url(p-slip.jpg)"><span class="pill" style="background:var(--rd);color:#fff">Slow</span></div><div class="nm">Silk Slip<span>$176</span></div><div class="mt">131 sold · 189 left</div><div class="st"><div class="bar"><i style="width:41%;background:var(--rd)"></i></div>41%</div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card heat">
+      <div class="ch"><div><div class="t">Size curve</div><div class="s">Sell-through by size</div></div><span class="pill pr">{{icon:triangle-alert:12:#C2566E:2.2}}Restock M</span></div>
+      <div class="hm"><div></div><div class="hh">XS</div><div class="hh">S</div><div class="hh">M</div><div class="hh">L</div><div class="hh">XL</div><div class="hn">Wool coat</div><div class="hc" style="background:#ECAEBD;color:#5B3540">64%</div><div class="hc" style="background:#CE6D83;color:#fff">88%</div><div class="hc so" style="background:#141213;color:#fff">Out</div><div class="hc" style="background:#C9637A;color:#fff">91%</div><div class="hc" style="background:#F1BBC7;color:#5B3540">58%</div><div class="hn">Cashmere knit</div><div class="hc" style="background:#E89FB1;color:#5B3540">71%</div><div class="hc" style="background:#D57A8F;color:#fff">84%</div><div class="hc" style="background:#DE8A9E;color:#5B3540">79%</div><div class="hc" style="background:#EBAAB9;color:#5B3540">66%</div><div class="hc" style="background:#F6CED7;color:#5B3540">47%</div><div class="hn">Linen trouser</div><div class="hc" style="background:#F5C8D2;color:#5B3540">52%</div><div class="hc" style="background:#E290A4;color:#5B3540">77%</div><div class="hc" style="background:#DA8498;color:#fff">81%</div><div class="hc" style="background:#EEB3C0;color:#5B3540">62%</div><div class="hc" style="background:#F7D5DC;color:#5B3540">38%</div><div class="hn">Tailored blazer</div><div class="hc" style="background:#F7D1D9;color:#5B3540">44%</div><div class="hc" style="background:#E9A4B4;color:#5B3540">69%</div><div class="hc" style="background:#E69BAD;color:#5B3540">73%</div><div class="hc" style="background:#F1BDC9;color:#5B3540">57%</div><div class="hc" style="background:#F8DAE1;color:#5B3540">31%</div><div class="hn">Silk slip</div><div class="hc" style="background:#F9DCE2;color:#5B3540">29%</div><div class="hc" style="background:#F6CFD7;color:#5B3540">46%</div><div class="hc" style="background:#F7D3DB;color:#5B3540">41%</div><div class="hc" style="background:#F8D9E0;color:#5B3540">33%</div><div class="hc" style="background:#FAE4E9;color:#5B3540">18%</div></div>
+      <div class="hlg">0%<i></i>100%<span class="so"><em></em>Sold out</span></div>
+    </div>
+    <div class="card ords">
+      <div class="ch"><div class="t">Latest orders</div><span style="font-size:12px;font-weight:600;color:var(--rd)">View all</span></div>
+      <div style="margin-top:6px">
+        <div class="or"><div class="ph" style="width:36px;height:36px;background-image:url(amara.jpg)"></div><div><b>Amara Okafor</b><span>Wool Coat · M</span></div><div class="r"><b>$289</b><div class="pill pg2">Paid</div></div></div>
+        <div class="or"><div class="ph" style="width:36px;height:36px;background-image:url(mei.jpg)"></div><div><b>Mei Tanaka</b><span>Rose Knit · S</span></div><div class="r"><b>$148</b><div class="pill pk">Packing</div></div></div>
+        <div class="or"><div class="ph" style="width:36px;height:36px;background-image:url(olivia.jpg)"></div><div><b>Olivia Grant</b><span>Boot · 38</span></div><div class="r"><b>$219</b><div class="pill pa">Shipped</div></div></div>
+        <div class="or"><div class="ph" style="width:36px;height:36px;background-image:url(rohan.jpg)"></div><div><b>Rohan Mehta</b><span>Blazer · L</span></div><div class="r"><b>$238</b><div class="pill pr">Return</div></div></div>
+        <div class="or"><div class="ph" style="width:36px;height:36px;background-image:url(daniel.jpg)"></div><div><b>Daniel Brooks</b><span>Sneaker · 43</span></div><div class="r"><b>$129</b><div class="pill pg2">Paid</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body></html>
