@@ -179,12 +179,10 @@ box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</sty
     save(Image.open(work / 'web1.png').resize((W, H), Image.LANCZOS), f'{prefix}-1.jpg')
 
     # slide 2: the top of the page, large, centred
-    cw, ctop = 900, 110
+    # Owner, 2026-11-21: the "Designed by" bar is on slide 1 ONLY, so slides 2+ use the full canvas.
+    cw, ctop = 900, 90
     sc = cw / pw
-    card_h = H - ctop - 90
-    if BRAND:
-        ctop = BRAND_TOP + 12
-        card_h = H - ctop - BRAND_BOT_NOWA
+    card_h = H - 2 * ctop
     topimg = page.crop((0, 0, pw, round(card_h / sc)))
     html = f"""<!doctype html><html><head><meta charset=utf-8><style>{R.STAGE_CSS}
 .col{{position:absolute;background:#fff;border-radius:6px;overflow:hidden;
@@ -203,7 +201,7 @@ box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</sty
     def fit(k):
         s_ = (k * W - 300) / ph
         return s_, round(pw * s_)
-    maxb = H - BRAND_TOP - BRAND_BOT_NOWA - 12 if BRAND else H - 90
+    maxb = H - 90
     k = max(2, round((ph * (maxb - 110) / pw + 300) / W))
     s_, band = fit(k)
     while band > maxb and k < 7:
@@ -214,15 +212,12 @@ box-shadow:0 0 0 1px rgba(0,0,0,.04),0 20px 40px -28px rgba(20,20,30,.10)}}</sty
     strip = Image.new('RGB', (k * W, band), BG)
     strip.paste(rot, (150, 0))
     top = (H - band) // 2
-    if BRAND:
-        top = BRAND_TOP + 12 + (maxb - band) // 2
     for i in range(k):
         c = Image.new('RGB', (W, H), BG)
         c.paste(strip.crop((i * W, 0, (i + 1) * W, band)), (0, top))
         save(c, f'{prefix}-{i + 3}.jpg')
     if BRAND:
-        for i in range(1, k + 3):
-            await brand(b, work, f'{prefix}-{i}.jpg', wa=False)
+        await brand(b, work, f'{prefix}-1.jpg', wa=False)   # slide 1 only (owner, 2026-11-21)
     save(await cta_slide(b, work), f'{prefix}-{k + 3}.jpg')
 
 
@@ -338,9 +333,8 @@ async def app(d, work, prefix, b):
         ".l span:first-child{color:#111114}.l span:last-child{color:#6B6B74;font-family:'JetBrains Mono';font-size:22px}")
     save(s4, f'{prefix}-4.jpg')
     if BRAND:
-        for i in range(1, 5):
-            make_room(f'{prefix}-{i}.jpg', 'shift' if i == 1 else 'scale')
-            await brand(b, work, f'{prefix}-{i}.jpg', wa=False)
+        make_room(f'{prefix}-1.jpg', 'shift')                # brand bar on slide 1 only (owner, 2026-11-21)
+        await brand(b, work, f'{prefix}-1.jpg', wa=False)
     save(await cta_slide(b, work), f'{prefix}-5.jpg')
 
 

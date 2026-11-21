@@ -218,6 +218,17 @@ AirLume, Enblox). Open them before every website. The owner wants scroll-stoppin
 - Ending: giant brand wordmark (often over a landscape photo or in a dark footer) with link columns.
 - Every website a different skeleton and palette. Website posts need the owner's "done" before posting.
 
+## Pre-post QA checklist (owner, 2026-11-21 — a post with any of these problems must NOT be posted)
+
+The Kettle & Crow website went out with its dark footer narrower than the hero frame and the "Designed by" bar on every slide.
+Before marking anything `ready` or posting it, check and fix:
+- **"Designed by" / SAVE for LATER bar on slide 1 ONLY** (apps, dashboards, websites). Slides 2+ never have it (carousel.py now enforces this).
+- **Frame widths match:** run `python3 tools/check_widths.py designs/<dir>`; the footer and every full-width coloured or photo section
+  must share the hero frame's left/right edges (no footer or band narrower or wider than the frame).
+- Open EVERY slide image and look: nothing clipped, no text cut by a slide edge, no orphan words, no blank bands, wordmarks not cut off,
+  descenders not clipped, numbers add up, CTA slide last.
+- If anything fails, fix and re-render before the slot's time; if it can't be fixed, leave it unposted and notify the owner.
+
 ## Brand chrome + mockup shadow (approved by the owner 2026-11-14 — on every post from 2026-11-15)
 
 Every design slide (not the CTA slide, and not dashboard slides 2–3, see the 2026-11-18 feedback) carries the owner's chrome, added automatically by tools/carousel.py:
