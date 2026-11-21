@@ -664,7 +664,8 @@
    "posted_at": "2026-11-21T08:40+06:00",
    "replied_comment_ids": [
     "17916525543555369",
-    "17897677503654773", "17937077736145612"
+    "17897677503654773",
+    "17937077736145612"
    ]
   },
   {
@@ -676,11 +677,11 @@
    "niche": "Skincare shop: product detail",
    "brand": "Mossé",
    "palette_hint": "moss green + mist",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-21-pm-mosse-skincare-app",
    "image": null,
    "caption": "A cream should look like this before you ever open the jar.\nSkincare app UI design: product detail with real photography, glass hotspots and slide to add\n\nMossé lets the product photo do the selling. Glass pins point at what's inside, and the size, price and checkout all live in one frosted sheet under the jar.\n\nSave this for your next e-commerce product page\nWould you add it to your bag from this screen?\n\n#uidesign #mobileappdesign #glassmorphism #skincareapp #beautytech",
-   "media_id": null,
+   "media_id": "18486504337118159",
    "format": "carousel-app-v4",
    "ai": false,
    "originally": "2026-11-19-pm",
@@ -694,7 +695,8 @@
     "posts/2026-11/2026-11-21-pm-mosse-skincare-app-6.jpg"
    ],
    "replaces": "Halo (moved to unscheduled on owner request)",
-   "approved": "owner approved Mossé v1 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am"
+   "approved": "owner approved Mossé v1 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am",
+   "posted_at": "2026-11-21T20:41+06:00"
   },
   {
    "id": "2026-11-22-am",
