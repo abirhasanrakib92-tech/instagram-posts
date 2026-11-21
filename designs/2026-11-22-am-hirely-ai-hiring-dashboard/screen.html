@@ -1,0 +1,265 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.hirely.ai/pipeline">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#F1F2F8;--card:#fff;--line:#E8E9F2;--ink:#14152B;--ink2:#5E6079;--ink3:#9A9CB2;--ind:#2E2F86;--ind2:#4A4CC9;--ind3:#E9E9FB;--mint:#86EBC7;--mint2:#E2F8EF;--mintd:#0F8A5F;--amb:#B26B12;--amb2:#FCF0DC;--rd:#D2475C}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-family:'Onest';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:0}
+.page{display:grid;grid-template-columns:688px 688px;column-gap:16px;padding:20px 24px;height:960px;grid-template-rows:52px 72px 1fr;row-gap:16px}
+.card{background:var(--card);border-radius:24px;padding:20px;position:relative;overflow:hidden}
+.ph{background-size:cover;background-position:center 30%;border-radius:50%;flex:none}
+.t{font-size:16px;font-weight:600;letter-spacing:-.2px}
+.s{font-size:12.5px;color:var(--ink3);font-weight:500;margin-top:3px}
+.ch{display:flex;align-items:flex-start;justify-content:space-between}
+.pill{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 9px;border-radius:999px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.ib{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;position:relative}
+.ib b{position:absolute;top:11px;right:12px;width:7px;height:7px;border-radius:50%;background:var(--rd);border:1.5px solid #fff}
+.btn{height:40px;padding:0 15px;border-radius:999px;background:#fff;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;white-space:nowrap}
+.mini{height:30px;padding:0 11px;border-radius:999px;border:1px solid var(--line);display:flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--ink2);white-space:nowrap}
+/* top bar */
+.top{display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:9px;font-size:21px;font-weight:600;letter-spacing:-.7px;margin-right:4px}
+.logo i{width:38px;height:38px;border-radius:12px;background:var(--ind);display:grid;place-items:center}
+.logo sup{font-size:10px;font-weight:600;color:var(--ind2);background:var(--ind3);border-radius:6px;padding:2px 5px;margin-left:2px;letter-spacing:0;vertical-align:4px}
+.nav{display:flex;gap:2px;background:#fff;border-radius:999px;padding:4px}
+.nav a{height:36px;padding:0 15px;border-radius:999px;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:500;color:var(--ink2)}
+.nav a.on{background:var(--ink);color:#fff}
+.nav a em{font-style:normal;font-size:11px;font-weight:600;background:var(--ind3);color:var(--ind2);border-radius:99px;padding:1px 6px}
+.srch{flex:1;height:44px;background:#fff;border-radius:999px;display:flex;align-items:center;gap:8px;padding:0 16px;font-size:13px;color:var(--ink3)}
+.srch kbd{margin-left:auto;font-family:inherit;font-size:11px;border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+.user{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:4px 16px 4px 4px;height:48px}
+.user b{display:block;font-size:13px;font-weight:600}.user span{font-size:11.5px;color:var(--ink3)}
+/* greeting */
+.greet{display:flex;flex-direction:column;justify-content:flex-end}
+.greet h1{font-size:34px;font-weight:500;letter-spacing:-1.3px;line-height:1.05}
+.greet h1 .serif{font-size:40px}
+.greet p{font-size:14px;color:var(--ink2);margin-top:8px;line-height:1.45}.greet p b{color:var(--ink);font-weight:600}
+.acts{display:flex;gap:8px;justify-content:flex-end;align-items:flex-end}
+.prim{background:var(--ind);color:#fff}
+.ai{background:var(--mint);color:var(--ink);font-weight:600}
+.half{display:flex;flex-direction:column;gap:16px;min-height:0}
+.row{display:flex;gap:16px;flex:1;min-height:0}
+/* hero */
+.hero{height:304px;flex:none;background:var(--ind);border-radius:28px;color:#fff;padding:22px 24px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-120px;top:-140px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(134,235,199,.28),rgba(134,235,199,0) 65%)}
+.hk{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#BFC0EC;position:relative}
+.hk .tg{display:flex;gap:6px}
+.hk .tg span{font-size:11.5px;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px 11px;color:#E6E6FA}
+.hk .tg span.on{background:#fff;color:var(--ind);border-color:#fff;font-weight:600}
+.hb{display:flex;align-items:flex-end;gap:14px;margin-top:12px;position:relative}
+.big{font-size:54px;font-weight:500;letter-spacing:-2.4px;line-height:.95}
+.hb .u{font-size:14px;color:#BFC0EC;padding-bottom:6px;line-height:1.35}
+.hb .u .pill{background:var(--mint);color:var(--ink);margin-right:6px}
+.hb .side{margin-left:auto;display:flex;gap:18px;padding-bottom:4px}
+.hb .side div{font-size:11.5px;color:#BFC0EC}.hb .side b{display:block;font-size:18px;color:#fff;font-weight:500;letter-spacing:-.4px;margin-top:2px}
+.stages{display:grid;grid-template-columns:repeat(5,128px);margin-top:18px;position:relative}
+.stages div{font-size:11.5px;color:#BFC0EC;padding-left:10px;border-left:1px solid rgba(255,255,255,.16);line-height:1.3}
+.stages div:first-child{border-left:0;padding-left:0}
+.stages b{display:block;font-size:17px;color:#fff;font-weight:600;letter-spacing:-.3px}
+.stages em{font-style:normal;color:var(--mint);font-weight:600}
+.fun{position:relative;margin-top:12px;height:116px}
+.fun svg{position:absolute;left:0;top:0}
+.fun .lines{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,128px)}
+.fun .lines i{border-left:1px dashed rgba(255,255,255,.16)}
+.fun .lines i:first-child{border:0}
+.chips{position:absolute;display:flex;align-items:center}
+.chips .ph{width:22px;height:22px;border:2px solid var(--mint);margin-left:-7px}
+.chips .ph:first-child{margin-left:0}
+/* matches */
+.match{width:416px}
+.mr{display:grid;grid-template-columns:40px 1fr 74px 40px;align-items:center;gap:12px;height:60px;border-top:1px solid var(--line)}
+.mr:first-of-type{border-top:0}
+.mr .ph{width:40px;height:40px}
+.mr b{font-size:13.5px;font-weight:600;display:block}.mr span{font-size:11.5px;color:var(--ink3)}
+.ring{position:relative;width:40px;height:40px}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:12.5px;font-weight:700}
+.list{margin-top:12px}
+.foot{position:absolute;left:20px;right:20px;bottom:20px;height:42px;border-radius:999px;background:var(--bg);display:flex;align-items:center;justify-content:center;gap:7px;font-size:13px;font-weight:600}
+/* kpis */
+.kp{flex:1;display:flex;flex-direction:column;gap:16px}
+.k{flex:1;padding:16px 18px}
+.k .kt{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:500;color:var(--ink2)}
+.k .kt i{width:30px;height:30px;border-radius:50%;background:var(--bg);display:grid;place-items:center}
+.k .v{font-size:32px;font-weight:500;letter-spacing:-1.2px;margin-top:8px;line-height:1}
+.k .v small{font-size:15px;color:var(--ink3);letter-spacing:-.2px;font-weight:500;margin-left:3px}
+.k .d{font-size:11.5px;color:var(--ink3);margin-top:8px;display:flex;align-items:center;gap:6px}
+.k.m{background:var(--mint)}
+.k.m .kt{color:#1B4A3A}.k.m .kt i{background:rgba(255,255,255,.55)}
+.k.m .d{color:#1B4A3A}
+.seg{display:flex;gap:3px;margin-top:10px}.seg i{flex:1;height:14px;border-radius:4px;background:var(--ind)}.seg i.o{background:var(--ind3)}
+/* score card */
+.score{height:392px;flex:none;display:grid;grid-template-columns:200px 1fr;gap:20px;padding:20px}
+.port{border-radius:20px;background:url(amara.jpg) center 28%/cover;position:relative}
+.gl{position:absolute;background:rgba(255,255,255,.24);border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff}
+.g1{top:12px;left:12px;height:28px;padding:0 10px;border-radius:999px;display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;background:rgba(20,21,43,.42);border-color:rgba(255,255,255,.22)}
+.g1 em{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 3px rgba(134,235,199,.3)}
+.g2{left:10px;right:10px;bottom:10px;border-radius:16px;padding:11px 12px;background:rgba(255,255,255,.86);color:var(--ink);border-color:rgba(255,255,255,.7)}
+.g2 b{font-size:14px;font-weight:600;display:block}.g2 span{font-size:11.5px;color:var(--ink2);display:flex;align-items:center;gap:4px;margin-top:2px}
+.sr{display:flex;flex-direction:column}
+.sr h3{font-size:18px;font-weight:600;letter-spacing:-.4px}
+.sr h3 .serif{font-size:22px;color:var(--ind2)}
+.sbig{display:flex;align-items:flex-end;gap:14px;margin-top:14px}
+.sbig .n{font-family:'Doto';font-weight:800;font-size:60px;line-height:.85;color:var(--ind);letter-spacing:-1px}
+.sbig .n small{font-family:'Onest';font-size:16px;color:var(--ink3);font-weight:500;letter-spacing:0}
+.sbig .r{font-size:12px;color:var(--ink2);line-height:1.4;padding-bottom:2px}
+.sbig .r b{color:var(--ink)}
+.fac{margin-top:16px;display:grid;gap:11px}
+.fr{display:grid;grid-template-columns:118px 1fr 44px;align-items:center;gap:10px;font-size:12.5px;color:var(--ink2)}
+.fr .bar{height:8px;border-radius:99px;background:var(--ind3);overflow:hidden}
+.fr .bar i{display:block;height:100%;border-radius:99px;background:var(--ind2)}
+.fr b{text-align:right;color:var(--ink);font-weight:600}
+.fr b small{color:var(--ink3);font-weight:500}
+.note{margin-top:14px;background:var(--mint2);border-radius:14px;padding:10px 12px;display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.4;color:#1B4A3A}
+.note b{font-weight:600}
+.sact{display:flex;gap:8px;margin-top:auto}
+.sact .btn{height:40px;background:var(--bg)}
+.sact .btn.prim{background:var(--ind);color:#fff;flex:1;justify-content:center}
+/* source chart */
+.src{width:336px}
+.tip{position:absolute;background:var(--ink);color:#fff;border-radius:12px;padding:7px 10px;font-size:11.5px;line-height:1.35;white-space:nowrap}
+.tip b{font-size:14px;display:block}
+.tl1:after{left:39px!important;margin-left:-5px}
+.tip:after{content:"";position:absolute;left:50%;bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:var(--ink)}
+.ax{font-size:11px;fill:#9A9CB2;font-family:'Onest'}
+/* interviews */
+.iv{width:336px}
+.tl{margin-top:14px;display:grid;gap:8px}
+.ti{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:stretch}
+.ti .tm{font-size:12px;font-weight:600;color:var(--ink2);padding-top:12px}
+.ti .bx{border-radius:16px;background:var(--bg);padding:10px 12px;display:flex;align-items:center;gap:10px}
+.ti .bx.now{background:var(--ind3);box-shadow:inset 3px 0 0 var(--ind2)}
+.ti .ph{width:34px;height:34px}
+.ti b{font-size:13px;font-weight:600;display:block}.ti span{font-size:11.5px;color:var(--ink3)}
+.ti .md{margin-left:auto}
+</style></head>
+<body><div class="page">
+
+<!-- top bar: left half -->
+<div class="top">
+  <div class="logo"><i>{{icon:sparkles:20:#86EBC7:2}}</i>Hirely<sup>AI</sup></div>
+  <div class="nav"><a class="on">Pipeline</a><a>Jobs <em>7</em></a><a>Candidates</a><a>Interviews</a><a>Offers</a></div>
+</div>
+<!-- top bar: right half -->
+<div class="top">
+  <div class="srch">{{icon:search:16:#9A9CB2}}Search candidates, skills or roles<kbd>⌘K</kbd></div>
+  <div class="ib">{{icon:bell:18:#14152B}}<b></b></div>
+  <div class="ib">{{icon:settings:18:#14152B}}</div>
+  <div class="user"><div class="ph" style="width:40px;height:40px;background-image:url(karim.jpg)"></div><div><b>Karim Haddad</b><span>Head of Talent</span></div></div>
+</div>
+
+<!-- greeting -->
+<div class="greet">
+  <h1>Good morning, <span class="serif">Karim</span></h1>
+  <p>Hirely screened <b>214 applicants</b> overnight and found <b>12 strong matches</b> for you.</p>
+</div>
+<div class="acts">
+  <div class="btn">{{icon:calendar:16:#14152B}}Oct 24 – Nov 22{{icon:chevron-down:14:#9A9CB2}}</div>
+  <div class="btn">{{icon:download:16:#14152B}}Export</div>
+  <div class="btn ai">{{icon:sparkles:16:#14152B}}Ask Hirely</div>
+  <div class="btn prim">{{icon:plus:16:#ffffff}}Post a job</div>
+</div>
+
+<!-- LEFT HALF -->
+<div class="half">
+  <div class="hero">
+    <div class="hk"><span>Hiring pipeline · all 7 open roles</span><div class="tg"><span class="on">30 days</span><span>Quarter</span><span>Year</span></div></div>
+    <div class="hb">
+      <div class="big">1,284</div>
+      <div class="u"><span class="pill">+212</span>applicants<br>vs 1,072 in the 30 days before</div>
+      <div class="side"><div>Screened by AI<b>in 3.8 h</b></div><div>Hired<b>6 people</b></div></div>
+    </div>
+    <div class="stages">
+      <div>Applied<b>1,284</b>100%</div>
+      <div>AI shortlisted<b>386</b><em>30%</em> pass</div>
+      <div>Interview<b>112</b><em>29%</em> pass</div>
+      <div>Final round<b>28</b><em>25%</em> pass</div>
+      <div>Offer<b>9</b><em>32%</em> pass</div>
+    </div>
+    <div class="fun">
+      <div class="lines"><i></i><i></i><i></i><i></i><i></i></div>
+      <svg width="640" height="116" viewBox="0 0 640 152" preserveAspectRatio="none">
+        <defs><linearGradient id="fg" x1="0" x2="1"><stop offset="0" stop-color="#86EBC7" stop-opacity=".95"/><stop offset="1" stop-color="#86EBC7" stop-opacity=".55"/></linearGradient>
+        <linearGradient id="fg2" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".16"/><stop offset="1" stop-color="#ffffff" stop-opacity=".05"/></linearGradient></defs>
+        <path d="M0,6 L98,6 C128,6 128,24 158,24 L226,24 C256,24 256,41 286,41 L354,41 C384,41 384,55 414,55 L482,55 C512,55 512,63 542,63 L640,63 L640,89 L542,89 C512,89 512,97 482,97 L414,97 C384,97 384,111 354,111 L286,111 C256,111 256,128 226,128 L158,128 C128,128 128,146 98,146 L0,146 Z" fill="url(#fg2)"/>
+        <g transform="translate(0,76) scale(1,.62) translate(0,-76)"><path d="M0,6 L98,6 C128,6 128,24 158,24 L226,24 C256,24 256,41 286,41 L354,41 C384,41 384,55 414,55 L482,55 C512,55 512,63 542,63 L640,63 L640,89 L542,89 C512,89 512,97 482,97 L414,97 C384,97 384,111 354,111 L286,111 C256,111 256,128 226,128 L158,128 C128,128 128,146 98,146 L0,146 Z" fill="url(#fg)"/></g>
+      </svg>
+      <div class="chips" style="left:536px;top:47px"><div class="ph" style="background-image:url(amara.jpg)"></div><div class="ph" style="background-image:url(kenji.jpg)"></div><div class="ph" style="background-image:url(sofia.jpg)"></div></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card match">
+      <div class="ch"><div><div class="t">Top AI matches today</div><div class="s">Ranked across all open roles</div></div><div class="mini">All roles{{icon:chevron-down:13:#9A9CB2}}</div></div>
+      <div class="list">
+        <div class="mr"><div class="ph" style="background-image:url(amara.jpg)"></div><div><b>Amara Okafor</b><span>Senior Product Designer · 7 yrs</span></div><span class="pill" style="background:var(--ind3);color:var(--ind2);justify-self:start">New</span><div class="ring"><svg width="40" height="40"><circle cx="20" cy="20" r="17" fill="none" stroke="#E9E9FB" stroke-width="3.5"/><circle cx="20" cy="20" r="17" fill="none" stroke="#0F8A5F" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="100.4 106.8" transform="rotate(-90 20 20)"/></svg><b>94</b></div></div>
+        <div class="mr"><div class="ph" style="background-image:url(kenji.jpg)"></div><div><b>Kenji Sato</b><span>Frontend Engineer · 5 yrs</span></div><span class="pill" style="background:var(--mint2);color:var(--mintd);justify-self:start">Interview</span><div class="ring"><svg width="40" height="40"><circle cx="20" cy="20" r="17" fill="none" stroke="#E9E9FB" stroke-width="3.5"/><circle cx="20" cy="20" r="17" fill="none" stroke="#0F8A5F" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="97.2 106.8" transform="rotate(-90 20 20)"/></svg><b>91</b></div></div>
+        <div class="mr"><div class="ph" style="background-image:url(sofia.jpg)"></div><div><b>Sofia Alvarez</b><span>Product Manager · 6 yrs</span></div><span class="pill" style="background:var(--amb2);color:var(--amb);justify-self:start">Offer</span><div class="ring"><svg width="40" height="40"><circle cx="20" cy="20" r="17" fill="none" stroke="#E9E9FB" stroke-width="3.5"/><circle cx="20" cy="20" r="17" fill="none" stroke="#0F8A5F" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="95.1 106.8" transform="rotate(-90 20 20)"/></svg><b>89</b></div></div>
+        <div class="mr"><div class="ph" style="background-image:url(rohan.jpg)"></div><div><b>Rohan Mehta</b><span>Data Analyst · 4 yrs</span></div><span class="pill" style="background:var(--ind3);color:var(--ind2);justify-self:start">New</span><div class="ring"><svg width="40" height="40"><circle cx="20" cy="20" r="17" fill="none" stroke="#E9E9FB" stroke-width="3.5"/><circle cx="20" cy="20" r="17" fill="none" stroke="#4A4CC9" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="92.9 106.8" transform="rotate(-90 20 20)"/></svg><b>87</b></div></div>
+        <div class="mr"><div class="ph" style="background-image:url(olivia.jpg)"></div><div><b>Olivia Grant</b><span>UX Researcher · 5 yrs</span></div><span class="pill" style="background:var(--bg);color:var(--ink2);justify-self:start">Screening</span><div class="ring"><svg width="40" height="40"><circle cx="20" cy="20" r="17" fill="none" stroke="#E9E9FB" stroke-width="3.5"/><circle cx="20" cy="20" r="17" fill="none" stroke="#4A4CC9" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="90.8 106.8" transform="rotate(-90 20 20)"/></svg><b>85</b></div></div>
+      </div>
+      <div class="foot">Review all 12 strong matches{{icon:arrow-right:15:#14152B}}</div>
+    </div>
+    <div class="kp">
+      <div class="card k m"><div class="kt">Time to hire<i>{{icon:timer:15:#1B4A3A}}</i></div><div class="v">18<small>days</small></div><div class="d">{{icon:trending-down:13:#1B4A3A}}4 days faster than Q3</div>
+        <svg width="104" height="30" viewBox="0 0 220 26" preserveAspectRatio="none" style="position:absolute;right:18px;top:62px"><path d="M0,4 L36,7 L72,6 L108,12 L144,14 L180,19 L220,21" fill="none" stroke="#1B4A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="220" cy="21" r="0"/><circle cx="214" cy="20.7" r="4" fill="#fff" stroke="#1B4A3A" stroke-width="2"/></svg></div>
+      <div class="card k"><div class="kt">Offer acceptance<i>{{icon:handshake:15:#14152B}}</i></div><div class="v">86<small>%</small></div><div class="d">6 of 7 offers this quarter</div>
+        <div class="seg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="o" style="background:linear-gradient(90deg,var(--ind) 60%,var(--ind3) 60%)"></i><i class="o"></i></div></div>
+      <div class="card k"><div class="kt">Cost per hire<i>{{icon:wallet:15:#14152B}}</i></div><div class="v">$3,120</div><div class="d"><span class="pill" style="background:var(--mint2);color:var(--mintd)">−12%</span>vs $3,545 last quarter</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- RIGHT HALF -->
+<div class="half">
+  <div class="card score">
+    <div class="port">
+      <div class="gl g1"><em></em>Top match</div>
+      <div class="gl g2"><b>Amara Okafor</b><span>{{icon:map-pin:12:#5E6079}}Lagos · open to remote</span></div>
+    </div>
+    <div class="sr">
+      <div class="ch"><div><h3>Why Hirely ranked her <span class="serif">#1</span></h3><div class="s">Senior Product Designer · applied Nov 19 via referral</div></div><span class="pill" style="background:var(--ind3);color:var(--ind2)">{{icon:sparkles:12:#4A4CC9}}Explainable</span></div>
+      <div class="sbig"><div class="n">94<small> /100</small></div><div class="r">Higher than <b>98%</b> of 216 applicants<br>for this role. Avg match: <b>61</b></div></div>
+      <div class="fac">
+        <div class="fr"><span>Skills match</span><div class="bar"><i style="width:95%"></i></div><b>38<small>/40</small></b></div>
+        <div class="fr"><span>Experience</span><div class="bar"><i style="width:96%"></i></div><b>24<small>/25</small></b></div>
+        <div class="fr"><span>Portfolio quality</span><div class="bar"><i style="width:95%"></i></div><b>19<small>/20</small></b></div>
+        <div class="fr"><span>Screening answers</span><div class="bar"><i style="width:86.7%"></i></div><b>13<small>/15</small></b></div>
+      </div>
+      <div class="note">{{icon:eye-off:16:#0F8A5F}}<div><b>Blind scoring is on.</b> Name, photo, age and school are hidden from the model. You see them, it doesn't.</div></div>
+      <div class="sact"><div class="btn prim">{{icon:calendar:15:#ffffff}}Book interview</div><div class="btn">{{icon:users:15:#14152B}}Compare</div></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card src">
+      <div class="ch"><div><div class="t">Where hires come from</div><div class="s">42 hires · last 90 days</div></div><div class="mini">90d{{icon:chevron-down:13:#9A9CB2}}</div></div>
+      <svg width="296" height="232" viewBox="0 0 296 232" style="margin-top:30px">
+        <defs><pattern id="hp" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#EDEDF8"/><line x1="0" y1="0" x2="0" y2="6" stroke="#CFD0EE" stroke-width="2"/></pattern></defs>
+        <g class="ax" text-anchor="end"><text x="296" y="200">0</text><text x="296" y="155">5</text><text x="296" y="110">10</text><text x="296" y="65">15</text><text x="296" y="20">20</text></g>
+        <g stroke="#E8E9F2" stroke-dasharray="3 4"><line x1="0" x2="276" y1="196" y2="196"/><line x1="0" x2="276" y1="151" y2="151"/><line x1="0" x2="276" y1="106" y2="106"/><line x1="0" x2="276" y1="61" y2="61"/><line x1="0" x2="276" y1="16" y2="16"/></g>
+        <!-- scale 9px per hire -->
+        <rect x="6" y="70" width="42" height="126" rx="10" fill="#2E2F86"/>
+        <rect x="60" y="97" width="42" height="99" rx="10" fill="url(#hp)"/>
+        <rect x="114" y="124" width="42" height="72" rx="10" fill="url(#hp)"/>
+        <rect x="168" y="142" width="42" height="54" rx="10" fill="#86EBC7"/>
+        <rect x="222" y="169" width="42" height="27" rx="10" fill="url(#hp)"/>
+        <g class="ax" text-anchor="middle" style="font-weight:600;fill:#5E6079"><text x="81" y="90">11</text><text x="135" y="117">8</text><text x="189" y="135" style="fill:#0F8A5F">6</text><text x="243" y="162">3</text></g>
+        <g class="ax" text-anchor="middle"><text x="27" y="216">Referral</text><text x="81" y="216">LinkedIn</text><text x="135" y="216">Careers</text><text x="189" y="216">Hirely AI</text><text x="243" y="216">Agency</text></g>
+      </svg>
+      <div class="tip tl1" style="left:8px;top:110px"><b>14 hires</b>33% · cost $410</div>
+          </div>
+    <div class="card iv">
+      <div class="ch"><div><div class="t">Interviews · Mon, Nov 23</div><div class="s">4 booked by Hirely</div></div><div class="mini">Week{{icon:chevron-down:13:#9A9CB2}}</div></div>
+      <div class="tl">
+        <div class="ti"><div class="tm">09:30</div><div class="bx now"><div class="ph" style="background-image:url(daniel.jpg)"></div><div><b>Daniel Brooks</b><span>Backend · tech screen</span></div><span class="md">{{icon:video:16:#4A4CC9}}</span></div></div>
+        <div class="ti"><div class="tm">11:00</div><div class="bx"><div class="ph" style="background-image:url(mei.jpg)"></div><div><b>Mei Tanaka</b><span>Designer · portfolio</span></div><span class="md">{{icon:building-2:16:#5E6079}}</span></div></div>
+        <div class="ti"><div class="tm">14:00</div><div class="bx"><div class="ph" style="background-image:url(kenji.jpg)"></div><div><b>Kenji Sato</b><span>Frontend · pairing</span></div><span class="md">{{icon:video:16:#5E6079}}</span></div></div>
+        <div class="ti"><div class="tm">16:30</div><div class="bx"><div class="ph" style="background-image:url(marcus.jpg)"></div><div><b>Marcus Reed</b><span>Data · case study</span></div><span class="md">{{icon:building-2:16:#5E6079}}</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div></body></html>
