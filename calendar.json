@@ -709,11 +709,11 @@
    "niche": "HR hiring pipeline with AI candidate scoring",
    "brand": "Hirely AI",
    "palette_hint": "indigo + mint",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-22-am-hirely-ai-hiring-dashboard",
    "image": null,
    "caption": "An AI candidate score is useless if it can't tell you why.\nHR recruitment dashboard UI design: hiring funnel, AI candidate scoring and interview schedule\n\nHirely breaks the 94 down into the four things it actually measured, and blind scoring keeps name, photo, age and school out of the model. The funnel shows exactly where 1,284 applicants turn into 9 offers.\n\nSave this for your next HR or AI dashboard\nWould you trust a hiring score that shows its working?\n\n#uiux #dashboarddesign #productdesign #hrtech #recruitment",
-   "media_id": null,
+   "media_id": "18116960411615472",
    "format": "carousel-dashboard",
    "ai": true,
    "originally": "2026-11-20-am",
@@ -723,7 +723,8 @@
     "posts/2026-11/2026-11-22-am-hirely-ai-hiring-dashboard-2.jpg",
     "posts/2026-11/2026-11-22-am-hirely-ai-hiring-dashboard-3.jpg",
     "posts/2026-11/2026-11-22-am-hirely-ai-hiring-dashboard-4.jpg"
-   ]
+   ],
+   "posted_at": "2026-11-22T08:41+06:00"
   },
   {
    "id": "2026-11-22-pm",
