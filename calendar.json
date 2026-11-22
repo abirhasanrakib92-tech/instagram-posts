@@ -765,7 +765,10 @@
     "posts/2026-11/2026-11-22-pm-brightside-dental-website-8.jpg"
    ],
    "approved": "owner said done (2026-11-21)",
-   "posted_at": "2026-11-22T20:46+06:00"
+   "posted_at": "2026-11-22T20:46+06:00",
+   "replied_comment_ids": [
+    "17967531606214477"
+   ]
   },
   {
    "id": "2026-11-23-am",
