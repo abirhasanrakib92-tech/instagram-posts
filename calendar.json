@@ -812,11 +812,11 @@
    "niche": "Smart warehouse inventory & picking",
    "brand": "Stockyard",
    "palette_hint": "orange + slate",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-23-pm-stockyard-warehouse-dashboard",
    "image": null,
    "caption": "Your warehouse is never behind everywhere. It's behind in one aisle.\nWarehouse management dashboard UI design: pick density floor map, carrier cutoff tracker and replenishment\n\nStockyard draws the floor as a heatmap with the pickers on it, so the jam in aisle C is obvious before Wave 4 lands there. The hero card counts down to the carrier cutoff, and each tick is 52 orders.\n\nSave this for your next logistics or SaaS dashboard\nWould you rather see the floor map or the numbers first?\n\n#uiux #dashboarddesign #saasdesign #warehousemanagement #supplychain",
-   "media_id": null,
+   "media_id": "18479087932184699",
    "format": "carousel-dashboard",
    "ai": false,
    "originally": "2026-11-21-pm",
@@ -826,7 +826,8 @@
     "posts/2026-11/2026-11-23-pm-stockyard-warehouse-dashboard-2.jpg",
     "posts/2026-11/2026-11-23-pm-stockyard-warehouse-dashboard-3.jpg",
     "posts/2026-11/2026-11-23-pm-stockyard-warehouse-dashboard-4.jpg"
-   ]
+   ],
+   "posted_at": "2026-11-23T20:43+06:00"
   },
   {
    "id": "2026-11-24-am",
