@@ -10,6 +10,6 @@ Weekly learnings from post performance (written by the Monday morning run).
 
 ## Week of 2026-11-16 → 2026-11-22 (written 2026-11-23)
 
-- Best: the owner's scroll-driven luxury lake house reel (21 Nov) reached 143 with 4 saves and 1 share, about 7x any carousel. Among carousels, Kettle & Crow coffee website led (20 reach, 15 likes, 10 comments, 3 follows), then Runloop/running app 13 and Echo voice journal 11.
-- Weak: every other carousel sat at 7–10 reach with 0–1 saves (Hirely, Sizewise fashion, RoomCraft, Mossé v1, Brightside 7–9). Reach per carousel is lower than the week before (10–47), so the feed format alone is not getting distribution.
+- Best: the owner's scroll-driven luxury lake house reel (21 Nov) reached 143 with 4 saves and 1 share, about 7x any carousel. Among carousels, Kettle & Crow coffee website led (20 reach, 15 likes, 10 comments, 3 follows), then Stride running app 13 and the AI voice journal app 11.
+- Weak: every other carousel sat at 7–10 reach with 0–1 saves (Hirely, Loomline fashion, Roomcraft, Mossé v1, Brightside 7–9). Reach per carousel is lower than the week before (10–47), so the feed format alone is not getting distribution.
 - Do more: motion. Pair the strongest designs with a short scroll or interaction reel when the owner can, keep cinematic product heroes like Kettle & Crow, and use hooks that invite an opinion people want to type (the roast-date question pulled real feedback comments).
