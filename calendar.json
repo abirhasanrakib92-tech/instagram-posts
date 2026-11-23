@@ -779,11 +779,11 @@
    "niche": "Skincare: skin scan",
    "brand": "Mossé",
    "palette_hint": "moss green + blush",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-23-am-mosse-skin-scan-app",
    "image": null,
    "caption": "Two minutes with your camera, and your skin gets a score out of 100.\nSkin scan app UI design: AI skin analysis, dot-matrix score and product match\n\nMossé reads hydration, texture and redness straight off a real face, pins each result where it was found, and suggests the one product your skin needs tonight.\n\nSave this for your next AI or health app idea\nWould you trust an app to score your skin?\n\n#uiux #appdesign #skincaretech #aiapp #beautyapp",
-   "media_id": null,
+   "media_id": "18352614523271408",
    "format": "carousel-app-v4",
    "ai": false,
    "originally": "2026-11-21-am",
@@ -797,7 +797,8 @@
     "posts/2026-11/2026-11-23-am-mosse-skin-scan-app-6.jpg"
    ],
    "replaces": "Mossé v1 (moved to 21-pm)",
-   "approved": "owner approved Mossé v2 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am"
+   "approved": "owner approved Mossé v2 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am",
+   "posted_at": "2026-11-23T08:41+06:00"
   },
   {
    "id": "2026-11-23-pm",
