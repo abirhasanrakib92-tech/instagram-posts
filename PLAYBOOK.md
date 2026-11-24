@@ -18,6 +18,8 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
   Where this file says "Light UI only", "off-white/white surfaces" or "light footer", read it as dark: near-black or deep tinted
   surfaces (e.g. #0F120B, #111318, #0E1116), cards one step lighter with a 1px hairline border, light ink text, the slot's palette as
   bright accents that read well on dark. Keep contrast readable (body text at least #B0B0B0-ish on the dark surface).
+- **Studio background stays light #EEEEEE (owner, 2026-11-24):** he tried a dark studio background and rejected it. Only the UI inside the
+  window/phone is dark; never render with `STAGE=dark`.
 - Unchanged: the locked carousel formats, the #EEEEEE studio background, the mockups (phone, browser window), the brand chrome and the fixed CTA slide.
 - Light designs already made for later slots are kept for history (`light_design_dir` in calendar.json); those slots are `planned`
   again and must be redesigned dark (same niche and brand; their photos can be reused).
