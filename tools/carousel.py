@@ -20,7 +20,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent))
 import render as R
 
 W, H = R.W, R.H
-BG = (238, 238, 238)
+BG = (16, 17, 20) if R.DARK else (238, 238, 238)
 
 
 def save(img, out):
@@ -57,6 +57,17 @@ BRAND_TOP, BRAND_BOT = 150, 120          # canvas space the chrome takes (top ba
 BRAND_BOT_NOWA = 56                      # bottom margin when there is no WhatsApp pill (app, website)
 
 
+BRAND_DARK_CSS = """
+.tb,.wa{background:#1C1D22;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 12px 30px -18px rgba(0,0,0,.7)}
+.av{box-shadow:0 0 0 3px #1C1D22,0 0 0 4px #34353C}
+.who small,.wa small{color:#8E8F99}
+.who b,.sv,.wa b{color:#F3F3F5}
+.wa .sep{background:#34353C}
+.mid svg{stroke:#F3F3F5}
+.sv svg path{fill:#F3F3F5}
+"""
+
+
 def brand_html(bg_uri, wa=True):
     av = R.b64(R.ROOT / 'assets/brand/abir.jpg')
     heart = '<svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z" fill="#E8453C"/></svg>'
@@ -79,7 +90,7 @@ def brand_html(bg_uri, wa=True):
 .wa i{{width:46px;height:46px;border-radius:50%;background:#25D366;display:grid;place-items:center}}
 .wa small{{font-size:16px;color:#8A8A8A}} .wa b{{font-size:22px;font-weight:600;color:#111;letter-spacing:-.2px}}
 .wa .sep{{width:1px;height:26px;background:#E3E3E3}}
-</style></head><body><div class="stage"><div class="bg"></div>
+{BRAND_DARK_CSS if R.DARK else ''}</style></head><body><div class="stage"><div class="bg"></div>
 <div class="tb"><div class="who"><span class="av"></span><div><small>Designed by</small><b>Abir Hasan <i>Rakib</i></b></div></div>
  <div class="mid">{heart}{R.expand_icons('{{icon:message-circle:32:#111:1.9}}{{icon:send:31:#111:1.9}}')}</div>
  <div class="sv"><span><b>SAVE</b> <em>for</em> <b>LATER</b></span>{bm}</div></div>
@@ -274,6 +285,19 @@ async def cta_slide(b, work):
 .row small{display:block;font:500 20px 'Inter Tight';color:#8A8A93;letter-spacing:0;margin-bottom:4px}
 .ic{width:68px;height:68px;border-radius:20px;background:#EEEEEE;display:grid;place-items:center;flex:none}
 .save{margin-left:auto;display:flex;align-items:center;gap:10px;background:#111114;color:#fff;font:600 22px 'Inter Tight';padding:16px 22px;border-radius:999px;letter-spacing:0}"""
+    if R.DARK:
+        body = body.replace('#111114:2}', '#F3F3F5:2}').replace('color:#6B6B74', 'color:#8E8F99').replace('color:#3D5AFE', 'color:#7088FF')
+        body = body.replace('stroke="#111114"', 'stroke="#F3F3F5"')
+        css += """
+html,body{background:#101114;color:#F3F3F5}
+.head{color:#F3F3F5}
+.chip{border-color:#F3F3F5}
+.row{background:#1C1D22;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.row small{color:#8E8F99}
+.ic{background:#26272D}
+.save{background:#F3F3F5;color:#111114}
+.save svg{stroke:#111114}
+"""
     return await _slide(b, work, 'cta', body, css)
 
 

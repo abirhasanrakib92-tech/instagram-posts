@@ -91,6 +91,18 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:#EEEEEE;font-fam
 .shot{display:block;width:100%}
 .crop{background-repeat:no-repeat}
 """
+# Owner, 2026-11-24: optional dark studio (STAGE=dark). Same layout, dark background and dark browser chrome.
+import os as _os
+DARK = _os.environ.get('STAGE', 'light') == 'dark'
+if DARK:
+    BG = '#101114'
+    STAGE_CSS += """
+html,body,.stage{background:#101114}
+.frame{background:rgba(255,255,255,.07);box-shadow:0 0 0 1px rgba(255,255,255,.06),0 40px 80px -40px rgba(0,0,0,.75),0 6px 14px -8px rgba(0,0,0,.5)}
+.inner{background:#16171B;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.bar{background:#1B1C21;border-bottom:1px solid #26272D}
+.url span{background:#25262C;color:#8E8F99}
+"""
 LOCK = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8C8C96" stroke-width="2.6" stroke-linecap="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>'
 BAR_ICONS = ('<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9A9AA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>'
              '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9A9AA3" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>')
