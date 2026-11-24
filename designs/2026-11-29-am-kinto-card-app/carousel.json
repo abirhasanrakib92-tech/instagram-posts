@@ -3,195 +3,212 @@
   "screen": "auto",
   "flat": true,
   "name": "Kinto",
-  "category": "Spending card & wallet",
-  "tagline": "A metal card with three currency pockets, real-rate spending and limits you set in one tap.",
+  "category": "Card & wallet",
+  "tagline": "Pay abroad from the right pocket, at the real rate, with no FX fee.",
   "font": "Geist",
-  "font_note": "An engineered grotesk for balances and card numbers, with Doto-style dot meters for the monthly limit.",
+  "font_note": "Thin, precise numerals for amounts and rates, with an Instrument Serif italic for the calm, human lines.",
   "gradient": [
-   "#5CF2B0",
-   "#1F6B52",
-   "#0F2A22",
-   "#060808"
+   "#DDE2DF",
+   "#5CF2B4",
+   "#12352A",
+   "#060807"
   ],
   "paper": "#EEEEEE",
   "palette": [
    [
-    "#5CF2B0",
-    "Mint"
+    "#5CF2B4",
+    "Kinto mint"
    ],
    [
-    "#0F2A22",
-    "Deep emerald"
+    "#1FA877",
+    "Emerald"
    ],
    [
-    "#B9C2C0",
+    "#C9CCD1",
     "Titanium"
    ],
    [
-    "#24282A",
+    "#7E848C",
+    "Steel"
+   ],
+   [
+    "#121614",
     "Graphite"
    ],
    [
-    "#EEF3F1",
-    "Frost"
-   ],
-   [
-    "#060808",
-    "Black"
+    "#060807",
+    "Night"
    ]
   ],
   "zoom": [
    0,
-   112,
+   372,
    393,
-   316
+   272
   ],
-  "zoom_title": "Your card, your pockets,<br>one calm screen.",
-  "components_title": "Metal, mint<br>and glass.",
+  "zoom_title": "One tap in Lisbon,<br>the cheapest pocket pays.",
+  "components_title": "Titanium, mint<br>and glass.",
   "elements": {
-   "card": {
+   "trip": {
     "box": [
-     28,
-     122,
-     337,
-     203
+     119,
+     60,
+     155,
+     42
     ],
-    "r": 20
+    "r": 21
    },
-   "who": {
+   "nfc": {
     "box": [
      18,
-     60,
-     180,
-     44
+     330,
+     212,
+     34
+    ],
+    "r": 17
+   },
+   "amt": {
+    "box": [
+     14,
+     378,
+     365,
+     154
+    ],
+    "r": 24
+   },
+   "pk": {
+    "box": [
+     14,
+     558,
+     365,
+     76
     ],
     "r": 22
    },
-   "limb": {
+   "on": {
     "box": [
-     109,
-     362,
-     84,
-     62
+     14,
+     558,
+     134,
+     76
     ],
-    "r": 20
+    "r": 22
    },
-   "usd": {
+   "sv": {
     "box": [
-     18,
-     492,
-     125,
-     62
+     14,
+     646,
+     365,
+     96
     ],
-    "r": 18
+    "r": 24
    },
-   "lim": {
+   "sl": {
     "box": [
-     18,
-     566,
-     357,
-     62
-    ],
-    "r": 20
-   },
-   "tx": {
-    "box": [
-     18,
-     660,
-     357,
-     46
-    ],
-    "r": 14
-   },
-   "nav": {
-    "box": [
-     18,
-     768,
-     357,
+     14,
+     764,
+     365,
      62
     ],
     "r": 31
+   },
+   "hero": {
+    "box": [
+     0,
+     96,
+     393,
+     226
+    ],
+    "r": 28
    }
   },
   "s2_floats": [
    [
-    "card",
-    520,
-    40,
-    690,
-    -6,
+    "nfc",
+    400,
+    50,
+    560,
+    -4,
     3
    ],
    [
-    "lim",
-    560,
-    40,
-    1010,
+    "pk",
+    520,
+    30,
+    760,
     3,
     3
    ],
    [
-    "nav",
-    520,
-    60,
-    1160,
-    -2,
+    "sl",
+    560,
+    40,
+    1120,
+    -3,
     3
    ]
   ],
   "s4_floats": [
    [
-    "who",
-    420,
-    600,
+    "hero",
+    500,
+    520,
     110,
     3,
     1
    ],
    [
-    "card",
-    620,
-    400,
-    290,
-    -4,
-    1
-   ],
-   [
-    "lim",
-    900,
-    90,
+    "amt",
     700,
+    90,
+    420,
     0,
     1
    ],
    [
-    "usd",
+    "trip",
     360,
-    80,
-    900,
-    -2,
+    90,
+    725,
+    -3,
     1
    ],
    [
-    "limb",
-    230,
-    520,
-    915,
-    4,
+    "nfc",
+    440,
+    560,
+    742,
+    3,
     1
    ],
    [
-    "tx",
+    "pk",
     900,
     90,
-    1130,
+    840,
     -1,
+    1
+   ],
+   [
+    "sv",
+    560,
+    90,
+    1045,
+    2,
+    1
+   ],
+   [
+    "sl",
+    700,
+    90,
+    1190,
+    -2,
     1
    ]
   ],
   "bg2": "#EEEEEE",
   "bg4": "#EEEEEE",
-  "s2_ink": "#060808",
-  "s4_ink": "#060808"
+  "s2_ink": "#060807",
+  "s4_ink": "#060807"
  }
 }

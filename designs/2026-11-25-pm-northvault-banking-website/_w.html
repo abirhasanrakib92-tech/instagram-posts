@@ -1,0 +1,796 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#050404;--ink:#F3EEE8;--ink2:rgba(243,238,232,.72);--ink3:rgba(243,238,232,.46);--cu:#E9935A;--cu2:#F6BE8C;--cu3:#B5602F;--line:rgba(255,255,255,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);color:var(--ink);font-family:'Inter Tight';-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.sora{font-family:'Sora'}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+.mono{font-family:'JetBrains Mono';letter-spacing:.6px}
+.frame{margin:0 24px;border-radius:32px;position:relative;overflow:hidden}
+.in{width:1200px;margin:0 auto;position:relative}
+.pill{display:inline-flex;align-items:center;gap:9px;height:34px;padding:0 6px 0 6px;border-radius:999px;border:1px solid rgba(233,147,90,.32);background:rgba(233,147,90,.08);color:var(--cu2);font-size:14px;font-weight:500}
+.pill b{background:var(--cu);color:#1A0C04;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:600}
+.pill span{padding-right:10px}
+.h2{font-family:'Sora';font-size:58px;font-weight:300;letter-spacing:-2.6px;line-height:1.04}
+.h2 .g{color:var(--ink3)}
+.lead{font-size:19px;line-height:1.55;color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-size:16.5px;font-weight:500}
+.btn.cu{background:linear-gradient(180deg,#F7C597,#E48A4E);color:#1A0C04;box-shadow:0 0 0 1px rgba(246,190,140,.55),0 0 44px rgba(233,147,90,.5),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn.ghost{border:1px solid rgba(255,255,255,.18);color:var(--ink);background:rgba(255,255,255,.04)}
+.glass{background:rgba(18,13,10,.55);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px -20px rgba(0,0,0,.7)}
+.ph{background-size:cover;background-position:center 28%;border-radius:50%;flex:none}
+.tag{font-size:13px;letter-spacing:2.4px;text-transform:uppercase;color:var(--cu2)}
+/* nav */
+.nav{position:absolute;left:32px;right:32px;top:28px;height:70px;border-radius:999px;display:flex;align-items:center;padding:0 10px 0 26px;z-index:5}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Sora';font-size:22px;font-weight:500;letter-spacing:-.6px}
+.logo i{width:34px;height:34px;border-radius:11px;background:linear-gradient(140deg,#F7C597,#B5602F);display:grid;place-items:center;box-shadow:0 0 22px rgba(233,147,90,.5)}
+.links{display:flex;gap:36px;margin:0 auto;font-size:15.5px;color:var(--ink2)}
+.links span:first-child{color:var(--ink)}
+/* hero */
+.hero{height:1240px;background:#000 url(card.jpg) center 470px/1392px auto no-repeat}
+.hero:before{content:"";position:absolute;left:50%;top:0;width:160px;height:500px;transform:translateX(-50%);background:linear-gradient(180deg,rgba(246,190,140,0) 0%,rgba(246,190,140,0) 60%,rgba(246,190,140,.16) 100%);filter:blur(30px)}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 30% at 50% 100%,rgba(0,0,0,0),rgba(0,0,0,.0)),linear-gradient(180deg,rgba(0,0,0,0) 80%,rgba(5,4,4,.9) 100%)}
+.hcopy{position:absolute;left:0;right:0;top:172px;text-align:center;z-index:2}
+.hcopy h1{font-family:'Sora';font-size:92px;font-weight:300;letter-spacing:-4.6px;line-height:1;margin-top:28px}
+.hcopy h1 .g{color:rgba(243,238,232,.42)}
+.hcopy h1 .serif{font-size:104px;letter-spacing:-1.5px;background:linear-gradient(180deg,#FFE0C2,#E9935A 70%,#B5602F);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(233,147,90,.35))}
+.hcopy p{font-size:20px;color:var(--ink2);margin:26px auto 0;width:640px;line-height:1.5}
+.hcopy .ctas{display:flex;gap:12px;justify-content:center;margin-top:34px}
+.fc{position:absolute;z-index:3;border-radius:24px;padding:22px 24px}
+.fc .l{font-size:14px;color:var(--ink3);display:flex;align-items:center;gap:8px}
+.fc .v{font-family:'Sora';font-size:40px;font-weight:300;letter-spacing:-1.8px;margin-top:10px}
+.fc .v small{font-size:22px;color:var(--ink3)}
+.bar2{display:flex;height:8px;border-radius:99px;overflow:hidden;margin-top:16px;gap:3px}
+.bar2 i{display:block;height:100%;border-radius:99px}
+.lg2{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink2);margin-top:10px}
+.lg2 b{color:var(--ink);font-weight:500}
+/* trust */
+.trust{padding:96px 0 0;text-align:center}
+.trust .lbl{font-size:13px;color:var(--ink3);letter-spacing:2.4px;text-transform:uppercase}
+.logos{display:flex;justify-content:space-between;margin-top:30px;color:rgba(243,238,232,.55);font-size:22px;font-weight:600;letter-spacing:-.4px}
+.logos span{display:flex;align-items:center;gap:9px}
+/* cards section */
+.cardsec{padding:170px 0 0}
+.csplit{display:grid;grid-template-columns:470px 1fr;gap:40px;align-items:center}
+.feat{margin-top:36px;display:flex;flex-direction:column;gap:0}
+.feat>div{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--line)}
+.feat>div:last-child{border-bottom:1px solid var(--line)}
+.feat i{width:42px;height:42px;border-radius:13px;background:rgba(233,147,90,.12);border:1px solid rgba(233,147,90,.25);display:grid;place-items:center;flex:none}
+.feat b{display:block;font-size:18px;font-weight:500}
+.feat span{font-size:15px;color:var(--ink3);line-height:1.45;display:block;margin-top:4px}
+.cvis{height:640px;border-radius:32px;position:relative;overflow:hidden;background:#000 url(cards.jpg) 62% 50%/auto 118% no-repeat;border:1px solid rgba(255,255,255,.08)}
+.cvis:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%,rgba(0,0,0,0) 40%,rgba(0,0,0,.45))}
+.chip{position:absolute;z-index:2;border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:12px;font-size:15px}
+.chip .ph{width:38px;height:38px}
+.chip b{display:block;font-weight:500;font-size:15.5px}
+.chip span{font-size:13px;color:var(--ink3)}
+.chip em{font-style:normal;margin-left:14px;font-family:'Sora';font-size:20px;font-weight:300;letter-spacing:-.6px}
+/* product */
+.prod{padding:190px 0 0;text-align:center}
+.prod .lead{width:640px;margin:22px auto 0}
+.win{position:relative;margin:70px auto 0;width:1200px;height:612px;border-radius:28px;text-align:left;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:linear-gradient(180deg,#141010,#0B0909);border:1px solid rgba(255,255,255,.10);box-shadow:0 0 0 1px rgba(0,0,0,.5),0 60px 120px -40px rgba(233,147,90,.35)}
+.glow{position:absolute;left:50%;transform:translateX(-50%);width:1000px;height:420px;border-radius:50%;background:radial-gradient(ellipse,rgba(233,147,90,.38),rgba(233,147,90,0) 65%);filter:blur(20px)}
+.side{border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:4px}
+.side .sl{display:flex;align-items:center;gap:11px;height:44px;padding:0 12px;border-radius:13px;font-size:15px;color:var(--ink2)}
+.side .sl.on{background:rgba(233,147,90,.12);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(233,147,90,.28)}
+.main{padding:26px 28px;display:grid;grid-template-columns:minmax(0,1fr) 290px;min-width:0;grid-template-rows:auto 1fr;gap:18px}
+.mh{grid-column:1/3;display:flex;justify-content:space-between;align-items:center}
+.mh h3{font-family:'Sora';font-size:26px;font-weight:400;letter-spacing:-.8px}
+.mh span{font-size:14px;color:var(--ink3)}
+.box{border-radius:20px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);padding:20px}
+.big{font-family:'Sora';font-size:46px;font-weight:300;letter-spacing:-2px}
+.big small{font-size:24px;color:var(--ink3)}
+.bl{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
+.bl:first-of-type{border-top:0}
+.bl .n{display:flex;align-items:center;gap:10px}
+.bl .n i{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.06);display:grid;place-items:center}
+.bl small{display:block;font-size:12.5px;color:var(--ink3)}
+.st{font-size:12.5px;padding:4px 10px;border-radius:99px}
+/* bento */
+.bento{padding:190px 0 0}
+.bhead{display:flex;justify-content:space-between;align-items:flex-end}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.bc{height:560px;border-radius:30px;position:relative;overflow:hidden;padding:30px;background:linear-gradient(180deg,#120E0C,#0A0808);border:1px solid rgba(255,255,255,.08)}
+.bc h4{font-family:'Sora';font-size:26px;font-weight:400;letter-spacing:-.9px;line-height:1.15}
+.bc p{font-size:15.5px;color:var(--ink3);line-height:1.5;margin-top:12px}
+.bc.lit{background:radial-gradient(ellipse 120% 70% at 50% 100%,rgba(233,147,90,.55),rgba(181,96,47,.18) 45%,rgba(10,8,8,1) 75%);border-color:rgba(246,190,140,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 80px -20px rgba(233,147,90,.5)}
+.bc .vis{position:absolute;left:30px;right:30px;bottom:30px}
+/* testimonial */
+.tst{padding:190px 0 0}
+.tgrid{display:grid;grid-template-columns:480px 1fr;gap:56px;align-items:stretch}
+.tph{height:600px;border-radius:30px;background:url(founder.jpg) center 22%/cover;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.tph .cap{position:absolute;left:20px;right:20px;bottom:20px;border-radius:20px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
+.tq{display:flex;flex-direction:column;justify-content:space-between;padding:10px 0}
+.tq q{font-family:'Sora';font-size:40px;font-weight:300;letter-spacing:-1.6px;line-height:1.22;quotes:none}
+.tq q .g{color:var(--ink3)}
+.tm{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.tm div{padding:26px 0 0 26px;border-left:1px solid var(--line)}
+.tm div:first-child{padding-left:0;border-left:0}
+.tm b{display:block;font-family:'Sora';font-size:48px;font-weight:200;letter-spacing:-2.2px}
+.tm b small{font-size:24px;color:var(--cu2)}
+.tm span{font-size:15px;color:var(--ink3)}
+/* cta */
+.cta{margin-top:190px;height:600px;background:#000 url(horizon.jpg) center 50px/1392px auto no-repeat;text-align:center}
+.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,0) 40%,rgba(0,0,0,.35))}
+.cta .c{position:relative;padding-top:80px}
+.cta h2{font-family:'Sora';font-size:76px;font-weight:300;letter-spacing:-3.6px;line-height:1.02}
+.cta h2 .g{color:var(--ink3)}
+.cta p{font-size:19px;color:var(--ink2);margin-top:20px}
+/* footer */
+.foot{margin-top:24px;margin-bottom:24px;height:640px;background:linear-gradient(180deg,#0E0B0A,#070606);border:1px solid rgba(255,255,255,.06)}
+.fcols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.4fr;gap:40px;padding:70px 72px 0}
+.fcols h6{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);font-weight:500;margin-bottom:18px}
+.fcols a{display:block;font-size:16px;color:var(--ink2);margin-bottom:12px}
+.news{display:flex;height:56px;border-radius:999px;border:1px solid rgba(255,255,255,.14);align-items:center;padding:0 6px 0 22px;font-size:15px;color:var(--ink3);margin-top:6px}
+.news span{margin-left:auto;height:44px;padding:0 20px;border-radius:999px;background:var(--cu);color:#1A0C04;display:flex;align-items:center;font-weight:600}
+.word{position:absolute;left:0;right:0;bottom:-26px;text-align:center;font-family:'Sora';font-size:258px;font-weight:600;letter-spacing:-14px;line-height:1;background:linear-gradient(180deg,rgba(246,190,140,.85),rgba(181,96,47,.25) 60%,rgba(181,96,47,0) 95%);-webkit-background-clip:text;color:transparent}
+.legal{position:absolute;left:72px;right:72px;top:330px;display:flex;justify-content:space-between;font-size:14px;color:var(--ink3);border-top:1px solid var(--line);padding-top:22px}
+</style></head><body>
+
+<!-- HERO -->
+<div class="frame hero" style="margin-top:24px">
+ <div class="nav glass">
+  <div class="logo"><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="18"
+  height="18"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#1A0C04"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 18v-7" />
+  <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" />
+  <path d="M14 18v-7" />
+  <path d="M18 18v-7" />
+  <path d="M3 22h18" />
+  <path d="M6 18v-7" />
+</svg></i>Northvault</div>
+  <div class="links"><span>Banking</span><span>Cards</span><span>Treasury</span><span>Bill pay</span><span>Pricing</span></div>
+  <span style="font-size:15.5px;color:var(--ink2);margin-right:20px">Log in</span>
+  <span class="btn cu" style="height:50px;font-size:15px">Open an account <svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#1A0C04"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 7h10v10" />
+  <path d="M7 17 17 7" />
+</svg></span>
+ </div>
+ <div class="hcopy">
+  <span class="pill"><b>New</b><span>Treasury now earns 4.10% APY on idle cash</span></span>
+  <h1>Banking that keeps up<br><span class="g">with your</span> <span class="serif">startup.</span></h1>
+  <p>Accounts, cards, bill pay and treasury in one place, with spend rules that run themselves. Built for founders from seed to Series B.</p>
+  <div class="ctas"><span class="btn cu">Open an account <svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#1A0C04"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg></span><span class="btn ghost"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="15"
+  height="15"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F3EEE8"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+</svg>Watch the 2-min tour</span></div>
+ </div>
+ <div class="fc glass" style="left:96px;top:800px;width:330px">
+  <div class="l"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
+  <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+</svg>Total cash · all accounts</div>
+  <div class="v">$4,081,930<small>.42</small></div>
+  <div class="bar2"><i style="width:60.8%;background:linear-gradient(90deg,#B5602F,#F6BE8C)"></i><i style="width:39.2%;background:rgba(255,255,255,.28)"></i></div>
+  <div class="lg2"><span>Operating <b>$2.48M</b></span><span>Treasury <b>$1.60M</b></span></div>
+ </div>
+ <div class="fc glass" style="left:1000px;top:870px;width:300px">
+  <div class="l"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#8FE0A8"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16 9-5.5 5.5L8 12" />
+</svg>Card payment approved</div>
+  <div style="display:flex;align-items:center;gap:12px;margin-top:14px"><div class="ph" style="width:44px;height:44px;background-image:url(rohan.jpg)"></div><div><b style="font-size:16px;font-weight:500;display:block">Rohan · Engineering</b><span style="font-size:13.5px;color:var(--ink3)">Lumen Print · inside $2,000 limit</span></div></div>
+  <div class="v" style="font-size:34px">$1,240<small>.00</small></div>
+ </div>
+</div>
+
+<!-- TRUST -->
+<div class="in trust">
+ <div class="lbl">Banking 18,400 startups, from first hire to Series B</div>
+ <div class="logos">
+  <span><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#8E8780"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+</svg>Kilnworks</span><span><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#8E8780"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+</svg>Parallax</span><span><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#8E8780"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.341 6.484A10 10 0 0 1 10.266 21.85" />
+  <path d="M3.659 17.516A10 10 0 0 1 13.74 2.152" />
+  <circle cx="12" cy="12" r="3" />
+  <circle cx="19" cy="5" r="2" />
+  <circle cx="5" cy="19" r="2" />
+</svg>Gantook</span><span><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#8E8780"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20" />
+  <path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13" />
+</svg>Mintwave</span><span><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#8E8780"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />
+</svg>Sundial</span><span><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="22"
+  height="22"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#8E8780"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z" />
+  <path d="M16 8 2 22" />
+  <path d="M17.488 15H9" />
+</svg>Fernbank</span>
+ </div>
+</div>
+
+<!-- CARDS -->
+<div class="in cardsec">
+ <div class="csplit">
+  <div>
+   <div class="tag">Corporate cards</div>
+   <h2 class="h2" style="margin-top:20px">A card for every teammate.<br><span class="g">A rule for every card.</span></h2>
+   <div class="feat">
+    <div><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="19"
+  height="19"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 5H3" />
+  <path d="M12 19H3" />
+  <path d="M14 3v4" />
+  <path d="M16 17v4" />
+  <path d="M21 12h-9" />
+  <path d="M21 19h-5" />
+  <path d="M21 5h-7" />
+  <path d="M8 10v4" />
+  <path d="M8 12H3" />
+</svg></i><div><b>Limits by person, team or vendor</b><span>Set $2,000 a month for design tools or one card per trip.</span></div></div>
+    <div><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="19"
+  height="19"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 17V7" />
+  <path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8" />
+  <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z" />
+</svg></i><div><b>Receipts matched for you</b><span>Snap or forward one, Northvault files it to the right expense.</span></div></div>
+    <div><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="19"
+  height="19"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <line x1="19" x2="5" y1="5" y2="19" />
+  <circle cx="6.5" cy="6.5" r="2.5" />
+  <circle cx="17.5" cy="17.5" r="2.5" />
+</svg></i><div><b>1.5% cash back, no fees</b><span>On every swipe, paid out on the 1st of the month.</span></div></div>
+   </div>
+  </div>
+  <div class="cvis">
+   <div class="chip glass" style="left:28px;top:40px"><div class="ph" style="background-image:url(mei.jpg)"></div><div><b>Mei · Design tools</b><span>Monthly limit</span></div><em>$2,000</em></div>
+   <div class="chip glass" style="left:28px;top:132px"><div class="ph" style="background-image:url(kenji.jpg)"></div><div><b>Kenji · Paid ads</b><span>Monthly limit</span></div><em>$25,000</em></div>
+   <div class="chip glass" style="left:28px;bottom:40px"><div class="ph" style="background-image:url(olivia.jpg)"></div><div><b>Olivia · Berlin offsite</b><span>Single trip, ends Dec 12</span></div><em>$8,000</em></div>
+  </div>
+ </div>
+</div>
+
+<!-- PRODUCT -->
+<div class="in prod">
+ <div class="tag">Dashboard</div>
+ <h2 class="h2" style="margin-top:20px">Your runway, live<br><span class="g">every single morning.</span></h2>
+ <p class="lead">Cash, burn and runway update with every payment, so the board deck writes its own first slide.</p>
+ <div class="glow" style="top:560px"></div>
+ <div class="win">
+  <div class="side">
+   <div class="logo" style="font-size:18px;margin:2px 8px 18px"><i style="width:30px;height:30px;border-radius:9px"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="15"
+  height="15"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#1A0C04"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 18v-7" />
+  <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" />
+  <path d="M14 18v-7" />
+  <path d="M18 18v-7" />
+  <path d="M3 22h18" />
+  <path d="M6 18v-7" />
+</svg></i>Northvault</div>
+   <div class="sl on"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+</svg>Home</div>
+   <div class="sl"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#B9B2AB"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="20" height="14" x="2" y="5" rx="2" />
+  <line x1="2" x2="22" y1="10" y2="10" />
+  <path d="M6 14h2" />
+</svg>Cards</div>
+   <div class="sl"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#B9B2AB"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8 3 4 7l4 4" />
+  <path d="M4 7h16" />
+  <path d="m16 21 4-4-4-4" />
+  <path d="M20 17H4" />
+</svg>Payments</div>
+   <div class="sl"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#B9B2AB"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 7h6v6" />
+  <path d="m22 7-8.5 8.5-5-5L2 17" />
+</svg>Treasury</div>
+   <div class="sl"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#B9B2AB"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+  <path d="M10 9H8" />
+  <path d="M16 13H8" />
+  <path d="M16 17H8" />
+</svg>Bill pay</div>
+   <div class="sl"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#B9B2AB"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 5v16" />
+  <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
+</svg>Accounting</div>
+   <div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px;border-radius:14px;background:rgba(255,255,255,.04)"><div class="ph" style="width:36px;height:36px;background-image:url(daniel.jpg)"></div><div><b style="font-size:14px;font-weight:500;display:block">Daniel Brooks</b><span style="font-size:12.5px;color:var(--ink3)">CEO · Kilnworks</span></div></div>
+  </div>
+  <div class="main">
+   <div class="mh"><h3>Good morning, Daniel</h3><span>Wed, Nov 25 · updated 08:02</span></div>
+   <div class="box" style="position:relative">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+     <div><div style="font-size:14px;color:var(--ink3)">Total cash</div><div class="big" style="margin-top:6px">$4,081,930<small>.42</small></div></div>
+     <div style="display:flex;gap:10px"><div style="text-align:right"><div style="font-size:14px;color:var(--ink3)">Monthly burn</div><div style="font-family:'Sora';font-size:24px;font-weight:300;margin-top:8px">$112.8k</div></div><div style="width:1px;background:var(--line);margin:0 8px"></div><div style="text-align:right"><div style="font-size:14px;color:var(--ink3)">Runway</div><div style="font-family:'Sora';font-size:24px;font-weight:300;margin-top:8px;color:var(--cu2)">36 months</div></div></div>
+    </div>
+    <svg id="ch" width="100%" height="356" viewBox="0 0 600 356" preserveAspectRatio="none" style="margin-top:6px;display:block"></svg>
+   </div>
+   <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="box lit" style="background:radial-gradient(ellipse at 50% 110%,rgba(233,147,90,.45),rgba(20,14,12,.6) 70%);border-color:rgba(246,190,140,.3)">
+     <div style="font-size:14px;color:var(--ink2);display:flex;justify-content:space-between">Treasury yield <span style="color:var(--cu2)">4.10% APY</span></div>
+     <div class="big" style="font-size:40px;margin-top:10px">+$5,466<small>.67</small></div>
+     <div style="font-size:13.5px;color:var(--ink2);margin-top:6px">earned on $1.60M this month</div>
+    </div>
+    <div class="box" style="flex:1;padding:16px 18px">
+     <div style="font-size:15px;font-weight:500;margin-bottom:6px">Bills this week</div>
+     <div class="bl"><div class="n"><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+</svg></i><div>Stratus Cloud<small>Fri · auto-pay</small></div></div><span>$18,420</span></div>
+     <div class="bl"><div class="n"><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 12h4" />
+  <path d="M10 8h4" />
+  <path d="M14 21v-3a2 2 0 0 0-4 0v3" />
+  <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" />
+  <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" />
+</svg></i><div>Office lease<small>Mon · approved</small></div></div><span>$9,600</span></div>
+     <div class="bl"><div class="n"><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3v18" />
+  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" />
+  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
+  <path d="M7 21h10" />
+</svg></i><div>Halden Legal<small>Needs 1 approval</small></div></div><span class="st" style="background:rgba(233,147,90,.16);color:var(--cu2)">$4,250</span></div>
+     <div class="bl"><div class="n"><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#F6BE8C"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m18 13-.654-4.736a4 4 0 00-2.756-3.266l-9.163-2.9a2 2 0 00-2.017.493l-.82.819a2 2 0 00-.492 2.017l2.9 9.163a4 4 0 003.266 2.756L13 18" />
+  <path d="M18.648 12.352a1.205 1.205 0 011.704 0l1.296 1.296a1.205 1.205 0 010 1.704l-6.296 6.296a1.205 1.205 0 01-1.704 0l-1.296-1.296a1.205 1.205 0 010-1.704z" />
+  <path d="m3 3 6.586 6.586" />
+  <circle cx="11" cy="11" r="2" />
+</svg></i><div>Kestrel Design<small>Thu · scheduled</small></div></div><span>$3,900</span></div>
+     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--ink2)"><span>4 bills this week</span><b style="font-weight:500;color:var(--ink)">$36,170</b></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- BENTO -->
+<div class="in bento">
+ <div class="bhead"><h2 class="h2">Every money job,<br><span class="g">done in one place.</span></h2><p class="lead" style="width:420px">Treasury, bill pay and books share the same ledger, so nothing needs to be exported, matched or chased again.</p></div>
+ <div class="bgrid">
+  <div class="bc lit">
+   <div class="tag">Treasury</div>
+   <h4 style="margin-top:14px">Idle cash that<br>earns while you build.</h4>
+   <div style="display:flex;gap:8px;margin-top:22px;flex-wrap:wrap"><span class="pill" style="height:32px;padding:0 14px">$1.60M invested</span><span class="pill" style="height:32px;padding:0 14px">Paid monthly</span><span class="pill" style="height:32px;padding:0 14px">Withdraw any day</span></div>
+   <div class="vis" style="text-align:center">
+    <svg width="324" height="200" viewBox="0 0 324 200" id="arc"></svg>
+    <div style="font-family:'Sora';font-size:96px;font-weight:200;letter-spacing:-5px;line-height:1;margin-top:-108px">4.10<span style="font-size:40px;color:var(--cu2)">%</span></div>
+    <div style="font-size:15px;color:var(--ink2);margin-top:12px">APY on government money market funds</div>
+   </div>
+  </div>
+  <div class="bc">
+   <div class="tag">Bill pay</div>
+   <h4 style="margin-top:14px">Approvals that<br>don't wait for Slack.</h4>
+   <div class="vis"><svg width="324" height="320" viewBox="0 0 324 320" id="orb"></svg>
+    <div class="glass" style="position:absolute;left:0;right:0;bottom:0;border-radius:16px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><b style="font-weight:500">Halden Legal</b> · $4,250</span><span style="color:#8FE0A8">2 of 3 approved</span></div>
+   </div>
+  </div>
+  <div class="bc">
+   <div class="tag">Accounting</div>
+   <h4 style="margin-top:14px">Books that close<br>in one day, not ten.</h4>
+   <div class="vis" id="flow"></div>
+  </div>
+ </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="in tst">
+ <div class="tgrid">
+  <div class="tph"><div class="cap glass"><div><b style="font-weight:500;font-size:17px;display:block">Amara Okafor</b><span style="font-size:14px;color:var(--ink3)">CFO · Parallax</span></div><span class="pill" style="height:30px;padding:0 12px">Series A · 2026</span></div></div>
+  <div class="tq">
+   <div class="tag">From a customer</div>
+   <q>"We closed our Series A on a Tuesday and had the money earning 4% by Wednesday. <span class="g">Our month-end went from ten days to one, and nobody on the team has asked me for a card since."</span></q>
+   <div class="tm">
+    <div><b>1<small> day</small></b><span>to close the books</span></div>
+    <div><b>$61k</b><span>treasury yield this year</span></div>
+    <div><b>42</b><span>cards, zero shared logins</span></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- CTA -->
+<div class="frame cta">
+ <div class="c">
+  <span class="pill"><b>10 min</b><span>Open online, no branch visit</span></span>
+  <h2 style="margin-top:26px">Your money should move<br><span class="g">as fast as you do.</span></h2>
+  <p>Free to open. No minimum balance. FDIC insured up to $5M through partner banks.</p>
+  <div style="display:flex;gap:12px;justify-content:center;margin-top:34px"><span class="btn cu">Open an account <svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="17"
+  height="17"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#1A0C04"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg></span><span class="btn ghost">Talk to sales</span></div>
+ </div>
+</div>
+
+<!-- FOOTER -->
+<div class="frame foot">
+ <div class="fcols">
+  <div><div class="logo"><i><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="18"
+  height="18"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#1A0C04"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M10 18v-7" />
+  <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" />
+  <path d="M14 18v-7" />
+  <path d="M18 18v-7" />
+  <path d="M3 22h18" />
+  <path d="M6 18v-7" />
+</svg></i>Northvault</div><p style="font-size:15.5px;color:var(--ink3);line-height:1.55;margin-top:18px;width:250px">Business banking for startups that would rather build than reconcile.</p></div>
+  <div><h6>Product</h6><a>Accounts</a><a>Cards</a><a>Treasury</a><a>Bill pay</a></div>
+  <div><h6>Company</h6><a>About</a><a>Careers</a><a>Press</a><a>Security</a></div>
+  <div><h6>Resources</h6><a>Runway calculator</a><a>Founder guides</a><a>API docs</a><a>Help center</a></div>
+  <div><h6>The monthly memo</h6><p style="font-size:15px;color:var(--ink3);line-height:1.5">One email a month on burn, runway and raising.</p><div class="news">you@startup.com<span>Subscribe</span></div></div>
+ </div>
+ <div class="legal"><span>© 2026 Northvault Financial, Inc. Banking services by partner banks, members FDIC.</span><span>Privacy · Terms · Disclosures</span></div>
+ <div class="word">Northvault</div>
+</div>
+
+<script>
+const F='Inter Tight';
+// cash chart
+(function(){
+ const m=['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'];
+ const v=[1520,1410,1300,1190,1080,970,4646,4533,4420,4308,4195,4082];
+ const L=46,R=588,T=24,B=316,max=5000,X=i=>L+(R-L)/11*i,Y=k=>B-(B-T)*k/max;let s='';
+ s+=`<defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9935A" stop-opacity=".45"/><stop offset="1" stop-color="#E9935A" stop-opacity="0"/></linearGradient><filter id="gl" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="5"/></filter></defs>`;
+ for(let k=0;k<=5000;k+=1000){s+=`<line x1="${L}" x2="${R}" y1="${Y(k)}" y2="${Y(k)}" stroke="rgba(255,255,255,.07)" ${k?'stroke-dasharray="3 5"':''}/><text x="${L-10}" y="${Y(k)+4}" text-anchor="end" font-family="${F}" font-size="12.5" fill="rgba(243,238,232,.45)">$${k/1000}M</text>`}
+ let p='';v.forEach((k,i)=>{p+=(i?'L':'M')+X(i)+' '+Y(k)});
+ s+=`<path d="${p} L${X(11)} ${B} L${X(0)} ${B} Z" fill="url(#ar)"/>`;
+ s+=`<path d="${p}" fill="none" stroke="#F6BE8C" stroke-width="6" stroke-opacity=".5" filter="url(#gl)"/><path d="${p}" fill="none" stroke="#F6BE8C" stroke-width="2.5" stroke-linejoin="round"/>`;
+ m.forEach((t,i)=>{s+=`<text x="${X(i)}" y="${B+24}" text-anchor="middle" font-family="${F}" font-size="12.5" fill="${i==11?'#F3EEE8':'rgba(243,238,232,.45)'}">${t}</text>`});
+ s+=`<line x1="${X(6)}" x2="${X(6)}" y1="${Y(4646)}" y2="${B}" stroke="rgba(246,190,140,.5)" stroke-dasharray="3 4"/><circle cx="${X(6)}" cy="${Y(4646)}" r="6" fill="#F6BE8C"/>`;
+ s+=`<g transform="translate(${X(6)-208},${Y(4646)-8})"><rect width="192" height="56" rx="14" fill="#F3EEE8"/><text x="14" y="22" font-family="${F}" font-size="12.5" fill="#6B625B">Jun 4 · Series A closed</text><text x="14" y="43" font-family="${F}" font-size="17" font-weight="600" fill="#1A0C04">+$3,676,000</text></g>`;
+ s+=`<circle cx="${X(11)}" cy="${Y(4082)}" r="7" fill="#050404" stroke="#F6BE8C" stroke-width="3"/>`;
+ document.getElementById('ch').innerHTML=s;
+})();
+// treasury arc
+(function(){
+ const cx=162,cy=186,r=156;let s=`<defs><filter id="ag"><feGaussianBlur stdDeviation="4"/></filter></defs>`;
+ const N=40;for(let i=0;i<N;i++){const a=Math.PI*(1-(i+.5)/N),lit=i<30;
+  s+=`<line x1="${cx+(r-22)*Math.cos(a)}" y1="${cy-(r-22)*Math.sin(a)}" x2="${cx+r*Math.cos(a)}" y2="${cy-r*Math.sin(a)}" stroke="${lit?'#F6BE8C':'rgba(255,255,255,.16)'}" stroke-width="4" stroke-linecap="round"/>`}
+ document.getElementById('arc').innerHTML=s;
+})();
+// approvals orbit
+(function(){
+ const cx=162,cy=140;let s='';
+ [118,82].forEach((r,i)=>s+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,${i?.12:.08})" stroke-dasharray="${i?'0':'4 6'}"/>`);
+ s+=`<circle cx="${cx}" cy="${cy}" r="44" fill="rgba(233,147,90,.22)"/><circle cx="${cx}" cy="${cy}" r="30" fill="#E9935A"/>`;
+ document.getElementById('orb').innerHTML=s;
+ const pos=[['mei',162-118,140,1],['kenji',162+84,140-84,1],['amara',162+104,140+52,0]];
+ const host=document.getElementById('orb').parentElement;
+ host.insertAdjacentHTML('beforeend',`<div style="position:absolute;left:${162-15}px;top:${140-15}px;width:30px;height:30px;display:grid;place-items:center"><svg
+  style="display:block;flex:none"
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#1A0C04"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+  <path d="M10 9H8" />
+  <path d="M16 13H8" />
+  <path d="M16 17H8" />
+</svg></div>`);
+ pos.forEach(([n,x,y,ok])=>host.insertAdjacentHTML('beforeend',`<div style="position:absolute;left:${x-24}px;top:${y-24}px;width:48px;height:48px;border-radius:50%;background:url(${n}.jpg) center 25%/cover;border:2px solid ${ok?'#8FE0A8':'rgba(255,255,255,.35)'}"></div><div style="position:absolute;left:${x+12}px;top:${y+10}px;width:20px;height:20px;border-radius:50%;background:${ok?'#8FE0A8':'#3A322D'};display:grid;place-items:center;font-size:12px;color:#06210F;font-weight:700">${ok?'✓':'…'}</div>`));
+})();
+// accounting flow
+(function(){
+ const rows=[['Card · Lumen Print','$1,240.00','Software'],['ACH · Stratus Cloud','$18,420.00','Hosting'],['Wire · Halden Legal','$4,250.00','Legal'],['Card · Kiosk Alfama','$38.60','Meals']];
+ let h='<div style="display:flex;flex-direction:column;gap:10px">';
+ rows.forEach((r,i)=>{h+=`<div style="display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:16px;background:${i==1?'rgba(233,147,90,.12)':'rgba(255,255,255,.04)'};border:1px solid ${i==1?'rgba(246,190,140,.35)':'rgba(255,255,255,.07)'}"><div style="flex:1"><div style="font-size:14.5px;font-weight:500">${r[0]}</div><div style="font-size:12.5px;color:rgba(243,238,232,.46);margin-top:2px">${r[1]}</div></div><span style="font-size:12.5px;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.07);color:rgba(243,238,232,.75)">${r[2]}</span><span style="width:24px;height:24px;border-radius:50%;background:#8FE0A8;display:grid;place-items:center;color:#06210F;font-size:13px;font-weight:700">✓</span></div>`});
+ h+='<div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(243,238,232,.72);margin-top:6px;padding:0 4px"><span>Synced to your ledger</span><span style="color:#F6BE8C">1,284 of 1,284 matched</span></div></div>';
+ document.getElementById('flow').innerHTML=h;
+})();
+</script>
+</body></html>

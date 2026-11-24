@@ -1,9 +1,9 @@
-Your card should know which currency you're spending before you do.
-Fintech app UI design: metal spending card, multi-currency wallet and monthly limits
+Paying abroad shouldn't cost you a 3% surprise.
+Fintech app UI design: metal card payment, multi-currency pockets and real exchange rate, dark mode
 
-Kinto keeps dollars, euros and pounds in separate pockets and pays from the right one at the real rate. Freeze, limits and PIN sit one tap under the card, and the dot meter shows how much of the month is left.
+Kinto shows one moment: a card tapping a terminal in Lisbon, the amount in big thin type, the real rate, and the pocket it picked to skip the FX fee. Slide once and it's paid.
 
-Save this for your next banking app project
-Would you rather set a monthly limit or a daily one?
+Save this for your next fintech app
+Do you keep money in more than one currency when you travel?
 
 #uiux #mobileappdesign #fintechdesign #bankingapp #fintech

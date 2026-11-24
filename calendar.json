@@ -946,7 +946,7 @@
    "status": "ready-pending-approval",
    "design_dir": "designs/2026-11-25-pm-northvault-banking-website",
    "image": null,
-   "caption": "Your startup shouldn't need five tools to pay one bill.\nFintech website UI design: business banking and corporate cards for startups, dark mode\n\nNorthvault opens on a copper card lit by a single beam of light, then shows the product doing the work: live runway, spend rules, treasury yield and a pricing table you can compare at a glance.\n\nSave this for your next fintech landing page\nWhich section would you keep if you could only keep one?\n\n#uiux #webdesign #landingpage #fintech #fintechdesign",
+   "caption": "Your bank should know your runway before your board does.\nFintech website UI design: business banking, corporate cards and treasury for startups\n\nNorthvault opens on a copper card rising over a dark horizon, then shows the product doing the work: live cash and runway, a card with its own spend rule for every teammate, and books that close in a day.\n\nSave this for your next fintech landing page\nWhich section would you ship first: the cards or the runway dashboard?\n\n#uiux #webdesign #landingpage #fintech #fintechdesign",
    "media_id": null,
    "format": "carousel-website-v2",
    "ai": false,
@@ -1200,7 +1200,7 @@
    "image": null,
    "media_id": null,
    "slug": "kinto-card-app",
-   "caption": "Your card should know which currency you're spending before you do.\nFintech app UI design: metal spending card, multi-currency wallet and monthly limits\n\nKinto keeps dollars, euros and pounds in separate pockets and pays from the right one at the real rate. Freeze, limits and PIN sit one tap under the card, and the dot meter shows how much of the month is left.\n\nSave this for your next banking app project\nWould you rather set a monthly limit or a daily one?\n\n#uiux #mobileappdesign #fintechdesign #bankingapp #fintech",
+   "caption": "Paying abroad shouldn't cost you a 3% surprise.\nFintech app UI design: metal card payment, multi-currency pockets and real exchange rate, dark mode\n\nKinto shows one moment: a card tapping a terminal in Lisbon, the amount in big thin type, the real rate, and the pocket it picked to skip the FX fee. Slide once and it's paid.\n\nSave this for your next fintech app\nDo you keep money in more than one currency when you travel?\n\n#uiux #mobileappdesign #fintechdesign #bankingapp #fintech",
    "format": "carousel-app-v4",
    "ai": false,
    "images": [
