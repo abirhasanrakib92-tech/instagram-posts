@@ -21,8 +21,13 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 - Unchanged: the locked carousel formats, the #EEEEEE studio background, the mockups (phone, browser window), the brand chrome and the fixed CTA slide.
 - Light designs already made for later slots are kept for history (`light_design_dir` in calendar.json); those slots are `planned`
   again and must be redesigned dark (same niche and brand; their photos can be reused).
-- **Approval (owner, 2026-11-24):** dark app and dark website designs are set `ready-pending-approval` and are NOT posted until the owner
-  approves them. Dark dashboards post automatically as before. Example dark dashboard: `designs/2026-11-25-am-tablewise-restaurant-dashboard`.
+- **Approval (owner, 2026-11-24):** ALL dark designs (apps, websites AND dashboards) are set `ready-pending-approval` and are NOT posted
+  until the owner says "final"/"done" for that design.
+- **Dark dashboard style (owner, 2026-11-24, refs `reference/dashboard-dark/ref-01.jpg … ref-10.jpg`):** dark does NOT mean a flat black
+  background. Use a real photo or a rich colour/gradient behind the UI (yacht + city, aerial golf course, satellite map, soft light),
+  glassmorphism cards (frosted `backdrop-filter` panels with hairline light borders) over it, a unique layout per post, a unique
+  filter/selector (e.g. a floating glass rail of round icon buttons, a vertical pill selector like "Hole 1 / Hole 2", photo chips),
+  unique card shapes, glowing highlighted chart elements (a lit bar, neon lines), thin large numbers. Every dashboard different.
 
 ## The schedule
 
