@@ -1,9 +1,0 @@
-Your runway shouldn't live in a spreadsheet nobody updates.
-Fintech website UI design: dark business banking landing page for startups with cards, treasury and bill pay
-
-Northvault puts the live product right in the hero, rising out of a cobalt horizon, then walks money from the bank to the books in one glowing flow. Built on a strict 4pt grid with chrome type and one lit card per section.
-
-Save this for your next fintech landing page
-What would you put in a banking hero: the product, the card, or the numbers?
-
-#uiux #webdesign #landingpage #fintech #fintechdesign

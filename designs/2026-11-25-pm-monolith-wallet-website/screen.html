@@ -1,0 +1,345 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bk:#050505;--bk2:#0A0A0A;--bk3:#111111;--bone:#EDEBE6;--g1:rgba(237,235,230,.72);--g2:rgba(237,235,230,.48);--g3:rgba(237,235,230,.28);--ln:rgba(255,255,255,.08);--ln2:rgba(255,255,255,.14);--ac:#E4FF3A}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bk);color:var(--bone);font-family:'Inter Tight';-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.mono{font-family:'JetBrains Mono';letter-spacing:0}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+.frame{position:relative;margin:0 24px;width:1392px;border-radius:32px;overflow:hidden}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.10;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+.lbl{font-family:'JetBrains Mono';font-size:12px;line-height:16px;letter-spacing:1.2px;text-transform:uppercase;color:var(--g2)}
+.lbl b{color:var(--ac);font-weight:500}
+.pill{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 16px;border-radius:999px;border:1px solid var(--ln2);font-size:14px;color:var(--g1)}
+.btn{display:inline-flex;align-items:center;gap:12px;height:48px;padding:0 8px 0 24px;border-radius:999px;font-size:16px;font-weight:500}
+.btn i{width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+.btn.ac{background:var(--ac);color:#0A0A0A}.btn.ac i{background:#0A0A0A}
+.btn.gh{border:1px solid var(--ln2);color:var(--bone);padding:0 24px}
+.chap{display:flex;align-items:center;gap:16px}
+.chap .n{font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.2px;color:var(--ac)}
+.chap .r{width:48px;height:1px;background:var(--ln2)}
+h2{font-size:72px;line-height:72px;font-weight:300;letter-spacing:-3.2px}
+h2 .dim{color:var(--g3)}
+/* hero */
+.hero{height:1000px;margin-top:24px;background:#000}
+.hero .shot{position:absolute;left:328px;top:0;height:1100px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24%,#000 76%,transparent 100%),linear-gradient(180deg,#000 80%,transparent 100%);-webkit-mask-composite:source-in}
+.hero .cut{position:absolute;left:542.85px;top:128.9px;width:300.78px}
+.hero .beam{position:absolute;left:600px;top:0;width:192px;height:520px;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,0));filter:blur(24px)}
+.word{position:absolute;left:0;right:0;top:376px;text-align:center;font-size:248px;line-height:200px;font-weight:600;letter-spacing:-14px;color:var(--bone)}
+.nav{position:absolute;left:32px;right:32px;top:32px;height:56px;display:flex;align-items:center;z-index:5}
+.logo{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:600;letter-spacing:-.4px}
+.logo i{width:16px;height:28px;border-radius:4px;background:var(--bone);display:block;box-shadow:inset -4px 0 0 rgba(0,0,0,.25)}
+.nav ul{display:flex;gap:32px;list-style:none;margin-left:auto;margin-right:auto;font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--g1)}
+.nav ul li.on{color:var(--bone)}.nav ul li.on:before{content:"";display:inline-block;width:8px;height:8px;background:var(--ac);margin-right:8px;vertical-align:0}
+.spec{position:absolute;z-index:6;display:flex;align-items:center;gap:12px}
+.spec .l{height:1px;background:rgba(237,235,230,.4)}
+.spec .d{width:8px;height:8px;border-radius:50%;border:1px solid var(--bone);background:#000;flex:none}
+.spec .t b{display:block;font-size:14px;line-height:20px;font-weight:500;color:var(--bone)}
+.spec .t span{font-family:'JetBrains Mono';font-size:12px;line-height:16px;color:var(--g2);letter-spacing:.4px}
+.hb{position:absolute;left:48px;bottom:48px;width:440px;z-index:6}
+.hb h1{font-size:40px;line-height:44px;font-weight:300;letter-spacing:-1.6px;margin-top:16px}
+.hb p{font-size:16px;line-height:24px;color:var(--g1);margin-top:16px;width:400px}
+.hb .acts{display:flex;gap:12px;margin-top:24px}
+.hr{position:absolute;right:48px;bottom:48px;text-align:right;z-index:6}
+.hr .p{font-size:56px;line-height:56px;font-weight:300;letter-spacing:-2.4px;margin-top:8px}
+.hr .p small{font-size:20px;color:var(--g2);letter-spacing:0}
+.counter{position:absolute;right:48px;top:136px;z-index:6;font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.2px;color:var(--g2);text-align:right;line-height:20px}
+.counter b{color:var(--bone);font-weight:500}
+.side{position:absolute;left:48px;top:136px;z-index:6;display:flex;flex-direction:column;gap:12px}
+.side span{font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.2px;color:var(--g3);display:flex;align-items:center;gap:8px}
+.side span.on{color:var(--bone)}.side span.on:before{content:"";width:16px;height:1px;background:var(--ac)}
+.scroll{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:6;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll i{width:24px;height:40px;border-radius:12px;border:1px solid var(--ln2);position:relative}
+.scroll i:after{content:"";position:absolute;left:10px;top:8px;width:4px;height:8px;border-radius:2px;background:var(--ac)}
+/* marquee */
+.mq{height:152px;margin-top:24px;background:var(--bk2);border:1px solid var(--ln);display:flex;align-items:center}
+.mq .row{display:flex;align-items:center;gap:40px;white-space:nowrap;margin-left:-160px}
+.mq .w{font-size:96px;line-height:96px;font-weight:600;letter-spacing:-4px;color:transparent;-webkit-text-stroke:1.2px rgba(237,235,230,.5)}
+.mq .w.f{color:var(--bone);-webkit-text-stroke:0}
+.mq .s{width:20px;height:20px;background:var(--ac);transform:rotate(45deg);flex:none}
+/* anatomy */
+.ana{height:880px;margin-top:24px;background:var(--bk2);border:1px solid var(--ln)}
+.ana .left{position:absolute;left:64px;top:80px;width:520px}
+.ana .left p{font-size:20px;line-height:32px;color:var(--g1);margin-top:32px}
+.ana .grid{position:absolute;left:64px;top:440px;width:560px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ln)}
+.ana .grid div{padding:20px 0;border-bottom:1px solid var(--ln)}
+.ana .grid div:nth-child(odd){padding-right:24px;border-right:1px solid var(--ln)}
+.ana .grid div:nth-child(even){padding-left:24px}
+.ana .grid b{display:block;font-size:32px;line-height:40px;font-weight:300;letter-spacing:-1.2px;margin-top:4px}
+.ana .grid b small{font-size:16px;color:var(--g2);letter-spacing:0;margin-left:4px}
+.ana .stage{position:absolute;right:64px;top:64px;width:640px;height:752px;border-radius:24px;background:radial-gradient(ellipse at 50% 30%,#1A1A1A,#050505 70%);border:1px solid var(--ln);overflow:hidden}
+.ana .stage img{position:absolute;left:196px;top:40px;height:672px}
+.certs{position:absolute;left:64px;top:704px;width:560px}
+.certs div{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+/* how it signs */
+.how{height:720px;margin-top:24px;background:var(--bk2);border:1px solid var(--ln)}
+.how .hd{position:absolute;left:64px;top:80px;right:64px;display:flex;justify-content:space-between;align-items:flex-end}
+.how .hd p{width:400px;font-size:16px;line-height:24px;color:var(--g1)}
+.steps{position:absolute;left:64px;right:64px;top:288px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.st{height:360px;border-radius:24px;border:1px solid var(--ln);padding:32px;position:relative;background:#0D0D0D}
+.st.on{background:linear-gradient(180deg,#151515,#0B0B0B);border-color:rgba(228,255,58,.4)}
+.st .num{font-size:96px;line-height:80px;font-weight:200;letter-spacing:-6px;color:transparent;-webkit-text-stroke:1.2px rgba(237,235,230,.4)}
+.st.on .num{color:var(--ac);-webkit-text-stroke:0}
+.st h3{font-size:24px;line-height:32px;font-weight:500;letter-spacing:-.6px;margin-top:16px}
+.st p{font-size:16px;line-height:24px;color:var(--g1);margin-top:8px}
+.eink{position:absolute;left:32px;right:32px;bottom:32px;height:96px;border-radius:12px;background:#C9C6BD;color:#1C1C1A;padding:12px 16px;font-family:'JetBrains Mono';font-size:12px;line-height:16px}
+.eink b{font-size:20px;line-height:28px;display:block;font-weight:500}
+.eink .bar{position:absolute;left:16px;right:16px;bottom:12px;height:4px;background:rgba(0,0,0,.15);border-radius:2px}
+.eink .bar i{display:block;height:4px;width:64%;background:#1C1C1A;border-radius:2px}
+/* app */
+.app{height:880px;margin-top:24px;background:#000}
+.app .bgp{position:absolute;inset:0;background:url(plain.jpg) center 40%/cover;opacity:.9}
+.app .bgp:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.1) 40%,rgba(0,0,0,.75))}
+.app .hd{position:absolute;left:64px;top:80px;width:560px;z-index:2}
+.app .hd p{font-size:16px;line-height:24px;color:var(--g1);margin-top:24px;width:440px}
+.win{position:absolute;right:64px;top:176px;width:720px;height:600px;border-radius:24px;background:rgba(16,16,16,.56);-webkit-backdrop-filter:blur(32px) saturate(140%);backdrop-filter:blur(32px) saturate(140%);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 40px 80px rgba(0,0,0,.5);padding:32px;z-index:2;transform:rotate(-2deg)}
+.win .top{display:flex;justify-content:space-between;align-items:center}
+.win .big{font-size:64px;line-height:64px;font-weight:200;letter-spacing:-3.2px;margin-top:16px}
+.win .big small{font-size:28px;color:var(--g2)}
+.hold{margin-top:24px;border-top:1px solid var(--ln)}
+.hold .r{display:grid;grid-template-columns:200px 1fr 160px 120px;align-items:center;height:64px;border-bottom:1px solid var(--ln);font-size:16px}
+.hold .r .tk{display:flex;align-items:center;gap:12px;font-weight:500}
+.hold .r .tk i{width:32px;height:32px;border-radius:8px;border:1px solid var(--ln2);display:grid;place-items:center;font-family:'JetBrains Mono';font-size:12px;font-style:normal;color:var(--g1)}
+.hold .r .q{font-family:'JetBrains Mono';font-size:14px;color:var(--g1)}
+.hold .r .v{text-align:right}
+.hold .r .bar{height:4px;background:var(--ln);border-radius:2px;margin-right:24px}
+.hold .r .bar i{display:block;height:4px;border-radius:2px;background:var(--bone)}
+.log{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.log div{border-radius:16px;border:1px solid var(--ln);padding:16px;background:rgba(255,255,255,.03)}
+.log b{display:block;font-size:16px;line-height:24px;font-weight:500;margin-top:8px}
+.log span{font-size:14px;color:var(--g2)}
+.mini{position:absolute;left:64px;bottom:64px;z-index:2;display:flex;gap:40px}
+.mini div b{display:block;font-size:40px;line-height:48px;font-weight:300;letter-spacing:-1.6px}
+.mini div span{font-size:14px;color:var(--g2)}
+/* colours */
+.col{height:800px;margin-top:24px;background:#000;border:1px solid var(--ln)}
+.col .img{position:absolute;left:0;right:0;top:0;height:560px;background:url(trio.jpg) 280px 46%/1100px auto no-repeat}
+.col .img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,#000)}
+.col .hd{position:absolute;left:64px;top:64px;z-index:2}
+.cw{position:absolute;left:64px;right:64px;top:584px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cw div{border-top:1px solid var(--ln2);padding-top:20px;display:flex;gap:16px;align-items:flex-start}
+.cw i{width:40px;height:40px;border-radius:50%;flex:none;border:1px solid var(--ln2)}
+.cw b{display:block;font-size:24px;line-height:32px;font-weight:400;letter-spacing:-.6px}
+.cw span{font-size:14px;line-height:20px;color:var(--g2)}
+.cw em{font-style:normal;margin-left:auto;font-size:24px;line-height:32px;font-weight:300}
+.cw .sel{border-top-color:var(--ac)}
+/* press */
+.press{height:480px;margin-top:24px;background:var(--bk2);border:1px solid var(--ln)}
+.press q{position:absolute;left:64px;top:96px;width:1120px;font-family:'Instrument Serif';font-style:italic;font-size:64px;line-height:72px;letter-spacing:-1.6px;quotes:none}
+.press q span{color:var(--g3)}
+.press .by{position:absolute;left:64px;bottom:64px;display:flex;align-items:center;gap:16px}
+.press .by .ph{width:48px;height:48px;border-radius:50%;background:url(olivia.jpg) center 30%/cover}
+.press .by b{display:block;font-size:16px;font-weight:500}.press .by span{font-size:14px;color:var(--g2)}
+.press .st3{position:absolute;right:64px;bottom:64px;display:flex;gap:48px}
+.press .st3 b{display:block;font-size:40px;line-height:48px;font-weight:300;letter-spacing:-1.6px;text-align:right}
+.press .st3 span{font-size:14px;color:var(--g2);display:block;text-align:right}
+/* pricing */
+.buy{height:600px;margin-top:24px;background:var(--bk2);border:1px solid var(--ln)}
+.card{position:absolute;left:64px;top:64px;width:720px;height:472px;border-radius:24px;background:linear-gradient(135deg,#161616,#0A0A0A);border:1px solid var(--ln2);overflow:hidden}
+.card .pimg{position:absolute;right:-40px;top:-80px;height:640px;opacity:.95}
+.card .in{position:absolute;left:40px;top:40px;bottom:40px;width:360px;display:flex;flex-direction:column}
+.card h3{font-size:40px;line-height:48px;font-weight:300;letter-spacing:-1.6px;margin-top:16px}
+.card .pr{font-size:72px;line-height:72px;font-weight:200;letter-spacing:-3.2px;margin-top:24px}
+.card .pr small{font-size:20px;color:var(--g2);letter-spacing:0;margin-left:8px}
+.card .opt{display:flex;gap:8px;margin-top:24px}
+.card .opt span{height:32px;padding:0 12px;border-radius:999px;border:1px solid var(--ln2);font-size:14px;display:flex;align-items:center;gap:8px;color:var(--g1)}
+.card .opt span.on{border-color:var(--bone);color:var(--bone)}
+.card .opt i{width:12px;height:12px;border-radius:50%}
+.card .btn{margin-top:auto;align-self:flex-start}
+.box{position:absolute;left:816px;top:64px;right:64px}
+.box ol{list-style:none;margin-top:24px;border-top:1px solid var(--ln)}
+.box li{display:flex;justify-content:space-between;align-items:center;height:64px;border-bottom:1px solid var(--ln);font-size:18px}
+.box li span{font-family:'JetBrains Mono';font-size:12px;color:var(--g2);letter-spacing:1.2px}
+.box p{font-size:14px;line-height:20px;color:var(--g2);margin-top:24px}
+/* cta */
+.cta{height:640px;margin-top:24px;background:#000}
+.cta .bgp{position:absolute;inset:0;background:url(hero.jpg) center 62%/1392px auto;opacity:.9}
+.cta .bgp:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,.2),rgba(0,0,0,.85) 70%)}
+.cta .c{position:absolute;left:0;right:0;top:152px;text-align:center;z-index:2}
+.cta h2{font-size:112px;line-height:112px;letter-spacing:-5.6px}
+.cta p{font-size:20px;line-height:32px;color:var(--g1);margin-top:24px}
+.cta .acts{display:flex;justify-content:center;gap:12px;margin-top:40px}
+/* footer */
+.foot{height:520px;margin-top:24px;margin-bottom:24px;background:var(--bk2);border:1px solid var(--ln)}
+.fcols{position:absolute;left:64px;right:64px;top:64px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.fcols h5{font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.2px;color:var(--g2);font-weight:400;text-transform:uppercase}
+.fcols ul{list-style:none;margin-top:16px}.fcols li{font-size:16px;line-height:32px;color:var(--g1)}
+.nl{display:flex;height:56px;border-radius:999px;border:1px solid var(--ln2);align-items:center;padding:4px 4px 4px 24px;margin-top:16px;width:440px;font-size:16px;color:var(--g2)}
+.nl span{margin-left:auto;height:48px;padding:0 24px;border-radius:999px;background:var(--bone);color:#0A0A0A;display:flex;align-items:center;font-weight:500}
+.fw{position:absolute;left:0;right:0;bottom:-40px;text-align:center;font-size:300px;line-height:280px;font-weight:600;letter-spacing:-18px;background:linear-gradient(180deg,#EDEBE6,rgba(237,235,230,.08));-webkit-background-clip:text;color:transparent}
+.fb{position:absolute;left:64px;right:64px;top:256px;display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.2px;color:var(--g3);text-transform:uppercase}
+</style></head><body>
+
+<!-- HERO -->
+<section class="frame hero">
+ <div class="beam"></div>
+ <img class="shot" src="hero.jpg">
+ <div class="word">MONOLITH</div>
+ <img class="cut" src="cut.png">
+ <div class="grain"></div>
+ <div class="nav">
+  <div class="logo"><i></i>Monolith</div>
+  <ul><li class="on">Device</li><li>How it signs</li><li>App</li><li>Security</li><li>Journal</li></ul>
+  <span class="btn ac" style="height:40px;font-size:14px;padding:0 4px 0 20px">Pre-order<i>{{icon:arrow-up-right:16:#E4FF3A:2}}</i></span>
+ </div>
+ <div class="side"><span class="on">01 Device</span><span>02 Anatomy</span><span>03 Signing</span><span>04 App</span><span>05 Finish</span><span>06 Order</span></div>
+ <div class="counter"><b>01</b> / 06<br>Batch 03 ships Jan 12</div>
+ <!-- spec labels -->
+ <div class="spec" style="left:236px;top:288px"><div class="t" style="text-align:right"><b>E-ink 2.7in</b><span>264 × 176 · readable in sun</span></div><div class="l" style="width:200px"></div><div class="d"></div></div>
+ <div class="spec" style="left:800px;top:340px"><div class="d"></div><div class="l" style="width:176px"></div><div class="t"><b>Secure element EAL6+</b><span>keys never leave the chip</span></div></div>
+ <div class="spec" style="left:808px;top:732px"><div class="d"></div><div class="l" style="width:168px"></div><div class="t"><b>Titanium grade 5</b><span>38 g · 86 × 32 × 6 mm</span></div></div>
+ <div class="hb">
+  <span class="pill"><i style="width:8px;height:8px;background:var(--ac);display:block"></i>Self-custody hardware wallet</span>
+  <h1>Your keys, offline,<br>in a slab of <span class="serif">titanium.</span></h1>
+  <p>Monolith signs every transaction on its own screen, away from your phone and laptop.</p>
+  <div class="acts"><span class="btn ac">Pre-order<i>{{icon:arrow-up-right:16:#E4FF3A:2}}</i></span><span class="btn gh">Watch the film</span></div>
+ </div>
+ <div class="scroll"><i></i><span class="lbl">Scroll</span></div>
+ <div class="hr"><span class="lbl">From</span><div class="p">$249<small> USD</small></div><span class="lbl" style="display:block;margin-top:8px"><b>●</b> 4,812 pre-orders</span></div>
+</section>
+
+<!-- MARQUEE -->
+<section class="frame mq"><div class="row">
+ <span class="w">Air-gapped</span><span class="s"></span><span class="w f">Self-custody</span><span class="s"></span><span class="w">Open firmware</span><span class="s"></span><span class="w f">Cold storage</span><span class="s"></span><span class="w">5,500+ assets</span>
+</div></section>
+
+<!-- ANATOMY -->
+<section class="frame ana">
+ <div class="left">
+  <div class="chap"><span class="n">02</span><span class="r"></span><span class="lbl">Anatomy</span></div>
+  <h2 style="margin-top:32px">Built like a vault.<br><span class="dim">Sized like a card.</span></h2>
+  <p>One piece of grade 5 titanium, a certified secure chip and a screen that only shows what you are about to sign. Nothing else to trust.</p>
+ </div>
+ <div class="grid">
+  <div><span class="lbl">Weight</span><b>38<small>g</small></b></div>
+  <div><span class="lbl">Standby</span><b>6<small>weeks</small></b></div>
+  <div><span class="lbl">Connect</span><b>USB-C · NFC</b></div>
+  <div><span class="lbl">Firmware</span><b>v4.2<small>open source</small></b></div>
+ </div>
+ <div class="certs"><span class="lbl">Certified &amp; audited</span><div><span class="pill">EAL6+ secure element</span><span class="pill">FIPS 140-3 L3</span><span class="pill">3 public audits</span><span class="pill">$250k bug bounty</span></div></div>
+ <div class="stage">
+  <img src="cut.png">
+  <div class="grain"></div>
+  <div class="spec" style="left:24px;top:164px"><div class="t" style="text-align:right;width:128px"><b>E-ink screen</b><span>no backlight</span></div><div class="l" style="width:64px"></div><div class="d"></div></div>
+  <div class="spec" style="left:416px;top:204px"><div class="d"></div><div class="l" style="width:48px"></div><div class="t"><b>Confirm key</b><span>press to sign</span></div></div>
+  <div class="spec" style="left:24px;top:444px"><div class="t" style="text-align:right;width:128px"><b>Secure chip</b><span>EAL6+ certified</span></div><div class="l" style="width:136px"></div><div class="d"></div></div>
+  <div class="spec" style="left:416px;top:620px"><div class="d"></div><div class="l" style="width:48px"></div><div class="t"><b>USB-C</b><span>charge + data</span></div></div>
+  <span class="lbl" style="position:absolute;left:24px;bottom:24px">Fig. 02 · front, 1:1</span>
+  <span class="lbl" style="position:absolute;right:24px;bottom:24px"><b>●</b> Rotate 360°</span>
+ </div>
+</section>
+
+<!-- HOW IT SIGNS -->
+<section class="frame how">
+ <div class="hd">
+  <div><div class="chap"><span class="n">03</span><span class="r"></span><span class="lbl">How it signs</span></div>
+  <h2 style="margin-top:32px">Three steps.<br><span class="dim">Zero keys online.</span></h2></div>
+  <p>Your phone builds the transaction. Monolith checks it, shows it in plain words and signs it inside the chip. The key never touches the internet.</p>
+ </div>
+ <div class="steps">
+  <div class="st"><div class="num">01</div><h3>Prepare on your phone</h3><p>Pick the asset, amount and address in the Monolith app.</p>
+   <div class="eink"><span>REQUEST · BTC</span><b>Send 0.0500 BTC</b><span>to bc1q…9xk4</span></div></div>
+  <div class="st on"><div class="num">02</div><h3>Read it on the slab</h3><p>The e-ink screen shows exactly what leaves your wallet.</p>
+   <div class="eink"><span>CHECK · FEE 0.00012</span><b>Hold key to sign</b><div class="bar"><i></i></div></div></div>
+  <div class="st"><div class="num">03</div><h3>Signed, then sent</h3><p>Only the signature goes back. Your key stays in the chip.</p>
+   <div class="eink"><span>DONE · 14:02</span><b>Signed on device</b><span>broadcast by app</span></div></div>
+ </div>
+</section>
+
+<!-- APP -->
+<section class="frame app">
+ <div class="bgp"></div>
+ <div class="hd">
+  <div class="chap"><span class="n">04</span><span class="r"></span><span class="lbl" style="color:var(--g1)">Companion app</span></div>
+  <h2 style="margin-top:32px">See it all.<br><span class="dim">Move nothing</span><br><span class="dim">without the slab.</span></h2>
+  <p>The app reads balances and builds transactions. It can never sign one on its own.</p>
+ </div>
+ <div class="win">
+  <div class="top"><span class="lbl">Portfolio · 3 assets</span><span class="pill" style="height:28px;font-size:12px"><i style="width:8px;height:8px;border-radius:50%;background:var(--ac);display:block"></i>Slab connected</span></div>
+  <div class="big">$167,216<small>.38</small></div>
+  <div style="font-size:14px;color:var(--g2);margin-top:8px">Held on device · last signed today, 14:02</div>
+  <div class="hold">
+   <div class="r"><span class="tk"><i>B</i>Bitcoin</span><div class="bar"><i style="width:74%"></i></div><span class="q">1.284306 BTC</span><span class="v">$123,832.78</span></div>
+   <div class="r"><span class="tk"><i>E</i>Ether</span><div class="bar"><i style="width:25%"></i></div><span class="q">12.4201 ETH</span><span class="v">$42,383.59</span></div>
+   <div class="r"><span class="tk"><i>$</i>Tether USD</span><div class="bar"><i style="width:1%"></i></div><span class="q">1,000.00 USDT</span><span class="v">$1,000.00</span></div>
+  </div>
+  <div class="log">
+   <div><span class="lbl">Last signed</span><b>Sent 0.0500 BTC</b><span>to bc1q…9xk4 · fee 0.00012</span></div>
+   <div><span class="lbl">Recovery</span><b>24 words on steel</b><span>checked 18 days ago</span></div>
+  </div>
+ </div>
+ <div class="mini"><div><b>5,500+</b><span>assets supported</span></div><div><b>0</b><span>keys ever online</span></div></div>
+ <div class="grain"></div>
+</section>
+
+<!-- COLOURWAYS -->
+<section class="frame col">
+ <div class="img"></div>
+ <div class="hd"><div class="chap"><span class="n">05</span><span class="r"></span><span class="lbl" style="color:var(--g1)">Finish</span></div>
+  <h2 style="margin-top:24px;font-size:56px;line-height:56px;letter-spacing:-2.4px">Three finishes.<br><span class="dim">One standard.</span></h2><p style="font-size:16px;line-height:24px;color:var(--g1);margin-top:24px;width:360px">Same chip, same screen, same 38 g. Pick the one you will still like in ten years.</p></div>
+ <div class="cw">
+  <div><i style="background:linear-gradient(135deg,#B8B6B1,#6E6C68)"></i><div><b>Raw titanium</b><span>bead blasted, ages well</span></div><em>$329</em></div>
+  <div class="sel"><i style="background:linear-gradient(135deg,#2A2A2A,#050505)"></i><div><b>Carbon black</b><span>PVD coated · most chosen</span></div><em>$249</em></div>
+  <div><i style="background:linear-gradient(135deg,#F3F0E8,#C9C4B8)"></i><div><b>Bone ceramic</b><span>zirconia front plate</span></div><em>$289</em></div>
+ </div>
+ <div class="grain"></div>
+</section>
+
+<!-- PRESS -->
+<section class="frame press">
+ <div class="chap" style="position:absolute;left:64px;top:48px"><span class="n">06</span><span class="r"></span><span class="lbl">What they said</span></div>
+ <q>“The first wallet that looks like it should cost more than <span>what it protects. It doesn't.”</span></q>
+ <div class="by"><div class="ph"></div><div><b>Olivia Grant</b><span>Hardware editor, Northfield Review</span></div></div>
+ <div class="st3"><div><b>4.9</b><span>2,140 reviews</span></div><div><b>0</b><span>remote exploits</span></div><div><b>4,812</b><span>pre-orders</span></div></div>
+</section>
+
+<!-- BUY -->
+<section class="frame buy">
+ <div class="card">
+  <img class="pimg" src="cut.png">
+  <div class="in">
+   <span class="lbl"><b>●</b> Batch 03 · ships Jan 12</span>
+   <h3>Monolith<br><span style="color:var(--g2)">Carbon black</span></h3>
+   <div class="pr">$249<small>one time, no subscription</small></div>
+   <div class="opt"><span><i style="background:#8F8D88"></i>Titanium</span><span class="on"><i style="background:#1A1A1A;border:1px solid #555"></i>Black</span><span><i style="background:#E6E1D6"></i>Bone</span></div>
+   <span class="btn ac">Pre-order now<i>{{icon:arrow-up-right:16:#E4FF3A:2}}</i></span>
+  </div>
+ </div>
+ <div class="box">
+  <div class="chap"><span class="n">IN THE BOX</span><span class="r"></span></div>
+  <ol>
+   <li>Monolith wallet<span>× 1</span></li>
+   <li>Steel recovery plate<span>× 1</span></li>
+   <li>24-word recovery cards<span>× 2</span></li>
+   <li>USB-C to USB-C cable<span>× 1</span></li>
+   <li>Titanium lanyard ring<span>× 1</span></li>
+  </ol>
+  <p>Free shipping in 42 countries. 30 days to return it, sealed or not.</p>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="frame cta">
+ <div class="bgp"></div>
+ <div class="c">
+  <span class="lbl">Batch 03 · 1,188 of 6,000 left</span>
+  <h2 style="margin-top:24px">Take your keys<br><span class="serif" style="letter-spacing:-2.4px">home.</span></h2>
+  <p>Self-custody that fits in a shirt pocket.</p>
+  <div class="acts"><span class="btn ac">Pre-order for $249<i>{{icon:arrow-up-right:16:#E4FF3A:2}}</i></span><span class="btn gh">Read the security paper</span></div>
+ </div>
+ <div class="grain"></div>
+</section>
+
+<!-- FOOTER -->
+<section class="frame foot">
+ <div class="fcols">
+  <div><div class="logo"><i></i>Monolith</div><div class="nl">Get batch updates by email<span>Subscribe</span></div></div>
+  <div><h5>Product</h5><ul><li>Device</li><li>App</li><li>Security paper</li><li>Firmware</li></ul></div>
+  <div><h5>Support</h5><ul><li>Setup guide</li><li>Recovery</li><li>Shipping</li><li>Contact</li></ul></div>
+  <div><h5>Company</h5><ul><li>Journal</li><li>Careers</li><li>Bug bounty</li><li>Press kit</li></ul></div>
+ </div>
+ <div class="fb"><span>© 2026 Monolith Labs</span><span>Designed in Lisbon · Made in Porto</span><span>Privacy · Terms</span></div>
+ <div class="fw">MONOLITH</div>
+</section>
+</body></html>

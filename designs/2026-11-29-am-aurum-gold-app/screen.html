@@ -1,0 +1,83 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Aurum">
+<meta name="app-desc" content="A savings app for **real vaulted gold**: pick the grams on a dial, see the exact price and fee, and **slide to buy** in one move.">
+<meta name="fonts" content="Inter Tight|Ultra-thin numerals that feel weighed, not typed, with an Instrument Serif italic for the warm moments and a mono ticker for live prices.">
+<meta name="palette" content="#F5D38A:Light gold|#C9973B:Aurum gold|#7A5418:Deep bronze|#EFE9DE:Bone|#8A8278:Warm grey|#070605:Vault black">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Inter Tight';color:#EFE9DE;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#070605}
+.photo{position:absolute;left:0;right:0;top:-40px;height:620px;background:url(bar.jpg) center 40%/cover;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 100%)}
+.vig{position:absolute;left:0;right:0;top:0;height:640px;background:radial-gradient(120% 60% at 50% 46%,rgba(7,6,5,0) 40%,rgba(7,6,5,.7) 100%)}
+.sb{position:absolute;top:0;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:4px;align-items:center}
+.gl{background:rgba(255,246,228,.06);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid rgba(255,238,204,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.top{position:absolute;top:60px;left:16px;right:16px;display:flex;align-items:center;justify-content:space-between}
+.cb{width:40px;height:40px;border-radius:20px;display:grid;place-items:center}
+.vault{height:40px;padding:0 16px 0 4px;border-radius:20px;display:flex;align-items:center;gap:8px}
+.vault i{width:32px;height:32px;border-radius:16px;background:linear-gradient(145deg,#F5D38A,#C9973B 55%,#7A5418);display:grid;place-items:center}
+.vault b{display:block;font-size:12px;font-weight:600;line-height:16px}.vault small{display:block;font-size:12px;line-height:12px;color:#8A8278}
+.eyebrow{position:absolute;top:116px;left:0;right:0;text-align:center;font-size:12px;line-height:16px;letter-spacing:2.4px;text-transform:uppercase;color:#B3A996}
+.eyebrow em{font-family:'Instrument Serif';font-style:italic;text-transform:none;letter-spacing:0;font-size:20px;color:#F5D38A}
+.wt{position:absolute;top:356px;left:0;right:0;text-align:center;font-weight:200;font-size:96px;line-height:96px;letter-spacing:-4px;background:linear-gradient(180deg,#FFF6E0 0%,#F5D38A 40%,#C9973B 72%,#7A5418 100%);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 8px 24px rgba(0,0,0,.6))}
+.wt small{font-size:40px;letter-spacing:-1px}
+.after{position:absolute;top:456px;left:0;right:0;text-align:center;font-size:14px;line-height:20px;color:#B3A996}
+.after b{color:#EFE9DE;font-weight:500}.after i{font-family:'Instrument Serif';font-size:16px;color:#F5D38A}
+.tk{position:absolute;top:488px;left:0;right:0;height:32px;justify-content:center;border-top:1px solid rgba(255,238,204,.1);border-bottom:1px solid rgba(255,238,204,.1);display:flex;align-items:center;gap:12px;padding:0 12px;font-family:'JetBrains Mono';font-size:12px;letter-spacing:-.4px;line-height:16px;color:#8A8278;white-space:nowrap;overflow:hidden}
+.tk b{color:#EFE9DE;font-weight:500}.tk .up{color:#7FD99A}
+.tk i{width:4px;height:4px;border-radius:2px;background:#5A5348;flex:none}
+.dial{position:absolute;top:532px;left:0;right:0;height:64px}
+.dial .needle{position:absolute;left:194px;top:0;width:4px;height:52px;border-radius:2px;background:linear-gradient(180deg,#FFF6E0,#C9973B);box-shadow:0 0 16px rgba(245,211,138,.8)}
+.chips{position:absolute;top:604px;left:16px;right:16px;display:flex;gap:8px}
+.chips span{flex:1;height:32px;border-radius:16px;display:grid;place-items:center;font-size:12px;line-height:16px;font-weight:500;color:#B3A996}
+.chips span.on{background:linear-gradient(145deg,#F5D38A,#C9973B);color:#1A1208;font-weight:600;border:0}
+.sheet{position:absolute;left:8px;right:8px;top:648px;bottom:8px;border-radius:32px;padding:16px 16px 0}
+.row{display:flex;justify-content:space-between;align-items:flex-end}
+.row .k{font-size:12px;line-height:16px;color:#8A8278;letter-spacing:1.2px;text-transform:uppercase}
+.row .tot{font-size:32px;line-height:36px;font-weight:300;letter-spacing:-1px;margin-top:4px}
+.row .tot small{font-size:20px}
+.row .math{font-family:'JetBrains Mono';font-size:12px;line-height:16px;color:#8A8278;text-align:right}
+.row .math b{color:#EFE9DE;font-weight:500}
+.fee{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;line-height:16px;color:#B3A996}
+
+.slide{position:absolute;left:8px;right:8px;bottom:28px;height:56px;border-radius:28px;display:flex;align-items:center;padding:4px;background:rgba(255,246,228,.08);border:1px solid rgba(255,238,204,.14)}
+.slide .kn{width:48px;height:48px;border-radius:24px;background:linear-gradient(145deg,#FFF6E0,#F5D38A 40%,#C9973B);display:grid;place-items:center;box-shadow:0 0 24px rgba(245,211,138,.5)}
+.slide span{margin-left:16px;font-size:16px;line-height:20px;font-weight:500}
+.slide span small{color:#8A8278;font-size:14px;margin-left:4px}
+.slide em{margin-left:auto;margin-right:16px;font-style:normal;color:#5A5348;letter-spacing:-2px;font-size:16px}
+.home{position:absolute;left:128px;bottom:8px;width:136px;height:4px;border-radius:2px;background:#EFE9DE}
+</style></head><body>
+<div class="photo"></div><div class="vig"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:16:#EFE9DE:2.4}}{{icon:wifi:16:#EFE9DE:2.4}}{{icon:battery-full:20:#EFE9DE:2}}</span></div>
+<div class="top">
+ <div class="cb gl">{{icon:chevron-left:20:#EFE9DE:2}}</div>
+ <div class="vault gl"><i>{{icon:vault:16:#1A1208:2}}</i><div><b>Vault · Zurich</b><small>Allocated · insured</small></div></div>
+ <div class="cb gl">{{icon:gift:18:#EFE9DE:1.8}}</div>
+</div>
+<div class="eyebrow">Buy gold · <em>by the gram</em></div>
+<div class="wt">12.48<small> g</small></div>
+<div class="after">Vault <b>35.84 g</b> → <b>48.32 g</b> · <i>about a wedding ring</i></div>
+<div class="tk"><span><b>XAU/g</b> $94.20</span><span class="up">▲ +0.84%</span><i></i><span>high <b>$94.61</b></span><i></i><span>Zurich <b>live</b></span></div>
+<svg class="dial" width="393" height="64" viewBox="0 0 393 64" id="dial"></svg>
+<div class="chips"><span class="gl">1 g</span><span class="gl">5 g</span><span class="on">12.48 g</span><span class="gl">25 g</span><span class="gl">$ amount</span></div>
+<div class="sheet gl">
+ <div class="row"><div><div class="k">You pay</div><div class="tot">$1,181<small>.50</small></div></div><div class="math">12.48 g × <b>$94.20</b><br>= $1,175.62 + fee <b>$5.88</b></div></div>
+ <div class="fee">{{icon:shield-check:16:#C9973B:2}}Storage and insurance free for your first year</div>
+ <div class="slide" data-nav><div class="kn">{{icon:chevrons-right:24:#1A1208:2.2}}</div><span>Slide to buy<small>12.48 g</small></span><em>›››</em></div>
+</div>
+<div class="home"></div>
+<script>
+(function(){const d=document.getElementById('dial');let s='';
+ // 4px per 0.1 g; centre (x=196) = 12.48 g
+ const c=196,v0=12.48,pxPer=40; // 40px per gram
+ for(let t=Math.ceil((v0-196/pxPer)*5)*2;t<=Math.floor((v0+197/pxPer)*10);t+=2){
+  const g=t/10,x=c+(g-v0)*pxPer,maj=t%10==0,mid=t%5==0;
+  const h=maj?32:(mid?20:12),dist=Math.abs(x-c)/196,op=(1-dist*.85).toFixed(2);
+  s+=`<rect x="${x-1}" y="${4}" width="2" height="${h}" rx="1" fill="rgba(239,233,222,${op})"/>`;
+  if(maj)s+=`<text x="${x}" y="56" text-anchor="middle" font-family="Inter Tight" font-size="12" fill="rgba(179,169,150,${op})">${g} g</text>`;
+ }
+ d.innerHTML=s;})();
+</script>
+<div style="position:absolute;left:194px;top:528px;width:4px;height:44px;border-radius:2px;background:linear-gradient(180deg,#FFF6E0,#C9973B);box-shadow:0 0 16px rgba(245,211,138,.8)"></div>
+</body></html>

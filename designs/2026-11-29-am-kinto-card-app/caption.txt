@@ -1,9 +1,0 @@
-Three cards, four currencies, and you still don't know what you can spend.
-Fintech wallet app UI design in dark mode: card stack, multi-currency balance and weekly spending cap
-
-Kinto folds every card and pocket into one balance, then puts a weekly cap right under it with one lit bar for your biggest day. Everything sits on a 4pt grid, so the screen stays calm even with this much money on it.
-
-Save this for your next banking or wallet app
-Would you rather see your total balance or what's left to spend this week?
-
-#uiux #mobileappdesign #fintechdesign #walletapp #darkmodeui

@@ -1,0 +1,223 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Aurum",
+  "category": "Gold savings app",
+  "tagline": "Buy real vaulted gold by the gram, on a dial, with the fee in plain sight.",
+  "font": "Inter Tight",
+  "font_note": "Ultra-thin numerals that feel weighed, not typed, with an Instrument Serif italic for the warm moments and a mono ticker for live prices.",
+  "gradient": [
+   "#F5D38A",
+   "#C9973B",
+   "#3A2A10",
+   "#070605"
+  ],
+  "paper": "#EEEEEE",
+  "palette": [
+   [
+    "#F5D38A",
+    "Light gold"
+   ],
+   [
+    "#C9973B",
+    "Aurum gold"
+   ],
+   [
+    "#7A5418",
+    "Deep bronze"
+   ],
+   [
+    "#EFE9DE",
+    "Bone"
+   ],
+   [
+    "#8A8278",
+    "Warm grey"
+   ],
+   [
+    "#070605",
+    "Vault black"
+   ]
+  ],
+  "zoom": [
+   0,
+   176,
+   393,
+   352
+  ],
+  "zoom_title": "Twelve grams,<br>weighed in light.",
+  "components_title": "Gold, glass<br>and a ruler.",
+  "elements": {
+   "vault": {
+    "box": [
+     118,
+     60,
+     156,
+     40
+    ],
+    "r": 20
+   },
+   "gift": {
+    "box": [
+     337,
+     60,
+     40,
+     40
+    ],
+    "r": 20
+   },
+   "bar": {
+    "box": [
+     48,
+     160,
+     296,
+     192
+    ],
+    "r": 32
+   },
+   "wt": {
+    "box": [
+     32,
+     356,
+     329,
+     124
+    ],
+    "r": 24
+   },
+   "tk": {
+    "box": [
+     0,
+     488,
+     393,
+     32
+    ],
+    "r": 16
+   },
+   "dial": {
+    "box": [
+     0,
+     524,
+     393,
+     76
+    ],
+    "r": 24
+   },
+   "chips": {
+    "box": [
+     16,
+     604,
+     361,
+     32
+    ],
+    "r": 16
+   },
+   "pay": {
+    "box": [
+     8,
+     648,
+     377,
+     108
+    ],
+    "r": 32
+   },
+   "sl": {
+    "box": [
+     16,
+     758,
+     361,
+     58
+    ],
+    "r": 29
+   }
+  },
+  "s2_floats": [
+   [
+    "vault",
+    400,
+    40,
+    560,
+    -4,
+    3
+   ],
+   [
+    "chips",
+    560,
+    30,
+    820,
+    3,
+    3
+   ],
+   [
+    "sl",
+    580,
+    40,
+    1120,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "bar",
+    440,
+    560,
+    72,
+    3,
+    1
+   ],
+   [
+    "wt",
+    480,
+    60,
+    300,
+    -2,
+    1
+   ],
+   [
+    "tk",
+    920,
+    80,
+    520,
+    0,
+    1
+   ],
+   [
+    "dial",
+    920,
+    80,
+    600,
+    0,
+    1
+   ],
+   [
+    "chips",
+    820,
+    130,
+    800,
+    2,
+    1
+   ],
+   [
+    "pay",
+    760,
+    80,
+    900,
+    -2,
+    1
+   ],
+   [
+    "sl",
+    820,
+    180,
+    1148,
+    0,
+    1
+   ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#070605",
+  "s4_ink": "#070605"
+ }
+}
