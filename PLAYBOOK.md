@@ -41,6 +41,8 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
   light beams and horizon glows, glowing ember/copper cards, product UI floating in the hero, giant wordmark, bento of dark cards with one lit
   element, two-tone grey/white headings, numbered accordion rows) but NEVER copy a layout, wording or brand one to one. No real logos in "trusted by" rows.
 - Each new design is `ready-pending-approval` until the owner says final.
+- **4pt grid (owner, 2026-11-25):** every size, gap, padding, radius and line height in a design is a multiple of 4 (4, 8, 12, 16, 20, 24, 32, 40, 48…). Font sizes on the 4pt scale too (12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 72, 80, 96…; 14 allowed for small body). Designs must look cool and polished.
+
 
 ## The schedule
 
