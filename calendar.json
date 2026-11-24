@@ -940,9 +940,9 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "website",
-   "niche": "Electric bike brand",
-   "brand": "Velo Nine",
-   "palette_hint": "signal yellow + graphite",
+   "niche": "Fintech: business banking & corporate cards for startups",
+   "brand": "Northvault",
+   "palette_hint": "black + ember copper glow",
    "status": "planned",
    "design_dir": null,
    "image": null,
@@ -951,9 +951,8 @@
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-23-pm",
-   "slug": "velo-nine-ebike-website",
+   "slug": "northvault-banking-website",
    "images": null,
-   "approved": "owner said done (2026-11-21)",
    "light_design_dir": "designs/2026-11-25-pm-velo-nine-ebike-website",
    "light_images": [
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-1.jpg",
@@ -964,8 +963,8 @@
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-6.jpg",
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-7.jpg"
    ],
-   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
-   "theme": "dark"
+   "theme": "dark",
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
   },
   {
    "id": "2026-11-26-am",
@@ -973,9 +972,9 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "niche": "Skincare: evening ritual timer",
-   "brand": "Mossé",
-   "palette_hint": "golden hour orange + terracotta",
+   "niche": "AI: personal AI assistant with voice mode",
+   "brand": "Aster",
+   "palette_hint": "black + icy blue + silver",
    "status": "planned",
    "design_dir": null,
    "image": null,
@@ -984,10 +983,8 @@
    "format": "carousel-app-v4",
    "ai": false,
    "originally": "2026-11-24-am",
-   "slug": "mosse-evening-ritual-app",
+   "slug": "aster-ai-assistant-app",
    "images": null,
-   "replaces": "Verdant (unscheduled)",
-   "approved": "owner approved Mossé v3 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am",
    "light_design_dir": "designs/2026-11-26-am-mosse-evening-ritual-app",
    "light_images": [
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-1.jpg",
@@ -997,8 +994,8 @@
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-5.jpg",
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-6.jpg"
    ],
-   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
-   "theme": "dark"
+   "theme": "dark",
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
   },
   {
    "id": "2026-11-26-pm",
@@ -1033,9 +1030,9 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "website",
-   "niche": "Boutique beach hotel",
-   "brand": "Saltwater House",
-   "palette_hint": "sand + ocean teal",
+   "niche": "Creative agency: brand & digital studio",
+   "brand": "Halftone Studio",
+   "palette_hint": "black + red-orange gradient + white",
    "status": "planned",
    "design_dir": null,
    "image": null,
@@ -1044,9 +1041,8 @@
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-25-am",
-   "slug": "saltwater-house-hotel-website",
+   "slug": "halftone-agency-website",
    "images": null,
-   "approved": "owner said done (2026-11-21)",
    "light_design_dir": "designs/2026-11-27-am-saltwater-house-hotel-website",
    "light_images": [
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-1.jpg",
@@ -1057,8 +1053,8 @@
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-6.jpg",
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-7.jpg"
    ],
-   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
-   "theme": "dark"
+   "theme": "dark",
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
   },
   {
    "id": "2026-11-27-pm",
@@ -1067,18 +1063,17 @@
    "time_dhaka": "20:39",
    "type": "app",
    "status": "planned",
-   "niche": "Hiking trail guide",
-   "brand": "Ridge",
-   "palette_hint": "sunrise peach + slate",
+   "niche": "Finance: stock & ETF investing",
+   "brand": "Plinth",
+   "palette_hint": "black + violet + chrome silver",
    "design_dir": null,
    "image": null,
    "media_id": null,
-   "slug": "ridge-hiking-app",
+   "slug": "plinth-invest-app",
    "caption": null,
    "format": "carousel-app-v4",
    "ai": false,
    "images": null,
-   "approved": "owner approved and asked to schedule (2026-11-21)",
    "light_design_dir": "designs/2026-11-27-pm-ridge-hiking-app",
    "light_images": [
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-1.jpg",
@@ -1088,8 +1083,8 @@
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-5.jpg",
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-6.jpg"
    ],
-   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
-   "theme": "dark"
+   "theme": "dark",
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
   },
   {
    "id": "2026-11-28-am",
@@ -1124,9 +1119,9 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "website",
-   "niche": "Indoor plant shop",
-   "brand": "Greenroom",
-   "palette_hint": "sage + terracotta",
+   "niche": "AI: agent automation platform for operations teams",
+   "brand": "Orrery",
+   "palette_hint": "black + moss lime glow, cinematic nature",
    "status": "planned",
    "design_dir": null,
    "image": null,
@@ -1135,9 +1130,8 @@
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-26-pm",
-   "slug": "greenroom-plants-website",
+   "slug": "orrery-ai-agents-website",
    "images": null,
-   "approved": "owner said done (2026-11-21)",
    "light_design_dir": "designs/2026-11-28-pm-greenroom-plants-website",
    "light_images": [
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-1.jpg",
@@ -1148,8 +1142,8 @@
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-6.jpg",
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-7.jpg"
    ],
-   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
-   "theme": "dark"
+   "theme": "dark",
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
   },
   {
    "id": "2026-11-29-am",
@@ -1158,18 +1152,17 @@
    "time_dhaka": "08:37",
    "type": "app",
    "status": "planned",
-   "niche": "Headphones companion: noise control + EQ",
-   "brand": "Aural",
-   "palette_hint": "lilac + pearl + peach",
+   "niche": "Fintech: spending card & multi-currency wallet",
+   "brand": "Tally",
+   "palette_hint": "black + emerald mint + metal",
    "design_dir": null,
    "image": null,
    "media_id": null,
-   "slug": "aural-headphones-app",
+   "slug": "tally-card-app",
    "caption": null,
    "format": "carousel-app-v4",
    "ai": false,
    "images": null,
-   "approved": "owner approved and asked to schedule (2026-11-21)",
    "light_design_dir": "designs/2026-11-29-am-aural-headphones-app",
    "light_images": [
     "posts/2026-11/2026-11-29-am-aural-headphones-app-1.jpg",
@@ -1179,8 +1172,8 @@
     "posts/2026-11/2026-11-29-am-aural-headphones-app-5.jpg",
     "posts/2026-11/2026-11-29-am-aural-headphones-app-6.jpg"
    ],
-   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
-   "theme": "dark"
+   "theme": "dark",
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
   },
   {
    "id": "2026-11-29-pm",

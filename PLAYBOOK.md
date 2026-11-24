@@ -33,6 +33,15 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
   filter/selector (e.g. a floating glass rail of round icon buttons, a vertical pill selector like "Hole 1 / Hole 2", photo chips),
   unique card shapes, glowing highlighted chart elements (a lit bar, neon lines), thin large numbers. Every dashboard different.
 
+## Niche focus + dark website style (owner, 2026-11-24 night)
+
+- New niches lean on **fintech, finance, creative agency and AI products** (AI assistants, agents, chatbots). Keep the app → dashboard → website rotation.
+- Dark website references: `reference/website-dark/ref-01.jpg … ref-13.jpg` (Crypture, Fluxora, Tropical, OpenMint, Orynthiq, Zenze, Verdant,
+  UI Rocket, AI web studio, Pathfinder coaching, Velocity, Kontour, RichPath). Study them; take the patterns (cinematic photo/3D hero on black,
+  light beams and horizon glows, glowing ember/copper cards, product UI floating in the hero, giant wordmark, bento of dark cards with one lit
+  element, two-tone grey/white headings, numbered accordion rows) but NEVER copy a layout, wording or brand one to one. No real logos in "trusted by" rows.
+- Each new design is `ready-pending-approval` until the owner says final.
+
 ## The schedule
 
 - Two posts a day, Asia/Dhaka time: **morning 08:37** (`am`) and **night 20:39** (`pm`).
