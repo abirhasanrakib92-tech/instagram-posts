@@ -1,9 +1,9 @@
-Your bank should know your runway before your board does.
-Fintech website UI design: business banking, corporate cards and treasury for startups
+Your runway shouldn't live in a spreadsheet nobody updates.
+Fintech website UI design: dark business banking landing page for startups with cards, treasury and bill pay
 
-Northvault opens on a copper card rising over a dark horizon, then shows the product doing the work: live cash and runway, a card with its own spend rule for every teammate, and books that close in a day.
+Northvault puts the live product right in the hero, rising out of a cobalt horizon, then walks money from the bank to the books in one glowing flow. Built on a strict 4pt grid with chrome type and one lit card per section.
 
 Save this for your next fintech landing page
-Which section would you ship first: the cards or the runway dashboard?
+What would you put in a banking hero: the product, the card, or the numbers?
 
 #uiux #webdesign #landingpage #fintech #fintechdesign

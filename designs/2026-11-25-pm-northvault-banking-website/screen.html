@@ -2,344 +2,354 @@
 <html><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
-:root{--bg:#050404;--ink:#F3EEE8;--ink2:rgba(243,238,232,.72);--ink3:rgba(243,238,232,.46);--cu:#E9935A;--cu2:#F6BE8C;--cu3:#B5602F;--line:rgba(255,255,255,.08)}
+:root{--bg:#07080A;--ink:#F4F6FA;--ink2:#A9AEBA;--ink3:#6B7180;--co:#3D6BFF;--co2:#7D9BFF;--co3:#B9C9FF;--mi:#5EF0B4;--line:rgba(255,255,255,.08);--card:#0E1014}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1440px;background:var(--bg);color:var(--ink);font-family:'Inter Tight';-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
-.sora{font-family:'Sora'}
-.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400}
-.mono{font-family:'JetBrains Mono';letter-spacing:.6px}
-.frame{margin:0 24px;border-radius:32px;position:relative;overflow:hidden}
-.in{width:1200px;margin:0 auto;position:relative}
-.pill{display:inline-flex;align-items:center;gap:9px;height:34px;padding:0 6px 0 6px;border-radius:999px;border:1px solid rgba(233,147,90,.32);background:rgba(233,147,90,.08);color:var(--cu2);font-size:14px;font-weight:500}
-.pill b{background:var(--cu);color:#1A0C04;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:600}
-.pill span{padding-right:10px}
-.h2{font-family:'Sora';font-size:58px;font-weight:300;letter-spacing:-2.6px;line-height:1.04}
-.h2 .g{color:var(--ink3)}
-.lead{font-size:19px;line-height:1.55;color:var(--ink2)}
-.btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-size:16.5px;font-weight:500}
-.btn.cu{background:linear-gradient(180deg,#F7C597,#E48A4E);color:#1A0C04;box-shadow:0 0 0 1px rgba(246,190,140,.55),0 0 44px rgba(233,147,90,.5),inset 0 1px 0 rgba(255,255,255,.6)}
-.btn.ghost{border:1px solid rgba(255,255,255,.18);color:var(--ink);background:rgba(255,255,255,.04)}
-.glass{background:rgba(18,13,10,.55);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px -20px rgba(0,0,0,.7)}
+html,body{width:1440px;background:var(--bg);color:var(--ink);font-family:'Geist';-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-1px}
+.mono{font-family:'JetBrains Mono';letter-spacing:0}
+.chrome{background:linear-gradient(180deg,#FFFFFF 0%,#D9DDE6 45%,#8A90A0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ct{width:1200px;margin:0 auto;position:relative}
+.fr{margin:0 24px;border-radius:32px;position:relative;overflow:hidden}
+.pill{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 16px 0 4px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:14px;color:var(--ink2)}
+.pill b{height:24px;padding:0 8px;border-radius:12px;background:var(--co);color:#fff;font-size:12px;font-weight:500;display:grid;place-items:center}
+.btn{height:48px;padding:0 24px;border-radius:24px;display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:500}
+.bp{background:var(--ink);color:#07080A}
+.bg{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:var(--ink)}
+.eb{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--co2);font-weight:500;display:flex;align-items:center;gap:8px}
+.eb:before{content:"";width:16px;height:1px;background:var(--co2)}
+h2{font-size:64px;line-height:68px;font-weight:300;letter-spacing:-2.4px}
+h2 .g{color:var(--ink3)}
+.glass{background:rgba(16,18,24,.56);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 24px 48px rgba(0,0,0,.4)}
 .ph{background-size:cover;background-position:center 28%;border-radius:50%;flex:none}
-.tag{font-size:13px;letter-spacing:2.4px;text-transform:uppercase;color:var(--cu2)}
-/* nav */
-.nav{position:absolute;left:32px;right:32px;top:28px;height:70px;border-radius:999px;display:flex;align-items:center;padding:0 10px 0 26px;z-index:5}
-.logo{display:flex;align-items:center;gap:11px;font-family:'Sora';font-size:22px;font-weight:500;letter-spacing:-.6px}
-.logo i{width:34px;height:34px;border-radius:11px;background:linear-gradient(140deg,#F7C597,#B5602F);display:grid;place-items:center;box-shadow:0 0 22px rgba(233,147,90,.5)}
-.links{display:flex;gap:36px;margin:0 auto;font-size:15.5px;color:var(--ink2)}
-.links span:first-child{color:var(--ink)}
-/* hero */
-.hero{height:1240px;background:#000 url(card.jpg) center 470px/1392px auto no-repeat}
-.hero:before{content:"";position:absolute;left:50%;top:0;width:160px;height:500px;transform:translateX(-50%);background:linear-gradient(180deg,rgba(246,190,140,0) 0%,rgba(246,190,140,0) 60%,rgba(246,190,140,.16) 100%);filter:blur(30px)}
-.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 30% at 50% 100%,rgba(0,0,0,0),rgba(0,0,0,.0)),linear-gradient(180deg,rgba(0,0,0,0) 80%,rgba(5,4,4,.9) 100%)}
-.hcopy{position:absolute;left:0;right:0;top:172px;text-align:center;z-index:2}
-.hcopy h1{font-family:'Sora';font-size:92px;font-weight:300;letter-spacing:-4.6px;line-height:1;margin-top:28px}
-.hcopy h1 .g{color:rgba(243,238,232,.42)}
-.hcopy h1 .serif{font-size:104px;letter-spacing:-1.5px;background:linear-gradient(180deg,#FFE0C2,#E9935A 70%,#B5602F);-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(233,147,90,.35))}
-.hcopy p{font-size:20px;color:var(--ink2);margin:26px auto 0;width:640px;line-height:1.5}
-.hcopy .ctas{display:flex;gap:12px;justify-content:center;margin-top:34px}
-.fc{position:absolute;z-index:3;border-radius:24px;padding:22px 24px}
-.fc .l{font-size:14px;color:var(--ink3);display:flex;align-items:center;gap:8px}
-.fc .v{font-family:'Sora';font-size:40px;font-weight:300;letter-spacing:-1.8px;margin-top:10px}
-.fc .v small{font-size:22px;color:var(--ink3)}
-.bar2{display:flex;height:8px;border-radius:99px;overflow:hidden;margin-top:16px;gap:3px}
-.bar2 i{display:block;height:100%;border-radius:99px}
-.lg2{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink2);margin-top:10px}
-.lg2 b{color:var(--ink);font-weight:500}
-/* trust */
-.trust{padding:96px 0 0;text-align:center}
-.trust .lbl{font-size:13px;color:var(--ink3);letter-spacing:2.4px;text-transform:uppercase}
-.logos{display:flex;justify-content:space-between;margin-top:30px;color:rgba(243,238,232,.55);font-size:22px;font-weight:600;letter-spacing:-.4px}
-.logos span{display:flex;align-items:center;gap:9px}
-/* cards section */
-.cardsec{padding:170px 0 0}
-.csplit{display:grid;grid-template-columns:470px 1fr;gap:40px;align-items:center}
-.feat{margin-top:36px;display:flex;flex-direction:column;gap:0}
-.feat>div{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--line)}
-.feat>div:last-child{border-bottom:1px solid var(--line)}
-.feat i{width:42px;height:42px;border-radius:13px;background:rgba(233,147,90,.12);border:1px solid rgba(233,147,90,.25);display:grid;place-items:center;flex:none}
-.feat b{display:block;font-size:18px;font-weight:500}
-.feat span{font-size:15px;color:var(--ink3);line-height:1.45;display:block;margin-top:4px}
-.cvis{height:640px;border-radius:32px;position:relative;overflow:hidden;background:#000 url(cards.jpg) 62% 50%/auto 118% no-repeat;border:1px solid rgba(255,255,255,.08)}
-.cvis:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%,rgba(0,0,0,0) 40%,rgba(0,0,0,.45))}
-.chip{position:absolute;z-index:2;border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:12px;font-size:15px}
-.chip .ph{width:38px;height:38px}
-.chip b{display:block;font-weight:500;font-size:15.5px}
-.chip span{font-size:13px;color:var(--ink3)}
-.chip em{font-style:normal;margin-left:14px;font-family:'Sora';font-size:20px;font-weight:300;letter-spacing:-.6px}
-/* product */
-.prod{padding:190px 0 0;text-align:center}
-.prod .lead{width:640px;margin:22px auto 0}
-.win{position:relative;margin:70px auto 0;width:1200px;height:612px;border-radius:28px;text-align:left;display:grid;grid-template-columns:230px 1fr;overflow:hidden;background:linear-gradient(180deg,#141010,#0B0909);border:1px solid rgba(255,255,255,.10);box-shadow:0 0 0 1px rgba(0,0,0,.5),0 60px 120px -40px rgba(233,147,90,.35)}
-.glow{position:absolute;left:50%;transform:translateX(-50%);width:1000px;height:420px;border-radius:50%;background:radial-gradient(ellipse,rgba(233,147,90,.38),rgba(233,147,90,0) 65%);filter:blur(20px)}
-.side{border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:4px}
-.side .sl{display:flex;align-items:center;gap:11px;height:44px;padding:0 12px;border-radius:13px;font-size:15px;color:var(--ink2)}
-.side .sl.on{background:rgba(233,147,90,.12);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(233,147,90,.28)}
-.main{padding:26px 28px;display:grid;grid-template-columns:minmax(0,1fr) 290px;min-width:0;grid-template-rows:auto 1fr;gap:18px}
-.mh{grid-column:1/3;display:flex;justify-content:space-between;align-items:center}
-.mh h3{font-family:'Sora';font-size:26px;font-weight:400;letter-spacing:-.8px}
-.mh span{font-size:14px;color:var(--ink3)}
-.box{border-radius:20px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);padding:20px}
-.big{font-family:'Sora';font-size:46px;font-weight:300;letter-spacing:-2px}
-.big small{font-size:24px;color:var(--ink3)}
-.bl{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
-.bl:first-of-type{border-top:0}
-.bl .n{display:flex;align-items:center;gap:10px}
-.bl .n i{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.06);display:grid;place-items:center}
-.bl small{display:block;font-size:12.5px;color:var(--ink3)}
-.st{font-size:12.5px;padding:4px 10px;border-radius:99px}
-/* bento */
-.bento{padding:190px 0 0}
-.bhead{display:flex;justify-content:space-between;align-items:flex-end}
-.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-.bc{height:560px;border-radius:30px;position:relative;overflow:hidden;padding:30px;background:linear-gradient(180deg,#120E0C,#0A0808);border:1px solid rgba(255,255,255,.08)}
-.bc h4{font-family:'Sora';font-size:26px;font-weight:400;letter-spacing:-.9px;line-height:1.15}
-.bc p{font-size:15.5px;color:var(--ink3);line-height:1.5;margin-top:12px}
-.bc.lit{background:radial-gradient(ellipse 120% 70% at 50% 100%,rgba(233,147,90,.55),rgba(181,96,47,.18) 45%,rgba(10,8,8,1) 75%);border-color:rgba(246,190,140,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 80px -20px rgba(233,147,90,.5)}
-.bc .vis{position:absolute;left:30px;right:30px;bottom:30px}
-/* testimonial */
-.tst{padding:190px 0 0}
-.tgrid{display:grid;grid-template-columns:480px 1fr;gap:56px;align-items:stretch}
-.tph{height:600px;border-radius:30px;background:url(founder.jpg) center 22%/cover;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
-.tph .cap{position:absolute;left:20px;right:20px;bottom:20px;border-radius:20px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
-.tq{display:flex;flex-direction:column;justify-content:space-between;padding:10px 0}
-.tq q{font-family:'Sora';font-size:40px;font-weight:300;letter-spacing:-1.6px;line-height:1.22;quotes:none}
-.tq q .g{color:var(--ink3)}
-.tm{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.tm div{padding:26px 0 0 26px;border-left:1px solid var(--line)}
-.tm div:first-child{padding-left:0;border-left:0}
-.tm b{display:block;font-family:'Sora';font-size:48px;font-weight:200;letter-spacing:-2.2px}
-.tm b small{font-size:24px;color:var(--cu2)}
-.tm span{font-size:15px;color:var(--ink3)}
-/* cta */
-.cta{margin-top:190px;height:600px;background:#000 url(horizon.jpg) center 50px/1392px auto no-repeat;text-align:center}
-.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,0) 40%,rgba(0,0,0,.35))}
-.cta .c{position:relative;padding-top:80px}
-.cta h2{font-family:'Sora';font-size:76px;font-weight:300;letter-spacing:-3.6px;line-height:1.02}
-.cta h2 .g{color:var(--ink3)}
-.cta p{font-size:19px;color:var(--ink2);margin-top:20px}
-/* footer */
-.foot{margin-top:24px;margin-bottom:24px;height:640px;background:linear-gradient(180deg,#0E0B0A,#070606);border:1px solid rgba(255,255,255,.06)}
-.fcols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.4fr;gap:40px;padding:70px 72px 0}
-.fcols h6{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);font-weight:500;margin-bottom:18px}
-.fcols a{display:block;font-size:16px;color:var(--ink2);margin-bottom:12px}
-.news{display:flex;height:56px;border-radius:999px;border:1px solid rgba(255,255,255,.14);align-items:center;padding:0 6px 0 22px;font-size:15px;color:var(--ink3);margin-top:6px}
-.news span{margin-left:auto;height:44px;padding:0 20px;border-radius:999px;background:var(--cu);color:#1A0C04;display:flex;align-items:center;font-weight:600}
-.word{position:absolute;left:0;right:0;bottom:-26px;text-align:center;font-family:'Sora';font-size:258px;font-weight:600;letter-spacing:-14px;line-height:1;background:linear-gradient(180deg,rgba(246,190,140,.85),rgba(181,96,47,.25) 60%,rgba(181,96,47,0) 95%);-webkit-background-clip:text;color:transparent}
-.legal{position:absolute;left:72px;right:72px;top:330px;display:flex;justify-content:space-between;font-size:14px;color:var(--ink3);border-top:1px solid var(--line);padding-top:22px}
+.gap{height:128px}
+
+/* HERO */
+.hero{height:1120px;background:#050608;margin-top:24px}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 120px 200px,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 340px 120px,rgba(255,255,255,.35),transparent),radial-gradient(1px 1px at 1040px 180px,rgba(255,255,255,.45),transparent),radial-gradient(1px 1px at 1240px 320px,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 220px 420px,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 1160px 520px,rgba(255,255,255,.35),transparent),radial-gradient(1px 1px at 640px 80px,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 900px 400px,rgba(255,255,255,.25),transparent)}
+.planet{position:absolute;left:50%;top:612px;width:4400px;height:1600px;margin-left:-2200px;border-radius:50%;background:radial-gradient(ellipse at 50% 0%,#0B1236 0%,#05070F 40%,#050608 70%);box-shadow:0 -4px 0 rgba(185,201,255,.9),0 -12px 32px rgba(61,107,255,.9),0 -32px 80px rgba(61,107,255,.5)}
+.hglow{position:absolute;left:50%;top:216px;width:2000px;height:480px;margin-left:-1000px;background:radial-gradient(ellipse 50% 100% at 50% 100%,rgba(61,107,255,.42),rgba(61,107,255,.12) 50%,rgba(61,107,255,0) 80%)}
+.hfade{position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(180deg,rgba(5,6,8,0),#050608);z-index:4}
+.beam{position:absolute;left:50%;top:0;width:480px;height:640px;margin-left:-240px;background:radial-gradient(ellipse at 50% 100%,rgba(61,107,255,.35),rgba(61,107,255,0) 60%)}
+.nav{position:absolute;left:32px;right:32px;top:24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:600;letter-spacing:-.4px}
+.logo i{width:36px;height:36px;border-radius:12px;background:linear-gradient(145deg,#C7D3FF,#3D6BFF 60%,#1A2E8A);display:grid;place-items:center;box-shadow:0 0 24px rgba(61,107,255,.6)}
+.links{display:flex;gap:4px;height:48px;padding:4px;border-radius:24px}
+.links a{height:40px;padding:0 16px;border-radius:20px;display:flex;align-items:center;font-size:14px;color:var(--ink2)}
+.links a.on{background:rgba(255,255,255,.08);color:var(--ink)}
+.hc{position:absolute;left:0;right:0;top:152px;text-align:center}
+.hc h1{font-size:88px;line-height:92px;font-weight:300;letter-spacing:-3.6px;margin-top:24px}
+.hc h1 .serif{font-size:96px;color:var(--co3);letter-spacing:-2px}
+.hc p{font-size:20px;line-height:28px;color:var(--ink2);margin:24px auto 0;width:640px}
+.hc .btns{display:flex;gap:12px;justify-content:center;margin-top:32px}
+/* dashboard in perspective */
+.dashw{position:absolute;left:50%;top:632px;width:1072px;margin-left:-536px;perspective:2400px}
+.dash{width:1072px;height:640px;border-radius:24px;background:linear-gradient(180deg,#10131B,#0A0C11);border:1px solid rgba(185,201,255,.20);transform:rotateX(16deg);transform-origin:50% 0;box-shadow:0 -24px 80px rgba(61,107,255,.35),inset 0 1px 0 rgba(255,255,255,.12);display:grid;grid-template-columns:200px 1fr;overflow:hidden}
+.sb{border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:4px}
+.sb .lg{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;margin-bottom:20px}
+.sb .lg i{width:24px;height:24px;border-radius:8px;background:linear-gradient(145deg,#C7D3FF,#3D6BFF)}
+.sb a{height:36px;border-radius:12px;display:flex;align-items:center;gap:12px;padding:0 12px;font-size:14px;color:var(--ink2)}
+.sb a.on{background:rgba(61,107,255,.16);color:var(--ink)}
+.dm{padding:24px 28px}
+.dtop{display:flex;justify-content:space-between;align-items:center}
+.dtop h4{font-size:20px;font-weight:400}
+.dk{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;margin-top:20px}
+.dk>div{border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02);padding:16px 20px}
+.dk span{font-size:12px;color:var(--ink3)}
+.dk b{display:block;font-size:32px;font-weight:300;letter-spacing:-1.2px;margin-top:8px}
+.dk b small{font-size:16px;color:var(--ink3)}
+.dk em{font-style:normal;font-size:12px;color:var(--mi)}
+.dch{margin-top:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02);padding:16px 20px;height:280px}
+/* floating chips */
+.chip{position:absolute;border-radius:20px;padding:16px;display:flex;gap:12px;align-items:center;z-index:5}
+.chip .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none}
+.chip span{display:block;font-size:12px;color:var(--ink3);line-height:16px}
+.chip b{display:block;font-size:20px;font-weight:400;letter-spacing:-.4px;line-height:28px}
+
+/* LOGOS */
+.logos{display:flex;align-items:center;justify-content:space-between;height:96px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.logos p{font-size:14px;line-height:20px;color:var(--ink3);width:200px}
+.logos span{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:500;color:#8A90A0;letter-spacing:-.4px}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:480px 1fr;gap:48px;align-items:center}
+.feat{margin-top:40px;display:flex;flex-direction:column;gap:0}
+.feat>div{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.feat i{width:40px;height:40px;border-radius:12px;background:rgba(61,107,255,.12);border:1px solid rgba(61,107,255,.32);display:grid;place-items:center}
+.feat b{font-size:20px;font-weight:500;line-height:28px}
+.feat p{font-size:16px;line-height:24px;color:var(--ink2);margin-top:4px}
+.photo{height:600px;border-radius:32px;background:url(chrome.jpg) 62% 50%/cover;position:relative;border:1px solid var(--line)}
+.lim{position:absolute;border-radius:16px;padding:12px 16px 12px 12px;display:flex;align-items:center;gap:12px;min-width:288px}
+.lim .ph{width:40px;height:40px}
+.lim b{font-size:16px;font-weight:500;display:block;line-height:20px}
+.lim span{font-size:14px;color:var(--ink3);line-height:20px}
+.lim .v{margin-left:auto;text-align:right}
+.lim .v b{font-size:20px;font-weight:400}
+.bar4{height:4px;border-radius:4px;background:rgba(255,255,255,.08);margin-top:8px;width:120px;margin-left:auto}
+.bar4 i{display:block;height:4px;border-radius:4px;background:var(--co2)}
+
+/* FLOW */
+.flow{height:560px;border-radius:32px;border:1px solid var(--line);background:radial-gradient(ellipse at 50% 120%,rgba(61,107,255,.18),rgba(61,107,255,0) 60%),var(--card);position:relative;margin-top:56px;overflow:hidden}
+.flow svg{position:absolute;inset:0}
+.col{position:absolute;top:56px;width:240px}
+.col h5{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);font-weight:500;margin-bottom:16px}
+.nd{border-radius:16px;padding:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);margin-bottom:12px;height:88px}
+.nd span{font-size:14px;color:var(--ink2);display:flex;align-items:center;gap:8px}
+.nd b{display:block;font-size:24px;font-weight:300;letter-spacing:-.8px;margin-top:8px}
+.nd.lit{background:linear-gradient(160deg,rgba(61,107,255,.36),rgba(61,107,255,.08));border-color:rgba(125,155,255,.56);box-shadow:0 0 48px rgba(61,107,255,.35)}
+
+/* METRICS */
+.mets{display:grid;grid-template-columns:repeat(4,1fr)}
+.mets div{padding:0 32px;border-left:1px solid var(--line)}
+.mets div:first-child{padding-left:0;border-left:0}
+.mets b{display:block;font-size:80px;line-height:80px;font-weight:200;letter-spacing:-4px}
+.mets b small{font-size:40px;letter-spacing:-1.6px}
+.mets span{display:block;font-size:16px;line-height:24px;color:var(--ink2);margin-top:16px}
+
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(3,384px);gap:24px;margin-top:56px}
+.bc{height:520px;border-radius:32px;border:1px solid var(--line);background:var(--card);padding:32px;position:relative;overflow:hidden}
+.bc h4{font-size:24px;line-height:32px;font-weight:400;letter-spacing:-.4px}
+.bc p{font-size:16px;line-height:24px;color:var(--ink2);margin-top:8px}
+.bc.lit{background:radial-gradient(ellipse at 50% 110%,#5B83FF 0%,#2448D8 36%,#0F1A55 70%,#0A0E22 100%);border-color:rgba(185,201,255,.36);box-shadow:0 24px 80px rgba(61,107,255,.35),inset 0 1px 0 rgba(255,255,255,.24)}
+.bc.lit p{color:#C9D5FF}
+.apy{position:absolute;left:32px;bottom:32px;right:32px}
+.apy>b{font-size:120px;line-height:112px;font-weight:200;letter-spacing:-6px;display:block}
+.apy>b small{font-size:48px;letter-spacing:-1.6px}
+.apy span{font-size:16px;line-height:24px;color:#DCE4FF}
+.appr{position:absolute;left:32px;right:32px;bottom:32px}
+.inv{border-radius:20px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);padding:20px}
+.inv .r{display:flex;justify-content:space-between;align-items:center}
+.inv .r span{font-size:14px;color:var(--ink3)}
+.inv .amt{font-size:40px;font-weight:300;letter-spacing:-1.6px;margin-top:8px}
+.steps{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.st{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink2);height:40px}
+.st .ph{width:40px;height:40px;border:2px solid #0E1014}
+.st b{color:var(--ink);font-weight:500}
+.st em{margin-left:auto;font-style:normal;height:24px;padding:0 8px;border-radius:12px;font-size:12px;display:grid;place-items:center}
+.ok{background:rgba(94,240,180,.12);color:var(--mi)}
+.wt{background:rgba(255,255,255,.06);color:var(--ink2)}
+.ledger{position:absolute;left:32px;right:32px;bottom:32px;display:flex;flex-direction:column;gap:8px}
+.lr{display:grid;grid-template-columns:1fr auto 24px;gap:12px;align-items:center;height:56px;padding:0 16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02)}
+.lr b{font-size:16px;font-weight:500;display:block;line-height:20px}
+.lr span{font-size:12px;color:var(--ink3);line-height:16px}
+.lr .a{font-size:16px}
+
+/* TESTIMONIAL */
+.tst{display:grid;grid-template-columns:480px 1fr;gap:72px;align-items:center}
+.por{height:600px;border-radius:32px;background:url(portrait.jpg) center 20%/cover;position:relative;border:1px solid var(--line)}
+.por .tag{position:absolute;left:24px;bottom:24px;border-radius:20px;padding:16px 20px}
+.por .tag b{display:block;font-size:20px;font-weight:500}
+.por .tag span{font-size:14px;color:var(--ink2)}
+.q{font-size:44px;line-height:56px;font-weight:300;letter-spacing:-1.6px}
+.q .g{color:var(--ink3)}
+.qm{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.qm div{border-radius:20px;border:1px solid var(--line);padding:20px}
+.qm b{display:block;font-size:40px;font-weight:300;letter-spacing:-1.6px;line-height:48px}
+.qm span{font-size:14px;color:var(--ink2);line-height:20px}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:440px 1fr;gap:64px}
+.fq{border-top:1px solid var(--line);padding:24px 0;display:grid;grid-template-columns:48px 1fr 40px;gap:16px;align-items:start}
+.fq:last-child{border-bottom:1px solid var(--line)}
+.fq .n{font-size:14px;color:var(--ink3);line-height:32px}
+.fq b{font-size:24px;line-height:32px;font-weight:400;letter-spacing:-.4px}
+.fq p{font-size:16px;line-height:24px;color:var(--ink2);margin-top:12px;width:560px}
+.fq i{width:40px;height:40px;border-radius:20px;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center}
+.fq.on i{background:var(--co);border-color:var(--co);box-shadow:0 0 24px rgba(61,107,255,.6)}
+
+/* CTA */
+.cta{height:480px;background:#050608;text-align:center}
+.cta .pl{position:absolute;left:50%;top:-760px;width:2000px;height:1040px;margin-left:-1000px;border-radius:50%;background:#050608;box-shadow:0 4px 0 rgba(185,201,255,.9),0 12px 32px rgba(61,107,255,.9),0 32px 80px rgba(61,107,255,.5)}
+.cglow{position:absolute;left:50%;top:280px;width:1800px;height:400px;margin-left:-900px;background:radial-gradient(ellipse 50% 100% at 50% 0%,rgba(61,107,255,.40),rgba(61,107,255,.10) 50%,rgba(61,107,255,0) 80%)}
+.cta .in{position:absolute;left:0;right:0;top:304px}
+.cta h3{font-size:64px;line-height:68px;font-weight:300;letter-spacing:-2.4px}
+.cta .btns{display:flex;gap:12px;justify-content:center;margin-top:32px}
+/* FOOTER */
+.foot{height:560px;background:var(--card);border:1px solid var(--line);margin-top:24px;margin-bottom:24px;padding:56px 64px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.6fr;gap:32px}
+.fcols h6{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);font-weight:500;margin-bottom:16px}
+.fcols a{display:block;font-size:16px;line-height:32px;color:var(--ink2)}
+.nl{display:flex;height:48px;border-radius:24px;border:1px solid rgba(255,255,255,.12);padding:4px 4px 4px 20px;align-items:center;font-size:14px;color:var(--ink3)}
+.nl span{margin-left:auto;height:40px;padding:0 20px;border-radius:20px;background:var(--ink);color:#07080A;display:grid;place-items:center;font-weight:500}
+.word{position:absolute;left:56px;right:56px;bottom:24px;font-size:248px;line-height:224px;font-weight:500;letter-spacing:-12px;text-align:center}
+.fb{position:absolute;left:64px;right:64px;bottom:264px;display:flex;justify-content:space-between;font-size:14px;color:var(--ink3);border-top:1px solid var(--line);padding-top:20px}
 </style></head><body>
 
 <!-- HERO -->
-<div class="frame hero" style="margin-top:24px">
- <div class="nav glass">
-  <div class="logo"><i>{{icon:landmark:18:#1A0C04:2}}</i>Northvault</div>
-  <div class="links"><span>Banking</span><span>Cards</span><span>Treasury</span><span>Bill pay</span><span>Pricing</span></div>
-  <span style="font-size:15.5px;color:var(--ink2);margin-right:20px">Log in</span>
-  <span class="btn cu" style="height:50px;font-size:15px">Open an account {{icon:arrow-up-right:16:#1A0C04:2}}</span>
+<div class="fr hero">
+ <div class="stars"></div><div class="beam"></div><div class="hglow"></div><div class="planet"></div><div class="hfade"></div>
+ <div class="nav">
+  <div class="logo"><i>{{icon:landmark:18:#FFFFFF:2}}</i>Northvault</div>
+  <div class="links glass"><a class="on">Banking</a><a>Cards</a><a>Treasury</a><a>Bill pay</a><a>Pricing</a></div>
+  <div style="display:flex;gap:8px"><span class="btn bg" style="height:40px;font-size:14px;padding:0 16px">Log in</span><span class="btn bp" style="height:40px;font-size:14px;padding:0 16px">Open an account</span></div>
  </div>
- <div class="hcopy">
-  <span class="pill"><b>New</b><span>Treasury now earns 4.10% APY on idle cash</span></span>
-  <h1>Banking that keeps up<br><span class="g">with your</span> <span class="serif">startup.</span></h1>
-  <p>Accounts, cards, bill pay and treasury in one place, with spend rules that run themselves. Built for founders from seed to Series B.</p>
-  <div class="ctas"><span class="btn cu">Open an account {{icon:arrow-right:17:#1A0C04:2}}</span><span class="btn ghost">{{icon:play:15:#F3EEE8:2}}Watch the 2-min tour</span></div>
+ <div class="hc">
+  <span class="pill"><b>New</b>Virtual cards now issue in 30 seconds</span>
+  <h1><span class="chrome">Every dollar your startup moves,</span><br><span class="serif">in one calm place.</span></h1>
+  <p>Accounts, cards, bills and treasury for founders, with spend rules that run themselves from seed to Series C.</p>
+  <div class="btns"><span class="btn bp">Open an account {{icon:arrow-up-right:18:#07080A:2}}</span><span class="btn bg">{{icon:circle-play:18:#F4F6FA}}Watch the 2-min tour</span></div>
  </div>
- <div class="fc glass" style="left:96px;top:800px;width:330px">
-  <div class="l">{{icon:wallet:16:#F6BE8C}}Total cash · all accounts</div>
-  <div class="v">$4,081,930<small>.42</small></div>
-  <div class="bar2"><i style="width:60.8%;background:linear-gradient(90deg,#B5602F,#F6BE8C)"></i><i style="width:39.2%;background:rgba(255,255,255,.28)"></i></div>
-  <div class="lg2"><span>Operating <b>$2.48M</b></span><span>Treasury <b>$1.60M</b></span></div>
- </div>
- <div class="fc glass" style="left:1000px;top:870px;width:300px">
-  <div class="l">{{icon:circle-check:16:#8FE0A8}}Card payment approved</div>
-  <div style="display:flex;align-items:center;gap:12px;margin-top:14px"><div class="ph" style="width:44px;height:44px;background-image:url(rohan.jpg)"></div><div><b style="font-size:16px;font-weight:500;display:block">Rohan · Engineering</b><span style="font-size:13.5px;color:var(--ink3)">Lumen Print · inside $2,000 limit</span></div></div>
-  <div class="v" style="font-size:34px">$1,240<small>.00</small></div>
- </div>
+ <div class="chip glass" style="left:56px;top:968px"><div class="ic" style="background:rgba(94,240,180,.12)">{{icon:circle-check:20:#5EF0B4}}</div><div><span>Card approved · within limit</span><b>$1,240.00 · Cloud</b></div></div>
+ <div class="chip glass" style="right:64px;top:712px"><div class="ic" style="background:rgba(61,107,255,.20)">{{icon:hourglass:20:#B9C9FF}}</div><div><span>Runway at current burn</span><b>34 months</b></div></div>
+ <div class="dashw"><div class="dash">
+  <div class="sb"><div class="lg"><i></i>Northvault</div>
+   <a class="on">{{icon:layout-dashboard:16:#F4F6FA}}Overview</a><a>{{icon:wallet:16:#A9AEBA}}Accounts</a><a>{{icon:credit-card:16:#A9AEBA}}Cards</a><a>{{icon:receipt:16:#A9AEBA}}Bill pay</a><a>{{icon:landmark:16:#A9AEBA}}Treasury</a><a>{{icon:book-check:16:#A9AEBA}}Accounting</a></div>
+  <div class="dm">
+   <div class="dtop"><h4>Good morning, Daniel</h4><span class="pill" style="padding:0 16px">{{icon:calendar:14:#A9AEBA}}Last 12 months</span></div>
+   <div class="dk">
+    <div><span>Total cash · USD accounts</span><b>$3,862,410<small>.18</small></b><em>+$3.2M Series A in June</em></div>
+    <div><span>Monthly burn</span><b>$113.6k</b><em style="color:var(--ink3)">avg last 3 months</em></div>
+    <div><span>Treasury yield</span><b>4.20<small>%</small></b><em>$6,825 / month</em></div>
+   </div>
+   <div class="dch"><svg id="hc" width="784" height="248" viewBox="0 0 784 248"></svg></div>
+  </div>
+ </div></div>
 </div>
 
-<!-- TRUST -->
-<div class="in trust">
- <div class="lbl">Banking 18,400 startups, from first hire to Series B</div>
- <div class="logos">
-  <span>{{icon:hexagon:22:#8E8780:2}}Kilnworks</span><span>{{icon:triangle:22:#8E8780:2}}Parallax</span><span>{{icon:orbit:22:#8E8780:2}}Gantook</span><span>{{icon:leaf:22:#8E8780:2}}Mintwave</span><span>{{icon:sun:22:#8E8780:2}}Sundial</span><span>{{icon:feather:22:#8E8780:2}}Fernbank</span>
- </div>
-</div>
+<div style="height:96px"></div>
+<div class="ct logos"><p>Banking 14,200 startups from pre-seed to Series C</p>
+ <span>{{icon:hexagon:20:#8A90A0}}Fieldnote</span><span>{{icon:triangle:20:#8A90A0}}Parallax</span><span>{{icon:orbit:20:#8A90A0}}Orbitly</span><span>{{icon:waves:20:#8A90A0}}Tidal Labs</span><span>{{icon:sun:20:#8A90A0}}Sundial</span><span>{{icon:leaf:20:#8A90A0}}Fernbank</span></div>
 
+<div class="gap"></div>
 <!-- CARDS -->
-<div class="in cardsec">
- <div class="csplit">
-  <div>
-   <div class="tag">Corporate cards</div>
-   <h2 class="h2" style="margin-top:20px">A card for every teammate.<br><span class="g">A rule for every card.</span></h2>
-   <div class="feat">
-    <div><i>{{icon:sliders-horizontal:19:#F6BE8C}}</i><div><b>Limits by person, team or vendor</b><span>Set $2,000 a month for design tools or one card per trip.</span></div></div>
-    <div><i>{{icon:receipt:19:#F6BE8C}}</i><div><b>Receipts matched for you</b><span>Snap or forward one, Northvault files it to the right expense.</span></div></div>
-    <div><i>{{icon:percent:19:#F6BE8C}}</i><div><b>1.5% cash back, no fees</b><span>On every swipe, paid out on the 1st of the month.</span></div></div>
-   </div>
+<div class="ct cards">
+ <div>
+  <div class="eb">Corporate cards</div>
+  <h2 style="margin-top:24px">A card for every<br>teammate. <span class="g">A rule<br>for every one.</span></h2>
+  <div class="feat">
+   <div><i>{{icon:shield-check:20:#B9C9FF}}</i><div><b>Limits by person, team or vendor</b><p>Set them once. Northvault declines anything outside them.</p></div></div>
+   <div><i>{{icon:receipt:20:#B9C9FF}}</i><div><b>Receipts matched for you</b><p>Snap it or forward it. It lands on the right transaction.</p></div></div>
+   <div><i>{{icon:zap:20:#B9C9FF}}</i><div><b>1.5% back, no FX fees</b><p>Paid into your operating account every month.</p></div></div>
   </div>
-  <div class="cvis">
-   <div class="chip glass" style="left:28px;top:40px"><div class="ph" style="background-image:url(mei.jpg)"></div><div><b>Mei · Design tools</b><span>Monthly limit</span></div><em>$2,000</em></div>
-   <div class="chip glass" style="left:28px;top:132px"><div class="ph" style="background-image:url(kenji.jpg)"></div><div><b>Kenji · Paid ads</b><span>Monthly limit</span></div><em>$25,000</em></div>
-   <div class="chip glass" style="left:28px;bottom:40px"><div class="ph" style="background-image:url(olivia.jpg)"></div><div><b>Olivia · Berlin offsite</b><span>Single trip, ends Dec 12</span></div><em>$8,000</em></div>
-  </div>
+ </div>
+ <div class="photo">
+  <div class="lim glass" style="left:24px;top:24px"><div class="ph" style="background-image:url(mei.jpg)"></div><div><b>Mei Tanaka</b><span>Design tools</span></div><div class="v"><b>$2,000</b><div class="bar4"><i style="width:64%"></i></div></div></div>
+  <div class="lim glass" style="left:24px;top:112px"><div class="ph" style="background-image:url(kenji.jpg)"></div><div><b>Kenji Sato</b><span>Cloud and infra</span></div><div class="v"><b>$25,000</b><div class="bar4"><i style="width:82%"></i></div></div></div>
+  <div class="lim glass" style="left:24px;bottom:24px"><div style="width:40px;height:40px;border-radius:12px;background:rgba(255,92,92,.14);display:grid;place-items:center">{{icon:ban:20:#FF8080}}</div><div><b>Blocked by rule</b><span>Gambling · $340 · 09:12</span></div></div>
  </div>
 </div>
 
-<!-- PRODUCT -->
-<div class="in prod">
- <div class="tag">Dashboard</div>
- <h2 class="h2" style="margin-top:20px">Your runway, live<br><span class="g">every single morning.</span></h2>
- <p class="lead">Cash, burn and runway update with every payment, so the board deck writes its own first slide.</p>
- <div class="glow" style="top:560px"></div>
- <div class="win">
-  <div class="side">
-   <div class="logo" style="font-size:18px;margin:2px 8px 18px"><i style="width:30px;height:30px;border-radius:9px">{{icon:landmark:15:#1A0C04:2}}</i>Northvault</div>
-   <div class="sl on">{{icon:house:17:#F6BE8C}}Home</div>
-   <div class="sl">{{icon:credit-card:17:#B9B2AB}}Cards</div>
-   <div class="sl">{{icon:arrow-left-right:17:#B9B2AB}}Payments</div>
-   <div class="sl">{{icon:trending-up:17:#B9B2AB}}Treasury</div>
-   <div class="sl">{{icon:file-text:17:#B9B2AB}}Bill pay</div>
-   <div class="sl">{{icon:book-open:17:#B9B2AB}}Accounting</div>
-   <div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px;border-radius:14px;background:rgba(255,255,255,.04)"><div class="ph" style="width:36px;height:36px;background-image:url(daniel.jpg)"></div><div><b style="font-size:14px;font-weight:500;display:block">Daniel Brooks</b><span style="font-size:12.5px;color:var(--ink3)">CEO · Kilnworks</span></div></div>
-  </div>
-  <div class="main">
-   <div class="mh"><h3>Good morning, Daniel</h3><span>Wed, Nov 25 · updated 08:02</span></div>
-   <div class="box" style="position:relative">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start">
-     <div><div style="font-size:14px;color:var(--ink3)">Total cash</div><div class="big" style="margin-top:6px">$4,081,930<small>.42</small></div></div>
-     <div style="display:flex;gap:10px"><div style="text-align:right"><div style="font-size:14px;color:var(--ink3)">Monthly burn</div><div style="font-family:'Sora';font-size:24px;font-weight:300;margin-top:8px">$112.8k</div></div><div style="width:1px;background:var(--line);margin:0 8px"></div><div style="text-align:right"><div style="font-size:14px;color:var(--ink3)">Runway</div><div style="font-family:'Sora';font-size:24px;font-weight:300;margin-top:8px;color:var(--cu2)">36 months</div></div></div>
-    </div>
-    <svg id="ch" width="100%" height="356" viewBox="0 0 600 356" preserveAspectRatio="none" style="margin-top:6px;display:block"></svg>
-   </div>
-   <div style="display:flex;flex-direction:column;gap:18px">
-    <div class="box lit" style="background:radial-gradient(ellipse at 50% 110%,rgba(233,147,90,.45),rgba(20,14,12,.6) 70%);border-color:rgba(246,190,140,.3)">
-     <div style="font-size:14px;color:var(--ink2);display:flex;justify-content:space-between">Treasury yield <span style="color:var(--cu2)">4.10% APY</span></div>
-     <div class="big" style="font-size:40px;margin-top:10px">+$5,466<small>.67</small></div>
-     <div style="font-size:13.5px;color:var(--ink2);margin-top:6px">earned on $1.60M this month</div>
-    </div>
-    <div class="box" style="flex:1;padding:16px 18px">
-     <div style="font-size:15px;font-weight:500;margin-bottom:6px">Bills this week</div>
-     <div class="bl"><div class="n"><i>{{icon:cloud:16:#F6BE8C}}</i><div>Stratus Cloud<small>Fri · auto-pay</small></div></div><span>$18,420</span></div>
-     <div class="bl"><div class="n"><i>{{icon:building-2:16:#F6BE8C}}</i><div>Office lease<small>Mon · approved</small></div></div><span>$9,600</span></div>
-     <div class="bl"><div class="n"><i>{{icon:scale:16:#F6BE8C}}</i><div>Halden Legal<small>Needs 1 approval</small></div></div><span class="st" style="background:rgba(233,147,90,.16);color:var(--cu2)">$4,250</span></div>
-     <div class="bl"><div class="n"><i>{{icon:pen-tool:16:#F6BE8C}}</i><div>Kestrel Design<small>Thu · scheduled</small></div></div><span>$3,900</span></div>
-     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--ink2)"><span>4 bills this week</span><b style="font-weight:500;color:var(--ink)">$36,170</b></div>
-    </div>
-   </div>
-  </div>
+<div class="gap"></div>
+<!-- FLOW -->
+<div class="ct">
+ <div style="display:flex;justify-content:space-between;align-items:flex-end">
+  <div><div class="eb">How money moves</div><h2 style="margin-top:24px">From the bank to the books,<br><span class="g">without a spreadsheet.</span></h2></div>
+  <p style="width:360px;font-size:16px;line-height:24px;color:var(--ink2)">Money comes in, rules decide where it can go, cards and bills spend it, and every line lands in your ledger already coded.</p>
+ </div>
+ <div class="flow">
+  <svg id="fl" width="1200" height="560" viewBox="0 0 1200 560"></svg>
+  <div class="col" style="left:40px"><h5>01 Accounts</h5>
+   <div class="nd"><span>{{icon:wallet:16:#A9AEBA}}Operating</span><b>$1,912,410</b></div>
+   <div class="nd"><span>{{icon:landmark:16:#A9AEBA}}Treasury · 4.20%</span><b>$1,950,000</b></div>
+   <div class="nd"><span>{{icon:globe:16:#A9AEBA}}EUR account</span><b>€214,600</b></div></div>
+  <div class="col" style="left:340px;top:156px"><h5>02 Rules</h5>
+   <div class="nd lit"><span style="color:#DCE4FF">{{icon:shield-check:16:#DCE4FF}}38 active rules</span><b>Approve under $5k</b></div>
+   <div class="nd"><span>{{icon:users:16:#A9AEBA}}2 approvers</span><b>Bills over $10k</b></div></div>
+  <div class="col" style="left:640px"><h5>03 Spend</h5>
+   <div class="nd"><span>{{icon:credit-card:16:#A9AEBA}}Virtual cards</span><b>38 active</b></div>
+   <div class="nd"><span>{{icon:credit-card:16:#A9AEBA}}Physical cards</span><b>12 active</b></div>
+   <div class="nd"><span>{{icon:receipt:16:#A9AEBA}}Bills this month</span><b>24 paid</b></div></div>
+  <div class="col" style="left:920px"><h5>04 Books</h5>
+   <div class="nd" style="height:280px;background:rgba(94,240,180,.04);border-color:rgba(94,240,180,.24)"><span>{{icon:book-check:16:#5EF0B4}}Synced to your ledger</span><b style="font-size:56px;line-height:56px;letter-spacing:-2.4px;margin-top:24px">2,184</b><span style="margin-top:8px;display:block;color:var(--ink2)">transactions coded this month</span><span style="margin-top:24px;display:block;color:var(--mi)">0 left to review</span></div></div>
  </div>
 </div>
 
+<div class="gap"></div>
+<!-- METRICS -->
+<div class="ct mets">
+ <div><b class="chrome">$9.4<small>B</small></b><span>moved through Northvault in 2026</span></div>
+ <div><b class="chrome">14.2<small>k</small></b><span>startups bank with us</span></div>
+ <div><b class="chrome">4.20<small>%</small></b><span>APY on idle cash in treasury</span></div>
+ <div><b class="chrome">30<small>s</small></b><span>to issue a virtual card</span></div>
+</div>
+
+<div class="gap"></div>
 <!-- BENTO -->
-<div class="in bento">
- <div class="bhead"><h2 class="h2">Every money job,<br><span class="g">done in one place.</span></h2><p class="lead" style="width:420px">Treasury, bill pay and books share the same ledger, so nothing needs to be exported, matched or chased again.</p></div>
- <div class="bgrid">
-  <div class="bc lit">
-   <div class="tag">Treasury</div>
-   <h4 style="margin-top:14px">Idle cash that<br>earns while you build.</h4>
-   <div style="display:flex;gap:8px;margin-top:22px;flex-wrap:wrap"><span class="pill" style="height:32px;padding:0 14px">$1.60M invested</span><span class="pill" style="height:32px;padding:0 14px">Paid monthly</span><span class="pill" style="height:32px;padding:0 14px">Withdraw any day</span></div>
-   <div class="vis" style="text-align:center">
-    <svg width="324" height="200" viewBox="0 0 324 200" id="arc"></svg>
-    <div style="font-family:'Sora';font-size:96px;font-weight:200;letter-spacing:-5px;line-height:1;margin-top:-108px">4.10<span style="font-size:40px;color:var(--cu2)">%</span></div>
-    <div style="font-size:15px;color:var(--ink2);margin-top:12px">APY on government money market funds</div>
-   </div>
-  </div>
-  <div class="bc">
-   <div class="tag">Bill pay</div>
-   <h4 style="margin-top:14px">Approvals that<br>don't wait for Slack.</h4>
-   <div class="vis"><svg width="324" height="320" viewBox="0 0 324 320" id="orb"></svg>
-    <div class="glass" style="position:absolute;left:0;right:0;bottom:0;border-radius:16px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><b style="font-weight:500">Halden Legal</b> · $4,250</span><span style="color:#8FE0A8">2 of 3 approved</span></div>
-   </div>
-  </div>
-  <div class="bc">
-   <div class="tag">Accounting</div>
-   <h4 style="margin-top:14px">Books that close<br>in one day, not ten.</h4>
-   <div class="vis" id="flow"></div>
-  </div>
+<div class="ct">
+ <div class="eb">Built in</div><h2 style="margin-top:24px">Everything finance does,<br><span class="g">done before Friday.</span></h2>
+ <div class="bento">
+  <div class="bc lit"><h4>Treasury</h4><p>Idle cash moves into treasury overnight and comes back when you need it.</p>
+   <div class="apy"><b>4.20<small>%</small></b><span>$1.95M earns <b style="color:#fff;font-weight:500">$6,825</b> a month</span></div></div>
+  <div class="bc"><h4>Bill pay with approvals</h4><p>Upload an invoice. The right people sign off from their phone.</p>
+   <div class="appr"><div class="inv"><div class="r"><span>Lumen Cloud · INV-2207</span><span>Due Nov 30</span></div><div class="amt">$18,400.00</div></div>
+    <div class="steps">
+     <div class="st"><div class="ph" style="background-image:url(rohan.jpg)"></div><span><b>Rohan</b> · Finance</span><em class="ok">Approved</em></div>
+     <div class="st"><div class="ph" style="background-image:url(olivia.jpg)"></div><span><b>Olivia</b> · CEO</span><em class="ok">Approved</em></div>
+     <div class="st"><div class="ph" style="background-image:url(amara.jpg)"></div><span><b>Amara</b> · CTO</span><em class="wt">Waiting</em></div></div></div></div>
+  <div class="bc"><h4>Books that close themselves</h4><p>Every transaction is matched, coded and synced to your accounting tool.</p>
+   <div class="ledger">
+    <div class="lr"><div><b>Cloud hosting</b><span>Software · Kenji</span></div><span class="a">$9,820.00</span>{{icon:circle-check:20:#5EF0B4}}</div>
+    <div class="lr"><div><b>Team offsite</b><span>Travel · Olivia</span></div><span class="a">$4,212.40</span>{{icon:circle-check:20:#5EF0B4}}</div>
+    <div class="lr"><div><b>Design license</b><span>Software · Mei</span></div><span class="a">$1,188.00</span>{{icon:circle-check:20:#5EF0B4}}</div>
+    <div class="lr"><div><b>Payroll tax</b><span>Taxes · auto</span></div><span class="a">$31,640.00</span>{{icon:circle-check:20:#5EF0B4}}</div>
+   </div></div>
  </div>
 </div>
 
+<div class="gap"></div>
 <!-- TESTIMONIAL -->
-<div class="in tst">
- <div class="tgrid">
-  <div class="tph"><div class="cap glass"><div><b style="font-weight:500;font-size:17px;display:block">Amara Okafor</b><span style="font-size:14px;color:var(--ink3)">CFO · Parallax</span></div><span class="pill" style="height:30px;padding:0 12px">Series A · 2026</span></div></div>
-  <div class="tq">
-   <div class="tag">From a customer</div>
-   <q>"We closed our Series A on a Tuesday and had the money earning 4% by Wednesday. <span class="g">Our month-end went from ten days to one, and nobody on the team has asked me for a card since."</span></q>
-   <div class="tm">
-    <div><b>1<small> day</small></b><span>to close the books</span></div>
-    <div><b>$61k</b><span>treasury yield this year</span></div>
-    <div><b>42</b><span>cards, zero shared logins</span></div>
-   </div>
-  </div>
+<div class="ct tst">
+ <div class="por"><div class="tag glass"><b>Elena Varga</b><span>CEO, Fieldnote · Series A</span></div></div>
+ <div>
+  <div class="eb">Founders on Northvault</div>
+  <p class="q" style="margin-top:32px">"We closed our round on a Tuesday. By Wednesday the money was earning 4.2%, <span class="g">and every engineer had a card with a limit I never had to chase."</span></p>
+  <div class="qm"><div><b class="chrome">12h</b><span>saved on expenses each month</span></div><div><b class="chrome">$0</b><span>in card or FX fees this year</span></div><div><b class="chrome">34</b><span>months of runway, live</span></div></div>
  </div>
 </div>
 
+<div class="gap"></div>
+<!-- FAQ -->
+<div class="ct faq">
+ <div><div class="eb">Questions</div><h2 style="margin-top:24px">Before you<br><span class="g">switch banks.</span></h2><p style="font-size:16px;line-height:24px;color:var(--ink2);margin-top:24px;width:360px">Moving takes about ten minutes. We copy your payees and cards over for you.</p></div>
+ <div>
+  <div class="fq on"><span class="n mono">01</span><div><b>Is my money insured?</b><p>Deposits are spread across partner banks for up to $5M in coverage, and treasury holds short-term government funds.</p></div><i>{{icon:minus:18:#FFFFFF:2}}</i></div>
+  <div class="fq"><span class="n mono">02</span><div><b>How fast can my team get cards?</b></div><i>{{icon:plus:18:#A9AEBA:2}}</i></div>
+  <div class="fq"><span class="n mono">03</span><div><b>Does it work with our accounting tool?</b></div><i>{{icon:plus:18:#A9AEBA:2}}</i></div>
+  <div class="fq"><span class="n mono">04</span><div><b>What does Northvault cost?</b></div><i>{{icon:plus:18:#A9AEBA:2}}</i></div>
+ </div>
+</div>
+
+<div class="gap"></div>
 <!-- CTA -->
-<div class="frame cta">
- <div class="c">
-  <span class="pill"><b>10 min</b><span>Open online, no branch visit</span></span>
-  <h2 style="margin-top:26px">Your money should move<br><span class="g">as fast as you do.</span></h2>
-  <p>Free to open. No minimum balance. FDIC insured up to $5M through partner banks.</p>
-  <div style="display:flex;gap:12px;justify-content:center;margin-top:34px"><span class="btn cu">Open an account {{icon:arrow-right:17:#1A0C04:2}}</span><span class="btn ghost">Talk to sales</span></div>
- </div>
+<div class="fr cta"><div class="stars"></div><div class="cglow"></div><div class="pl"></div>
+ <div class="in"><h3><span class="chrome">Open an account</span> <span class="serif" style="color:var(--co3);font-size:72px">in ten minutes.</span></h3>
+ <div class="btns"><span class="btn bp">Open an account {{icon:arrow-up-right:18:#07080A:2}}</span><span class="btn bg">Talk to a banker</span></div></div>
 </div>
-
 <!-- FOOTER -->
-<div class="frame foot">
+<div class="fr foot">
  <div class="fcols">
-  <div><div class="logo"><i>{{icon:landmark:18:#1A0C04:2}}</i>Northvault</div><p style="font-size:15.5px;color:var(--ink3);line-height:1.55;margin-top:18px;width:250px">Business banking for startups that would rather build than reconcile.</p></div>
+  <div><div class="logo"><i>{{icon:landmark:18:#FFFFFF:2}}</i>Northvault</div><p style="font-size:16px;line-height:24px;color:var(--ink2);margin-top:16px;width:240px">Business banking for startups that move fast and spend carefully.</p></div>
   <div><h6>Product</h6><a>Accounts</a><a>Cards</a><a>Treasury</a><a>Bill pay</a></div>
-  <div><h6>Company</h6><a>About</a><a>Careers</a><a>Press</a><a>Security</a></div>
-  <div><h6>Resources</h6><a>Runway calculator</a><a>Founder guides</a><a>API docs</a><a>Help center</a></div>
-  <div><h6>The monthly memo</h6><p style="font-size:15px;color:var(--ink3);line-height:1.5">One email a month on burn, runway and raising.</p><div class="news">you@startup.com<span>Subscribe</span></div></div>
+  <div><h6>Company</h6><a>About</a><a>Careers</a><a>Security</a><a>Press</a></div>
+  <div><h6>Help</h6><a>Support</a><a>Guides</a><a>Status</a><a>Contact</a></div>
+  <div><h6>Monthly finance notes</h6><div class="nl">you@startup.com<span>Subscribe</span></div><p style="font-size:14px;line-height:20px;color:var(--ink3);margin-top:12px">One email a month. No spam.</p></div>
  </div>
- <div class="legal"><span>© 2026 Northvault Financial, Inc. Banking services by partner banks, members FDIC.</span><span>Privacy · Terms · Disclosures</span></div>
- <div class="word">Northvault</div>
+ <div class="fb"><span>© 2026 Northvault Inc. Banking services by partner banks.</span><span>Privacy · Terms · Licenses</span></div>
+ <div class="word chrome">Northvault</div>
 </div>
-
 <script>
-const F='Inter Tight';
-// cash chart
-(function(){
+(function(){ // hero cash chart
+ const c=document.getElementById('hc');const L=40,R=776,T=16,B=216;
  const m=['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'];
- const v=[1520,1410,1300,1190,1080,970,4646,4533,4420,4308,4195,4082];
- const L=46,R=588,T=24,B=316,max=5000,X=i=>L+(R-L)/11*i,Y=k=>B-(B-T)*k/max;let s='';
- s+=`<defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9935A" stop-opacity=".45"/><stop offset="1" stop-color="#E9935A" stop-opacity="0"/></linearGradient><filter id="gl" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="5"/></filter></defs>`;
- for(let k=0;k<=5000;k+=1000){s+=`<line x1="${L}" x2="${R}" y1="${Y(k)}" y2="${Y(k)}" stroke="rgba(255,255,255,.07)" ${k?'stroke-dasharray="3 5"':''}/><text x="${L-10}" y="${Y(k)+4}" text-anchor="end" font-family="${F}" font-size="12.5" fill="rgba(243,238,232,.45)">$${k/1000}M</text>`}
- let p='';v.forEach((k,i)=>{p+=(i?'L':'M')+X(i)+' '+Y(k)});
- s+=`<path d="${p} L${X(11)} ${B} L${X(0)} ${B} Z" fill="url(#ar)"/>`;
- s+=`<path d="${p}" fill="none" stroke="#F6BE8C" stroke-width="6" stroke-opacity=".5" filter="url(#gl)"/><path d="${p}" fill="none" stroke="#F6BE8C" stroke-width="2.5" stroke-linejoin="round"/>`;
- m.forEach((t,i)=>{s+=`<text x="${X(i)}" y="${B+24}" text-anchor="middle" font-family="${F}" font-size="12.5" fill="${i==11?'#F3EEE8':'rgba(243,238,232,.45)'}">${t}</text>`});
- s+=`<line x1="${X(6)}" x2="${X(6)}" y1="${Y(4646)}" y2="${B}" stroke="rgba(246,190,140,.5)" stroke-dasharray="3 4"/><circle cx="${X(6)}" cy="${Y(4646)}" r="6" fill="#F6BE8C"/>`;
- s+=`<g transform="translate(${X(6)-208},${Y(4646)-8})"><rect width="192" height="56" rx="14" fill="#F3EEE8"/><text x="14" y="22" font-family="${F}" font-size="12.5" fill="#6B625B">Jun 4 · Series A closed</text><text x="14" y="43" font-family="${F}" font-size="17" font-weight="600" fill="#1A0C04">+$3,676,000</text></g>`;
- s+=`<circle cx="${X(11)}" cy="${Y(4082)}" r="7" fill="#050404" stroke="#F6BE8C" stroke-width="3"/>`;
- document.getElementById('ch').innerHTML=s;
+ const v=[1.87,1.76,1.65,1.54,1.43,1.32,4.41,4.30,4.19,4.08,3.97,3.86];
+ const X=i=>L+(R-L)/11*i,Y=x=>B-(B-T)*x/5;let s='';
+ s+=`<defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D6BFF" stop-opacity=".45"/><stop offset="1" stop-color="#3D6BFF" stop-opacity="0"/></linearGradient><filter id="gw"><feGaussianBlur stdDeviation="4"/></filter></defs>`;
+ [0,1,2,3,4,5].forEach(k=>{s+=`<line x1="${L}" x2="${R}" y1="${Y(k)}" y2="${Y(k)}" stroke="rgba(255,255,255,.06)"/><text x="${L-8}" y="${Y(k)+4}" fill="#6B7180" font-size="12" font-family="Geist" text-anchor="end">$${k}M</text>`});
+ let p='';v.forEach((x,i)=>{p+=(i?'L':'M')+X(i)+' '+Y(x)});
+ s+=`<path d="${p} L${R} ${B} L${L} ${B}Z" fill="url(#ar)"/><path d="${p}" fill="none" stroke="#7D9BFF" stroke-width="6" filter="url(#gw)" opacity=".8"/><path d="${p}" fill="none" stroke="#B9C9FF" stroke-width="2"/>`;
+ m.forEach((t,i)=>{s+=`<text x="${X(i)}" y="${B+24}" fill="#6B7180" font-size="12" font-family="Geist" text-anchor="middle">${t}</text>`});
+ s+=`<circle cx="${X(6)}" cy="${Y(4.41)}" r="6" fill="#fff" stroke="#3D6BFF" stroke-width="4"/>`;
+ s+=`<g transform="translate(${X(6)+16},${Y(4.41)-8})"><rect width="168" height="48" rx="12" fill="#F4F6FA"/><text x="12" y="20" font-size="12" font-family="Geist" fill="#6B7180">Jun 4 · Series A</text><text x="12" y="40" font-size="16" font-weight="600" font-family="Geist" fill="#07080A">+$3,200,000</text></g>`;
+ c.innerHTML=s;
 })();
-// treasury arc
-(function(){
- const cx=162,cy=186,r=156;let s=`<defs><filter id="ag"><feGaussianBlur stdDeviation="4"/></filter></defs>`;
- const N=40;for(let i=0;i<N;i++){const a=Math.PI*(1-(i+.5)/N),lit=i<30;
-  s+=`<line x1="${cx+(r-22)*Math.cos(a)}" y1="${cy-(r-22)*Math.sin(a)}" x2="${cx+r*Math.cos(a)}" y2="${cy-r*Math.sin(a)}" stroke="${lit?'#F6BE8C':'rgba(255,255,255,.16)'}" stroke-width="4" stroke-linecap="round"/>`}
- document.getElementById('arc').innerHTML=s;
-})();
-// approvals orbit
-(function(){
- const cx=162,cy=140;let s='';
- [118,82].forEach((r,i)=>s+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,${i?.12:.08})" stroke-dasharray="${i?'0':'4 6'}"/>`);
- s+=`<circle cx="${cx}" cy="${cy}" r="44" fill="rgba(233,147,90,.22)"/><circle cx="${cx}" cy="${cy}" r="30" fill="#E9935A"/>`;
- document.getElementById('orb').innerHTML=s;
- const pos=[['mei',162-118,140,1],['kenji',162+84,140-84,1],['amara',162+104,140+52,0]];
- const host=document.getElementById('orb').parentElement;
- host.insertAdjacentHTML('beforeend',`<div style="position:absolute;left:${162-15}px;top:${140-15}px;width:30px;height:30px;display:grid;place-items:center">{{icon:file-text:20:#1A0C04:2}}</div>`);
- pos.forEach(([n,x,y,ok])=>host.insertAdjacentHTML('beforeend',`<div style="position:absolute;left:${x-24}px;top:${y-24}px;width:48px;height:48px;border-radius:50%;background:url(${n}.jpg) center 25%/cover;border:2px solid ${ok?'#8FE0A8':'rgba(255,255,255,.35)'}"></div><div style="position:absolute;left:${x+12}px;top:${y+10}px;width:20px;height:20px;border-radius:50%;background:${ok?'#8FE0A8':'#3A322D'};display:grid;place-items:center;font-size:12px;color:#06210F;font-weight:700">${ok?'✓':'…'}</div>`));
-})();
-// accounting flow
-(function(){
- const rows=[['Card · Lumen Print','$1,240.00','Software'],['ACH · Stratus Cloud','$18,420.00','Hosting'],['Wire · Halden Legal','$4,250.00','Legal'],['Card · Kiosk Alfama','$38.60','Meals']];
- let h='<div style="display:flex;flex-direction:column;gap:10px">';
- rows.forEach((r,i)=>{h+=`<div style="display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:16px;background:${i==1?'rgba(233,147,90,.12)':'rgba(255,255,255,.04)'};border:1px solid ${i==1?'rgba(246,190,140,.35)':'rgba(255,255,255,.07)'}"><div style="flex:1"><div style="font-size:14.5px;font-weight:500">${r[0]}</div><div style="font-size:12.5px;color:rgba(243,238,232,.46);margin-top:2px">${r[1]}</div></div><span style="font-size:12.5px;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.07);color:rgba(243,238,232,.75)">${r[2]}</span><span style="width:24px;height:24px;border-radius:50%;background:#8FE0A8;display:grid;place-items:center;color:#06210F;font-size:13px;font-weight:700">✓</span></div>`});
- h+='<div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(243,238,232,.72);margin-top:6px;padding:0 4px"><span>Synced to your ledger</span><span style="color:#F6BE8C">1,284 of 1,284 matched</span></div></div>';
- document.getElementById('flow').innerHTML=h;
+(function(){ // flow wires
+ const f=document.getElementById('fl');let s='<defs><filter id="w"><feGaussianBlur stdDeviation="6"/></filter></defs>';
+ const w=(x1,y1,x2,y2)=>{const mx=(x1+x2)/2;const d=`M${x1} ${y1} C${mx} ${y1},${mx} ${y2},${x2} ${y2}`;return `<path d="${d}" fill="none" stroke="#3D6BFF" stroke-width="8" opacity=".5" filter="url(#w)"/><path d="${d}" fill="none" stroke="#7D9BFF" stroke-width="2"/><circle cx="${x2}" cy="${y2}" r="4" fill="#B9C9FF"/>`};
+ // accounts nodes centers y: 56+32+44=132, +100=232, 332 ; rules: 156+32+44=232, 332 ; spend: 132,232,332 ; books center 88+140=228
+ [132,232,332].forEach(y=>{s+=w(280,y,340,232)});
+ s+=w(580,232,640,132);s+=w(580,232,640,232);s+=w(580,332,640,332);
+ [132,232,332].forEach(y=>{s+=w(880,y,920,228)});
+ f.innerHTML=s;
 })();
 </script>
 </body></html>

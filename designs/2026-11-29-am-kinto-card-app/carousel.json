@@ -3,147 +3,147 @@
   "screen": "auto",
   "flat": true,
   "name": "Kinto",
-  "category": "Card & wallet",
-  "tagline": "Pay abroad from the right pocket, at the real rate, with no FX fee.",
-  "font": "Geist",
-  "font_note": "Thin, precise numerals for amounts and rates, with an Instrument Serif italic for the calm, human lines.",
+  "category": "Wallet & cards",
+  "tagline": "Three cards, four currencies and one balance, with a weekly cap that keeps you honest.",
+  "font": "Figtree",
+  "font_note": "Light, wide numerals for big balances, paired with an Instrument Serif italic for the warm, human lines.",
   "gradient": [
-   "#DDE2DF",
-   "#5CF2B4",
-   "#12352A",
-   "#060807"
+   "#FFD3C0",
+   "#FF4F9A",
+   "#5A1E3A",
+   "#0A0709"
   ],
   "paper": "#EEEEEE",
   "palette": [
    [
-    "#5CF2B4",
-    "Kinto mint"
+    "#FF4F9A",
+    "Kinto rose"
    ],
    [
-    "#1FA877",
-    "Emerald"
+    "#FFB08A",
+    "Peach"
    ],
    [
-    "#C9CCD1",
-    "Titanium"
+    "#F4EEEA",
+    "Pearl"
    ],
    [
-    "#7E848C",
-    "Steel"
+    "#8C8189",
+    "Mauve grey"
    ],
    [
-    "#121614",
-    "Graphite"
+    "#1A1418",
+    "Plum ink"
    ],
    [
-    "#060807",
+    "#0A0709",
     "Night"
    ]
   ],
   "zoom": [
    0,
-   372,
+   300,
    393,
-   272
+   240
   ],
-  "zoom_title": "One tap in Lisbon,<br>the cheapest pocket pays.",
-  "components_title": "Titanium, mint<br>and glass.",
+  "zoom_title": "Every card and currency,<br>one number.",
+  "components_title": "Rose glass,<br>pearl metal.",
   "elements": {
-   "trip": {
-    "box": [
-     119,
-     60,
-     155,
-     42
-    ],
-    "r": 21
-   },
-   "nfc": {
-    "box": [
-     18,
-     330,
-     212,
-     34
-    ],
-    "r": 17
-   },
-   "amt": {
-    "box": [
-     14,
-     378,
-     365,
-     154
-    ],
-    "r": 24
-   },
-   "pk": {
-    "box": [
-     14,
-     558,
-     365,
-     76
-    ],
-    "r": 22
-   },
-   "on": {
-    "box": [
-     14,
-     558,
-     134,
-     76
-    ],
-    "r": 22
-   },
-   "sv": {
-    "box": [
-     14,
-     646,
-     365,
-     96
-    ],
-    "r": 24
-   },
-   "sl": {
-    "box": [
-     14,
-     764,
-     365,
-     62
-    ],
-    "r": 31
-   },
    "hero": {
     "box": [
-     0,
-     96,
-     393,
-     226
+     12,
+     100,
+     369,
+     204
     ],
-    "r": 28
+    "r": 24
+   },
+   "top": {
+    "box": [
+     16,
+     56,
+     168,
+     48
+    ],
+    "r": 24
+   },
+   "ctag": {
+    "box": [
+     20,
+     312,
+     194,
+     32
+    ],
+    "r": 16
+   },
+   "bal": {
+    "box": [
+     4,
+     352,
+     296,
+     128
+    ],
+    "r": 16
+   },
+   "seg": {
+    "box": [
+     20,
+     480,
+     353,
+     48
+    ],
+    "r": 24
+   },
+   "wk": {
+    "box": [
+     20,
+     544,
+     353,
+     128
+    ],
+    "r": 24
+   },
+   "row": {
+    "box": [
+     16,
+     680,
+     361,
+     64
+    ],
+    "r": 16
+   },
+   "tab": {
+    "box": [
+     48,
+     760,
+     297,
+     64
+    ],
+    "r": 32
    }
   },
   "s2_floats": [
    [
-    "nfc",
-    400,
-    50,
+    "ctag",
+    380,
+    40,
     560,
     -4,
     3
    ],
    [
-    "pk",
-    520,
+    "seg",
+    540,
     30,
-    760,
+    740,
     3,
     3
    ],
    [
-    "sl",
-    560,
+    "tab",
+    520,
     40,
-    1120,
+    1110,
     -3,
     3
    ]
@@ -151,64 +151,64 @@
   "s4_floats": [
    [
     "hero",
+    540,
     500,
-    520,
-    110,
+    96,
     3,
     1
    ],
    [
-    "amt",
-    700,
-    90,
-    420,
+    "bal",
+    520,
+    80,
+    380,
     0,
     1
    ],
    [
-    "trip",
-    360,
+    "seg",
+    900,
     90,
-    725,
-    -3,
+    660,
+    0,
     1
    ],
    [
-    "nfc",
-    440,
-    560,
-    742,
+    "wk",
+    520,
+    80,
+    830,
+    -2,
+    1
+   ],
+   [
+    "row",
+    380,
+    660,
+    850,
     3,
     1
    ],
    [
-    "pk",
-    900,
-    90,
-    840,
+    "ctag",
+    380,
+    660,
+    1000,
+    -3,
+    1
+   ],
+   [
+    "tab",
+    600,
+    240,
+    1120,
     -1,
-    1
-   ],
-   [
-    "sv",
-    560,
-    90,
-    1045,
-    2,
-    1
-   ],
-   [
-    "sl",
-    700,
-    90,
-    1190,
-    -2,
     1
    ]
   ],
   "bg2": "#EEEEEE",
   "bg4": "#EEEEEE",
-  "s2_ink": "#060807",
-  "s4_ink": "#060807"
+  "s2_ink": "#0A0709",
+  "s4_ink": "#0A0709"
  }
 }

@@ -1,9 +1,9 @@
-Paying abroad shouldn't cost you a 3% surprise.
-Fintech app UI design: metal card payment, multi-currency pockets and real exchange rate, dark mode
+Three cards, four currencies, and you still don't know what you can spend.
+Fintech wallet app UI design in dark mode: card stack, multi-currency balance and weekly spending cap
 
-Kinto shows one moment: a card tapping a terminal in Lisbon, the amount in big thin type, the real rate, and the pocket it picked to skip the FX fee. Slide once and it's paid.
+Kinto folds every card and pocket into one balance, then puts a weekly cap right under it with one lit bar for your biggest day. Everything sits on a 4pt grid, so the screen stays calm even with this much money on it.
 
-Save this for your next fintech app
-Do you keep money in more than one currency when you travel?
+Save this for your next banking or wallet app
+Would you rather see your total balance or what's left to spend this week?
 
-#uiux #mobileappdesign #fintechdesign #bankingapp #fintech
+#uiux #mobileappdesign #fintechdesign #walletapp #darkmodeui

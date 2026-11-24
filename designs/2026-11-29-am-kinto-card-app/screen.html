@@ -1,82 +1,114 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
 <meta name="app-name" content="Kinto">
-<meta name="app-desc" content="A metal card and wallet that **picks the right currency pocket** when you pay abroad, shows the real rate, and lets you **slide to pay with no FX fee**.">
-<meta name="fonts" content="Geist|Thin, precise numerals for amounts and rates, with an Instrument Serif italic for the calm, human lines.">
-<meta name="palette" content="#5CF2B4:Kinto mint|#1FA877:Emerald|#C9CCD1:Titanium|#7E848C:Steel|#121614:Graphite|#060807:Night">
+<meta name="app-desc" content="A wallet with **three cards and four currencies** in one stack. See your whole balance in one number and **cap your weekly spend** before it caps you.">
+<meta name="fonts" content="Figtree|Light, wide numerals for big balances, paired with an Instrument Serif italic for the warm, human lines.">
+<meta name="palette" content="#FF4F9A:Kinto rose|#FFB08A:Peach|#F4EEEA:Pearl|#8C8189:Mauve grey|#1A1418:Plum ink|#0A0709:Night">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:393px;height:852px;overflow:hidden;font-family:'Geist';color:#EEF3F0;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#060807}
-.photo{position:absolute;left:0;top:0;width:393px;height:520px;background:url(tap.jpg) center 18%/393px auto no-repeat;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
-.shade{position:absolute;left:0;top:0;width:393px;height:520px;background:linear-gradient(180deg,rgba(6,8,7,.55) 0%,rgba(6,8,7,0) 22%,rgba(6,8,7,0) 52%,rgba(6,8,7,.85) 86%,#060807 100%)}
-.glow{position:absolute;left:-60px;top:300px;width:520px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(92,242,180,.20),rgba(92,242,180,0))}
-.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
-.sb span:last-child{display:flex;gap:6px;align-items:center}
-.gl{background:rgba(255,255,255,.08);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.14)}
-.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;justify-content:space-between}
-.cb{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none}
-.trip{height:42px;padding:0 15px 0 6px;border-radius:999px;display:flex;align-items:center;gap:9px}
-.trip i{width:30px;height:30px;border-radius:50%;background:linear-gradient(145deg,#7DF7C6,#1FA877);display:grid;place-items:center}
-.trip b{display:block;font-size:13px;font-weight:600;line-height:1.15}.trip small{font-size:11px;color:#A7B0AB}
-.nfc{position:absolute;left:18px;top:330px;height:34px;padding:0 13px 0 8px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:#DDF7EC}
-.nfc em{width:20px;height:20px;border-radius:50%;background:#5CF2B4;display:grid;place-items:center;box-shadow:0 0 14px rgba(92,242,180,.9)}
-.amt{position:absolute;left:22px;right:22px;top:384px}
-.mer{display:flex;align-items:center;gap:8px;font-size:12px;color:#A7B0AB;letter-spacing:1.2px;text-transform:uppercase;font-weight:500}
-.mer i{width:6px;height:6px;border-radius:50%;background:#5CF2B4;box-shadow:0 0 8px #5CF2B4}
-.big{font-weight:200;font-size:84px;letter-spacing:-4.5px;line-height:1;margin-top:10px;background:linear-gradient(180deg,#FFFFFF 0%,#DDE2DF 50%,#8E9691 100%);-webkit-background-clip:text;color:transparent}
-.big small{font-size:38px;letter-spacing:-1px}
-.conv{font-size:13.5px;color:#A7B0AB;margin-top:8px}
-.conv i{font-family:'Instrument Serif';font-size:17px;color:#EEF3F0}
-.conv b{color:#5CF2B4;font-weight:600}
-.ph{position:absolute;left:18px;right:18px;top:536px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#A7B0AB}
-.pk{position:absolute;left:14px;right:14px;top:558px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px}
-.pk>div{height:76px;border-radius:22px;padding:11px 12px;position:relative}
-.pk .cur{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#DDE2DF}
-.pk .cur i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.12);color:#EEF3F0}
-.pk b{display:block;font-size:17px;font-weight:300;letter-spacing:-.5px;margin-top:9px}
-.pk .on{background:linear-gradient(150deg,rgba(92,242,180,.34),rgba(18,22,20,.75) 70%);border:1px solid rgba(92,242,180,.55);box-shadow:0 0 24px rgba(92,242,180,.18)}
-.pk .on .cur i{background:#5CF2B4;color:#06120D}
-.pk .on .tk{position:absolute;right:10px;top:11px;width:18px;height:18px;border-radius:50%;background:#5CF2B4;display:grid;place-items:center}
-.sv{position:absolute;left:14px;right:14px;top:646px;height:96px;border-radius:24px;padding:13px 15px;display:flex;gap:12px;align-items:center}
-.sv .ic{width:44px;height:44px;border-radius:14px;background:rgba(92,242,180,.14);border:1px solid rgba(92,242,180,.35);display:grid;place-items:center;flex:none}
-.sv .tx{flex:1}
-.sv .tx b{display:block;font-size:14px;font-weight:600}
-.sv .tx span{display:block;font-size:12px;color:#A7B0AB;margin-top:3px;line-height:1.35}
-.sv .tx span em{font-style:normal;color:#5CF2B4;font-weight:600}
-.sv .af{text-align:right;font-size:11px;color:#A7B0AB}
-.sv .af b{display:block;font-size:15px;font-weight:400;color:#EEF3F0;margin-top:3px;letter-spacing:-.3px}
-.sl{position:absolute;left:14px;right:14px;bottom:26px;height:62px;border-radius:999px;display:flex;align-items:center;padding:6px;background:linear-gradient(90deg,rgba(92,242,180,.22),rgba(255,255,255,.07) 45%);border:1px solid rgba(92,242,180,.4);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.sl .k{width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#B8FFE1,#22C487);display:grid;place-items:center;box-shadow:0 0 26px rgba(92,242,180,.75)}
-.sl .tx{position:absolute;left:0;right:0;text-align:center;font-size:15px;font-weight:600}
-.sl .tx span{color:#A7B0AB;font-weight:400}
-.sl .ch{position:absolute;right:22px;display:flex;opacity:.45}
-.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:#EEF3F0;transform:translateX(-50%)}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Figtree';color:#F4EEEA;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#0A0709}
+.glow{position:absolute;left:-80px;top:120px;width:560px;height:320px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,79,154,.28),rgba(255,79,154,0))}
+.glow2{position:absolute;right:-120px;top:420px;width:360px;height:280px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,176,138,.12),rgba(255,176,138,0))}
+.cards{position:absolute;left:-28px;top:100px;width:448px;height:240px;background:url(cards.jpg) center 44%/448px auto no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 20%,#000 80%,transparent 100%)}
+.sb{position:absolute;top:0;left:0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:4px;align-items:center}
+.gl{background:rgba(255,255,255,.06);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.top{position:absolute;top:60px;left:20px;right:20px;height:40px;display:flex;align-items:center;gap:12px}
+.av{width:40px;height:40px;border-radius:50%;background:url(sofia.jpg) center 28%/cover;box-shadow:0 0 0 2px #0A0709,0 0 0 3px rgba(255,79,154,.6)}
+.hi{flex:1}
+.hi small{display:block;font-size:12px;line-height:16px;color:#8C8189}
+.hi b{display:block;font-size:16px;line-height:20px;font-weight:600}
+.cb{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none;position:relative}
+.cb i{position:absolute;top:8px;right:8px;width:8px;height:8px;border-radius:50%;background:#FF4F9A;box-shadow:0 0 8px #FF4F9A}
+.ctag{position:absolute;left:20px;top:312px;height:32px;padding:0 12px 0 8px;border-radius:16px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600}
+.ctag em{width:16px;height:16px;border-radius:50%;background:linear-gradient(145deg,#FF8BBF,#FF4F9A);box-shadow:0 0 12px rgba(255,79,154,.9)}
+.ctag span{color:#8C8189;font-weight:500}
+.dots{position:absolute;right:20px;top:324px;display:flex;gap:4px}
+.dots i{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.2)}
+.dots i.on{width:24px;background:#FF4F9A}
+.bal{position:absolute;left:20px;right:20px;top:360px}
+.bal small{display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px;letter-spacing:1.2px;text-transform:uppercase;color:#8C8189;font-weight:600}
+.big{font-weight:200;font-size:56px;line-height:64px;letter-spacing:-2.4px;margin-top:4px;background:linear-gradient(180deg,#FFFFFF 0%,#F4EEEA 55%,#B9AEB4 100%);-webkit-background-clip:text;color:transparent}
+.big span{font-size:32px;letter-spacing:-1px}
+.delta{font-size:14px;line-height:20px;color:#8C8189;margin-top:4px}
+.delta b{color:#FFB08A;font-weight:600}
+.delta i{font-family:'Instrument Serif';font-size:16px;color:#F4EEEA}
+.seg{position:absolute;left:20px;right:20px;top:480px;height:48px;border-radius:24px;padding:4px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.seg span{border-radius:20px;display:flex;align-items:center;justify-content:center;gap:4px;font-size:14px;font-weight:600;color:#B9AEB4}
+.seg span small{font-size:12px;font-weight:500;color:#8C8189}
+.seg span.on{background:#F4EEEA;color:#0A0709}
+.seg span.on small{color:#8C8189}
+.wk{position:absolute;left:20px;right:20px;top:544px;height:128px;border-radius:24px;padding:16px}
+.wkh{display:flex;justify-content:space-between;align-items:flex-start}
+.wkh small{display:block;font-size:12px;line-height:16px;color:#8C8189}
+.wkh b{display:block;font-size:20px;line-height:28px;font-weight:500;letter-spacing:-.4px}
+.wkh b span{color:#8C8189;font-size:14px;font-weight:400;letter-spacing:0}
+.lim{height:24px;padding:0 8px;border-radius:12px;background:rgba(255,176,138,.14);border:1px solid rgba(255,176,138,.32);color:#FFB08A;font-size:12px;font-weight:600;display:flex;align-items:center}
+.bars{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;height:52px;margin-top:4px;align-items:end}
+.bars div{display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.bars i{display:block;width:100%;border-radius:4px;background:rgba(255,255,255,.12)}
+.bars i.lit{background:linear-gradient(180deg,#FF8BBF,#FF4F9A);box-shadow:0 0 16px rgba(255,79,154,.7)}
+.bars em{font-style:normal;font-size:12px;line-height:12px;color:#8C8189}
+.bars em.lit{color:#F4EEEA;font-weight:700}
+.tx{position:absolute;left:20px;right:20px;top:684px}
+.row{display:flex;align-items:center;gap:12px;height:56px}
+.row+.row{border-top:1px solid rgba(255,255,255,.08)}
+.mi{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none;background:linear-gradient(145deg,#2A1E25,#1A1418);border:1px solid rgba(255,255,255,.08)}
+.row .t{flex:1}
+.row .t b{display:block;font-size:14px;line-height:20px;font-weight:600}
+.row .t small{font-size:12px;line-height:16px;color:#8C8189}
+.row .v{text-align:right}
+.row .v b{display:block;font-size:14px;line-height:20px;font-weight:600}
+.row .v small{font-size:12px;line-height:16px;color:#8C8189}
+.fade{position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(180deg,rgba(10,7,9,0),rgba(10,7,9,.92) 56%)}
+.tab{position:absolute;left:48px;right:48px;bottom:28px;height:64px;border-radius:32px;display:flex;align-items:center;justify-content:space-between;padding:0 8px}
+.tab span{width:48px;height:48px;border-radius:24px;display:grid;place-items:center}
+.tab span.on{background:rgba(255,255,255,.10)}
+.tab span.mid{width:56px;height:48px;background:linear-gradient(145deg,#FF8BBF,#FF4F9A);box-shadow:0 0 24px rgba(255,79,154,.6),inset 0 1px 0 rgba(255,255,255,.4)}
+.home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:136px;height:4px;border-radius:4px;background:#F4EEEA}
 </style></head><body>
-<div class="photo"></div><div class="shade"></div><div class="glow"></div>
-<div class="sb"><span>9:41</span><span>{{icon:signal:17:#ffffff:2.6}}{{icon:wifi:17:#ffffff:2.6}}{{icon:battery-full:24:#ffffff:2}}</span></div>
-<div class="top">
- <span class="cb gl">{{icon:x:19:#EEF3F0:2}}</span>
- <span class="trip gl"><i>{{icon:plane:15:#06120D:2.2}}</i><span><b>Paying abroad</b><small>Lisbon · Day 3 of 6</small></span></span>
- <span class="cb gl">{{icon:ellipsis:19:#EEF3F0:2}}</span>
+<div class="glow"></div><div class="glow2"></div>
+<div class="cards" id="cards"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:16:#F4EEEA:2.4}}{{icon:wifi:16:#F4EEEA:2.4}}{{icon:battery-full:20:#F4EEEA:2}}</span></div>
+<div class="top" id="top">
+ <div class="av"></div>
+ <div class="hi"><small>Good evening</small><b>Sofia Alvarez</b></div>
+ <div class="cb gl">{{icon:scan-line:18:#F4EEEA}}</div>
+ <div class="cb gl">{{icon:bell:18:#F4EEEA}}<i></i></div>
 </div>
-<div class="nfc gl"><em>{{icon:nfc:12:#06120D:2.4}}</em>Card read · confirm to finish</div>
-<div class="amt">
- <div class="mer"><i></i>Kiosk Alfama · Café, Lisbon</div>
- <div class="big">€48<small>.20</small></div>
- <div class="conv">≈ <i>$51.09</i> at the real rate <b>1.06</b></div>
+<div class="ctag gl" id="ctag"><em></em>Rose · Travel card <span>•• 2048</span></div>
+<div class="dots"><i class="on"></i><i></i><i></i></div>
+<div class="bal" id="bal">
+ <small>Total balance · 4 currencies</small>
+ <div class="big">$12,128<span>.98</span></div>
+ <div class="delta"><b>+$1,240.00</b> this month, <i>all in one number.</i></div>
 </div>
-<div class="ph"><span>Pay from</span><span>Kinto picked the cheapest pocket</span></div>
-<div class="pk">
- <div class="on"><div class="cur"><i>€</i>EUR</div><b>€2,960.00</b><span class="tk">{{icon:check:11:#06120D:3}}</span></div>
- <div class="gl"><div class="cur"><i>$</i>USD</div><b>$8,214.50</b></div>
- <div class="gl"><div class="cur"><i>£</i>GBP</div><b>£1,140.80</b></div>
+<div class="seg gl" id="seg">
+ <span class="on">USD</span><span>EUR</span><span>GBP</span><span>JPY</span>
 </div>
-<div class="sv gl">
- <div class="ic">{{icon:badge-percent:20:#5CF2B4:2}}</div>
- <div class="tx"><b>No FX fee on this one</b><span>A bank card would add <em>$1.53</em> (3%).<br>Saved $38.40 on this trip.</span></div>
- <div class="af">EUR after<b>€2,911.80</b></div>
+<div class="wk gl" id="wk">
+ <div class="wkh"><div><small>Spent this week</small><b>$642.80 <span>of $900</span></b></div><span class="lim">$257.20 left</span></div>
+ <div class="bars">
+  <div><i style="height:12px"></i><em>M</em></div>
+  <div><i style="height:16px"></i><em>T</em></div>
+  <div><i style="height:12px"></i><em>W</em></div>
+  <div><i class="lit" style="height:36px"></i><em class="lit">T</em></div>
+  <div><i style="height:20px"></i><em>F</em></div>
+  <div><i style="height:24px"></i><em>S</em></div>
+  <div><i style="height:8px"></i><em>S</em></div>
+ </div>
 </div>
-<div class="sl" data-nav><span class="k">{{icon:arrow-right:22:#06120D:2.4}}</span><span class="tx">Slide to pay €48.20 <span>· Face ID</span></span><span class="ch">{{icon:chevrons-right:20:#EEF3F0:2}}</span></div>
-<div class="hi"></div>
+<div class="tx" id="tx">
+ <div class="row"><div class="mi">{{icon:soup:20:#FFB08A}}</div><div class="t"><b>Kumo Ramen</b><small>Tokyo · JPY pocket</small></div><div class="v"><b>−¥4,200</b><small>$28.14</small></div></div>
+</div>
+<div class="fade"></div>
+<div class="tab gl" data-nav>
+ <span class="on">{{icon:wallet:22:#F4EEEA}}</span>
+ <span>{{icon:chart-pie:22:#8C8189}}</span>
+ <span class="mid">{{icon:arrow-left-right:22:#0A0709:2.4}}</span>
+ <span>{{icon:credit-card:22:#8C8189}}</span>
+ <span>{{icon:user-round:22:#8C8189}}</span>
+</div>
+<div class="home"></div>
 </body></html>
