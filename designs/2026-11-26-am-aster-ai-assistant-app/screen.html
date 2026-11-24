@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Aster">
+<meta name="app-desc" content="A personal AI assistant you can **just talk to**. It moves meetings, books tables and shows every action as a card you can **confirm in one tap**.">
+<meta name="fonts" content="Manrope|Light, airy Manrope for a voice-first screen, with an Instrument Serif word for warmth and a Doto call timer.">
+<meta name="palette" content="#9FD8FF:Ice blue|#D7DEE6:Silver|#5B7C99:Steel blue|#1A1F26:Graphite|#F3F6F9:Frost|#05070A:Night">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Manrope';color:#F3F6F9;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#05070A}
+.glow{position:absolute;left:-60px;right:-60px;top:40px;height:460px;background:radial-gradient(closest-side,rgba(110,180,255,.30),rgba(110,180,255,.08) 55%,rgba(5,7,10,0))}
+.orb{position:absolute;left:66px;top:104px;width:262px;height:262px;border-radius:50%;background:url(orb.jpg) center 46%/120% auto no-repeat;-webkit-mask:radial-gradient(circle,#000 62%,transparent 71%);mask:radial-gradient(circle,#000 62%,transparent 71%)}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(159,216,255,.18)}
+.gl{background:rgba(255,255,255,.07);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid rgba(255,255,255,.14)}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.top{position:absolute;top:58px;left:18px;right:18px;display:flex;align-items:center;justify-content:space-between}
+.cb{width:42px;height:42px;border-radius:50%;display:grid;place-items:center}
+.mode{height:36px;padding:0 14px 0 10px;border-radius:999px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.mode i{width:8px;height:8px;border-radius:50%;background:#9FD8FF;box-shadow:0 0 0 4px rgba(159,216,255,.25),0 0 12px #9FD8FF}
+.mode span{color:rgba(243,246,249,.55);font-weight:500}
+.tm{position:absolute;left:0;right:0;top:372px;text-align:center}
+.tm b{font-family:'Doto';font-weight:800;font-size:22px;letter-spacing:1px;color:#9FD8FF}
+.tm small{display:block;font-size:12px;color:rgba(243,246,249,.5);margin-top:2px;letter-spacing:.3px}
+.wave{position:absolute;left:96px;right:96px;top:426px;height:30px;display:flex;align-items:center;justify-content:space-between}
+.wave i{width:3px;border-radius:2px;background:linear-gradient(#DDF1FF,#6FB6F2)}
+.tx{position:absolute;left:24px;right:24px;top:470px}
+.you{font-size:13px;line-height:1.45;color:rgba(243,246,249,.5);font-weight:500}
+.you b{color:rgba(243,246,249,.72);font-weight:600}
+.ai{font-size:21px;line-height:1.3;font-weight:300;letter-spacing:-.4px;margin-top:10px}
+.ai em{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-size:23px;color:#BFE4FF}
+.ai u{text-decoration:none;color:rgba(243,246,249,.35)}
+.cards{position:absolute;left:14px;right:14px;top:612px;display:grid;grid-template-columns:1fr 1.18fr;gap:8px}
+.cd{border-radius:22px;padding:11px 12px;height:128px;position:relative}
+.cd .h{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:rgba(243,246,249,.55)}
+.cd .h i{width:6px;height:6px;border-radius:50%;background:#8CE0B4}
+.cd b{display:block;font-size:14px;font-weight:600;margin-top:7px;line-height:1.2}
+.cd span{font-size:11.5px;color:rgba(243,246,249,.6)}
+.cd .av{position:absolute;left:12px;bottom:11px;display:flex;align-items:center;gap:7px;font-size:11.5px;color:rgba(243,246,249,.7)}
+.cd .av i{width:24px;height:24px;border-radius:50%;background:url(daniel.jpg) center 25%/cover;border:1.5px solid rgba(255,255,255,.6)}
+.bk{display:flex;gap:10px}
+.bk .ph{width:42px;height:42px;border-radius:12px;background:url(table.jpg) center/cover;flex:none;margin-top:4px}
+.bk .bt{position:absolute;left:12px;right:12px;bottom:10px;height:30px;border-radius:999px;background:#F3F6F9;color:#05070A;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px}
+.nav{position:absolute;left:14px;right:14px;bottom:26px;height:68px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px}
+.nav .s{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.07)}
+.nav .m{flex:1;margin:0 8px;height:52px;border-radius:999px;background:linear-gradient(90deg,#BFE4FF,#7FC2F5);color:#05070A;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14.5px;font-weight:700;box-shadow:0 0 28px rgba(127,194,245,.45)}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:#F3F6F9;transform:translateX(-50%)}
+</style></head><body>
+<div class="glow"></div>
+<div class="ring" style="left:40px;top:78px;width:314px;height:314px"></div>
+<div class="ring" style="left:14px;top:52px;width:366px;height:366px;border-color:rgba(159,216,255,.09)"></div>
+<div class="orb"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#F3F6F9:2.6}}{{icon:wifi:17:#F3F6F9:2.6}}{{icon:battery-full:24:#F3F6F9:2}}</span></div>
+<div class="top"><span class="cb gl">{{icon:chevron-down:20:#F3F6F9:2}}</span><span class="mode gl"><i></i>Voice<span>· Aster speaking</span></span><span class="cb gl">{{icon:captions:18:#F3F6F9:1.9}}</span></div>
+<div class="tm"><b>01:42</b><small>Tap the orb to interrupt</small></div>
+<div class="wave" id="w"></div>
+<div class="tx">
+ <p class="you"><b>You</b> · Move my 4pm with Daniel to Thursday and find us a table for two near the office at 8.</p>
+ <p class="ai">Done. Daniel is on <em>Thursday</em> at 4. I found a quiet table 6 minutes away. <u>Want me to book it?</u></p>
+</div>
+<div class="cards">
+ <div class="cd gl"><div class="h"><i></i>Moved</div><b>Sync with Daniel</b><span>Thu, Nov 27 · 16:00</span><div class="av"><i></i>Accepted</div></div>
+ <div class="cd gl bk"><div class="ph"></div><div><div class="h" style="margin-top:2px">Table for 2</div><b>Brass Room</b><span>Tonight · 20:00</span></div><div class="bt">{{icon:check:13:#05070A:2.6}}Book it</div></div>
+</div>
+<div class="nav gl" data-nav>
+ <span class="s">{{icon:keyboard:20:#F3F6F9:1.8}}</span>
+ <span class="m">{{icon:audio-lines:18:#05070A:2.2}}Hold to talk</span>
+ <span class="s">{{icon:x:20:#F3F6F9:2}}</span>
+</div>
+<div class="hi"></div>
+<script>
+const h=[6,10,16,12,22,28,18,26,30,20,14,24,30,26,18,12,20,26,16,10,14,8,6];
+document.getElementById('w').innerHTML=h.map(v=>`<i style="height:${v}px;opacity:${(.45+v/60).toFixed(2)}"></i>`).join('');
+</script>
+</body></html>

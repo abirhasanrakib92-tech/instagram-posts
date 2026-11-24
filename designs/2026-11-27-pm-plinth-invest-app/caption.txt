@@ -1,0 +1,9 @@
+Most investing apps show the price. This one shows what you actually own.
+Stock investing app UI design in dark mode: live chart, your position and slide to buy
+
+Plinth puts your 24 shares, average cost and total return right under the day's chart, so the number that matters is never two taps away. Buying a fraction is one slide.
+
+Save this for your next fintech app
+What do you check first in an investing app: the price or your return?
+
+#uidesign #mobileappdesign #fintech #investingapp #darkmodeui

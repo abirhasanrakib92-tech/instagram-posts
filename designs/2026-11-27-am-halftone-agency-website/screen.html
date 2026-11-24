@@ -1,0 +1,293 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--bg:#070707;--card:#101010;--card2:#151515;--line:#232323;--ink:#F5F2EC;--ink2:#A6A29B;--ink3:#6F6B65;--rd:#FF3D1F;--or:#FF7A2F;--am:#FFB35C;--grad:linear-gradient(120deg,#FF2E1F 0%,#FF6A2B 55%,#FFB35C 100%)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Inter Tight';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.se{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-.01em}
+.mono{font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink3)}
+.ph{background-size:cover;background-repeat:no-repeat;background-position:center}
+.frame{width:1360px;margin:0 auto;position:relative}
+.dots{background-image:radial-gradient(circle,rgba(255,106,43,.9) 1.3px,transparent 1.8px);background-size:11px 11px}
+.btn{height:56px;padding:0 10px 0 26px;border-radius:999px;display:inline-flex;align-items:center;gap:14px;font-size:16px;font-weight:500;white-space:nowrap}
+.btn i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center}
+.btn.w{background:var(--ink);color:#0B0B0B}.btn.w i{background:#0B0B0B}
+.btn.g{border:1px solid #333;color:var(--ink);padding:0 26px}
+.lab{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 14px;border-radius:999px;border:1px solid #2A2A2A;font-size:13px;color:var(--ink2)}
+.lab b{width:6px;height:6px;border-radius:50%;background:var(--or);box-shadow:0 0 10px var(--or)}
+h2{font-family:'Bricolage Grotesque';font-weight:500;font-size:76px;line-height:.98;letter-spacing:-3px}
+h2 .g{color:#5D5953}
+.sec{margin-top:150px}
+
+/* HERO */
+.hero{margin-top:24px;height:920px;border-radius:36px;overflow:hidden;position:relative;background:#0B0B0B}
+.hero .pic{position:absolute;right:0;top:0;width:760px;height:920px;background:url(portrait.jpg) center 22%/cover}
+.hero .pic:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0B0B0B 0%,rgba(11,11,11,.55) 22%,rgba(11,11,11,0) 50%),linear-gradient(0deg,rgba(11,11,11,.85) 0%,rgba(11,11,11,0) 35%)}
+.hero .glow{position:absolute;right:240px;top:180px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,74,31,.35),rgba(255,74,31,0) 65%)}
+.hero .ht{position:absolute;left:0;top:0;width:520px;height:920px;opacity:.55;-webkit-mask-image:radial-gradient(ellipse at 0% 100%,#000 0%,transparent 65%);mask-image:radial-gradient(ellipse at 0% 100%,#000 0%,transparent 65%)}
+nav{position:absolute;left:40px;right:40px;top:32px;display:flex;align-items:center;z-index:3}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Bricolage Grotesque';font-size:24px;font-weight:600;letter-spacing:-.6px}
+.logo i{width:34px;height:34px;border-radius:50%;background:var(--grad);position:relative;overflow:hidden}
+.logo i:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,#0B0B0B 1.6px,transparent 2.1px);background-size:6px 6px;opacity:.55}
+.menu{margin-left:72px;display:flex;gap:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:5px;backdrop-filter:blur(12px)}
+.menu a{height:38px;padding:0 18px;border-radius:999px;display:flex;align-items:center;font-size:14.5px;color:var(--ink2)}
+.menu a.on{background:var(--ink);color:#0B0B0B;font-weight:500}
+nav .r{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:14.5px;color:var(--ink2)}
+nav .r .btn{height:46px;font-size:14.5px}.nav-avail{display:flex;align-items:center;gap:8px}
+.nav-avail b{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 10px #4ADE80}
+.hcopy{position:absolute;left:56px;top:150px;z-index:2}
+.hcopy h1{font-family:'Bricolage Grotesque';font-weight:500;font-size:132px;line-height:.9;letter-spacing:-6px;margin-top:26px}
+.hcopy h1 .se{font-size:146px;letter-spacing:-3px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:12px}
+.hcopy p{font-size:19px;line-height:1.55;color:var(--ink2);width:470px;margin-top:30px}
+.hcopy .cta{display:flex;gap:12px;margin-top:38px}
+.hstats{position:absolute;left:56px;bottom:48px;display:flex;gap:12px;z-index:2}
+.hs{width:196px;height:132px;border-radius:24px;padding:18px 20px;background:rgba(20,20,20,.6);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);display:flex;flex-direction:column;justify-content:space-between}
+.hs b{font-family:'Bricolage Grotesque';font-weight:400;font-size:46px;letter-spacing:-2px;line-height:1}
+.hs span{font-size:13.5px;color:var(--ink2);line-height:1.35}
+.hs.lit{background:var(--grad);border-color:transparent;color:#140A05}.hs.lit span{color:#3B1606}
+.book{position:absolute;right:40px;bottom:48px;width:330px;border-radius:26px;padding:20px;background:rgba(14,14,14,.55);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);z-index:2}
+.book .row{display:flex;align-items:center;gap:12px}
+.stack{display:flex}.stack i{width:38px;height:38px;border-radius:50%;border:2px solid #141414;margin-left:-10px;background-size:cover;background-position:center 25%}.stack i:first-child{margin-left:0}
+.book h4{font-size:17px;font-weight:500;margin-top:16px}.book p{font-size:13.5px;color:var(--ink2);margin-top:6px;line-height:1.45}
+.slots{display:flex;gap:6px;margin-top:14px}.slots span{flex:1;height:34px;border-radius:10px;border:1px solid #2C2C2C;font-size:12.5px;display:grid;place-items:center;color:var(--ink2)}
+.slots span.on{background:var(--ink);color:#0B0B0B;border-color:var(--ink);font-weight:500}.slots span.x{color:#4A4743;text-decoration:line-through}
+
+/* clients */
+.clients{display:flex;align-items:center;justify-content:space-between;margin-top:56px;padding:0 20px}
+.clients .mono{width:170px;line-height:1.6}
+.cl{font-family:'Bricolage Grotesque';font-size:25px;font-weight:500;color:#5B5852;letter-spacing:-.6px;display:flex;align-items:center;gap:8px}
+.cl i{width:16px;height:16px;border-radius:4px;background:#3A3835}
+
+/* statement */
+.stmt{display:grid;grid-template-columns:300px 1fr;gap:40px}
+.stmt p{font-family:'Bricolage Grotesque';font-size:54px;line-height:1.1;letter-spacing:-1.8px;font-weight:400}
+.stmt p span{color:#55514B}
+.stmt .who{display:flex;gap:14px;align-items:center;margin-top:46px}
+.stmt .who i{width:58px;height:58px;border-radius:50%;background-size:cover;background-position:center 25%}
+.stmt .who b{display:block;font-size:16px;font-weight:500}.stmt .who span{font-size:14px;color:var(--ink2)}
+
+/* services */
+.svh{display:flex;justify-content:space-between;align-items:flex-end}
+.svh p{width:380px;color:var(--ink2);font-size:17px;line-height:1.55}
+.svl{margin-top:56px;border-top:1px solid var(--line)}
+.sv{display:grid;grid-template-columns:120px 1fr 64px;align-items:center;height:118px;border-bottom:1px solid var(--line)}
+.sv .n{font-family:'JetBrains Mono';font-size:15px;color:var(--ink3)}
+.sv h3{font-family:'Bricolage Grotesque';font-weight:400;font-size:50px;letter-spacing:-2px;color:#77736C}
+.sv .ar{width:56px;height:56px;border-radius:50%;border:1px solid #2E2E2E;display:grid;place-items:center}
+.sv.open{height:auto;padding:34px 0 40px;align-items:start;grid-template-columns:120px 1fr 64px}
+.sv.open .n{color:var(--or);padding-top:16px}
+.sv.open h3{color:var(--ink)}
+.sv.open .ar{background:var(--grad);border:0}
+.svb{display:grid;grid-template-columns:1fr 470px;gap:48px;margin-top:28px}
+.svb p{font-size:18px;line-height:1.6;color:var(--ink2);width:520px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;width:560px}
+.tags span{height:36px;padding:0 16px;border-radius:999px;border:1px solid #2E2E2E;font-size:14px;color:var(--ink2);display:flex;align-items:center}
+.svb .img{height:290px;border-radius:24px;background:url(kit.jpg) center/cover;position:relative;overflow:hidden}
+.svb .img span{position:absolute;left:16px;bottom:16px;height:34px;padding:0 14px;border-radius:999px;background:rgba(10,10,10,.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);font-size:13px;display:flex;align-items:center;gap:8px}
+
+/* work */
+.work{display:grid;grid-template-columns:808px 1fr;grid-template-rows:380px 380px;gap:16px;margin-top:56px}
+.wc{border-radius:30px;overflow:hidden;position:relative;background:var(--card)}
+.wc .meta{position:absolute;left:28px;right:28px;bottom:26px;display:flex;justify-content:space-between;align-items:flex-end}
+.wc h4{font-family:'Bricolage Grotesque';font-weight:500;font-size:30px;letter-spacing:-1px}
+.wc .sub{font-size:14px;color:rgba(245,242,236,.75);margin-top:6px}
+.wc .chip{position:absolute;left:28px;top:26px;height:32px;padding:0 14px;border-radius:999px;background:rgba(10,10,10,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);font-size:13px;display:flex;align-items:center}
+.wc .res{text-align:right}.wc .res b{display:block;font-family:'Bricolage Grotesque';font-size:52px;font-weight:400;letter-spacing:-2px;line-height:1}.wc .res span{font-size:13px;color:rgba(245,242,236,.7)}
+.big{grid-row:1/3;background:url(kit.jpg) 40% center/cover}
+.big:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,0) 45%)}
+.big .meta{z-index:2}
+.nv{background:radial-gradient(ellipse at 80% 0%,rgba(255,122,47,.55),rgba(255,122,47,0) 60%),#0E0E0E;border:1px solid #1E1E1E}
+.nv .ui{position:absolute;right:28px;top:26px;width:230px;border-radius:20px;background:#161616;border:1px solid #2A2A2A;padding:16px}
+.nv .ui small{font-size:11.5px;color:var(--ink3)}.nv .ui b{display:block;font-size:28px;font-weight:400;letter-spacing:-1px;margin-top:4px}
+.nv .ui .bars{display:flex;gap:5px;align-items:flex-end;height:58px;margin-top:12px}.nv .ui .bars i{flex:1;border-radius:4px;background:#2A2A2A}.nv .ui .bars i.l{background:var(--grad);box-shadow:0 0 16px rgba(255,106,43,.6)}
+.tw{background:#F5F2EC;color:#0B0B0B}
+.tw .chip{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.1);color:#0B0B0B;backdrop-filter:none}
+.tw .sub,.tw .res span{color:#6B675F}
+.tw .halo{position:absolute;right:-60px;top:-80px;width:330px;height:330px;border-radius:50%;background:var(--grad)}
+.tw .halo:after{content:"";position:absolute;inset:0;border-radius:50%;background-image:radial-gradient(circle,#F5F2EC 2.2px,transparent 2.8px);background-size:12px 12px;-webkit-mask-image:linear-gradient(200deg,transparent 30%,#000 90%);mask-image:linear-gradient(200deg,transparent 30%,#000 90%)}
+
+/* process */
+.proc{margin-top:64px;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.proc .line{position:absolute;left:0;right:0;top:27px;height:2px;background:linear-gradient(90deg,var(--rd),var(--or) 40%,#2A2A2A 62%,#2A2A2A)}
+.st{position:relative}
+.st .k{width:56px;height:56px;border-radius:50%;background:#0B0B0B;border:1px solid #333;display:grid;place-items:center;font-family:'JetBrains Mono';font-size:14px;color:var(--ink2);position:relative}
+.st.done .k{background:var(--grad);border:0;color:#140A05;font-weight:700;box-shadow:0 0 30px rgba(255,90,31,.55)}
+.st .c{margin-top:28px;border-radius:24px;background:var(--card);border:1px solid #1C1C1C;padding:24px;height:216px}
+.st .c .mono{color:var(--or)}
+.st h5{font-family:'Bricolage Grotesque';font-weight:500;font-size:26px;letter-spacing:-.8px;margin-top:12px}
+.st p{font-size:15px;color:var(--ink2);line-height:1.5;margin-top:10px}
+
+/* studio */
+.studio{display:grid;grid-template-columns:1fr 420px;gap:16px;margin-top:56px;height:560px}
+.studio .pic{border-radius:30px;background:url(studio.jpg) center 40%/cover;position:relative;overflow:hidden}
+.studio .pic .cap{position:absolute;left:24px;bottom:24px;width:360px;border-radius:22px;padding:18px 20px;background:rgba(12,12,12,.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12)}
+.studio .pic .cap b{font-size:17px;font-weight:500}.studio .pic .cap p{font-size:13.5px;color:var(--ink2);margin-top:6px;line-height:1.45}
+.studio .side{display:flex;flex-direction:column;gap:16px}
+.q{flex:1;border-radius:30px;background:var(--card);border:1px solid #1C1C1C;padding:30px;position:relative;overflow:hidden}
+.q:before{content:"";position:absolute;left:-40px;bottom:-120px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,74,31,.28),rgba(255,74,31,0) 65%)}
+.q .qm{font-family:'Instrument Serif';font-size:80px;line-height:.6;background:var(--grad);-webkit-background-clip:text;color:transparent}
+.q p{font-size:21px;line-height:1.45;margin-top:18px;position:relative}
+.q .who{display:flex;gap:12px;align-items:center;margin-top:24px;position:relative}
+.q .who i{width:46px;height:46px;border-radius:50%;background-size:cover;background-position:center 25%}
+.q .who b{display:block;font-size:15px;font-weight:500}.q .who span{font-size:13px;color:var(--ink2)}
+.team{height:150px;border-radius:30px;background:var(--grad);padding:24px 26px;color:#140A05;display:flex;flex-direction:column;justify-content:space-between}
+.team b{font-family:'Bricolage Grotesque';font-weight:500;font-size:30px;letter-spacing:-1px}
+.team .stack i{border-color:#FF7A2F;width:42px;height:42px}
+.team .row{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:500}
+
+/* pricing */
+.pr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.pc{border-radius:30px;background:var(--card);border:1px solid #1C1C1C;padding:32px;height:520px;position:relative;overflow:hidden}
+.pc .mono{color:var(--ink2)}
+.pc h4{font-family:'Bricolage Grotesque';font-weight:500;font-size:34px;letter-spacing:-1.2px;margin-top:18px}
+.pc .price{font-family:'Bricolage Grotesque';font-size:64px;font-weight:400;letter-spacing:-3px;margin-top:22px}
+.pc .price small{font-size:18px;letter-spacing:0;color:var(--ink2);margin-left:6px}
+.pc ul{list-style:none;margin-top:26px;border-top:1px solid #222}
+.pc li{height:48px;border-bottom:1px solid #222;display:flex;align-items:center;gap:12px;font-size:15.5px;color:var(--ink2)}
+.pc li i{width:7px;height:7px;border-radius:50%;background:#444}
+.pc .go{position:absolute;left:32px;right:32px;bottom:32px;height:56px;border-radius:999px;border:1px solid #333;display:grid;place-items:center;font-size:15.5px;font-weight:500}
+.pc.hot{background:radial-gradient(ellipse at 50% -10%,rgba(255,106,43,.75),rgba(255,74,31,.18) 45%,rgba(16,16,16,1) 75%);border-color:rgba(255,122,47,.5);box-shadow:0 0 60px -10px rgba(255,90,31,.45)}
+.pc.hot li i{background:var(--or);box-shadow:0 0 8px var(--or)}
+.pc.hot .go{background:var(--ink);color:#0B0B0B;border:0}
+.pc .badge{position:absolute;right:28px;top:28px;height:30px;padding:0 12px;border-radius:999px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);font-size:12.5px;display:flex;align-items:center}
+
+/* cta */
+.ctab{margin-top:150px;height:560px;padding-top:84px;border-radius:36px;overflow:hidden;position:relative;background:#090909;border:1px solid #1A1A1A;text-align:center}
+.ctab .arc{position:absolute;left:50%;top:330px;width:1800px;height:900px;margin-left:-900px;border-radius:50%;border-top:3px solid #FFB35C;box-shadow:0 -20px 60px -10px rgba(255,106,43,.75),inset 0 30px 80px -30px rgba(255,90,31,.55)}
+.ctab .ht2{position:absolute;inset:0;opacity:.35;-webkit-mask-image:radial-gradient(ellipse at 50% 100%,#000 0%,transparent 60%);mask-image:radial-gradient(ellipse at 50% 100%,#000 0%,transparent 60%)}
+.ctab h2{font-size:92px;letter-spacing:-4px;margin-top:26px;position:relative}
+.ctab p{color:var(--ink2);font-size:18px;margin-top:22px;position:relative}
+.ctab .cta{display:flex;gap:12px;justify-content:center;margin-top:36px;position:relative}
+
+/* footer */
+footer{margin-top:16px;border-radius:36px;background:#0E0E0E;border:1px solid #1A1A1A;padding:56px 56px 0;overflow:hidden;position:relative;margin-bottom:24px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fg h6{font-family:'JetBrains Mono';font-size:12px;letter-spacing:1.4px;color:var(--ink3);font-weight:400;text-transform:uppercase;margin-bottom:18px}
+.fg a{display:block;font-size:16px;color:var(--ink2);margin-bottom:12px}
+.nl{display:flex;height:58px;border-radius:999px;border:1px solid #2C2C2C;align-items:center;padding:0 6px 0 22px;margin-top:20px;width:420px}
+.nl span{color:var(--ink3);font-size:15px}.nl b{margin-left:auto;height:46px;padding:0 20px;border-radius:999px;background:var(--grad);color:#140A05;font-size:14.5px;font-weight:600;display:flex;align-items:center}
+.word{font-family:'Bricolage Grotesque';font-weight:600;font-size:272px;letter-spacing:-12px;line-height:.8;margin-top:70px;margin-left:-8px;background:linear-gradient(180deg,#F5F2EC 0%,#F5F2EC 35%,#FF6A2B 75%,#FF2E1F 100%);-webkit-background-clip:text;color:transparent;white-space:nowrap}
+.fb{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink3);padding:26px 0 30px;border-top:1px solid #1F1F1F;margin-top:10px}
+</style></head><body>
+<div class="frame">
+ <!-- HERO -->
+ <section class="hero">
+  <div class="pic"></div><div class="glow"></div><div class="ht dots"></div>
+  <nav>
+   <div class="logo"><i></i>Halftone</div>
+   <div class="menu"><a class="on">Studio</a><a>Work</a><a>Services</a><a>Process</a><a>Journal</a></div>
+   <div class="r"><span class="nav-avail"><b></b>2 spots open for January</span><span class="btn w">Start a project<i>{{icon:arrow-up-right:18:#F5F2EC:2}}</i></span></div>
+  </nav>
+  <div class="hcopy">
+   <span class="lab"><b></b>Brand &amp; digital studio · Lisbon</span>
+   <h1>Brands people<br><span class="se">remember.</span></h1>
+   <p>We build identities, websites and products for founders who would rather be recognised than just seen.</p>
+   <div class="cta"><span class="btn w">See our work<i>{{icon:arrow-up-right:18:#F5F2EC:2}}</i></span><span class="btn g">{{icon:play:16:#F5F2EC:2}}&nbsp;Studio reel · 1:24</span></div>
+  </div>
+  <div class="hstats">
+   <div class="hs lit"><b>212</b><span>brands launched<br>since 2016</span></div>
+   <div class="hs"><b>4.9</b><span>average rating from<br>86 client reviews</span></div>
+   <div class="hs"><b>3.1×</b><span>median lift in<br>site sign-ups</span></div>
+  </div>
+  <div class="book">
+   <div class="row"><div class="stack"><i style="background-image:url(mei.jpg)"></i><i style="background-image:url(daniel.jpg)"></i><i style="background-image:url(karim.jpg)"></i></div><span style="font-size:13px;color:var(--ink2)">Mei, Daniel &amp; Karim reply<br>within one working day</span></div>
+   <h4>Book a 30-minute intro call</h4>
+   <p>Tell us what you are building. We will tell you honestly if we are the right studio.</p>
+   <div class="slots"><span class="x">Tue 2</span><span class="on">Wed 3</span><span>Thu 4</span><span>Fri 5</span></div>
+  </div>
+ </section>
+
+ <div class="clients">
+  <span class="mono">Trusted by<br>founders at</span>
+  <span class="cl"><i style="border-radius:50%"></i>Northvault</span>
+  <span class="cl"><i></i>Ostra</span>
+  <span class="cl"><i style="transform:rotate(45deg)"></i>Tidewell</span>
+  <span class="cl"><i style="border-radius:50%"></i>Pellucid</span>
+  <span class="cl"><i></i>Quillon</span>
+  <span class="cl"><i style="border-radius:50% 0"></i>Saltmarsh</span>
+ </div>
+
+ <!-- STATEMENT -->
+ <section class="sec stmt">
+  <div><span class="mono">01 / The studio</span></div>
+  <div>
+   <p>Halftone is a 24-person studio for brand identity, websites and product design. <span>We turn a fuzzy idea into a system your team can actually use on Monday morning, then we stay to see it work.</span></p>
+   <div class="who"><i style="background-image:url(olivia.jpg)"></i><div><b>Olivia Grant</b><span>Founder &amp; creative director</span></div></div>
+  </div>
+ </section>
+
+ <!-- SERVICES -->
+ <section class="sec">
+  <div class="svh"><h2>What we make,<br><span class="g">start to finish.</span></h2><p>Four teams that work as one. Most clients start with a brand sprint and stay for the website and product.</p></div>
+  <div class="svl">
+   <div class="sv"><span class="n">[01]</span><h3>Brand strategy &amp; naming</h3><span class="ar">{{icon:arrow-down-right:20:#77736C:1.8}}</span></div>
+   <div class="sv open"><span class="n">[02]</span>
+    <div><h3>Visual identity systems</h3>
+     <div class="svb"><div><p>Logo, type, colour and the rules that hold them together, delivered as a living guide and a component kit your designers can ship with in week one.</p>
+      <div class="tags"><span>Logo &amp; wordmark</span><span>Type system</span><span>Colour tokens</span><span>Packaging</span><span>Brand guidelines</span><span>Figma library</span></div></div>
+      <div class="img"><span>{{icon:sparkles:14:#FFB35C}}Ostra Skincare · identity kit</span></div></div>
+    </div><span class="ar">{{icon:arrow-up-right:20:#140A05:2}}</span></div>
+   <div class="sv"><span class="n">[03]</span><h3>Websites &amp; digital products</h3><span class="ar">{{icon:arrow-down-right:20:#77736C:1.8}}</span></div>
+   <div class="sv"><span class="n">[04]</span><h3>Motion &amp; launch campaigns</h3><span class="ar">{{icon:arrow-down-right:20:#77736C:1.8}}</span></div>
+  </div>
+ </section>
+
+ <!-- WORK -->
+ <section class="sec">
+  <div class="svh"><h2>Selected work,<br><span class="g">with the numbers.</span></h2><span class="btn g">All 48 case studies {{icon:arrow-right:16:#F5F2EC:2}}</span></div>
+  <div class="work">
+   <div class="wc big"><span class="chip">Identity · Packaging · 2026</span>
+    <div class="meta"><div><h4>Ostra Skincare</h4><div class="sub">A clinical brand that still feels warm on the shelf</div></div><div class="res"><b>+64%</b><span>retail orders in 90 days</span></div></div></div>
+   <div class="wc nv"><span class="chip">Product · Web app</span>
+    <div class="ui"><small>Card spend · November</small><b>$184,220</b><div class="bars"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i class="l" style="height:100%"></i><i style="height:62%"></i><i style="height:70%"></i></div></div>
+    <div class="meta"><div><h4>Northvault</h4><div class="sub">Business banking for startups</div></div><div class="res"><b>11k</b><span>teams in year one</span></div></div></div>
+   <div class="wc tw"><div class="halo"></div><span class="chip">Website · Campaign</span>
+    <div class="meta"><div><h4>Tidewell Fund</h4><div class="sub">Climate investing, explained in one scroll</div></div><div class="res"><b>3.4×</b><span>investor sign-ups</span></div></div></div>
+  </div>
+ </section>
+
+ <!-- PROCESS -->
+ <section class="sec">
+  <div class="svh"><h2>Eight weeks,<br><span class="g">no surprises.</span></h2><p>Every project runs on the same rhythm, with a review every Friday and one shared board you can open at any time.</p></div>
+  <div class="proc"><div class="line"></div>
+   <div class="st done"><div class="k">01</div><div class="c"><span class="mono">Week 1</span><h5>Listen</h5><p>Interviews with your team and 8 customers. We read everything before we draw anything.</p></div></div>
+   <div class="st done"><div class="k">02</div><div class="c"><span class="mono">Weeks 2–3</span><h5>Define</h5><p>Positioning, name check and one clear idea, signed off before any design starts.</p></div></div>
+   <div class="st"><div class="k">03</div><div class="c"><span class="mono" style="color:var(--ink3)">Weeks 4–7</span><h5>Design &amp; build</h5><p>Identity, site and kit, built in parallel and tested with real customers.</p></div></div>
+   <div class="st"><div class="k">04</div><div class="c"><span class="mono" style="color:var(--ink3)">Week 8</span><h5>Launch &amp; hand over</h5><p>Go live, train your team, and 30 days of support while it settles.</p></div></div>
+  </div>
+ </section>
+
+ <!-- STUDIO -->
+ <section class="sec">
+  <h2>Small studio,<br><span class="g">senior hands.</span></h2>
+  <div class="studio">
+   <div class="pic"><div class="cap"><b>Friday crit, Lisbon studio</b><p>Every piece of work is reviewed by two senior designers before a client sees it.</p></div></div>
+   <div class="side">
+    <div class="q"><div class="qm">“</div><p>They asked better questions about our customers than we did. The new brand paid for itself in a quarter.</p>
+     <div class="who"><i style="background-image:url(sofia.jpg)"></i><div><b>Sofia Alvarez</b><span>CEO, Ostra Skincare</span></div></div></div>
+    <div class="team"><div class="row"><b>Meet the 24</b>{{icon:arrow-up-right:22:#140A05:2}}</div><div class="row"><div class="stack"><i style="background-image:url(mei.jpg)"></i><i style="background-image:url(daniel.jpg)"></i><i style="background-image:url(karim.jpg)"></i><i style="background-image:url(olivia.jpg)"></i></div><span>Designers, writers, developers</span></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- CTA -->
+ <section class="ctab"><div class="ht2 dots"></div><div class="arc"></div>
+  <span class="lab" style="position:relative"><b></b>2 spots open for January</span>
+  <h2>Got a brand that<br>deserves <span class="se" style="background:var(--grad);-webkit-background-clip:text;color:transparent;font-size:100px">better?</span></h2>
+  <p>Send us two lines about it. We reply within one working day.</p>
+  <div class="cta"><span class="btn w">Start a project<i>{{icon:arrow-up-right:18:#F5F2EC:2}}</i></span><span class="btn g">hello@halftone.studio</span></div>
+ </section>
+
+ <footer>
+  <div class="fg">
+   <div><div class="logo"><i></i>Halftone</div><p style="color:var(--ink2);font-size:15.5px;line-height:1.6;margin-top:18px;width:380px">One letter a month on brand, type and what we learned shipping it. No spam, unsubscribe in one click.</p><div class="nl"><span>you@company.com</span><b>Subscribe</b></div></div>
+   <div><h6>Studio</h6><a>About</a><a>Work</a><a>Process</a><a>Careers · 3 open</a></div>
+   <div><h6>Services</h6><a>Brand strategy</a><a>Identity systems</a><a>Websites</a><a>Motion</a></div>
+   <div><h6>Visit</h6><a>Rua das Flores 42</a><a>1200-195 Lisbon</a><a>hello@halftone.studio</a><a>+351 21 555 0192</a></div>
+  </div>
+  <div class="word">HALFTONE</div>
+  <div class="fb"><span>© 2026 Halftone Studio, Lda.</span><span>Instagram · Behance · Dribbble · LinkedIn</span><span>Privacy · Terms</span></div>
+ </footer>
+</div>
+</body></html>

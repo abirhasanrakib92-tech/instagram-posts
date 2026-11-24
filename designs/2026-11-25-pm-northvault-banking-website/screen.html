@@ -1,0 +1,368 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* Northvault: dark fintech, ember-copper glow on black (refs: horizon glows, floating product UI, lit bento card, giant wordmark) */
+:root{--bg:#050505;--card:#0D0C0B;--card2:#141210;--line:rgba(255,255,255,.08);--ink:#F4EFEA;--ink2:#A39B93;--ink3:#6E6760;--cu:#E07B39;--cu2:#F4A462;--em:#FF6A1F;--gr:#7BD49A}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;background:var(--bg);font-family:'Inter Tight';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+.se{font-family:'Instrument Serif';font-style:italic;font-weight:400;letter-spacing:-.01em}
+.mono{font-family:'JetBrains Mono';letter-spacing:.02em}
+.wrap{width:1360px;margin:0 auto;position:relative}
+.in{width:1200px;margin:0 auto;position:relative}
+.av{border-radius:50%;background-size:cover;background-position:center 25%;flex:none}
+.eb{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 14px;border-radius:999px;border:1px solid rgba(224,123,57,.35);background:rgba(224,123,57,.08);font-size:12.5px;color:var(--cu2);font-family:'JetBrains Mono';letter-spacing:.06em;text-transform:uppercase}
+.eb i{width:6px;height:6px;border-radius:50%;background:var(--em);box-shadow:0 0 10px var(--em)}
+.btn{height:54px;padding:0 26px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:500;white-space:nowrap}
+.btn.cu{background:linear-gradient(180deg,#F4A462,#D96A28);color:#1A0C04;box-shadow:0 0 0 1px rgba(255,200,150,.35) inset,0 12px 40px -8px rgba(255,106,31,.55)}
+.btn.gh{border:1px solid rgba(255,255,255,.18);color:var(--ink);background:rgba(255,255,255,.04)}
+.h2{font-size:64px;font-weight:300;letter-spacing:-2.6px;line-height:1.02}
+.h2 .g{color:#6E6760}
+.glass{background:rgba(20,18,16,.55);-webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px -30px rgba(0,0,0,.8)}
+.card{background:linear-gradient(180deg,#121110,#0B0A09);border:1px solid var(--line);border-radius:28px;position:relative;overflow:hidden}
+.pill{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 11px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}
+
+/* HERO */
+.hero{margin-top:24px;height:1040px;border-radius:40px;overflow:hidden;position:relative;background:#000 url(card.jpg) center 455px/1120px auto no-repeat;border:1px solid rgba(255,255,255,.06)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 30%,rgba(0,0,0,0) 48%,rgba(0,0,0,0) 80%,rgba(0,0,0,.7) 100%)}
+nav{position:absolute;left:32px;right:32px;top:28px;display:flex;align-items:center;z-index:3}
+.lg{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:500;letter-spacing:-.6px}
+.lg b{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#F4A462,#B8571F);display:grid;place-items:center;box-shadow:0 0 24px rgba(255,106,31,.45)}
+nav .mid{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:2px;padding:5px;border-radius:999px}
+nav .mid span{height:38px;padding:0 17px;border-radius:999px;display:flex;align-items:center;font-size:14.5px;color:var(--ink2)}
+nav .mid span.on{background:rgba(255,255,255,.08);color:var(--ink)}
+nav .r{margin-left:auto;display:flex;gap:10px;align-items:center}
+nav .r .btn{height:44px;font-size:14.5px;padding:0 20px}
+.hc{position:absolute;left:0;right:0;top:150px;text-align:center;z-index:2}
+.hc h1{font-size:96px;font-weight:300;letter-spacing:-4.6px;line-height:.98;margin-top:26px}
+.hc h1 .g{background:linear-gradient(90deg,#8A8077,#F4A462 55%,#8A8077);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hc p{font-size:19px;color:var(--ink2);margin:26px auto 0;width:620px;line-height:1.5}
+.hc .bt{display:flex;gap:12px;justify-content:center;margin-top:34px}
+.fl{position:absolute;z-index:2;border-radius:22px;padding:18px 20px}
+.fl .k{font-size:12.5px;color:var(--ink2);display:flex;align-items:center;gap:7px}
+.fl .v{font-size:34px;font-weight:300;letter-spacing:-1.4px;margin-top:8px}
+.fl .v small{font-size:16px;color:var(--ink2);letter-spacing:0}
+.hstats{position:absolute;left:32px;right:32px;bottom:32px;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);border-radius:24px;padding:22px 8px}
+.hstats div{padding:0 26px;border-left:1px solid var(--line)}
+.hstats div:first-child{border-left:0}
+.hstats b{display:block;font-size:40px;font-weight:300;letter-spacing:-1.6px}
+.hstats span{font-size:13.5px;color:var(--ink2)}
+
+/* logos */
+.logos{padding:70px 0 20px;text-align:center}
+.logos p{font-size:14px;color:var(--ink3)}
+.logos .row{display:flex;justify-content:center;gap:58px;margin-top:26px;color:#8A837C;font-size:22px;font-weight:500;letter-spacing:-.4px;align-items:center}
+.logos .row span{display:flex;align-items:center;gap:9px}
+
+/* statement */
+.stmt{padding:120px 0 0}
+.stmt h3{font-size:46px;font-weight:300;letter-spacing:-1.6px;line-height:1.18;width:1080px}
+.stmt h3 .g{color:#5F5852}
+
+/* bento */
+.sec{padding-top:120px}
+.shead{display:flex;justify-content:space-between;align-items:flex-end}
+.shead p{width:380px;font-size:17px;color:var(--ink2);line-height:1.55}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:380px;gap:18px;margin-top:56px}
+.bento .card{padding:30px}
+.bento h4{font-size:24px;font-weight:400;letter-spacing:-.6px}
+.bento .d{font-size:15px;color:var(--ink2);line-height:1.5;margin-top:10px;width:330px}
+.w2{grid-column:span 2}
+.lit{background:radial-gradient(ellipse at 75% 110%,rgba(255,106,31,.55),rgba(255,106,31,0) 55%),radial-gradient(ellipse at 100% 0%,rgba(244,164,98,.18),rgba(0,0,0,0) 45%),linear-gradient(180deg,#171310,#0B0907);border-color:rgba(244,164,98,.30)}
+.lit:after{content:"";position:absolute;left:30px;right:30px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#F4A462,transparent)}
+.mcard{position:absolute;right:44px;top:96px;width:270px;height:170px;border-radius:20px;background:url(card.jpg) 41% 30%/700px auto;transform:rotate(-8deg);box-shadow:0 40px 70px -20px rgba(0,0,0,.9),0 0 60px rgba(255,106,31,.25)}
+.mcard b{position:absolute;left:24px;bottom:20px;font-size:18px;font-weight:500;color:#2A160A;letter-spacing:-.3px}
+.mcard span{position:absolute;right:22px;bottom:22px;font-family:'JetBrains Mono';font-size:13px;color:#3A1E0C}
+.limits{position:absolute;left:30px;bottom:28px;width:440px;display:flex;flex-direction:column;gap:9px}
+.lim{display:grid;grid-template-columns:34px 1fr 110px;gap:12px;align-items:center}
+.lim .av{width:34px;height:34px}
+.lim b{font-size:14px;font-weight:500;display:block}.lim span{font-size:12px;color:var(--ink2)}
+.bar{height:5px;border-radius:9px;background:rgba(255,255,255,.08);margin-top:6px}.bar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#B8571F,#F4A462)}
+.lim .n{text-align:right;font-size:13.5px}.lim .n small{display:block;font-size:11.5px;color:var(--ink3)}
+.rules{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.rule{display:flex;align-items:center;gap:10px;height:48px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line);padding:0 14px;font-size:14px;color:var(--ink)}
+.rule i{width:28px;height:28px;border-radius:8px;background:rgba(224,123,57,.14);display:grid;place-items:center;flex:none}
+.rule em{margin-left:auto;font-style:normal;font-size:12px;color:var(--gr)}
+.big{font-size:72px;font-weight:200;letter-spacing:-3.4px;line-height:1;margin-top:26px}
+.big small{font-size:22px;color:var(--cu2);letter-spacing:-.2px;margin-left:6px}
+.bills{margin-top:24px;display:flex;flex-direction:column;gap:2px}
+.bill{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;height:50px;border-bottom:1px solid var(--line);font-size:14px}
+.bill span{font-size:12px;color:var(--ink3);display:block}
+.sync{position:absolute;left:30px;right:30px;bottom:28px;display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:0}
+.sync .col{display:flex;flex-direction:column;gap:8px}
+.sr{height:44px;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:13.5px}
+.sr span{color:var(--ink2);font-size:12.5px}
+.cat{height:24px;padding:0 10px;border-radius:999px;background:rgba(224,123,57,.14);color:var(--cu2);font-size:12px;display:flex;align-items:center}
+
+/* product */
+.app{margin-top:56px;border-radius:30px;padding:10px;background:linear-gradient(180deg,rgba(244,164,98,.35),rgba(255,255,255,.04) 40%);position:relative}
+.app:before{content:"";position:absolute;left:10%;right:10%;top:-40px;height:120px;background:radial-gradient(ellipse at center,rgba(255,106,31,.35),rgba(255,106,31,0) 70%);filter:blur(10px)}
+.ui{border-radius:22px;background:#0A0908;display:grid;grid-template-columns:220px 1fr 330px;height:640px;overflow:hidden;position:relative}
+.side{border-right:1px solid var(--line);padding:22px 16px}
+.side .lg{font-size:18px}.side .lg b{width:30px;height:30px;border-radius:9px}
+.side a{display:flex;align-items:center;gap:10px;height:40px;padding:0 12px;border-radius:11px;font-size:14px;color:var(--ink2);margin-top:4px}
+.side a.on{background:rgba(255,255,255,.06);color:var(--ink)}
+.main{padding:26px 28px}
+.main .t{font-size:14px;color:var(--ink2)}
+.main .bal{font-size:58px;font-weight:200;letter-spacing:-2.6px;margin-top:6px}
+.main .bal small{font-size:26px;color:var(--ink3)}
+.chips{display:flex;gap:8px;margin-top:14px}
+.chips span{height:30px;padding:0 13px;border-radius:999px;border:1px solid var(--line);font-size:13px;color:var(--ink2);display:flex;align-items:center;gap:6px}
+.rail{border-left:1px solid var(--line);padding:24px 22px}
+.tx{display:grid;grid-template-columns:36px 1fr auto;gap:11px;align-items:center;height:58px;border-bottom:1px solid var(--line)}
+.tx i{width:36px;height:36px;border-radius:11px;background:rgba(255,255,255,.05);display:grid;place-items:center}
+.tx b{font-size:14px;font-weight:500;display:block}.tx span{font-size:12px;color:var(--ink3)}
+.tx em{font-style:normal;font-size:14.5px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:420px 1fr;gap:80px;margin-top:0}
+.st{border-top:1px solid var(--line);display:grid;grid-template-columns:70px 1fr 44px;align-items:center;min-height:92px;font-size:28px;font-weight:300;letter-spacing:-.8px;color:#7D756E}
+.st:last-child{border-bottom:1px solid var(--line)}
+.st .n{font-family:'JetBrains Mono';font-size:14px;color:var(--ink3)}
+.st .ar{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.st.on{color:var(--ink);padding:26px 0;align-items:start}
+.st.on .ar{background:linear-gradient(180deg,#F4A462,#D96A28);border:0;box-shadow:0 0 30px rgba(255,106,31,.5)}
+.st.on p{font-size:16px;color:var(--ink2);line-height:1.55;letter-spacing:0;margin-top:12px;width:520px}
+.st.on .tg{display:flex;gap:8px;margin-top:16px}
+.st.on .tg span{height:30px;padding:0 13px;border-radius:999px;border:1px solid var(--line);font-size:13px;color:var(--ink2);display:flex;align-items:center;letter-spacing:0}
+
+/* testimonial */
+.testi{display:grid;grid-template-columns:480px 1fr;gap:18px;margin-top:56px}
+.ph{border-radius:28px;background:url(founder.jpg) center 22%/cover;height:600px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.ph .tag{position:absolute;left:20px;bottom:20px;border-radius:16px;padding:12px 16px}
+.ph .tag b{display:block;font-size:16px;font-weight:500}.ph .tag span{font-size:13px;color:var(--ink2)}
+.qt{padding:44px 48px;display:flex;flex-direction:column}
+.qt q{font-size:38px;font-weight:300;letter-spacing:-1.2px;line-height:1.22;quotes:none}
+.qt q .g{color:#6E6760}
+.qn{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:auto}
+.qn div{border-radius:20px;border:1px solid var(--line);padding:18px 20px;background:rgba(255,255,255,.02)}
+.qn b{display:block;font-size:36px;font-weight:300;letter-spacing:-1.4px}
+.qn span{font-size:13px;color:var(--ink2)}
+
+/* pricing table */
+.tbl{margin-top:56px;border-radius:30px;border:1px solid var(--line);overflow:hidden;display:grid;grid-template-columns:330px repeat(3,1fr);position:relative}
+.tbl .c{border-left:1px solid var(--line)}
+.tbl .c:first-child{border-left:0}
+.tbl .hd{height:210px;padding:28px 26px;border-bottom:1px solid var(--line)}
+.tbl .hd b{font-size:20px;font-weight:500}
+.tbl .hd .pr{font-size:52px;font-weight:200;letter-spacing:-2.4px;margin-top:14px}
+.tbl .hd .pr small{font-size:16px;color:var(--ink2);letter-spacing:0}
+.tbl .hd .btn{height:42px;font-size:14px;margin-top:14px;padding:0 18px}
+.tbl .r{height:58px;display:flex;align-items:center;padding:0 26px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.tbl .c:not(:first-child) .r{color:var(--ink);justify-content:flex-start}
+.tbl .r:last-child{border-bottom:0}
+.tbl .hot{background:radial-gradient(ellipse at 50% -10%,rgba(255,106,31,.40),rgba(255,106,31,0) 55%),linear-gradient(180deg,#16110D,#0C0A08);box-shadow:inset 0 0 0 1px rgba(244,164,98,.35)}
+
+/* cta + footer */
+.cta{margin-top:120px;height:500px;border-radius:40px;overflow:hidden;background:#000 url(horizon.jpg) center 62%/1360px auto;text-align:center;position:relative;border:1px solid rgba(255,255,255,.06)}
+.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 40%,rgba(0,0,0,.15))}
+.cta .c{position:relative;padding-top:84px}
+.cta h2{font-size:78px;font-weight:300;letter-spacing:-3.4px;line-height:1}
+.cta p{font-size:18px;color:var(--ink2);margin-top:20px}
+.cta .bt{display:flex;gap:12px;justify-content:center;margin-top:30px}
+footer{margin-top:18px;border-radius:40px 40px 0 0;background:linear-gradient(180deg,#0C0B0A,#050505);border:1px solid var(--line);border-bottom:0;padding:56px 60px 0;overflow:hidden;height:500px;position:relative}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.4fr;gap:30px}
+.fcols h5{font-size:13px;color:var(--ink3);font-weight:500;font-family:'JetBrains Mono';letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.fcols a{display:block;font-size:15px;color:var(--ink2);margin-bottom:11px}
+.nl{display:flex;height:52px;border-radius:999px;border:1px solid var(--line);align-items:center;padding:0 6px 0 18px;font-size:14px;color:var(--ink3);margin-top:6px}
+.nl span{margin-left:auto;height:40px;width:40px;border-radius:50%;background:linear-gradient(180deg,#F4A462,#D96A28);display:grid;place-items:center}
+.wm{position:absolute;left:44px;bottom:26px;font-size:240px;font-weight:500;letter-spacing:-13px;line-height:.76;padding-bottom:6px;background:linear-gradient(180deg,#5A3D27,#1A120C 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.legal{position:absolute;left:60px;right:60px;top:236px;display:flex;justify-content:space-between;font-size:13px;color:var(--ink3)}
+</style></head><body>
+
+<div class="wrap">
+ <section class="hero">
+  <nav>
+   <div class="lg"><b>{{icon:vault:20:#1A0C04:2.2}}</b>Northvault</div>
+   <div class="mid glass"><span class="on">Banking</span><span>Cards</span><span>Treasury</span><span>Bill pay</span><span>Pricing</span></div>
+   <div class="r"><span style="font-size:14.5px;color:var(--ink2);margin-right:8px">Log in</span><span class="btn cu">Open an account</span></div>
+  </nav>
+  <div class="hc">
+   <span class="eb"><i></i>New · Treasury now earns 4.10% APY</span>
+   <h1>Banking that keeps up<br><span class="g">with your startup.</span></h1>
+   <p>Cards, bills, payroll and treasury in one account, with spend rules that run themselves. Built for teams from first hire to Series C.</p>
+   <div class="bt"><span class="btn cu">Open an account {{icon:arrow-right:18:#1A0C04:2}}</span><span class="btn gh">{{icon:play:16:#F4EFEA:2}}Watch the 2-min tour</span></div>
+  </div>
+  <div class="fl glass" style="left:96px;top:600px;width:300px">
+   <div class="k">{{icon:landmark:15:#A39B93}}Total cash · all accounts</div>
+   <div class="v">$4,081,930<small>.42</small></div>
+   <div style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;color:var(--ink2)"><span>Burn $112,800/mo</span><span style="color:var(--cu2)">36 mo runway</span></div>
+   <div class="bar" style="margin-top:10px"><i style="width:73%"></i></div>
+  </div>
+  <div class="fl glass" style="right:96px;top:560px;width:318px;padding:16px 18px">
+   <div style="display:flex;align-items:center;gap:12px"><div class="av" style="width:40px;height:40px;background-image:url(rohan.jpg)"></div><div><div style="font-size:15px;font-weight:500">Rohan · Engineering</div><div style="font-size:12.5px;color:var(--ink2)">Cloud hosting · today 09:14</div></div></div>
+   <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:14px"><div class="v" style="margin:0;font-size:30px">$1,240<small>.00</small></div><span class="pill" style="background:rgba(123,212,154,.14);color:var(--gr)">{{icon:check:13:#7BD49A:2.5}}Within limit</span></div>
+   <div style="font-size:12.5px;color:var(--ink3);margin-top:8px">Receipt matched · tagged to Infrastructure</div>
+  </div>
+  <div class="hstats glass">
+   <div><b>$4.2B</b><span>moved by founders in 2026</span></div>
+   <div><b>18,400</b><span>startups bank with us</span></div>
+   <div><b>1.5%</b><span>cashback on card spend</span></div>
+   <div><b>1 day</b><span>from signup to live account</span></div>
+  </div>
+ </section>
+</div>
+
+<div class="in logos">
+ <p>Trusted by finance teams at fast-moving companies</p>
+ <div class="row">
+  <span>{{icon:flame:22:#8A837C:2}}Kilnworks</span><span>{{icon:triangle:20:#8A837C:2}}Parallax</span><span>{{icon:sailboat:22:#8A837C:2}}Oarlock</span><span>{{icon:leaf:21:#8A837C:2}}Mintwave</span><span>{{icon:sun:22:#8A837C:2}}Sundial</span><span>{{icon:hexagon:21:#8A837C:2}}Fernbank</span>
+ </div>
+</div>
+
+<div class="in sec">
+ <div class="shead"><h2 class="h2">Everything money<br><span class="g">does at a startup.</span></h2><p>Each tool works on its own and gets better together: a card swipe becomes a categorised expense, a bill becomes a scheduled payment.</p></div>
+ <div class="bento">
+  <div class="card w2 lit">
+   <h4>Corporate cards for every teammate</h4>
+   <div class="d">Physical copper cards and unlimited virtual cards, each with its own limit, merchant rules and receipt reminders.</div>
+   <div class="mcard"><b>Northvault</b><span>•••• 4021</span></div>
+   <div class="limits">
+    <div class="lim"><div class="av" style="background-image:url(rohan.jpg)"></div><div><b>Rohan Mehta · Engineering</b><div class="bar"><i style="width:72%"></i></div></div><div class="n">$7,212<small>of $10,000</small></div></div>
+    <div class="lim"><div class="av" style="background-image:url(kenji.jpg)"></div><div><b>Kenji Sato · Sales</b><div class="bar"><i style="width:48%"></i></div></div><div class="n">$2,390<small>of $5,000</small></div></div>
+    <div class="lim"><div class="av" style="background-image:url(mei.jpg)"></div><div><b>Mei Tanaka · Design</b><div class="bar"><i style="width:61%"></i></div></div><div class="n">$1,840<small>of $3,000</small></div></div>
+   </div>
+  </div>
+  <div class="card">
+   <h4>Spend rules that enforce themselves</h4>
+   <div class="rules">
+    <div class="rule"><i>{{icon:plane:15:#F4A462}}</i>Travel over $800 needs a manager<em>Active</em></div>
+    <div class="rule"><i>{{icon:ban:15:#F4A462}}</i>Block gambling and cash advances<em>Active</em></div>
+    <div class="rule"><i>{{icon:receipt:15:#F4A462}}</i>Freeze card after 7 days without receipt<em>Active</em></div>
+    <div class="rule"><i>{{icon:repeat:15:#F4A462}}</i>Flag new subscriptions over $200<em>Active</em></div>
+   </div>
+  </div>
+  <div class="card">
+   <h4>Treasury that pays you back</h4>
+   <div class="d" style="width:auto">Idle cash moves into short-term US Treasuries automatically.</div>
+   <div class="big">4.10<small>% APY</small></div>
+   <svg width="300" height="110" viewBox="0 0 300 110" style="position:absolute;left:30px;bottom:30px"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6A1F" stop-opacity=".45"/><stop offset="1" stop-color="#FF6A1F" stop-opacity="0"/></linearGradient></defs><path d="M0 92 C40 88 60 80 90 74 C120 68 140 60 170 50 C200 40 230 30 260 22 L300 14 L300 110 L0 110Z" fill="url(#ag)"/><path d="M0 92 C40 88 60 80 90 74 C120 68 140 60 170 50 C200 40 230 30 260 22 L300 14" fill="none" stroke="#F4A462" stroke-width="2.5"/><circle cx="260" cy="22" r="5" fill="#F4A462"/><circle cx="260" cy="22" r="12" fill="#FF6A1F" opacity=".25"/></svg>
+   <div style="position:absolute;right:30px;bottom:150px;font-size:13px;color:var(--ink2);text-align:right">$1.6M in treasury<br><span style="color:var(--cu2)">+$5,467 this month</span></div>
+  </div>
+  <div class="card">
+   <h4>Bills paid in two clicks</h4>
+   <div class="d" style="width:auto">Forward an invoice. We read it, you approve it.</div>
+   <div class="bills">
+    <div class="bill"><div>Office lease · Dec<span>Due Dec 1 · ACH</span></div><span class="pill" style="background:rgba(244,164,98,.12);color:var(--cu2)">Scheduled</span><div>$18,500</div></div>
+    <div class="bill"><div>Legal retainer<span>Due Dec 4 · Wire</span></div><span class="pill" style="background:rgba(255,255,255,.06);color:var(--ink2)">Needs approval</span><div>$6,200</div></div>
+    <div class="bill"><div>Design contractor<span>Paid Nov 22 · ACH</span></div><span class="pill" style="background:rgba(123,212,154,.12);color:var(--gr)">Paid</span><div>$4,800</div></div>
+   </div>
+  </div>
+  <div class="card w2">
+   <h4>Books that close themselves</h4>
+   <div class="d" style="width:520px">Every transaction is matched to a receipt, coded to the right account and synced to your accounting tool overnight.</div>
+   <div class="sync">
+    <div class="col">
+     <div class="sr">Cloud hosting<span>−$7,212.40</span></div>
+     <div class="sr">Team offsite, Lisbon<span>−$3,860.00</span></div>
+     <div class="sr">Customer payout<span style="color:var(--gr)">+$46,120.85</span></div>
+    </div>
+    <div style="display:grid;place-items:center">{{icon:arrow-right-left:22:#F4A462:1.8}}</div>
+    <div class="col">
+     <div class="sr">6100 · Infrastructure<span class="cat">Auto</span></div>
+     <div class="sr">6420 · Travel &amp; events<span class="cat">Auto</span></div>
+     <div class="sr">4000 · Revenue<span class="cat">Auto</span></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="in sec">
+ <div class="shead"><h2 class="h2">Your runway,<br><span class="g">live, every morning.</span></h2><p>See cash, burn and runway update with every transaction instead of rebuilding a spreadsheet each month.</p></div>
+ <div class="app"><div class="ui">
+  <div class="side">
+   <div class="lg"><b>{{icon:vault:16:#1A0C04:2.2}}</b>Northvault</div>
+   <div style="margin-top:22px">
+    <a class="on">{{icon:layout-grid:17:#F4EFEA}}Overview</a><a>{{icon:credit-card:17:#A39B93}}Cards</a><a>{{icon:file-text:17:#A39B93}}Bills</a><a>{{icon:users:17:#A39B93}}Payroll</a><a>{{icon:trending-up:17:#A39B93}}Treasury</a><a>{{icon:book-open:17:#A39B93}}Accounting</a>
+   </div>
+   <div style="position:absolute;left:16px;bottom:18px;width:188px;border-radius:16px;padding:14px;background:rgba(224,123,57,.10);border:1px solid rgba(244,164,98,.25);font-size:12.5px;color:var(--ink2);line-height:1.45"><b style="color:var(--ink);font-weight:500;display:block;font-size:13.5px">Close November</b>12 receipts left to match</div>
+  </div>
+  <div class="main">
+   <div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div class="t">Total cash · all accounts</div><div class="bal">$4,081,930<small>.42</small></div></div>
+    <div style="display:flex;gap:8px"><span class="pill" style="border:1px solid var(--line);color:var(--ink2);height:34px;padding:0 14px">12 months</span><span class="pill" style="background:linear-gradient(180deg,#F4A462,#D96A28);color:#1A0C04;height:34px;padding:0 14px">{{icon:arrow-up-right:14:#1A0C04:2.2}}Move money</span></div></div>
+   <div class="chips"><span><i style="width:8px;height:8px;border-radius:50%;background:#F4A462;display:inline-block"></i>Operating $2.48M</span><span><i style="width:8px;height:8px;border-radius:50%;background:#7A5236;display:inline-block"></i>Treasury $1.60M</span><span>Runway <b style="color:var(--ink);font-weight:500;margin-left:4px">36 months</b></span></div>
+   <svg id="ch" width="580" height="380" viewBox="0 0 580 380" style="margin-top:18px"></svg>
+  </div>
+  <div class="rail">
+   <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:16px;font-weight:500">Recent activity</b><span style="font-size:13px;color:var(--ink3)">See all</span></div>
+   <div style="margin-top:10px">
+    <div class="tx"><i>{{icon:server:16:#F4A462}}</i><div><b>Cloud hosting</b><span>Rohan · card 4021</span></div><em>−$7,212.40</em></div>
+    <div class="tx"><i>{{icon:arrow-down-left:16:#7BD49A}}</i><div><b>Customer payout</b><span>Weekly settlement</span></div><em style="color:var(--gr)">+$46,120.85</em></div>
+    <div class="tx"><i>{{icon:users:16:#F4A462}}</i><div><b>Payroll · 14 people</b><span>Nov 15 run</span></div><em>−$84,300.00</em></div>
+    <div class="tx"><i>{{icon:trending-up:16:#7BD49A}}</i><div><b>Treasury interest</b><span>4.10% APY</span></div><em style="color:var(--gr)">+$5,466.67</em></div>
+    <div class="tx"><i>{{icon:building-2:16:#F4A462}}</i><div><b>Office lease</b><span>Scheduled · Dec 1</span></div><em>−$18,500.00</em></div>
+    <div class="tx" style="border-bottom:0"><i>{{icon:plane:16:#F4A462}}</i><div><b>Team offsite, Lisbon</b><span>Kenji · card 7730</span></div><em>−$3,860.00</em></div>
+   </div>
+  </div>
+ </div></div>
+</div>
+
+<div class="in sec">
+ <div class="shead"><h2 class="h2">Founders who<br><span class="g">stopped doing finance.</span></h2><p>Teams switch from a traditional bank plus three tools, and most say the month-end close is what they notice first.</p></div>
+ <div class="testi">
+  <div class="ph"><div class="tag glass"><b>Amara Lindqvist</b><span>CEO &amp; co-founder, Kilnworks</span></div></div>
+  <div class="card qt">
+   <span class="eb" style="align-self:flex-start"><i></i>Series A · 38 people</span>
+   <q style="margin-top:30px">“We used to close the month on the 15th. Now it's the 3rd, and nobody on my team chases receipts. <span class="g">The spend rules said no to things I would have had to say no to myself.</span>”</q>
+   <div class="qn">
+    <div><b>12 days</b><span>faster month-end close</span></div>
+    <div><b>$61,400</b><span>treasury interest this year</span></div>
+    <div><b>0</b><span>missing receipts in Q3</span></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="in sec">
+ <div class="shead"><h2 class="h2">Simple plans,<br><span class="g">no surprise fees.</span></h2><p>Every plan includes FDIC-insured accounts, unlimited virtual cards and free ACH. Switch plans any time.</p></div>
+ <div class="tbl">
+  <div class="c"><div class="hd" style="display:flex;flex-direction:column;justify-content:flex-end"><span style="font-size:15px;color:var(--ink2);line-height:1.5">Compare what each<br>plan includes</span></div>
+   <div class="r">Cashback on card spend</div><div class="r">Treasury yield</div><div class="r">Legal entities</div><div class="r">Bill pay and approvals</div><div class="r">Accounting sync</div><div class="r">Support</div></div>
+  <div class="c"><div class="hd"><b>Starter</b><div class="pr">$0<small> /month</small></div><span class="btn gh">Start free</span></div>
+   <div class="r">1.0%</div><div class="r">3.60% APY</div><div class="r">1</div><div class="r">Up to 20 bills</div><div class="r">Monthly</div><div class="r">Email</div></div>
+  <div class="c hot"><div class="hd"><b style="display:flex;justify-content:space-between">Growth<span class="pill" style="background:rgba(255,106,31,.18);color:var(--cu2);height:24px">Most teams</span></b><div class="pr">$49<small> /month</small></div><span class="btn cu">Start 30-day trial</span></div>
+   <div class="r">1.5%</div><div class="r">4.10% APY</div><div class="r">Up to 3</div><div class="r">Unlimited</div><div class="r">Overnight</div><div class="r">Chat, 1-hour reply</div></div>
+  <div class="c"><div class="hd"><b>Scale</b><div class="pr">$249<small> /month</small></div><span class="btn gh">Talk to us</span></div>
+   <div class="r">2.0%</div><div class="r">4.10% APY</div><div class="r">Unlimited</div><div class="r">Unlimited + multi-step</div><div class="r">Real time</div><div class="r">Dedicated manager</div></div>
+ </div>
+</div>
+
+<div class="wrap">
+ <section class="cta"><div class="c">
+  <span class="eb"><i></i>Join 18,400 startups</span>
+  <h2 style="margin-top:24px">Your money should move<br><span class="se" style="color:#F4A462">as fast as you do.</span></h2>
+  <p>Open an account in a day. Free on Starter, forever.</p>
+  <div class="bt"><span class="btn cu">Open an account {{icon:arrow-right:18:#1A0C04:2}}</span><span class="btn gh">Book a demo</span></div>
+ </div></section>
+ <footer>
+  <div class="fcols">
+   <div><div class="lg"><b>{{icon:vault:20:#1A0C04:2.2}}</b>Northvault</div><p style="font-size:14.5px;color:var(--ink2);line-height:1.55;margin-top:18px;width:250px">Business banking and corporate cards for startups. Banking services by FDIC-member partner banks.</p></div>
+   <div><h5>Product</h5><a>Accounts</a><a>Cards</a><a>Treasury</a><a>Bill pay</a></div>
+   <div><h5>Company</h5><a>About</a><a>Careers</a><a>Security</a><a>Press</a></div>
+   <div><h5>Resources</h5><a>Runway calculator</a><a>Startup guides</a><a>Help center</a><a>Status</a></div>
+   <div><h5>The finance memo</h5><p style="font-size:14.5px;color:var(--ink2);line-height:1.5">One email a month on cash, cards and closing the books.</p><div class="nl">you@startup.com<span>{{icon:arrow-right:17:#1A0C04:2.2}}</span></div></div>
+  </div>
+  <div class="legal"><span>© 2026 Northvault Inc. Northvault is a financial technology company, not a bank.</span><span>Privacy · Terms · Disclosures</span></div>
+  <div class="wm">Northvault</div>
+ </footer>
+</div>
+
+<script>
+(function(){
+ const s=document.getElementById('ch');
+ // total cash, $M, Dec 2025 → Nov 2026 (funding round in Apr)
+ const m=['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'];
+ const v=[1.92,1.84,1.75,1.66,4.95,4.86,4.74,4.62,4.49,4.37,4.22,4.08];
+ const L=40,R=574,T=20,B=340,max=6,X=i=>L+(R-L)/11*i,Y=x=>B-(B-T)*x/max;let h='';
+ h+=`<defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6A1F" stop-opacity=".40"/><stop offset="1" stop-color="#FF6A1F" stop-opacity="0"/></linearGradient><filter id="gl"><feGaussianBlur stdDeviation="4"/></filter></defs>`;
+ for(let k=0;k<=6;k+=2){h+=`<line x1="${L}" x2="${R}" y1="${Y(k)}" y2="${Y(k)}" stroke="rgba(255,255,255,.07)" ${k?'stroke-dasharray="3 5"':''}/><text x="${L-10}" y="${Y(k)+4}" text-anchor="end" font-family="Inter Tight" font-size="12" fill="#6E6760">$${k}M</text>`}
+ let p='';v.forEach((x,i)=>{p+=(i?'L':'M')+X(i)+' '+Y(x)});
+ h+=`<path d="${p} L${X(11)} ${B} L${X(0)} ${B}Z" fill="url(#ar)"/><path d="${p}" fill="none" stroke="#FF6A1F" stroke-width="6" opacity=".35" filter="url(#gl)"/><path d="${p}" fill="none" stroke="#F4A462" stroke-width="2.5" stroke-linejoin="round"/>`;
+ m.forEach((x,i)=>{h+=`<text x="${X(i)}" y="${B+24}" text-anchor="middle" font-family="Inter Tight" font-size="12" fill="${i==11?'#F4EFEA':'#6E6760'}">${x}</text>`});
+ h+=`<line x1="${X(4)}" x2="${X(4)}" y1="${Y(4.95)}" y2="${B}" stroke="rgba(244,164,98,.5)" stroke-dasharray="3 4"/><g transform="translate(${X(4)+12},${Y(4.95)-62})"><rect width="164" height="48" rx="12" fill="#F4EFEA"/><text x="12" y="20" font-family="Inter Tight" font-size="12" fill="#6E6760">Apr · Series A closed</text><text x="12" y="38" font-family="Inter Tight" font-size="14.5" font-weight="600" fill="#1A0C04">+$3.4M raised</text></g>`;
+ h+=`<circle cx="${X(11)}" cy="${Y(4.08)}" r="12" fill="#FF6A1F" opacity=".25"/><circle cx="${X(11)}" cy="${Y(4.08)}" r="5.5" fill="#F4A462" stroke="#0A0908" stroke-width="2"/>`;
+ s.innerHTML=h;
+})();
+</script>
+</body></html>

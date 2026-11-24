@@ -1,0 +1,107 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Plinth">
+<meta name="app-desc" content="An investing app that shows **your real position** on every stock and ETF, with a glowing live chart and **one slide to buy** a fraction.">
+<meta name="fonts" content="Sora|Thin, wide numerals that read like engraved metal, with an Instrument Serif italic for the human moments.">
+<meta name="palette" content="#8B6CFF:Plinth violet|#C9B8FF:Lilac glow|#D9DCE3:Chrome|#8C8F99:Steel|#16151C:Graphite|#08080B:Void">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Sora';color:#F2F1F7;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#08080B}
+.arm{position:absolute;right:-56px;top:36px;width:270px;height:380px;background:url(arm.jpg) center/cover;-webkit-mask-image:linear-gradient(180deg,#000 50%,transparent 96%),linear-gradient(90deg,transparent,#000 30%);-webkit-mask-composite:source-in;opacity:.95}
+.glow{position:absolute;left:-120px;top:240px;width:420px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(139,108,255,.32),rgba(139,108,255,0))}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.gl{background:rgba(255,255,255,.07);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.13)}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;gap:8px}
+.cb{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none}
+.tick{height:42px;padding:0 14px 0 5px;border-radius:999px;display:flex;align-items:center;gap:9px}
+.tick i{width:32px;height:32px;border-radius:50%;background:linear-gradient(145deg,#ECEEF3,#8C8F99);display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:700;color:#08080B}
+.tick b{display:block;font-size:13.5px;font-weight:600;line-height:1.1}.tick small{font-size:11px;color:#9C9AA8}
+.top .cb.sp{margin-left:auto}
+.hero{position:absolute;left:22px;top:124px}
+.lbl{font-size:12px;color:#9C9AA8;letter-spacing:1.4px;text-transform:uppercase;font-weight:500}
+.px{font-weight:200;font-size:56px;letter-spacing:-3px;line-height:1;margin-top:8px;background:linear-gradient(180deg,#FFFFFF 0%,#D9DCE3 45%,#8C8F99 100%);-webkit-background-clip:text;color:transparent}
+.px small{font-size:30px;letter-spacing:-1px}
+.chg{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px 0 8px;border-radius:999px;margin-top:12px;font-size:12.5px;font-weight:600;color:#D9CCFF;background:rgba(139,108,255,.18);border:1px solid rgba(139,108,255,.45)}
+.hero p{font-size:12.5px;color:#9C9AA8;margin-top:10px}
+.hero p i{font-family:'Instrument Serif';font-size:16px;color:#F2F1F7}
+.chart{position:absolute;left:0;right:0;top:282px;height:178px}
+.rng{position:absolute;left:18px;right:18px;top:464px;height:38px;border-radius:999px;display:flex;padding:3px}
+.rng span{flex:1;border-radius:999px;display:grid;place-items:center;font-size:12px;font-weight:500;color:#9C9AA8}
+.rng span.on{background:#F2F1F7;color:#08080B;font-weight:600}
+.pos{position:absolute;left:14px;right:14px;top:512px;height:130px;border-radius:26px;padding:14px 16px;background:linear-gradient(150deg,rgba(139,108,255,.30),rgba(22,21,28,.7) 60%);border:1px solid rgba(201,184,255,.32)}
+.pos .r1{display:flex;justify-content:space-between;align-items:center}
+.pos .r1 small{font-size:11.5px;color:#BDB6D6;font-weight:500}
+.pos .r1 em{font-style:normal;font-size:11px;font-weight:600;color:#08080B;background:#C9B8FF;border-radius:999px;padding:3px 9px}
+.pos .v{font-weight:300;font-size:30px;letter-spacing:-1.4px;margin-top:6px}
+.pos .g{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:10px;font-size:11px;color:#9C9AA8}
+.pos .g b{display:block;font-size:13px;font-weight:600;color:#F2F1F7;margin-top:2px}
+.pos .g b.up{color:#C9B8FF}
+.two{position:absolute;left:14px;right:14px;top:652px;height:96px;display:grid;grid-template-columns:1.15fr 1fr;gap:8px}
+.two>div{border-radius:22px;padding:12px 13px}
+.two small{font-size:11px;color:#9C9AA8;font-weight:500;display:flex;align-items:center;gap:5px}
+.an{display:flex;gap:3px;margin-top:10px;height:8px}.an i{border-radius:4px}
+.anl{display:flex;justify-content:space-between;font-size:11px;color:#9C9AA8;margin-top:7px}.anl b{color:#F2F1F7;font-weight:600}
+.ai b{display:block;font-size:22px;font-weight:300;letter-spacing:-.8px;margin-top:6px}
+.ai span{font-size:11px;color:#9C9AA8}
+.sl{position:absolute;left:14px;right:14px;bottom:26px;height:62px;border-radius:999px;display:flex;align-items:center;padding:6px;background:#F2F1F7;color:#08080B}
+.sl .k{width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#B8A4FF,#6B4BFF);display:grid;place-items:center;box-shadow:0 0 22px rgba(139,108,255,.7)}
+.sl .tx{position:absolute;left:0;right:0;text-align:center;font-size:15px;font-weight:600}
+.sl .tx span{color:#6E6C78;font-weight:400}
+.sl .ch{position:absolute;right:22px;display:flex;opacity:.4}
+.hi{position:absolute;left:50%;bottom:8px;width:134px;height:5px;border-radius:3px;background:#F2F1F7;transform:translateX(-50%)}
+</style></head><body>
+<div class="glow"></div><div class="arm"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#fff:2.6}}{{icon:wifi:17:#fff:2.6}}{{icon:battery-full:24:#fff:2}}</span></div>
+<div class="top">
+ <span class="cb gl">{{icon:chevron-left:20:#F2F1F7:2}}</span>
+ <span class="tick gl"><i>HLX</i><span><b>Helix Robotics</b><small>HLX · Robotics &amp; AI</small></span></span>
+ <span class="cb gl sp">{{icon:bell:18:#F2F1F7:1.9}}</span>
+ <span class="cb gl">{{icon:star:18:#C9B8FF:1.9}}</span>
+</div>
+<div class="hero">
+ <div class="lbl">Price · live</div>
+ <div class="px">$184<small>.62</small></div>
+ <span class="chg">{{icon:trending-up:14:#C9B8FF:2.2}}+$6.84 · 3.85% today</span>
+ <p>You own <i>24 shares</i> since March</p>
+</div>
+<svg class="chart" id="ch" width="393" height="178" viewBox="0 0 393 178"></svg>
+<div class="rng gl"><span class="on">1D</span><span>1W</span><span>1M</span><span>1Y</span><span>5Y</span><span>All</span></div>
+<div class="pos">
+ <div class="r1"><small>Your position</small><em>+21.4%</em></div>
+ <div class="v">$4,430.88</div>
+ <div class="g"><div>Shares<b>24</b></div><div>Avg cost<b>$152.10</b></div><div>Total return<b class="up">+$780.48</b></div></div>
+</div>
+<div class="two">
+ <div class="gl"><small>{{icon:users:12:#9C9AA8:2}}Analysts · 24</small>
+  <div class="an"><i style="flex:18;background:#8B6CFF;box-shadow:0 0 10px rgba(139,108,255,.7)"></i><i style="flex:5;background:#8C8F99"></i><i style="flex:1;background:#4A4856"></i></div>
+  <div class="anl"><span><b>18</b> Buy</span><span><b>5</b> Hold</span><span><b>1</b> Sell</span></div></div>
+ <div class="gl ai"><small>{{icon:repeat:12:#9C9AA8:2}}Auto-invest</small><b>$50 / wk</b><span>Next: Fri, Nov 27</span></div>
+</div>
+<div class="sl" data-nav><span class="k">{{icon:arrow-right:22:#fff:2.2}}</span><span class="tx">Slide to buy $250 <span>· 1.354 sh</span></span><span class="ch">{{icon:chevrons-right:20:#08080B:2}}</span></div>
+<div class="hi"></div>
+<script>
+(function(){
+ const el=document.getElementById('ch');
+ // 1D intraday 9:30-16:00, 40 points, open 177.78 -> last 184.62, low 176.90, high 185.40
+ const P=[177.78,177.40,176.90,177.20,177.95,178.60,178.30,179.10,179.80,179.50,180.20,180.90,180.60,181.40,181.10,180.70,181.30,182.00,182.60,182.20,182.90,183.50,183.10,183.80,184.40,185.40,184.90,184.20,183.70,184.10,184.60,184.30,183.90,184.50,184.80,184.40,184.70,185.00,184.80,184.62];
+ const L=16,R=377,T=22,B=160,mn=176.4,mx=185.9,X=i=>L+(R-L)*i/(P.length-1),Y=v=>B-(B-T)*(v-mn)/(mx-mn);
+ let d='';P.forEach((v,i)=>d+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1));
+ let s=`<defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B6CFF" stop-opacity=".38"/><stop offset="1" stop-color="#8B6CFF" stop-opacity="0"/></linearGradient>
+ <filter id="gw" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="4"/></filter></defs>`;
+ s+=`<line x1="${L}" x2="${R}" y1="${Y(177.78)}" y2="${Y(177.78)}" stroke="rgba(255,255,255,.22)" stroke-dasharray="2 4"/><text x="${R}" y="${Y(177.78)+14}" text-anchor="end" font-family="Sora" font-size="10" fill="#6E6C78">Open 177.78</text>`;
+ s+=`<path d="${d} L${R} ${B} L${L} ${B} Z" fill="url(#ar)"/>`;
+ s+=`<path d="${d}" fill="none" stroke="#A98BFF" stroke-width="5" stroke-opacity=".6" filter="url(#gw)"/>`;
+ s+=`<path d="${d}" fill="none" stroke="#D9CCFF" stroke-width="2" stroke-linejoin="round"/>`;
+ const hx=X(25),hy=Y(185.40);
+ s+=`<line x1="${hx}" x2="${hx}" y1="${hy}" y2="${B}" stroke="rgba(201,184,255,.5)" stroke-dasharray="2 3"/>`;
+ s+=`<circle cx="${hx}" cy="${hy}" r="9" fill="#8B6CFF" opacity=".35"/><circle cx="${hx}" cy="${hy}" r="4.5" fill="#fff"/>`;
+ s+=`<g transform="translate(${hx-118},${hy-18})"><rect width="104" height="38" rx="12" fill="#F2F1F7"/><text x="10" y="16" font-family="Sora" font-size="9.5" fill="#6E6C78">High · 14:05</text><text x="10" y="31" font-family="Sora" font-size="13" font-weight="600" fill="#08080B">$185.40</text></g>`;
+ const lx=X(P.length-1),ly=Y(184.62);
+ s+=`<circle cx="${lx}" cy="${ly}" r="10" fill="#8B6CFF" opacity=".3"/><circle cx="${lx}" cy="${ly}" r="4" fill="#D9CCFF"/>`;
+ ['9:30','11:00','12:30','14:00','16:00'].forEach((t,i)=>{s+=`<text x="${L+(R-L)*i/4}" y="176" text-anchor="${i==0?'start':i==4?'end':'middle'}" font-family="Sora" font-size="9.5" fill="#6E6C78">${t}</text>`});
+ el.innerHTML=s;
+})();
+</script>
+</body></html>

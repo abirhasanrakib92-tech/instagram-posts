@@ -1,0 +1,124 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="app-name" content="Kinto">
+<meta name="app-desc" content="A metal spending card and wallet that holds **three currencies in pockets**, converts at the real rate, and lets you **freeze or cap the card in one tap**.">
+<meta name="fonts" content="Geist|A calm, engineered grotesk for balances and card numbers, with Doto dot-matrix digits for the monthly limit meter.">
+<meta name="palette" content="#5CF2B0:Mint|#0F2A22:Deep emerald|#B9C2C0:Titanium|#24282A:Graphite|#EEF3F1:Frost|#060808:Black">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:393px;height:852px;overflow:hidden;font-family:'Geist';color:#EEF3F1;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#060808}
+.bg{position:absolute;inset:0;background:radial-gradient(120% 55% at 50% 12%,rgba(92,242,176,.20),rgba(15,42,34,.35) 45%,rgba(6,8,8,0) 75%),#060808}
+.bg:after{content:"";position:absolute;left:-40px;right:-40px;top:300px;height:2px;background:linear-gradient(90deg,rgba(92,242,176,0),rgba(92,242,176,.55),rgba(92,242,176,0));filter:blur(1px)}
+.sb{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 38px;font-size:16px;font-weight:600}
+.sb span:last-child{display:flex;gap:6px;align-items:center}
+.gl{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.top{position:absolute;top:60px;left:18px;right:18px;display:flex;align-items:center;gap:10px}
+.who{display:flex;align-items:center;gap:10px;height:44px;padding:0 14px 0 4px;border-radius:999px}
+.who i{width:36px;height:36px;border-radius:50%;background:url(marcus.jpg) center 25%/cover}
+.who b{display:block;font-size:14px;font-weight:600;line-height:1.1}.who small{font-size:11.5px;color:rgba(238,243,241,.55)}
+.cb{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;position:relative}
+.top .cb:first-of-type{margin-left:auto}
+.cb em{position:absolute;top:11px;right:12px;width:7px;height:7px;border-radius:50%;background:#5CF2B0}
+/* card */
+.card{position:absolute;left:28px;top:122px;width:337px;height:203px;border-radius:20px;background:url(card.jpg) center/100% 100%;box-shadow:0 30px 50px -18px rgba(0,0,0,.8),0 0 60px -10px rgba(92,242,176,.28),inset 0 0 0 1px rgba(255,255,255,.10)}
+.card .wm{position:absolute;left:22px;top:20px;font-size:19px;font-weight:600;letter-spacing:-.5px;color:#DCE3E1;opacity:.92}
+.card .wm i{font-family:'Instrument Serif';font-weight:400;font-style:italic;font-size:20px;color:#5CF2B0;margin-left:3px}
+.card .ct{position:absolute;right:20px;top:20px;opacity:.75}
+.card .no{position:absolute;left:22px;bottom:20px;font-size:14px;letter-spacing:2.5px;color:#C9D1CF;font-family:'JetBrains Mono'}
+.card .nm{position:absolute;left:22px;bottom:42px;font-size:10.5px;letter-spacing:1.6px;color:rgba(201,209,207,.7);text-transform:uppercase}
+.card .net{position:absolute;right:20px;bottom:16px;display:flex;align-items:center}
+.card .net span{width:30px;height:30px;border-radius:8px;transform:rotate(45deg);border:2px solid rgba(220,227,225,.75)}
+.card .net span+span{margin-left:-14px;background:rgba(92,242,176,.55);border-color:rgba(92,242,176,.9)}
+.live{position:absolute;left:50%;transform:translateX(-50%);top:336px;display:flex;align-items:center;gap:7px;white-space:nowrap;font-size:11.5px;color:rgba(238,243,241,.6)}
+.live i{width:6px;height:6px;border-radius:50%;background:#5CF2B0;box-shadow:0 0 8px #5CF2B0}
+/* controls */
+.ctl{position:absolute;left:18px;right:18px;top:362px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.ctl>div{height:62px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:11.5px;font-weight:500;color:rgba(238,243,241,.8)}
+.ctl>div.on{background:#5CF2B0;color:#06130E;border-color:#5CF2B0;box-shadow:0 0 24px -4px rgba(92,242,176,.6)}
+/* pockets */
+.bal{position:absolute;left:24px;right:24px;top:436px;display:flex;justify-content:space-between;align-items:flex-end}
+.bal small{font-size:12px;color:rgba(238,243,241,.55);display:block}
+.bal b{font-weight:300;font-size:34px;letter-spacing:-1.6px;line-height:1.1}
+.bal b span{color:rgba(238,243,241,.45)}
+.bal .pl{font-size:11.5px;color:#5CF2B0;padding:5px 10px;border-radius:999px;background:rgba(92,242,176,.10);border:1px solid rgba(92,242,176,.25)}
+.pk{position:absolute;left:18px;right:18px;top:492px;display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:8px}
+.pk>div{border-radius:18px;padding:10px 11px;height:62px}
+.pk>div.on{background:linear-gradient(155deg,rgba(92,242,176,.22),rgba(15,42,34,.5));border-color:rgba(92,242,176,.35)}
+.pk .c{display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(238,243,241,.65)}
+.pk .c i{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:700;background:#EEF3F1;color:#060808}
+.pk b{display:block;font-size:17px;font-weight:500;letter-spacing:-.4px;margin-top:6px}
+/* limit */
+.lim{position:absolute;left:18px;right:18px;top:566px;height:62px;border-radius:20px;padding:11px 14px}
+.lim .r{display:flex;justify-content:space-between;font-size:12px;color:rgba(238,243,241,.6)}
+.lim .r b{color:#EEF3F1;font-weight:500}
+.dm{display:flex;gap:3px;margin-top:9px}
+.dm i{flex:1;height:14px;border-radius:3px;background:rgba(255,255,255,.08)}
+.dm i.f{background:#5CF2B0;box-shadow:0 0 6px rgba(92,242,176,.45)}
+.dm i.w{background:rgba(92,242,176,.35)}
+/* activity */
+.act{position:absolute;left:18px;right:18px;top:640px}
+.ah{display:flex;justify-content:space-between;font-size:13px;font-weight:600;padding:0 4px 4px}
+.ah span{font-weight:400;color:rgba(238,243,241,.5);font-size:12px}
+.tx{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;height:44px;padding:0 4px}
+.tx+.tx{border-top:1px solid rgba(255,255,255,.07)}
+.tx i{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.07)}
+.tx b{display:block;font-size:13.5px;font-weight:500}.tx small{font-size:11.5px;color:rgba(238,243,241,.5)}
+.tx .a{text-align:right;font-size:14px;font-weight:500}.tx .a small{display:block}
+/* nav */
+.nav{position:absolute;left:18px;right:18px;bottom:22px;height:62px;border-radius:31px;display:flex;align-items:center;justify-content:space-around;padding:0 8px;background:rgba(22,26,26,.82);border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.nav span{width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
+.nav span.on{background:rgba(92,242,176,.14)}
+.nav span.pay{width:52px;height:52px;background:#5CF2B0;box-shadow:0 0 22px -2px rgba(92,242,176,.6)}
+.home{position:absolute;left:50%;transform:translateX(-50%);bottom:7px;width:134px;height:5px;border-radius:3px;background:#EEF3F1;opacity:.9}
+</style></head><body>
+<div class="bg"></div>
+<div class="sb"><span>9:41</span><span>{{icon:signal:17:#EEF3F1:2.6}}{{icon:wifi:17:#EEF3F1:2.6}}{{icon:battery-full:24:#EEF3F1:2}}</span></div>
+<div class="top">
+ <div class="who gl"><i></i><div><b>Marcus Reid</b><small>Kinto Metal · Personal</small></div></div>
+ <div class="cb gl">{{icon:scan-line:19:#EEF3F1}}</div>
+ <div class="cb gl">{{icon:bell:19:#EEF3F1}}<em></em></div>
+</div>
+<div class="card">
+ <div class="wm">Kinto<i>metal</i></div>
+ <div class="ct">{{icon:nfc:22:#DCE3E1:1.8}}</div>
+ <div class="nm">Marcus Reid · exp 09/29</div>
+ <div class="no">••••  ••••  ••••  4820</div>
+ <div class="net"><span></span><span></span></div>
+</div>
+<div class="live"><i></i>Card active · tap and phone pay ready</div>
+<div class="ctl">
+ <div class="gl">{{icon:snowflake:19:#EEF3F1:1.8}}Freeze</div>
+ <div class="gl on">{{icon:gauge:19:#06130E:1.9}}Limits</div>
+ <div class="gl">{{icon:eye:19:#EEF3F1:1.8}}Details</div>
+ <div class="gl">{{icon:key-round:19:#EEF3F1:1.8}}PIN</div>
+</div>
+<div class="bal"><div><small>Total across pockets</small><b>$12,800<span>.92</span></b></div><span class="pl">+$214 this week</span></div>
+<div class="pk">
+ <div class="gl on"><div class="c"><i>$</i>USD · main</div><b>$8,214.50</b></div>
+ <div class="gl"><div class="c"><i>€</i>EUR</div><b>€2,960.00</b></div>
+ <div class="gl"><div class="c"><i>£</i>GBP</div><b>£1,140.80</b></div>
+</div>
+<div class="lim gl">
+ <div class="r"><span>Monthly limit · <b>$1,846</b> of $2,500</span><span>12 days left</span></div>
+ <div class="dm" id="dm"></div>
+</div>
+<div class="act">
+ <div class="ah">Recent spends<span>Converted at the real rate</span></div>
+ <div class="tx"><i>{{icon:coffee:17:#5CF2B0:1.8}}</i><div><b>Kiosk Alfama</b><small>Lisbon · today 08:12</small></div><div class="a">−€4.20<small>EUR pocket</small></div></div>
+ <div class="tx"><i>{{icon:plane:17:#EEF3F1:1.8}}</i><div><b>Northline Air</b><small>LIS → LHR · yesterday</small></div><div class="a">−£182.00<small>GBP pocket</small></div></div>
+</div>
+<div class="nav" data-nav>
+ <span>{{icon:house:21:#9AA3A0:1.9}}</span>
+ <span class="on">{{icon:credit-card:21:#5CF2B0:1.9}}</span>
+ <span class="pay">{{icon:arrow-left-right:22:#06130E:2.2}}</span>
+ <span>{{icon:chart-pie:21:#9AA3A0:1.9}}</span>
+ <span>{{icon:user-round:21:#9AA3A0:1.9}}</span>
+</div>
+<div class="home"></div>
+<script>
+const dm=document.getElementById('dm');let h='';
+for(let i=0;i<40;i++){h+=`<i class="${i<29?'f':(i<30?'w':'')}"></i>`}
+dm.innerHTML=h;
+</script>
+</body></html>

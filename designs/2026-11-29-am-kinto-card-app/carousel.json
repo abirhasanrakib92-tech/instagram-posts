@@ -1,0 +1,197 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Kinto",
+  "category": "Spending card & wallet",
+  "tagline": "A metal card with three currency pockets, real-rate spending and limits you set in one tap.",
+  "font": "Geist",
+  "font_note": "An engineered grotesk for balances and card numbers, with Doto-style dot meters for the monthly limit.",
+  "gradient": [
+   "#5CF2B0",
+   "#1F6B52",
+   "#0F2A22",
+   "#060808"
+  ],
+  "paper": "#EEEEEE",
+  "palette": [
+   [
+    "#5CF2B0",
+    "Mint"
+   ],
+   [
+    "#0F2A22",
+    "Deep emerald"
+   ],
+   [
+    "#B9C2C0",
+    "Titanium"
+   ],
+   [
+    "#24282A",
+    "Graphite"
+   ],
+   [
+    "#EEF3F1",
+    "Frost"
+   ],
+   [
+    "#060808",
+    "Black"
+   ]
+  ],
+  "zoom": [
+   0,
+   112,
+   393,
+   316
+  ],
+  "zoom_title": "Your card, your pockets,<br>one calm screen.",
+  "components_title": "Metal, mint<br>and glass.",
+  "elements": {
+   "card": {
+    "box": [
+     28,
+     122,
+     337,
+     203
+    ],
+    "r": 20
+   },
+   "who": {
+    "box": [
+     18,
+     60,
+     180,
+     44
+    ],
+    "r": 22
+   },
+   "limb": {
+    "box": [
+     109,
+     362,
+     84,
+     62
+    ],
+    "r": 20
+   },
+   "usd": {
+    "box": [
+     18,
+     492,
+     125,
+     62
+    ],
+    "r": 18
+   },
+   "lim": {
+    "box": [
+     18,
+     566,
+     357,
+     62
+    ],
+    "r": 20
+   },
+   "tx": {
+    "box": [
+     18,
+     660,
+     357,
+     46
+    ],
+    "r": 14
+   },
+   "nav": {
+    "box": [
+     18,
+     768,
+     357,
+     62
+    ],
+    "r": 31
+   }
+  },
+  "s2_floats": [
+   [
+    "card",
+    520,
+    40,
+    690,
+    -6,
+    3
+   ],
+   [
+    "lim",
+    560,
+    40,
+    1010,
+    3,
+    3
+   ],
+   [
+    "nav",
+    520,
+    60,
+    1160,
+    -2,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "who",
+    420,
+    600,
+    110,
+    3,
+    1
+   ],
+   [
+    "card",
+    620,
+    400,
+    290,
+    -4,
+    1
+   ],
+   [
+    "lim",
+    900,
+    90,
+    700,
+    0,
+    1
+   ],
+   [
+    "usd",
+    360,
+    80,
+    900,
+    -2,
+    1
+   ],
+   [
+    "limb",
+    230,
+    520,
+    915,
+    4,
+    1
+   ],
+   [
+    "tx",
+    900,
+    90,
+    1130,
+    -1,
+    1
+   ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#060808",
+  "s4_ink": "#060808"
+ }
+}

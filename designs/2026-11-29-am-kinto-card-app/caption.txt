@@ -1,0 +1,9 @@
+Your card should know which currency you're spending before you do.
+Fintech app UI design: metal spending card, multi-currency wallet and monthly limits
+
+Kinto keeps dollars, euros and pounds in separate pockets and pays from the right one at the real rate. Freeze, limits and PIN sit one tap under the card, and the dot meter shows how much of the month is left.
+
+Save this for your next banking app project
+Would you rather set a monthly limit or a daily one?
+
+#uiux #mobileappdesign #fintechdesign #bankingapp #fintech

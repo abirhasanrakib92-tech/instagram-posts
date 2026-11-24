@@ -1,0 +1,206 @@
+{
+ "v4": {
+  "screen": "auto",
+  "flat": true,
+  "name": "Plinth",
+  "category": "Investing app",
+  "tagline": "Your real position on every stock, on one glowing screen.",
+  "font": "Sora",
+  "font_note": "Thin, wide numerals that read like engraved metal, with an Instrument Serif italic for the human moments.",
+  "gradient": [
+   "#D9DCE3",
+   "#8B6CFF",
+   "#2A2240",
+   "#08080B"
+  ],
+  "paper": "#EEEEEE",
+  "palette": [
+   [
+    "#8B6CFF",
+    "Plinth violet"
+   ],
+   [
+    "#C9B8FF",
+    "Lilac glow"
+   ],
+   [
+    "#D9DCE3",
+    "Chrome"
+   ],
+   [
+    "#8C8F99",
+    "Steel"
+   ],
+   [
+    "#16151C",
+    "Graphite"
+   ],
+   [
+    "#08080B",
+    "Void"
+   ]
+  ],
+  "zoom": [
+   0,
+   207,
+   393,
+   255
+  ],
+  "zoom_title": "The whole day,<br>in one lit line.",
+  "components_title": "Chrome on<br>black glass.",
+  "elements": {
+   "tick": {
+    "box": [
+     68,
+     60,
+     167,
+     42
+    ],
+    "r": 21
+   },
+   "chg": {
+    "box": [
+     22,
+     215,
+     175,
+     28
+    ],
+    "r": 14
+   },
+   "chart": {
+    "box": [
+     0,
+     282,
+     393,
+     178
+    ],
+    "r": 24
+   },
+   "rng": {
+    "box": [
+     18,
+     464,
+     357,
+     38
+    ],
+    "r": 19
+   },
+   "pos": {
+    "box": [
+     14,
+     512,
+     365,
+     130
+    ],
+    "r": 26
+   },
+   "an": {
+    "box": [
+     14,
+     652,
+     191,
+     96
+    ],
+    "r": 22
+   },
+   "ai": {
+    "box": [
+     213,
+     652,
+     166,
+     96
+    ],
+    "r": 22
+   },
+   "sl": {
+    "box": [
+     14,
+     764,
+     365,
+     62
+    ],
+    "r": 31
+   }
+  },
+  "s2_floats": [
+   [
+    "chg",
+    380,
+    60,
+    560,
+    -4,
+    3
+   ],
+   [
+    "pos",
+    470,
+    30,
+    760,
+    3,
+    3
+   ],
+   [
+    "sl",
+    560,
+    40,
+    1120,
+    -3,
+    3
+   ]
+  ],
+  "s4_floats": [
+   [
+    "chart",
+    920,
+    80,
+    310,
+    0,
+    1
+   ],
+   [
+    "tick",
+    380,
+    90,
+    750,
+    -3,
+    1
+   ],
+   [
+    "chg",
+    380,
+    560,
+    760,
+    3,
+    1
+   ],
+   [
+    "pos",
+    560,
+    70,
+    880,
+    -2,
+    1
+   ],
+   [
+    "an",
+    380,
+    660,
+    880,
+    3,
+    1
+   ],
+   [
+    "sl",
+    900,
+    90,
+    1140,
+    -2,
+    1
+   ]
+  ],
+  "bg2": "#EEEEEE",
+  "bg4": "#EEEEEE",
+  "s2_ink": "#08080B",
+  "s4_ink": "#08080B"
+ }
+}
