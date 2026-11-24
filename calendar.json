@@ -943,7 +943,7 @@
    "niche": "Fintech: hardware wallet for crypto self-custody",
    "brand": "Monolith",
    "palette_hint": "black + bone + titanium + acid yellow",
-   "status": "ready-pending-approval",
+   "status": "ready",
    "design_dir": "designs/2026-11-25-pm-monolith-wallet-website",
    "image": null,
    "caption": "If your keys live on your phone, they're not really yours.\nHardware crypto wallet website UI design in dark mode: cinematic product landing page for self-custody\n\nMonolith is a slab of titanium that signs every transaction on its own e-ink screen. The page treats it like a film: giant wordmark behind the product, spec labels on leader lines, and one acid-yellow signal colour.\n\nSave this for your next product landing page\nWould you trust a device more if the website looked this calm?\n\n#uiux #webdesign #landingpage #cryptowallet #fintechdesign",
@@ -973,7 +973,8 @@
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-7.jpg"
    ],
    "theme": "dark",
-   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
+   "approved": "owner said Final (2026-11-25)"
   },
   {
    "id": "2026-11-26-am",
@@ -984,7 +985,7 @@
    "niche": "AI: personal AI assistant with voice mode",
    "brand": "Aster",
    "palette_hint": "black + icy blue + silver",
-   "status": "ready-pending-approval",
+   "status": "ready",
    "design_dir": "designs/2026-11-26-am-aster-ai-assistant-app",
    "image": null,
    "caption": "The best AI assistant is the one you never have to type to.\nAI voice assistant app UI design: live voice mode, transcript and action cards\n\nAster shows what it heard, what it did and what still needs your yes. Every action lands as a card under the transcript, so nothing happens behind your back.\n\nSave this for your next AI product\nWould you trust an assistant to book things without asking first?\n\n#uidesign #mobileappdesign #aiassistant #voiceui #conversationaldesign",
@@ -1011,7 +1012,8 @@
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-6.jpg"
    ],
    "theme": "dark",
-   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
+   "approved": "owner said Final (2026-11-25)"
   },
   {
    "id": "2026-11-26-pm",
@@ -1049,7 +1051,7 @@
    "niche": "Creative agency: brand & digital studio",
    "brand": "Halftone Studio",
    "palette_hint": "black + red-orange gradient + white",
-   "status": "ready-pending-approval",
+   "status": "ready",
    "design_dir": "designs/2026-11-27-am-halftone-agency-website",
    "image": null,
    "caption": "Most agency sites sell the team. The good ones sell the result.\nCreative agency website UI design in dark mode: brand studio landing page with case studies and process\n\nHalftone leads with a portrait under red-orange light, then backs every case study with a number and lays out the whole eight-week process before anyone books a call.\n\nSave this for your next agency or portfolio site\nWhat do you check first on an agency website: the work or the price?\n\n#uidesign #webdesign #landingpage #creativeagency #brandingagency",
@@ -1079,7 +1081,8 @@
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-7.jpg"
    ],
    "theme": "dark",
-   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
+   "approved": "owner said Final (2026-11-25)"
   },
   {
    "id": "2026-11-27-pm",
@@ -1087,7 +1090,7 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "status": "ready-pending-approval",
+   "status": "ready",
    "niche": "Finance: stock & ETF investing",
    "brand": "Plinth",
    "palette_hint": "black + violet + chrome silver",
@@ -1116,7 +1119,8 @@
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-6.jpg"
    ],
    "theme": "dark",
-   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
+   "approved": "owner said Final (2026-11-25)"
   },
   {
    "id": "2026-11-28-am",
@@ -1154,7 +1158,7 @@
    "niche": "AI: agent automation platform for operations teams",
    "brand": "Orrery",
    "palette_hint": "black + moss lime glow, cinematic nature",
-   "status": "ready-pending-approval",
+   "status": "ready",
    "design_dir": "designs/2026-11-28-pm-orrery-ai-agents-website",
    "image": null,
    "caption": "Your ops team shouldn't be the night shift.\nAI agent automation website UI design: dark SaaS landing page with live agent console\n\nOrrery puts the product right in the hero: a real run log of an agent matching 35 invoices, with the 3 risky ones parked for a human. Glass cards over a night forest, lime glow only where something is live.\n\nSave this for your next AI SaaS landing page\nWould you let an AI agent approve refunds under $50 on its own?\n\n#uiux #landingpage #saasdesign #aiagents #darkui",
@@ -1184,7 +1188,8 @@
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-7.jpg"
    ],
    "theme": "dark",
-   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
+   "approved": "owner said Final (2026-11-25)"
   },
   {
    "id": "2026-11-29-am",
@@ -1192,7 +1197,7 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "status": "ready-pending-approval",
+   "status": "ready",
    "niche": "Finance: digital gold savings",
    "brand": "Aurum",
    "palette_hint": "black + warm gold + bone",
@@ -1221,7 +1226,8 @@
     "posts/2026-11/2026-11-29-am-aural-headphones-app-6.jpg"
    ],
    "theme": "dark",
-   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark"
+   "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
+   "approved": "owner said Final (2026-11-25)"
   },
   {
    "id": "2026-11-29-pm",
