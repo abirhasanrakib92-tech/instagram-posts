@@ -804,7 +804,10 @@
    ],
    "replaces": "Mossé v1 (moved to 21-pm)",
    "approved": "owner approved Mossé v2 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am",
-   "posted_at": "2026-11-23T08:41+06:00"
+   "posted_at": "2026-11-23T08:41+06:00",
+   "replied_comment_ids": [
+    "18079997339722765"
+   ]
   },
   {
    "id": "2026-11-23-pm",
@@ -863,7 +866,11 @@
     "posts/2026-11/2026-11-24-am-hireready-coach-website-7.jpg"
    ],
    "approved": "owner said done (2026-11-21)",
-   "posted_at": "2026-11-24T08:40+06:00"
+   "posted_at": "2026-11-24T08:40+06:00",
+   "replied_comment_ids": [
+    "17957924112310508",
+    "17917733079500093"
+   ]
   },
   {
    "id": "2026-11-24-pm",
