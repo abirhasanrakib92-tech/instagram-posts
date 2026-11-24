@@ -20,6 +20,8 @@ Do not edit `tools/render.py` or the mockup assets unless the owner asks.
   bright accents that read well on dark. Keep contrast readable (body text at least #B0B0B0-ish on the dark surface).
 - **Studio background stays light #EEEEEE (owner, 2026-11-24):** he tried a dark studio background and rejected it. Only the UI inside the
   window/phone is dark; never render with `STAGE=dark`.
+- **Dark browser mockup (owner, 2026-11-24):** the dashboard/website browser window (frame + address bar) is dark on the #EEEEEE studio.
+  This is the default in tools/render.py (`FRAME=light` brings back the old white window; do not use it unless the owner asks).
 - Unchanged: the locked carousel formats, the #EEEEEE studio background, the mockups (phone, browser window), the brand chrome and the fixed CTA slide.
 - Light designs already made for later slots are kept for history (`light_design_dir` in calendar.json); those slots are `planned`
   again and must be redesigned dark (same niche and brand; their photos can be reused).
