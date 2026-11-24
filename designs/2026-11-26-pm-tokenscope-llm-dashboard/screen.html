@@ -1,0 +1,199 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.tokenscope.ai/spend">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--ink:#F3F1FA;--ink2:rgba(243,241,250,.74);--ink3:rgba(243,241,250,.50);--vi:#A98BFF;--vi2:#7C5CFF;--li:#D9CCFF;--mi:#7EE2B8;--co:#FF7F96;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;font-family:'Geist';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#09090C}
+.bgimg{position:absolute;inset:0;background:url(bg.jpg) center 30%/cover}
+.bgimg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,9,12,.10),rgba(9,9,12,.55) 70%,rgba(9,9,12,.80)),radial-gradient(ellipse at 15% 85%,rgba(124,92,255,.18),rgba(124,92,255,0) 50%)}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+.page{position:relative;display:grid;grid-template-columns:688px 688px;column-gap:16px;padding:20px 24px;height:960px;grid-template-rows:52px 1fr;row-gap:16px}
+.glass{background:rgba(22,20,30,.48);-webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%);border:1px solid rgba(255,255,255,.11);box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 12px 32px rgba(0,0,0,.3)}
+.card{border-radius:24px;padding:20px;position:relative;overflow:hidden}
+.ph{background-size:cover;background-position:center 28%;border-radius:50%;flex:none}
+.t{font-size:16px;font-weight:600;letter-spacing:-.2px}
+.s{font-size:12.5px;color:var(--ink3);margin-top:3px}
+.ch{display:flex;align-items:flex-start;justify-content:space-between}
+.pill{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;white-space:nowrap}
+.gp{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:var(--ink2)}
+.vp{background:rgba(169,139,255,.16);border:1px solid rgba(169,139,255,.40);color:var(--li)}
+.top{display:flex;align-items:center;gap:10px}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:600;letter-spacing:-.6px;margin-right:6px}
+.logo i{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#C9B8FF,#7C5CFF);display:grid;place-items:center;box-shadow:0 0 24px rgba(124,92,255,.55)}
+.tabs{display:flex;gap:2px;border-radius:999px;padding:4px}
+.tabs a{height:38px;padding:0 16px;border-radius:999px;display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink2)}
+.tabs a.on{background:rgba(255,255,255,.92);color:#15121F;font-weight:600}
+.rb{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;position:relative}
+.rb b{position:absolute;top:11px;right:12px;width:7px;height:7px;border-radius:50%;background:var(--co)}
+.srch{flex:1;height:46px;border-radius:999px;display:flex;align-items:center;gap:8px;padding:0 18px;font-size:13.5px;color:var(--ink3)}
+.env{display:flex;border-radius:999px;padding:4px;height:46px;align-items:center}
+.env span{height:36px;padding:0 14px;border-radius:999px;display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2)}
+.env span.on{background:rgba(126,226,184,.16);color:var(--mi);font-weight:600}
+.env span.on i{width:7px;height:7px;border-radius:50%;background:var(--mi);box-shadow:0 0 8px var(--mi)}
+.user{border-radius:999px;padding:3px;height:46px;width:46px}
+.half{display:flex;flex-direction:column;gap:16px;min-height:0}
+.ttl{height:118px;flex:none;display:flex;flex-direction:column;justify-content:flex-end;padding-left:4px}
+.ttl .ey{display:flex;gap:8px;margin-bottom:12px}
+.ttl h1{font-size:52px;font-weight:300;letter-spacing:-2px;line-height:1}
+.ttl h1 .serif{color:var(--li);letter-spacing:-.5px;font-size:58px}
+/* budget hero */
+.hero{height:326px;flex:none;border-radius:28px;background:linear-gradient(145deg,rgba(124,92,255,.42),rgba(30,24,52,.55) 55%,rgba(22,20,30,.55));border:1px solid rgba(201,184,255,.30)}
+.hero:before{content:"";position:absolute;left:-60px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(201,184,255,.35),rgba(201,184,255,0) 65%)}
+.big{font-size:68px;font-weight:200;letter-spacing:-3.5px;line-height:.95}
+.big small{font-size:22px;color:var(--ink3);letter-spacing:-.4px;font-weight:300;margin-left:6px}
+.bud{margin-top:18px;position:relative}
+.bud .tr{height:14px;border-radius:99px;background:rgba(255,255,255,.10);position:relative;overflow:visible}
+.bud .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,#7C5CFF,#C9B8FF);box-shadow:0 0 18px rgba(169,139,255,.7)}
+.bud .tr u{position:absolute;top:0;bottom:0;border-radius:99px;background:repeating-linear-gradient(135deg,rgba(201,184,255,.35) 0 4px,rgba(201,184,255,.08) 4px 8px)}
+.bud .tr em{position:absolute;top:-6px;width:2px;height:26px;background:#fff;border-radius:2px}
+.bud .lab{display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-top:8px}
+.dots{display:grid;grid-template-columns:repeat(30,1fr);gap:5px;margin-top:18px}
+.dots i{height:22px;border-radius:6px;background:rgba(255,255,255,.08)}
+.hfoot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink3);margin-top:8px}
+/* routing */
+.route{flex:1}
+.hm{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.hm div{border-radius:14px;padding:9px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);font-size:11.5px;color:var(--ink3)}
+.hm b{display:block;font-size:18px;font-weight:400;color:var(--ink);letter-spacing:-.4px;margin-top:1px}
+/* right */
+.teams{height:56px;flex:none;border-radius:999px;display:flex;align-items:center;gap:4px;padding:5px}
+.teams span{height:46px;padding:0 16px 0 5px;border-radius:999px;display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink2);flex:1}
+.teams span .ph{width:36px;height:36px}
+.teams span b{font-weight:600;color:var(--ink);display:block;font-size:13px}
+.teams span small{font-size:11.5px;color:var(--ink3)}
+.teams span.on{background:rgba(255,255,255,.92);color:#15121F}
+.teams span.on b{color:#15121F}.teams span.on small{color:#6A6480}
+.teams .all{width:46px;flex:none;padding:0;justify-content:center;background:rgba(255,255,255,.07)}
+.chart{height:318px;flex:none}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:128px;flex:none}
+.k{border-radius:22px;padding:16px 18px}
+.k .kl{font-size:12.5px;color:var(--ink3);display:flex;justify-content:space-between;align-items:center}
+.k .kv{font-size:34px;font-weight:300;letter-spacing:-1.4px;margin-top:10px;line-height:1}
+.k .kv small{font-size:15px;color:var(--ink3);letter-spacing:0;margin-left:2px}
+.k .ks{font-size:11.5px;color:var(--ink3);margin-top:8px}
+.good{color:var(--mi);font-weight:600}
+.ep{flex:1}
+.er{display:grid;grid-template-columns:1fr 150px 84px;gap:14px;align-items:center;height:50px;border-top:1px solid var(--line)}
+.er:first-of-type{border-top:0}
+.er .nm{display:flex;align-items:center;gap:10px}
+.er .nm .ph{width:30px;height:30px}
+.er code{font-family:'JetBrains Mono';font-size:12.5px;color:var(--ink);display:block}
+.er span{font-size:11.5px;color:var(--ink3)}
+.er .bar{height:6px;border-radius:99px;background:rgba(255,255,255,.08);position:relative}
+.er .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,#7C5CFF,#C9B8FF)}
+.er .v{text-align:right;font-size:15px;font-weight:500}
+</style></head><body>
+<div class="bgimg"></div>
+<div class="page">
+ <div class="top">
+  <div class="logo"><i>{{icon:scan-eye:20:#ffffff:2}}</i>Tokenscope</div>
+  <div class="tabs glass"><a class="on">Spend</a><a>Usage</a><a>Latency</a><a>Prompts</a><a>Alerts</a></div>
+ </div>
+ <div class="top">
+  <div class="srch glass">{{icon:search:17:#9C98AE}}Search endpoints, prompts, keys…</div>
+  <div class="env glass"><span class="on"><i></i>Production</span><span>Staging</span></div>
+  <div class="rb glass">{{icon:bell:18:#F3F1FA}}<b></b></div>
+  <div class="user glass"><div class="ph" style="width:38px;height:38px;background-image:url(kenji.jpg)"></div></div>
+ </div>
+
+ <!-- LEFT -->
+ <div class="half">
+  <div class="ttl">
+   <div class="ey"><span class="pill vp">{{icon:calendar:13:#D9CCFF}}Nov 1 – 25</span><span class="pill gp">Halcyon · 4 teams · 9 endpoints</span></div>
+   <h1>Spend is <span class="serif">under budget,</span> again.</h1>
+  </div>
+  <div class="card hero">
+   <div class="ch" style="position:relative"><div><div class="s" style="margin:0 0 10px;color:var(--ink2)">LLM spend this month</div><div class="big">$48,230<small>of $60,000</small></div></div>
+    <div style="text-align:right"><span class="pill" style="background:rgba(126,226,184,.16);color:var(--mi);border:1px solid rgba(126,226,184,.35)">{{icon:trending-down:13:#7EE2B8:2.2}}$2,170 under</span><div class="s" style="margin-top:8px">Forecast $57,830</div></div></div>
+   <div class="bud">
+    <div class="tr"><i style="width:80.4%"></i><u style="left:80.4%;width:16%"></u><em style="left:96.4%"></em></div>
+    <div class="lab"><span>Spent 80.4%</span><span>Forecast 96.4% · 5 days left</span><span>Budget</span></div>
+   </div>
+   <div class="dots" id="dots"></div>
+   <div class="hfoot"><span>Nov 1</span><span>Each block is one day · brighter = more spend</span><span>Nov 30</span></div>
+   <div class="hm"><div>Tokens<b>6.42B</b></div><div>Requests<b>18.6M</b></div><div>Avg per day<b>$1,929</b></div><div>Budget left<b>$11,770</b></div></div>
+  </div>
+  <div class="card glass route">
+   <div class="ch"><div><div class="t">Model routing</div><div class="s">18.6M requests sent to the cheapest model that passes the eval</div></div><span class="pill gp">{{icon:git-branch:13:#C9C5D9}}Router v4</span></div>
+   <svg id="r" width="648" height="292" viewBox="0 0 648 292" style="margin-top:10px"></svg>
+  </div>
+ </div>
+
+ <!-- RIGHT -->
+ <div class="half">
+  <div class="teams glass">
+   <span class="all on" style="width:auto;padding:0 16px;gap:7px;color:#15121F;font-weight:600;font-size:13px">{{icon:layers:17:#15121F}}All teams</span>
+   <span><div class="ph" style="background-image:url(sofia.jpg)"></div><div><b>Support</b><small>$14.9k</small></div></span>
+   <span><div class="ph" style="background-image:url(rohan.jpg)"></div><div><b>Copilot</b><small>$12.4k</small></div></span>
+   <span><div class="ph" style="background-image:url(mei.jpg)"></div><div><b>Search</b><small>$9.8k</small></div></span>
+   <span><div class="ph" style="background-image:url(marcus.jpg)"></div><div><b>Data</b><small>$11.2k</small></div></span>
+  </div>
+  <div class="card glass chart">
+   <div class="ch"><div><div class="t">Daily spend · all teams</div><div class="s">One spike this month, fixed the same afternoon</div></div>
+    <div style="display:flex;gap:12px;font-size:12px;color:var(--ink2);align-items:center"><span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:rgba(255,255,255,.25);margin-right:5px"></i>Weekday</span><span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:rgba(255,255,255,.10);margin-right:5px"></i>Weekend</span><span><i style="display:inline-block;width:14px;height:0;border-top:1.5px dashed #C9B8FF;margin-right:5px;vertical-align:3px"></i>$2k / day budget</span></div></div>
+   <svg id="c" width="648" height="236" viewBox="0 0 648 236" style="margin-top:10px"></svg>
+  </div>
+  <div class="kp">
+   <div class="k glass"><div class="kl">Cost / 1k requests{{icon:coins:15:#9C98AE}}</div><div class="kv">$2.59</div><div class="ks"><span class="good">−18%</span> since Router v4</div></div>
+   <div class="k glass"><div class="kl">Cache hit rate{{icon:database-zap:15:#9C98AE}}</div><div class="kv">41.2<small>%</small></div><div class="ks">saved <span class="good">$9,860</span> this month</div></div>
+   <div class="k glass"><div class="kl">p95 latency{{icon:gauge:15:#9C98AE}}</div><div class="kv">1.84<small>s</small></div><div class="ks">goal 2.0s · <span class="good">on target</span></div></div>
+  </div>
+  <div class="card glass ep">
+   <div class="ch"><div><div class="t">Top endpoints by cost</div><div class="s">4 of 9 shown · the other 5 cost $4,860</div></div><span class="pill gp">This month</span></div>
+   <div style="margin-top:6px">
+    <div class="er"><div class="nm"><div class="ph" style="background-image:url(sofia.jpg)"></div><div><code>/support/reply</code><span>Support · 7.2M calls</span></div></div><div class="bar"><i style="width:100%"></i></div><div class="v">$14,880</div></div>
+    <div class="er"><div class="nm"><div class="ph" style="background-image:url(rohan.jpg)"></div><div><code>/copilot/complete</code><span>Copilot · 6.1M calls</span></div></div><div class="bar"><i style="width:83.4%"></i></div><div class="v">$12,410</div></div>
+    <div class="er"><div class="nm"><div class="ph" style="background-image:url(mei.jpg)"></div><div><code>/search/answer</code><span>Search · 3.4M calls</span></div></div><div class="bar"><i style="width:65.6%"></i></div><div class="v">$9,760</div></div>
+    <div class="er"><div class="nm"><div class="ph" style="background-image:url(marcus.jpg)"></div><div><code>/docs/summarize</code><span>Data · 0.9M calls</span></div></div><div class="bar"><i style="width:42.5%"></i></div><div class="v">$6,320</div></div>
+   </div>
+  </div>
+ </div>
+</div>
+<script>
+const F='Geist';
+const D=[1310,1850,1920,2000,1860,1880,1440,1370,1930,2010,2080,1960,2190,1360,1280,2160,2240,3420,2300,2230,1290,1250,2390,2370,2140];
+// dot calendar
+(function(){const el=document.getElementById('dots');let h='';
+ for(let i=0;i<30;i++){ if(i<25){const v=D[i],a=Math.min(1,(v-1100)/2400);
+   const spike=i==17;h+=`<i style="background:${spike?'#FF7F96':`rgba(201,184,255,${(.18+a*.75).toFixed(2)})`};${spike?'box-shadow:0 0 14px rgba(255,127,150,.7)':''}"></i>`}
+  else h+=`<i style="background:transparent;border:1.5px dashed rgba(255,255,255,.22)"></i>`}
+ el.innerHTML=h})();
+// daily chart
+(function(){
+ const c=document.getElementById('c'),L=46,R=640,T=16,B=204,max=4000,n=25,X=i=>L+(R-L)/n*(i+.5),Y=v=>B-(B-T)*v/max,bw=15;let s='';
+ s+=`<defs><linearGradient id="lit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB3C1"/><stop offset="1" stop-color="#FF7F96" stop-opacity=".25"/></linearGradient><filter id="gw" x="-200%" y="-50%" width="500%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+ <linearGradient id="vb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9B8FF" stop-opacity=".75"/><stop offset="1" stop-color="#7C5CFF" stop-opacity=".12"/></linearGradient></defs>`;
+ for(let v=0;v<=4000;v+=1000){s+=`<line x1="${L}" x2="${R}" y1="${Y(v)}" y2="${Y(v)}" stroke="rgba(255,255,255,.08)" ${v?'stroke-dasharray="3 5"':''}/><text x="${L-10}" y="${Y(v)+4}" text-anchor="end" font-family="${F}" font-size="11" fill="rgba(243,241,250,.45)">$${v/1000}k</text>`}
+ s+=`<line x1="${L}" x2="${R}" y1="${Y(2000)}" y2="${Y(2000)}" stroke="rgba(201,184,255,.55)" stroke-dasharray="6 5"/>`;
+ D.forEach((v,i)=>{const wd=new Date(2026,10,i+1).getDay(),we=wd==0||wd==6,sp=i==17,x=X(i)-bw/2;
+  if(sp)s+=`<rect x="${x}" y="${Y(v)}" width="${bw}" height="${B-Y(v)}" rx="7" fill="#FF7F96" opacity=".7" filter="url(#gw)"/><rect x="${x}" y="${Y(v)}" width="${bw}" height="${B-Y(v)}" rx="7" fill="url(#lit)"/>`;
+  else s+=`<rect x="${x}" y="${Y(v)}" width="${bw}" height="${B-Y(v)}" rx="7" fill="${we?'rgba(255,255,255,.10)':'url(#vb)'}"/>`;
+  if(i%4==0||i==24)s+=`<text x="${X(i)}" y="${B+20}" text-anchor="middle" font-family="${F}" font-size="11" fill="rgba(243,241,250,.5)">Nov ${i+1}</text>`;
+ });
+ const sx=X(17);
+ s+=`<g transform="translate(${sx-276},${Y(3420)-8})"><rect width="256" height="58" rx="14" fill="#F3F1FA"/><text x="12" y="21" font-family="${F}" font-size="11.5" fill="#6A6480">Wed, Nov 18 · retry loop in /support/reply</text><text x="12" y="44" font-family="${F}" font-size="16" font-weight="600" fill="#15121F">$3,420</text><text x="244" y="44" text-anchor="end" font-family="${F}" font-size="11.5" font-weight="600" fill="#D6455F">fixed in 3h 12m</text></g>`;
+ c.innerHTML=s;
+})();
+// routing graph
+(function(){
+ const r=document.getElementById('r');let s='';
+ s+=`<defs><filter id="ng" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3"/></filter><pattern id="dp" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="rgba(255,255,255,.10)"/></pattern></defs>`;
+ s+=`<rect width="648" height="292" rx="16" fill="url(#dp)"/>`;
+ const node=(x,y,w,h,title,sub,fill,stroke,tc='#F3F1FA',sc='rgba(243,241,250,.55)')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="16" fill="${fill}" stroke="${stroke}"/><text x="${x+16}" y="${y+26}" font-family="${F}" font-size="14" font-weight="600" fill="${tc}">${title}</text><text x="${x+16}" y="${y+46}" font-family="${F}" font-size="12" fill="${sc}">${sub}</text>`;
+ const M=[['Atlas-S','62% of calls · 11.0% of spend','$5,310',14,'#7EE2B8'],['Atlas-M','27% of calls · 29.3% of spend','$14,120',106,'#C9B8FF'],['Atlas-XL','11% of calls · 55.6% of spend','$26,840',198,'#FF9FB2']];
+ // wires
+ const wire=(x1,y1,x2,y2,col,w)=>{const mx=(x1+x2)/2;return `<path d="M${x1} ${y1} C${mx} ${y1},${mx} ${y2},${x2} ${y2}" fill="none" stroke="${col}" stroke-width="${w}" stroke-opacity=".9"/><path d="M${x1} ${y1} C${mx} ${y1},${mx} ${y2},${x2} ${y2}" fill="none" stroke="${col}" stroke-width="${w+4}" stroke-opacity=".35" filter="url(#ng)"/>`};
+ s+=wire(170,146,226,146,'#C9B8FF',2);
+ M.forEach((m,i)=>{const y=m[3]+40;s+=wire(386,146,424,y,m[4],[3.5,2,1.4][i])});
+ s+=node(14,111,156,70,'Requests','18.6M · 6.42B tokens','rgba(255,255,255,.06)','rgba(255,255,255,.14)');
+ s+=`<rect x="226" y="105" width="160" height="82" rx="18" fill="rgba(124,92,255,.38)" stroke="rgba(201,184,255,.55)"/><rect x="226" y="105" width="160" height="82" rx="18" fill="none" stroke="#A98BFF" stroke-width="6" stroke-opacity=".25" filter="url(#ng)"/>`;
+ s+=`<text x="242" y="133" font-family="${F}" font-size="14" font-weight="600" fill="#fff">Router v4</text><text x="242" y="153" font-family="${F}" font-size="12" fill="rgba(243,241,250,.7)">Eval gate · 97.8% pass</text><text x="242" y="172" font-family="${F}" font-size="12" fill="#7EE2B8">−18% cost / request</text>`;
+ M.forEach(m=>{s+=node(424,m[3],210,80,m[0],m[1],'rgba(255,255,255,.06)','rgba(255,255,255,.14)');
+  s+=`<circle cx="424" cy="${m[3]+40}" r="4" fill="${m[4]}"/><text x="618" y="${m[3]+26}" text-anchor="end" font-family="${F}" font-size="13" font-weight="600" fill="${m[4]}">${m[2]}</text><rect x="440" y="${m[3]+60}" width="178" height="5" rx="2.5" fill="rgba(255,255,255,.08)"/><rect x="440" y="${m[3]+60}" width="${178*parseFloat(m[1].split(' · ')[1])/100}" height="5" rx="2.5" fill="${m[4]}"/>`});
+ s+=`<text x="14" y="244" font-family="${F}" font-size="12" fill="rgba(243,241,250,.5)">Embeddings</text><text x="14" y="264" font-family="${F}" font-size="15" font-weight="500" fill="#F3F1FA">$1,960 · 4.1%</text>`;
+ r.innerHTML=s;
+})();
+</script>
+</body></html>

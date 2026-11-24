@@ -1,0 +1,181 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="mock-url" content="app.keyhold.co/linden-court">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+:root{--ink:#F2EFE6;--ink2:rgba(242,239,230,.74);--ink3:rgba(242,239,230,.50);--sa:#E8D3A9;--fo:#3F7A5A;--lg:#A8D9B8;--am:#F2B35E;--rd:#F27C6B;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:960px;overflow:hidden;font-family:'Outfit';color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;background:#0A0F0C}
+.bgimg{position:absolute;inset:-60px;background:url(bg.jpg) center/cover;filter:blur(30px) brightness(.42) saturate(1.25)}
+.bgtint{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 40%,rgba(63,122,90,.25),rgba(0,0,0,0) 60%),linear-gradient(180deg,rgba(6,10,8,.2),rgba(6,10,8,.55))}
+.serif{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+.page{position:relative;display:grid;grid-template-columns:688px 688px;column-gap:16px;padding:20px 24px;height:960px;grid-template-rows:52px 1fr;row-gap:16px}
+.glass{background:rgba(18,24,20,.46);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);border:1px solid rgba(255,255,255,.11);box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 10px 30px rgba(0,0,0,.28)}
+.card{border-radius:26px;padding:20px;position:relative;overflow:hidden}
+.ph{background-size:cover;background-position:center 28%;border-radius:50%;flex:none}
+.t{font-size:17px;font-weight:500;letter-spacing:-.2px}
+.s{font-size:12.5px;color:var(--ink3);margin-top:3px}
+.ch{display:flex;align-items:flex-start;justify-content:space-between}
+.pill{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;white-space:nowrap}
+.gp{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:var(--ink2)}
+.top{display:flex;align-items:center;gap:10px}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:600;letter-spacing:-.5px;margin-right:6px}
+.logo i{width:40px;height:40px;border-radius:50%;background:var(--sa);display:grid;place-items:center}
+.tabs{display:flex;gap:2px;border-radius:999px;padding:4px}
+.tabs a{height:38px;padding:0 15px;border-radius:999px;display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--ink2)}
+.tabs a.on{background:var(--sa);color:#1B1A14;font-weight:600}
+.tabs a em{font-style:normal;font-size:11px;font-weight:600;background:rgba(242,179,94,.2);color:var(--am);border-radius:99px;padding:1px 6px}
+.rb{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;position:relative}
+.rb b{position:absolute;top:11px;right:12px;width:7px;height:7px;border-radius:50%;background:var(--am)}
+.srch{flex:1;height:46px;border-radius:999px;display:flex;align-items:center;gap:8px;padding:0 18px;font-size:13.5px;color:var(--ink3)}
+.user{display:flex;align-items:center;gap:10px;border-radius:999px;padding:4px 16px 4px 4px;height:50px}
+.user b{display:block;font-size:13.5px;font-weight:500}.user span{font-size:12px;color:var(--ink3)}
+.half{display:flex;flex-direction:column;gap:16px;min-height:0}
+.ttl{height:110px;flex:none;display:flex;flex-direction:column;justify-content:flex-end;padding-left:4px}
+.ttl h1{font-size:50px;font-weight:300;letter-spacing:-1.8px;line-height:1}
+.ttl h1 .serif{color:var(--sa);font-size:56px;letter-spacing:-.6px}
+.ttl p{font-size:14px;color:var(--ink2);margin-top:10px}.ttl p b{color:var(--ink);font-weight:500}
+/* map */
+.map{height:440px;flex:none;border-radius:28px;position:relative;overflow:hidden;background:url(bg.jpg) center/cover;border:1px solid rgba(255,255,255,.14)}
+.map:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.0) 50%,rgba(0,0,0,.35));pointer-events:none}
+.mtag{position:absolute;z-index:2;border-radius:16px;padding:9px 12px;font-size:11.5px;color:var(--ink2);background:rgba(14,20,16,.52);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.16)}
+.mtag b{display:block;font-size:14px;font-weight:500;color:var(--ink)}
+.mtag .bar{height:4px;border-radius:9px;background:rgba(255,255,255,.15);margin-top:7px;width:120px}.mtag .bar i{display:block;height:100%;border-radius:9px;background:var(--lg)}
+.dot{position:absolute;z-index:2;width:16px;height:16px;border-radius:50%;border:3px solid #fff}
+.sel{position:absolute;z-index:3;right:14px;top:14px;display:flex;flex-direction:column;gap:6px;padding:6px;border-radius:24px;background:rgba(14,20,16,.5);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.16)}
+.sel span{width:58px;height:44px;border-radius:16px;display:grid;place-items:center;font-size:13px;font-weight:500;color:var(--ink2);line-height:1.1;text-align:center}
+.sel span small{display:block;font-size:10.5px;color:var(--ink3)}
+.sel span.on{background:var(--sa);color:#1B1A14}.sel span.on small{color:#5E5644}
+.mhead{position:absolute;z-index:3;left:14px;top:14px}
+.zoom{position:absolute;z-index:3;left:14px;bottom:14px;display:flex;gap:6px}
+.zoom span{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(14,20,16,.5);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.16)}
+/* right */
+.kp{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;gap:12px;height:124px;flex:none}
+.k{border-radius:22px;padding:16px}
+.k .kl{font-size:12.5px;color:var(--ink3);display:flex;justify-content:space-between;align-items:center}
+.k .kv{font-size:34px;font-weight:300;letter-spacing:-1.4px;margin-top:10px;line-height:1}
+.k .kv small{font-size:15px;color:var(--ink3);letter-spacing:0;margin-left:2px}
+.k .ks{font-size:11.5px;color:var(--ink3);margin-top:8px}
+.k.fill{background:linear-gradient(150deg,#E8D3A9,#C9AE7B);color:#1B1A14;box-shadow:0 10px 30px rgba(232,211,169,.18)}
+.k.fill .kl,.k.fill .ks,.k.fill .kv small{color:#5E5644}
+.good{color:var(--lg);font-weight:500}
+.wo{height:276px;flex:none}
+.aist{margin-top:14px;border-radius:18px;padding:12px 12px 12px 14px;display:flex;align-items:center;gap:12px;background:linear-gradient(120deg,rgba(232,211,169,.20),rgba(63,122,90,.18));border:1px solid rgba(232,211,169,.30)}
+.aist .ic{width:36px;height:36px;border-radius:50%;background:var(--sa);display:grid;place-items:center;flex:none;box-shadow:0 0 20px rgba(232,211,169,.45)}
+.aist p{font-size:12.5px;color:var(--ink2);line-height:1.4;flex:1}.aist p b{color:var(--ink);font-weight:500}
+.aist span.go{height:36px;padding:0 14px;border-radius:999px;background:var(--sa);color:#1B1A14;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.col h5{font-size:12.5px;font-weight:500;color:var(--ink2);display:flex;align-items:center;gap:7px;margin-bottom:10px}
+.col h5 em{font-style:normal;font-size:11.5px;background:rgba(255,255,255,.09);border-radius:99px;padding:1px 8px;color:var(--ink)}
+.col h5 i{width:8px;height:8px;border-radius:50%}
+.tk{border-radius:16px;padding:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);margin-bottom:10px;height:108px;position:relative}
+.tk .u{font-size:11.5px;color:var(--ink3);display:flex;justify-content:space-between}
+.tk b{display:block;font-size:13.5px;font-weight:500;margin-top:5px;line-height:1.3}
+.tk .f{position:absolute;left:12px;right:12px;bottom:11px;display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--ink2)}
+.tk .f .ph{width:24px;height:24px}
+.urg{background:rgba(242,124,107,.18);color:var(--rd);border:1px solid rgba(242,124,107,.35);height:20px;font-size:11px;padding:0 8px}
+.more{border-radius:14px;border:1.5px dashed rgba(255,255,255,.16);height:34px;display:grid;place-items:center;font-size:12px;color:var(--ink3)}
+.rn{flex:1}
+.rr{display:grid;grid-template-columns:1fr 128px 92px;gap:12px;align-items:center;height:62px;border-top:1px solid var(--line)}
+.rr:first-of-type{border-top:0}
+.rr .nm{display:flex;align-items:center;gap:10px}
+.rr .nm .ph{width:36px;height:36px}
+.rr b{font-size:13.5px;font-weight:500;display:block}
+.rr span{font-size:11.5px;color:var(--ink3)}
+.rr .rent{font-size:13.5px}.rr .rent small{display:block;font-size:11.5px;color:var(--lg)}
+.st{justify-self:end;height:24px}
+</style></head><body>
+<div class="bgimg"></div><div class="bgtint"></div>
+<div class="page">
+ <div class="top">
+  <div class="logo"><i>{{icon:key-round:19:#1B1A14:2}}</i>Keyhold</div>
+  <div class="tabs glass"><a class="on">Properties</a><a>Residents</a><a>Work orders <em>14</em></a><a>Leases</a><a>Money</a></div>
+ </div>
+ <div class="top">
+  <div class="srch glass">{{icon:search:17:#A6A69C}}Search units, residents, invoices…</div>
+  <div class="rb glass">{{icon:message-circle:18:#F2EFE6}}</div>
+  <div class="rb glass">{{icon:bell:18:#F2EFE6}}<b></b></div>
+  <div class="user glass"><div class="ph" style="width:42px;height:42px;background-image:url(amara.jpg)"></div><div><b>Amara Okafor</b><span>Property manager</span></div></div>
+ </div>
+
+ <!-- LEFT -->
+ <div class="half">
+  <div class="ttl">
+   <h1>Linden Court is <span class="serif">96.5% home.</span></h1>
+   <p><b>137 of 142</b> units let · <b>$318,460</b> rent in for November · 3 buildings, 1 pool</p>
+  </div>
+  <div class="map">
+   <div class="mhead"><span class="pill gp" style="background:rgba(14,20,16,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)">{{icon:map-pin:13:#E8D3A9}}Live view · Tue 19:20</span></div>
+   <div class="sel"><span class="on">All<small>142</small></span><span>A<small>48</small></span><span>B<small>52</small></span><span>C<small>42</small></span><span>{{icon:waves:18:#C9C7BD}}</span></div>
+   <!-- pins -->
+   <div class="dot" style="left:116px;top:150px;background:var(--lg)"></div>
+   <div class="mtag" style="left:24px;top:176px"><b>Building A</b>47 / 48 let · 98%<div class="bar"><i style="width:98%"></i></div></div>
+   <div class="dot" style="left:336px;top:58px;background:var(--lg)"></div>
+   <div class="mtag" style="left:268px;top:84px"><b>Building B</b>50 / 52 let · 96%<div class="bar"><i style="width:96%"></i></div></div>
+   <div class="dot" style="left:548px;top:176px;background:var(--am)"></div>
+   <div class="mtag" style="left:418px;top:204px;border-color:rgba(242,179,94,.45)"><b>Building C</b>40 / 42 let · 95%<div class="bar"><i style="width:95%;background:var(--am)"></i></div></div>
+   <div class="mtag" style="left:440px;top:300px;display:flex;align-items:center;gap:9px;padding:7px 12px 7px 7px"><div class="ph" style="width:30px;height:30px;background-image:url(karim.jpg)"></div><div><b style="font-size:12.5px">C-304 · leak</b>Karim on site · 12 min</div></div>
+   <div class="mtag" style="left:300px;top:250px;padding:6px 10px;display:flex;align-items:center;gap:6px">{{icon:waves:13:#A8D9B8}}Pool · open till 22:00</div>
+   <div class="zoom"><span>{{icon:plus:16:#F2EFE6}}</span><span>{{icon:minus:16:#F2EFE6}}</span><span>{{icon:locate:16:#F2EFE6}}</span></div>
+  </div>
+  <div class="card glass" style="flex:1">
+   <div class="ch"><div><div class="t">November rent</div><div class="s">Billed to collected, all buildings</div></div><span class="pill gp">96.2% collected</span></div>
+   <svg id="w" width="648" height="196" viewBox="0 0 648 196" style="margin-top:6px"></svg>
+  </div>
+ </div>
+
+ <!-- RIGHT -->
+ <div class="half">
+  <div class="kp">
+   <div class="k fill"><div class="kl">Occupancy{{icon:house:15:#5E5644}}</div><div class="kv">96.5<small>%</small></div><div class="ks"><b style="color:#2F5D46">+1.4 pts</b> since September</div></div>
+   <div class="k glass"><div class="kl">Collected{{icon:wallet:15:#A6A69C}}</div><div class="kv">96.2<small>%</small></div><div class="ks">$12,740 still due</div></div>
+   <div class="k glass"><div class="kl">Work orders{{icon:wrench:15:#A6A69C}}</div><div class="kv">14</div><div class="ks">avg fix <span class="good">1.6 days</span></div></div>
+   <div class="k glass"><div class="kl">Renewals{{icon:file-signature:15:#A6A69C}}</div><div class="kv">11</div><div class="ks">due in 60 days</div></div>
+  </div>
+  <div class="card glass wo">
+   <div class="ch"><div><div class="t">Work orders</div><div class="s">14 open · 1 urgent</div></div><span class="pill gp">{{icon:plus:13:#C9C7BD}}New order</span></div>
+   <div class="cols">
+    <div class="col"><h5><i style="background:var(--rd)"></i>New <em>5</em></h5>
+     <div class="tk" style="border-color:rgba(242,124,107,.4)"><div class="u"><span>C-304 · 18 min ago</span><span class="pill urg">Urgent</span></div><b>Leak under the kitchen sink</b><div class="f"><div class="ph" style="background-image:url(mei.jpg)"></div>Mei Tanaka</div></div>
+     <div class="more">+4 more</div></div>
+    <div class="col"><h5><i style="background:var(--am)"></i>In progress <em>6</em></h5>
+     <div class="tk"><div class="u"><span>B-210 · AC</span><span>ETA 18:30</span></div><b>Air con blowing warm air</b><div class="f"><div class="ph" style="background-image:url(karim.jpg)"></div>Karim · HVAC</div></div>
+     <div class="more">+5 more</div></div>
+    <div class="col"><h5><i style="background:var(--lg)"></i>Waiting parts <em>3</em></h5>
+     <div class="tk"><div class="u"><span>C-118 · Oven</span><span>Nov 30</span></div><b>Igniter ordered, arrives Monday</b><div class="f"><div class="ph" style="background-image:url(daniel.jpg)"></div>Daniel · Appliances</div></div>
+     <div class="more">+2 more</div></div>
+   </div>
+  </div>
+  <div class="card glass rn">
+   <div class="ch"><div><div class="t">Renewals coming up</div><div class="s">4 of 11 · new rent includes the 3% cap</div></div><span class="pill gp">Next 60 days</span></div>
+   <div style="margin-top:6px">
+    <div class="rr"><div class="nm"><div class="ph" style="background-image:url(kenji.jpg)"></div><div><b>Kenji Sato</b><span>A-301 · ends Dec 31</span></div></div><div class="rent">$1,980 → $2,039<small>+3.0%</small></div><span class="pill st" style="background:rgba(168,217,184,.16);color:var(--lg)">Signed</span></div>
+    <div class="rr"><div class="nm"><div class="ph" style="background-image:url(olivia.jpg)"></div><div><b>Olivia Grant</b><span>C-212 · ends Jan 15</span></div></div><div class="rent">$2,310 → $2,379<small>+3.0%</small></div><span class="pill st gp">Offer sent</span></div>
+    <div class="rr"><div class="nm"><div class="ph" style="background-image:url(rohan.jpg)"></div><div><b>Rohan Mehta</b><span>B-115 · ends Jan 22</span></div></div><div class="rent">$1,860 → $1,916<small>+3.0%</small></div><span class="pill st gp">Offer sent</span></div>
+    <div class="rr"><div class="nm"><div class="ph" style="background-image:url(sofia.jpg)"></div><div><b>Sofia Alvarez</b><span>B-207 · ends Jan 28</span></div></div><div class="rent">$2,140 → $2,204<small>+3.0%</small></div><span class="pill st" style="background:rgba(242,179,94,.16);color:var(--am)">Not opened</span></div>
+   </div>
+   <div class="aist"><div class="ic">{{icon:sparkles:16:#1B1A14}}</div><p><b>Text Sofia a reminder.</b> Residents who get one sign 2× faster than email alone.</p><span class="go">{{icon:send:13:#1B1A14}}Send text</span></div>
+  </div>
+ </div>
+</div>
+<script>
+const F='Outfit';
+(function(){
+ const w=document.getElementById('w');let s='';
+ const steps=[['Billed','$331,200',331200,0,'b'],['Paid on time','$296,140',296140,0,'g'],['Paid late','$22,320',22320,296140,'s'],['Still due','$12,740',12740,318460,'r']];
+ const L=20,R=640,T=34,B=158,max=331200,Y=v=>B-(B-T)*v/max,n=4,cw=(R-L)/n,bw=92;
+ s+=`<defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A8D9B8"/><stop offset="1" stop-color="#3F7A5A" stop-opacity=".5"/></linearGradient><filter id="gw" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+ <pattern id="hh" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="rgba(242,124,107,.15)"/><line x1="0" y1="0" x2="0" y2="7" stroke="rgba(242,124,107,.7)" stroke-width="2.5"/></pattern></defs>`;
+ s+=`<line x1="${L}" x2="${R}" y1="${B}" y2="${B}" stroke="rgba(255,255,255,.12)"/>`;
+ steps.forEach((st,i)=>{const cx=L+cw*(i+.5),x=cx-bw/2,top=Y(st[2]+st[3]),bot=Y(st[3]);
+  let fill={b:'rgba(255,255,255,.14)',g:'url(#g1)',s:'#E8D3A9',r:'url(#hh)'}[st[4]];
+  if(st[4]=='g')s+=`<rect x="${x+8}" y="${top+10}" width="${bw-16}" height="${bot-top-10}" rx="14" fill="#A8D9B8" opacity=".45" filter="url(#gw)"/>`;
+  s+=`<rect x="${x}" y="${top}" width="${bw}" height="${Math.max(bot-top,4)}" rx="${st[4]=='s'||st[4]=='r'?8:14}" fill="${fill}" ${st[4]=='r'?'stroke="rgba(242,124,107,.8)" stroke-width="1.5"':''}/>`;
+  if(i>0&&i<3){const nx=L+cw*(i+1.5)-bw/2,ly=Y(i==0?0+331200:(i==1?296140:318460));s+=`<line x1="${x+bw}" x2="${nx}" y1="${ly}" y2="${ly}" stroke="rgba(255,255,255,.35)" stroke-dasharray="3 4"/>`}
+  s+=`<text x="${cx}" y="${top-10}" text-anchor="middle" font-family="${F}" font-size="15" font-weight="500" fill="${st[4]=='r'?'#F27C6B':'#F2EFE6'}">${st[1]}</text>`;
+  s+=`<text x="${cx}" y="${B+22}" text-anchor="middle" font-family="${F}" font-size="12" fill="rgba(242,239,230,.55)">${st[0]}</text>`;
+ });
+ w.innerHTML=s;
+})();
+</script>
+</body></html>

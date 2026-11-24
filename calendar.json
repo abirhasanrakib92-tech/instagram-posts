@@ -918,7 +918,7 @@
    "status": "ready-pending-approval",
    "design_dir": "designs/2026-11-25-am-tablewise-restaurant-dashboard",
    "image": null,
-   "caption": "Most restaurants are one bad week of labor away from losing money.\nRestaurant group operations dashboard UI design: prime cost, covers and sales by location\n\nTablewise leads with the one number owners watch most, prime cost, split into food and labor on a tick gauge where each tick is 2% of sales. Under it, every location sits against the 60% target, and the AI card turns a quiet Tuesday into a shift you can cut.\n\nSave this for your next hospitality or SaaS dashboard\nWhich number would you put first for a restaurant group: prime cost, covers or average check?\n\n#uiux #dashboarddesign #saasdesign #restauranttech #hospitalitytech",
+   "caption": "A restaurant dashboard should feel like the dining room, not a spreadsheet.\nRestaurant operations dashboard UI design in dark glass: live floor plan, prime cost and covers by hour\n\nTablewise sits on a photo of the dining room with frosted glass cards on top. Pick a location from the photo rail, see every table by stage of the meal, and let the AI card tell you when to send a server home.\n\nSave this for your next hospitality dashboard\nWould you put the floor plan or prime cost first?\n\n#uiux #dashboarddesign #glassmorphism #restauranttech #hospitalitytech",
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
@@ -1008,15 +1008,22 @@
    "niche": "LLM usage & cost monitoring",
    "brand": "Tokenscope",
    "palette_hint": "graphite + violet",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-26-pm-tokenscope-llm-dashboard",
    "image": null,
-   "caption": null,
+   "caption": "One retry loop cost $1,330 in a single afternoon.\nLLM cost monitoring dashboard UI design: token spend, budget forecast and model routing\n\nTokenscope tracks AI spend against the monthly budget, marks every day in a dot calendar, and shows how the router splits 18.6M requests across three models.\n\nSave this for your next AI SaaS dashboard\nDo you track LLM spend per team or per feature?\n\n#uiux #dashboarddesign #glassmorphism #aiproduct #llmops",
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": true,
    "originally": "2026-11-24-pm",
-   "theme": "dark"
+   "theme": "dark",
+   "slug": "tokenscope-llm-dashboard",
+   "images": [
+    "posts/2026-11/2026-11-26-pm-tokenscope-llm-dashboard-1.jpg",
+    "posts/2026-11/2026-11-26-pm-tokenscope-llm-dashboard-2.jpg",
+    "posts/2026-11/2026-11-26-pm-tokenscope-llm-dashboard-3.jpg",
+    "posts/2026-11/2026-11-26-pm-tokenscope-llm-dashboard-4.jpg"
+   ]
   },
   {
    "id": "2026-11-27-am",
@@ -1091,15 +1098,22 @@
    "niche": "Property management",
    "brand": "Keyhold",
    "palette_hint": "forest green + sand",
-   "status": "planned",
-   "design_dir": null,
+   "status": "ready-pending-approval",
+   "design_dir": "designs/2026-11-28-am-keyhold-property-dashboard",
    "image": null,
-   "caption": null,
+   "caption": "A property dashboard should start with the building, not a table.\nProperty management dashboard UI design: occupancy map, rent waterfall, work orders and renewals\n\nKeyhold puts an aerial photo of the property under glass, pins live occupancy on each building, walks rent from billed to still due, and turns renewals into a one-tap reminder.\n\nSave this for your next real estate dashboard\nWhat would you check first as a property manager?\n\n#uiux #dashboarddesign #glassmorphism #proptech #realestatedesign",
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
    "originally": "2026-11-26-am",
-   "theme": "dark"
+   "theme": "dark",
+   "slug": "keyhold-property-dashboard",
+   "images": [
+    "posts/2026-11/2026-11-28-am-keyhold-property-dashboard-1.jpg",
+    "posts/2026-11/2026-11-28-am-keyhold-property-dashboard-2.jpg",
+    "posts/2026-11/2026-11-28-am-keyhold-property-dashboard-3.jpg",
+    "posts/2026-11/2026-11-28-am-keyhold-property-dashboard-4.jpg"
+   ]
   },
   {
    "id": "2026-11-28-pm",
