@@ -928,7 +928,8 @@
     "posts/2026-11/2026-11-25-am-tablewise-restaurant-dashboard-2.jpg",
     "posts/2026-11/2026-11-25-am-tablewise-restaurant-dashboard-3.jpg",
     "posts/2026-11/2026-11-25-am-tablewise-restaurant-dashboard-4.jpg"
-   ]
+   ],
+   "theme": "dark"
   },
   {
    "id": "2026-11-25-pm",
@@ -939,16 +940,19 @@
    "niche": "Electric bike brand",
    "brand": "Velo Nine",
    "palette_hint": "signal yellow + graphite",
-   "status": "ready",
-   "design_dir": "designs/2026-11-25-pm-velo-nine-ebike-website",
+   "status": "planned",
+   "design_dir": null,
    "image": null,
-   "caption": "Most e-bikes look like they were designed for a spec sheet. This one was designed for the hills.\nE-bike website UI design: cinematic product hero, live battery gauge and glass buy card\n\nVelo Nine puts a real graphite bike on misty green hills, then lets thin type, mono labels and frosted cards do the talking: range, battery and price, nothing shouting.\n\nSave this for your next product landing page\nWould you buy a $2,890 bike from a page this quiet?\n\n#uidesign #webdesign #landingpage #ebike #productdesign",
+   "caption": null,
    "media_id": null,
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-23-pm",
    "slug": "velo-nine-ebike-website",
-   "images": [
+   "images": null,
+   "approved": "owner said done (2026-11-21)",
+   "light_design_dir": "designs/2026-11-25-pm-velo-nine-ebike-website",
+   "light_images": [
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-1.jpg",
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-2.jpg",
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-3.jpg",
@@ -957,7 +961,8 @@
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-6.jpg",
     "posts/2026-11/2026-11-25-pm-velo-nine-ebike-website-7.jpg"
    ],
-   "approved": "owner said done (2026-11-21)"
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-11-26-am",
@@ -968,16 +973,20 @@
    "niche": "Skincare: evening ritual timer",
    "brand": "Mossé",
    "palette_hint": "golden hour orange + terracotta",
-   "status": "ready",
-   "design_dir": "designs/2026-11-26-am-mosse-evening-ritual-app",
+   "status": "planned",
+   "design_dir": null,
    "image": null,
-   "caption": "Most people rush skincare in 40 seconds. This screen makes it six calm minutes.\nSkincare routine app UI design: guided evening ritual with a dot-matrix timer\n\nMossé walks you through each step with the real product on screen, times the massage for you, and keeps a streak so the habit sticks.\n\nSave this for your next wellness app project\nMorning routine or evening routine: which one do you never skip?\n\n#uidesign #mobileappdesign #wellnessapp #skincareroutine #glassmorphism",
+   "caption": null,
    "media_id": null,
    "format": "carousel-app-v4",
    "ai": false,
    "originally": "2026-11-24-am",
    "slug": "mosse-evening-ritual-app",
-   "images": [
+   "images": null,
+   "replaces": "Verdant (unscheduled)",
+   "approved": "owner approved Mossé v3 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am",
+   "light_design_dir": "designs/2026-11-26-am-mosse-evening-ritual-app",
+   "light_images": [
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-1.jpg",
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-2.jpg",
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-3.jpg",
@@ -985,8 +994,8 @@
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-5.jpg",
     "posts/2026-11/2026-11-26-am-mosse-evening-ritual-app-6.jpg"
    ],
-   "replaces": "Verdant (unscheduled)",
-   "approved": "owner approved Mossé v3 (2026-11-20); schedule set 2026-11-21: v1 21-pm, v2 23-am, v3 26-am"
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-11-26-pm",
@@ -1004,7 +1013,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": true,
-   "originally": "2026-11-24-pm"
+   "originally": "2026-11-24-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-11-27-am",
@@ -1015,16 +1025,19 @@
    "niche": "Boutique beach hotel",
    "brand": "Saltwater House",
    "palette_hint": "sand + ocean teal",
-   "status": "ready",
-   "design_dir": "designs/2026-11-27-am-saltwater-house-hotel-website",
+   "status": "planned",
+   "design_dir": null,
    "image": null,
-   "caption": "A hotel with twelve rooms will never ask you to fight for a sun lounger.\nBoutique hotel website UI design: photo-led hero, bento layout and a booking card that adds up\n\nSaltwater House lets one golden-hour photo do the selling, then answers what guests really ask: how far to the sea, how warm the water is, and what three nights actually cost.\n\nSave this for your next hospitality or travel website\nInfinity pool at sunset or a private cove at sunrise: which one books you?\n\n#uidesign #webdesign #hotelwebsite #landingpagedesign #travelwebsite",
+   "caption": null,
    "media_id": null,
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-25-am",
    "slug": "saltwater-house-hotel-website",
-   "images": [
+   "images": null,
+   "approved": "owner said done (2026-11-21)",
+   "light_design_dir": "designs/2026-11-27-am-saltwater-house-hotel-website",
+   "light_images": [
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-1.jpg",
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-2.jpg",
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-3.jpg",
@@ -1033,7 +1046,8 @@
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-6.jpg",
     "posts/2026-11/2026-11-27-am-saltwater-house-hotel-website-7.jpg"
    ],
-   "approved": "owner said done (2026-11-21)"
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-11-27-pm",
@@ -1041,18 +1055,21 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "status": "ready",
+   "status": "planned",
    "niche": "Hiking trail guide",
    "brand": "Ridge",
    "palette_hint": "sunrise peach + slate",
-   "design_dir": "designs/2026-11-27-pm-ridge-hiking-app",
+   "design_dir": null,
    "image": null,
    "media_id": null,
    "slug": "ridge-hiking-app",
-   "caption": "Most hikers check the weather. Almost nobody checks the climb.\nHiking trail app UI design: elevation profile, summit pins and slide to start\n\nRidge puts the real ridge at sunrise on screen, pins the summit and the water stop where they are, and shows the 860 m climb before you take a step.\n\nSave this for your next outdoor or travel app\nSunrise summit or a slow afternoon loop: which one are you picking?\n\n#uidesign #mobileappdesign #hikingapp #outdoorapp #glassmorphism",
+   "caption": null,
    "format": "carousel-app-v4",
    "ai": false,
-   "images": [
+   "images": null,
+   "approved": "owner approved and asked to schedule (2026-11-21)",
+   "light_design_dir": "designs/2026-11-27-pm-ridge-hiking-app",
+   "light_images": [
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-1.jpg",
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-2.jpg",
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-3.jpg",
@@ -1060,7 +1077,8 @@
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-5.jpg",
     "posts/2026-11/2026-11-27-pm-ridge-hiking-app-6.jpg"
    ],
-   "approved": "owner approved and asked to schedule (2026-11-21)"
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-11-28-am",
@@ -1078,7 +1096,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-11-26-am"
+   "originally": "2026-11-26-am",
+   "theme": "dark"
   },
   {
    "id": "2026-11-28-pm",
@@ -1089,16 +1108,19 @@
    "niche": "Indoor plant shop",
    "brand": "Greenroom",
    "palette_hint": "sage + terracotta",
-   "status": "ready",
-   "design_dir": "designs/2026-11-28-pm-greenroom-plants-website",
+   "status": "planned",
+   "design_dir": null,
    "image": null,
-   "caption": "Most houseplants don't die from neglect. They die in the wrong light.\nPlant shop website UI design: plant finder, care plans and product grid\n\nGreenroom leads with a real plant in a real hand, then shows the two things that keep it alive: a light check before you buy and a watering schedule after.\n\nSave this for your next e-commerce landing page\nBe honest: how many plants have you lost this year?\n\n#uidesign #webdesign #landingpage #plantshop #ecommercedesign",
+   "caption": null,
    "media_id": null,
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-26-pm",
    "slug": "greenroom-plants-website",
-   "images": [
+   "images": null,
+   "approved": "owner said done (2026-11-21)",
+   "light_design_dir": "designs/2026-11-28-pm-greenroom-plants-website",
+   "light_images": [
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-1.jpg",
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-2.jpg",
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-3.jpg",
@@ -1107,7 +1129,8 @@
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-6.jpg",
     "posts/2026-11/2026-11-28-pm-greenroom-plants-website-7.jpg"
    ],
-   "approved": "owner said done (2026-11-21)"
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-11-29-am",
@@ -1115,18 +1138,21 @@
    "slot": "am",
    "time_dhaka": "08:37",
    "type": "app",
-   "status": "ready",
+   "status": "planned",
    "niche": "Headphones companion: noise control + EQ",
    "brand": "Aural",
    "palette_hint": "lilac + pearl + peach",
-   "design_dir": "designs/2026-11-29-am-aural-headphones-app",
+   "design_dir": null,
    "image": null,
    "media_id": null,
    "slug": "aural-headphones-app",
-   "caption": "Your left ear cup is always the one that dies first. Now you can see it coming.\nHeadphones app UI design: battery per ear cup, noise control and EQ sound profile\n\nAural splits the battery by ear cup over a real photo of the headphones, keeps noise control one tap away, and turns the equaliser into a single curve you can drag.\n\nSave this for your next device companion app\nWould you keep noise cancelling on all day, or switch to transparency?\n\n#uidesign #mobileappdesign #glassmorphism #headphones #audioapp",
+   "caption": null,
    "format": "carousel-app-v4",
    "ai": false,
-   "images": [
+   "images": null,
+   "approved": "owner approved and asked to schedule (2026-11-21)",
+   "light_design_dir": "designs/2026-11-29-am-aural-headphones-app",
+   "light_images": [
     "posts/2026-11/2026-11-29-am-aural-headphones-app-1.jpg",
     "posts/2026-11/2026-11-29-am-aural-headphones-app-2.jpg",
     "posts/2026-11/2026-11-29-am-aural-headphones-app-3.jpg",
@@ -1134,7 +1160,8 @@
     "posts/2026-11/2026-11-29-am-aural-headphones-app-5.jpg",
     "posts/2026-11/2026-11-29-am-aural-headphones-app-6.jpg"
    ],
-   "approved": "owner approved and asked to schedule (2026-11-21)"
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-11-29-pm",
@@ -1152,7 +1179,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-11-27-pm"
+   "originally": "2026-11-27-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-11-30-am",
@@ -1170,7 +1198,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": true,
-   "originally": "2026-11-28-am"
+   "originally": "2026-11-28-am",
+   "theme": "dark"
   },
   {
    "id": "2026-11-30-pm",
@@ -1178,18 +1207,21 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "status": "ready",
+   "status": "planned",
    "niche": "Online art auction: live bidding",
    "brand": "Lot & Light",
    "palette_hint": "gallery ivory + oxblood + charcoal",
-   "design_dir": "designs/2026-11-30-pm-lotlight-auction-app",
+   "design_dir": null,
    "image": null,
    "media_id": null,
    "slug": "lotlight-auction-app",
-   "caption": "The hammer falls in 42 seconds and you can still see every fee.\nArt auction app UI design: live lot bidding, countdown and slide to bid\n\nLot & Light puts the real painting on the wall first, then the clock, the bid history and the exact price with the buyer's premium, so nobody gets a surprise at checkout.\n\nSave this for your next marketplace or bidding flow\nWould you bid €18,800 on a painting you've only seen on your phone?\n\n#uidesign #mobileappdesign #auctionapp #artcollector #glassmorphism",
+   "caption": null,
    "format": "carousel-app-v4",
    "ai": false,
-   "images": [
+   "images": null,
+   "approved": "owner approved and asked to schedule (2026-11-21)",
+   "light_design_dir": "designs/2026-11-30-pm-lotlight-auction-app",
+   "light_images": [
     "posts/2026-11/2026-11-30-pm-lotlight-auction-app-1.jpg",
     "posts/2026-11/2026-11-30-pm-lotlight-auction-app-2.jpg",
     "posts/2026-11/2026-11-30-pm-lotlight-auction-app-3.jpg",
@@ -1197,7 +1229,8 @@
     "posts/2026-11/2026-11-30-pm-lotlight-auction-app-5.jpg",
     "posts/2026-11/2026-11-30-pm-lotlight-auction-app-6.jpg"
    ],
-   "approved": "owner approved and asked to schedule (2026-11-21)"
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-12-01-am",
@@ -1215,7 +1248,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-11-29-am"
+   "originally": "2026-11-29-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-01-pm",
@@ -1233,7 +1267,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-11-29-pm"
+   "originally": "2026-11-29-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-02-am",
@@ -1245,14 +1280,18 @@
    "niche": "Smart ring health tracking",
    "palette_hint": "silver blue + graphite + coral",
    "slug": "halo-ring-app",
-   "caption": "Your ring knew you'd sleep badly before you did.\nSmart ring health app UI design: readiness score, heart rate and sleep tracking\n\nHalo turns a whole night of sensor data into one dot-matrix number, then shows the three things it was built from, right over a real photo of the ring.\n\nSave this for your next health or wearable app\nWould you trust one readiness number, or do you want every metric?\n\n#uidesign #mobileappdesign #healthapp #wearabletech #smartring",
-   "status": "ready",
+   "caption": null,
+   "status": "planned",
    "approved": "owner asked to schedule all app designs (2026-11-21)",
    "replaces": "Spotly",
    "format": "carousel-app-v4",
    "ai": false,
-   "design_dir": "designs/2026-12-02-am-halo-ring-app",
-   "images": [
+   "design_dir": null,
+   "images": null,
+   "image": null,
+   "media_id": null,
+   "light_design_dir": "designs/2026-12-02-am-halo-ring-app",
+   "light_images": [
     "posts/2026-12/2026-12-02-am-halo-ring-app-1.jpg",
     "posts/2026-12/2026-12-02-am-halo-ring-app-2.jpg",
     "posts/2026-12/2026-12-02-am-halo-ring-app-3.jpg",
@@ -1260,8 +1299,8 @@
     "posts/2026-12/2026-12-02-am-halo-ring-app-5.jpg",
     "posts/2026-12/2026-12-02-am-halo-ring-app-6.jpg"
    ],
-   "image": null,
-   "media_id": null
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-12-02-pm",
@@ -1279,7 +1318,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-11-30-pm"
+   "originally": "2026-11-30-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-03-am",
@@ -1297,7 +1337,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-12-01-am"
+   "originally": "2026-12-01-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-03-pm",
@@ -1309,14 +1350,18 @@
    "niche": "Crypto & savings wallet",
    "palette_hint": "mint + emerald + lilac",
    "slug": "verdant-wallet-app",
-   "caption": "Saving for a cabin feels different when you can see the cabin.\nCrypto wallet app UI design: one-card swap, savings goal and slide to confirm\n\nVerdant keeps the swap honest: rate, fee and what you actually get, all in one glass card. Round-ups then grow a goal with a real photo, not a bar chart.\n\nSave this for your next fintech app project\nWould you keep crypto and savings in one app, or split them?\n\n#uidesign #mobileappdesign #fintechdesign #cryptowallet #glassmorphism",
-   "status": "ready",
+   "caption": null,
+   "status": "planned",
    "approved": "owner asked to schedule all app designs (2026-11-21)",
    "replaces": "Closet",
    "format": "carousel-app-v4",
    "ai": false,
-   "design_dir": "designs/2026-12-03-pm-verdant-wallet-app",
-   "images": [
+   "design_dir": null,
+   "images": null,
+   "image": null,
+   "media_id": null,
+   "light_design_dir": "designs/2026-12-03-pm-verdant-wallet-app",
+   "light_images": [
     "posts/2026-12/2026-12-03-pm-verdant-wallet-app-1.jpg",
     "posts/2026-12/2026-12-03-pm-verdant-wallet-app-2.jpg",
     "posts/2026-12/2026-12-03-pm-verdant-wallet-app-3.jpg",
@@ -1324,8 +1369,8 @@
     "posts/2026-12/2026-12-03-pm-verdant-wallet-app-5.jpg",
     "posts/2026-12/2026-12-03-pm-verdant-wallet-app-6.jpg"
    ],
-   "image": null,
-   "media_id": null
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-12-04-am",
@@ -1343,7 +1388,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-12-02-am"
+   "originally": "2026-12-02-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-04-pm",
@@ -1361,7 +1407,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-12-02-pm"
+   "originally": "2026-12-02-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-05-am",
@@ -1373,14 +1420,18 @@
    "niche": "Padel court booking",
    "palette_hint": "court blue + sunset coral",
    "slug": "rally-padel-app",
-   "caption": "Booking padel shouldn't end with a group chat about who owes €9.50.\nPadel court booking app UI design: time slots, cost split and slide to book\n\nRally shows the real court at the hour you'll play, prices every slot up front, and splits the bill four ways before you book.\n\nSave this for your next booking app project\nWould you book the 19:30 golden hour slot or the cheaper 22:30?\n\n#uidesign #mobileappdesign #bookingapp #padel #sportsapp",
-   "status": "ready",
+   "caption": null,
+   "status": "planned",
    "approved": "owner asked to schedule all app designs (2026-11-21)",
    "replaces": "Fade",
    "format": "carousel-app-v4",
    "ai": false,
-   "design_dir": "designs/2026-12-05-am-rally-padel-app",
-   "images": [
+   "design_dir": null,
+   "images": null,
+   "image": null,
+   "media_id": null,
+   "light_design_dir": "designs/2026-12-05-am-rally-padel-app",
+   "light_images": [
     "posts/2026-12/2026-12-05-am-rally-padel-app-1.jpg",
     "posts/2026-12/2026-12-05-am-rally-padel-app-2.jpg",
     "posts/2026-12/2026-12-05-am-rally-padel-app-3.jpg",
@@ -1388,8 +1439,8 @@
     "posts/2026-12/2026-12-05-am-rally-padel-app-5.jpg",
     "posts/2026-12/2026-12-05-am-rally-padel-app-6.jpg"
    ],
-   "image": null,
-   "media_id": null
+   "note_dark": "Owner (2026-11-24): every post from 2026-11-25 am is DARK. The light design is kept in light_design_dir; redesign this slot dark (same niche/brand, may reuse its photos), set ready-pending-approval and wait for the owner.",
+   "theme": "dark"
   },
   {
    "id": "2026-12-05-pm",
@@ -1407,7 +1458,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-12-03-pm"
+   "originally": "2026-12-03-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-06-am",
@@ -1425,7 +1477,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-12-04-am"
+   "originally": "2026-12-04-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-06-pm",
@@ -1439,7 +1492,8 @@
    "status": "planned",
    "design_dir": null,
    "image": null,
-   "media_id": null
+   "media_id": null,
+   "theme": "dark"
   },
   {
    "id": "2026-12-07-am",
@@ -1457,7 +1511,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-12-05-am"
+   "originally": "2026-12-05-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-07-pm",
@@ -1475,7 +1530,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-12-05-pm"
+   "originally": "2026-12-05-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-08-am",
@@ -1493,7 +1549,8 @@
    "media_id": null,
    "format": "carousel-app",
    "ai": false,
-   "originally": "2026-12-06-am"
+   "originally": "2026-12-06-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-08-pm",
@@ -1511,7 +1568,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": true,
-   "originally": "2026-12-06-pm"
+   "originally": "2026-12-06-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-09-am",
@@ -1529,7 +1587,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": true,
-   "originally": "2026-12-07-am"
+   "originally": "2026-12-07-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-09-pm",
@@ -1547,7 +1606,8 @@
    "media_id": null,
    "format": "carousel-app",
    "ai": false,
-   "originally": "2026-12-07-pm"
+   "originally": "2026-12-07-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-10-am",
@@ -1565,7 +1625,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-12-08-am"
+   "originally": "2026-12-08-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-10-pm",
@@ -1583,7 +1644,8 @@
    "media_id": null,
    "format": "carousel-website",
    "ai": false,
-   "originally": "2026-12-08-pm"
+   "originally": "2026-12-08-pm",
+   "theme": "dark"
   },
   {
    "id": "2026-12-11-am",
@@ -1601,7 +1663,8 @@
    "media_id": null,
    "format": "carousel-app",
    "ai": true,
-   "originally": "2026-12-09-am"
+   "originally": "2026-12-09-am",
+   "theme": "dark"
   },
   {
    "id": "2026-12-11-pm",
@@ -1619,7 +1682,8 @@
    "media_id": null,
    "format": "carousel-dashboard",
    "ai": false,
-   "originally": "2026-12-09-pm"
+   "originally": "2026-12-09-pm",
+   "theme": "dark"
   }
  ],
  "note_resequence": "2026-11-18: runs stalled after 2026-11-16 am; the 4 missed slots and everything after were shifted forward 4 slots (rotation kept). 'originally' keeps the old slot id; file paths keep the old ids. Owner asked to see all designs before posting: ready slots are 'ready-pending-approval' until he approves. Owner approved on 2026-11-18; ready slots are 'ready' again."

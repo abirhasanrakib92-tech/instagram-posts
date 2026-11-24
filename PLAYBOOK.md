@@ -12,6 +12,18 @@ Match these approved posts exactly in presentation; only the design inside the s
 Always: 1080×1350, `#EEEEEE` background, light UI, the brand chrome ("Designed by" bar on all types, WhatsApp pill on dashboards only, see below) on the design slides; the fixed CTA slide stays last.
 Do not edit `tools/render.py` or the mockup assets unless the owner asks.
 
+## DARK ONLY (owner, 2026-11-24 night — overrides every "light UI" rule above, from 2026-11-25 am on)
+
+- Every post from 2026-11-25 am is a **dark version**: dark apps, dark dashboards, dark websites. No light UI designs any more.
+  Where this file says "Light UI only", "off-white/white surfaces" or "light footer", read it as dark: near-black or deep tinted
+  surfaces (e.g. #0F120B, #111318, #0E1116), cards one step lighter with a 1px hairline border, light ink text, the slot's palette as
+  bright accents that read well on dark. Keep contrast readable (body text at least #B0B0B0-ish on the dark surface).
+- Unchanged: the locked carousel formats, the #EEEEEE studio background, the mockups (phone, browser window), the brand chrome and the fixed CTA slide.
+- Light designs already made for later slots are kept for history (`light_design_dir` in calendar.json); those slots are `planned`
+  again and must be redesigned dark (same niche and brand; their photos can be reused).
+- **Approval (owner, 2026-11-24):** dark app and dark website designs are set `ready-pending-approval` and are NOT posted until the owner
+  approves them. Dark dashboards post automatically as before. Example dark dashboard: `designs/2026-11-25-am-tablewise-restaurant-dashboard`.
+
 ## The schedule
 
 - Two posts a day, Asia/Dhaka time: **morning 08:37** (`am`) and **night 20:39** (`pm`).

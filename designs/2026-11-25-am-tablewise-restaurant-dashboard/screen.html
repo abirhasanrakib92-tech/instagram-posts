@@ -121,16 +121,42 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
 .sh .tx b{color:var(--ink);font-size:12px}
 .abtn{display:flex;gap:8px;margin-top:12px}
 .abtn span{flex:1;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600}
+:root{--bg:#0F120B;--card:#191D13;--line:#2A2F21;--ink:#F2F1E8;--ink2:#B4B8A6;--ink3:#7F8473;--ol:#C9D98A;--ol2:#A9BC5E;--ol3:#C9D98A;--ol4:#22281A;--ap:#F08A55;--ap2:#3A2418;--gr:#7BCB86;--gr2:#1B2E1E;--am:#E8B04A;--am2:#33280F;--rd:#F07A63;--rd2:#3A1C17;--sf:#20251A}
+/* dark theme overrides */
+.ib,.btn,.nav,.srch,.user,.stack{background:var(--sf)}
+.ib b{border-color:var(--sf)}
+.srch kbd{border-color:#363C2C}
+.nav a.on{background:var(--ol);color:#151A0C}
+.nav a em{color:#F7B48F}
+.logo i{background:var(--ol)}
+.prim{background:var(--ol);color:#151A0C}
+.stack .ph,.stack em{border-color:var(--sf)}
+.seg span.on{background:#2C3223;color:var(--ink);box-shadow:none}
+.hero{background:linear-gradient(150deg,#2E3A18 0%,#1E2512 70%);border:1px solid #39441F}
+.hero:before{background:radial-gradient(circle,rgba(201,217,138,.20),rgba(201,217,138,0) 66%)}
+.hk .tg span.on{background:var(--ol);color:#151A0C;border-color:var(--ol)}
+.hl .d .pill{background:var(--ol);color:#151A0C}
+.big small{color:var(--ol)}
+.pb .bar{background:#262B1E}
+.pb .bar u{background:#F2F1E8}
+.k .kt i{background:#262B1E}
+.k.fill{background:var(--ap);color:#1A0E07}
+.k.fill .kt{color:#3B1C0C}.k.fill .kt i{background:rgba(0,0,0,.12)}.k.fill .kv small,.k.fill .ks{color:#4A2410}
+.al{background:linear-gradient(160deg,#243016,#191D13);border:1px solid #2F3A1C}
+.ai .ic{background:var(--ol)}
+.alt{background:#232A19}
+.card{border:1px solid #23281B}
+.greet h1 .serif{color:var(--ol)}
 </style></head><body>
 <div class="page">
  <div class="top">
-  <div class="logo"><i>{{icon:utensils-crossed:19:#ffffff:2}}</i>Tablewise</div>
+  <div class="logo"><i>{{icon:utensils-crossed:19:#151A0C:2}}</i>Tablewise</div>
   <div class="nav"><a class="on">Group</a><a>Locations</a><a>Menu</a><a>Labor <em>2</em></a><a>Inventory</a></div>
  </div>
  <div class="top">
-  <div class="srch">{{icon:search:17:#9A9D8E}}Search locations, dishes, staff…<kbd>⌘K</kbd></div>
-  <div class="ib">{{icon:bell:18:#1D2114}}<b></b></div>
-  <div class="ib">{{icon:settings-2:18:#1D2114}}</div>
+  <div class="srch">{{icon:search:17:#7F8473}}Search locations, dishes, staff…<kbd>⌘K</kbd></div>
+  <div class="ib">{{icon:bell:18:#F2F1E8}}<b></b></div>
+  <div class="ib">{{icon:settings-2:18:#F2F1E8}}</div>
   <div class="user"><div class="ph" style="width:40px;height:40px;background-image:url(olivia.jpg)"></div><div><b>Olivia Grant</b><span>Director of Ops · Fennel Group</span></div></div>
  </div>
 
@@ -139,9 +165,9 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
   <p>6 locations served <b>9,842 covers</b> last week and kept prime cost at <b>58.4%</b>, under the 60% target.</p>
  </div>
  <div class="acts">
-  <div class="btn">{{icon:calendar:16:#1D2114}}Nov 18 – Nov 24{{icon:chevron-down:15:#9A9D8E}}</div>
-  <div class="btn">{{icon:download:16:#1D2114}}Export</div>
-  <div class="btn prim">{{icon:sparkles:16:#ffffff}}Ask Tablewise</div>
+  <div class="btn">{{icon:calendar:16:#F2F1E8}}Nov 18 – Nov 24{{icon:chevron-down:15:#7F8473}}</div>
+  <div class="btn">{{icon:download:16:#F2F1E8}}Export</div>
+  <div class="btn prim">{{icon:sparkles:16:#151A0C}}Ask Tablewise</div>
   <div class="stack"><div class="ph" style="background-image:url(marcus.jpg)"></div><div class="ph" style="background-image:url(mei.jpg)"></div><div class="ph" style="background-image:url(rohan.jpg)"></div><em>+3</em></div>
  </div>
 
@@ -152,7 +178,7 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
    <div class="hmain">
     <div class="hl">
      <div class="big">58.4<small>%</small></div>
-     <div class="d"><span class="pill">{{icon:arrow-down-right:12:#2F3A1C:2.5}}1.2 pts</span>vs previous week<br>$4,950 saved at last week's sales</div>
+     <div class="d"><span class="pill">{{icon:arrow-down-right:12:#151A0C:2.5}}1.2 pts</span>vs previous week<br>$4,950 saved at last week's sales</div>
      <div class="tgt"><span>{{icon:target:13:#B9C48A}}Target ≤ 60%</span><span>{{icon:store:13:#B9C48A}}4 of 6 on track</span></div>
     </div>
     <div class="gauge"><svg id="g" width="360" height="190" viewBox="0 0 360 190" style="overflow:visible"></svg>
@@ -168,7 +194,7 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
   </div>
 
   <div class="card tbl">
-   <div class="ch"><div><div class="t">Locations</div><div class="s">Sorted by net sales · black line marks the 60% target</div></div>
+   <div class="ch"><div><div class="t">Locations</div><div class="s">Sorted by net sales · white line marks the 60% target</div></div>
     <div class="seg"><span class="on">Prime cost</span><span>Food</span><span>Labor</span></div></div>
    <div class="th"><div>Location · GM</div><div>Net sales</div><div>Covers</div><div>Prime cost</div><div style="text-align:right">Status</div></div>
    <div class="tr"><div class="loc"><div class="pimg" style="width:40px;height:40px;background-image:url(r1.jpg)"></div><div><b>Ember &amp; Oak</b><span><i class="ph" style="background-image:url(marcus.jpg)"></i>Downtown · Marcus</span></div></div><div class="v">$92,480<small>$43.95 / cover</small></div><div class="v">2,104</div><div class="pb"><div class="bar"><i style="width:79.6%;background:var(--ol2)"></i><u></u></div><b>55.7%</b></div><div style="text-align:right"><span class="pill ok">On track</span></div></div>
@@ -183,10 +209,10 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
  <!-- RIGHT HALF -->
  <div class="half">
   <div class="kpis">
-   <div class="k fill"><div class="kt">Covers<i>{{icon:users:14:#ffffff}}</i></div><div class="kv">9,842</div><div class="ks"><b>+4.1%</b> vs last week</div></div>
-   <div class="k card"><div class="kt">Avg check<i>{{icon:receipt:14:#1D2114}}</i></div><div class="kv">$41.95</div><div class="ks"><b style="color:var(--gr)">+$1.20</b> per cover</div></div>
-   <div class="k card"><div class="kt">Table turns<i>{{icon:refresh-ccw:14:#1D2114}}</i></div><div class="kv">2.6<small>×</small></div><div class="ks">dinner · <b style="color:var(--gr)">+0.2</b></div></div>
-   <div class="k card"><div class="kt">Food waste<i>{{icon:trash-2:14:#1D2114}}</i></div><div class="kv">2.8<small>%</small></div><div class="ks">of food cost · <b style="color:var(--gr)">−0.6 pts</b></div></div>
+   <div class="k fill"><div class="kt">Covers<i>{{icon:users:14:#1A0E07}}</i></div><div class="kv">9,842</div><div class="ks"><b>+4.1%</b> vs last week</div></div>
+   <div class="k card"><div class="kt">Avg check<i>{{icon:receipt:14:#F2F1E8}}</i></div><div class="kv">$41.95</div><div class="ks"><b style="color:var(--gr)">+$1.20</b> per cover</div></div>
+   <div class="k card"><div class="kt">Table turns<i>{{icon:refresh-ccw:14:#F2F1E8}}</i></div><div class="kv">2.6<small>×</small></div><div class="ks">dinner · <b style="color:var(--gr)">+0.2</b></div></div>
+   <div class="k card"><div class="kt">Food waste<i>{{icon:trash-2:14:#F2F1E8}}</i></div><div class="kv">2.8<small>%</small></div><div class="ks">of food cost · <b style="color:var(--gr)">−0.6 pts</b></div></div>
   </div>
 
   <div class="card chart">
@@ -206,13 +232,13 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
     </div>
    </div>
    <div class="card al" style="width:316px;flex:none">
-    <div class="ai"><div class="ic">{{icon:sparkles:17:#ffffff}}</div><div><div class="t">Tablewise suggests</div><div class="s" style="color:var(--ink2)">2 fixes · about $1,380 a week</div></div></div>
+    <div class="ai"><div class="ic">{{icon:sparkles:17:#151A0C}}</div><div><div class="t">Tablewise suggests</div><div class="s" style="color:var(--ink2)">2 fixes · about $1,380 a week</div></div></div>
     <div class="alt">
      <h4><span class="pill ov">Labor</span>Terrazza, tonight</h4>
      <p><b>3 servers</b> are scheduled past 21:30, but only <b>14 covers</b> are booked after 21:00.</p>
-     <div class="sh"><div class="ph" style="background-image:url(daniel.jpg)"></div><div class="ph" style="background-image:url(karim.jpg)"></div><span class="ar">{{icon:arrow-right:14:#9A9D8E}}</span><div class="tx"><b>Cut 1 shift at 21:30</b><br>saves $96 tonight</div></div>
+     <div class="sh"><div class="ph" style="background-image:url(daniel.jpg)"></div><div class="ph" style="background-image:url(karim.jpg)"></div><span class="ar">{{icon:arrow-right:14:#7F8473}}</span><div class="tx"><b>Cut 1 shift at 21:30</b><br>saves $96 tonight</div></div>
     </div>
-    <div class="abtn"><span style="background:var(--ol);color:#fff">{{icon:check:14:#ffffff:2.5}}Apply</span><span style="background:#fff">Review all</span></div>
+    <div class="abtn"><span style="background:var(--ol);color:#151A0C">{{icon:check:14:#151A0C:2.5}}Apply</span><span style="background:#2C3223">Review all</span></div>
    </div>
   </div>
  </div>
@@ -223,8 +249,8 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
  const g=document.getElementById('g'),cx=180,cy=170,r1=112,r2=150,N=50;let s='';
  for(let i=0;i<N;i++){
   const a=Math.PI*(1-(i+0.5)/N),c=Math.cos(a),n=Math.sin(a);
-  const v=(i+0.5)*2; let col='rgba(255,255,255,.13)';
-  if(v<=29.1)col='#B9C48A'; else if(v<=58.4)col='#EE7A43';
+  const v=(i+0.5)*2; let col='rgba(255,255,255,.10)';
+  if(v<=29.1)col='#C9D98A'; else if(v<=58.4)col='#EE7A43';
   const big=(i==29);
   const ri=big?r1-8:r1, ro=big?r2+10:r2;
   s+=`<line x1="${cx+ri*c}" y1="${cy-ri*n}" x2="${cx+ro*c}" y2="${cy-ro*n}" stroke="${big?'#ffffff':col}" stroke-width="${big?4:5}" stroke-linecap="round"/>`;
@@ -243,16 +269,16 @@ html,body{width:1440px;height:960px;overflow:hidden;background:var(--bg);font-fa
  const y=[1.8,6.4,7.1,3.2,1.9,2.4,5.6,8.9,10.4,7.8,3.9,1.5];
  const ly=[1.6,6.0,6.6,3.4,1.7,2.1,5.0,8.3,9.6,7.4,3.6,1.7];
  const L=40,R=640,T=12,B=192,max=12;const X=i=>L+(R-L)/12*(i+.5),Y=v=>B-(B-T)*v/max,bw=30;let s='';
- for(let v=0;v<=12;v+=3){s+=`<line x1="${L}" x2="${R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#ECE8DC" ${v?'stroke-dasharray="3 4"':''}/><text x="${L-10}" y="${Y(v)+4}" text-anchor="end" font-family="Onest" font-size="11" fill="#9A9D8E">$${v}k</text>`}
- s+=`<defs><pattern id="h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#E6EBCF"/><line x1="0" y1="0" x2="0" y2="6" stroke="#CFD8A8" stroke-width="2.4"/></pattern></defs>`;
- y.forEach((v,i)=>{const hi=i==8;s+=`<rect x="${X(i)-bw/2}" y="${Y(v)}" width="${bw}" height="${B-Y(v)}" rx="8" fill="${hi?'#46552A':'url(#h)'}"/>`;
-  s+=`<text x="${X(i)}" y="${B+20}" text-anchor="middle" font-family="Onest" font-size="11" fill="${hi?'#1D2114':'#9A9D8E'}" font-weight="${hi?700:400}">${hrs[i]}:00</text>`});
+ for(let v=0;v<=12;v+=3){s+=`<line x1="${L}" x2="${R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#2A2F21" ${v?'stroke-dasharray="3 4"':''}/><text x="${L-10}" y="${Y(v)+4}" text-anchor="end" font-family="Onest" font-size="11" fill="#7F8473">$${v}k</text>`}
+ s+=`<defs><pattern id="h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#23291A"/><line x1="0" y1="0" x2="0" y2="6" stroke="#3B4528" stroke-width="2.4"/></pattern></defs>`;
+ y.forEach((v,i)=>{const hi=i==8;s+=`<rect x="${X(i)-bw/2}" y="${Y(v)}" width="${bw}" height="${B-Y(v)}" rx="8" fill="${hi?'#C9D98A':'url(#h)'}"/>`;
+  s+=`<text x="${X(i)}" y="${B+20}" text-anchor="middle" font-family="Onest" font-size="11" fill="${hi?'#F2F1E8':'#7F8473'}" font-weight="${hi?700:400}">${hrs[i]}:00</text>`});
  let p='';ly.forEach((v,i)=>{p+=(i?'L':'M')+X(i)+' '+Y(v)});
- s+=`<path d="${p}" fill="none" stroke="#EE7A43" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="1 0"/>`;
- ly.forEach((v,i)=>{s+=`<circle cx="${X(i)}" cy="${Y(v)}" r="3" fill="#fff" stroke="#EE7A43" stroke-width="2"/>`});
+ s+=`<path d="${p}" fill="none" stroke="#F08A55" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="1 0"/>`;
+ ly.forEach((v,i)=>{s+=`<circle cx="${X(i)}" cy="${Y(v)}" r="3" fill="#191D13" stroke="#F08A55" stroke-width="2"/>`});
  const tx=X(8),ty=Y(10.4);
- s+=`<g transform="translate(${tx-bw/2-12-212},0)"><rect width="212" height="52" rx="12" fill="#1D2114"/><text x="12" y="20" font-family="Onest" font-size="11" fill="#B8BBAE">19:00 – 20:00 · dinner peak</text><text x="12" y="40" font-family="Onest" font-size="15" font-weight="700" fill="#fff">$10,400</text><text x="200" y="40" text-anchor="end" font-family="Onest" font-size="11" font-weight="700" fill="#B9C48A">+$800 · 248 covers</text></g>`;
- s+=`<line x1="${tx-bw/2-12}" x2="${tx-bw/2-2}" y1="40" y2="40" stroke="#1D2114" stroke-width="1.5"/>`;
+ s+=`<g transform="translate(${tx-bw/2-12-212},0)"><rect width="212" height="52" rx="12" fill="#F2F1E8"/><text x="12" y="20" font-family="Onest" font-size="11" fill="#5D6252">19:00 – 20:00 · dinner peak</text><text x="12" y="40" font-family="Onest" font-size="15" font-weight="700" fill="#151A0C">$10,400</text><text x="200" y="40" text-anchor="end" font-family="Onest" font-size="11" font-weight="700" fill="#4E6B1E">+$800 · 248 covers</text></g>`;
+ s+=`<line x1="${tx-bw/2-12}" x2="${tx-bw/2-2}" y1="40" y2="40" stroke="#F2F1E8" stroke-width="1.5"/>`;
  c.innerHTML=s;
 })();
 </script>
