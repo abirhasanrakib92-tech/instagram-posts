@@ -944,11 +944,11 @@
    "niche": "Fintech: hardware wallet for crypto self-custody",
    "brand": "Monolith",
    "palette_hint": "black + bone + titanium + acid yellow",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-25-pm-monolith-wallet-website",
    "image": null,
    "caption": "If your keys live on your phone, they're not really yours.\nHardware crypto wallet website UI design in dark mode: cinematic product landing page for self-custody\n\nMonolith is a slab of titanium that signs every transaction on its own e-ink screen. The page treats it like a film: giant wordmark behind the product, spec labels on leader lines, and one acid-yellow signal colour.\n\nSave this for your next product landing page\nWould you trust a device more if the website looked this calm?\n\n#uiux #webdesign #landingpage #cryptowallet #fintechdesign",
-   "media_id": null,
+   "media_id": "18118174985118027",
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-23-pm",
@@ -975,7 +975,8 @@
    ],
    "theme": "dark",
    "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
-   "approved": "owner said Final (2026-11-25)"
+   "approved": "owner said Final (2026-11-25)",
+   "posted_at": "2026-11-25T20:42+06:00"
   },
   {
    "id": "2026-11-26-am",
