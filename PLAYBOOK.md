@@ -270,6 +270,9 @@ a top pill with his photo (`assets/brand/abir.jpg`), "Designed by / Abir Hasan *
 (dashboard halves pan from each edge, website columns/bands sit between the bars, app slides shift/scale down).
 Mockup shadows are deliberately faint (owner: the old shadow was too heavy): 1px hairline + a soft, low-opacity drop.
 Do not darken them again. If the owner sends a sharper profile photo, replace `assets/brand/abir.jpg`.
+**Slim top bar (owner, 2026-11-25 night, replaces the old "Designed by" bar look):** one thin white pill across the top of slide 1
+(64px tall, 48px side margins): heart (red) + comment + repost + send icons on the left, his photo + "Abir Hasan Rakib" / "UI/UX Designer"
+in the centre, "Save for Later" + red bookmark on the right. No verified badge. Carousels are otherwise unchanged. Built by `brand_html` in tools/carousel.py.
 
 
 ## Growth rules (owner's standing order: every post should aim to go viral)

@@ -59,41 +59,38 @@ BRAND_BOT_NOWA = 56                      # bottom margin when there is no WhatsA
 
 BRAND_DARK_CSS = """
 .tb,.wa{background:#1C1D22;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 12px 30px -18px rgba(0,0,0,.7)}
-.av{box-shadow:0 0 0 3px #1C1D22,0 0 0 4px #34353C}
 .who small,.wa small{color:#8E8F99}
 .who b,.sv,.wa b{color:#F3F3F5}
 .wa .sep{background:#34353C}
-.mid svg{stroke:#F3F3F5}
-.sv svg path{fill:#F3F3F5}
+.act svg{stroke:#F3F3F5}
 """
 
 
 def brand_html(bg_uri, wa=True):
+    # Slim top bar (owner, 2026-11-25, ref: thin pill with actions left, designer centre, Save for Later right).
     av = R.b64(R.ROOT / 'assets/brand/abir.jpg')
-    heart = '<svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z" fill="#E8453C"/></svg>'
-    bm = '<svg width="26" height="30" viewBox="0 0 20 24"><path d="M2 2.5C2 1.7 2.7 1 3.5 1h13c.8 0 1.5.7 1.5 1.5V23l-8-5.2L2 23z" fill="#111"/></svg>'
+    heart = '<svg width="28" height="28" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z" fill="#E8453C"/></svg>'
+    bm = '<svg width="18" height="22" viewBox="0 0 20 24"><path d="M2 3C2 1.9 2.9 1 4 1h12c1.1 0 2 .9 2 2v20l-8-5.2L2 23z" fill="#E8453C"/></svg>'
     WA = f"""<div class="wa"><i>{R.expand_icons('{{icon:phone:22:#fff:2.4}}')}</i><small>WhatsApp</small><span class="sep"></span><b>+880 1730 402 994</b></div>"""
     return f"""<!doctype html><html><head><meta charset=utf-8><link rel=stylesheet href="{(R.ROOT/'assets/fonts.css').as_uri()}"><style>{R.STAGE_CSS}
 .bg{{position:absolute;inset:0;background:url({bg_uri}) 0 0/1080px 1350px no-repeat}}
-.tb{{position:absolute;left:56px;right:56px;top:30px;height:88px;border-radius:44px;background:#fff;display:flex;align-items:center;padding:0 34px 0 14px;
- box-shadow:0 0 0 1px rgba(0,0,0,.025),0 10px 24px -20px rgba(20,20,30,.12)}}
-.who{{display:flex;align-items:center;gap:14px}}
-.av{{width:62px;height:62px;border-radius:50%;background:url({av}) center/cover;box-shadow:0 0 0 3px #fff,0 0 0 4px #E6E6E6}}
-.who small{{display:block;font-size:15px;color:#8A8A8A;font-family:'Inter Tight';letter-spacing:-.1px}}
-.who b{{display:block;font-size:27px;font-weight:600;color:#111;letter-spacing:-.8px;line-height:1.05;font-family:'Inter Tight'}}
-.who b i{{font-family:'Instrument Serif';font-weight:400;font-size:31px;letter-spacing:-.3px}}
-.mid{{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:26px;align-items:center}}
-.sv{{margin-left:auto;display:flex;align-items:center;gap:14px;font-family:'Inter Tight';font-size:21px;font-weight:600;color:#111;letter-spacing:-.3px}}
-.sv span b{{font-weight:600}} .sv span em{{font-style:normal;font-weight:400}}
+.tb{{position:absolute;left:48px;right:48px;top:64px;height:64px;border-radius:32px;background:#fff;display:flex;align-items:center;padding:0 32px 0 28px;
+ font-family:'Inter Tight';box-shadow:0 0 0 1px rgba(0,0,0,.04),0 8px 20px -16px rgba(20,20,30,.14)}}
+.act{{display:flex;gap:20px;align-items:center}}
+.who{{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;white-space:nowrap}}
+.av{{width:40px;height:40px;border-radius:50%;background:url({av}) center/cover;box-shadow:0 0 0 1px rgba(0,0,0,.08)}}
+.who b{{display:block;font-size:18px;font-weight:600;color:#111;letter-spacing:-.4px;line-height:20px}}
+.who small{{display:block;font-size:13px;color:#8A8A8A;letter-spacing:-.1px;line-height:16px}}
+.sv{{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:18px;font-weight:500;color:#111;letter-spacing:-.3px}}
 .wa{{position:absolute;left:50%;transform:translateX(-50%);bottom:40px;height:64px;border-radius:32px;background:#fff;display:flex;align-items:center;gap:14px;padding:0 28px 0 10px;
  font-family:'Inter Tight';box-shadow:0 0 0 1px rgba(0,0,0,.025),0 10px 24px -20px rgba(20,20,30,.12);white-space:nowrap}}
 .wa i{{width:46px;height:46px;border-radius:50%;background:#25D366;display:grid;place-items:center}}
 .wa small{{font-size:16px;color:#8A8A8A}} .wa b{{font-size:22px;font-weight:600;color:#111;letter-spacing:-.2px}}
 .wa .sep{{width:1px;height:26px;background:#E3E3E3}}
 {BRAND_DARK_CSS if R.DARK else ''}</style></head><body><div class="stage"><div class="bg"></div>
-<div class="tb"><div class="who"><span class="av"></span><div><small>Designed by</small><b>Abir Hasan <i>Rakib</i></b></div></div>
- <div class="mid">{heart}{R.expand_icons('{{icon:message-circle:32:#111:1.9}}{{icon:send:31:#111:1.9}}')}</div>
- <div class="sv"><span><b>SAVE</b> <em>for</em> <b>LATER</b></span>{bm}</div></div>
+<div class="tb"><div class="act">{heart}{R.expand_icons('{{icon:message-circle:26:#111:1.8}}{{icon:repeat-2:26:#111:1.8}}{{icon:send:25:#111:1.8}}')}</div>
+ <div class="who"><span class="av"></span><div><b>Abir Hasan Rakib</b><small>UI/UX Designer</small></div></div>
+ <div class="sv">Save for Later{bm}</div></div>
 {WA if wa else ''}
 </div></body></html>"""
 
