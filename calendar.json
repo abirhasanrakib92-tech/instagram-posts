@@ -933,7 +933,10 @@
    ],
    "theme": "dark",
    "note_dark": "Owner (2026-11-24): plain dark is not enough; dashboards need the glass-over-photo dark style and his approval before posting.",
-   "approved": "owner said final (2026-11-24 night), dark glass UI + black mockup on #EEEEEE"
+   "approved": "owner said final (2026-11-24 night), dark glass UI + black mockup on #EEEEEE",
+   "replied_comment_ids": [
+    "18185498053426159"
+   ]
   },
   {
    "id": "2026-11-25-pm",
@@ -976,7 +979,10 @@
    "theme": "dark",
    "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
    "approved": "owner said Final (2026-11-25)",
-   "posted_at": "2026-11-25T20:42+06:00"
+   "posted_at": "2026-11-25T20:42+06:00",
+   "replied_comment_ids": [
+    "18168484846488468"
+   ]
   },
   {
    "id": "2026-11-26-am",
