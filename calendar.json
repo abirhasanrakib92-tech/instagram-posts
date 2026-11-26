@@ -1036,11 +1036,11 @@
    "niche": "LLM usage & cost monitoring",
    "brand": "Tokenscope",
    "palette_hint": "graphite + violet",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-26-pm-tokenscope-llm-dashboard",
    "image": null,
    "caption": "One retry loop cost $1,330 in a single afternoon.\nLLM cost monitoring dashboard UI design: token spend, budget forecast and model routing\n\nTokenscope tracks AI spend against the monthly budget, marks every day in a dot calendar, and shows how the router splits 18.6M requests across three models.\n\nSave this for your next AI SaaS dashboard\nDo you track LLM spend per team or per feature?\n\n#uiux #dashboarddesign #glassmorphism #aiproduct #llmops",
-   "media_id": null,
+   "media_id": "17919764625492495",
    "format": "carousel-dashboard",
    "ai": true,
    "originally": "2026-11-24-pm",
@@ -1052,7 +1052,8 @@
     "posts/2026-11/2026-11-26-pm-tokenscope-llm-dashboard-3.jpg",
     "posts/2026-11/2026-11-26-pm-tokenscope-llm-dashboard-4.jpg"
    ],
-   "approved": "owner said final (2026-11-24 night), dark glass UI + black mockup on #EEEEEE"
+   "approved": "owner said final (2026-11-24 night), dark glass UI + black mockup on #EEEEEE",
+   "posted_at": "2026-11-26T20:42+06:00"
   },
   {
    "id": "2026-11-27-am",
