@@ -1104,13 +1104,13 @@
    "slot": "pm",
    "time_dhaka": "20:39",
    "type": "app",
-   "status": "ready",
+   "status": "posted",
    "niche": "Finance: stock & ETF investing",
    "brand": "Plinth",
    "palette_hint": "black + violet + chrome silver",
    "design_dir": "designs/2026-11-27-pm-plinth-invest-app",
    "image": null,
-   "media_id": null,
+   "media_id": "17983317717125191",
    "slug": "plinth-invest-app",
    "caption": "Most investing apps show the price. This one shows what you actually own.\nStock investing app UI design in dark mode: live chart, your position and slide to buy\n\nPlinth puts your 24 shares, average cost and total return right under the day's chart, so the number that matters is never two taps away. Buying a fraction is one slide.\n\nSave this for your next fintech app\nWhat do you check first in an investing app: the price or your return?\n\n#uidesign #mobileappdesign #fintech #investingapp #darkmodeui",
    "format": "carousel-app-v4",
@@ -1134,7 +1134,8 @@
    ],
    "theme": "dark",
    "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
-   "approved": "owner said Final (2026-11-25)"
+   "approved": "owner said Final (2026-11-25)",
+   "posted_at": "2026-11-27T20:45+06:00"
   },
   {
    "id": "2026-11-28-am",
