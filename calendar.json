@@ -1064,11 +1064,11 @@
    "niche": "Creative agency: brand & digital studio",
    "brand": "Halftone Studio",
    "palette_hint": "black + red-orange gradient + white",
-   "status": "ready",
+   "status": "posted",
    "design_dir": "designs/2026-11-27-am-halftone-agency-website",
    "image": null,
    "caption": "Most agency sites sell the team. The good ones sell the result.\nCreative agency website UI design in dark mode: brand studio landing page with case studies and process\n\nHalftone leads with a portrait under red-orange light, then backs every case study with a number and lays out the whole eight-week process before anyone books a call.\n\nSave this for your next agency or portfolio site\nWhat do you check first on an agency website: the work or the price?\n\n#uidesign #webdesign #landingpage #creativeagency #brandingagency",
-   "media_id": null,
+   "media_id": "18077454773751972",
    "format": "carousel-website-v2",
    "ai": false,
    "originally": "2026-11-25-am",
@@ -1095,7 +1095,8 @@
    ],
    "theme": "dark",
    "focus": "owner 2026-11-24: fintech / finance / creative agency / AI, dark refs in reference/website-dark",
-   "approved": "owner said Final (2026-11-25)"
+   "approved": "owner said Final (2026-11-25)",
+   "posted_at": "2026-11-27T08:40+06:00"
   },
   {
    "id": "2026-11-27-pm",
